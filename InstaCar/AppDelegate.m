@@ -10,10 +10,30 @@
 
 @implementation AppDelegate
 
+@synthesize menuController = _menuController;
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
+    
+    UINavigationController *mainNavController = [[UIStoryboard storyboardWithName:@"main" bundle:nil] instantiateViewControllerWithIdentifier:@"mainNavController"];
+    
+    DDMenuController *rootController = [[DDMenuController alloc] initWithRootViewController:mainNavController];
+    _menuController = rootController;
+    
+    /*LeftController *leftController = [[LeftController alloc] init];
+    rootController.leftViewController = leftController;
+    
+    RightController *rightController = [[RightController alloc] init];
+    rootController.rightViewController = rightController;*/
+    
+    self.window.rootViewController = rootController;
+    
+    self.window.backgroundColor = [UIColor whiteColor];
+    [self.window makeKeyAndVisible];
     return YES;
+
 }
 							
 - (void)applicationWillResignActive:(UIApplication *)application
