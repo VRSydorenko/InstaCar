@@ -8,6 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MainNavController : UINavigationController
+typedef enum {
+    EMPTY = 0,
+    SHOW_SETTINGS = 1
+    } SideAction;
+
+@protocol SideActionProtocol <NSObject>
+-(void) performSideAction:(SideAction)action;
+@end
+
+@interface MainNavController : UINavigationController <SideActionProtocol>
 
 @end

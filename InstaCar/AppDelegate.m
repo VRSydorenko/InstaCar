@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "AppMenuTableVC.h"
 
 @implementation AppDelegate
 
@@ -17,15 +18,16 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     
-    UINavigationController *mainNavController = [[UIStoryboard storyboardWithName:@"main" bundle:nil] instantiateViewControllerWithIdentifier:@"mainNavController"];
+    MainNavController *mainNavController = [[UIStoryboard storyboardWithName:@"main" bundle:nil] instantiateViewControllerWithIdentifier:@"mainNavController"];
     
     DDMenuController *rootController = [[DDMenuController alloc] initWithRootViewController:mainNavController];
     _menuController = rootController;
     
-    /*LeftController *leftController = [[LeftController alloc] init];
+    AppMenuTableVC *leftController = [[UIStoryboard storyboardWithName:@"main" bundle:nil] instantiateViewControllerWithIdentifier:@"appMenuTableVC"];
+    leftController.sideActionDelegate = mainNavController;
     rootController.leftViewController = leftController;
     
-    RightController *rightController = [[RightController alloc] init];
+    /*RightController *rightController = [[RightController alloc] init];
     rootController.rightViewController = rightController;*/
     
     self.window.rootViewController = rootController;

@@ -13,7 +13,6 @@
 		7F27671C1791E80000A1C1A0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7F27671A1791E80000A1C1A0 /* InfoPlist.strings */; };
 		7F27671E1791E80000A1C1A0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F27671D1791E80000A1C1A0 /* main.m */; };
 		7F2767221791E80000A1C1A0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F2767211791E80000A1C1A0 /* AppDelegate.m */; };
-		7F2767251791E80000A1C1A0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F2767231791E80000A1C1A0 /* Main.storyboard */; };
 		7F27672A1791E80000A1C1A0 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7F2767291791E80000A1C1A0 /* Images.xcassets */; };
 		7F2767311791E80000A1C1A0 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F2767301791E80000A1C1A0 /* XCTest.framework */; };
 		7F2767321791E80000A1C1A0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F2767111791E80000A1C1A0 /* Foundation.framework */; };
@@ -24,6 +23,7 @@
 		7F3871D617BE4CA900D8E39D /* MainNavController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F3871D517BE4CA900D8E39D /* MainNavController.m */; };
 		7F3871D917BE4D4C00D8E39D /* MainVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F3871D817BE4D4C00D8E39D /* MainVC.m */; };
 		7F3871DE17BE4F1000D8E39D /* DDMenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F3871DD17BE4F1000D8E39D /* DDMenuController.m */; };
+		7F3871E117BE5A4F00D8E39D /* AppMenuTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F3871E017BE5A4F00D8E39D /* AppMenuTableVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,7 +47,6 @@
 		7F27671F1791E80000A1C1A0 /* InstaCar-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "InstaCar-Prefix.pch"; sourceTree = "<group>"; };
 		7F2767201791E80000A1C1A0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		7F2767211791E80000A1C1A0 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		7F2767241791E80000A1C1A0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7F2767291791E80000A1C1A0 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		7F27672F1791E80000A1C1A0 /* InstaCarTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InstaCarTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F2767301791E80000A1C1A0 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -61,6 +60,8 @@
 		7F3871D817BE4D4C00D8E39D /* MainVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainVC.m; sourceTree = "<group>"; };
 		7F3871DC17BE4F1000D8E39D /* DDMenuController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDMenuController.h; sourceTree = "<group>"; };
 		7F3871DD17BE4F1000D8E39D /* DDMenuController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDMenuController.m; sourceTree = "<group>"; };
+		7F3871DF17BE5A4F00D8E39D /* AppMenuTableVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppMenuTableVC.h; sourceTree = "<group>"; };
+		7F3871E017BE5A4F00D8E39D /* AppMenuTableVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppMenuTableVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,12 +124,13 @@
 			children = (
 				7F2767201791E80000A1C1A0 /* AppDelegate.h */,
 				7F2767211791E80000A1C1A0 /* AppDelegate.m */,
-				7F2767231791E80000A1C1A0 /* Main.storyboard */,
 				7F3871D217BE4B7900D8E39D /* main.storyboard */,
 				7F3871D417BE4CA900D8E39D /* MainNavController.h */,
 				7F3871D517BE4CA900D8E39D /* MainNavController.m */,
 				7F3871D717BE4D4C00D8E39D /* MainVC.h */,
 				7F3871D817BE4D4C00D8E39D /* MainVC.m */,
+				7F3871DF17BE5A4F00D8E39D /* AppMenuTableVC.h */,
+				7F3871E017BE5A4F00D8E39D /* AppMenuTableVC.m */,
 				7F2767291791E80000A1C1A0 /* Images.xcassets */,
 				7F2767181791E80000A1C1A0 /* Supporting Files */,
 			);
@@ -252,7 +254,6 @@
 			files = (
 				7F27672A1791E80000A1C1A0 /* Images.xcassets in Resources */,
 				7F27671C1791E80000A1C1A0 /* InfoPlist.strings in Resources */,
-				7F2767251791E80000A1C1A0 /* Main.storyboard in Resources */,
 				7F3871D317BE4B7900D8E39D /* main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -274,6 +275,7 @@
 			files = (
 				7F3871D617BE4CA900D8E39D /* MainNavController.m in Sources */,
 				7F3871DE17BE4F1000D8E39D /* DDMenuController.m in Sources */,
+				7F3871E117BE5A4F00D8E39D /* AppMenuTableVC.m in Sources */,
 				7F3871D917BE4D4C00D8E39D /* MainVC.m in Sources */,
 				7F2767221791E80000A1C1A0 /* AppDelegate.m in Sources */,
 				7F27671E1791E80000A1C1A0 /* main.m in Sources */,
@@ -305,14 +307,6 @@
 				7F27671B1791E80000A1C1A0 /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		7F2767231791E80000A1C1A0 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				7F2767241791E80000A1C1A0 /* Base */,
-			);
-			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 		7F2767391791E80000A1C1A0 /* InfoPlist.strings */ = {

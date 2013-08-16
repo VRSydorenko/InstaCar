@@ -7,6 +7,8 @@
 //
 
 #import "MainNavController.h"
+#import "DDMenuController.h"
+#import "AppDelegate.h"
 
 @interface MainNavController ()
 
@@ -33,6 +35,13 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - SideActionProtocol methods
+
+-(void) performSideAction:(SideAction)action{
+    DDMenuController *menuController = (DDMenuController*)((AppDelegate*)[[UIApplication sharedApplication] delegate]).menuController;
+    [menuController showRootController:YES];
 }
 
 @end
