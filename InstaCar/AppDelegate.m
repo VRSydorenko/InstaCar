@@ -11,8 +11,6 @@
 
 @implementation AppDelegate
 
-@synthesize menuController = _menuController;
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
