@@ -7,8 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CaptureSessionManager.h"
 
 @interface MainVC : UIViewController
+
+@property CaptureSessionManager *captureManager;
 
 // Buttons
 @property (weak, nonatomic) IBOutlet UIButton *btnLocation;
@@ -21,6 +24,9 @@
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *constraintViewMiddleButtonsHeight;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *constraintViewMiddleButtonsBottomMargin;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *constraintBtnMakeWidth;
+
+@property (weak, nonatomic) IBOutlet UIView *viewImagePreview;
+
 
 - (IBAction)btnLocationPressed:(id)sender;
 - (IBAction)btnMiddleLeftPressed;

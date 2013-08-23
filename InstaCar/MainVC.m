@@ -38,6 +38,18 @@ typedef enum {
 	// Do any additional setup after loading the view.
     
     buttonsInInitialState = YES;
+    
+    // Set up and run the capture manager
+    self.captureManager = [[CaptureSessionManager alloc] init];
+    [self.captureManager addVideoInput];
+    [self.captureManager addVideoPreviewLayer];
+    
+    CGRect layerRect = self.viewImagePreview.frame;
+    [self.captureManager.previewLayer setBounds:layerRect];
+    [self.captureManager.previewLayer setPosition:CGPointMake(CGRectGetMidX(layerRect), CGRectGetMidY(layerRect))];
+    
+    [self.view.layer addSublayer:self.captureManager.previewLayer];
+    [self.captureManager.captureSession startRunning];
 }
 
 - (void)didReceiveMemoryWarning
