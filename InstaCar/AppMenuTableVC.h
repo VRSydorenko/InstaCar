@@ -6,11 +6,11 @@
 //  Copyright (c) 2013 Viktor Sydorenko. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
-#import "MainNavController.h"
+#import "SideViewControllerBase.h"
 
-@interface AppMenuTableVC : UITableViewController <UITableViewDelegate>
+@interface AppMenuTableVC : SideViewControllerBase <UITableViewDelegate,
+                                                    UITableViewDataSource>
 
-@property id<SideActionProtocol> sideActionDelegate;
+@property (weak, nonatomic) IBOutlet UITableView *tableAppMenu;
 
 @end

@@ -9,6 +9,11 @@
 #import <UIKit/UIKit.h>
 
 typedef enum {
+    APP_MENU = 0,
+    LOCATIONS = 1
+} SideView;
+
+typedef enum {
     EMPTY = 0,
     SHOW_SETTINGS = 1
     } SideAction;
@@ -18,5 +23,9 @@ typedef enum {
 @end
 
 @interface MainNavController : UINavigationController <SideActionProtocol>
+
+-(void)setSideViewController:(SideView)sideView andShowOnTheLeftSide:(BOOL)isLeft;
+-(void)showLeft;
+-(void)showRight;
 
 @end

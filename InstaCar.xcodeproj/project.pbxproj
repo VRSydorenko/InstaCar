@@ -26,6 +26,14 @@
 		7F3871D917BE4D4C00D8E39D /* MainVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F3871D817BE4D4C00D8E39D /* MainVC.m */; };
 		7F3871DE17BE4F1000D8E39D /* DDMenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F3871DD17BE4F1000D8E39D /* DDMenuController.m */; };
 		7F3871E117BE5A4F00D8E39D /* AppMenuTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F3871E017BE5A4F00D8E39D /* AppMenuTableVC.m */; };
+		7F4ECC2A17C7F8C200BF1671 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F4ECC2917C7F8C200BF1671 /* CoreLocation.framework */; };
+		7F4ECC2D17C8062800BF1671 /* SideViewControllerBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F4ECC2C17C8062800BF1671 /* SideViewControllerBase.m */; };
+		7FC4137517C7E8450025DD2C /* Foursquare2.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FC4136C17C7E8450025DD2C /* Foursquare2.m */; };
+		7FC4137617C7E8450025DD2C /* FSConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FC4136E17C7E8450025DD2C /* FSConverter.m */; };
+		7FC4137717C7E8450025DD2C /* FSRequester.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FC4137017C7E8450025DD2C /* FSRequester.m */; };
+		7FC4137817C7E8450025DD2C /* FSTargetCallback.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FC4137217C7E8450025DD2C /* FSTargetCallback.m */; };
+		7FC4137917C7E8450025DD2C /* FSVenue.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FC4137417C7E8450025DD2C /* FSVenue.m */; };
+		7FC4137C17C7EFF70025DD2C /* LocationsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FC4137B17C7EFF70025DD2C /* LocationsVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +75,21 @@
 		7F3871DD17BE4F1000D8E39D /* DDMenuController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDMenuController.m; sourceTree = "<group>"; };
 		7F3871DF17BE5A4F00D8E39D /* AppMenuTableVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppMenuTableVC.h; sourceTree = "<group>"; };
 		7F3871E017BE5A4F00D8E39D /* AppMenuTableVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppMenuTableVC.m; sourceTree = "<group>"; };
+		7F4ECC2917C7F8C200BF1671 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		7F4ECC2B17C8062800BF1671 /* SideViewControllerBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SideViewControllerBase.h; sourceTree = "<group>"; };
+		7F4ECC2C17C8062800BF1671 /* SideViewControllerBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SideViewControllerBase.m; sourceTree = "<group>"; };
+		7FC4136B17C7E8450025DD2C /* Foursquare2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Foursquare2.h; sourceTree = "<group>"; };
+		7FC4136C17C7E8450025DD2C /* Foursquare2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Foursquare2.m; sourceTree = "<group>"; };
+		7FC4136D17C7E8450025DD2C /* FSConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSConverter.h; sourceTree = "<group>"; };
+		7FC4136E17C7E8450025DD2C /* FSConverter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSConverter.m; sourceTree = "<group>"; };
+		7FC4136F17C7E8450025DD2C /* FSRequester.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSRequester.h; sourceTree = "<group>"; };
+		7FC4137017C7E8450025DD2C /* FSRequester.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSRequester.m; sourceTree = "<group>"; };
+		7FC4137117C7E8450025DD2C /* FSTargetCallback.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSTargetCallback.h; sourceTree = "<group>"; };
+		7FC4137217C7E8450025DD2C /* FSTargetCallback.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSTargetCallback.m; sourceTree = "<group>"; };
+		7FC4137317C7E8450025DD2C /* FSVenue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSVenue.h; sourceTree = "<group>"; };
+		7FC4137417C7E8450025DD2C /* FSVenue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSVenue.m; sourceTree = "<group>"; };
+		7FC4137A17C7EFF70025DD2C /* LocationsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationsVC.h; sourceTree = "<group>"; };
+		7FC4137B17C7EFF70025DD2C /* LocationsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationsVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +97,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7F4ECC2A17C7F8C200BF1671 /* CoreLocation.framework in Frameworks */,
 				7F1767A917C76CB800724BD6 /* AVFoundation.framework in Frameworks */,
 				7F2767141791E80000A1C1A0 /* CoreGraphics.framework in Frameworks */,
 				7F2767161791E80000A1C1A0 /* UIKit.framework in Frameworks */,
@@ -117,6 +141,7 @@
 		7F2767101791E80000A1C1A0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7F4ECC2917C7F8C200BF1671 /* CoreLocation.framework */,
 				7F1767A817C76CB800724BD6 /* AVFoundation.framework */,
 				7F2767111791E80000A1C1A0 /* Foundation.framework */,
 				7F2767131791E80000A1C1A0 /* CoreGraphics.framework */,
@@ -136,8 +161,12 @@
 				7F3871D517BE4CA900D8E39D /* MainNavController.m */,
 				7F3871D717BE4D4C00D8E39D /* MainVC.h */,
 				7F3871D817BE4D4C00D8E39D /* MainVC.m */,
+				7F4ECC2B17C8062800BF1671 /* SideViewControllerBase.h */,
+				7F4ECC2C17C8062800BF1671 /* SideViewControllerBase.m */,
 				7F3871DF17BE5A4F00D8E39D /* AppMenuTableVC.h */,
 				7F3871E017BE5A4F00D8E39D /* AppMenuTableVC.m */,
+				7FC4137A17C7EFF70025DD2C /* LocationsVC.h */,
+				7FC4137B17C7EFF70025DD2C /* LocationsVC.m */,
 				7F2767291791E80000A1C1A0 /* Images.xcassets */,
 				7F2767181791E80000A1C1A0 /* Supporting Files */,
 			);
@@ -176,6 +205,7 @@
 		7F3871DB17BE4F1000D8E39D /* CustomControls */ = {
 			isa = PBXGroup;
 			children = (
+				7FC4136A17C7E8450025DD2C /* Foursquare */,
 				7F1767AA17C76F0F00724BD6 /* CaptureSessionManager.h */,
 				7F1767AB17C76F0F00724BD6 /* CaptureSessionManager.m */,
 				7F3871DC17BE4F1000D8E39D /* DDMenuController.h */,
@@ -183,6 +213,23 @@
 			);
 			name = CustomControls;
 			path = InstaCar/CustomControls;
+			sourceTree = "<group>";
+		};
+		7FC4136A17C7E8450025DD2C /* Foursquare */ = {
+			isa = PBXGroup;
+			children = (
+				7FC4136B17C7E8450025DD2C /* Foursquare2.h */,
+				7FC4136C17C7E8450025DD2C /* Foursquare2.m */,
+				7FC4136D17C7E8450025DD2C /* FSConverter.h */,
+				7FC4136E17C7E8450025DD2C /* FSConverter.m */,
+				7FC4136F17C7E8450025DD2C /* FSRequester.h */,
+				7FC4137017C7E8450025DD2C /* FSRequester.m */,
+				7FC4137117C7E8450025DD2C /* FSTargetCallback.h */,
+				7FC4137217C7E8450025DD2C /* FSTargetCallback.m */,
+				7FC4137317C7E8450025DD2C /* FSVenue.h */,
+				7FC4137417C7E8450025DD2C /* FSVenue.m */,
+			);
+			path = Foursquare;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -284,11 +331,18 @@
 			files = (
 				7F3871D617BE4CA900D8E39D /* MainNavController.m in Sources */,
 				7F3871DE17BE4F1000D8E39D /* DDMenuController.m in Sources */,
+				7FC4137C17C7EFF70025DD2C /* LocationsVC.m in Sources */,
 				7F3871E117BE5A4F00D8E39D /* AppMenuTableVC.m in Sources */,
+				7F4ECC2D17C8062800BF1671 /* SideViewControllerBase.m in Sources */,
 				7F3871D917BE4D4C00D8E39D /* MainVC.m in Sources */,
+				7FC4137917C7E8450025DD2C /* FSVenue.m in Sources */,
 				7F2767221791E80000A1C1A0 /* AppDelegate.m in Sources */,
 				7F27671E1791E80000A1C1A0 /* main.m in Sources */,
+				7FC4137817C7E8450025DD2C /* FSTargetCallback.m in Sources */,
 				7F1767AC17C76F0F00724BD6 /* CaptureSessionManager.m in Sources */,
+				7FC4137717C7E8450025DD2C /* FSRequester.m in Sources */,
+				7FC4137617C7E8450025DD2C /* FSConverter.m in Sources */,
+				7FC4137517C7E8450025DD2C /* Foursquare2.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

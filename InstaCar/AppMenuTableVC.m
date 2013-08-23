@@ -14,26 +14,12 @@
 
 @implementation AppMenuTableVC
 
-- (id)initWithStyle:(UITableViewStyle)style
-{
-    self = [super initWithStyle:style];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
-    self.tableView.delegate = self;
-
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    self.tableAppMenu.delegate = self;
+    self.tableAppMenu.dataSource = self;
 }
 
 - (void)didReceiveMemoryWarning
@@ -58,6 +44,8 @@
 {
     static NSString *CellIdentifier = @"cellSomeItem";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    
+    cell.textLabel.text = @"some item...";
     
     return cell;
 }

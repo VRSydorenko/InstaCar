@@ -7,6 +7,7 @@
 //
 
 #import "MainVC.h"
+#import "MainNavController.h"
 
 #define SWITCH_TIME 1.0
 
@@ -16,6 +17,7 @@ typedef enum {
 } ButtonTransformAction;
 
 @interface MainVC (){
+    MainNavController *navCon;
     BOOL buttonsInInitialState;
 }
 
@@ -37,6 +39,7 @@ typedef enum {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
+    navCon = (MainNavController*)self.navigationController;
     buttonsInInitialState = YES;
     
     // Set up and run the capture manager
@@ -50,6 +53,15 @@ typedef enum {
     
     [self.view.layer addSublayer:self.captureManager.previewLayer];
     [self.captureManager.captureSession startRunning];
+    
+    // Navitgation item transparency
+    /*self.navigationController.navigationBar.translucent = YES;
+    const float colorMask[6] = {222, 255, 222, 255, 222, 255};
+    UIImage *img = [[UIImage alloc] init];
+    UIImage *maskedImage = [UIImage imageWithCGImage: CGImageCreateWithMaskingColors(img.CGImage, colorMask)];
+    
+    [self.navigationController.navigationBar setBackgroundImage:maskedImage forBarMetrics:UIBarMetricsDefault];
+     */
 }
 
 - (void)didReceiveMemoryWarning
@@ -136,7 +148,7 @@ typedef enum {
 #pragma mark Button Actions
 
 - (IBAction)btnLocationPressed:(id)sender {
-    
+    [navCon setSideViewController:LOCATIONS andShowOnTheLeftSide:YES];
 }
 
 - (IBAction)btnMiddlePressed {

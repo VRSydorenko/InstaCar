@@ -20,14 +20,16 @@
 @property (weak, nonatomic) IBOutlet UIButton *btnMiddleRight;
 @property (weak, nonatomic) IBOutlet UIButton *btnRightSide;
 
+// Constraints
 @property (weak, nonatomic) IBOutlet UIView *viewMiddleButtons;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *constraintViewMiddleButtonsHeight;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *constraintViewMiddleButtonsBottomMargin;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *constraintBtnMakeWidth;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *constraintImagePreviewHeight;
 
 @property (weak, nonatomic) IBOutlet UIView *viewImagePreview;
 
-
+// Actions
 - (IBAction)btnLocationPressed:(id)sender;
 - (IBAction)btnMiddleLeftPressed;
 - (IBAction)btnMiddlePressed;

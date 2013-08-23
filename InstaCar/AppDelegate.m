@@ -7,12 +7,17 @@
 //
 
 #import "AppDelegate.h"
-#import "AppMenuTableVC.h"
+#import "MainNavController.h"
+#import "Foursquare2.h"
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    [Foursquare2 setupFoursquareWithKey:@"WU4W30WXTHPBEIMQWLGJBFFC2V3NITOGLKLNMWPXL0O5MP2N"
+                 secret:@"YGMNXG45YV2RSRYRSVW2NHBFANQWB3MAGUIWNDZNUUTEUR3R"
+                 callbackURL:@"app://instatest"];
+    
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     
@@ -20,13 +25,6 @@
     
     DDMenuController *rootController = [[DDMenuController alloc] initWithRootViewController:mainNavController];
     _menuController = rootController;
-    
-    AppMenuTableVC *leftController = [[UIStoryboard storyboardWithName:@"main" bundle:nil] instantiateViewControllerWithIdentifier:@"appMenuTableVC"];
-    leftController.sideActionDelegate = mainNavController;
-    rootController.leftViewController = leftController;
-    
-    /*RightController *rightController = [[RightController alloc] init];
-    rootController.rightViewController = rightController;*/
     
     self.window.rootViewController = rootController;
     
