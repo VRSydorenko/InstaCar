@@ -44,14 +44,16 @@ typedef enum {
     
     // Set up and run the capture manager
     self.captureManager = [[CaptureSessionManager alloc] init];
-    [self.captureManager addVideoInput];
+    [self.captureManager addVideoInputFrontCamera:NO];
+    [self.captureManager addStillImageOutput];
     [self.captureManager addVideoPreviewLayer];
     
-    CGRect layerRect = self.viewImagePreview.frame;
+    CGRect layerRect = self.imagePreview.frame;
     [self.captureManager.previewLayer setBounds:layerRect];
     [self.captureManager.previewLayer setPosition:CGPointMake(CGRectGetMidX(layerRect), CGRectGetMidY(layerRect))];
     
     [self.view.layer addSublayer:self.captureManager.previewLayer];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(imageCaptured) name:kImageCapturedSuccessfully object:nil];
     [self.captureManager.captureSession startRunning];
     
     // Navitgation item transparency
@@ -152,7 +154,7 @@ typedef enum {
 }
 
 - (IBAction)btnMiddlePressed {
-    [self switchButtons];
+    [self.captureManager captureStillImage];
 }
 
 - (IBAction)btnSkinsPressed:(id)sender {
@@ -163,15 +165,48 @@ typedef enum {
 }
 
 -(void)doCamSettingsPressed{
-    
+    [self.captureManager switchInputs];
 }
 
 -(void)doPickNewPhotoPressed{
     [self switchButtons];
+    [self.captureManager addLastVideoInput];
 }
 
 -(void)doSharePressed{
     
+}
+
+#pragma mark -
+
+-(void) imageCaptured{
+    [self prepareSquareImage];
+    [self.captureManager clearInputs];
+    self.imagePreview.image = self.captureManager.stillImage;
+    [self switchButtons];
+}
+
+- (void)saveImageToPhotoAlbum
+{
+    UIImageWriteToSavedPhotosAlbum(self.captureManager.stillImage, self, @selector(image:didFinishSavingWithError:contextInfo:), nil);
+}
+
+-(void) prepareSquareImage{
+    UIImage *sourceImage = self.captureManager.stillImage;
+    
+    CGFloat heightScaleFactor =  sourceImage.size.height / self.view.frame.size.height;
+    CGPoint convertedPreviewPoint = [self.view convertPoint:self.imagePreview.frame.origin toView:nil];
+    CGFloat subImageTop = convertedPreviewPoint.y * heightScaleFactor;
+    CGRect subImageRect = CGRectMake(0, subImageTop, sourceImage.size.width, sourceImage.size.width);
+    UIImage *subImage = [UIImage imageWithCGImage:CGImageCreateWithImageInRect(sourceImage.CGImage, subImageRect)];
+    
+    self.captureManager.stillImage = subImage;
+}
+
+- (void)image:(UIImage *)image didFinishSavingWithError:(NSError *)error contextInfo:(void *)contextInfo
+{
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Image" message:error!=NULL?@"Image couldn't be saved":@"Saved!" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
+        [alert show];
 }
 
 @end

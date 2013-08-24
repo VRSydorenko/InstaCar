@@ -27,7 +27,7 @@
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *constraintBtnMakeWidth;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *constraintImagePreviewHeight;
 
-@property (weak, nonatomic) IBOutlet UIView *viewImagePreview;
+@property (weak, nonatomic) IBOutlet UIImageView *imagePreview;
 
 // Actions
 - (IBAction)btnLocationPressed:(id)sender;

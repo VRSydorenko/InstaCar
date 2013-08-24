@@ -142,17 +142,23 @@
                                     <constraint firstItem="AkF-py-Nas" firstAttribute="top" secondItem="NyH-nI-Ums" secondAttribute="top" id="vOf-wt-ey1"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eex-pA-zai">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4Xz-0E-p37">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="320"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                            </view>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="320" id="dkK-ZR-O75"/>
+                                    <constraint firstAttribute="width" constant="320" id="vbr-mu-0dT"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="NyH-nI-Ums" firstAttribute="bottom" secondItem="K25-XF-Jiu" secondAttribute="bottom" id="21k-Ug-WJ7"/>
                             <constraint firstItem="AIv-dK-ka2" firstAttribute="leading" secondItem="NyH-nI-Ums" secondAttribute="trailing" id="2SX-HA-I8s"/>
+                            <constraint firstItem="4Xz-0E-p37" firstAttribute="trailing" secondItem="K25-XF-Jiu" secondAttribute="trailing" id="2qQ-qO-wcS"/>
+                            <constraint firstItem="4Xz-0E-p37" firstAttribute="top" secondItem="K25-XF-Jiu" secondAttribute="top" id="4El-DA-ie3"/>
                             <constraint firstItem="PZn-uN-nYb" firstAttribute="leading" secondItem="K25-XF-Jiu" secondAttribute="leading" id="BkR-xg-5bz"/>
+                            <constraint firstItem="4Xz-0E-p37" firstAttribute="leading" secondItem="K25-XF-Jiu" secondAttribute="leading" id="I7Q-xS-A5m"/>
                             <constraint firstItem="AIv-dK-ka2" firstAttribute="bottom" secondItem="K25-XF-Jiu" secondAttribute="bottom" id="cWk-eZ-EWh"/>
                             <constraint firstItem="PZn-uN-nYb" firstAttribute="bottom" secondItem="K25-XF-Jiu" secondAttribute="bottom" id="oBd-cR-hbr"/>
                             <constraint firstItem="NyH-nI-Ums" firstAttribute="leading" secondItem="PZn-uN-nYb" secondAttribute="trailing" id="oEr-tL-ep0"/>
@@ -168,9 +174,10 @@
                         <outlet property="btnMiddleRight" destination="AkF-py-Nas" id="eBf-TX-cMc"/>
                         <outlet property="btnRightSide" destination="AIv-dK-ka2" id="Hso-eM-RYO"/>
                         <outlet property="constraintBtnMakeWidth" destination="g4j-Mv-gDK" id="tMD-Qb-hab"/>
+                        <outlet property="constraintImagePreviewHeight" destination="dkK-ZR-O75" id="Ykz-yu-Sip"/>
                         <outlet property="constraintViewMiddleButtonsBottomMargin" destination="21k-Ug-WJ7" id="nfX-QG-n9o"/>
                         <outlet property="constraintViewMiddleButtonsHeight" destination="jRz-5a-X3U" id="HKG-Uq-gDa"/>
-                        <outlet property="viewImagePreview" destination="eex-pA-zai" id="MnL-Bn-c3U"/>
+                        <outlet property="imagePreview" destination="4Xz-0E-p37" id="HPP-8Z-05v"/>
                         <outlet property="viewMiddleButtons" destination="NyH-nI-Ums" id="xnw-Hc-J6u"/>
                     </connections>
                 </viewController>
@@ -269,6 +276,51 @@
             <point key="canvasLocation" x="363" y="838"/>
         </scene>
     </scenes>
+    <classes>
+        <class className="AppMenuTableVC" superclassName="SideViewControllerBase">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/AppMenuTableVC.h"/>
+            <relationships>
+                <relationship kind="outlet" name="tableAppMenu" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="LocationsVC" superclassName="SideViewControllerBase">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/LocationsVC.h"/>
+            <relationships>
+                <relationship kind="outlet" name="tableVenues" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="MainNavController" superclassName="UINavigationController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MainNavController.h"/>
+        </class>
+        <class className="MainVC" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MainVC.h"/>
+            <relationships>
+                <relationship kind="action" name="btnLocationPressed:"/>
+                <relationship kind="action" name="btnMiddleLeftPressed"/>
+                <relationship kind="action" name="btnMiddlePressed"/>
+                <relationship kind="action" name="btnMiddleRightPressed"/>
+                <relationship kind="action" name="btnSkinsPressed:"/>
+                <relationship kind="outlet" name="btnLocation" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="btnMiddle" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="btnMiddleLeft" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="btnMiddleRight" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="btnRightSide" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="constraintBtnMakeWidth" candidateClass="NSLayoutConstraint"/>
+                <relationship kind="outlet" name="constraintImagePreviewHeight" candidateClass="NSLayoutConstraint"/>
+                <relationship kind="outlet" name="constraintViewMiddleButtonsBottomMargin" candidateClass="NSLayoutConstraint"/>
+                <relationship kind="outlet" name="constraintViewMiddleButtonsHeight" candidateClass="NSLayoutConstraint"/>
+                <relationship kind="outlet" name="imagePreview" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="viewImagePreview" candidateClass="UIView"/>
+                <relationship kind="outlet" name="viewMiddleButtons" candidateClass="UIView"/>
+            </relationships>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="SideViewControllerBase" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SideViewControllerBase.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
