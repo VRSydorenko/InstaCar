@@ -21,20 +21,9 @@
         canEditFieldText1 = NO;
         canEditFieldText2 = NO;
         
-        [self initGestures];
+        self.userInteractionEnabled = YES;
     }
     return self;
-}
-
--(void)initGestures{
-    swipeUp = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(moveContentUp)];
-    swipeUp.direction = UISwipeGestureRecognizerDirectionUp;
-    [self addGestureRecognizer:swipeUp];
-    
-    swipeDown = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(moveContentDown)];
-    swipeDown.direction = UISwipeGestureRecognizerDirectionUp;
-    [self addGestureRecognizer:swipeDown];
-
 }
 
 #pragma mark -
@@ -94,6 +83,10 @@
     }
 }
 
+-(void)initialise{
+    // overriden by descendants
+}
+
 -(void)setMovingViewConstraint:(NSLayoutConstraint*)topMargin andViewHeight:(unsigned short)height{
     movingViewTopMarginConstraint = topMargin;
     movingViewHeight = height;
@@ -115,6 +108,7 @@
     [UIView animateWithDuration:MOVINGVIEW_TIME
             animations:^(void){
                 movingViewTopMarginConstraint.constant = 0;
+                [self layoutIfNeeded];
             }
             completion:^(BOOL finished){
             }
@@ -133,6 +127,7 @@
     [UIView animateWithDuration:MOVINGVIEW_TIME
             animations:^(void){
                 movingViewTopMarginConstraint.constant = self.frame.size.height - movingViewHeight;
+                [self layoutIfNeeded];
             }
             completion:^(BOOL finished){
             }

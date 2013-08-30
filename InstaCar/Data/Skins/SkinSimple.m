@@ -17,20 +17,15 @@
 
 @implementation SkinSimple
 
-- (id)init
-{
-    self = [super init];
-    if (self) {
-        [self setMovingViewConstraint:self.topMargin andViewHeight:self.movingView.frame.size.height];
-        
-        canEditFieldAuto1 = YES;
-        canEditFieldText1 = YES;
-    }
-    return self;
+-(void)initialise{
+    [self setMovingViewConstraint:self.topMargin andViewHeight:self.movingView.frame.size.height];
+
+    canEditFieldAuto1 = YES;
+    canEditFieldText1 = YES;
 }
 
 -(void)fieldAuto1DidUpdate{
-    self.imgEmblem.image = [UIImage imageNamed:@"nav_menu_icon.png"];
+    self.imgEmblem.image = [UIImage imageNamed:@"nav_menu_icon"];
     self.textAuto.text = @"BMW";
     CGSize textSize = [self.text.text sizeWithFont:self.text.font];
     self.autoTitleWidth.constant = textSize.width;

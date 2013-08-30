@@ -20,11 +20,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "InstaCar/MainVC.m"
-            timestampString = "399147570.73405"
+            timestampString = "399594091.298325"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "98"
-            endingLineNumber = "98"
+            startingLineNumber = "129"
+            endingLineNumber = "129"
             landmarkName = "-collapseButtons"
             landmarkType = "5">
          </BreakpointContent>
@@ -35,13 +35,29 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "InstaCar/MainVC.m"
-            timestampString = "399147570.73405"
+            filePath = "InstaCar/Data/Skins/SkinViewBase.m"
+            timestampString = "399592821.714634"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "157"
-            endingLineNumber = "157"
-            landmarkName = "-btnMiddlePressed"
+            startingLineNumber = "119"
+            endingLineNumber = "119"
+            landmarkName = "-moveContentDown"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "InstaCar/Data/Skins/SkinViewBase.m"
+            timestampString = "399592821.714634"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "100"
+            endingLineNumber = "100"
+            landmarkName = "-moveContentUp"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

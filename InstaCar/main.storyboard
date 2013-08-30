@@ -29,6 +29,16 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H0K-d7-f7o">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="320"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="320" id="iUG-Fm-SLs"/>
+                                    <constraint firstAttribute="width" constant="320" id="p43-mh-v34"/>
+                                </constraints>
+                            </scrollView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PZn-uN-nYb">
                                 <rect key="frame" x="0.0" y="352" width="64" height="64"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -145,6 +155,7 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4Xz-0E-p37">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="320"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="320" id="dkK-ZR-O75"/>
                                     <constraint firstAttribute="width" constant="320" id="vbr-mu-0dT"/>
@@ -153,12 +164,15 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="H0K-d7-f7o" firstAttribute="trailing" secondItem="K25-XF-Jiu" secondAttribute="trailing" id="1Sq-OT-NOf"/>
                             <constraint firstItem="NyH-nI-Ums" firstAttribute="bottom" secondItem="K25-XF-Jiu" secondAttribute="bottom" id="21k-Ug-WJ7"/>
                             <constraint firstItem="AIv-dK-ka2" firstAttribute="leading" secondItem="NyH-nI-Ums" secondAttribute="trailing" id="2SX-HA-I8s"/>
                             <constraint firstItem="4Xz-0E-p37" firstAttribute="trailing" secondItem="K25-XF-Jiu" secondAttribute="trailing" id="2qQ-qO-wcS"/>
                             <constraint firstItem="4Xz-0E-p37" firstAttribute="top" secondItem="K25-XF-Jiu" secondAttribute="top" id="4El-DA-ie3"/>
+                            <constraint firstItem="H0K-d7-f7o" firstAttribute="top" secondItem="K25-XF-Jiu" secondAttribute="top" id="AoH-y1-NPz"/>
                             <constraint firstItem="PZn-uN-nYb" firstAttribute="leading" secondItem="K25-XF-Jiu" secondAttribute="leading" id="BkR-xg-5bz"/>
                             <constraint firstItem="4Xz-0E-p37" firstAttribute="leading" secondItem="K25-XF-Jiu" secondAttribute="leading" id="I7Q-xS-A5m"/>
+                            <constraint firstItem="H0K-d7-f7o" firstAttribute="leading" secondItem="K25-XF-Jiu" secondAttribute="leading" id="NkT-m9-wAA"/>
                             <constraint firstItem="AIv-dK-ka2" firstAttribute="bottom" secondItem="K25-XF-Jiu" secondAttribute="bottom" id="cWk-eZ-EWh"/>
                             <constraint firstItem="PZn-uN-nYb" firstAttribute="bottom" secondItem="K25-XF-Jiu" secondAttribute="bottom" id="oBd-cR-hbr"/>
                             <constraint firstItem="NyH-nI-Ums" firstAttribute="leading" secondItem="PZn-uN-nYb" secondAttribute="trailing" id="oEr-tL-ep0"/>
@@ -178,6 +192,7 @@
                         <outlet property="constraintViewMiddleButtonsBottomMargin" destination="21k-Ug-WJ7" id="nfX-QG-n9o"/>
                         <outlet property="constraintViewMiddleButtonsHeight" destination="jRz-5a-X3U" id="HKG-Uq-gDa"/>
                         <outlet property="imagePreview" destination="4Xz-0E-p37" id="HPP-8Z-05v"/>
+                        <outlet property="scrollSkins" destination="H0K-d7-f7o" id="rqj-at-aHX"/>
                         <outlet property="viewMiddleButtons" destination="NyH-nI-Ums" id="xnw-Hc-J6u"/>
                     </connections>
                 </viewController>
@@ -276,51 +291,6 @@
             <point key="canvasLocation" x="363" y="838"/>
         </scene>
     </scenes>
-    <classes>
-        <class className="AppMenuTableVC" superclassName="SideViewControllerBase">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/AppMenuTableVC.h"/>
-            <relationships>
-                <relationship kind="outlet" name="tableAppMenu" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-        <class className="LocationsVC" superclassName="SideViewControllerBase">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/LocationsVC.h"/>
-            <relationships>
-                <relationship kind="outlet" name="tableVenues" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-        <class className="MainNavController" superclassName="UINavigationController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MainNavController.h"/>
-        </class>
-        <class className="MainVC" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MainVC.h"/>
-            <relationships>
-                <relationship kind="action" name="btnLocationPressed:"/>
-                <relationship kind="action" name="btnMiddleLeftPressed"/>
-                <relationship kind="action" name="btnMiddlePressed"/>
-                <relationship kind="action" name="btnMiddleRightPressed"/>
-                <relationship kind="action" name="btnSkinsPressed:"/>
-                <relationship kind="outlet" name="btnLocation" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="btnMiddle" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="btnMiddleLeft" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="btnMiddleRight" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="btnRightSide" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="constraintBtnMakeWidth" candidateClass="NSLayoutConstraint"/>
-                <relationship kind="outlet" name="constraintImagePreviewHeight" candidateClass="NSLayoutConstraint"/>
-                <relationship kind="outlet" name="constraintViewMiddleButtonsBottomMargin" candidateClass="NSLayoutConstraint"/>
-                <relationship kind="outlet" name="constraintViewMiddleButtonsHeight" candidateClass="NSLayoutConstraint"/>
-                <relationship kind="outlet" name="imagePreview" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="viewImagePreview" candidateClass="UIView"/>
-                <relationship kind="outlet" name="viewMiddleButtons" candidateClass="UIView"/>
-            </relationships>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-        <class className="SideViewControllerBase" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SideViewControllerBase.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

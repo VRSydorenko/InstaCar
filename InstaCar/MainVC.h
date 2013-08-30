@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "CaptureSessionManager.h"
+#import "SkinProvider.h"
 
 @interface MainVC : UIViewController
 
@@ -28,6 +29,7 @@
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *constraintImagePreviewHeight;
 
 @property (weak, nonatomic) IBOutlet UIImageView *imagePreview;
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollSkins;
 
 // Actions
 - (IBAction)btnLocationPressed:(id)sender;

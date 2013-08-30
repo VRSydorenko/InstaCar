@@ -41,7 +41,6 @@ typedef enum {
 @interface DDMenuController : UIViewController <UIGestureRecognizerDelegate>{
     
     id _tap;
-    id _pan;
     
     CGFloat _panOriginX;
     CGPoint _panVelocity;
@@ -66,7 +65,6 @@ typedef enum {
 @property(nonatomic,strong) UIViewController *rootViewController;
 
 @property(nonatomic,readonly) UITapGestureRecognizer *tap;
-@property(nonatomic,readonly) UIPanGestureRecognizer *pan;
 
 @property(nonatomic,assign) Class barButtonItemClass;
 

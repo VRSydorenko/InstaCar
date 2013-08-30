@@ -10,7 +10,7 @@
 #import "Location.h"
 #import "Auto.h"
 
-#define MOVINGVIEW_TIME 0.5f
+#define MOVINGVIEW_TIME 0.5
 
 @class SkinViewBase;
 
@@ -46,18 +46,16 @@ typedef enum {
 @private
     NSLayoutConstraint *movingViewTopMarginConstraint;
     unsigned short movingViewHeight;
-    
-    UISwipeGestureRecognizer *swipeUp;
-    UISwipeGestureRecognizer *swipeDown;
 }
 
+-(void)initialise;
 -(void)setMovingViewConstraint:(NSLayoutConstraint*)topMargin andViewHeight:(unsigned short)height;
--(BOOL) canEditField:(SkinField)field;
--(void) updateField:(SkinField)field withValue:(NSObject*)value;
+-(BOOL)canEditField:(SkinField)field;
+-(void)updateField:(SkinField)field withValue:(NSObject*)value;
 -(UIImage*)getImage;
 
-//-(void)moveContentUp;
-//-(void)moveContentDown;
+-(void)moveContentUp;
+-(void)moveContentDown;
 
 -(void)fieldLocationDidUpdate;
 -(void)fieldAuto1DidUpdate;

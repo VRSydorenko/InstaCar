@@ -19,20 +19,15 @@ typedef enum {
 @interface MainVC (){
     MainNavController *navCon;
     BOOL buttonsInInitialState;
+    
+    SkinViewBase *activeSkin;
+    UISwipeGestureRecognizer *swipeUp;
+    UISwipeGestureRecognizer *swipeDown;
 }
 
 @end
 
 @implementation MainVC
-
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
 
 - (void)viewDidLoad
 {
@@ -42,19 +37,13 @@ typedef enum {
     navCon = (MainNavController*)self.navigationController;
     buttonsInInitialState = YES;
     
-    // Set up and run the capture manager
-    self.captureManager = [[CaptureSessionManager alloc] init];
-    [self.captureManager addVideoInputFrontCamera:NO];
-    [self.captureManager addStillImageOutput];
-    [self.captureManager addVideoPreviewLayer];
+    [self initCaptureManager];
     
-    CGRect layerRect = self.imagePreview.frame;
-    [self.captureManager.previewLayer setBounds:layerRect];
-    [self.captureManager.previewLayer setPosition:CGPointMake(CGRectGetMidX(layerRect), CGRectGetMidY(layerRect))];
+    [self initSkins];
     
-    [self.view.layer addSublayer:self.captureManager.previewLayer];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(imageCaptured) name:kImageCapturedSuccessfully object:nil];
-    [self.captureManager.captureSession startRunning];
+    [self initGestures];
+    
+    [self.view bringSubviewToFront:self.scrollSkins];
     
     // Navitgation item transparency
     /*self.navigationController.navigationBar.translucent = YES;
@@ -66,10 +55,52 @@ typedef enum {
      */
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+#pragma mark Initialization
+
+-(void)initCaptureManager{
+    // Set up and run the capture manager
+    self.captureManager = [[CaptureSessionManager alloc] init];
+    [self.captureManager addVideoInputFrontCamera:NO];
+    [self.captureManager addStillImageOutput];
+    [self.captureManager addVideoPreviewLayer];
+    
+    CGRect layerRect = self.imagePreview.frame;
+    [self.captureManager.previewLayer setBounds:layerRect];
+    [self.captureManager.previewLayer setPosition:CGPointMake(CGRectGetMidX(layerRect), CGRectGetMidY(layerRect))];
+    
+    //[self.view.layer addSublayer:self.captureManager.previewLayer];
+    [self.imagePreview.layer addSublayer:self.captureManager.previewLayer];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(imageCaptured) name:kImageCapturedSuccessfully object:nil];
+    [self.captureManager.captureSession startRunning];
+}
+
+-(void)initGestures{
+    swipeUp = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipeUp)];
+    swipeUp.direction = UISwipeGestureRecognizerDirectionUp;
+    [self.scrollSkins addGestureRecognizer:swipeUp];
+    
+    swipeDown = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipeDown)];
+    swipeDown.direction = UISwipeGestureRecognizerDirectionDown;
+    [self.scrollSkins addGestureRecognizer:swipeDown];
+}
+
+-(void)initSkins{
+    NSArray *sets = [SkinProvider getInstance].skinSets;
+    NSObject<SkinSetProtocol> *skinSet = (NSObject<SkinSetProtocol>*)sets.firstObject;
+    SkinViewBase *skinView = [skinSet getSkinAtIndex:0];
+    [self.scrollSkins addSubview:skinView];
+
+    activeSkin = skinView;
+}
+
+#pragma mark Gestures
+
+-(void)swipeUp{
+    [activeSkin moveContentUp];
+}
+
+-(void)swipeDown{
+    [activeSkin moveContentDown];
 }
 
 #pragma mark Switching buttons

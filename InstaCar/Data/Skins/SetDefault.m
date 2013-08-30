@@ -24,15 +24,22 @@
 }
 
 -(void)loadSkins{
+    NSMutableArray *skinsArray = [[NSMutableArray alloc] init];
     NSArray *bundle = [[NSBundle mainBundle] loadNibNamed:@"SetDefault" owner:self options:nil];
     
     SkinSimple *skinSimple;
     for (id object in bundle) {
         if ([object isKindOfClass:[SkinSimple class]]){
             skinSimple = (SkinSimple*)object;
+            [skinSimple initialise];
+            [skinsArray addObject:skinSimple];
             continue;
         }
     }
+    
+    [self freeSkins];
+    
+    skins = [[NSArray alloc] initWithArray:skinsArray];
 }
 
 #pragma mark SkinSetProtocol
