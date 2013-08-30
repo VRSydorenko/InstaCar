@@ -169,8 +169,8 @@ typedef enum {
 }
 
 -(void)doPickNewPhotoPressed{
-    [self switchButtons];
     [self.captureManager addLastVideoInput];
+    [self switchButtons];
 }
 
 -(void)doSharePressed{
@@ -182,7 +182,6 @@ typedef enum {
 -(void) imageCaptured{
     [self prepareSquareImage];
     [self.captureManager clearInputs];
-    self.imagePreview.image = self.captureManager.stillImage;
     [self switchButtons];
 }
 
@@ -203,7 +202,7 @@ typedef enum {
     self.captureManager.stillImage = subImage;
 }
 
-- (void)image:(UIImage *)image didFinishSavingWithError:(NSError *)error contextInfo:(void *)contextInfo
+- (void)image:(UIImage*)image didFinishSavingWithError:(NSError*)error contextInfo:(void*)contextInfo
 {
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Image" message:error!=NULL?@"Image couldn't be saved":@"Saved!" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
         [alert show];
