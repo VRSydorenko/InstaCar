@@ -7,7 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "SetDefault.h"
 
 @interface SkinProvider : NSObject
+
++(SkinProvider*)getInstance;
+
+@property (readonly) NSArray *skinSets;
 
 @end

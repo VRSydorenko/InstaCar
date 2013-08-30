@@ -10,4 +10,7 @@
 
 @implementation Auto
 
+@synthesize name = _name;
+@synthesize emblem = _emblem;
+
 @end

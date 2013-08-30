@@ -8,10 +8,6 @@
 
 #import "SkinViewBase.h"
 
-@interface SkinViewBase()
-    -(void)setMovingViewConstraint:(NSLayoutConstraint*)topMargin andViewHeight:(unsigned short)height;
-@end
-
 @implementation SkinViewBase
 
 #pragma mark Initialization

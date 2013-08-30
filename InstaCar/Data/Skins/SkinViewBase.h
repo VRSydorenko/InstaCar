@@ -12,6 +12,15 @@
 
 #define MOVINGVIEW_TIME 0.5f
 
+@class SkinViewBase;
+
+@protocol SkinSetProtocol <NSObject>
+-(NSString*)getTitle;
+-(unsigned short)getSkinsCount;
+-(SkinViewBase*)getSkinAtIndex:(unsigned short)index;
+-(void)freeSkins;
+@end
+
 typedef enum {
     LOCATION,
     AUTO1,
@@ -19,7 +28,7 @@ typedef enum {
     TEXT1,
     TEXT2,
 } SkinField;
-
+    
 @interface SkinViewBase : UIView {
 @protected
     BOOL canEditFieldLocation;
@@ -28,13 +37,13 @@ typedef enum {
     BOOL canEditFieldText1;
     BOOL canEditFieldText2;
     
-@private
     Location *fieldLocation;
     Auto *fieldAuto1;
     Auto *fieldAuto2;
     NSString *fieldText1;
     NSString *fieldText2;
     
+@private
     NSLayoutConstraint *movingViewTopMarginConstraint;
     unsigned short movingViewHeight;
     
@@ -42,6 +51,7 @@ typedef enum {
     UISwipeGestureRecognizer *swipeDown;
 }
 
+-(void)setMovingViewConstraint:(NSLayoutConstraint*)topMargin andViewHeight:(unsigned short)height;
 -(BOOL) canEditField:(SkinField)field;
 -(void) updateField:(SkinField)field withValue:(NSObject*)value;
 -(UIImage*)getImage;

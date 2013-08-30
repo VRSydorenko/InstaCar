@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7F094F8117CE6F80007B9543 /* SkinViewBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F094F8017CE6F80007B9543 /* SkinViewBase.m */; };
 		7F1767A917C76CB800724BD6 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F1767A817C76CB800724BD6 /* AVFoundation.framework */; };
 		7F1767AC17C76F0F00724BD6 /* CaptureSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F1767AB17C76F0F00724BD6 /* CaptureSessionManager.m */; };
 		7F2767121791E80000A1C1A0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F2767111791E80000A1C1A0 /* Foundation.framework */; };
@@ -30,16 +29,18 @@
 		7F4ECC2A17C7F8C200BF1671 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F4ECC2917C7F8C200BF1671 /* CoreLocation.framework */; };
 		7F4ECC2D17C8062800BF1671 /* SideViewControllerBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F4ECC2C17C8062800BF1671 /* SideViewControllerBase.m */; };
 		7F5AC64417CC000400C01658 /* SkinProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F5AC64317CC000400C01658 /* SkinProvider.m */; };
-		7F5AC64717CC05B800C01658 /* SkinSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F5AC64617CC05B800C01658 /* SkinSet.m */; };
 		7F5AC64D17CC06CE00C01658 /* Auto.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F5AC64C17CC06CE00C01658 /* Auto.m */; };
+		7F5BC05D17D12B8B00C6EFF3 /* SetDefault.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F5BC05C17D12B8B00C6EFF3 /* SetDefault.m */; };
+		7F70812017D0CE170094D759 /* SetDefault.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F70811D17D0CE170094D759 /* SetDefault.xib */; };
+		7F70812117D0CE170094D759 /* SkinViewBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F70811F17D0CE170094D759 /* SkinViewBase.m */; };
 		7F7FF47017CF8634000E0ABD /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F7FF46F17CF8634000E0ABD /* Location.m */; };
-		7F9C9A5D17CF60DB00C9C0D4 /* Skins.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F9C9A5C17CF60DB00C9C0D4 /* Skins.xib */; };
 		7FC4137517C7E8450025DD2C /* Foursquare2.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FC4136C17C7E8450025DD2C /* Foursquare2.m */; };
 		7FC4137617C7E8450025DD2C /* FSConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FC4136E17C7E8450025DD2C /* FSConverter.m */; };
 		7FC4137717C7E8450025DD2C /* FSRequester.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FC4137017C7E8450025DD2C /* FSRequester.m */; };
 		7FC4137817C7E8450025DD2C /* FSTargetCallback.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FC4137217C7E8450025DD2C /* FSTargetCallback.m */; };
 		7FC4137917C7E8450025DD2C /* FSVenue.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FC4137417C7E8450025DD2C /* FSVenue.m */; };
 		7FC4137C17C7EFF70025DD2C /* LocationsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FC4137B17C7EFF70025DD2C /* LocationsVC.m */; };
+		7FFFD7B717D0CF3400C833DE /* SkinSimple.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FFFD7B617D0CF3400C833DE /* SkinSimple.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,8 +54,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		7F094F7F17CE6F80007B9543 /* SkinViewBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SkinViewBase.h; path = InstaCar/Data/SkinViewBase.h; sourceTree = "<group>"; };
-		7F094F8017CE6F80007B9543 /* SkinViewBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SkinViewBase.m; path = InstaCar/Data/SkinViewBase.m; sourceTree = "<group>"; };
 		7F1767A817C76CB800724BD6 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		7F1767AA17C76F0F00724BD6 /* CaptureSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CaptureSessionManager.h; sourceTree = "<group>"; };
 		7F1767AB17C76F0F00724BD6 /* CaptureSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CaptureSessionManager.m; sourceTree = "<group>"; };
@@ -88,13 +87,15 @@
 		7F4ECC2C17C8062800BF1671 /* SideViewControllerBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SideViewControllerBase.m; sourceTree = "<group>"; };
 		7F5AC64217CC000400C01658 /* SkinProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SkinProvider.h; path = InstaCar/Data/SkinProvider.h; sourceTree = "<group>"; };
 		7F5AC64317CC000400C01658 /* SkinProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SkinProvider.m; path = InstaCar/Data/SkinProvider.m; sourceTree = "<group>"; };
-		7F5AC64517CC05B800C01658 /* SkinSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SkinSet.h; path = InstaCar/Data/SkinSet.h; sourceTree = "<group>"; };
-		7F5AC64617CC05B800C01658 /* SkinSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SkinSet.m; path = InstaCar/Data/SkinSet.m; sourceTree = "<group>"; };
 		7F5AC64B17CC06CE00C01658 /* Auto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Auto.h; path = InstaCar/Data/Auto.h; sourceTree = "<group>"; };
 		7F5AC64C17CC06CE00C01658 /* Auto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Auto.m; path = InstaCar/Data/Auto.m; sourceTree = "<group>"; };
+		7F5BC05B17D12B8B00C6EFF3 /* SetDefault.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetDefault.h; sourceTree = "<group>"; };
+		7F5BC05C17D12B8B00C6EFF3 /* SetDefault.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetDefault.m; sourceTree = "<group>"; };
+		7F70811D17D0CE170094D759 /* SetDefault.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SetDefault.xib; sourceTree = "<group>"; };
+		7F70811E17D0CE170094D759 /* SkinViewBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkinViewBase.h; sourceTree = "<group>"; };
+		7F70811F17D0CE170094D759 /* SkinViewBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SkinViewBase.m; sourceTree = "<group>"; };
 		7F7FF46E17CF8634000E0ABD /* Location.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Location.h; path = InstaCar/Data/Location.h; sourceTree = "<group>"; };
 		7F7FF46F17CF8634000E0ABD /* Location.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Location.m; path = InstaCar/Data/Location.m; sourceTree = "<group>"; };
-		7F9C9A5C17CF60DB00C9C0D4 /* Skins.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = Skins.xib; path = InstaCar/Data/Skins.xib; sourceTree = "<group>"; };
 		7FC4136B17C7E8450025DD2C /* Foursquare2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Foursquare2.h; sourceTree = "<group>"; };
 		7FC4136C17C7E8450025DD2C /* Foursquare2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Foursquare2.m; sourceTree = "<group>"; };
 		7FC4136D17C7E8450025DD2C /* FSConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSConverter.h; sourceTree = "<group>"; };
@@ -107,6 +108,8 @@
 		7FC4137417C7E8450025DD2C /* FSVenue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSVenue.m; sourceTree = "<group>"; };
 		7FC4137A17C7EFF70025DD2C /* LocationsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationsVC.h; sourceTree = "<group>"; };
 		7FC4137B17C7EFF70025DD2C /* LocationsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationsVC.m; sourceTree = "<group>"; };
+		7FFFD7B517D0CF3400C833DE /* SkinSimple.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkinSimple.h; sourceTree = "<group>"; };
+		7FFFD7B617D0CF3400C833DE /* SkinSimple.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SkinSimple.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +141,7 @@
 		7F2767051791E7FF00A1C1A0 = {
 			isa = PBXGroup;
 			children = (
+				7F70811C17D0CE170094D759 /* Skins */,
 				7F5AC64117CBFFDD00C01658 /* Data */,
 				7F3871DB17BE4F1000D8E39D /* CustomControls */,
 				7F2767171791E80000A1C1A0 /* InstaCar */,
@@ -238,17 +242,27 @@
 			children = (
 				7F5AC64217CC000400C01658 /* SkinProvider.h */,
 				7F5AC64317CC000400C01658 /* SkinProvider.m */,
-				7F5AC64517CC05B800C01658 /* SkinSet.h */,
-				7F5AC64617CC05B800C01658 /* SkinSet.m */,
 				7F5AC64B17CC06CE00C01658 /* Auto.h */,
 				7F5AC64C17CC06CE00C01658 /* Auto.m */,
-				7F094F7F17CE6F80007B9543 /* SkinViewBase.h */,
-				7F094F8017CE6F80007B9543 /* SkinViewBase.m */,
-				7F9C9A5C17CF60DB00C9C0D4 /* Skins.xib */,
 				7F7FF46E17CF8634000E0ABD /* Location.h */,
 				7F7FF46F17CF8634000E0ABD /* Location.m */,
 			);
 			name = Data;
+			sourceTree = "<group>";
+		};
+		7F70811C17D0CE170094D759 /* Skins */ = {
+			isa = PBXGroup;
+			children = (
+				7F70811D17D0CE170094D759 /* SetDefault.xib */,
+				7F70811E17D0CE170094D759 /* SkinViewBase.h */,
+				7F70811F17D0CE170094D759 /* SkinViewBase.m */,
+				7FFFD7B517D0CF3400C833DE /* SkinSimple.h */,
+				7FFFD7B617D0CF3400C833DE /* SkinSimple.m */,
+				7F5BC05B17D12B8B00C6EFF3 /* SetDefault.h */,
+				7F5BC05C17D12B8B00C6EFF3 /* SetDefault.m */,
+			);
+			name = Skins;
+			path = InstaCar/Data/Skins;
 			sourceTree = "<group>";
 		};
 		7FC4136A17C7E8450025DD2C /* Foursquare */ = {
@@ -344,9 +358,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7F9C9A5D17CF60DB00C9C0D4 /* Skins.xib in Resources */,
 				7F27672A1791E80000A1C1A0 /* Images.xcassets in Resources */,
 				7F27671C1791E80000A1C1A0 /* InfoPlist.strings in Resources */,
+				7F70812017D0CE170094D759 /* SetDefault.xib in Resources */,
 				7F3871D317BE4B7900D8E39D /* main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -367,15 +381,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				7F3871D617BE4CA900D8E39D /* MainNavController.m in Sources */,
-				7F094F8117CE6F80007B9543 /* SkinViewBase.m in Sources */,
 				7F3871DE17BE4F1000D8E39D /* DDMenuController.m in Sources */,
 				7FC4137C17C7EFF70025DD2C /* LocationsVC.m in Sources */,
 				7F3871E117BE5A4F00D8E39D /* AppMenuTableVC.m in Sources */,
 				7F5AC64417CC000400C01658 /* SkinProvider.m in Sources */,
 				7F7FF47017CF8634000E0ABD /* Location.m in Sources */,
-				7F5AC64717CC05B800C01658 /* SkinSet.m in Sources */,
+				7FFFD7B717D0CF3400C833DE /* SkinSimple.m in Sources */,
 				7F4ECC2D17C8062800BF1671 /* SideViewControllerBase.m in Sources */,
 				7F3871D917BE4D4C00D8E39D /* MainVC.m in Sources */,
+				7F70812117D0CE170094D759 /* SkinViewBase.m in Sources */,
 				7FC4137917C7E8450025DD2C /* FSVenue.m in Sources */,
 				7F5AC64D17CC06CE00C01658 /* Auto.m in Sources */,
 				7F2767221791E80000A1C1A0 /* AppDelegate.m in Sources */,
@@ -384,6 +398,7 @@
 				7F1767AC17C76F0F00724BD6 /* CaptureSessionManager.m in Sources */,
 				7FC4137717C7E8450025DD2C /* FSRequester.m in Sources */,
 				7FC4137617C7E8450025DD2C /* FSConverter.m in Sources */,
+				7F5BC05D17D12B8B00C6EFF3 /* SetDefault.m in Sources */,
 				7FC4137517C7E8450025DD2C /* Foursquare2.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
