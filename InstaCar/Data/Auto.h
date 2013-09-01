@@ -11,7 +11,7 @@
 @interface Auto : NSObject
 
 @property (nonatomic) NSString *name;
-@property (nonatomic) NSArray *models;
+@property (nonatomic) NSArray *models; // type: AutoModel
 @property (nonatomic) UIImage *emblem;
 
 @end

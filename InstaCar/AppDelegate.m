@@ -12,15 +12,21 @@
 
 @implementation AppDelegate
 
+@synthesize dbManager;
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    // Database
+    self.dbManager = [[DbManager alloc] init];
+    
+    // Foursquare
     [Foursquare2 setupFoursquareWithKey:@"WU4W30WXTHPBEIMQWLGJBFFC2V3NITOGLKLNMWPXL0O5MP2N"
                  secret:@"YGMNXG45YV2RSRYRSVW2NHBFANQWB3MAGUIWNDZNUUTEUR3R"
                  callbackURL:@"app://instatest"];
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
     
+    // Slide controller
     MainNavController *mainNavController = [[UIStoryboard storyboardWithName:@"main" bundle:nil] instantiateViewControllerWithIdentifier:@"mainNavController"];
     
     DDMenuController *rootController = [[DDMenuController alloc] initWithRootViewController:mainNavController];
@@ -29,6 +35,7 @@
     self.window.rootViewController = rootController;
     
     self.window.backgroundColor = [UIColor whiteColor];
+    
     [self.window makeKeyAndVisible];
     return YES;
 

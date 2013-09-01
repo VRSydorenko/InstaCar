@@ -8,10 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "DDMenuController.h"
+#import "DbManager.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 @property (strong, nonatomic) DDMenuController *menuController;
+@property DbManager* dbManager;
 
 @end

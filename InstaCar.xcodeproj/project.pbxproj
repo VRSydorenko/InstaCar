@@ -28,6 +28,17 @@
 		7F3871E117BE5A4F00D8E39D /* AppMenuTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F3871E017BE5A4F00D8E39D /* AppMenuTableVC.m */; };
 		7F4ECC2A17C7F8C200BF1671 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F4ECC2917C7F8C200BF1671 /* CoreLocation.framework */; };
 		7F4ECC2D17C8062800BF1671 /* SideViewControllerBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F4ECC2C17C8062800BF1671 /* SideViewControllerBase.m */; };
+		7F59AC5A17D3BA2900B87457 /* DataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F59AC5917D3BA2900B87457 /* DataManager.m */; };
+		7F59AC5D17D3BA4700B87457 /* AutoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F59AC5C17D3BA4700B87457 /* AutoModel.m */; };
+		7F59AC5F17D3C1F400B87457 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F59AC5E17D3C1F400B87457 /* libsqlite3.0.dylib */; };
+		7F59AC6B17D3C20C00B87457 /* DBDefinition.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F59AC6217D3C20C00B87457 /* DBDefinition.m */; };
+		7F59AC6C17D3C20C00B87457 /* DbField.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F59AC6417D3C20C00B87457 /* DbField.m */; };
+		7F59AC6D17D3C20C00B87457 /* DbForeignKey.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F59AC6617D3C20C00B87457 /* DbForeignKey.m */; };
+		7F59AC6E17D3C20C00B87457 /* DbManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F59AC6817D3C20C00B87457 /* DbManager.m */; };
+		7F59AC6F17D3C20C00B87457 /* DbTable.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F59AC6A17D3C20C00B87457 /* DbTable.m */; };
+		7F59AC7217D3C88400B87457 /* bmw_256.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F59AC7117D3C88400B87457 /* bmw_256.png */; };
+		7F59AC7517D3C8CC00B87457 /* UserSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F59AC7417D3C8CC00B87457 /* UserSettings.m */; };
+		7F59AC7817D3E67000B87457 /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F59AC7717D3E67000B87457 /* Utils.m */; };
 		7F5AC64417CC000400C01658 /* SkinProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F5AC64317CC000400C01658 /* SkinProvider.m */; };
 		7F5AC64D17CC06CE00C01658 /* Auto.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F5AC64C17CC06CE00C01658 /* Auto.m */; };
 		7F5BC05D17D12B8B00C6EFF3 /* SetDefault.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F5BC05C17D12B8B00C6EFF3 /* SetDefault.m */; };
@@ -85,6 +96,26 @@
 		7F4ECC2917C7F8C200BF1671 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		7F4ECC2B17C8062800BF1671 /* SideViewControllerBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SideViewControllerBase.h; sourceTree = "<group>"; };
 		7F4ECC2C17C8062800BF1671 /* SideViewControllerBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SideViewControllerBase.m; sourceTree = "<group>"; };
+		7F59AC5817D3BA2900B87457 /* DataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DataManager.h; path = InstaCar/Data/DataManager.h; sourceTree = "<group>"; };
+		7F59AC5917D3BA2900B87457 /* DataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DataManager.m; path = InstaCar/Data/DataManager.m; sourceTree = "<group>"; };
+		7F59AC5B17D3BA4700B87457 /* AutoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AutoModel.h; path = InstaCar/Data/AutoModel.h; sourceTree = "<group>"; };
+		7F59AC5C17D3BA4700B87457 /* AutoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AutoModel.m; path = InstaCar/Data/AutoModel.m; sourceTree = "<group>"; };
+		7F59AC5E17D3C1F400B87457 /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
+		7F59AC6117D3C20C00B87457 /* DBDefinition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBDefinition.h; sourceTree = "<group>"; };
+		7F59AC6217D3C20C00B87457 /* DBDefinition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBDefinition.m; sourceTree = "<group>"; };
+		7F59AC6317D3C20C00B87457 /* DbField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DbField.h; sourceTree = "<group>"; };
+		7F59AC6417D3C20C00B87457 /* DbField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DbField.m; sourceTree = "<group>"; };
+		7F59AC6517D3C20C00B87457 /* DbForeignKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DbForeignKey.h; sourceTree = "<group>"; };
+		7F59AC6617D3C20C00B87457 /* DbForeignKey.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DbForeignKey.m; sourceTree = "<group>"; };
+		7F59AC6717D3C20C00B87457 /* DbManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DbManager.h; sourceTree = "<group>"; };
+		7F59AC6817D3C20C00B87457 /* DbManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DbManager.m; sourceTree = "<group>"; };
+		7F59AC6917D3C20C00B87457 /* DbTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DbTable.h; sourceTree = "<group>"; };
+		7F59AC6A17D3C20C00B87457 /* DbTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DbTable.m; sourceTree = "<group>"; };
+		7F59AC7117D3C88400B87457 /* bmw_256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bmw_256.png; sourceTree = "<group>"; };
+		7F59AC7317D3C8CC00B87457 /* UserSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserSettings.h; path = InstaCar/Data/UserSettings.h; sourceTree = "<group>"; };
+		7F59AC7417D3C8CC00B87457 /* UserSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserSettings.m; path = InstaCar/Data/UserSettings.m; sourceTree = "<group>"; };
+		7F59AC7617D3E67000B87457 /* Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Utils.h; path = InstaCar/Data/Utils.h; sourceTree = "<group>"; };
+		7F59AC7717D3E67000B87457 /* Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Utils.m; path = InstaCar/Data/Utils.m; sourceTree = "<group>"; };
 		7F5AC64217CC000400C01658 /* SkinProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SkinProvider.h; path = InstaCar/Data/SkinProvider.h; sourceTree = "<group>"; };
 		7F5AC64317CC000400C01658 /* SkinProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SkinProvider.m; path = InstaCar/Data/SkinProvider.m; sourceTree = "<group>"; };
 		7F5AC64B17CC06CE00C01658 /* Auto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Auto.h; path = InstaCar/Data/Auto.h; sourceTree = "<group>"; };
@@ -117,6 +148,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7F59AC5F17D3C1F400B87457 /* libsqlite3.0.dylib in Frameworks */,
 				7F4ECC2A17C7F8C200BF1671 /* CoreLocation.framework in Frameworks */,
 				7F1767A917C76CB800724BD6 /* AVFoundation.framework in Frameworks */,
 				7F2767141791E80000A1C1A0 /* CoreGraphics.framework in Frameworks */,
@@ -141,6 +173,7 @@
 		7F2767051791E7FF00A1C1A0 = {
 			isa = PBXGroup;
 			children = (
+				7F59AC6017D3C20C00B87457 /* Database */,
 				7F70811C17D0CE170094D759 /* Skins */,
 				7F5AC64117CBFFDD00C01658 /* Data */,
 				7F3871DB17BE4F1000D8E39D /* CustomControls */,
@@ -163,6 +196,7 @@
 		7F2767101791E80000A1C1A0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7F59AC5E17D3C1F400B87457 /* libsqlite3.0.dylib */,
 				7F4ECC2917C7F8C200BF1671 /* CoreLocation.framework */,
 				7F1767A817C76CB800724BD6 /* AVFoundation.framework */,
 				7F2767111791E80000A1C1A0 /* Foundation.framework */,
@@ -237,15 +271,51 @@
 			path = InstaCar/CustomControls;
 			sourceTree = "<group>";
 		};
+		7F59AC6017D3C20C00B87457 /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				7F59AC6117D3C20C00B87457 /* DBDefinition.h */,
+				7F59AC6217D3C20C00B87457 /* DBDefinition.m */,
+				7F59AC6317D3C20C00B87457 /* DbField.h */,
+				7F59AC6417D3C20C00B87457 /* DbField.m */,
+				7F59AC6517D3C20C00B87457 /* DbForeignKey.h */,
+				7F59AC6617D3C20C00B87457 /* DbForeignKey.m */,
+				7F59AC6717D3C20C00B87457 /* DbManager.h */,
+				7F59AC6817D3C20C00B87457 /* DbManager.m */,
+				7F59AC6917D3C20C00B87457 /* DbTable.h */,
+				7F59AC6A17D3C20C00B87457 /* DbTable.m */,
+			);
+			name = Database;
+			path = InstaCar/Database;
+			sourceTree = "<group>";
+		};
+		7F59AC7017D3C88400B87457 /* AutoLogos */ = {
+			isa = PBXGroup;
+			children = (
+				7F59AC7117D3C88400B87457 /* bmw_256.png */,
+			);
+			name = AutoLogos;
+			path = InstaCar/Data/AutoLogos;
+			sourceTree = "<group>";
+		};
 		7F5AC64117CBFFDD00C01658 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				7F59AC7017D3C88400B87457 /* AutoLogos */,
 				7F5AC64217CC000400C01658 /* SkinProvider.h */,
 				7F5AC64317CC000400C01658 /* SkinProvider.m */,
 				7F5AC64B17CC06CE00C01658 /* Auto.h */,
 				7F5AC64C17CC06CE00C01658 /* Auto.m */,
+				7F59AC5B17D3BA4700B87457 /* AutoModel.h */,
+				7F59AC5C17D3BA4700B87457 /* AutoModel.m */,
 				7F7FF46E17CF8634000E0ABD /* Location.h */,
 				7F7FF46F17CF8634000E0ABD /* Location.m */,
+				7F59AC5817D3BA2900B87457 /* DataManager.h */,
+				7F59AC5917D3BA2900B87457 /* DataManager.m */,
+				7F59AC7317D3C8CC00B87457 /* UserSettings.h */,
+				7F59AC7417D3C8CC00B87457 /* UserSettings.m */,
+				7F59AC7617D3E67000B87457 /* Utils.h */,
+				7F59AC7717D3E67000B87457 /* Utils.m */,
 			);
 			name = Data;
 			sourceTree = "<group>";
@@ -362,6 +432,7 @@
 				7F27671C1791E80000A1C1A0 /* InfoPlist.strings in Resources */,
 				7F70812017D0CE170094D759 /* SetDefault.xib in Resources */,
 				7F3871D317BE4B7900D8E39D /* main.storyboard in Resources */,
+				7F59AC7217D3C88400B87457 /* bmw_256.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -382,22 +453,31 @@
 			files = (
 				7F3871D617BE4CA900D8E39D /* MainNavController.m in Sources */,
 				7F3871DE17BE4F1000D8E39D /* DDMenuController.m in Sources */,
+				7F59AC6B17D3C20C00B87457 /* DBDefinition.m in Sources */,
 				7FC4137C17C7EFF70025DD2C /* LocationsVC.m in Sources */,
 				7F3871E117BE5A4F00D8E39D /* AppMenuTableVC.m in Sources */,
+				7F59AC6F17D3C20C00B87457 /* DbTable.m in Sources */,
 				7F5AC64417CC000400C01658 /* SkinProvider.m in Sources */,
 				7F7FF47017CF8634000E0ABD /* Location.m in Sources */,
 				7FFFD7B717D0CF3400C833DE /* SkinSimple.m in Sources */,
 				7F4ECC2D17C8062800BF1671 /* SideViewControllerBase.m in Sources */,
 				7F3871D917BE4D4C00D8E39D /* MainVC.m in Sources */,
 				7F70812117D0CE170094D759 /* SkinViewBase.m in Sources */,
+				7F59AC5D17D3BA4700B87457 /* AutoModel.m in Sources */,
 				7FC4137917C7E8450025DD2C /* FSVenue.m in Sources */,
+				7F59AC7817D3E67000B87457 /* Utils.m in Sources */,
+				7F59AC6E17D3C20C00B87457 /* DbManager.m in Sources */,
 				7F5AC64D17CC06CE00C01658 /* Auto.m in Sources */,
+				7F59AC6C17D3C20C00B87457 /* DbField.m in Sources */,
 				7F2767221791E80000A1C1A0 /* AppDelegate.m in Sources */,
 				7F27671E1791E80000A1C1A0 /* main.m in Sources */,
 				7FC4137817C7E8450025DD2C /* FSTargetCallback.m in Sources */,
 				7F1767AC17C76F0F00724BD6 /* CaptureSessionManager.m in Sources */,
+				7F59AC7517D3C8CC00B87457 /* UserSettings.m in Sources */,
+				7F59AC5A17D3BA2900B87457 /* DataManager.m in Sources */,
 				7FC4137717C7E8450025DD2C /* FSRequester.m in Sources */,
 				7FC4137617C7E8450025DD2C /* FSConverter.m in Sources */,
+				7F59AC6D17D3C20C00B87457 /* DbForeignKey.m in Sources */,
 				7F5BC05D17D12B8B00C6EFF3 /* SetDefault.m in Sources */,
 				7FC4137517C7E8450025DD2C /* Foursquare2.m in Sources */,
 			);

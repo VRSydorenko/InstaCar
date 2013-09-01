@@ -25,7 +25,7 @@
 }
 
 -(void)fieldAuto1DidUpdate{
-    self.imgEmblem.image = [UIImage imageNamed:@"nav_menu_icon"];
+    self.imgEmblem.image = [UIImage imageNamed:@"nav_menu_icon.png"];
     self.textAuto.text = @"BMW";
     CGSize textSize = [self.text.text sizeWithFont:self.text.font];
     self.autoTitleWidth.constant = textSize.width;
