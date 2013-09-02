@@ -10,4 +10,11 @@
 
 @interface AutoModel : NSObject
 
+@property (nonatomic) NSString *name;
+@property (nonatomic) NSString *logo;
+@property (nonatomic) int startYear;
+@property (nonatomic) int endYear;
+
+-(id)initWithName:(NSString*)name;
+
 @end

@@ -10,7 +10,15 @@
 
 @implementation Auto
 
-@synthesize name = _name;
-@synthesize emblem = _emblem;
+-(id)initWithName:(NSString*)name logo:(NSString*)logo country:(NSString*)country{
+    self = [super init];
+    if (self){
+        self.name = name;
+        self.logo = logo;
+        self.country = country;
+        self.model = nil;
+    }
+    return self;
+}
 
 @end

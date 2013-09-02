@@ -23,6 +23,9 @@ typedef enum {
     SkinViewBase *activeSkin;
     UISwipeGestureRecognizer *swipeUp;
     UISwipeGestureRecognizer *swipeDown;
+    
+    Auto *selectedAuto;
+    SkinSet *selectedSkinSet;
 }
 
 @end
@@ -36,6 +39,7 @@ typedef enum {
     
     navCon = (MainNavController*)self.navigationController;
     buttonsInInitialState = YES;
+    selectedAuto = nil;
     
     [self initCaptureManager];
     
@@ -85,9 +89,9 @@ typedef enum {
 }
 
 -(void)initSkins{
-    NSArray *sets = [SkinProvider getInstance].skinSets;
-    NSObject<SkinSetProtocol> *skinSet = (NSObject<SkinSetProtocol>*)sets.firstObject;
-    SkinViewBase *skinView = [skinSet getSkinAtIndex:0];
+    selectedSkinSet = [SkinProvider getInstance].lastUsedSkinSet;
+    
+    SkinViewBase *skinView = [selectedSkinSet getSkinAtIndex:0];
     [self.scrollSkins addSubview:skinView];
 
     activeSkin = skinView;
@@ -189,6 +193,7 @@ typedef enum {
 }
 
 - (IBAction)btnSkinsPressed:(id)sender {
+    [navCon setSideViewController:SKINS andShowOnTheLeftSide:NO];
 }
 
 -(void)doPickPhotoPressed{

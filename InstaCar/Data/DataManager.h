@@ -7,7 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "DbManager.h"
 
 @interface DataManager : NSObject
+
++(NSArray*)getAutos; // type: Auto
++(NSArray*)getSkinSets; // type: SkinSet
 
 @end

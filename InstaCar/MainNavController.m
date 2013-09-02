@@ -44,7 +44,7 @@
 }
 
 -(void) setSideViewController:(SideView)sideView andShowOnTheLeftSide:(BOOL)isLeft{
-    DDMenuController *menuController = (DDMenuController*)((AppDelegate*)[[UIApplication sharedApplication] delegate]).menuController;
+    DDMenuController *menuController = (DDMenuController*)((AppDelegate*)[UIApplication sharedApplication].delegate).menuController;
     if (!menuController){
         return;
     }
@@ -58,6 +58,10 @@
         }
         case LOCATIONS:{
             sideViewId = @"locationsVC";
+            break;
+        }
+        case SKINS:{
+            sideViewId = @"skinsVC";
             break;
         }
     }

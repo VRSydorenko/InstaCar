@@ -24,6 +24,7 @@
     self = [super init];
     if (self){
         [self initSkins];
+        [self initLastUsedSkin];
     }
     return self;
 }
@@ -33,8 +34,23 @@
     
     SetDefault *skinDefault = [[SetDefault alloc] init];
     [sets addObject:skinDefault];
+    _defaultSkinSet = skinDefault;
     
     _skinSets = [[NSArray alloc] initWithArray:sets];
+}
+         
+-(void)initLastUsedSkin{
+    NSString *lastUsedSet = [UserSettings getLastUsedSkinSet];
+    if (!lastUsedSet){
+        self.lastUsedSkinSet = self.defaultSkinSet;
+        return;
+    }
+    
+    for (SkinSet *set in self.skinSets) {
+        if ([[set getTitle] isEqualToString:lastUsedSet]){
+            self.lastUsedSkinSet = set;
+        }
+    }
 }
 
 @end

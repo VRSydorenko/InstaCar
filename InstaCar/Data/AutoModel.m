@@ -10,4 +10,15 @@
 
 @implementation AutoModel
 
+-(id)initWithName:(NSString*)name{
+    self = [super init];
+    if (self){
+        self.name = name;
+        self.logo = @"";
+        self.startYear = 0;
+        self.endYear = 0;
+    }
+    return self;
+}
+
 @end

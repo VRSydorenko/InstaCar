@@ -20,10 +20,7 @@
         [self initDatabase];
         
         if ([Utils appVersionDiffers]){
-            [self initCountries];
-            [self initLogos];
-            [self initAutos];
-            [self initModels];
+            [self initData];
         }
     }
     return self;
@@ -53,19 +50,15 @@
         char *errMsg;
         DBDefinition* dbDef = [[DBDefinition alloc] init];
         
-#ifndef DEBUG
-        NSLog(@"Release");
         if ([Utils appVersionDiffers]){
-#endif
             const char *dropSql = [[dbDef getTablesCreationSQL] UTF8String];
             if (sqlite3_exec(instacarDb, dropSql, NULL, NULL, &errMsg) != SQLITE_OK)
             {
                 NSLog(@"Error dropping DB table(s)");
                 NSLog(@"Info:%s", sqlite3_errmsg(instacarDb));
             }
-#ifndef DEBUG
+            // [UserSettings setStoredAppVersion]; // TODO: uncomment in production
         }
-#endif
         
         const char *sql = [[dbDef getTablesCreationSQL] UTF8String];
         if (sqlite3_exec(instacarDb, sql, NULL, NULL, &errMsg) != SQLITE_OK)
@@ -79,22 +72,42 @@
     }
 }
 
--(void)initCountries{
-}
-
--(void)initLogos{
-}
-
--(void)initAutos{
-}
-
--(void)initModels{
+-(void)initData{
+    int countryId;
+    int logoId;
+    int autoId;
+    
+    // Countries
+    // A
+    // B
+    // C
+    // D
+    // E
+    // F
+    // G
+    countryId = [self addCountry:@"Germany"];
+    logoId = [self addLogo:@"bmw_256.png"];
+    autoId = [self addAuto:@"BMW" country:countryId logo:logoId];
+    [self addAutoModel:@"1 Series" ofAuto:autoId logo:logoId startYear:0 endYear:0];
+    [self addAutoModel:@"1x Convertible" ofAuto:autoId logo:logoId startYear:0 endYear:0];
+    [self addAutoModel:@"1x Coupe" ofAuto:autoId logo:logoId startYear:0 endYear:0];
+    [self addAutoModel:@"1x M Coupe" ofAuto:autoId logo:logoId startYear:0 endYear:0];
+    [self addAutoModel:@"3 Series" ofAuto:autoId logo:logoId startYear:0 endYear:0];
+    [self addAutoModel:@"3x GT" ofAuto:autoId logo:logoId startYear:0 endYear:0];
+    [self addAutoModel:@"3x Convertible" ofAuto:autoId logo:logoId startYear:0 endYear:0];
+    [self addAutoModel:@"3x Compact" ofAuto:autoId logo:logoId startYear:0 endYear:0];
+    [self addAutoModel:@"3x Coupe" ofAuto:autoId logo:logoId startYear:0 endYear:0];
+    [self addAutoModel:@"4 Series" ofAuto:autoId logo:logoId startYear:0 endYear:0];
+    [self addAutoModel:@"5 Series" ofAuto:autoId logo:logoId startYear:0 endYear:0];
+    [self addAutoModel:@"6 Series" ofAuto:autoId logo:logoId startYear:0 endYear:0];
+    [self addAutoModel:@"7 Series" ofAuto:autoId logo:logoId startYear:0 endYear:0];
+    [self addAutoModel:@"X1 Series" ofAuto:autoId logo:logoId startYear:0 endYear:0];
 }
 
 #pragma mark -
-#pragma mark Saving data methods
+#pragma mark Saving data private methods
 
--(void)addCountry:(NSString*)name{
+-(int)addCountry:(NSString*)name{
     NSString* sql = [NSString stringWithFormat: @"INSERT INTO %@ (%@) VALUES (?)", T_COUNTRIES, F_NAME];
     
     const char *insert_stmt = [sql UTF8String];
@@ -112,15 +125,19 @@
         }
     }
     sqlite3_finalize(statement);
+    
+    return [self getIdForCountry:name];
 }
 
--(void)addLogo:(NSString*)filename{
-    NSString* sql = [NSString stringWithFormat: @"INSERT INTO %@ (%@) VALUES (%@)", T_LOGOS, F_NAME, filename];
+-(int)addLogo:(NSString*)filename{
+    NSString* sql = [NSString stringWithFormat: @"INSERT INTO %@ (%@) VALUES (?)", T_LOGOS, F_NAME];
     
     const char *insert_stmt = [sql UTF8String];
     
     sqlite3_stmt *statement;
     if (sqlite3_prepare_v2(instacarDb, insert_stmt, -1, &statement, NULL) == SQLITE_OK){
+        sqlite3_bind_text(statement, 1, [filename cStringUsingEncoding:NSUTF8StringEncoding], -1, SQLITE_TRANSIENT);
+        
         if (sqlite3_step(statement) == SQLITE_DONE)
         {
             NSLog(@"Added logo: %@", filename);
@@ -130,9 +147,145 @@
         }
     }
     sqlite3_finalize(statement);
+    
+    return [self getIdForLogo:filename];
 }
 
-#pragma mark Getting data methods
+-(int)addAuto:(NSString*)name country:(int)countryId logo:(int)logoId{
+    NSString* sql = [NSString stringWithFormat: @"INSERT INTO %@ (%@, %@, %@) VALUES (?, %d, %d)", T_AUTOS, F_NAME, F_COUNTRY_ID, F_LOGO_ID, countryId, logoId];
+    
+    const char *insert_stmt = [sql UTF8String];
+    
+    sqlite3_stmt *statement;
+    if (sqlite3_prepare_v2(instacarDb, insert_stmt, -1, &statement, NULL) == SQLITE_OK){
+        sqlite3_bind_text(statement, 1, [name cStringUsingEncoding:NSUTF8StringEncoding], -1, SQLITE_TRANSIENT);
+        
+        if (sqlite3_step(statement) == SQLITE_DONE)
+        {
+            NSLog(@"Added auto: %@", name);
+        } else {
+            NSLog(@"Failed to add auto %@", name);
+            NSLog(@"Info:%s", sqlite3_errmsg(instacarDb));
+        }
+    }
+    sqlite3_finalize(statement);
+    
+    return [self getIdForAuto:name country:countryId];
+}
+
+-(void)addAutoModel:(NSString*)name ofAuto:(int)autoId logo:(int)logoId startYear:(int)startYear endYear:(int)endYear{
+    NSString* sql = [NSString stringWithFormat: @"INSERT INTO %@ (%@, %@, %@, %@, %@) VALUES (?, %d, %d, %d, %d)", T_AUTOS, F_NAME, F_AUTO_ID, F_LOGO_ID, F_YEAR_START, F_YEAR_END, autoId, logoId, startYear, endYear];
+    
+    const char *insert_stmt = [sql UTF8String];
+    
+    sqlite3_stmt *statement;
+    if (sqlite3_prepare_v2(instacarDb, insert_stmt, -1, &statement, NULL) == SQLITE_OK){
+        sqlite3_bind_text(statement, 1, [name cStringUsingEncoding:NSUTF8StringEncoding], -1, SQLITE_TRANSIENT);
+        
+        if (sqlite3_step(statement) == SQLITE_DONE)
+        {
+            NSLog(@"Added model: %@", name);
+        } else {
+            NSLog(@"Failed to add model %@", name);
+            NSLog(@"Info:%s", sqlite3_errmsg(instacarDb));
+        }
+    }
+    sqlite3_finalize(statement);
+}
+
+#pragma mark -
+#pragma mark Getting data public methods
+
+-(NSArray*)getAllAutos{
+    NSMutableArray *mutableAutos = [[NSMutableArray alloc] init];
+    
+    //                                                        name   logo   country
+    NSString *querySQL = [NSString stringWithFormat: @"SELECT %@.%@, %@.%@, %@.%@ FROM %@, %@, %@ WHERE %@.%@=%@.%@ AND %@.%@=%@.%@", T_AUTOS, F_NAME, T_LOGOS, F_NAME, T_COUNTRIES, F_NAME, T_AUTOS, T_LOGOS, T_COUNTRIES, T_AUTOS, F_LOGO_ID, T_LOGOS, F_ID, T_AUTOS, F_COUNTRY_ID, T_COUNTRIES, F_ID];
+    const char *query_stmt = [querySQL UTF8String];
+    
+    sqlite3_stmt *statement;
+    if (sqlite3_prepare_v2(instacarDb, query_stmt, -1, &statement, NULL) == SQLITE_OK){
+        while (sqlite3_step(statement) == SQLITE_ROW){
+            NSString *nameField = [[NSString alloc] initWithUTF8String:(const char *) sqlite3_column_text(statement, 0)];
+            NSString *logoField = [[NSString alloc] initWithUTF8String:(const char *) sqlite3_column_text(statement, 1)];
+            NSString *countryField = [[NSString alloc] initWithUTF8String:(const char *) sqlite3_column_text(statement, 2)];
+            
+            Auto *_auto = [[Auto alloc] initWithName:nameField logo:logoField country:countryField];
+            [mutableAutos addObject:_auto];
+        }
+    } else {
+        NSLog(@"Failed to query auto");
+        NSLog(@"Info:%s", sqlite3_errmsg(instacarDb));
+    }
+    sqlite3_finalize(statement);
+        
+    return [[NSArray alloc] initWithArray:mutableAutos];
+}
+
+#pragma mark Getting data private methods
+
+-(int)getIdForCountry:(NSString*)name{
+    NSString *querySQL = [NSString stringWithFormat: @"SELECT %@ FROM %@ WHERE %@=?", F_ID, T_COUNTRIES, F_NAME];
+    const char *query_stmt = [querySQL UTF8String];
+    int _id = -1;
+    
+    sqlite3_stmt *statement;
+    if (sqlite3_prepare_v2(instacarDb, query_stmt, -1, &statement, NULL) == SQLITE_OK)
+    {
+        sqlite3_bind_text(statement, 1, [name cStringUsingEncoding:NSUTF8StringEncoding], -1, SQLITE_TRANSIENT);
+        if (sqlite3_step(statement) == SQLITE_ROW)
+        {
+            _id = sqlite3_column_int(statement, 0);
+        } else {
+            NSLog(@"Country not found");
+        }
+    }
+    sqlite3_finalize(statement);
+    
+    return _id;
+}
+
+-(int)getIdForLogo:(NSString*)filename{
+    NSString *querySQL = [NSString stringWithFormat: @"SELECT %@ FROM %@ WHERE %@=?", F_ID, T_LOGOS, F_NAME];
+    const char *query_stmt = [querySQL UTF8String];
+    int _id = -1;
+    
+    sqlite3_stmt *statement;
+    if (sqlite3_prepare_v2(instacarDb, query_stmt, -1, &statement, NULL) == SQLITE_OK)
+    {
+        sqlite3_bind_text(statement, 1, [filename cStringUsingEncoding:NSUTF8StringEncoding], -1, SQLITE_TRANSIENT);
+        if (sqlite3_step(statement) == SQLITE_ROW)
+        {
+            _id = sqlite3_column_int(statement, 0);
+        } else {
+            NSLog(@"Logo not found");
+        }
+    }
+    sqlite3_finalize(statement);
+    
+    return _id;
+}
+
+-(int)getIdForAuto:(NSString*)name country:(int)countryId{
+    NSString *querySQL = [NSString stringWithFormat: @"SELECT %@ FROM %@ WHERE %@=? AND %@=%d", F_ID, T_AUTOS, F_NAME, F_COUNTRY_ID, countryId];
+    const char *query_stmt = [querySQL UTF8String];
+    int _id = -1;
+    
+    sqlite3_stmt *statement;
+    if (sqlite3_prepare_v2(instacarDb, query_stmt, -1, &statement, NULL) == SQLITE_OK)
+    {
+        sqlite3_bind_text(statement, 1, [name cStringUsingEncoding:NSUTF8StringEncoding], -1, SQLITE_TRANSIENT);
+        if (sqlite3_step(statement) == SQLITE_ROW)
+        {
+            _id = sqlite3_column_int(statement, 0);
+        } else {
+            NSLog(@"Auto not found");
+        }
+    }
+    sqlite3_finalize(statement);
+    
+    return _id;
+}
 
 /*
 

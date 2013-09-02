@@ -18,4 +18,11 @@
     [[NSUserDefaults standardUserDefaults] setValue:appVersionString forKey:STORED_APP_VERSION];
 }
 
++(NSString*) getLastUsedSkinSet{
+    return [[NSUserDefaults standardUserDefaults] stringForKey:LAST_USED_SKINSET];
+}
++(void) setLastUsedSkinSet:(NSString*)name{
+    [[NSUserDefaults standardUserDefaults] setValue:name forKey:LAST_USED_SKINSET];
+}
+
 @end

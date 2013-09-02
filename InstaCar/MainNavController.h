@@ -10,7 +10,8 @@
 
 typedef enum {
     APP_MENU = 0,
-    LOCATIONS = 1
+    LOCATIONS = 1,
+    SKINS = 2,
 } SideView;
 
 typedef enum {

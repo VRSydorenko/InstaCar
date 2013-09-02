@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "Utils.h"
+#import "Auto.h"
 
 @interface DbManager : NSObject
 
@@ -17,5 +18,7 @@
 -(void) close;
 
 #pragma mark Custom methods
+
+-(NSArray*)getAllAutos; // tape: Auto
 
 @end

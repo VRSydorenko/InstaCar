@@ -51,6 +51,7 @@
 		7FC4137817C7E8450025DD2C /* FSTargetCallback.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FC4137217C7E8450025DD2C /* FSTargetCallback.m */; };
 		7FC4137917C7E8450025DD2C /* FSVenue.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FC4137417C7E8450025DD2C /* FSVenue.m */; };
 		7FC4137C17C7EFF70025DD2C /* LocationsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FC4137B17C7EFF70025DD2C /* LocationsVC.m */; };
+		7FF3389317D4C0E700B046C4 /* SkinsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FF3389217D4C0E700B046C4 /* SkinsVC.m */; };
 		7FFFD7B717D0CF3400C833DE /* SkinSimple.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FFFD7B617D0CF3400C833DE /* SkinSimple.m */; };
 /* End PBXBuildFile section */
 
@@ -139,6 +140,8 @@
 		7FC4137417C7E8450025DD2C /* FSVenue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSVenue.m; sourceTree = "<group>"; };
 		7FC4137A17C7EFF70025DD2C /* LocationsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationsVC.h; sourceTree = "<group>"; };
 		7FC4137B17C7EFF70025DD2C /* LocationsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationsVC.m; sourceTree = "<group>"; };
+		7FF3389117D4C0E700B046C4 /* SkinsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SkinsVC.h; path = InstaCar/SkinsVC.h; sourceTree = "<group>"; };
+		7FF3389217D4C0E700B046C4 /* SkinsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SkinsVC.m; path = InstaCar/SkinsVC.m; sourceTree = "<group>"; };
 		7FFFD7B517D0CF3400C833DE /* SkinSimple.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkinSimple.h; sourceTree = "<group>"; };
 		7FFFD7B617D0CF3400C833DE /* SkinSimple.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SkinSimple.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -173,10 +176,10 @@
 		7F2767051791E7FF00A1C1A0 = {
 			isa = PBXGroup;
 			children = (
+				7F3871DB17BE4F1000D8E39D /* CustomControls */,
 				7F59AC6017D3C20C00B87457 /* Database */,
 				7F70811C17D0CE170094D759 /* Skins */,
 				7F5AC64117CBFFDD00C01658 /* Data */,
-				7F3871DB17BE4F1000D8E39D /* CustomControls */,
 				7F2767171791E80000A1C1A0 /* InstaCar */,
 				7F2767361791E80000A1C1A0 /* InstaCarTests */,
 				7F2767101791E80000A1C1A0 /* Frameworks */,
@@ -210,8 +213,6 @@
 		7F2767171791E80000A1C1A0 /* InstaCar */ = {
 			isa = PBXGroup;
 			children = (
-				7F2767201791E80000A1C1A0 /* AppDelegate.h */,
-				7F2767211791E80000A1C1A0 /* AppDelegate.m */,
 				7F3871D217BE4B7900D8E39D /* main.storyboard */,
 				7F3871D417BE4CA900D8E39D /* MainNavController.h */,
 				7F3871D517BE4CA900D8E39D /* MainNavController.m */,
@@ -223,6 +224,8 @@
 				7F3871E017BE5A4F00D8E39D /* AppMenuTableVC.m */,
 				7FC4137A17C7EFF70025DD2C /* LocationsVC.h */,
 				7FC4137B17C7EFF70025DD2C /* LocationsVC.m */,
+				7FF3389117D4C0E700B046C4 /* SkinsVC.h */,
+				7FF3389217D4C0E700B046C4 /* SkinsVC.m */,
 				7F2767291791E80000A1C1A0 /* Images.xcassets */,
 				7F2767181791E80000A1C1A0 /* Supporting Files */,
 			);
@@ -232,6 +235,8 @@
 		7F2767181791E80000A1C1A0 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				7F2767201791E80000A1C1A0 /* AppDelegate.h */,
+				7F2767211791E80000A1C1A0 /* AppDelegate.m */,
 				7F2767191791E80000A1C1A0 /* InstaCar-Info.plist */,
 				7F27671A1791E80000A1C1A0 /* InfoPlist.strings */,
 				7F27671D1791E80000A1C1A0 /* main.m */,
@@ -456,6 +461,7 @@
 				7F59AC6B17D3C20C00B87457 /* DBDefinition.m in Sources */,
 				7FC4137C17C7EFF70025DD2C /* LocationsVC.m in Sources */,
 				7F3871E117BE5A4F00D8E39D /* AppMenuTableVC.m in Sources */,
+				7FF3389317D4C0E700B046C4 /* SkinsVC.m in Sources */,
 				7F59AC6F17D3C20C00B87457 /* DbTable.m in Sources */,
 				7F5AC64417CC000400C01658 /* SkinProvider.m in Sources */,
 				7F7FF47017CF8634000E0ABD /* Location.m in Sources */,
