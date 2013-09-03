@@ -17,7 +17,7 @@ typedef NSObject<SkinSetProtocol> SkinSet;
 +(SkinProvider*)getInstance;
 
 @property (readonly) NSArray *skinSets;
-@property (readonly) SkinSet *defaultSkinSet;
-@property SkinSet *lastUsedSkinSet;
+@property SkinSet *selectedSkinSet;
+@property Auto *selectedAuto;
 
 @end

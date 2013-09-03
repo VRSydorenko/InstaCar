@@ -8,7 +8,6 @@
 
 #import "AppDelegate.h"
 #import "DataManager.h"
-#import "SkinProvider.h"
 
 @implementation DataManager
 
@@ -22,6 +21,21 @@
 
 +(NSArray*)getSkinSets{
     return [SkinProvider getInstance].skinSets;
+}
+
++(Auto*)getSelectedAuto{
+    return [SkinProvider getInstance].selectedAuto;
+}
++(void)setSelectedAuto:(Auto*)selectedAuto{
+    [SkinProvider getInstance].selectedAuto = selectedAuto;
+}
+
++(SkinSet*)getSelectedSkinSet{
+    return [SkinProvider getInstance].selectedSkinSet;
+}
++(void)setSelectedSkinSet:(SkinSet*)set{
+    [SkinProvider getInstance].selectedSkinSet = set;
+    [UserSettings setLastUsedSkinSet:[set getTitle]];
 }
 
 @end

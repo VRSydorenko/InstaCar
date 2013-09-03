@@ -24,7 +24,6 @@ typedef enum {
     UISwipeGestureRecognizer *swipeDown;
     
     Auto *selectedAuto;
-    SkinSet *selectedSkinSet;
 }
 
 @end
@@ -91,9 +90,7 @@ typedef enum {
 }
 
 -(void)initSkins{
-    selectedSkinSet = [SkinProvider getInstance].lastUsedSkinSet;
-    
-    SkinViewBase *skinView = [selectedSkinSet getSkinAtIndex:0];
+    SkinViewBase *skinView = [[SkinProvider getInstance].selectedSkinSet getSkinAtIndex:0];
     [self.scrollSkins addSubview:skinView];
 
     activeSkin = skinView;

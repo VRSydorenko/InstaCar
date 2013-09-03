@@ -8,10 +8,17 @@
 
 #import <Foundation/Foundation.h>
 #import "DbManager.h"
+#import "SkinProvider.h"
 
 @interface DataManager : NSObject
 
 +(NSArray*)getAutos; // type: Auto
 +(NSArray*)getSkinSets; // type: SkinSet
+
++(Auto*)getSelectedAuto;
++(void)setSelectedAuto:(Auto*)selectedAuto;
+
++(SkinSet*)getSelectedSkinSet;
++(void)setSelectedSkinSet:(SkinSet*)set;
 
 @end

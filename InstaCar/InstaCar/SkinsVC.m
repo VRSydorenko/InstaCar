@@ -8,6 +8,9 @@
 
 #import "SkinsVC.h"
 #import "AutosVC.h"
+#import "CellSkinSet.h"
+#import "CellSelectedAuto.h"
+#import "DataManager.h"
 
 @interface SkinsVC (){
     NSArray *sets;
@@ -97,38 +100,52 @@
     } else if (tableView == self.tableSets){
         return [self tableView:tableView cellForSkinSetAtIndexPath:indexPath];
     }
-    return [[UITableViewCell alloc] init];
+    return nil;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForSkinSetAtIndexPath:(NSIndexPath*)indexPath{
-    static NSString *CellIdentifier = @"cellSkin";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    CellSkinSet *cell = [tableView dequeueReusableCellWithIdentifier:@"cellSkin" forIndexPath:indexPath];
     
-    NSObject<SkinSetProtocol> *set = (NSObject<SkinSetProtocol>*)[sets objectAtIndex:indexPath.row];
+    SkinSet *set = (SkinSet*)[sets objectAtIndex:indexPath.row];
     
-    cell.textLabel.text = [set getTitle];
+    cell.skinTitleLabel.text = [set getTitle];
     
     return cell;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForSelectedAutoAtIndexPath:(NSIndexPath*)indexPath{
-    static NSString *CellIdentifier = @"cellSelectedAuto";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    CellSelectedAuto *cell = [tableView dequeueReusableCellWithIdentifier:@"cellSelectedAuto" forIndexPath:indexPath];
+    Auto *_auto = [DataManager getSelectedAuto];
     
-    NSObject<SkinSetProtocol> *set = (NSObject<SkinSetProtocol>*)[sets objectAtIndex:indexPath.row];
+    if (_auto){
+        cell.autoTitleLabel.text = _auto.name;
+        cell.autoLogo.image = [UIImage imageNamed:_auto.logo];
+    } else {
+        cell.autoTitleLabel.text = @"Select auto...";
+        cell.autoLogo.image = [UIImage imageNamed:@"bmw_256.png"]; // TODO: load placeholder logo
+    }
     
-    cell.textLabel.text = [set getTitle];
+    cell.constraintMainTextWidth.constant = [cell.autoTitleLabel.text sizeWithFont:cell.autoTitleLabel.font].width; // TODO: set whis size in the cell class
     
     return cell;
 }
 
 - (void)tableView:(UITableView*)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if (tableView == self.tableSelectedAuto){
-        [tableView deselectRowAtIndexPath:indexPath animated:YES];
+        //[tableView deselectRowAtIndexPath:indexPath animated:YES];
         if (!autosVC){
             autosVC = [[UIStoryboard storyboardWithName:@"main" bundle:nil] instantiateViewControllerWithIdentifier:@"autosVC"];
         }
         [self presentViewController:autosVC animated:YES completion:nil];
+    } else if (tableView == self.tableSets) {
+        [tableView deselectRowAtIndexPath:indexPath animated:YES];
+        SkinSet *newSet = [sets objectAtIndex:indexPath.row];
+        if (![[newSet getTitle] isEqualToString:[[DataManager getSelectedSkinSet] getTitle]]){
+            [DataManager setSelectedSkinSet:newSet];
+            [self.sideActionDelegate performSideAction:LOAD_NEW_SKIN withArgument:nil]; // TODO: pass set instead of nil?
+        } else {
+            [self.sideActionDelegate performSideAction:EMPTY withArgument:nil];
+        }
     }
 }
 

@@ -93,6 +93,14 @@
 -(void) performSideAction:(SideAction)action withArgument:(id)object{
     DDMenuController *menuController = (DDMenuController*)((AppDelegate*)[[UIApplication sharedApplication] delegate]).menuController;
     [menuController showRootController:YES];
+    
+    switch (action) {
+        case LOAD_NEW_SKIN:
+            [self.dataSelectionChangeDelegate selectedData:SKIN_SET changedTo:object];
+            break;
+        default:
+            break;
+    }
 }
 
 #pragma mark DDMenuControllerDelegate

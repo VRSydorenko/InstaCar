@@ -13,17 +13,18 @@ typedef enum {
     APP_MENU = 0,
     LOCATIONS = 1,
     SKINS = 2,
-} SideView;
+} SideView; // MainVC tells navCon what to show on side
 
 typedef enum {
     EMPTY = 0,
-    SHOW_SETTINGS = 1
-} SideAction;
+    SHOW_SETTINGS = 1,
+    LOAD_NEW_SKIN = 2,
+} SideAction; // side controller tells navCon what to do
 
 typedef enum {
     AUTO = 0,
     SKIN_SET = 1,
-} SelectedDataChange;
+} SelectedDataChange; // navCon tells MainVC what has changed
 
 @protocol SideActionProtocol <NSObject>
 -(void) performSideAction:(SideAction)action withArgument:(id)object;

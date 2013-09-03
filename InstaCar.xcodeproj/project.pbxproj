@@ -26,6 +26,8 @@
 		7F3871D917BE4D4C00D8E39D /* MainVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F3871D817BE4D4C00D8E39D /* MainVC.m */; };
 		7F3871DE17BE4F1000D8E39D /* DDMenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F3871DD17BE4F1000D8E39D /* DDMenuController.m */; };
 		7F3871E117BE5A4F00D8E39D /* AppMenuTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F3871E017BE5A4F00D8E39D /* AppMenuTableVC.m */; };
+		7F419E2717D65EBB00255E56 /* CellSkinSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F419E2617D65EBB00255E56 /* CellSkinSet.m */; };
+		7F419E2D17D6698000255E56 /* CellAuto.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F419E2C17D6698000255E56 /* CellAuto.m */; };
 		7F4ECC2A17C7F8C200BF1671 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F4ECC2917C7F8C200BF1671 /* CoreLocation.framework */; };
 		7F4ECC2D17C8062800BF1671 /* SideViewControllerBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F4ECC2C17C8062800BF1671 /* SideViewControllerBase.m */; };
 		7F59AC5A17D3BA2900B87457 /* DataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F59AC5917D3BA2900B87457 /* DataManager.m */; };
@@ -45,6 +47,7 @@
 		7F70812017D0CE170094D759 /* SetDefault.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F70811D17D0CE170094D759 /* SetDefault.xib */; };
 		7F70812117D0CE170094D759 /* SkinViewBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F70811F17D0CE170094D759 /* SkinViewBase.m */; };
 		7F7FF47017CF8634000E0ABD /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F7FF46F17CF8634000E0ABD /* Location.m */; };
+		7FB233B317D6773C003751B5 /* CellSelectedAuto.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FB233B217D6773C003751B5 /* CellSelectedAuto.m */; };
 		7FC4137517C7E8450025DD2C /* Foursquare2.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FC4136C17C7E8450025DD2C /* Foursquare2.m */; };
 		7FC4137617C7E8450025DD2C /* FSConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FC4136E17C7E8450025DD2C /* FSConverter.m */; };
 		7FC4137717C7E8450025DD2C /* FSRequester.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FC4137017C7E8450025DD2C /* FSRequester.m */; };
@@ -95,6 +98,10 @@
 		7F3871DD17BE4F1000D8E39D /* DDMenuController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDMenuController.m; sourceTree = "<group>"; };
 		7F3871DF17BE5A4F00D8E39D /* AppMenuTableVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppMenuTableVC.h; sourceTree = "<group>"; };
 		7F3871E017BE5A4F00D8E39D /* AppMenuTableVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppMenuTableVC.m; sourceTree = "<group>"; };
+		7F419E2517D65EBB00255E56 /* CellSkinSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CellSkinSet.h; path = InstaCar/TableCells/CellSkinSet.h; sourceTree = "<group>"; };
+		7F419E2617D65EBB00255E56 /* CellSkinSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CellSkinSet.m; path = InstaCar/TableCells/CellSkinSet.m; sourceTree = "<group>"; };
+		7F419E2B17D6698000255E56 /* CellAuto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CellAuto.h; path = InstaCar/TableCells/CellAuto.h; sourceTree = "<group>"; };
+		7F419E2C17D6698000255E56 /* CellAuto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CellAuto.m; path = InstaCar/TableCells/CellAuto.m; sourceTree = "<group>"; };
 		7F4ECC2917C7F8C200BF1671 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		7F4ECC2B17C8062800BF1671 /* SideViewControllerBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SideViewControllerBase.h; sourceTree = "<group>"; };
 		7F4ECC2C17C8062800BF1671 /* SideViewControllerBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SideViewControllerBase.m; sourceTree = "<group>"; };
@@ -129,6 +136,8 @@
 		7F70811F17D0CE170094D759 /* SkinViewBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SkinViewBase.m; sourceTree = "<group>"; };
 		7F7FF46E17CF8634000E0ABD /* Location.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Location.h; path = InstaCar/Data/Location.h; sourceTree = "<group>"; };
 		7F7FF46F17CF8634000E0ABD /* Location.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Location.m; path = InstaCar/Data/Location.m; sourceTree = "<group>"; };
+		7FB233B117D6773C003751B5 /* CellSelectedAuto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CellSelectedAuto.h; path = InstaCar/TableCells/CellSelectedAuto.h; sourceTree = "<group>"; };
+		7FB233B217D6773C003751B5 /* CellSelectedAuto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CellSelectedAuto.m; path = InstaCar/TableCells/CellSelectedAuto.m; sourceTree = "<group>"; };
 		7FC4136B17C7E8450025DD2C /* Foursquare2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Foursquare2.h; sourceTree = "<group>"; };
 		7FC4136C17C7E8450025DD2C /* Foursquare2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Foursquare2.m; sourceTree = "<group>"; };
 		7FC4136D17C7E8450025DD2C /* FSConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSConverter.h; sourceTree = "<group>"; };
@@ -216,6 +225,7 @@
 		7F2767171791E80000A1C1A0 /* InstaCar */ = {
 			isa = PBXGroup;
 			children = (
+				7F419E1D17D6549C00255E56 /* TableCells */,
 				7F3871D217BE4B7900D8E39D /* main.storyboard */,
 				7F3871D417BE4CA900D8E39D /* MainNavController.h */,
 				7F3871D517BE4CA900D8E39D /* MainNavController.m */,
@@ -279,6 +289,19 @@
 			);
 			name = CustomControls;
 			path = InstaCar/CustomControls;
+			sourceTree = "<group>";
+		};
+		7F419E1D17D6549C00255E56 /* TableCells */ = {
+			isa = PBXGroup;
+			children = (
+				7F419E2517D65EBB00255E56 /* CellSkinSet.h */,
+				7F419E2617D65EBB00255E56 /* CellSkinSet.m */,
+				7F419E2B17D6698000255E56 /* CellAuto.h */,
+				7F419E2C17D6698000255E56 /* CellAuto.m */,
+				7FB233B117D6773C003751B5 /* CellSelectedAuto.h */,
+				7FB233B217D6773C003751B5 /* CellSelectedAuto.m */,
+			);
+			name = TableCells;
 			sourceTree = "<group>";
 		};
 		7F59AC6017D3C20C00B87457 /* Database */ = {
@@ -470,6 +493,8 @@
 				7F59AC6F17D3C20C00B87457 /* DbTable.m in Sources */,
 				7F5AC64417CC000400C01658 /* SkinProvider.m in Sources */,
 				7F7FF47017CF8634000E0ABD /* Location.m in Sources */,
+				7F419E2D17D6698000255E56 /* CellAuto.m in Sources */,
+				7F419E2717D65EBB00255E56 /* CellSkinSet.m in Sources */,
 				7FFFD7B717D0CF3400C833DE /* SkinSimple.m in Sources */,
 				7F4ECC2D17C8062800BF1671 /* SideViewControllerBase.m in Sources */,
 				7F3871D917BE4D4C00D8E39D /* MainVC.m in Sources */,
@@ -484,6 +509,7 @@
 				7F27671E1791E80000A1C1A0 /* main.m in Sources */,
 				7FC4137817C7E8450025DD2C /* FSTargetCallback.m in Sources */,
 				7F1767AC17C76F0F00724BD6 /* CaptureSessionManager.m in Sources */,
+				7FB233B317D6773C003751B5 /* CellSelectedAuto.m in Sources */,
 				7FEF908917D505E800C07A05 /* AutosVC.m in Sources */,
 				7F59AC7517D3C8CC00B87457 /* UserSettings.m in Sources */,
 				7F59AC5A17D3BA2900B87457 /* DataManager.m in Sources */,
