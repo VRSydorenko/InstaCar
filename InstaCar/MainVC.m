@@ -38,6 +38,7 @@ typedef enum {
     
     navCon = (MainNavController*)self.navigationController;
     navCon.dataSelectionChangeDelegate = self;
+    navCon.menuControllerDelegate = self;
     
     buttonsInInitialState = YES;
     selectedAuto = nil;
@@ -217,6 +218,17 @@ typedef enum {
 
 -(void)doSharePressed{
     
+}
+
+#pragma mark DDMenuControllerDelegate
+- (void)menuController:(DDMenuController*)controller willShowViewController:(UIViewController*)toShow{
+    swipeUp.enabled = NO;
+    swipeDown.enabled = NO;
+}
+
+- (void)menuControllerWillShowRootViewController{
+    swipeUp.enabled = YES;
+    swipeDown.enabled = YES;
 }
 
 #pragma mark -

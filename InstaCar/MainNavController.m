@@ -61,6 +61,9 @@
     
     SideViewControllerBase *sideController = [[UIStoryboard storyboardWithName:@"main" bundle:nil] instantiateViewControllerWithIdentifier:sideViewId];
     sideController.sideActionDelegate = self;
+    if ([sideController conformsToProtocol:@protocol(DDMenuControllerDelegate)]){
+        self.menuControllerDelegate = (NSObject<DDMenuControllerDelegate>*)sideController;
+    }
     
     if (isLeft){
         menuController.leftViewController = sideController;
@@ -90,6 +93,20 @@
 -(void) performSideAction:(SideAction)action withArgument:(id)object{
     DDMenuController *menuController = (DDMenuController*)((AppDelegate*)[[UIApplication sharedApplication] delegate]).menuController;
     [menuController showRootController:YES];
+}
+
+#pragma mark DDMenuControllerDelegate
+
+-(void)menuController:(DDMenuController *)controller willShowViewController:(UIViewController *)toShow{
+    if (self.menuControllerDelegate && [self.menuControllerDelegate respondsToSelector:@selector(menuController:willShowViewController:)]){
+        [self.menuControllerDelegate menuController:controller willShowViewController:toShow];
+    }
+}
+
+- (void)menuControllerWillShowRootViewController{
+    if (self.menuControllerDelegate && [self.menuControllerDelegate respondsToSelector:@selector(menuControllerWillShowRootViewController)]){
+        [self.menuControllerDelegate menuControllerWillShowRootViewController];
+    }
 }
 
 @end

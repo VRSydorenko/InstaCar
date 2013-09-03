@@ -48,6 +48,7 @@ typedef enum {
 
     struct {
         unsigned int respondsToWillShowViewController:1;
+        unsigned int respondsToWillShowRootViewController:1;
         unsigned int showingLeftView:1;
         unsigned int showingRightView:1;
         unsigned int canShowRight:1;
@@ -75,6 +76,8 @@ typedef enum {
 
 @end
 
-@protocol DDMenuControllerDelegate 
-- (void)menuController:(DDMenuController*)controller willShowViewController:(UIViewController*)controller;
+@protocol DDMenuControllerDelegate
+@optional
+- (void)menuController:(DDMenuController*)controller willShowViewController:(UIViewController*)toShow;
+- (void)menuControllerWillShowRootViewController;
 @end

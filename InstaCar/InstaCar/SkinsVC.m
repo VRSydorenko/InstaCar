@@ -11,6 +11,7 @@
 
 @interface SkinsVC (){
     NSArray *sets;
+    AutosVC *autosVC;
 }
 @end
 
@@ -20,6 +21,8 @@
 {
     [super viewDidLoad];
     
+    autosVC = nil;
+    
     sets = [DataManager getSkinSets];
 	
     self.tableSets.delegate = self;
@@ -27,6 +30,11 @@
     
     self.tableSelectedAuto.delegate = self;
     self.tableSelectedAuto.dataSource = self;
+}
+
+-(void)dealloc{
+    sets = nil;
+    autosVC = nil;
 }
 
 - (void)didReceiveMemoryWarning
@@ -116,12 +124,22 @@
 
 - (void)tableView:(UITableView*)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if (tableView == self.tableSelectedAuto){
-    // [tableView deselectRowAtIndexPath:indexPath animated:YES];
-        AutosVC *autosVC = [[UIStoryboard storyboardWithName:@"main" bundle:nil] instantiateViewControllerWithIdentifier:@"autosVC"];
+        [tableView deselectRowAtIndexPath:indexPath animated:YES];
+        if (!autosVC){
+            autosVC = [[UIStoryboard storyboardWithName:@"main" bundle:nil] instantiateViewControllerWithIdentifier:@"autosVC"];
+        }
         [self presentViewController:autosVC animated:YES completion:nil];
     }
 }
 
 #pragma mark -
+#pragma mark DDMenuControllerDelegate
+
+-(void)menuControllerWillShowRootViewController{
+    if (autosVC){
+        [autosVC dismissViewControllerAnimated:NO completion:nil];
+        autosVC = nil;
+    }
+}
 
 @end

@@ -11,7 +11,8 @@
 #import "CaptureSessionManager.h"
 #import "SkinProvider.h"
 
-@interface MainVC : UIViewController <SelectedDataChangeActionProtocol>
+@interface MainVC : UIViewController <SelectedDataChangeActionProtocol,
+                                      DDMenuControllerDelegate>
 
 @property CaptureSessionManager *captureManager;
 

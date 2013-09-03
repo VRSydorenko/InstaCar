@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DDMenuController.h"
 
 typedef enum {
     APP_MENU = 0,
@@ -33,9 +34,11 @@ typedef enum {
 @end
 
 
-@interface MainNavController : UINavigationController <SideActionProtocol>
+@interface MainNavController : UINavigationController <SideActionProtocol,
+                                                       DDMenuControllerDelegate>
 
 @property NSObject<SelectedDataChangeActionProtocol> *dataSelectionChangeDelegate;
+@property NSObject<DDMenuControllerDelegate> *menuControllerDelegate;
 
 -(void)setSideViewController:(SideView)sideView andShowOnTheLeftSide:(BOOL)isLeft;
 -(void)showLeft;

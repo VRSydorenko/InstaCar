@@ -30,6 +30,7 @@
     MainNavController *mainNavController = [[UIStoryboard storyboardWithName:@"main" bundle:nil] instantiateViewControllerWithIdentifier:@"mainNavController"];
     
     DDMenuController *rootController = [[DDMenuController alloc] initWithRootViewController:mainNavController];
+    rootController.delegate = mainNavController;
     _menuController = rootController;
     
     self.window.rootViewController = rootController;

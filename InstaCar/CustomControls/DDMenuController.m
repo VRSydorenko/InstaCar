@@ -141,6 +141,10 @@
         [UIView setAnimationsEnabled:NO];
     }
     
+    if (_menuFlags.respondsToWillShowRootViewController) {
+        [self.delegate menuControllerWillShowRootViewController];
+    }
+    
     [UIView animateWithDuration:.3
             animations:^{
                 _root.view.frame = frame;
@@ -258,7 +262,8 @@
 
 - (void)setDelegate:(id<DDMenuControllerDelegate>)val {
     delegate = val;
-    _menuFlags.respondsToWillShowViewController = [(id)self.delegate respondsToSelector:@selector(menuController:willShowViewController:)];    
+    _menuFlags.respondsToWillShowViewController = [(id)self.delegate respondsToSelector:@selector(menuController:willShowViewController:)];
+    _menuFlags.respondsToWillShowRootViewController = [(id)self.delegate respondsToSelector:@selector(menuControllerWillShowRootViewController)];
 }
 
 - (void)setRightViewController:(UIViewController *)rightController {
