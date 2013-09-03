@@ -35,14 +35,13 @@
 // F_LOGO_ID
 // F_NAME
 
-#define T_COUNTRIES @"t_coutries"
+#define T_COUNTRIES @"t_countries"
 // F_NAME
 
 #pragma mark -
 
 @interface DBDefinition : NSObject
 
--(NSString*) getTablesCreationSQL;
--(NSString*) getTablesDropSQL;
+-(NSArray*) getTablesCreationQueries;
 
 @end

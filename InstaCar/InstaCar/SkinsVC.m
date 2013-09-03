@@ -7,6 +7,7 @@
 //
 
 #import "SkinsVC.h"
+#import "AutosVC.h"
 
 @interface SkinsVC (){
     NSArray *sets;
@@ -35,6 +36,20 @@
 }
 
 #pragma mark Table methods
+
+-(UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    UILabel *label = [[UILabel alloc] init];
+    label.text = [self tableView:tableView titleForHeaderInSection:section];
+    label.backgroundColor = [UIColor clearColor];
+    label.textAlignment = NSTextAlignmentRight;
+    return label;
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    return 50;
+}
 
 -(NSString*)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
     if (tableView == self.tableSelectedAuto){
@@ -97,6 +112,14 @@
     cell.textLabel.text = [set getTitle];
     
     return cell;
+}
+
+- (void)tableView:(UITableView*)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (tableView == self.tableSelectedAuto){
+    // [tableView deselectRowAtIndexPath:indexPath animated:YES];
+        AutosVC *autosVC = [[UIStoryboard storyboardWithName:@"main" bundle:nil] instantiateViewControllerWithIdentifier:@"autosVC"];
+        [self presentViewController:autosVC animated:YES completion:nil];
+    }
 }
 
 #pragma mark -

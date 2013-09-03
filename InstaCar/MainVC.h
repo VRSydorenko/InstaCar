@@ -7,10 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MainNavController.h"
 #import "CaptureSessionManager.h"
 #import "SkinProvider.h"
 
-@interface MainVC : UIViewController
+@interface MainVC : UIViewController <SelectedDataChangeActionProtocol>
 
 @property CaptureSessionManager *captureManager;
 

@@ -51,6 +51,7 @@
 		7FC4137817C7E8450025DD2C /* FSTargetCallback.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FC4137217C7E8450025DD2C /* FSTargetCallback.m */; };
 		7FC4137917C7E8450025DD2C /* FSVenue.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FC4137417C7E8450025DD2C /* FSVenue.m */; };
 		7FC4137C17C7EFF70025DD2C /* LocationsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FC4137B17C7EFF70025DD2C /* LocationsVC.m */; };
+		7FEF908917D505E800C07A05 /* AutosVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FEF908817D505E800C07A05 /* AutosVC.m */; };
 		7FF3389317D4C0E700B046C4 /* SkinsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FF3389217D4C0E700B046C4 /* SkinsVC.m */; };
 		7FFFD7B717D0CF3400C833DE /* SkinSimple.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FFFD7B617D0CF3400C833DE /* SkinSimple.m */; };
 /* End PBXBuildFile section */
@@ -140,6 +141,8 @@
 		7FC4137417C7E8450025DD2C /* FSVenue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSVenue.m; sourceTree = "<group>"; };
 		7FC4137A17C7EFF70025DD2C /* LocationsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationsVC.h; sourceTree = "<group>"; };
 		7FC4137B17C7EFF70025DD2C /* LocationsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationsVC.m; sourceTree = "<group>"; };
+		7FEF908717D505E800C07A05 /* AutosVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AutosVC.h; path = InstaCar/AutosVC.h; sourceTree = "<group>"; };
+		7FEF908817D505E800C07A05 /* AutosVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AutosVC.m; path = InstaCar/AutosVC.m; sourceTree = "<group>"; };
 		7FF3389117D4C0E700B046C4 /* SkinsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SkinsVC.h; path = InstaCar/SkinsVC.h; sourceTree = "<group>"; };
 		7FF3389217D4C0E700B046C4 /* SkinsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SkinsVC.m; path = InstaCar/SkinsVC.m; sourceTree = "<group>"; };
 		7FFFD7B517D0CF3400C833DE /* SkinSimple.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkinSimple.h; sourceTree = "<group>"; };
@@ -226,6 +229,8 @@
 				7FC4137B17C7EFF70025DD2C /* LocationsVC.m */,
 				7FF3389117D4C0E700B046C4 /* SkinsVC.h */,
 				7FF3389217D4C0E700B046C4 /* SkinsVC.m */,
+				7FEF908717D505E800C07A05 /* AutosVC.h */,
+				7FEF908817D505E800C07A05 /* AutosVC.m */,
 				7F2767291791E80000A1C1A0 /* Images.xcassets */,
 				7F2767181791E80000A1C1A0 /* Supporting Files */,
 			);
@@ -479,6 +484,7 @@
 				7F27671E1791E80000A1C1A0 /* main.m in Sources */,
 				7FC4137817C7E8450025DD2C /* FSTargetCallback.m in Sources */,
 				7F1767AC17C76F0F00724BD6 /* CaptureSessionManager.m in Sources */,
+				7FEF908917D505E800C07A05 /* AutosVC.m in Sources */,
 				7F59AC7517D3C8CC00B87457 /* UserSettings.m in Sources */,
 				7F59AC5A17D3BA2900B87457 /* DataManager.m in Sources */,
 				7FC4137717C7E8450025DD2C /* FSRequester.m in Sources */,

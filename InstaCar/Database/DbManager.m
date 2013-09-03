@@ -47,28 +47,39 @@
     const char *dbpath = [databasePath UTF8String];
     if (sqlite3_open(dbpath, &instacarDb) == SQLITE_OK)
     {
-        char *errMsg;
-        DBDefinition* dbDef = [[DBDefinition alloc] init];
-        
         if ([Utils appVersionDiffers]){
-            const char *dropSql = [[dbDef getTablesCreationSQL] UTF8String];
-            if (sqlite3_exec(instacarDb, dropSql, NULL, NULL, &errMsg) != SQLITE_OK)
-            {
-                NSLog(@"Error dropping DB table(s)");
-                NSLog(@"Info:%s", sqlite3_errmsg(instacarDb));
-            }
+            [self eraseTables];
             // [UserSettings setStoredAppVersion]; // TODO: uncomment in production
         }
         
-        const char *sql = [[dbDef getTablesCreationSQL] UTF8String];
-        if (sqlite3_exec(instacarDb, sql, NULL, NULL, &errMsg) != SQLITE_OK)
-        {
-            NSLog(@"Error creating DB table(s)");
-            NSLog(@"Info:%s", sqlite3_errmsg(instacarDb));
-        }
+        [self createTables];
     } else {
         NSLog(@"Failed to open/create database");
         NSLog(@"Info:%s", sqlite3_errmsg(instacarDb));
+    }
+}
+
+-(void)eraseTables{
+    NSString *eraseSql = [NSString stringWithFormat:@"DELETE FROM %@;DELETE FROM %@;DELETE FROM %@;DELETE FROM %@;", T_MODELS, T_AUTOS, T_LOGOS, T_COUNTRIES];
+    char *err;
+    if (sqlite3_exec(instacarDb, [eraseSql UTF8String], nil, nil, &err) == SQLITE_OK){
+        NSLog(@"Tables erased");
+    } else {
+        NSLog(@"Table erase failed: %@", [NSString stringWithUTF8String:err]);
+        sqlite3_free(err);
+    }
+}
+
+-(void)createTables{
+    DBDefinition* dbDef = [[DBDefinition alloc] init];
+    char *err;
+    for (NSString *sql in [dbDef getTablesCreationQueries]) {
+        if (sqlite3_exec(instacarDb, [sql UTF8String], nil, nil, &err) == SQLITE_OK){
+            NSLog(@"Table created");
+        } else {
+            NSLog(@"Table creation failed: %@", [NSString stringWithUTF8String:err]);
+            sqlite3_free(err);
+        }
     }
 }
 
@@ -123,6 +134,8 @@
             NSLog(@"Failed to add country %@", name);
             NSLog(@"Info:%s", sqlite3_errmsg(instacarDb));
         }
+    } else {
+        NSLog(@"Error:%s", sqlite3_errmsg(instacarDb));
     }
     sqlite3_finalize(statement);
     
@@ -145,6 +158,8 @@
             NSLog(@"Failed to add logo %@", filename);
             NSLog(@"Info:%s", sqlite3_errmsg(instacarDb));
         }
+    } else {
+        NSLog(@"Error:%s", sqlite3_errmsg(instacarDb));
     }
     sqlite3_finalize(statement);
     
@@ -167,6 +182,8 @@
             NSLog(@"Failed to add auto %@", name);
             NSLog(@"Info:%s", sqlite3_errmsg(instacarDb));
         }
+    } else {
+        NSLog(@"Error:%s", sqlite3_errmsg(instacarDb));
     }
     sqlite3_finalize(statement);
     
@@ -174,7 +191,7 @@
 }
 
 -(void)addAutoModel:(NSString*)name ofAuto:(int)autoId logo:(int)logoId startYear:(int)startYear endYear:(int)endYear{
-    NSString* sql = [NSString stringWithFormat: @"INSERT INTO %@ (%@, %@, %@, %@, %@) VALUES (?, %d, %d, %d, %d)", T_AUTOS, F_NAME, F_AUTO_ID, F_LOGO_ID, F_YEAR_START, F_YEAR_END, autoId, logoId, startYear, endYear];
+    NSString* sql = [NSString stringWithFormat: @"INSERT INTO %@ (%@, %@, %@, %@, %@) VALUES (?, %d, %d, %d, %d)", T_MODELS, F_NAME, F_AUTO_ID, F_LOGO_ID, F_YEAR_START, F_YEAR_END, autoId, logoId, startYear, endYear];
     
     const char *insert_stmt = [sql UTF8String];
     
@@ -189,6 +206,8 @@
             NSLog(@"Failed to add model %@", name);
             NSLog(@"Info:%s", sqlite3_errmsg(instacarDb));
         }
+    } else {
+        NSLog(@"Error:%s", sqlite3_errmsg(instacarDb));
     }
     sqlite3_finalize(statement);
 }
@@ -239,6 +258,8 @@
         } else {
             NSLog(@"Country not found");
         }
+    } else {
+        NSLog(@"Error getting id for Country:%s", sqlite3_errmsg(instacarDb));
     }
     sqlite3_finalize(statement);
     
@@ -260,6 +281,8 @@
         } else {
             NSLog(@"Logo not found");
         }
+    } else {
+        NSLog(@"Error getting id for Logo:%s", sqlite3_errmsg(instacarDb));
     }
     sqlite3_finalize(statement);
     
@@ -281,6 +304,8 @@
         } else {
             NSLog(@"Auto not found");
         }
+    } else {
+        NSLog(@"Error getting id for Auto:%s", sqlite3_errmsg(instacarDb));
     }
     sqlite3_finalize(statement);
     

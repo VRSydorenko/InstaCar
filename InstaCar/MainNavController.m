@@ -18,19 +18,11 @@
 
 @implementation MainNavController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
+    
+    self.dataSelectionChangeDelegate = nil;
     
     UIBarButtonItem *button = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"nav_menu_icon.png"] style:UIBarButtonItemStyleBordered target:self action:@selector(showAppMenuButtonPressed)];
     UIViewController *topController = [self.viewControllers objectAtIndex:0];
@@ -62,6 +54,7 @@
         }
         case SKINS:{
             sideViewId = @"skinsVC";
+            //sideViewId = @"rightNavCon";
             break;
         }
     }
@@ -94,7 +87,7 @@
 
 #pragma mark - SideActionProtocol methods
 
--(void) performSideAction:(SideAction)action{
+-(void) performSideAction:(SideAction)action withArgument:(id)object{
     DDMenuController *menuController = (DDMenuController*)((AppDelegate*)[[UIApplication sharedApplication] delegate]).menuController;
     [menuController showRootController:YES];
 }

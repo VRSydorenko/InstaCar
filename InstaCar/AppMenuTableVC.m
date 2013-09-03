@@ -95,7 +95,7 @@
     
     // TODO: determine the action and pass it in the delegate method further
     
-    [self.sideActionDelegate performSideAction:EMPTY];
+    [self.sideActionDelegate performSideAction:EMPTY withArgument:nil];
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 

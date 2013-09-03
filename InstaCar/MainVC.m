@@ -7,7 +7,6 @@
 //
 
 #import "MainVC.h"
-#import "MainNavController.h"
 
 #define SWITCH_TIME 1.0
 
@@ -38,6 +37,8 @@ typedef enum {
 	// Do any additional setup after loading the view.
     
     navCon = (MainNavController*)self.navigationController;
+    navCon.dataSelectionChangeDelegate = self;
+    
     buttonsInInitialState = YES;
     selectedAuto = nil;
     
@@ -95,6 +96,11 @@ typedef enum {
     [self.scrollSkins addSubview:skinView];
 
     activeSkin = skinView;
+}
+
+#pragma mark SelectedDataChangeActionProtocol
+
+-(void) selectedData:(SelectedDataChange)dataType changedTo:(id)newValue{
 }
 
 #pragma mark Gestures

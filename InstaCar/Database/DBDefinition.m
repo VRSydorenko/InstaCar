@@ -51,20 +51,12 @@
     [tables addObject:tModels];
 }
 
--(NSString*) getTablesCreationSQL{
-    NSString* sql = [[NSString alloc] init];
+-(NSArray*) getTablesCreationQueries{
+    NSMutableArray* sqls = [[NSMutableArray alloc] init];
     for (DbTable* table in tables) {
-        sql = [sql stringByAppendingString:[table getTableCreationSQL]];
+        [sqls addObject:[table getTableCreationSQL]];
     }
-    return sql;
-}
-
--(NSString*) getTablesDropSQL{
-    NSString* sql = [[NSString alloc] init];
-    for (DbTable* table in tables) {
-        sql = [sql stringByAppendingString:[table getTableDropSQL]];
-    }
-    return sql;
+    return sqls;
 }
 
 @end
