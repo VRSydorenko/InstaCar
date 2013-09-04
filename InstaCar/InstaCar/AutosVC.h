@@ -9,9 +9,14 @@
 #import <UIKit/UIKit.h>
 #import "DataManager.h"
 
+@protocol AutoSelectorDelegate <NSObject>
+-(void)newAutoSelected:(Auto*)newAuto;
+@end
+
 @interface AutosVC : UIViewController <UITableViewDelegate,
                                        UITableViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableAutos;
+@property id<AutoSelectorDelegate> autoSelectorDelegate;
 
 @end

@@ -104,12 +104,18 @@
     [self addAutoModel:@"1x Coupe" ofAuto:autoId logo:logoId startYear:0 endYear:0];
     [self addAutoModel:@"1x M Coupe" ofAuto:autoId logo:logoId startYear:0 endYear:0];
     [self addAutoModel:@"3 Series" ofAuto:autoId logo:logoId startYear:0 endYear:0];
+    {
+        [self addAutoModel:@"E46" ofAuto:autoId logo:logoId startYear:2001 endYear:2005];
+    }
     [self addAutoModel:@"3x GT" ofAuto:autoId logo:logoId startYear:0 endYear:0];
     [self addAutoModel:@"3x Convertible" ofAuto:autoId logo:logoId startYear:0 endYear:0];
     [self addAutoModel:@"3x Compact" ofAuto:autoId logo:logoId startYear:0 endYear:0];
     [self addAutoModel:@"3x Coupe" ofAuto:autoId logo:logoId startYear:0 endYear:0];
     [self addAutoModel:@"4 Series" ofAuto:autoId logo:logoId startYear:0 endYear:0];
     [self addAutoModel:@"5 Series" ofAuto:autoId logo:logoId startYear:0 endYear:0];
+    {
+        [self addAutoModel:@"E34" ofAuto:autoId logo:logoId startYear:1990 endYear:1998];
+    }
     [self addAutoModel:@"6 Series" ofAuto:autoId logo:logoId startYear:0 endYear:0];
     [self addAutoModel:@"7 Series" ofAuto:autoId logo:logoId startYear:0 endYear:0];
     [self addAutoModel:@"X1 Series" ofAuto:autoId logo:logoId startYear:0 endYear:0];

@@ -18,12 +18,14 @@ typedef enum {
 typedef enum {
     EMPTY = 0,
     SHOW_SETTINGS = 1,
-    LOAD_NEW_SKIN = 2,
+    LOAD_NEW_SKINSET = 2,
 } SideAction; // side controller tells navCon what to do
 
 typedef enum {
-    AUTO = 0,
-    SKIN_SET = 1,
+    AUTO1 = 0,
+    AUTO2 = 1,
+    SKIN_SET = 2,
+    LOCATION = 3,
 } SelectedDataChange; // navCon tells MainVC what has changed
 
 @protocol SideActionProtocol <NSObject>

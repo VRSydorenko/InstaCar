@@ -72,4 +72,31 @@
     skins = nil;
 }
 
+-(void)updateData:(id)data ofType:(SelectedDataChange)type{
+    // TODO: go through all skins and update possible values
+    switch (type) {
+        case AUTO1:
+            for (SkinViewBase *skinView in skins) {
+                [skinView updateField:fAUTO1 withValue:data];
+            }
+            break;
+        case AUTO2:
+            for (SkinViewBase *skinView in skins) {
+                [skinView updateField:fAUTO2 withValue:data];
+            }
+            break;
+        case LOCATION:
+            for (SkinViewBase *skinView in skins) {
+                [skinView updateField:fLOCATION withValue:data];
+            }
+            break;
+        default:
+            break;
+    }
+}
+
+-(BOOL)supportsSecondCar{
+    return NO;
+}
+
 @end

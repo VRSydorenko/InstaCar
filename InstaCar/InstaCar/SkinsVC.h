@@ -9,10 +9,12 @@
 #import "SideViewControllerBase.h"
 #import "DataManager.h"
 #import "SkinViewBase.h"
+#import "AutosVC.h"
 
 @interface SkinsVC : SideViewControllerBase <UITableViewDelegate,
                                              UITableViewDataSource,
-                                             DDMenuControllerDelegate>
+                                             DDMenuControllerDelegate,
+                                             AutoSelectorDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableSets;
 @property (weak, nonatomic) IBOutlet UITableView *tableSelectedAuto;

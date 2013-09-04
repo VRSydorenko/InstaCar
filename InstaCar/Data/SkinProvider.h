@@ -18,6 +18,7 @@ typedef NSObject<SkinSetProtocol> SkinSet;
 
 @property (readonly) NSArray *skinSets;
 @property SkinSet *selectedSkinSet;
-@property Auto *selectedAuto;
+@property Auto *selectedAuto1;
+@property Auto *selectedAuto2;
 
 @end

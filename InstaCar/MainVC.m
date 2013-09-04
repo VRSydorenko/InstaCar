@@ -22,8 +22,6 @@ typedef enum {
     SkinViewBase *activeSkin;
     UISwipeGestureRecognizer *swipeUp;
     UISwipeGestureRecognizer *swipeDown;
-    
-    Auto *selectedAuto;
 }
 
 @end
@@ -40,7 +38,6 @@ typedef enum {
     navCon.menuControllerDelegate = self;
     
     buttonsInInitialState = YES;
-    selectedAuto = nil;
     
     [self initCaptureManager];
     
@@ -99,6 +96,11 @@ typedef enum {
 #pragma mark SelectedDataChangeActionProtocol
 
 -(void) selectedData:(SelectedDataChange)dataType changedTo:(id)newValue{
+    if (dataType == SKIN_SET){
+        // load new set
+    } else { // other fields are skin relevant so pass the update to selected skin
+        [[SkinProvider getInstance].selectedSkinSet updateData:newValue ofType:dataType];
+    }
 }
 
 #pragma mark Gestures

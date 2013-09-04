@@ -7,6 +7,7 @@
 //
 
 #import "SkinSimple.h"
+#import "DataManager.h"
 
 @interface SkinSimple()
 
@@ -25,8 +26,9 @@
 }
 
 -(void)fieldAuto1DidUpdate{
-    self.imgEmblem.image = [UIImage imageNamed:@"nav_menu_icon.png"];
-    self.textAuto.text = @"BMW";
+    Auto *auto1 = [DataManager getSelectedAuto1];
+    self.imgEmblem.image = [UIImage imageNamed:auto1.logo];
+    self.textAuto.text = auto1.name;
     CGSize textSize = [self.text.text sizeWithFont:self.text.font];
     self.autoTitleWidth.constant = textSize.width;
 }

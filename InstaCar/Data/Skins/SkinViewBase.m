@@ -30,15 +30,15 @@
 
 -(BOOL) canEditField:(SkinField)field{
     switch (field) {
-        case LOCATION:
+        case fLOCATION:
             return canEditFieldLocation;
-        case AUTO1:
+        case fAUTO1:
             return canEditFieldAuto1;
-        case AUTO2:
+        case fAUTO2:
             return canEditFieldAuto2;
-        case TEXT1:
+        case fTEXT1:
             return canEditFieldText1;
-        case TEXT2:
+        case fTEXT2:
             return canEditFieldText2;
         default:
             return NO;
@@ -50,31 +50,31 @@
         return;
     }
     switch (field) {
-        case LOCATION:
+        case fLOCATION:
             if ([value isKindOfClass:Location.class]){
                 fieldLocation = (Location*)value;
                 [self fieldLocationDidUpdate];
             }
             break;
-        case AUTO1:
+        case fAUTO1:
             if ([value isKindOfClass:Auto.class]){
                 fieldAuto1 = (Auto*)value;
                 [self fieldAuto1DidUpdate];
             }
             break;
-        case AUTO2:
+        case fAUTO2:
             if ([value isKindOfClass:Auto.class]){
                 fieldAuto2 = (Auto*)value;
                 [self fieldAuto2DidUpdate];
             }
             break;
-        case TEXT1:
+        case fTEXT1:
             if ([value isKindOfClass:NSString.class]){
                 fieldText1 = (NSString*)value;
                 [self fieldText1DidUpdate];
             }
             break;
-        case TEXT2:
+        case fTEXT2:
             if ([value isKindOfClass:NSString.class]){
                 fieldText2 = (NSString*)value;
                 [self fieldText2DidUpdate];

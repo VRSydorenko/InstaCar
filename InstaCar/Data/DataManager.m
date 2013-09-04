@@ -23,11 +23,18 @@
     return [SkinProvider getInstance].skinSets;
 }
 
-+(Auto*)getSelectedAuto{
-    return [SkinProvider getInstance].selectedAuto;
++(Auto*)getSelectedAuto1{
+    return [SkinProvider getInstance].selectedAuto1;
 }
-+(void)setSelectedAuto:(Auto*)selectedAuto{
-    [SkinProvider getInstance].selectedAuto = selectedAuto;
++(void)setSelectedAuto1:(Auto*)selectedAuto{
+    [SkinProvider getInstance].selectedAuto1 = selectedAuto;
+}
+
++(Auto*)getSelectedAuto2{
+    return [SkinProvider getInstance].selectedAuto2;
+}
++(void)setSelectedAuto2:(Auto*)selectedAuto{
+    [SkinProvider getInstance].selectedAuto2 = selectedAuto;
 }
 
 +(SkinSet*)getSelectedSkinSet{

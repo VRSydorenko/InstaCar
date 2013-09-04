@@ -7,7 +7,6 @@
 //
 
 #import "SkinsVC.h"
-#import "AutosVC.h"
 #import "CellSkinSet.h"
 #import "CellSelectedAuto.h"
 #import "DataManager.h"
@@ -15,6 +14,7 @@
 @interface SkinsVC (){
     NSArray *sets;
     AutosVC *autosVC;
+    int isSelectingSecondAuto;
 }
 @end
 
@@ -25,6 +25,7 @@
     [super viewDidLoad];
     
     autosVC = nil;
+    isSelectingSecondAuto = NO;
     
     sets = [DataManager getSkinSets];
 	
@@ -82,7 +83,7 @@
     if (tableView == self.tableSelectedAuto){
         switch (section) {
             case 0:
-                return 1;
+                return [DataManager getSelectedSkinSet].supportsSecondCar ? 2 : 1;
         }
     } else if (tableView == self.tableSets){
         switch (section) {
@@ -115,7 +116,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForSelectedAutoAtIndexPath:(NSIndexPath*)indexPath{
     CellSelectedAuto *cell = [tableView dequeueReusableCellWithIdentifier:@"cellSelectedAuto" forIndexPath:indexPath];
-    Auto *_auto = [DataManager getSelectedAuto];
+    Auto *_auto = indexPath.row == 0 ? [DataManager getSelectedAuto1] : [DataManager getSelectedAuto2];
     
     if (_auto){
         cell.autoTitleLabel.text = _auto.name;
@@ -125,7 +126,7 @@
         cell.autoLogo.image = [UIImage imageNamed:@"bmw_256.png"]; // TODO: load placeholder logo
     }
     
-    cell.constraintMainTextWidth.constant = [cell.autoTitleLabel.text sizeWithFont:cell.autoTitleLabel.font].width; // TODO: set whis size in the cell class
+    cell.constraintMainTextWidth.constant = [cell.autoTitleLabel.text sizeWithFont:cell.autoTitleLabel.font].width; // TODO: set this size in the cell class
     
     return cell;
 }
@@ -135,14 +136,16 @@
         //[tableView deselectRowAtIndexPath:indexPath animated:YES];
         if (!autosVC){
             autosVC = [[UIStoryboard storyboardWithName:@"main" bundle:nil] instantiateViewControllerWithIdentifier:@"autosVC"];
+            autosVC.autoSelectorDelegate = self;
         }
+        isSelectingSecondAuto = indexPath.row == 1; // 0 or 1
         [self presentViewController:autosVC animated:YES completion:nil];
     } else if (tableView == self.tableSets) {
         [tableView deselectRowAtIndexPath:indexPath animated:YES];
         SkinSet *newSet = [sets objectAtIndex:indexPath.row];
         if (![[newSet getTitle] isEqualToString:[[DataManager getSelectedSkinSet] getTitle]]){
             [DataManager setSelectedSkinSet:newSet];
-            [self.sideActionDelegate performSideAction:LOAD_NEW_SKIN withArgument:nil]; // TODO: pass set instead of nil?
+            [self.sideActionDelegate performSideAction:LOAD_NEW_SKINSET withArgument:nil]; // TODO: pass set instead of nil?
         } else {
             [self.sideActionDelegate performSideAction:EMPTY withArgument:nil];
         }
@@ -150,6 +153,25 @@
 }
 
 #pragma mark -
+
+#pragma mark AutoSelectorDelegate
+
+-(void)newAutoSelected:(Auto*)newAuto{
+    [autosVC dismissViewControllerAnimated:NO completion:nil];
+    if (newAuto){
+        if (isSelectingSecondAuto){
+            [DataManager setSelectedAuto2:newAuto];
+            [[DataManager getSelectedSkinSet] updateData:newAuto ofType:AUTO2];
+        } else {
+            [DataManager setSelectedAuto1:newAuto];
+            [[DataManager getSelectedSkinSet] updateData:newAuto ofType:AUTO1];
+        }
+        [self.tableSelectedAuto reloadData];
+    }
+    
+    [self.sideActionDelegate performSideAction:EMPTY withArgument:nil];
+}
+
 #pragma mark DDMenuControllerDelegate
 
 -(void)menuControllerWillShowRootViewController{

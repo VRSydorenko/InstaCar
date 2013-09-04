@@ -35,7 +35,8 @@
     SetDefault *skinDefault = [[SetDefault alloc] init];
     [sets addObject:skinDefault];
     self.selectedSkinSet = skinDefault; // setting default skin set
-    self.selectedAuto = nil;
+    self.selectedAuto1 = nil;
+    self.selectedAuto2 = nil;
     
     _skinSets = [[NSArray alloc] initWithArray:sets];
 }

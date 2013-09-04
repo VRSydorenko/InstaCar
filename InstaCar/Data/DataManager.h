@@ -15,8 +15,11 @@
 +(NSArray*)getAutos; // type: Auto
 +(NSArray*)getSkinSets; // type: SkinSet
 
-+(Auto*)getSelectedAuto;
-+(void)setSelectedAuto:(Auto*)selectedAuto;
++(Auto*)getSelectedAuto1;
++(void)setSelectedAuto1:(Auto*)selectedAuto;
+
++(Auto*)getSelectedAuto2;
++(void)setSelectedAuto2:(Auto*)selectedAuto;
 
 +(SkinSet*)getSelectedSkinSet;
 +(void)setSelectedSkinSet:(SkinSet*)set;

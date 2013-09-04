@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "Location.h"
 #import "Auto.h"
+#import "MainNavController.h"
 
 #define MOVINGVIEW_TIME 0.5
 
@@ -19,14 +20,16 @@
 -(unsigned short)getSkinsCount;
 -(SkinViewBase*)getSkinAtIndex:(unsigned short)index;
 -(void)freeSkins;
+-(void)updateData:(id)data ofType:(SelectedDataChange)type;
+-(BOOL)supportsSecondCar;
 @end
 
 typedef enum {
-    LOCATION,
-    AUTO1,
-    AUTO2,
-    TEXT1,
-    TEXT2,
+    fLOCATION,
+    fAUTO1,
+    fAUTO2,
+    fTEXT1,
+    fTEXT2,
 } SkinField;
     
 @interface SkinViewBase : UIView {

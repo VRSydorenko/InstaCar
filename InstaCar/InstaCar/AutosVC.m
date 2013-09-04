@@ -68,7 +68,9 @@
 }
 
 - (void)tableView:(UITableView*)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-   
+    if (self.autoSelectorDelegate){
+        [self.autoSelectorDelegate newAutoSelected:[autos objectAtIndex:indexPath.row]];
+    }
 }
 
 @end
