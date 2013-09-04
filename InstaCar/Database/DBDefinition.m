@@ -49,6 +49,16 @@
     [tModels addForeignKey:F_AUTO_ID refTable:T_AUTOS refField:F_ID];
     [tModels addForeignKey:F_LOGO_ID refTable:T_LOGOS refField:F_ID];
     [tables addObject:tModels];
+    
+    DbTable* tSubmodels = [[DbTable alloc] initWithTableName:T_SUBMODELS];
+    [tSubmodels addField:F_NAME type:DBTYPE_TEXT notNull:YES];
+    [tSubmodels addField:F_MODEL_ID type:DBTYPE_REAL notNull:YES];
+    [tSubmodels addField:F_LOGO_ID type:DBTYPE_REAL notNull:YES];
+    [tSubmodels addField:F_YEAR_START type:DBTYPE_REAL notNull:NO];
+    [tSubmodels addField:F_YEAR_END type:DBTYPE_REAL notNull:NO];
+    [tSubmodels addForeignKey:F_MODEL_ID refTable:T_MODELS refField:F_ID];
+    [tSubmodels addForeignKey:F_LOGO_ID refTable:T_LOGOS refField:F_ID];
+    [tables addObject:tSubmodels];
 }
 
 -(NSArray*) getTablesCreationQueries{

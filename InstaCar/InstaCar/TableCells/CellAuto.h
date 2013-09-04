@@ -10,4 +10,8 @@
 
 @interface CellAuto : UITableViewCell
 
+@property (nonatomic, weak) IBOutlet UILabel *autoTitleLabel;
+@property (nonatomic, weak) IBOutlet UIImageView *autoLogo;
+@property (nonatomic, weak) IBOutlet UIButton *autoModelsButton;
+
 @end

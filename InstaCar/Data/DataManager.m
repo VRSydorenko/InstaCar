@@ -19,6 +19,10 @@
     return [[self dbManager] getAllAutos];
 }
 
++(NSArray*)getModelsOfAuto:(int)autoId{
+    return [[self dbManager] getModelsOfAuto:autoId];
+}
+
 +(NSArray*)getSkinSets{
     return [SkinProvider getInstance].skinSets;
 }

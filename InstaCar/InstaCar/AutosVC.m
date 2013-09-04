@@ -7,6 +7,7 @@
 //
 
 #import "AutosVC.h"
+#import "CellAuto.h"
 
 @interface AutosVC (){
     NSArray *autos;
@@ -59,10 +60,14 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"cellAuto";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    CellAuto *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
     Auto *_auto = [autos objectAtIndex:indexPath.row];
-    cell.textLabel.text = _auto.name;
+    cell.autoTitleLabel.text = _auto.name;
+    cell.autoLogo.image = [UIImage imageNamed:_auto.logo];
+    
+    NSArray *models = [DataManager getModelsOfAuto:_auto._id];
+    cell.autoModelsButton.hidden = models.count == 0;
     
     return cell;
 }

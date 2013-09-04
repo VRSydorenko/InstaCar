@@ -19,6 +19,7 @@
 
 #pragma mark Custom methods
 
--(NSArray*)getAllAutos; // tape: Auto
+-(NSArray*)getAllAutos; // type: Auto
+-(NSArray*)getModelsOfAuto:(int)autoId; // type: AutoModel
 
 @end

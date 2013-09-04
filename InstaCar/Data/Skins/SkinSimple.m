@@ -29,7 +29,7 @@
     Auto *auto1 = [DataManager getSelectedAuto1];
     self.imgEmblem.image = [UIImage imageNamed:auto1.logo];
     self.textAuto.text = auto1.name;
-    CGSize textSize = [self.text.text sizeWithFont:self.text.font];
+    CGSize textSize = [auto1.name sizeWithFont:self.textAuto.font];
     self.autoTitleWidth.constant = textSize.width;
 }
 

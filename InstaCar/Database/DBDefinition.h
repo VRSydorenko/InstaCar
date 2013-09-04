@@ -35,6 +35,13 @@
 // F_LOGO_ID
 // F_NAME
 
+#define T_SUBMODELS @"t_submodels"
+#define F_MODEL_ID @"f_model_id"
+// F_NAME
+// F_LOGO_ID
+// F_YEAR_START
+// F_YEAR_END
+
 #define T_COUNTRIES @"t_countries"
 // F_NAME
 

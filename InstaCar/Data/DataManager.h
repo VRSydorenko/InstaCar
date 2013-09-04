@@ -13,6 +13,7 @@
 @interface DataManager : NSObject
 
 +(NSArray*)getAutos; // type: Auto
++(NSArray*)getModelsOfAuto:(int)autoId; // type: AutoModel
 +(NSArray*)getSkinSets; // type: SkinSet
 
 +(Auto*)getSelectedAuto1;

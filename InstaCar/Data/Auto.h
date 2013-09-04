@@ -11,11 +11,12 @@
 
 @interface Auto : NSObject
 
+@property (nonatomic) int _id;
 @property (nonatomic) NSString *name;
 @property (nonatomic) NSString *logo;
 @property (nonatomic) NSString *country;
 @property (nonatomic) AutoModel *model;
 
--(id)initWithName:(NSString*)name logo:(NSString*)logo country:(NSString*)country;
+-(id)initWithId:(int)_id name:(NSString*)name logo:(NSString*)logo country:(NSString*)country;
 
 @end

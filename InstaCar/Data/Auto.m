@@ -10,9 +10,10 @@
 
 @implementation Auto
 
--(id)initWithName:(NSString*)name logo:(NSString*)logo country:(NSString*)country{
+-(id)initWithId:(int)_id name:(NSString*)name logo:(NSString*)logo country:(NSString*)country{
     self = [super init];
     if (self){
+        self._id = _id;
         self.name = name;
         self.logo = logo;
         self.country = country;
