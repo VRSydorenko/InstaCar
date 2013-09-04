@@ -14,6 +14,7 @@
 
 +(NSArray*)getAutos; // type: Auto
 +(NSArray*)getModelsOfAuto:(int)autoId; // type: AutoModel
++(NSArray*)getSubmodelsOfModel:(int)modelId; // type: AutoSubModel
 +(NSArray*)getSkinSets; // type: SkinSet
 
 +(Auto*)getSelectedAuto1;

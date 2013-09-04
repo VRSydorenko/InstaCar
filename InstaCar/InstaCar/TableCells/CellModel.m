@@ -6,9 +6,9 @@
 //  Copyright (c) 2013 Viktor Sydorenko. All rights reserved.
 //
 
-#import "CellAuto.h"
+#import "CellModel.h"
 
-@implementation CellAuto
+@implementation CellModel
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
@@ -26,7 +26,7 @@
     // Configure the view for the selected state
 }
 
--(IBAction)modelsButtonPressed:(id)sender{
+-(IBAction)submodelsButtonPressed:(id)sender{
     [self.sublevelPickerDelegate sublevelButtonPressedAtIndex:self.tag];
 }
 

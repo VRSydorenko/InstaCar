@@ -8,10 +8,17 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol SublevelPickerDelegate <NSObject>
+-(void)sublevelButtonPressedAtIndex:(int)index;
+@end
+
 @interface CellAuto : UITableViewCell
 
 @property (nonatomic, weak) IBOutlet UILabel *autoTitleLabel;
 @property (nonatomic, weak) IBOutlet UIImageView *autoLogo;
 @property (nonatomic, weak) IBOutlet UIButton *autoModelsButton;
+@property id<SublevelPickerDelegate> sublevelPickerDelegate;
+
+-(IBAction)modelsButtonPressed:(id)sender;
 
 @end

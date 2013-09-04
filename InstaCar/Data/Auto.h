@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "AutoModel.h"
+#import "AutoSubmodel.h"
 
 @interface Auto : NSObject
 

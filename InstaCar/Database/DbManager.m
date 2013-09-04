@@ -276,19 +276,20 @@
 -(NSArray*)getModelsOfAuto:(int)autoId{
     NSMutableArray *mutableModels = [[NSMutableArray alloc] init];
     
-    //                                                        name   logo  sYear  eYear
-    NSString *querySQL = [NSString stringWithFormat: @"SELECT %@.%@, %@.%@, %@.%@, %@.%@ FROM %@, %@ WHERE %@.%@=%@.%@ AND %@.%@=%d", T_MODELS, F_NAME, T_LOGOS, F_NAME, T_MODELS, F_YEAR_START, T_MODELS, F_YEAR_END, T_MODELS, T_LOGOS, T_MODELS, F_LOGO_ID, T_LOGOS, F_ID, T_MODELS, F_AUTO_ID, autoId];
+    //                                                        id     name   logo  sYear  eYear
+    NSString *querySQL = [NSString stringWithFormat: @"SELECT %@.%@, %@.%@, %@.%@, %@.%@, %@.%@ FROM %@, %@ WHERE %@.%@=%@.%@ AND %@.%@=%d", T_MODELS, F_ID, T_MODELS, F_NAME, T_LOGOS, F_NAME, T_MODELS, F_YEAR_START, T_MODELS, F_YEAR_END, T_MODELS, T_LOGOS, T_MODELS, F_LOGO_ID, T_LOGOS, F_ID, T_MODELS, F_AUTO_ID, autoId];
     const char *query_stmt = [querySQL UTF8String];
     
     sqlite3_stmt *statement;
     if (sqlite3_prepare_v2(instacarDb, query_stmt, -1, &statement, NULL) == SQLITE_OK){
         while (sqlite3_step(statement) == SQLITE_ROW){
-            NSString *nameField = [[NSString alloc] initWithUTF8String:(const char *) sqlite3_column_text(statement, 0)];
-            NSString *logoField = [[NSString alloc] initWithUTF8String:(const char *) sqlite3_column_text(statement, 1)];
+            int modelId = sqlite3_column_int(statement, 0);
+            NSString *nameField = [[NSString alloc] initWithUTF8String:(const char *) sqlite3_column_text(statement, 1)];
+            NSString *logoField = [[NSString alloc] initWithUTF8String:(const char *) sqlite3_column_text(statement, 2)];
             
-            AutoModel *model = [[AutoModel alloc] initWithName:nameField];
+            AutoModel *model = [[AutoModel alloc] initWithId:modelId andName:nameField];
             model.logo = logoField;
-            model.startYear = sqlite3_column_int(statement, 2);
+            model.startYear = sqlite3_column_int(statement, 3);
             model.endYear = sqlite3_column_int(statement, 3);
             
             [mutableModels addObject:model];
@@ -300,6 +301,35 @@
     sqlite3_finalize(statement);
     
     return [[NSArray alloc] initWithArray:mutableModels];
+}
+
+-(NSArray*)getSubmodelsOfModel:(int)modelId{
+    NSMutableArray *mutableSubmodels = [[NSMutableArray alloc] init];
+    
+    //                                                        name   logo  sYear  eYear
+    NSString *querySQL = [NSString stringWithFormat: @"SELECT %@.%@, %@.%@, %@.%@, %@.%@ FROM %@, %@ WHERE %@.%@=%@.%@ AND %@.%@=%d", T_SUBMODELS, F_NAME, T_LOGOS, F_NAME, T_SUBMODELS, F_YEAR_START, T_SUBMODELS, F_YEAR_END, T_SUBMODELS, T_LOGOS, T_SUBMODELS, F_LOGO_ID, T_LOGOS, F_ID, T_SUBMODELS, F_MODEL_ID, modelId];
+    const char *query_stmt = [querySQL UTF8String];
+    
+    sqlite3_stmt *statement;
+    if (sqlite3_prepare_v2(instacarDb, query_stmt, -1, &statement, NULL) == SQLITE_OK){
+        while (sqlite3_step(statement) == SQLITE_ROW){
+            NSString *nameField = [[NSString alloc] initWithUTF8String:(const char *) sqlite3_column_text(statement, 0)];
+            NSString *logoField = [[NSString alloc] initWithUTF8String:(const char *) sqlite3_column_text(statement, 1)];
+            
+            AutoSubmodel *submodel = [[AutoSubmodel alloc] initWithName:nameField];
+            submodel.logo = logoField;
+            submodel.startYear = sqlite3_column_int(statement, 2);
+            submodel.endYear = sqlite3_column_int(statement, 3);
+            
+            [mutableSubmodels addObject:submodel];
+        }
+    } else {
+        NSLog(@"Failed to query submodel");
+        NSLog(@"Info:%s", sqlite3_errmsg(instacarDb));
+    }
+    sqlite3_finalize(statement);
+    
+    return [[NSArray alloc] initWithArray:mutableSubmodels];
 }
 
 #pragma mark Getting data private methods

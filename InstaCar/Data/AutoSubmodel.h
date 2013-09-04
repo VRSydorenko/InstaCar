@@ -1,5 +1,5 @@
 //
-//  AutoModel.h
+//  AutoSubmodel.h
 //  InstaCar
 //
 //  Created by VRS on 9/1/13.
@@ -7,17 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "AutoSubmodel.h"
 
-@interface AutoModel : NSObject
+@interface AutoSubmodel : NSObject
 
 @property (nonatomic) NSString *name;
 @property (nonatomic) NSString *logo;
 @property (nonatomic) int startYear;
 @property (nonatomic) int endYear;
-@property (nonatomic) int modelId;
-@property AutoSubmodel *submodel;
 
--(id)initWithId:(int)modelId andName:(NSString*)name;
+-(id)initWithName:(NSString*)name;
 
 @end

@@ -21,6 +21,7 @@
 		7F2767331791E80000A1C1A0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F2767151791E80000A1C1A0 /* UIKit.framework */; };
 		7F27673B1791E80000A1C1A0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7F2767391791E80000A1C1A0 /* InfoPlist.strings */; };
 		7F27673D1791E80000A1C1A0 /* InstaCarTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F27673C1791E80000A1C1A0 /* InstaCarTests.m */; };
+		7F3106CA17D7A9DD0057FCBE /* ModelsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F3106C917D7A9DD0057FCBE /* ModelsVC.m */; };
 		7F3871D317BE4B7900D8E39D /* main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F3871D217BE4B7900D8E39D /* main.storyboard */; };
 		7F3871D617BE4CA900D8E39D /* MainNavController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F3871D517BE4CA900D8E39D /* MainNavController.m */; };
 		7F3871D917BE4D4C00D8E39D /* MainVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F3871D817BE4D4C00D8E39D /* MainVC.m */; };
@@ -46,6 +47,10 @@
 		7F5BC05D17D12B8B00C6EFF3 /* SetDefault.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F5BC05C17D12B8B00C6EFF3 /* SetDefault.m */; };
 		7F70812017D0CE170094D759 /* SetDefault.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F70811D17D0CE170094D759 /* SetDefault.xib */; };
 		7F70812117D0CE170094D759 /* SkinViewBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F70811F17D0CE170094D759 /* SkinViewBase.m */; };
+		7F72A06217D7AB000075FC0B /* CellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F72A06117D7AB000075FC0B /* CellModel.m */; };
+		7F72A06517D7AED10075FC0B /* AutoSubmodel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F72A06417D7AED10075FC0B /* AutoSubmodel.m */; };
+		7F72A06817D7B1390075FC0B /* SubmodelsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F72A06717D7B1390075FC0B /* SubmodelsVC.m */; };
+		7F72A06B17D7B1E10075FC0B /* CellSubmodel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F72A06A17D7B1E10075FC0B /* CellSubmodel.m */; };
 		7F7FF47017CF8634000E0ABD /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F7FF46F17CF8634000E0ABD /* Location.m */; };
 		7FB233B317D6773C003751B5 /* CellSelectedAuto.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FB233B217D6773C003751B5 /* CellSelectedAuto.m */; };
 		7FC4137517C7E8450025DD2C /* Foursquare2.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FC4136C17C7E8450025DD2C /* Foursquare2.m */; };
@@ -89,6 +94,8 @@
 		7F2767381791E80000A1C1A0 /* InstaCarTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "InstaCarTests-Info.plist"; sourceTree = "<group>"; };
 		7F27673A1791E80000A1C1A0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		7F27673C1791E80000A1C1A0 /* InstaCarTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InstaCarTests.m; sourceTree = "<group>"; };
+		7F3106C817D7A9DD0057FCBE /* ModelsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ModelsVC.h; path = InstaCar/ModelsVC.h; sourceTree = "<group>"; };
+		7F3106C917D7A9DD0057FCBE /* ModelsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ModelsVC.m; path = InstaCar/ModelsVC.m; sourceTree = "<group>"; };
 		7F3871D217BE4B7900D8E39D /* main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = main.storyboard; sourceTree = "<group>"; };
 		7F3871D417BE4CA900D8E39D /* MainNavController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainNavController.h; sourceTree = "<group>"; };
 		7F3871D517BE4CA900D8E39D /* MainNavController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainNavController.m; sourceTree = "<group>"; };
@@ -134,6 +141,14 @@
 		7F70811D17D0CE170094D759 /* SetDefault.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SetDefault.xib; sourceTree = "<group>"; };
 		7F70811E17D0CE170094D759 /* SkinViewBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkinViewBase.h; sourceTree = "<group>"; };
 		7F70811F17D0CE170094D759 /* SkinViewBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SkinViewBase.m; sourceTree = "<group>"; };
+		7F72A06017D7AB000075FC0B /* CellModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CellModel.h; path = InstaCar/TableCells/CellModel.h; sourceTree = "<group>"; };
+		7F72A06117D7AB000075FC0B /* CellModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CellModel.m; path = InstaCar/TableCells/CellModel.m; sourceTree = "<group>"; };
+		7F72A06317D7AED10075FC0B /* AutoSubmodel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AutoSubmodel.h; path = InstaCar/Data/AutoSubmodel.h; sourceTree = "<group>"; };
+		7F72A06417D7AED10075FC0B /* AutoSubmodel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AutoSubmodel.m; path = InstaCar/Data/AutoSubmodel.m; sourceTree = "<group>"; };
+		7F72A06617D7B1380075FC0B /* SubmodelsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SubmodelsVC.h; path = InstaCar/SubmodelsVC.h; sourceTree = "<group>"; };
+		7F72A06717D7B1390075FC0B /* SubmodelsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SubmodelsVC.m; path = InstaCar/SubmodelsVC.m; sourceTree = "<group>"; };
+		7F72A06917D7B1E10075FC0B /* CellSubmodel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CellSubmodel.h; path = InstaCar/TableCells/CellSubmodel.h; sourceTree = "<group>"; };
+		7F72A06A17D7B1E10075FC0B /* CellSubmodel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CellSubmodel.m; path = InstaCar/TableCells/CellSubmodel.m; sourceTree = "<group>"; };
 		7F7FF46E17CF8634000E0ABD /* Location.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Location.h; path = InstaCar/Data/Location.h; sourceTree = "<group>"; };
 		7F7FF46F17CF8634000E0ABD /* Location.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Location.m; path = InstaCar/Data/Location.m; sourceTree = "<group>"; };
 		7FB233B117D6773C003751B5 /* CellSelectedAuto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CellSelectedAuto.h; path = InstaCar/TableCells/CellSelectedAuto.h; sourceTree = "<group>"; };
@@ -241,6 +256,10 @@
 				7FF3389217D4C0E700B046C4 /* SkinsVC.m */,
 				7FEF908717D505E800C07A05 /* AutosVC.h */,
 				7FEF908817D505E800C07A05 /* AutosVC.m */,
+				7F3106C817D7A9DD0057FCBE /* ModelsVC.h */,
+				7F3106C917D7A9DD0057FCBE /* ModelsVC.m */,
+				7F72A06617D7B1380075FC0B /* SubmodelsVC.h */,
+				7F72A06717D7B1390075FC0B /* SubmodelsVC.m */,
 				7F2767291791E80000A1C1A0 /* Images.xcassets */,
 				7F2767181791E80000A1C1A0 /* Supporting Files */,
 			);
@@ -294,6 +313,10 @@
 		7F419E1D17D6549C00255E56 /* TableCells */ = {
 			isa = PBXGroup;
 			children = (
+				7F72A06917D7B1E10075FC0B /* CellSubmodel.h */,
+				7F72A06A17D7B1E10075FC0B /* CellSubmodel.m */,
+				7F72A06017D7AB000075FC0B /* CellModel.h */,
+				7F72A06117D7AB000075FC0B /* CellModel.m */,
 				7F419E2517D65EBB00255E56 /* CellSkinSet.h */,
 				7F419E2617D65EBB00255E56 /* CellSkinSet.m */,
 				7F419E2B17D6698000255E56 /* CellAuto.h */,
@@ -341,6 +364,8 @@
 				7F5AC64C17CC06CE00C01658 /* Auto.m */,
 				7F59AC5B17D3BA4700B87457 /* AutoModel.h */,
 				7F59AC5C17D3BA4700B87457 /* AutoModel.m */,
+				7F72A06317D7AED10075FC0B /* AutoSubmodel.h */,
+				7F72A06417D7AED10075FC0B /* AutoSubmodel.m */,
 				7F7FF46E17CF8634000E0ABD /* Location.h */,
 				7F7FF46F17CF8634000E0ABD /* Location.m */,
 				7F59AC5817D3BA2900B87457 /* DataManager.h */,
@@ -495,9 +520,13 @@
 				7F7FF47017CF8634000E0ABD /* Location.m in Sources */,
 				7F419E2D17D6698000255E56 /* CellAuto.m in Sources */,
 				7F419E2717D65EBB00255E56 /* CellSkinSet.m in Sources */,
+				7F72A06217D7AB000075FC0B /* CellModel.m in Sources */,
+				7F3106CA17D7A9DD0057FCBE /* ModelsVC.m in Sources */,
+				7F72A06817D7B1390075FC0B /* SubmodelsVC.m in Sources */,
 				7FFFD7B717D0CF3400C833DE /* SkinSimple.m in Sources */,
 				7F4ECC2D17C8062800BF1671 /* SideViewControllerBase.m in Sources */,
 				7F3871D917BE4D4C00D8E39D /* MainVC.m in Sources */,
+				7F72A06B17D7B1E10075FC0B /* CellSubmodel.m in Sources */,
 				7F70812117D0CE170094D759 /* SkinViewBase.m in Sources */,
 				7F59AC5D17D3BA4700B87457 /* AutoModel.m in Sources */,
 				7FC4137917C7E8450025DD2C /* FSVenue.m in Sources */,
@@ -508,6 +537,7 @@
 				7F2767221791E80000A1C1A0 /* AppDelegate.m in Sources */,
 				7F27671E1791E80000A1C1A0 /* main.m in Sources */,
 				7FC4137817C7E8450025DD2C /* FSTargetCallback.m in Sources */,
+				7F72A06517D7AED10075FC0B /* AutoSubmodel.m in Sources */,
 				7F1767AC17C76F0F00724BD6 /* CaptureSessionManager.m in Sources */,
 				7FB233B317D6773C003751B5 /* CellSelectedAuto.m in Sources */,
 				7FEF908917D505E800C07A05 /* AutosVC.m in Sources */,

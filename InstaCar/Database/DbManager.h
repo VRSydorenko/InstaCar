@@ -21,5 +21,6 @@
 
 -(NSArray*)getAllAutos; // type: Auto
 -(NSArray*)getModelsOfAuto:(int)autoId; // type: AutoModel
+-(NSArray*)getSubmodelsOfModel:(int)modelId; // type: AutoSubmodel
 
 @end
