@@ -151,7 +151,7 @@ typedef enum {
     return selectedAuto;
 }
 
-- (IBAction)btnBackPressed:(UIButton *)sender {
+- (IBAction)btnBackPressed {
     switch (currentContentType) {
         case CONTENT_AUTOS:{
             [self dismissViewControllerAnimated:YES completion:nil];
@@ -175,7 +175,7 @@ typedef enum {
     }
 }
 
-- (IBAction)btnClosePressed {
+- (IBAction)btnClosePressed:(id)sender {
     [self.autoSelectorDelegate newAutoSelected:nil];
 }
 @end

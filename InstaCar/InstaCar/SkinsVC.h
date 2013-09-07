@@ -18,5 +18,6 @@
 
 @property (weak, nonatomic) IBOutlet UITableView *tableSets;
 @property (weak, nonatomic) IBOutlet UITableView *tableSelectedAuto;
+- (IBAction)btnClosePressed:(id)sender;
 
 @end

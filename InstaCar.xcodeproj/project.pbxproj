@@ -38,7 +38,6 @@
 		7F59AC6D17D3C20C00B87457 /* DbForeignKey.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F59AC6617D3C20C00B87457 /* DbForeignKey.m */; };
 		7F59AC6E17D3C20C00B87457 /* DbManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F59AC6817D3C20C00B87457 /* DbManager.m */; };
 		7F59AC6F17D3C20C00B87457 /* DbTable.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F59AC6A17D3C20C00B87457 /* DbTable.m */; };
-		7F59AC7217D3C88400B87457 /* bmw_256.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F59AC7117D3C88400B87457 /* bmw_256.png */; };
 		7F59AC7517D3C8CC00B87457 /* UserSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F59AC7417D3C8CC00B87457 /* UserSettings.m */; };
 		7F59AC7817D3E67000B87457 /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F59AC7717D3E67000B87457 /* Utils.m */; };
 		7F5AC64417CC000400C01658 /* SkinProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F5AC64317CC000400C01658 /* SkinProvider.m */; };
@@ -57,6 +56,7 @@
 		7FC4137C17C7EFF70025DD2C /* LocationsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FC4137B17C7EFF70025DD2C /* LocationsVC.m */; };
 		7FEF908917D505E800C07A05 /* AutosVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FEF908817D505E800C07A05 /* AutosVC.m */; };
 		7FF3389317D4C0E700B046C4 /* SkinsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FF3389217D4C0E700B046C4 /* SkinsVC.m */; };
+		7FFEBC5517DBA54F00B1DC9A /* auto_logos.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7FFEBC5417DBA54F00B1DC9A /* auto_logos.xcassets */; };
 		7FFFD7B717D0CF3400C833DE /* SkinSimple.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FFFD7B617D0CF3400C833DE /* SkinSimple.m */; };
 /* End PBXBuildFile section */
 
@@ -121,7 +121,6 @@
 		7F59AC6817D3C20C00B87457 /* DbManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DbManager.m; sourceTree = "<group>"; };
 		7F59AC6917D3C20C00B87457 /* DbTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DbTable.h; sourceTree = "<group>"; };
 		7F59AC6A17D3C20C00B87457 /* DbTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DbTable.m; sourceTree = "<group>"; };
-		7F59AC7117D3C88400B87457 /* bmw_256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bmw_256.png; sourceTree = "<group>"; };
 		7F59AC7317D3C8CC00B87457 /* UserSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserSettings.h; path = InstaCar/Data/UserSettings.h; sourceTree = "<group>"; };
 		7F59AC7417D3C8CC00B87457 /* UserSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserSettings.m; path = InstaCar/Data/UserSettings.m; sourceTree = "<group>"; };
 		7F59AC7617D3E67000B87457 /* Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Utils.h; path = InstaCar/Data/Utils.h; sourceTree = "<group>"; };
@@ -157,6 +156,7 @@
 		7FEF908817D505E800C07A05 /* AutosVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AutosVC.m; path = InstaCar/AutosVC.m; sourceTree = "<group>"; };
 		7FF3389117D4C0E700B046C4 /* SkinsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SkinsVC.h; path = InstaCar/SkinsVC.h; sourceTree = "<group>"; };
 		7FF3389217D4C0E700B046C4 /* SkinsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SkinsVC.m; path = InstaCar/SkinsVC.m; sourceTree = "<group>"; };
+		7FFEBC5417DBA54F00B1DC9A /* auto_logos.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = auto_logos.xcassets; path = InstaCar/Data/auto_logos.xcassets; sourceTree = "<group>"; };
 		7FFFD7B517D0CF3400C833DE /* SkinSimple.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkinSimple.h; sourceTree = "<group>"; };
 		7FFFD7B617D0CF3400C833DE /* SkinSimple.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SkinSimple.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -326,19 +326,9 @@
 			path = InstaCar/Database;
 			sourceTree = "<group>";
 		};
-		7F59AC7017D3C88400B87457 /* AutoLogos */ = {
-			isa = PBXGroup;
-			children = (
-				7F59AC7117D3C88400B87457 /* bmw_256.png */,
-			);
-			name = AutoLogos;
-			path = InstaCar/Data/AutoLogos;
-			sourceTree = "<group>";
-		};
 		7F5AC64117CBFFDD00C01658 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				7F59AC7017D3C88400B87457 /* AutoLogos */,
 				7F5AC64217CC000400C01658 /* SkinProvider.h */,
 				7F5AC64317CC000400C01658 /* SkinProvider.m */,
 				7F5AC64B17CC06CE00C01658 /* Auto.h */,
@@ -355,6 +345,7 @@
 				7F59AC7417D3C8CC00B87457 /* UserSettings.m */,
 				7F59AC7617D3E67000B87457 /* Utils.h */,
 				7F59AC7717D3E67000B87457 /* Utils.m */,
+				7FFEBC5417DBA54F00B1DC9A /* auto_logos.xcassets */,
 			);
 			name = Data;
 			sourceTree = "<group>";
@@ -475,10 +466,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				7F27672A1791E80000A1C1A0 /* Images.xcassets in Resources */,
+				7FFEBC5517DBA54F00B1DC9A /* auto_logos.xcassets in Resources */,
 				7F27671C1791E80000A1C1A0 /* InfoPlist.strings in Resources */,
 				7F70812017D0CE170094D759 /* SetDefault.xib in Resources */,
 				7F3871D317BE4B7900D8E39D /* main.storyboard in Resources */,
-				7F59AC7217D3C88400B87457 /* bmw_256.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

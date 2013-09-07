@@ -60,7 +60,7 @@
 
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
-    return 50;
+    return 30;
 }
 
 -(NSString*)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
@@ -123,7 +123,7 @@
         cell.autoLogo.image = [UIImage imageNamed:_auto.logo];
     } else {
         cell.autoTitleLabel.text = @"Select auto...";
-        cell.autoLogo.image = [UIImage imageNamed:@"bmw_256.png"]; // TODO: load placeholder logo
+        cell.autoLogo.image = [UIImage imageNamed:@"anycarLogo.png"]; // TODO: load placeholder logo
     }
     
     CGSize textSize = [cell.autoTitleLabel.text sizeWithAttributes:[NSDictionary dictionaryWithObject:cell.autoTitleLabel.font forKey: NSFontAttributeName]];
@@ -159,7 +159,7 @@
 #pragma mark AutoSelectorDelegate
 
 -(void)newAutoSelected:(Auto*)newAuto{
-    [autosVC dismissViewControllerAnimated:NO completion:nil];
+    //[autosVC dismissViewControllerAnimated:NO completion:nil];
     if (newAuto){
         if (isSelectingSecondAuto){
             [DataManager setSelectedAuto2:newAuto];
@@ -169,6 +169,7 @@
             [[DataManager getSelectedSkinSet] updateData:newAuto ofType:AUTO1];
         }
         [self.tableSelectedAuto reloadData];
+        //[self.tableSelectedAuto reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationAutomatic];
     }
     
     [self.sideActionDelegate performSideAction:EMPTY withArgument:nil];
@@ -182,4 +183,7 @@
     }
 }
 
+- (IBAction)btnClosePressed:(id)sender {
+    [self.sideActionDelegate performSideAction:EMPTY withArgument:nil];
+}
 @end

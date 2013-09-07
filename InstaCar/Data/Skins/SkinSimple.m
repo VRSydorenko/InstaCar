@@ -27,6 +27,7 @@
 
 -(void)fieldAuto1DidUpdate{
     Auto *auto1 = [DataManager getSelectedAuto1];
+    self.imgEmblem.contentMode = UIViewContentModeScaleAspectFit;
     self.imgEmblem.image = [UIImage imageNamed:auto1.logo];
     self.textAuto.text = auto1.name;
     CGSize textSize = [auto1.name sizeWithAttributes:[NSDictionary dictionaryWithObject:self.textAuto.font forKey: NSFontAttributeName]];

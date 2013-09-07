@@ -12,7 +12,9 @@
 #import "AppMenuTableVC.h"
 #import "LocationsVC.h"
 
-@interface MainNavController ()
+@interface MainNavController (){
+    SideViewControllerBase *sideViewController;
+}
 
 @end
 
@@ -57,18 +59,21 @@
             break;
         }
     }
-    
-    SideViewControllerBase *sideController = [[UIStoryboard storyboardWithName:@"main" bundle:nil] instantiateViewControllerWithIdentifier:sideViewId];
-    sideController.sideActionDelegate = self;
-    if ([sideController conformsToProtocol:@protocol(DDMenuControllerDelegate)]){
-        self.menuControllerDelegate = (NSObject<DDMenuControllerDelegate>*)sideController;
+
+    if (sideViewController){
+        sideViewController = nil;
+    }
+    sideViewController = [[UIStoryboard storyboardWithName:@"main" bundle:nil] instantiateViewControllerWithIdentifier:sideViewId];
+    sideViewController.sideActionDelegate = self;
+    if ([sideViewController conformsToProtocol:@protocol(DDMenuControllerDelegate)]){
+        self.menuControllerDelegate = (NSObject<DDMenuControllerDelegate>*)sideViewController;
     }
     
     if (isLeft){
-        menuController.leftViewController = sideController;
+        menuController.leftViewController = sideViewController;
         [menuController showLeftController:YES];
     } else {
-        menuController.rightViewController = sideController;
+        menuController.rightViewController = sideViewController;
         [menuController showRightController:YES];
     }
 }

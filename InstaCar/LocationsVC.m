@@ -38,8 +38,8 @@
     locationManager = [[CLLocationManager alloc]init];
     locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters;
     locationManager.delegate = self;
-    [locationManager startUpdatingLocation];
     
+    [self btnRefreshPressed:self.btnRefresh];
 }
 
 - (void)didReceiveMemoryWarning
@@ -64,6 +64,7 @@
 }
 
 -(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations{
+    [locationManager stopUpdatingLocation];
     CLLocation *newLocation = (CLLocation*)locations.lastObject;
     [Foursquare2 searchVenuesNearByLatitude:@(newLocation.coordinate.latitude)
                  longitude:@(newLocation.coordinate.longitude)
@@ -81,10 +82,35 @@
                          NSArray* venues = [dic valueForKeyPath:@"response.venues"];
                          FSConverter *converter = [[FSConverter alloc]init];
                          self.nearbyVenues = [converter convertToObjects:venues];
-                         [self.tableVenues reloadData];
-                    }
+                         [self.tableVenues reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationAutomatic];
+                         
+                         // restore refresh button
+                         NSMutableArray *toolBarButtons = [self.toolBar.items mutableCopy];
+                         [toolBarButtons insertObject:self.btnRefresh atIndex:0];
+                         self.toolBar.items = toolBarButtons;
+                         [self.activityIndicator stopAnimating];
+                     } else {
+                         [locationManager startUpdatingLocation];
+                     }
                 }
      ];
+}
+
+- (IBAction)btnBackPressed {
+    [locationManager stopUpdatingLocation];
+    if (self.sideActionDelegate){
+        [self.sideActionDelegate performSideAction:EMPTY withArgument:nil];
+    }
+}
+
+- (IBAction)btnRefreshPressed:(id)sender {
+    // hide refresh button
+    NSMutableArray *toolBarButtons = [self.toolBar.items mutableCopy];
+    [toolBarButtons removeObject:self.btnRefresh];
+    self.toolBar.items = toolBarButtons;
+    [self.activityIndicator startAnimating];
+    
+    [locationManager startUpdatingLocation];
 }
 
 @end
