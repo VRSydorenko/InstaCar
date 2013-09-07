@@ -21,4 +21,7 @@
 @property (weak, nonatomic) IBOutlet UITableView *tableAutos;
 @property id<AutoSelectorDelegate> autoSelectorDelegate;
 
+- (IBAction)btnBackPressed:(UIButton *)sender;
+- (IBAction)btnClosePressed;
+
 @end

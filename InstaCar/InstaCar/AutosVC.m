@@ -37,6 +37,7 @@ typedef enum {
     selectingModelForAutoIndex = -1;
     data = [DataManager getAutos];
     currentContentType = CONTENT_AUTOS;
+    //[self.btnBack setTitle:@"Back" forState:UIControlStateNormal];
     
     self.tableAutos.delegate = self;
     self.tableAutos.dataSource = self;
@@ -61,6 +62,7 @@ typedef enum {
     switch (currentContentType) {
         case CONTENT_AUTOS:{
             Auto *_auto = [data objectAtIndex:indexPath.row];
+            cell.tag = indexPath.row;
             cell.autoTitleLabel.text = _auto.name;
             cell.autoLogo.image = [UIImage imageNamed:_auto.logo];
             cell.sublevelPickerDelegate = self;
@@ -71,6 +73,7 @@ typedef enum {
         }
         case CONTENT_MODELS:{
             AutoModel *model = [data objectAtIndex:indexPath.row];
+            cell.tag = indexPath.row;
             cell.autoTitleLabel.text = model.name;
             cell.autoLogo.image = [UIImage imageNamed:model.logo];
             cell.sublevelPickerDelegate = self;
@@ -119,14 +122,16 @@ typedef enum {
             selectedAuto = [data objectAtIndex:index];
             data = [DataManager getModelsOfAuto:selectedAuto._id];
             currentContentType = CONTENT_MODELS;
-            [self.tableAutos reloadData];
+            [self.tableAutos reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationAutomatic];
+            //[self.btnBack setTitle:@"Cars" forState:UIControlStateNormal];
             break;
         }
         case CONTENT_MODELS:{
             selectedModel = [data objectAtIndex:index];
             data = [DataManager getSubmodelsOfModel:selectedModel.modelId];
             currentContentType = CONTENT_SUBMODELS;
-            [self.tableAutos reloadData];
+            [self.tableAutos reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationAutomatic];
+            //[self.btnBack setTitle:@"Models" forState:UIControlStateNormal];
             break;
         }
         default:
@@ -146,4 +151,31 @@ typedef enum {
     return selectedAuto;
 }
 
+- (IBAction)btnBackPressed:(UIButton *)sender {
+    switch (currentContentType) {
+        case CONTENT_AUTOS:{
+            [self dismissViewControllerAnimated:YES completion:nil];
+//            [self.autoSelectorDelegate newAutoSelected:nil];
+            break;
+        }
+        case CONTENT_MODELS:{
+            data = [DataManager getAutos];
+            currentContentType = CONTENT_AUTOS;
+            [self.tableAutos reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationAutomatic];
+            //[self.btnBack setTitle:@"Back" forState:UIControlStateNormal];
+            break;
+        }
+        case CONTENT_SUBMODELS:{
+            data = [DataManager getModelsOfAuto:selectedAuto._id];
+            currentContentType = CONTENT_MODELS;
+            [self.tableAutos reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationAutomatic];
+            //[self.btnBack setTitle:@"Cars" forState:UIControlStateNormal];
+            break;
+        }
+    }
+}
+
+- (IBAction)btnClosePressed {
+    [self.autoSelectorDelegate newAutoSelected:nil];
+}
 @end

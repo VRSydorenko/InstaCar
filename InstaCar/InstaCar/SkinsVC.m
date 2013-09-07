@@ -141,6 +141,7 @@
         }
         isSelectingSecondAuto = indexPath.row == 1; // 0 or 1
         [self presentViewController:autosVC animated:YES completion:nil];
+        [tableView deselectRowAtIndexPath:indexPath animated:YES];
     } else if (tableView == self.tableSets) {
         [tableView deselectRowAtIndexPath:indexPath animated:YES];
         SkinSet *newSet = [sets objectAtIndex:indexPath.row];
