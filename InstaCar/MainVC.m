@@ -128,9 +128,7 @@ typedef enum {
                 self.constraintViewMiddleButtonsBottomMargin.constant = -32.0; // half of the view container height
                 self.constraintViewMiddleButtonsHeight.constant = 1;
                 self.btnMiddleLeft.titleLabel.alpha = 0.0;
-                if (buttonsInInitialState){
-                    self.btnMiddle.titleLabel.alpha = 0.0;
-                }
+                self.btnMiddle.titleLabel.alpha = 0.0;
                 self.btnMiddleRight.titleLabel.alpha = 0.0;
                 
                 [self.view layoutIfNeeded];
@@ -159,9 +157,7 @@ typedef enum {
                 self.constraintViewMiddleButtonsBottomMargin.constant = 0;
                 self.constraintViewMiddleButtonsHeight.constant = 64.0;
                 self.btnMiddleLeft.titleLabel.alpha = 1.0;
-                if (!buttonsInInitialState){
-                    self.btnMiddle.titleLabel.alpha = 1.0;
-                }
+                self.btnMiddle.titleLabel.alpha = 1.0;
                 self.btnMiddleRight.titleLabel.alpha = 1.0;
             
                 [self.view layoutIfNeeded];

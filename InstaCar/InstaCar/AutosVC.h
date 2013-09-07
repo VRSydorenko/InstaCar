@@ -9,7 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "DataManager.h"
 #import "CellAuto.h"
-#import "ModelsVC.h"
 
 @protocol AutoSelectorDelegate <NSObject>
 -(void)newAutoSelected:(Auto*)newAuto;
@@ -17,8 +16,7 @@
 
 @interface AutosVC : UIViewController <UITableViewDelegate,
                                        UITableViewDataSource,
-                                       SublevelPickerDelegate,
-                                       ModelSelectorDelegate>
+                                       SublevelPickerDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableAutos;
 @property id<AutoSelectorDelegate> autoSelectorDelegate;

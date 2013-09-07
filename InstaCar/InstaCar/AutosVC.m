@@ -8,11 +8,22 @@
 
 #import "AutosVC.h"
 
+typedef enum {
+    CONTENT_AUTOS = 0,
+    CONTENT_MODELS = 1,
+    CONTENT_SUBMODELS = 2,
+} ContentType;
+
 @interface AutosVC (){
-    NSArray *autos;
+    NSArray *data;
     
-    ModelsVC *modelsVC;
     int selectingModelForAutoIndex;
+    
+    ContentType currentContentType;
+    
+    Auto *selectedAuto;
+    AutoModel *selectedModel;
+    AutoSubmodel *selectedSubmodel;
 }
 
 @end
@@ -24,7 +35,8 @@
     [super viewDidLoad];
 	
     selectingModelForAutoIndex = -1;
-    autos = [DataManager getAutos];
+    data = [DataManager getAutos];
+    currentContentType = CONTENT_AUTOS;
     
     self.tableAutos.delegate = self;
     self.tableAutos.dataSource = self;
@@ -36,86 +48,102 @@
     // Dispose of any resources that can be recreated.
 }
 
--(void)viewWillDisappear:(BOOL)animated{
-    if (modelsVC){
-        [modelsVC dismissViewControllerAnimated:NO completion:nil];
-    }
-}
-
 #pragma mark Table methods
 
--(UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
-{
-    UILabel *label = [[UILabel alloc] init];
-    label.text = [self tableView:tableView titleForHeaderInSection:section];
-    label.backgroundColor = [UIColor clearColor];
-    label.textAlignment = NSTextAlignmentRight;
-    return label;
-}
-
--(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
-{
-    return 50;
-}
-
--(NSString*)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
-    return @"Cars";
-}
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return autos.count;
+    return data.count;
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     static NSString *CellIdentifier = @"cellAuto";
     CellAuto *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
-    Auto *_auto = [autos objectAtIndex:indexPath.row];
-    cell.tag = indexPath.row; // store index for model button handler
-    cell.autoTitleLabel.text = _auto.name;
-    cell.autoLogo.image = [UIImage imageNamed:_auto.logo];
-    cell.sublevelPickerDelegate = self;
-    
-    NSArray *models = [DataManager getModelsOfAuto:_auto._id];
-    cell.autoModelsButton.hidden = models.count == 0;
+    switch (currentContentType) {
+        case CONTENT_AUTOS:{
+            Auto *_auto = [data objectAtIndex:indexPath.row];
+            cell.autoTitleLabel.text = _auto.name;
+            cell.autoLogo.image = [UIImage imageNamed:_auto.logo];
+            cell.sublevelPickerDelegate = self;
+            
+            NSArray *models = [DataManager getModelsOfAuto:_auto._id];
+            cell.autoModelsButton.hidden = models.count == 0;
+            break;
+        }
+        case CONTENT_MODELS:{
+            AutoModel *model = [data objectAtIndex:indexPath.row];
+            cell.autoTitleLabel.text = model.name;
+            cell.autoLogo.image = [UIImage imageNamed:model.logo];
+            cell.sublevelPickerDelegate = self;
+            
+            NSArray *submodels = [DataManager getSubmodelsOfModel:model.modelId];
+            cell.autoModelsButton.hidden = submodels.count == 0;
+            break;
+        }
+        case CONTENT_SUBMODELS:{
+            AutoSubmodel *submodel = [data objectAtIndex:indexPath.row];
+            cell.autoTitleLabel.text = submodel.name;
+            cell.autoLogo.image = [UIImage imageNamed:submodel.logo];
+            cell.autoModelsButton.hidden = YES;
+            break;
+        }
+    }
     
     return cell;
 }
 
 - (void)tableView:(UITableView*)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if (self.autoSelectorDelegate){
-        [self.autoSelectorDelegate newAutoSelected:[autos objectAtIndex:indexPath.row]];
-    }
-}
-
-#pragma mark ModelSelectorDelegate
-
--(void)newModelSelected:(AutoModel*)newModel{
-    if (modelsVC){
-        [modelsVC dismissViewControllerAnimated:NO completion:nil];
-        modelsVC = nil;
-        if (selectingModelForAutoIndex != -1){
-            Auto *_auto = [autos objectAtIndex:selectingModelForAutoIndex];
-            _auto.model = newModel;
-            if (self.autoSelectorDelegate){
-                [self.autoSelectorDelegate newAutoSelected:[autos objectAtIndex:selectingModelForAutoIndex]];
+        switch (currentContentType) {
+            case CONTENT_AUTOS:{
+                selectedAuto = [data objectAtIndex:indexPath.row];
+                break;
+            }
+            case CONTENT_MODELS:{
+                selectedModel = [data objectAtIndex:indexPath.row];
+                break;
+            }
+            case CONTENT_SUBMODELS:{
+                selectedSubmodel = [data objectAtIndex:indexPath.row];
+                break;
             }
         }
+        [self.autoSelectorDelegate newAutoSelected:[self prepareResult]];
     }
 }
 
 #pragma mark SublevelPickerDelegate
 
 -(void)sublevelButtonPressedAtIndex:(int)index{
-    if (!modelsVC){
-        modelsVC = [[UIStoryboard storyboardWithName:@"main" bundle:nil] instantiateViewControllerWithIdentifier:@"modelsVC"];
-        modelsVC.modelSelectorDelegate = self;
-        Auto *_auto = [autos objectAtIndex:index];
-        modelsVC.autoId = _auto._id;
-        selectingModelForAutoIndex = index;
+    switch (currentContentType) {
+        case CONTENT_AUTOS:{
+            selectedAuto = [data objectAtIndex:index];
+            data = [DataManager getModelsOfAuto:selectedAuto._id];
+            currentContentType = CONTENT_MODELS;
+            [self.tableAutos reloadData];
+            break;
+        }
+        case CONTENT_MODELS:{
+            selectedModel = [data objectAtIndex:index];
+            data = [DataManager getSubmodelsOfModel:selectedModel.modelId];
+            currentContentType = CONTENT_SUBMODELS;
+            [self.tableAutos reloadData];
+            break;
+        }
+        default:
+            break;
     }
-    [self presentViewController:modelsVC animated:YES completion:nil];
+}
+
+#pragma mark private methods
+
+-(Auto*)prepareResult{
+    if (selectedModel){
+        if (selectedSubmodel){
+            selectedModel.submodel = selectedSubmodel;
+        }
+        selectedAuto.model = selectedModel;
+    }
+    return selectedAuto;
 }
 
 @end
