@@ -29,7 +29,8 @@
     Auto *auto1 = [DataManager getSelectedAuto1];
     self.imgEmblem.image = [UIImage imageNamed:auto1.logo];
     self.textAuto.text = auto1.name;
-    CGSize textSize = [auto1.name sizeWithFont:self.textAuto.font];
+    CGSize textSize = [auto1.name sizeWithAttributes:[NSDictionary dictionaryWithObject:self.textAuto.font forKey: NSFontAttributeName]];
+
     self.autoTitleWidth.constant = textSize.width;
 }
 

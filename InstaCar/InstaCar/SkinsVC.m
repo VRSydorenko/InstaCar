@@ -126,7 +126,8 @@
         cell.autoLogo.image = [UIImage imageNamed:@"bmw_256.png"]; // TODO: load placeholder logo
     }
     
-    cell.constraintMainTextWidth.constant = [cell.autoTitleLabel.text sizeWithFont:cell.autoTitleLabel.font].width; // TODO: set this size in the cell class
+    CGSize textSize = [cell.autoTitleLabel.text sizeWithAttributes:[NSDictionary dictionaryWithObject:cell.autoTitleLabel.font forKey: NSFontAttributeName]];
+    cell.constraintMainTextWidth.constant = textSize.width; // TODO: set this size in the cell class
     
     return cell;
 }
@@ -177,7 +178,6 @@
 -(void)menuControllerWillShowRootViewController{
     if (autosVC){
         [autosVC dismissViewControllerAnimated:NO completion:nil];
-        autosVC = nil;
     }
 }
 

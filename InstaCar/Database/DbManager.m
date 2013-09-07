@@ -100,15 +100,25 @@
     countryId = [self addCountry:@"Germany"];
     logoId = [self addLogo:@"bmw_256.png"];
     autoId = [self addAuto:@"BMW" country:countryId logo:logoId];
-    [self addAutoModel:@"1 Series" ofAuto:autoId logo:logoId startYear:0 endYear:0];
+    modelId = [self addAutoModel:@"1 Series" ofAuto:autoId logo:logoId startYear:0 endYear:0];
+    {
+        [self addAutoSubmodel:@"E81" ofModel:modelId logo:logoId startYear:2004 endYear:2012];
+        [self addAutoSubmodel:@"E82" ofModel:modelId logo:logoId startYear:2007 endYear:0];
+        [self addAutoSubmodel:@"E87" ofModel:modelId logo:logoId startYear:2004 endYear:2012];
+        [self addAutoSubmodel:@"E88" ofModel:modelId logo:logoId startYear:2007 endYear:0];
+        [self addAutoSubmodel:@"F20" ofModel:modelId logo:logoId startYear:2011 endYear:0];
+        [self addAutoSubmodel:@"F21" ofModel:modelId logo:logoId startYear:2011 endYear:0];
+    }
     [self addAutoModel:@"1x Convertible" ofAuto:autoId logo:logoId startYear:0 endYear:0];
     [self addAutoModel:@"1x Coupe" ofAuto:autoId logo:logoId startYear:0 endYear:0];
     [self addAutoModel:@"1x M Coupe" ofAuto:autoId logo:logoId startYear:0 endYear:0];
+    
+    [self addAutoModel:@"3x GT" ofAuto:autoId logo:logoId startYear:0 endYear:0];
     modelId = [self addAutoModel:@"3 Series" ofAuto:autoId logo:logoId startYear:0 endYear:0];
     {
         [self addAutoSubmodel:@"E46" ofModel:modelId logo:logoId startYear:2001 endYear:2005];
     }
-    [self addAutoModel:@"3x GT" ofAuto:autoId logo:logoId startYear:0 endYear:0];
+    [self addAutoModel:@"3x Compact" ofAuto:autoId logo:logoId startYear:0 endYear:0];
     [self addAutoModel:@"3x Convertible" ofAuto:autoId logo:logoId startYear:0 endYear:0];
     [self addAutoModel:@"3x Compact" ofAuto:autoId logo:logoId startYear:0 endYear:0];
     [self addAutoModel:@"3x Coupe" ofAuto:autoId logo:logoId startYear:0 endYear:0];
@@ -118,8 +128,36 @@
         [self addAutoSubmodel:@"E34" ofModel:modelId logo:logoId startYear:1990 endYear:1998];
     }
     [self addAutoModel:@"6 Series" ofAuto:autoId logo:logoId startYear:0 endYear:0];
+    [self addAutoModel:@"6x Convertible" ofAuto:autoId logo:logoId startYear:0 endYear:0];
     [self addAutoModel:@"7 Series" ofAuto:autoId logo:logoId startYear:0 endYear:0];
-    [self addAutoModel:@"X1 Series" ofAuto:autoId logo:logoId startYear:0 endYear:0];
+    [self addAutoModel:@"8 Series" ofAuto:autoId logo:logoId startYear:0 endYear:0];
+    [self addAutoModel:@"Gran Turismo" ofAuto:autoId logo:logoId startYear:0 endYear:0];
+    [self addAutoModel:@"M Coupe" ofAuto:autoId logo:logoId startYear:0 endYear:0];
+    [self addAutoModel:@"M3" ofAuto:autoId logo:logoId startYear:0 endYear:0];
+    [self addAutoModel:@"M3 Convertible" ofAuto:autoId logo:logoId startYear:0 endYear:0];
+    [self addAutoModel:@"M3 Coupe" ofAuto:autoId logo:logoId startYear:0 endYear:0];
+    [self addAutoModel:@"M5" ofAuto:autoId logo:logoId startYear:0 endYear:0];
+    [self addAutoModel:@"M6" ofAuto:autoId logo:logoId startYear:0 endYear:0];
+    modelId = [self addAutoModel:@"X Series" ofAuto:autoId logo:logoId startYear:0 endYear:0];
+    {
+        [self addAutoSubmodel:@"X1" ofModel:modelId logo:logoId startYear:0 endYear:0];
+        [self addAutoSubmodel:@"X3" ofModel:modelId logo:logoId startYear:0 endYear:0];
+        [self addAutoSubmodel:@"X4" ofModel:modelId logo:logoId startYear:0 endYear:0];
+        [self addAutoSubmodel:@"X5" ofModel:modelId logo:logoId startYear:0 endYear:0];
+        [self addAutoSubmodel:@"X5 M" ofModel:modelId logo:logoId startYear:0 endYear:0];
+        [self addAutoSubmodel:@"X6" ofModel:modelId logo:logoId startYear:0 endYear:0];
+        [self addAutoSubmodel:@"X6 M" ofModel:modelId logo:logoId startYear:0 endYear:0];
+    }
+    modelId = [self addAutoModel:@"Z Series" ofAuto:autoId logo:logoId startYear:0 endYear:0];
+    {
+        [self addAutoSubmodel:@"Z1" ofModel:modelId logo:logoId startYear:0 endYear:0];
+        [self addAutoSubmodel:@"Z3" ofModel:modelId logo:logoId startYear:0 endYear:0];
+        [self addAutoSubmodel:@"Z4" ofModel:modelId logo:logoId startYear:0 endYear:0];
+        [self addAutoSubmodel:@"Z4 Coupe" ofModel:modelId logo:logoId startYear:0 endYear:0];
+        [self addAutoSubmodel:@"Z4 M Coupe" ofModel:modelId logo:logoId startYear:0 endYear:0];
+        [self addAutoSubmodel:@"Z4 M Roadster" ofModel:modelId logo:logoId startYear:0 endYear:0];
+        [self addAutoSubmodel:@"Z8" ofModel:modelId logo:logoId startYear:0 endYear:0];
+    }
 }
 
 #pragma mark -

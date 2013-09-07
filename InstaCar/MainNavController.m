@@ -54,7 +54,6 @@
         }
         case SKINS:{
             sideViewId = @"skinsVC";
-            //sideViewId = @"rightNavCon";
             break;
         }
     }
