@@ -9,6 +9,7 @@
 #import "LocationsVC.h"
 #import "Foursquare2.h"
 #import "FSConverter.h"
+#import "CellVenue.h"
 
 @interface LocationsVC (){
     CLLocationManager *locationManager;
@@ -42,12 +43,6 @@
     [self btnRefreshPressed:self.btnRefresh];
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return self.nearbyVenues.count;
@@ -56,9 +51,15 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"cellVenue";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    CellVenue *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
-    cell.textLabel.text = [self.nearbyVenues[indexPath.row] name];
+    FSVenue *venue = [self.nearbyVenues objectAtIndex:indexPath.row];
+    
+    cell.textVenueName.text =  venue.name;
+    NSURL *url = [NSURL URLWithString:venue.iconURL];
+    NSData *data = [NSData dataWithContentsOfURL:url];
+    UIImage *img = [UIImage imageWithData:data];
+    cell.imgVenueIcon.image = img;
     
     return cell;
 }
@@ -84,11 +85,7 @@
                          self.nearbyVenues = [converter convertToObjects:venues];
                          [self.tableVenues reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationAutomatic];
                          
-                         // restore refresh button
-                         NSMutableArray *toolBarButtons = [self.toolBar.items mutableCopy];
-                         [toolBarButtons insertObject:self.btnRefresh atIndex:0];
-                         self.toolBar.items = toolBarButtons;
-                         [self.activityIndicator stopAnimating];
+                         [self restoreRefreshButtonIfHidden];
                      } else {
                          [locationManager startUpdatingLocation];
                      }
@@ -98,6 +95,9 @@
 
 - (IBAction)btnBackPressed {
     [locationManager stopUpdatingLocation];
+    
+    [self restoreRefreshButtonIfHidden];
+    
     if (self.sideActionDelegate){
         [self.sideActionDelegate performSideAction:EMPTY withArgument:nil];
     }
@@ -111,6 +111,15 @@
     [self.activityIndicator startAnimating];
     
     [locationManager startUpdatingLocation];
+}
+
+-(void)restoreRefreshButtonIfHidden{
+    NSMutableArray *toolBarButtons = [self.toolBar.items mutableCopy];
+    if (![toolBarButtons containsObject:self.btnRefresh]){
+        [toolBarButtons insertObject:self.btnRefresh atIndex:0];
+        self.toolBar.items = toolBarButtons;
+    }
+    [self.activityIndicator stopAnimating];
 }
 
 @end

@@ -21,6 +21,7 @@
 		7F2767331791E80000A1C1A0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F2767151791E80000A1C1A0 /* UIKit.framework */; };
 		7F27673B1791E80000A1C1A0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7F2767391791E80000A1C1A0 /* InfoPlist.strings */; };
 		7F27673D1791E80000A1C1A0 /* InstaCarTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F27673C1791E80000A1C1A0 /* InstaCarTests.m */; };
+		7F2E97DC17DBDF9D003598EC /* CellVenue.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F2E97DB17DBDF9D003598EC /* CellVenue.m */; };
 		7F3871D317BE4B7900D8E39D /* main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F3871D217BE4B7900D8E39D /* main.storyboard */; };
 		7F3871D617BE4CA900D8E39D /* MainNavController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F3871D517BE4CA900D8E39D /* MainNavController.m */; };
 		7F3871D917BE4D4C00D8E39D /* MainVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F3871D817BE4D4C00D8E39D /* MainVC.m */; };
@@ -90,6 +91,8 @@
 		7F2767381791E80000A1C1A0 /* InstaCarTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "InstaCarTests-Info.plist"; sourceTree = "<group>"; };
 		7F27673A1791E80000A1C1A0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		7F27673C1791E80000A1C1A0 /* InstaCarTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InstaCarTests.m; sourceTree = "<group>"; };
+		7F2E97DA17DBDF9D003598EC /* CellVenue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CellVenue.h; path = InstaCar/TableCells/CellVenue.h; sourceTree = "<group>"; };
+		7F2E97DB17DBDF9D003598EC /* CellVenue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CellVenue.m; path = InstaCar/TableCells/CellVenue.m; sourceTree = "<group>"; };
 		7F3871D217BE4B7900D8E39D /* main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = main.storyboard; sourceTree = "<group>"; };
 		7F3871D417BE4CA900D8E39D /* MainNavController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainNavController.h; sourceTree = "<group>"; };
 		7F3871D517BE4CA900D8E39D /* MainNavController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainNavController.m; sourceTree = "<group>"; };
@@ -304,6 +307,8 @@
 				7F419E2C17D6698000255E56 /* CellAuto.m */,
 				7FB233B117D6773C003751B5 /* CellSelectedAuto.h */,
 				7FB233B217D6773C003751B5 /* CellSelectedAuto.m */,
+				7F2E97DA17DBDF9D003598EC /* CellVenue.h */,
+				7F2E97DB17DBDF9D003598EC /* CellVenue.m */,
 			);
 			name = TableCells;
 			sourceTree = "<group>";
@@ -517,6 +522,7 @@
 				7FB233B317D6773C003751B5 /* CellSelectedAuto.m in Sources */,
 				7FEF908917D505E800C07A05 /* AutosVC.m in Sources */,
 				7F59AC7517D3C8CC00B87457 /* UserSettings.m in Sources */,
+				7F2E97DC17DBDF9D003598EC /* CellVenue.m in Sources */,
 				7F59AC5A17D3BA2900B87457 /* DataManager.m in Sources */,
 				7FC4137717C7E8450025DD2C /* FSRequester.m in Sources */,
 				7FC4137617C7E8450025DD2C /* FSConverter.m in Sources */,

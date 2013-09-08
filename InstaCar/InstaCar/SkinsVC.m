@@ -120,9 +120,11 @@
     
     if (_auto){
         cell.autoTitleLabel.text = _auto.name;
+        cell.autoLogo.contentMode = UIViewContentModeScaleAspectFit;
         cell.autoLogo.image = [UIImage imageNamed:_auto.logo];
     } else {
         cell.autoTitleLabel.text = @"Select auto...";
+        cell.autoLogo.contentMode = UIViewContentModeCenter;
         cell.autoLogo.image = [UIImage imageNamed:@"anycarLogo.png"]; // TODO: load placeholder logo
     }
     

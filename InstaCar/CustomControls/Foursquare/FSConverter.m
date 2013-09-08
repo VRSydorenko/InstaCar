@@ -20,6 +20,10 @@
         ann.venueId = v[@"id"];
         ann.location.address = v[@"location"][@"address"];
         ann.location.distance = v[@"location"][@"distance"];
+
+        ann.iconURL = @"https://foursquare.com/img/categories_v2/parks_outdoors/plaza_64.png";
+        //ann.iconURL = [NSString stringWithFormat:@"%@bg_64%@", v[@"categories"][@"icon"][@"prefix"], v[@"categories"][@"icon"][@"suffix"]];
+        // TODO: save to db and load then
         
         [ann.location setCoordinate:CLLocationCoordinate2DMake([v[@"location"][@"lat"] doubleValue],
                                                                [v[@"location"][@"lng"] doubleValue])];

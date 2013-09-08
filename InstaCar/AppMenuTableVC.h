@@ -12,5 +12,6 @@
                                                     UITableViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableAppMenu;
+- (IBAction)btnClosePressed:(id)sender;
 
 @end
