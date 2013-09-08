@@ -31,6 +31,14 @@
     return [SkinProvider getInstance].skinSets;
 }
 
++(UIImage*)getIconForPath:(NSString*)path{
+    return [[self dbManager] getIconForPath:path];
+}
++(void)addIcon:(UIImage*)icon forPath:(NSString*)path{
+    [[self dbManager] addIcon:icon forPath:path];
+}
+
+
 +(Auto*)getSelectedAuto1{
     return [SkinProvider getInstance].selectedAuto1;
 }

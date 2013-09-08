@@ -16,6 +16,8 @@
 +(NSArray*)getModelsOfAuto:(int)autoId; // type: AutoModel
 +(NSArray*)getSubmodelsOfModel:(int)modelId; // type: AutoSubModel
 +(NSArray*)getSkinSets; // type: SkinSet
++(UIImage*)getIconForPath:(NSString*)path;
++(void)addIcon:(UIImage*)icon forPath:(NSString*)path;
 
 +(Auto*)getSelectedAuto1;
 +(void)setSelectedAuto1:(Auto*)selectedAuto;

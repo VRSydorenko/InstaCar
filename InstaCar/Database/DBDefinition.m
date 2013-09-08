@@ -59,6 +59,11 @@
     [tSubmodels addForeignKey:F_MODEL_ID refTable:T_MODELS refField:F_ID];
     [tSubmodels addForeignKey:F_LOGO_ID refTable:T_LOGOS refField:F_ID];
     [tables addObject:tSubmodels];
+    
+    DbTable* tIcons = [[DbTable alloc] initWithTableName:T_ICONS];
+    [tIcons addField:F_FILENAME type:DBTYPE_TEXT notNull:YES];
+    [tIcons addField:F_DATA type:DBTYPE_BLOB notNull:YES];
+    [tables addObject:tIcons];
 }
 
 -(NSArray*) getTablesCreationQueries{

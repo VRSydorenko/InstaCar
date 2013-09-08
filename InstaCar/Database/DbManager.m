@@ -60,7 +60,7 @@
 }
 
 -(void)eraseTables{
-    NSString *eraseSql = [NSString stringWithFormat:@"DELETE FROM %@;DELETE FROM %@;DELETE FROM %@;DELETE FROM %@;DELETE FROM %@;", T_SUBMODELS, T_MODELS, T_AUTOS, T_LOGOS, T_COUNTRIES];
+    NSString *eraseSql = [NSString stringWithFormat:@"DELETE FROM %@;DELETE FROM %@;DELETE FROM %@;DELETE FROM %@;DELETE FROM %@;DELETE FROM %@;", T_SUBMODELS, T_MODELS, T_AUTOS, T_LOGOS, T_COUNTRIES, T_ICONS];
     char *err;
     if (sqlite3_exec(instacarDb, [eraseSql UTF8String], nil, nil, &err) == SQLITE_OK){
         NSLog(@"Tables erased");
@@ -282,6 +282,34 @@
 }
 
 #pragma mark -
+
+#pragma mark Saving data public methods
+-(void)addIcon:(UIImage*)icon forPath:(NSString*)iconPath{
+    NSString* sql = [NSString stringWithFormat: @"INSERT INTO %@ (%@, %@) VALUES (?, ?)", T_ICONS, F_FILENAME, F_DATA];
+    
+    const char *insert_stmt = [sql UTF8String];
+    
+    sqlite3_stmt *statement;
+    if (sqlite3_prepare_v2(instacarDb, insert_stmt, -1, &statement, NULL) == SQLITE_OK){
+        sqlite3_bind_text(statement, 1, [iconPath cStringUsingEncoding:NSUTF8StringEncoding], -1, SQLITE_TRANSIENT);
+        
+        NSData *iconData = UIImagePNGRepresentation(icon);
+        sqlite3_bind_blob(statement, 2, iconData.bytes, iconData.length, SQLITE_TRANSIENT);
+        
+        if (sqlite3_step(statement) == SQLITE_DONE)
+        {
+            NSLog(@"Added icon: %@", iconPath);
+        } else {
+            NSLog(@"Failed to add icon %@", iconPath);
+            NSLog(@"Info:%s", sqlite3_errmsg(instacarDb));
+        }
+    } else {
+        NSLog(@"Error:%s", sqlite3_errmsg(instacarDb));
+    }
+    sqlite3_finalize(statement);    
+}
+
+
 #pragma mark Getting data public methods
 
 -(NSArray*)getAllAutos{
@@ -344,7 +372,7 @@
 -(NSArray*)getSubmodelsOfModel:(int)modelId{
     NSMutableArray *mutableSubmodels = [[NSMutableArray alloc] init];
     
-    //                                                        name   logo  sYear  eYear
+    //                                                        name   logo   sYear  eYear
     NSString *querySQL = [NSString stringWithFormat: @"SELECT %@.%@, %@.%@, %@.%@, %@.%@ FROM %@, %@ WHERE %@.%@=%@.%@ AND %@.%@=%d", T_SUBMODELS, F_NAME, T_LOGOS, F_NAME, T_SUBMODELS, F_YEAR_START, T_SUBMODELS, F_YEAR_END, T_SUBMODELS, T_LOGOS, T_SUBMODELS, F_LOGO_ID, T_LOGOS, F_ID, T_SUBMODELS, F_MODEL_ID, modelId];
     const char *query_stmt = [querySQL UTF8String];
     
@@ -368,6 +396,33 @@
     sqlite3_finalize(statement);
     
     return [[NSArray alloc] initWithArray:mutableSubmodels];
+}
+
+-(UIImage*)getIconForPath:(NSString*)path{
+    NSString *querySQL = [NSString stringWithFormat: @"SELECT %@ FROM %@ WHERE %@=?", F_DATA, T_ICONS, F_FILENAME];
+    const char *query_stmt = [querySQL UTF8String];
+    UIImage *icon = nil;
+    
+    sqlite3_stmt *statement;
+    if (sqlite3_prepare_v2(instacarDb, query_stmt, -1, &statement, NULL) == SQLITE_OK)
+    {
+        sqlite3_bind_text(statement, 1, [path cStringUsingEncoding:NSUTF8StringEncoding], -1, SQLITE_TRANSIENT);
+        if (sqlite3_step(statement) == SQLITE_ROW)
+        {
+            NSUInteger blobLength = sqlite3_column_bytes(statement, 0);
+            NSData *imageData = [NSData dataWithBytes:sqlite3_column_blob(statement, 0) length:blobLength];
+            if (imageData){
+                icon = [UIImage imageWithData:imageData];
+            }
+        } else {
+            NSLog(@"Icon not found");
+        }
+    } else {
+        NSLog(@"Error getting data for icon: %s", sqlite3_errmsg(instacarDb));
+    }
+    sqlite3_finalize(statement);
+    
+    return icon;
 }
 
 #pragma mark Getting data private methods

@@ -45,6 +45,10 @@
 #define T_COUNTRIES @"t_countries"
 // F_NAME
 
+#define T_ICONS @"t_icons"
+#define F_FILENAME @"f_filename"
+#define F_DATA @"f_data"
+
 #pragma mark -
 
 @interface DBDefinition : NSObject
