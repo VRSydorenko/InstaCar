@@ -149,9 +149,9 @@
         SkinSet *newSet = [sets objectAtIndex:indexPath.row];
         if (![[newSet getTitle] isEqualToString:[[DataManager getSelectedSkinSet] getTitle]]){
             [DataManager setSelectedSkinSet:newSet];
-            [self.sideActionDelegate performSideAction:LOAD_NEW_SKINSET withArgument:nil]; // TODO: pass set instead of nil?
+            [self.sideActionDelegate performSideAction:ACT_LOAD_NEW_SKINSET withArgument:nil]; // TODO: pass set instead of nil?
         } else {
-            [self.sideActionDelegate performSideAction:EMPTY withArgument:nil];
+            [self.sideActionDelegate performSideAction:ACT_EMPTY withArgument:nil];
         }
     }
 }
@@ -174,7 +174,7 @@
         //[self.tableSelectedAuto reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationAutomatic];
     }
     
-    [self.sideActionDelegate performSideAction:EMPTY withArgument:nil];
+    [self.sideActionDelegate performSideAction:ACT_EMPTY withArgument:nil];
 }
 
 #pragma mark DDMenuControllerDelegate
@@ -186,6 +186,6 @@
 }
 
 - (IBAction)btnClosePressed:(id)sender {
-    [self.sideActionDelegate performSideAction:EMPTY withArgument:nil];
+    [self.sideActionDelegate performSideAction:ACT_EMPTY withArgument:nil];
 }
 @end

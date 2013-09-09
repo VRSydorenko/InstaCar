@@ -37,6 +37,7 @@
     self.selectedSkinSet = skinDefault; // setting default skin set
     self.selectedAuto1 = nil;
     self.selectedAuto2 = nil;
+    self.selectedVenue = nil;
     
     _skinSets = [[NSArray alloc] initWithArray:sets];
 }

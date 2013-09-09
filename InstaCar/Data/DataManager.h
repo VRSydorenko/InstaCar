@@ -28,4 +28,7 @@
 +(SkinSet*)getSelectedSkinSet;
 +(void)setSelectedSkinSet:(SkinSet*)set;
 
++(FSVenue*)getSelectedVenue;
++(void)setSelectedVenue:(FSVenue*)venue;
+
 @end

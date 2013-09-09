@@ -38,7 +38,6 @@
     [[self dbManager] addIcon:icon forPath:path];
 }
 
-
 +(Auto*)getSelectedAuto1{
     return [SkinProvider getInstance].selectedAuto1;
 }
@@ -59,6 +58,13 @@
 +(void)setSelectedSkinSet:(SkinSet*)set{
     [SkinProvider getInstance].selectedSkinSet = set;
     [UserSettings setLastUsedSkinSet:[set getTitle]];
+}
+
++(FSVenue*)getSelectedVenue{
+    return [SkinProvider getInstance].selectedVenue;
+}
++(void)setSelectedVenue:(FSVenue*)venue{
+    [SkinProvider getInstance].selectedVenue = venue;
 }
 
 @end

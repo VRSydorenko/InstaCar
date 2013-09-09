@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "UserSettings.h"
 #import "SetDefault.h"
+#import "FSVenue.h"
 
 typedef NSObject<SkinSetProtocol> SkinSet;
 
@@ -20,5 +21,6 @@ typedef NSObject<SkinSetProtocol> SkinSet;
 @property SkinSet *selectedSkinSet;
 @property Auto *selectedAuto1;
 @property Auto *selectedAuto2;
+@property FSVenue *selectedVenue;
 
 @end

@@ -16,9 +16,10 @@ typedef enum {
 } SideView; // MainVC tells navCon what to show on side
 
 typedef enum {
-    EMPTY = 0,
-    SHOW_SETTINGS = 1,
-    LOAD_NEW_SKINSET = 2,
+    ACT_EMPTY = 0,
+    ACT_SHOW_SETTINGS = 1,
+    ACT_LOAD_NEW_SKINSET = 2,
+    ACT_UPDATE_SKINS_LOCATION = 3,
 } SideAction; // side controller tells navCon what to do
 
 typedef enum {

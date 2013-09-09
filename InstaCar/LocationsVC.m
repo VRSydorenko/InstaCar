@@ -20,15 +20,6 @@
 
 @implementation LocationsVC
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -43,6 +34,8 @@
     
     [self btnRefreshPressed:self.btnRefresh];
 }
+
+#pragma mark Table methods
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
@@ -71,6 +64,15 @@
     
     return cell;
 }
+
+- (void)tableView:(UITableView*)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    FSVenue *selectedVenue = [self.nearbyVenues objectAtIndex:indexPath.row];
+    [DataManager setSelectedVenue:selectedVenue];
+    [self.sideActionDelegate performSideAction:ACT_UPDATE_SKINS_LOCATION withArgument:selectedVenue];
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
+
+#pragma mark Location manager delegate
 
 -(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations{
     [locationManager stopUpdatingLocation];
@@ -101,13 +103,15 @@
      ];
 }
 
+#pragma mark Event handlers
+
 - (IBAction)btnBackPressed {
     [locationManager stopUpdatingLocation];
     
     [self restoreRefreshButtonIfHidden];
     
     if (self.sideActionDelegate){
-        [self.sideActionDelegate performSideAction:EMPTY withArgument:nil];
+        [self.sideActionDelegate performSideAction:ACT_EMPTY withArgument:nil];
     }
 }
 
@@ -120,6 +124,8 @@
     
     [locationManager startUpdatingLocation];
 }
+
+#pragma marj private methods
 
 -(void)restoreRefreshButtonIfHidden{
     NSMutableArray *toolBarButtons = [self.toolBar.items mutableCopy];

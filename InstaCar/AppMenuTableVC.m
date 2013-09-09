@@ -56,11 +56,11 @@
     
     // TODO: determine the action and pass it in the delegate method further
     
-    [self.sideActionDelegate performSideAction:EMPTY withArgument:nil];
+    [self.sideActionDelegate performSideAction:ACT_EMPTY withArgument:nil];
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 - (IBAction)btnClosePressed:(id)sender {
-    [self.sideActionDelegate performSideAction:EMPTY withArgument:nil];
+    [self.sideActionDelegate performSideAction:ACT_EMPTY withArgument:nil];
 }
 @end

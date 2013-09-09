@@ -21,14 +21,23 @@
         ann.location.address = v[@"location"][@"address"];
         ann.location.distance = v[@"location"][@"distance"];
 
-        ann.iconURL = @"https://foursquare.com/img/categories_v2/parks_outdoors/plaza_64.png";
-        //ann.iconURL = [NSString stringWithFormat:@"%@bg_64%@", v[@"categories"][@"icon"][@"prefix"], v[@"categories"][@"icon"][@"suffix"]];
-        // TODO: save to db and load then
+        NSArray *categories = [v objectForKey:@"categories"];
+        if (categories && categories.count > 0){
+            NSDictionary *catsDic = [categories objectAtIndex:0];
+            if (catsDic && catsDic.count > 0){
+                NSString *prefix = catsDic[@"icon"][@"prefix"];
+                NSString *suffix = catsDic[@"icon"][@"suffix"];
+                if (prefix && suffix){
+                    ann.iconURL = [NSString stringWithFormat:@"%@64%@", prefix, suffix];
+                }
+            }
+        }
         
         [ann.location setCoordinate:CLLocationCoordinate2DMake([v[@"location"][@"lat"] doubleValue],
                                                                [v[@"location"][@"lng"] doubleValue])];
         [objects addObject:ann];
     }
+
     return objects;
 }
 

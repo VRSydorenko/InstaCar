@@ -99,8 +99,11 @@
     [menuController showRootController:YES];
     
     switch (action) {
-        case LOAD_NEW_SKINSET:
+        case ACT_LOAD_NEW_SKINSET:
             [self.dataSelectionChangeDelegate selectedData:SKIN_SET changedTo:object];
+            break;
+        case ACT_UPDATE_SKINS_LOCATION:
+            [self.dataSelectionChangeDelegate selectedData:LOCATION changedTo:object];
             break;
         default:
             break;
