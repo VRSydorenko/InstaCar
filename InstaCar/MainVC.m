@@ -7,6 +7,7 @@
 //
 
 #import "MainVC.h"
+#import "ShareKit.h"
 
 #define SWITCH_TIME 1.0
 
@@ -212,7 +213,10 @@ typedef enum {
 }
 
 -(void)doSharePressed{
-    
+    SHKItem *toShare = [SHKItem image:self.imagePreview.image title:@"Share titte"];
+    SHKActionSheet *actionSheet = [SHKActionSheet actionSheetForItem:toShare];
+    [SHK setRootViewController:self];
+    [actionSheet showInView:self.view];
 }
 
 #pragma mark DDMenuControllerDelegate
@@ -230,6 +234,7 @@ typedef enum {
 
 -(void) imageCaptured{
     [self prepareSquareImage];
+    self.imagePreview.image = self.captureManager.stillImage;
     [self.captureManager clearInputs];
     [self switchButtons];
 }
