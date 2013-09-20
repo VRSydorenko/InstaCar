@@ -13,4 +13,7 @@
 
 +(BOOL)appVersionDiffers;
 
++(NSData*) compressImage:(UIImage*)image;
++(UIImage*)image:(UIImage*)sourceImage byScalingProportionallyToSize:(CGSize)targetSize;
+
 @end

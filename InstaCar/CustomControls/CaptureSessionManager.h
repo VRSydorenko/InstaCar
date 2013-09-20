@@ -11,6 +11,8 @@
 @property (retain) AVCaptureStillImageOutput *stillImageOutput;
 @property (nonatomic, retain) UIImage *stillImage;
 
+@property int imageTopCropMargin; // status bar * navigation item height
+
 - (void)addVideoPreviewLayer;
 - (void)addStillImageOutput;
 - (void)captureStillImage;

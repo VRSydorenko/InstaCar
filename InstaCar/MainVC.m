@@ -8,8 +8,10 @@
 
 #import "MainVC.h"
 #import "ShareKit.h"
+#include "Utils.h"
 
 #define SWITCH_TIME 1.0
+#define IMAGE_SIDE_SIZE 612.0
 
 typedef enum {
     COLLAPSE,
@@ -32,7 +34,6 @@ typedef enum {
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
     
     navCon = (MainNavController*)self.navigationController;
     navCon.dataSelectionChangeDelegate = self;
@@ -58,6 +59,11 @@ typedef enum {
      */
 }
 
+-(void)viewDidAppear:(BOOL)animated{
+    CGPoint convertedPreviewPoint = [self.view convertPoint:self.imagePreview.frame.origin toView:nil];
+    self.captureManager.imageTopCropMargin = convertedPreviewPoint.y;
+}
+
 #pragma mark Initialization
 
 -(void)initCaptureManager{
@@ -67,14 +73,21 @@ typedef enum {
     [self.captureManager addStillImageOutput];
     [self.captureManager addVideoPreviewLayer];
     
+    [self initPreviewLayer];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(imageCaptured) name:kImageCapturedSuccessfully object:nil];
+    [self.captureManager.captureSession startRunning];
+}
+
+-(void)initPreviewLayer{
+    if (!self.captureManager){
+        return;
+    }
+    
     CGRect layerRect = self.imagePreview.frame;
     [self.captureManager.previewLayer setBounds:layerRect];
     [self.captureManager.previewLayer setPosition:CGPointMake(CGRectGetMidX(layerRect), CGRectGetMidY(layerRect))];
-    
-    //[self.view.layer addSublayer:self.captureManager.previewLayer];
     [self.imagePreview.layer addSublayer:self.captureManager.previewLayer];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(imageCaptured) name:kImageCapturedSuccessfully object:nil];
-    [self.captureManager.captureSession startRunning];
 }
 
 -(void)initGestures{
@@ -209,11 +222,18 @@ typedef enum {
 
 -(void)doPickNewPhotoPressed{
     [self.captureManager addLastVideoInput];
+    [self initPreviewLayer];
+    self.captureManager.stillImage = nil;
     [self switchButtons];
 }
 
 -(void)doSharePressed{
-    SHKItem *toShare = [SHKItem image:self.imagePreview.image title:@"Share titte"];
+    UIImage *imageTaken = self.imagePreview.image;
+    UIImage *imageSkin = [activeSkin getImageOfSize:imageTaken.size andScale:imageTaken.scale];
+    UIImage *imageToShare = [self drawImage:imageSkin inImage:imageTaken atPoint:CGPointMake(0, 0)];
+    //imageToShare = [UIImage imageWithData:[Utils compressImage:imageToShare]];
+    
+    SHKItem *toShare = [SHKItem image:imageToShare title:@"Share titte"];
     SHKActionSheet *actionSheet = [SHKActionSheet actionSheetForItem:toShare];
     [SHK setRootViewController:self];
     [actionSheet showInView:self.view];
@@ -233,27 +253,33 @@ typedef enum {
 #pragma mark -
 
 -(void) imageCaptured{
-    [self prepareSquareImage];
-    self.imagePreview.image = self.captureManager.stillImage;
+    //[self prepareSquareImage];
+    //CGSize desiredSize = CGSizeMake(IMAGE_SIDE_SIZE, IMAGE_SIDE_SIZE);
+    
+    self.imagePreview.image = self.captureManager.stillImage;//[Utils image:self.captureManager.stillImage byScalingProportionallyToSize:desiredSize];
+    self.captureManager.stillImage = nil;
+    
     [self.captureManager clearInputs];
+    [self.captureManager.previewLayer removeFromSuperlayer];
     [self switchButtons];
+}
+
+-(UIImage*) drawImage:(UIImage*)fgImage
+              inImage:(UIImage*)bgImage
+              atPoint:(CGPoint)point
+{
+    UIGraphicsBeginImageContext(bgImage.size);
+    [bgImage drawInRect:CGRectMake(0, 0, bgImage.size.width, bgImage.size.height)];
+    [fgImage drawInRect:CGRectMake(point.x, point.y, fgImage.size.width, fgImage.size.height)];
+    UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    return newImage;
 }
 
 - (void)saveImageToPhotoAlbum
 {
     UIImageWriteToSavedPhotosAlbum(self.captureManager.stillImage, self, @selector(image:didFinishSavingWithError:contextInfo:), nil);
-}
-
--(void) prepareSquareImage{
-    UIImage *sourceImage = self.captureManager.stillImage;
-    
-    CGFloat heightScaleFactor =  sourceImage.size.height / self.view.frame.size.height;
-    CGPoint convertedPreviewPoint = [self.view convertPoint:self.imagePreview.frame.origin toView:nil];
-    CGFloat subImageTop = convertedPreviewPoint.y * heightScaleFactor;
-    CGRect subImageRect = CGRectMake(0, subImageTop, sourceImage.size.width, sourceImage.size.width);
-    UIImage *subImage = [UIImage imageWithCGImage:CGImageCreateWithImageInRect(sourceImage.CGImage, subImageRect)];
-    
-    self.captureManager.stillImage = subImage;
 }
 
 - (void)image:(UIImage*)image didFinishSavingWithError:(NSError*)error contextInfo:(void*)contextInfo

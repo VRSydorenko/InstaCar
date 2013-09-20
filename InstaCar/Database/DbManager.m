@@ -21,6 +21,7 @@
         
         if ([Utils appVersionDiffers]){
             [self initData];
+            [UserSettings setStoredAppVersion]; // TODO: uncomment in production
         }
     }
     return self;
@@ -49,7 +50,6 @@
     {
         if ([Utils appVersionDiffers]){
             [self eraseTables];
-            // [UserSettings setStoredAppVersion]; // TODO: uncomment in production
         }
         
         [self createTables];

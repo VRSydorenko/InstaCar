@@ -19,13 +19,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "InstaCar/InstaCar/SkinsVC.m"
-            timestampString = "400284689.648963"
+            filePath = "InstaCar/Data/Skins/SkinViewBase.m"
+            timestampString = "400936360.07436"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "140"
-            endingLineNumber = "140"
-            landmarkName = "-tableView:didSelectRowAtIndexPath:"
+            startingLineNumber = "105"
+            endingLineNumber = "105"
+            landmarkName = "-getImageOfSize:andScale:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -35,14 +35,76 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "InstaCar/InstaCar/TableCells/CellVenue.m"
-            timestampString = "400450174.738041"
+            filePath = "InstaCar/Data/Skins/SkinViewBase.m"
+            timestampString = "400936360.07436"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "17"
-            endingLineNumber = "17"
-            landmarkName = "-setSelected:animated:"
+            startingLineNumber = "106"
+            endingLineNumber = "106"
+            landmarkName = "-getImageOfSize:andScale:"
             landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "InstaCar/Data/Skins/SkinSimple.m"
+            timestampString = "401048949.450647"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
+            landmarkName = "-initialise"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "InstaCar/Data/Skins/SkinSimple.m"
+            timestampString = "401048886.597158"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
+            landmarkName = "-layoutSubviews"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[SkinSimple layoutSubviews]"
+                  moduleName = "InstaCar"
+                  urlString = "file://localhost/Volumes/DATA/VRS/Documents/Projects/InstaCar/InstaCar/Data/Skins/SkinSimple.m"
+                  timestampString = "401048949.598759"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "30"
+                  endingLineNumber = "30"
+                  offsetFromSymbolStart = "652">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[SkinSimple layoutSubviews]"
+                  moduleName = "InstaCar"
+                  urlString = "file://localhost/Volumes/DATA/VRS/Documents/Projects/InstaCar/InstaCar/Data/Skins/SkinSimple.m"
+                  timestampString = "401048949.599259"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "30"
+                  endingLineNumber = "30"
+                  offsetFromSymbolStart = "676">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

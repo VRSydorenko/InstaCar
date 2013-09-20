@@ -92,8 +92,31 @@
     movingViewHeight = height;
 }
 
--(UIImage*)getImage{
-    return nil;
+-(UIImage*)getImageOfSize:(CGSize)size andScale:(CGFloat)scale{
+    CGFloat scaleFactorHeight = size.height/self.frame.size.height;
+    CGFloat scaleFactorWidth = size.width/self.frame.size.width;
+    
+    //[self setViewContentScaleFactor:scale forView:self];
+        
+    //self.transform = CGAffineTransformMakeScale(scaleFactorWidth, scaleFactorHeight);
+    //[self setNeedsDisplay];
+
+    self.layer.contentsScale = scaleFactorHeight;
+    CGRect currentFrame = self.frame;
+    self.frame = CGRectMake(0, 0, size.width, size.height);
+    UIGraphicsBeginImageContextWithOptions(size, NO, scaleFactorHeight);
+    [self.layer renderInContext:UIGraphicsGetCurrentContext()];
+    UIImage *result = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    self.frame = currentFrame;
+    return result;
+}
+
+-(void)setViewContentScaleFactor:(CGFloat)scale forView:(UIView*)view{
+    view.contentScaleFactor = scale;
+    for (UIView *subview in view.subviews) {
+        [self setViewContentScaleFactor:scale forView:subview];
+    }
 }
 
 -(void)moveContentUp{

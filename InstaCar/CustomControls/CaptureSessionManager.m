@@ -78,7 +78,7 @@
 - (void)addStillImageOutput
 {
     self.stillImageOutput = [[AVCaptureStillImageOutput alloc] init];
-    NSDictionary *outputSettings = [[NSDictionary alloc] initWithObjectsAndKeys:AVVideoCodecJPEG, AVVideoCodecKey, nil];
+    NSDictionary *outputSettings = [[NSDictionary alloc] initWithObjectsAndKeys:[NSNumber numberWithInt:kCMVideoCodecType_JPEG], (NSString*)AVVideoCodecKey,  [NSNumber numberWithUnsignedInt:kCVPixelFormatType_32BGRA], (NSString*)kCVPixelBufferPixelFormatTypeKey, nil];
     [self.stillImageOutput setOutputSettings:outputSettings];
     
     AVCaptureConnection *videoConnection = nil;
@@ -113,17 +113,31 @@
     
 	NSLog(@"about to request a capture from: %@", [self stillImageOutput]);
 	[self.stillImageOutput captureStillImageAsynchronouslyFromConnection:videoConnection
-                           completionHandler:^(CMSampleBufferRef imageSampleBuffer, NSError *error) {
-                               CFDictionaryRef exifAttachments = CMGetAttachment(imageSampleBuffer, kCGImagePropertyExifDictionary, NULL);
-                               if (exifAttachments) {
-                                   NSLog(@"attachements: %@", exifAttachments);
-                               } else {
-                                   NSLog(@"no attachments");
-                               }
-                               NSData *imageData = [AVCaptureStillImageOutput jpegStillImageNSDataRepresentation:imageSampleBuffer];
-                               self.stillImage = [[UIImage alloc] initWithData:imageData];
-                               [[NSNotificationCenter defaultCenter] postNotificationName:kImageCapturedSuccessfully object:nil];
-                            }
+        completionHandler:^(CMSampleBufferRef imageSampleBuffer, NSError *error) {
+            /*CFDictionaryRef exifAttachments = CMGetAttachment(imageSampleBuffer, kCGImagePropertyExifDictionary, NULL);
+            if (exifAttachments) {
+                NSLog(@"attachements: %@", exifAttachments);
+            } else {
+                NSLog(@"no attachments");
+            }*/
+                               
+            CVPixelBufferRef pixelBuffer = CMSampleBufferGetImageBuffer(imageSampleBuffer);
+            CIImage *ciImage = [CIImage imageWithCVPixelBuffer:pixelBuffer];
+
+            // calculating rect for cropping
+            CGFloat currentMinSideLength = MIN(ciImage.extent.size.width, ciImage.extent.size.height);
+            CGFloat desiredSideLength = 612.0;
+            CGRect screenRect = [UIScreen mainScreen].bounds;
+            CGFloat topOffset = self.imageTopCropMargin * currentMinSideLength/MIN(screenRect.size.width, screenRect.size.height); // 'top' is 'right' here
+            CGRect subImageRect = CGRectMake(topOffset, 0, currentMinSideLength, currentMinSideLength);
+            
+            ciImage = [ciImage imageByCroppingToRect:subImageRect];
+            ciImage = [ciImage imageByApplyingTransform:CGAffineTransformMakeRotation(-M_PI_2)];
+                               
+            CGFloat imageScale = currentMinSideLength/desiredSideLength;
+            self.stillImage = [[UIImage alloc] initWithCIImage:ciImage scale:imageScale orientation:UIImageOrientationUp];
+            [[NSNotificationCenter defaultCenter] postNotificationName:kImageCapturedSuccessfully object:nil];
+        }
      ];
 }
 

@@ -16,7 +16,7 @@
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <subviews>
                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The best car ever!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GGv-Qr-cwX">
-                            <rect key="frame" x="20" y="0.0" width="219" height="50"/>
+                            <rect key="frame" x="20" y="0.0" width="132" height="50"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="highlightedColor"/>
@@ -24,6 +24,7 @@
                         <imageView userInteractionEnabled="NO" contentMode="right" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="anycarLogo" translatesAutoresizingMaskIntoConstraints="NO" id="SWH-nj-s0u">
                             <rect key="frame" x="247" y="4" width="54" height="42"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="54" id="Oej-UT-i2Y"/>
                             </constraints>
@@ -44,12 +45,11 @@
                         <constraint firstItem="IEM-D4-Cc5" firstAttribute="top" secondItem="QqS-cI-X27" secondAttribute="top" id="8s2-A0-TRU"/>
                         <constraint firstAttribute="height" constant="50" id="Agd-0q-RnN"/>
                         <constraint firstItem="GGv-Qr-cwX" firstAttribute="bottom" secondItem="QqS-cI-X27" secondAttribute="bottom" id="C9A-Gb-UBo"/>
+                        <constraint firstItem="IEM-D4-Cc5" firstAttribute="left" secondItem="SWH-nj-s0u" secondAttribute="right" constant="8" id="OE9-hq-Do8"/>
                         <constraint firstItem="SWH-nj-s0u" firstAttribute="top" secondItem="QqS-cI-X27" secondAttribute="top" constant="4" id="QeF-Yn-QKW"/>
                         <constraint firstItem="GGv-Qr-cwX" firstAttribute="top" secondItem="QqS-cI-X27" secondAttribute="top" id="Sp6-Be-3NM"/>
                         <constraint firstItem="IEM-D4-Cc5" firstAttribute="bottom" secondItem="QqS-cI-X27" secondAttribute="bottom" id="XHd-zk-jwt"/>
                         <constraint firstItem="IEM-D4-Cc5" firstAttribute="trailing" secondItem="QqS-cI-X27" secondAttribute="trailing" constant="-10" id="hVC-zv-vni"/>
-                        <constraint firstItem="SWH-nj-s0u" firstAttribute="leading" secondItem="GGv-Qr-cwX" secondAttribute="trailing" constant="8" id="mdz-EK-18r"/>
-                        <constraint firstItem="IEM-D4-Cc5" firstAttribute="leading" secondItem="SWH-nj-s0u" secondAttribute="trailing" constant="8" id="paa-TF-NCb"/>
                         <constraint firstAttribute="bottom" secondItem="SWH-nj-s0u" secondAttribute="bottom" constant="4" id="wfx-xt-zM7"/>
                     </constraints>
                 </view>
@@ -63,34 +63,17 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="autoTitleWidth" destination="xqm-68-GDy" id="JNF-JH-Bos"/>
+                <outlet property="heightConstraint" destination="Agd-0q-RnN" id="IK4-sH-fAm"/>
                 <outlet property="imgEmblem" destination="SWH-nj-s0u" id="c5I-CC-nUq"/>
                 <outlet property="movingView" destination="QqS-cI-X27" id="Jf2-aK-MzE"/>
                 <outlet property="text" destination="GGv-Qr-cwX" id="695-9s-Zwm"/>
                 <outlet property="textAuto" destination="IEM-D4-Cc5" id="Ncf-SJ-CDP"/>
                 <outlet property="topMargin" destination="3Yj-m2-g2h" id="9HT-1d-dlL"/>
+                <outlet property="widthLogoConstraint" destination="Oej-UT-i2Y" id="bYa-ec-xiX"/>
             </connections>
         </view>
     </objects>
     <resources>
         <image name="anycarLogo" width="24" height="12.5"/>
     </resources>
-    <classes>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-        <class className="SkinSimple" superclassName="SkinViewBase">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SkinSimple.h"/>
-            <relationships>
-                <relationship kind="outlet" name="autoTitleWidth" candidateClass="NSLayoutConstraint"/>
-                <relationship kind="outlet" name="imgEmblem" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="movingView" candidateClass="UIView"/>
-                <relationship kind="outlet" name="text" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="textAuto" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="topMargin" candidateClass="NSLayoutConstraint"/>
-            </relationships>
-        </class>
-        <class className="SkinViewBase" superclassName="UIView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SkinViewBase.h"/>
-        </class>
-    </classes>
 </document>

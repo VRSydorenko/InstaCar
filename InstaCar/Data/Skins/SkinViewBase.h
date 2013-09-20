@@ -55,7 +55,7 @@ typedef enum {
 -(void)setMovingViewConstraint:(NSLayoutConstraint*)topMargin andViewHeight:(unsigned short)height;
 -(BOOL)canEditField:(SkinField)field;
 -(void)updateField:(SkinField)field withValue:(NSObject*)value;
--(UIImage*)getImage;
+-(UIImage*)getImageOfSize:(CGSize)size andScale:(CGFloat)scale;
 
 -(void)moveContentUp;
 -(void)moveContentDown;
