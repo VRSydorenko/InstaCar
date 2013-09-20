@@ -2,8 +2,10 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>59E58379-F9CA-4163-99AD-8D278F366E2D</string>
+	<string>F9401540-F1BC-4F1C-A5D3-E2A4C4F3F1FE</string>
 	<key>IDESourceControlProjectName</key>
 	<string>InstaCar</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>

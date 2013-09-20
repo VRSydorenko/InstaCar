@@ -1,0 +1,27 @@
+PODS:
+  - Facebook-iOS-SDK (3.8.0)
+  - JSONKit (1.5pre)
+  - ShareKit/Core (2.3.1):
+    - SSKeychain (= 0.2.1)
+  - ShareKit/Facebook (2.3.1):
+    - Facebook-iOS-SDK (~> 3.7)
+    - ShareKit/Core
+  - ShareKit/Instagram (2.3.1):
+    - ShareKit/Core
+  - ShareKit/Twitter (2.3.1):
+    - JSONKit (~> 1.4)
+    - ShareKit/Core
+  - SSKeychain (0.2.1)
+
+DEPENDENCIES:
+  - ShareKit/Facebook
+  - ShareKit/Instagram
+  - ShareKit/Twitter
+
+SPEC CHECKSUMS:
+  Facebook-iOS-SDK: 55a22fe8bcaacd638cde9014af6b3ee85f4d71fb
+  JSONKit: 409734ab3407fce90ef7eaa95d7168f38d9a6601
+  ShareKit: f1d9200c6126d23415bc1b4bff264647615b271b
+  SSKeychain: ffa1a79eb716d9ed1ca184fb0cf218087ca28486
+
+COCOAPODS: 0.24.0
