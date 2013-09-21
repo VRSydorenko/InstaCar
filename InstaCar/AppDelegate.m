@@ -9,8 +9,6 @@
 #import "AppDelegate.h"
 #import "MainNavController.h"
 #import "Foursquare2.h"
-#import "SHKConfiguration.h"
-#import "CustomSHKConfigurator.h"
 
 @implementation AppDelegate
 
@@ -18,10 +16,6 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // ShareKit configuration
-    DefaultSHKConfigurator *customShareKitConfig = [[CustomSHKConfigurator alloc] init];
-    [SHKConfiguration sharedInstanceWithConfigurator:customShareKitConfig];
-    
     // Database
     self.dbManager = [[DbManager alloc] init];
     

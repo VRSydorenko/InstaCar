@@ -7,7 +7,6 @@
 //
 
 #import "MainVC.h"
-#import "ShareKit.h"
 #include "Utils.h"
 
 #define SWITCH_TIME 1.0
@@ -233,10 +232,7 @@ typedef enum {
     UIImage *imageToShare = [self drawImage:imageSkin inImage:imageTaken atPoint:CGPointMake(0, 0)];
     //imageToShare = [UIImage imageWithData:[Utils compressImage:imageToShare]];
     
-    SHKItem *toShare = [SHKItem image:imageToShare title:@"Share titte"];
-    SHKActionSheet *actionSheet = [SHKActionSheet actionSheetForItem:toShare];
-    [SHK setRootViewController:self];
-    [actionSheet showInView:self.view];
+    // TODO: share
 }
 
 #pragma mark DDMenuControllerDelegate
