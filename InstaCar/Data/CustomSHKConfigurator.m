@@ -14,8 +14,4 @@
     return @"SHKCustomSharers.plist";
 }
 
--(NSNumber*)isUsingCocoaPods{
-    return [NSNumber numberWithBool:YES];
-}
-
 @end

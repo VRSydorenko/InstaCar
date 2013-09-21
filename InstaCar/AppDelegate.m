@@ -26,7 +26,6 @@
     self.dbManager = [[DbManager alloc] init];
     
     // Foursquare
-    // TODO: create InstaCar app at Foursquare
     [Foursquare2 setupFoursquareWithKey:@"WU4W30WXTHPBEIMQWLGJBFFC2V3NITOGLKLNMWPXL0O5MP2N"
                  secret:@"YGMNXG45YV2RSRYRSVW2NHBFANQWB3MAGUIWNDZNUUTEUR3R"
                  callbackURL:@"app://instatest"];
