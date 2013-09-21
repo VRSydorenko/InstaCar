@@ -7,7 +7,8 @@
 //
 
 #import "MainVC.h"
-#include "Utils.h"
+#import "Utils.h"
+#import "ShareKit.h"
 
 #define SWITCH_TIME 1.0
 #define IMAGE_SIDE_SIZE 612.0
@@ -232,7 +233,17 @@ typedef enum {
     UIImage *imageToShare = [self drawImage:imageSkin inImage:imageTaken atPoint:CGPointMake(0, 0)];
     //imageToShare = [UIImage imageWithData:[Utils compressImage:imageToShare]];
     
-    // TODO: share
+    SHKItem *item = [SHKItem image:imageToShare title:@"Hohoho"];
+    
+    // Get the ShareKit action sheet
+    SHKActionSheet *actionSheet = [SHKActionSheet actionSheetForItem:item];
+    
+    // ShareKit detects top view controller (the one intended to present ShareKit UI) automatically,
+    // but sometimes it may not find one. To be safe, set it explicitly
+    [SHK setRootViewController:self];
+    
+    // Display the action sheet
+    [actionSheet showFromToolbar:navCon.toolbar];
 }
 
 #pragma mark DDMenuControllerDelegate
