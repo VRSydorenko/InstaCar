@@ -8,6 +8,13 @@
 
 #import "SkinViewBase.h"
 
+@interface SkinViewBase(){
+    // TODO: get rid of workaround
+    CGRect workaroundFrame;
+    BOOL workaroundFlag;
+}
+@end
+
 @implementation SkinViewBase
 
 #pragma mark Initialization
@@ -22,6 +29,8 @@
         canEditFieldText2 = NO;
         
         self.userInteractionEnabled = YES;
+        
+        workaroundFlag = NO;
     }
     return self;
 }
@@ -93,22 +102,25 @@
 }
 
 -(UIImage*)getImageOfSize:(CGSize)size andScale:(CGFloat)scale{
-    CGFloat scaleFactorHeight = size.height/self.frame.size.height;
-    CGFloat scaleFactorWidth = size.width/self.frame.size.width;
+    CGFloat scaleFactorHeight = size.height/self.bounds.size.height;
     
-    //[self setViewContentScaleFactor:scale forView:self];
-        
-    //self.transform = CGAffineTransformMakeScale(scaleFactorWidth, scaleFactorHeight);
-    //[self setNeedsDisplay];
-
     self.layer.contentsScale = scaleFactorHeight;
-    CGRect currentFrame = self.frame;
+    if (!workaroundFlag){
+        workaroundFrame = self.frame;
+    }
     self.frame = CGRectMake(0, 0, size.width, size.height);
     UIGraphicsBeginImageContextWithOptions(size, NO, scaleFactorHeight);
     [self.layer renderInContext:UIGraphicsGetCurrentContext()];
     UIImage *result = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
-    self.frame = currentFrame;
+    if (workaroundFlag){
+        self.frame = workaroundFrame;
+        workaroundFlag = NO;
+    } else {
+        workaroundFlag = YES;
+        [self setNeedsLayout];
+        return [self getImageOfSize:size andScale:scale];
+    }
     return result;
 }
 

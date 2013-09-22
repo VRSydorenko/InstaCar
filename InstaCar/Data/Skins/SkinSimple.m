@@ -11,6 +11,7 @@
 
 @interface SkinSimple(){
     CGFloat heightScaleFactor;
+    CGFloat initialFontSize;
 }
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *topMargin;
@@ -23,15 +24,19 @@
 @implementation SkinSimple
 
 -(void)layoutSubviews{
-    self.heightConstraint.constant = self.frame.size.height * heightScaleFactor;
+    self.heightConstraint.constant = self.bounds.size.height * heightScaleFactor;
     float newHeight = self.heightConstraint.constant;
-    self.widthLogoConstraint.constant = self.imgEmblem.frame.size.height * 1.33; // 30% wider than taller
+    self.widthLogoConstraint.constant = self.imgEmblem.bounds.size.height * 1.33; // 30% wider than taller
     float newWidth = self.widthLogoConstraint.constant;
+    self.text.font = [UIFont fontWithName:self.text.font.fontName size:initialFontSize * heightScaleFactor];
+    NSLog(@"New font size: %f", initialFontSize * heightScaleFactor);
+    NSLog(@"New size: width: %f; height: %f", newWidth, newHeight);
     [super layoutSubviews];
 }
 
 -(void)initialise{
     heightScaleFactor = self.movingView.frame.size.height / self.frame.size.height;
+    initialFontSize = self.text.font.pointSize;
     //self.widthLogoConstraint.constant = self.imgEmblem.frame.size.height * 1.3;
     [self setMovingViewConstraint:self.topMargin andViewHeight:self.movingView.frame.size.height];
 
@@ -43,8 +48,16 @@
     Auto *auto1 = [DataManager getSelectedAuto1];
     self.imgEmblem.contentMode = UIViewContentModeScaleAspectFit;
     self.imgEmblem.image = [UIImage imageNamed:auto1.logo];
-    self.textAuto.text = auto1.name;
-    CGSize textSize = [auto1.name sizeWithAttributes:[NSDictionary dictionaryWithObject:self.textAuto.font forKey: NSFontAttributeName]];
+    NSString *autoText = auto1.name;
+    if (auto1.model){
+        if (auto1.model.submodel){
+            autoText = auto1.model.submodel.name;
+        } else {
+            autoText = auto1.model.name;
+        }
+    }
+    self.textAuto.text = autoText;
+    CGSize textSize = [autoText sizeWithAttributes:[NSDictionary dictionaryWithObject:self.textAuto.font forKey: NSFontAttributeName]];
 
     self.autoTitleWidth.constant = textSize.width;
 }
