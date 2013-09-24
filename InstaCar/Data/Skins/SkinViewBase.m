@@ -107,14 +107,20 @@
     self.layer.contentsScale = scaleFactorHeight;
     if (!workaroundFlag){
         workaroundFrame = self.frame;
+        if (movingViewTopMarginConstraint.constant > 0){
+            movingViewTopMarginConstraint.constant = size.height - movingViewHeight*scaleFactorHeight;
+        }
     }
-    self.frame = CGRectMake(0, 0, size.width, size.height);
+    self.frame = CGRectMake(self.frame.origin.x, self.frame.origin.y, size.width, size.height);
     UIGraphicsBeginImageContextWithOptions(size, NO, scaleFactorHeight);
     [self.layer renderInContext:UIGraphicsGetCurrentContext()];
     UIImage *result = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     if (workaroundFlag){
         self.frame = workaroundFrame;
+        if (movingViewTopMarginConstraint.constant > 0){
+            movingViewTopMarginConstraint.constant = workaroundFrame.size.height - movingViewHeight;
+        }
         workaroundFlag = NO;
     } else {
         workaroundFlag = YES;

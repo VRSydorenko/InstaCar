@@ -11,7 +11,6 @@
 
 @interface SkinSimple(){
     CGFloat heightScaleFactor;
-    CGFloat initialFontSize;
 }
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *topMargin;
@@ -27,8 +26,7 @@
     self.heightConstraint.constant = self.bounds.size.height * heightScaleFactor;
     self.widthLogoConstraint.constant = self.imgEmblem.bounds.size.height * 1.33; // 30% wider than taller
     
-    float newFontSize = self.bounds.size.width > 320.0 ? 40.0 : 20.0;
-    self.text.font = [UIFont fontWithName:self.text.font.fontName size:newFontSize];
+    float newFontSize = self.bounds.size.width > 320.0 ? 50.0 : 25.0;
     self.textAuto.font = [UIFont fontWithName:self.textAuto.font.fontName size:newFontSize];
     [self adjustAutoLabelSizeAccordingToText];
     
@@ -36,13 +34,10 @@
 }
 
 -(void)initialise{
-    heightScaleFactor = self.movingView.frame.size.height / self.frame.size.height;
-    initialFontSize = self.text.font.pointSize;
-    //self.widthLogoConstraint.constant = self.imgEmblem.frame.size.height * 1.3;
-    [self setMovingViewConstraint:self.topMargin andViewHeight:self.movingView.frame.size.height];
+    heightScaleFactor = self.movingView.bounds.size.height / self.bounds.size.height;
+    [self setMovingViewConstraint:self.topMargin andViewHeight:self.movingView.bounds.size.height];
 
     canEditFieldAuto1 = YES;
-    canEditFieldText1 = YES;
 }
 
 -(void)fieldAuto1DidUpdate{
@@ -59,10 +54,6 @@
     }
     self.textAuto.text = autoText;
     [self adjustAutoLabelSizeAccordingToText];
-}
-
--(void)fieldText1DidUpdate{
-    self.text.text = fieldText1;
 }
 
 -(void)adjustAutoLabelSizeAccordingToText{

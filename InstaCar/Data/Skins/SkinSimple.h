@@ -12,7 +12,6 @@
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *autoTitleWidth;
 @property (weak, nonatomic) IBOutlet UIImageView *imgEmblem;
-@property (weak, nonatomic) IBOutlet UILabel *text;
 @property (weak, nonatomic) IBOutlet UILabel *textAuto;
 
 @end
