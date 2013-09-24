@@ -25,12 +25,13 @@
 
 -(void)layoutSubviews{
     self.heightConstraint.constant = self.bounds.size.height * heightScaleFactor;
-    float newHeight = self.heightConstraint.constant;
     self.widthLogoConstraint.constant = self.imgEmblem.bounds.size.height * 1.33; // 30% wider than taller
-    float newWidth = self.widthLogoConstraint.constant;
-    self.text.font = [UIFont fontWithName:self.text.font.fontName size:initialFontSize * heightScaleFactor];
-    NSLog(@"New font size: %f", initialFontSize * heightScaleFactor);
-    NSLog(@"New size: width: %f; height: %f", newWidth, newHeight);
+    
+    float newFontSize = self.bounds.size.width > 320.0 ? 40.0 : 20.0;
+    self.text.font = [UIFont fontWithName:self.text.font.fontName size:newFontSize];
+    self.textAuto.font = [UIFont fontWithName:self.textAuto.font.fontName size:newFontSize];
+    [self adjustAutoLabelSizeAccordingToText];
+    
     [super layoutSubviews];
 }
 
@@ -57,13 +58,16 @@
         }
     }
     self.textAuto.text = autoText;
-    CGSize textSize = [autoText sizeWithAttributes:[NSDictionary dictionaryWithObject:self.textAuto.font forKey: NSFontAttributeName]];
-
-    self.autoTitleWidth.constant = textSize.width;
+    [self adjustAutoLabelSizeAccordingToText];
 }
 
 -(void)fieldText1DidUpdate{
     self.text.text = fieldText1;
+}
+
+-(void)adjustAutoLabelSizeAccordingToText{
+    CGSize textSize = [self.textAuto.text sizeWithAttributes:[NSDictionary dictionaryWithObject:self.textAuto.font forKey:NSFontAttributeName]];
+    self.autoTitleWidth.constant = textSize.width;
 }
 
 @end
