@@ -17,6 +17,7 @@
 @property (nonatomic) NSString *logo;
 @property (nonatomic) NSString *country;
 @property (nonatomic) AutoModel *model;
+@property (readonly) NSString* selectedText;
 
 -(id)initWithId:(int)_id name:(NSString*)name logo:(NSString*)logo country:(NSString*)country;
 

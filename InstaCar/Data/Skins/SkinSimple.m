@@ -44,15 +44,8 @@
     Auto *auto1 = [DataManager getSelectedAuto1];
     self.imgEmblem.contentMode = UIViewContentModeScaleAspectFit;
     self.imgEmblem.image = [UIImage imageNamed:auto1.logo];
-    NSString *autoText = auto1.name;
-    if (auto1.model){
-        if (auto1.model.submodel){
-            autoText = auto1.model.submodel.name;
-        } else {
-            autoText = auto1.model.name;
-        }
-    }
-    self.textAuto.text = autoText;
+    self.textAuto.text = auto1.selectedText;
+    
     [self adjustAutoLabelSizeAccordingToText];
 }
 

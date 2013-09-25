@@ -22,4 +22,15 @@
     return self;
 }
 
+-(NSString*)selectedText{
+    if (self.model){
+        if (self.model.submodel){
+            return self.model.submodel.name;
+        } else {
+            return self.model.name;
+        }
+    }
+    return self.name;
+}
+
 @end
