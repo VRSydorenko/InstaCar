@@ -164,7 +164,7 @@
     }
 #pragma mark |---- Mercedes
     logoId = [self addLogo:@"mercedes_256.png"];
-    autoId = [self addAuto:@"Mercedes" country:countryId logo:logoId];
+    autoId = [self addAuto:@"Mercedes-Benz" country:countryId logo:logoId];
     modelId = [self addAutoModel:@"A class" ofAuto:autoId logo:logoId startYear:0 endYear:0];
     {
         [self addAutoSubmodel:@"W168" ofModel:modelId logo:logoId startYear:1997 endYear:2004];

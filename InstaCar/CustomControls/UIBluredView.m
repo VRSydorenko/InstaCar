@@ -36,7 +36,7 @@
     
     UIToolbar *toolbar = [[UIToolbar alloc] initWithFrame:self.bounds];
     toolbar.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-    //toolbar.alpha = 0.9;
+    toolbar.alpha = 0.9;
     [self insertSubview:toolbar atIndex:0];
 }
 

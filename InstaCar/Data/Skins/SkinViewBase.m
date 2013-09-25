@@ -108,7 +108,7 @@
     if (!workaroundFlag){
         workaroundFrame = self.frame;
         if (movingViewTopMarginConstraint.constant > 0){
-            movingViewTopMarginConstraint.constant = size.height - movingViewHeight*scaleFactorHeight;
+            movingViewTopMarginConstraint.constant = size.height - (int)(movingViewHeight*scaleFactorHeight);
         }
     }
     self.frame = CGRectMake(self.frame.origin.x, self.frame.origin.y, size.width, size.height);
