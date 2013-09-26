@@ -62,6 +62,46 @@
                 <outlet property="widthLogoConstraint" destination="Oej-UT-i2Y" id="bYa-ec-xiX"/>
             </connections>
         </view>
+        <view contentMode="scaleToFill" id="W7n-Me-jy0" customClass="SkinSimple2">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="320"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pmx-JJ-kVN">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="anycarLogo" translatesAutoresizingMaskIntoConstraints="NO" id="b04-g2-uAD">
+                            <rect key="frame" x="5" y="5" width="70" height="70"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="70" id="gsm-df-rgg"/>
+                            </constraints>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="80" id="JQe-qm-rHD"/>
+                        <constraint firstItem="b04-g2-uAD" firstAttribute="top" secondItem="Pmx-JJ-kVN" secondAttribute="top" constant="5" id="gxz-KN-rvN"/>
+                        <constraint firstAttribute="bottom" secondItem="b04-g2-uAD" secondAttribute="bottom" constant="5" id="gyN-zv-6qO"/>
+                        <constraint firstItem="b04-g2-uAD" firstAttribute="leading" secondItem="Pmx-JJ-kVN" secondAttribute="leading" constant="5" id="oST-VY-HlM"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="Pmx-JJ-kVN" secondAttribute="trailing" id="3st-Vt-ohb"/>
+                <constraint firstItem="Pmx-JJ-kVN" firstAttribute="leading" secondItem="W7n-Me-jy0" secondAttribute="leading" id="mK4-Ib-E3x"/>
+                <constraint firstItem="Pmx-JJ-kVN" firstAttribute="top" secondItem="W7n-Me-jy0" secondAttribute="top" id="pDC-Za-dpR"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="heightConstraint" destination="JQe-qm-rHD" id="rNu-6x-XmL"/>
+                <outlet property="imgEmblem" destination="b04-g2-uAD" id="ddo-Zp-9zm"/>
+                <outlet property="movingView" destination="Pmx-JJ-kVN" id="O9Q-7s-xwB"/>
+                <outlet property="topMargin" destination="pDC-Za-dpR" id="VkK-i9-o1O"/>
+                <outlet property="widthLogoConstraint" destination="gsm-df-rgg" id="4C6-a8-DqV"/>
+            </connections>
+        </view>
     </objects>
     <resources>
         <image name="anycarLogo" width="24" height="12"/>

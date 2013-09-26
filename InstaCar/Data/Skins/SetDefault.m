@@ -27,10 +27,15 @@
     NSMutableArray *skinsArray = [[NSMutableArray alloc] init];
     NSArray *bundle = [[NSBundle mainBundle] loadNibNamed:@"SetDefault" owner:self options:nil];
     
-    SkinSimple *skinSimple;
     for (id object in bundle) {
         if ([object isKindOfClass:[SkinSimple class]]){
-            skinSimple = (SkinSimple*)object;
+            SkinSimple *skinSimple = (SkinSimple*)object;
+            [skinSimple initialise];
+            [skinsArray addObject:skinSimple];
+            continue;
+        }
+        if ([object isKindOfClass:[SkinSimple2 class]]){
+            SkinSimple2 *skinSimple = (SkinSimple2*)object;
             [skinSimple initialise];
             [skinsArray addObject:skinSimple];
             continue;

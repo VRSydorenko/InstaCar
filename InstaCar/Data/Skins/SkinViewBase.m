@@ -167,7 +167,7 @@
     
     [UIView animateWithDuration:MOVINGVIEW_TIME
             animations:^(void){
-                movingViewTopMarginConstraint.constant = self.frame.size.height - movingViewHeight;
+                movingViewTopMarginConstraint.constant = self.bounds.size.height - movingViewHeight;
                 [self layoutIfNeeded];
             }
             completion:^(BOOL finished){

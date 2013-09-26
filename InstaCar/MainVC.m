@@ -60,7 +60,7 @@ typedef enum {
 }
 
 -(void)viewDidAppear:(BOOL)animated{
-    CGPoint convertedPreviewPoint = [self.view convertPoint:self.imagePreview.frame.origin toView:nil];
+    CGPoint convertedPreviewPoint = [self.imagePreview convertPoint:self.imagePreview.frame.origin toView:nil];
     self.captureManager.imageTopCropMargin = convertedPreviewPoint.y;
 }
 
@@ -101,7 +101,7 @@ typedef enum {
 }
 
 -(void)initSkins{
-    SkinViewBase *skinView = [[SkinProvider getInstance].selectedSkinSet getSkinAtIndex:0];
+    SkinViewBase *skinView = [[SkinProvider getInstance].selectedSkinSet getSkinAtIndex:1];
     [self.scrollSkins addSubview:skinView];
 
     activeSkin = skinView;
