@@ -7,6 +7,7 @@
 //
 
 #import "SkinViewBase.h"
+#import "Utils.h"
 
 @implementation SkinViewBase
 
@@ -93,6 +94,10 @@
 }
 
 -(UIImage*)getImageOfSize:(CGSize)size andScale:(CGFloat)scale{
+    return [self getImageOfSize:size andScale:scale blur:0.0];
+}
+
+-(UIImage*)getImageOfSize:(CGSize)size andScale:(CGFloat)scale blur:(CGFloat)blurStrength {
     CGFloat scaleFactorHeight = size.height/self.bounds.size.height;
     
     self.layer.contentsScale = scaleFactorHeight;
@@ -120,40 +125,12 @@
     [self layoutIfNeeded];
     [self layoutSubviews];
     
+    if (blurStrength > 0){
+        result = [Utils blurImage:result strength:blurStrength];
+    }
+    
     return result;
 }
-
-/*-(UIImage*)getImageOfSize:(CGSize)size andScale:(CGFloat)scale{
-    CGFloat scaleFactorHeight = size.height/self.bounds.size.height;
-    
-    self.layer.contentsScale = scaleFactorHeight;
-    if (!workaroundFlag){
-        workaroundFrame = self.frame;
-        if (movingViewTopMarginConstraint.constant > 0){
-            movingViewTopMarginConstraint.constant = size.height - (int)(movingViewHeight*scaleFactorHeight);
-        }
-    }
-    self.frame = CGRectMake(self.frame.origin.x, self.frame.origin.y, size.width, size.height);
-    UIGraphicsBeginImageContextWithOptions(size, NO, scaleFactorHeight);
-    [self.layer renderInContext:UIGraphicsGetCurrentContext()];
-    UIImage *result = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-    if (workaroundFlag){
-        self.frame = workaroundFrame;
-        if (movingViewTopMarginConstraint.constant > 0){
-            movingViewTopMarginConstraint.constant = workaroundFrame.size.height - movingViewHeight;
-        }
-        workaroundFlag = NO;
-    } else {
-        workaroundFlag = YES;
-        [self setNeedsLayout];
-        return [self getImageOfSize:size andScale:scale];
-    }
-    [self setNeedsLayout];
-    [self layoutIfNeeded];
-    [self layoutSubviews];
-    return result;
-}*/
 
 -(void)setViewContentScaleFactor:(CGFloat)scale forView:(UIView*)view{
     view.contentScaleFactor = scale;

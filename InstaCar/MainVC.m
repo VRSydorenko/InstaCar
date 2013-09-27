@@ -294,12 +294,10 @@ typedef enum {
 -(void)doSharePressed{
     UIImage *imageTaken = self.imagePreview.image;
     UIImage *imageSkin = [activeSkin getImageOfSize:imageTaken.size andScale:imageTaken.scale];
+    
     UIImage *imageToShare = [self drawImage:imageSkin inImage:imageTaken atPoint:CGPointMake(0, 0)];
-    //imageToShare = [UIImage imageWithData:[Utils compressImage:imageToShare]];
     
     SHKItem *item = [SHKItem image:imageToShare title:@"Hohoho"];
-    
-    // Get the ShareKit action sheet
     SHKActionSheet *actionSheet = [SHKActionSheet actionSheetForItem:item];
     
     // ShareKit detects top view controller (the one intended to present ShareKit UI) automatically,
@@ -324,10 +322,7 @@ typedef enum {
 #pragma mark -
 
 -(void) imageCaptured{
-    //[self prepareSquareImage];
-    //CGSize desiredSize = CGSizeMake(IMAGE_SIDE_SIZE, IMAGE_SIDE_SIZE);
-    
-    self.imagePreview.image = self.captureManager.stillImage;//[Utils image:self.captureManager.stillImage byScalingProportionallyToSize:desiredSize];
+    self.imagePreview.image = self.captureManager.stillImage;
     self.captureManager.stillImage = nil;
     
     [self.captureManager clearInputs];
