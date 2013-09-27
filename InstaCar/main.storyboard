@@ -12,7 +12,16 @@
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="rld-yC-Xag">
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.08235294371843338" green="0.29803922772407532" blue="0.78039222955703735" alpha="1" colorSpace="deviceRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="0.0"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
                     </navigationBar>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="wRt-Uz-J66">
+                        <rect key="frame" x="0.0" y="416" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="vLK-Ar-ArR" kind="relationship" relationship="rootViewController" id="ZPb-NM-zN8"/>
                     </connections>
@@ -145,6 +154,11 @@
                                     <constraint firstAttribute="width" constant="320" id="vbr-mu-0dT"/>
                                 </constraints>
                             </imageView>
+                            <pageControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="VGX-8k-cNz">
+                                <rect key="frame" x="20" y="317" width="280" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            </pageControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -176,6 +190,7 @@
                         <outlet property="constraintViewMiddleButtonsBottomMargin" destination="21k-Ug-WJ7" id="nfX-QG-n9o"/>
                         <outlet property="constraintViewMiddleButtonsHeight" destination="jRz-5a-X3U" id="HKG-Uq-gDa"/>
                         <outlet property="imagePreview" destination="4Xz-0E-p37" id="HPP-8Z-05v"/>
+                        <outlet property="pageControl" destination="VGX-8k-cNz" id="ro4-Bz-PC3"/>
                         <outlet property="scrollSkins" destination="H0K-d7-f7o" id="rqj-at-aHX"/>
                         <outlet property="viewMiddleButtons" destination="NyH-nI-Ums" id="xnw-Hc-J6u"/>
                     </connections>

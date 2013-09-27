@@ -12,7 +12,8 @@
 #import "SkinProvider.h"
 
 @interface MainVC : UIViewController <SelectedDataChangeActionProtocol,
-                                      DDMenuControllerDelegate>
+                                      DDMenuControllerDelegate,
+                                      UIScrollViewDelegate>
 
 @property CaptureSessionManager *captureManager;
 
@@ -32,6 +33,7 @@
 
 @property (weak, nonatomic) IBOutlet UIImageView *imagePreview;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollSkins;
+@property (weak, nonatomic) IBOutlet UIPageControl *pageControl;
 
 // Actions
 - (IBAction)btnLocationPressed:(id)sender;

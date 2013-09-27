@@ -78,7 +78,7 @@
                             </constraints>
                         </imageView>
                     </subviews>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="80" id="JQe-qm-rHD"/>
                         <constraint firstItem="b04-g2-uAD" firstAttribute="top" secondItem="Pmx-JJ-kVN" secondAttribute="top" constant="5" id="gxz-KN-rvN"/>

@@ -21,6 +21,7 @@ typedef enum {
 @interface MainVC (){
     MainNavController *navCon;
     BOOL buttonsInInitialState;
+    BOOL isChangingPage;
     
     SkinViewBase *activeSkin;
     UISwipeGestureRecognizer *swipeUp;
@@ -40,6 +41,7 @@ typedef enum {
     navCon.menuControllerDelegate = self;
     
     buttonsInInitialState = YES;
+    isChangingPage = NO;
     
     [self initCaptureManager];
     
@@ -47,6 +49,7 @@ typedef enum {
     
     [self initGestures];
     
+    self.scrollSkins.delegate = self;
     [self.view bringSubviewToFront:self.scrollSkins];
     
     // Navitgation item transparency
@@ -101,10 +104,46 @@ typedef enum {
 }
 
 -(void)initSkins{
-    SkinViewBase *skinView = [[SkinProvider getInstance].selectedSkinSet getSkinAtIndex:1];
-    [self.scrollSkins addSubview:skinView];
+    SkinSet *skinSet = [SkinProvider getInstance].selectedSkinSet;
+    activeSkin = [skinSet getSkinAtIndex:0];
 
-    activeSkin = skinView;
+	self.scrollSkins.indicatorStyle = UIScrollViewIndicatorStyleWhite;
+    
+    const unsigned short pageCount = [skinSet getSkinsCount];
+    const int skinWidth = 320;
+    
+    for (unsigned short i = 0; i < pageCount; i++) {
+        SkinViewBase *skinToAdd = [skinSet getSkinAtIndex:i];
+		
+		CGRect skinRect = skinToAdd.frame;
+        skinRect.origin.x = i * skinWidth;
+        skinRect.origin.y = 0;
+        
+		skinToAdd.frame = skinRect;
+        
+        [self.scrollSkins addSubview:skinToAdd];
+	}
+    
+	[self.scrollSkins setContentSize:CGSizeMake(skinWidth * pageCount, [self.scrollSkins bounds].size.height)];
+    self.pageControl.numberOfPages = pageCount;
+}
+
+- (void)scrollViewDidScroll:(UIScrollView *)sender
+{
+    if (isChangingPage){
+        return;
+    }
+    
+	// Switch page at 50% across
+    CGFloat pageWidth = sender.frame.size.width;
+    int page = floor((sender.contentOffset.x - pageWidth / 2) / pageWidth) + 1;
+    self.pageControl.currentPage = page;
+    
+    activeSkin = [[SkinProvider getInstance].selectedSkinSet getSkinAtIndex:page];
+}
+
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)sender{
+    isChangingPage = NO;
 }
 
 #pragma mark SelectedDataChangeActionProtocol
@@ -243,7 +282,7 @@ typedef enum {
     [SHK setRootViewController:self];
     
     // Display the action sheet
-    [actionSheet showFromToolbar:navCon.toolbar];
+    [actionSheet showInView:self.view];
 }
 
 #pragma mark DDMenuControllerDelegate

@@ -27,6 +27,7 @@
     self.dataSelectionChangeDelegate = nil;
     
     UIBarButtonItem *button = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"nav_menu_icon.png"] style:UIBarButtonItemStyleBordered target:self action:@selector(showAppMenuButtonPressed)];
+    button.TintColor = [UIColor whiteColor];
     UIViewController *topController = [self.viewControllers objectAtIndex:0];
     topController.navigationItem.leftBarButtonItem = button;
 }

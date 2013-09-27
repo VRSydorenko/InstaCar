@@ -32,6 +32,7 @@
 -(void)initialise{
     heightScaleFactor = self.movingView.bounds.size.height / self.bounds.size.height;
     [self.imgEmblem.layer setMinificationFilter:kCAFilterTrilinear];
+    self.movingView.backgroundColor = [UIColor clearColor];
     
     [self setMovingViewConstraint:self.topMargin andViewHeight:self.movingView.bounds.size.height];
 
