@@ -78,7 +78,6 @@
 }
 
 -(void)updateData:(id)data ofType:(SelectedDataChange)type{
-    // TODO: go through all skins and update possible values
     switch (type) {
         case AUTO1:
             for (SkinViewBase *skinView in skins) {

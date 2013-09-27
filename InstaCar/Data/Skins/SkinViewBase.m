@@ -8,13 +8,6 @@
 
 #import "SkinViewBase.h"
 
-@interface SkinViewBase(){
-    // TODO: get rid of workaround
-    CGRect workaroundFrame;
-    BOOL workaroundFlag;
-}
-@end
-
 @implementation SkinViewBase
 
 #pragma mark Initialization
@@ -29,8 +22,6 @@
         canEditFieldText2 = NO;
         
         self.userInteractionEnabled = YES;
-        
-        workaroundFlag = NO;
     }
     return self;
 }
@@ -105,6 +96,37 @@
     CGFloat scaleFactorHeight = size.height/self.bounds.size.height;
     
     self.layer.contentsScale = scaleFactorHeight;
+    CGRect currentFrame = self.frame;
+    if (movingViewTopMarginConstraint.constant > 0){
+        movingViewTopMarginConstraint.constant = size.height - (int)(movingViewHeight*scaleFactorHeight);
+    }
+    
+    self.frame = CGRectMake(self.frame.origin.x, self.frame.origin.y, size.width, size.height);
+    [self setNeedsLayout];
+    [self layoutIfNeeded];
+    [self layoutSubviews];
+    
+    UIGraphicsBeginImageContextWithOptions(size, NO, scaleFactorHeight);
+    [self.layer renderInContext:UIGraphicsGetCurrentContext()];
+    UIImage *result = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    self.frame = currentFrame;
+    if (movingViewTopMarginConstraint.constant > 0){
+        movingViewTopMarginConstraint.constant = currentFrame.size.height - movingViewHeight;
+    }
+    
+    [self setNeedsLayout];
+    [self layoutIfNeeded];
+    [self layoutSubviews];
+    
+    return result;
+}
+
+/*-(UIImage*)getImageOfSize:(CGSize)size andScale:(CGFloat)scale{
+    CGFloat scaleFactorHeight = size.height/self.bounds.size.height;
+    
+    self.layer.contentsScale = scaleFactorHeight;
     if (!workaroundFlag){
         workaroundFrame = self.frame;
         if (movingViewTopMarginConstraint.constant > 0){
@@ -127,8 +149,11 @@
         [self setNeedsLayout];
         return [self getImageOfSize:size andScale:scale];
     }
+    [self setNeedsLayout];
+    [self layoutIfNeeded];
+    [self layoutSubviews];
     return result;
-}
+}*/
 
 -(void)setViewContentScaleFactor:(CGFloat)scale forView:(UIView*)view{
     view.contentScaleFactor = scale;
