@@ -70,6 +70,7 @@
 		7F3A16FC17F612C500584614 /* SetDefault.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F3A16F617F612C500584614 /* SetDefault.xib */; };
 		7F3A16FD17F612C500584614 /* SkinSimple.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F3A16F817F612C500584614 /* SkinSimple.m */; };
 		7F3A16FE17F612C500584614 /* SkinSimple2.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F3A16FA17F612C500584614 /* SkinSimple2.m */; };
+		7F3A170117F627A200584614 /* UIAlphaGradientView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F3A170017F627A200584614 /* UIAlphaGradientView.m */; };
 		7F419E2717D65EBB00255E56 /* CellSkinSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F419E2617D65EBB00255E56 /* CellSkinSet.m */; };
 		7F419E2D17D6698000255E56 /* CellAuto.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F419E2C17D6698000255E56 /* CellAuto.m */; };
 		7F4ECC2D17C8062800BF1671 /* SideViewControllerBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F4ECC2C17C8062800BF1671 /* SideViewControllerBase.m */; };
@@ -238,6 +239,8 @@
 		7F3A16F817F612C500584614 /* SkinSimple.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SkinSimple.m; sourceTree = "<group>"; };
 		7F3A16F917F612C500584614 /* SkinSimple2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkinSimple2.h; sourceTree = "<group>"; };
 		7F3A16FA17F612C500584614 /* SkinSimple2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SkinSimple2.m; sourceTree = "<group>"; };
+		7F3A16FF17F627A200584614 /* UIAlphaGradientView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIAlphaGradientView.h; sourceTree = "<group>"; };
+		7F3A170017F627A200584614 /* UIAlphaGradientView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIAlphaGradientView.m; sourceTree = "<group>"; };
 		7F419E2517D65EBB00255E56 /* CellSkinSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CellSkinSet.h; path = InstaCar/TableCells/CellSkinSet.h; sourceTree = "<group>"; };
 		7F419E2617D65EBB00255E56 /* CellSkinSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CellSkinSet.m; path = InstaCar/TableCells/CellSkinSet.m; sourceTree = "<group>"; };
 		7F419E2B17D6698000255E56 /* CellAuto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CellAuto.h; path = InstaCar/TableCells/CellAuto.h; sourceTree = "<group>"; };
@@ -657,6 +660,8 @@
 				7F3871DD17BE4F1000D8E39D /* DDMenuController.m */,
 				7FC28FC017F31EF200638697 /* UIBluredView.h */,
 				7FC28FC117F31EF200638697 /* UIBluredView.m */,
+				7F3A16FF17F627A200584614 /* UIAlphaGradientView.h */,
+				7F3A170017F627A200584614 /* UIAlphaGradientView.m */,
 				7FCD262A17F5BFEC00BFDF4E /* SMPageControl.h */,
 				7FCD262B17F5BFEC00BFDF4E /* SMPageControl.m */,
 			);
@@ -919,6 +924,7 @@
 				7FC4137817C7E8450025DD2C /* FSTargetCallback.m in Sources */,
 				7F72A06517D7AED10075FC0B /* AutoSubmodel.m in Sources */,
 				7F1767AC17C76F0F00724BD6 /* CaptureSessionManager.m in Sources */,
+				7F3A170117F627A200584614 /* UIAlphaGradientView.m in Sources */,
 				7FB233B317D6773C003751B5 /* CellSelectedAuto.m in Sources */,
 				7F2AD5A617EDE9B40096EC8D /* SHKTextMessage.m in Sources */,
 				7F2AD5D617EDE9B40096EC8D /* SHKFormFieldSettings.m in Sources */,
