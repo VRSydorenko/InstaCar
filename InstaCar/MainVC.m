@@ -26,6 +26,7 @@ typedef enum {
     SkinViewBase *activeSkin;
     UISwipeGestureRecognizer *swipeUp;
     UISwipeGestureRecognizer *swipeDown;
+    SMPageControl *pageControl;
 }
 
 @end
@@ -44,6 +45,8 @@ typedef enum {
     isChangingPage = NO;
     
     [self initCaptureManager];
+    
+    [self initPageControl];
     
     [self initSkins];
     
@@ -125,8 +128,30 @@ typedef enum {
 	}
     
 	[self.scrollSkins setContentSize:CGSizeMake(skinWidth * pageCount, [self.scrollSkins bounds].size.height)];
-    self.pageControl.numberOfPages = pageCount;
+    pageControl.numberOfPages = pageCount;
 }
+
+-(void)initPageControl{
+    if (pageControl){
+        return;
+    }
+    
+    CGRect pageControlFrame = CGRectMake(0, 0, self.pageControlContainer.bounds.size.width, self.pageControlContainer.bounds.size.height);
+    pageControl = [[SMPageControl alloc] initWithFrame:pageControlFrame];
+    pageControl.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
+    
+    pageControl.userInteractionEnabled = NO;
+    
+    //pageControl.pageIndicatorImage = [UIImage imageNamed:@"pageDot.png"];
+    //pageControl.currentPageIndicatorImage = [UIImage imageNamed:@"currentPageDot.png"];
+    pageControl.backgroundColor = [UIColor clearColor];
+    //pageControl.pageIndicatorTintColor = [UIColor whiteColor];
+    
+    [self.pageControlContainer setBarTintColor:navCon.navigationBar.barTintColor];
+    [self.pageControlContainer addSubview:pageControl];
+}
+
+#pragma UIScrollViewDelegate
 
 - (void)scrollViewDidScroll:(UIScrollView *)sender
 {
@@ -137,7 +162,7 @@ typedef enum {
 	// Switch page at 50% across
     CGFloat pageWidth = sender.frame.size.width;
     int page = floor((sender.contentOffset.x - pageWidth / 2) / pageWidth) + 1;
-    self.pageControl.currentPage = page;
+    pageControl.currentPage = page;
     
     activeSkin = [[SkinProvider getInstance].selectedSkinSet getSkinAtIndex:page];
 }

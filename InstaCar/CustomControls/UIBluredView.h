@@ -10,4 +10,6 @@
 
 @interface UIBluredView : UIView
 
+-(void)setBarTintColor:(UIColor *)tintColor;
+
 @end

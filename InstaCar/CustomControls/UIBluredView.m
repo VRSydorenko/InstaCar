@@ -8,7 +8,12 @@
 
 #import "UIBluredView.h"
 
-@implementation UIBluredView
+
+
+@implementation UIBluredView{
+@private
+    UIToolbar *toolbar;
+}
 
 - (id) initWithFrame:(CGRect)frame
 {
@@ -34,10 +39,17 @@
 {   self.opaque = NO;
     self.backgroundColor = [UIColor clearColor];
     
-    UIToolbar *toolbar = [[UIToolbar alloc] initWithFrame:self.bounds];
+    toolbar = [[UIToolbar alloc] initWithFrame:self.bounds];
     toolbar.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     //toolbar.alpha = 0.9;
     [self insertSubview:toolbar atIndex:0];
+}
+
+-(void)setBarTintColor:(UIColor *)tintColor{
+    if (!toolbar){
+        return;
+    }
+    toolbar.barTintColor = tintColor;
 }
 
 /*

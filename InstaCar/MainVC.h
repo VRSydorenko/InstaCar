@@ -10,6 +10,8 @@
 #import "MainNavController.h"
 #import "CaptureSessionManager.h"
 #import "SkinProvider.h"
+#import "SMPageControl.h"
+#import "UIBluredView.h"
 
 @interface MainVC : UIViewController <SelectedDataChangeActionProtocol,
                                       DDMenuControllerDelegate,
@@ -33,7 +35,7 @@
 
 @property (weak, nonatomic) IBOutlet UIImageView *imagePreview;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollSkins;
-@property (weak, nonatomic) IBOutlet UIPageControl *pageControl;
+@property (weak, nonatomic) IBOutlet UIBluredView *pageControlContainer;
 
 // Actions
 - (IBAction)btnLocationPressed:(id)sender;

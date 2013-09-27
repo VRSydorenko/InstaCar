@@ -154,11 +154,14 @@
                                     <constraint firstAttribute="width" constant="320" id="vbr-mu-0dT"/>
                                 </constraints>
                             </imageView>
-                            <pageControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="VGX-8k-cNz">
-                                <rect key="frame" x="20" y="317" width="280" height="37"/>
+                            <view opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kdr-lZ-7HS" customClass="UIBluredView">
+                                <rect key="frame" x="0.0" y="320" width="320" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                            </pageControl>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="tzc-nQ-TxX"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -170,8 +173,11 @@
                             <constraint firstItem="H0K-d7-f7o" firstAttribute="top" secondItem="K25-XF-Jiu" secondAttribute="top" id="AoH-y1-NPz"/>
                             <constraint firstItem="PZn-uN-nYb" firstAttribute="leading" secondItem="K25-XF-Jiu" secondAttribute="leading" id="BkR-xg-5bz"/>
                             <constraint firstItem="4Xz-0E-p37" firstAttribute="leading" secondItem="K25-XF-Jiu" secondAttribute="leading" id="I7Q-xS-A5m"/>
+                            <constraint firstItem="kdr-lZ-7HS" firstAttribute="leading" secondItem="K25-XF-Jiu" secondAttribute="leading" id="ILd-PS-nUk"/>
                             <constraint firstItem="H0K-d7-f7o" firstAttribute="leading" secondItem="K25-XF-Jiu" secondAttribute="leading" id="NkT-m9-wAA"/>
+                            <constraint firstAttribute="trailing" secondItem="kdr-lZ-7HS" secondAttribute="trailing" id="SWN-UC-MeQ"/>
                             <constraint firstItem="AIv-dK-ka2" firstAttribute="bottom" secondItem="K25-XF-Jiu" secondAttribute="bottom" id="cWk-eZ-EWh"/>
+                            <constraint firstItem="kdr-lZ-7HS" firstAttribute="top" secondItem="H0K-d7-f7o" secondAttribute="bottom" id="lcj-2W-qDB"/>
                             <constraint firstItem="PZn-uN-nYb" firstAttribute="bottom" secondItem="K25-XF-Jiu" secondAttribute="bottom" id="oBd-cR-hbr"/>
                             <constraint firstItem="NyH-nI-Ums" firstAttribute="leading" secondItem="PZn-uN-nYb" secondAttribute="trailing" id="oEr-tL-ep0"/>
                             <constraint firstItem="AIv-dK-ka2" firstAttribute="trailing" secondItem="K25-XF-Jiu" secondAttribute="trailing" id="re6-kH-229"/>
@@ -190,7 +196,7 @@
                         <outlet property="constraintViewMiddleButtonsBottomMargin" destination="21k-Ug-WJ7" id="nfX-QG-n9o"/>
                         <outlet property="constraintViewMiddleButtonsHeight" destination="jRz-5a-X3U" id="HKG-Uq-gDa"/>
                         <outlet property="imagePreview" destination="4Xz-0E-p37" id="HPP-8Z-05v"/>
-                        <outlet property="pageControl" destination="VGX-8k-cNz" id="ro4-Bz-PC3"/>
+                        <outlet property="pageControlContainer" destination="kdr-lZ-7HS" id="cjU-tb-oUR"/>
                         <outlet property="scrollSkins" destination="H0K-d7-f7o" id="rqj-at-aHX"/>
                         <outlet property="viewMiddleButtons" destination="NyH-nI-Ums" id="xnw-Hc-J6u"/>
                     </connections>
