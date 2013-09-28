@@ -24,4 +24,21 @@
     return [[UIImage alloc] initWithCIImage:resultImage scale:image.scale orientation:UIImageOrientationUp];
 }
 
++(UIImage*)image:(UIImage*)sourceImage byScalingProportionallyToSize:(CGSize)targetSize{
+    CGFloat widthFactor = targetSize.width / sourceImage.size.width;
+    CGFloat heightFactor = targetSize.height / sourceImage.size.height;
+    CGFloat scaleFactor = (widthFactor < heightFactor) ? widthFactor : heightFactor;
+    
+    CGFloat scaledWidth  = sourceImage.size.width * scaleFactor;
+    CGFloat scaledHeight = sourceImage.size.height * scaleFactor;
+    
+    CGRect rect = CGRectMake(0.0, 0.0, scaledWidth, scaledHeight);
+    UIGraphicsBeginImageContext(rect.size);
+    [sourceImage drawInRect:rect];
+    UIImage* newImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    return newImage;
+}
+
 @end

@@ -13,6 +13,7 @@
 
 +(BOOL)appVersionDiffers;
 
++(UIImage*)image:(UIImage*)sourceImage byScalingProportionallyToSize:(CGSize)targetSize;
 +(UIImage*)blurImage:(UIImage*)image strength:(CGFloat)strength;
 
 @end

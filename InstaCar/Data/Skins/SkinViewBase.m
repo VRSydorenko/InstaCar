@@ -93,25 +93,25 @@
     movingViewHeight = height;
 }
 
--(UIImage*)getImageOfSize:(CGSize)size andScale:(CGFloat)scale{
-    return [self getImageOfSize:size andScale:scale blur:0.0];
+-(UIImage*)getSkinImage{
+    return [self getSkinImageWithBlur:0.0];
 }
 
--(UIImage*)getImageOfSize:(CGSize)size andScale:(CGFloat)scale blur:(CGFloat)blurStrength {
-    CGFloat scaleFactorHeight = size.height/self.bounds.size.height;
+-(UIImage*)getSkinImageWithBlur:(CGFloat)blurStrength {
+    CGFloat scaleFactorHeight = 612.0/self.bounds.size.height;
     
     self.layer.contentsScale = scaleFactorHeight;
     CGRect currentFrame = self.frame;
     if (movingViewTopMarginConstraint.constant > 0){
-        movingViewTopMarginConstraint.constant = size.height - (int)(movingViewHeight*scaleFactorHeight) + 1;
+        movingViewTopMarginConstraint.constant = 612.0 - (int)(movingViewHeight*scaleFactorHeight) + 1;
     }
     
-    self.frame = CGRectMake(self.frame.origin.x, self.frame.origin.y, size.width, size.height);
+    self.frame = CGRectMake(self.frame.origin.x, self.frame.origin.y, 612.0, 612.0);
     [self setNeedsLayout];
     [self layoutIfNeeded];
     [self layoutSubviews];
     
-    UIGraphicsBeginImageContextWithOptions(size, NO, scaleFactorHeight);
+    UIGraphicsBeginImageContextWithOptions(CGSizeMake(612.0, 612.0), NO, scaleFactorHeight);
     [self.layer renderInContext:UIGraphicsGetCurrentContext()];
     UIImage *result = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();

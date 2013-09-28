@@ -57,8 +57,8 @@ typedef enum {
 -(BOOL)canEditField:(SkinField)field;
 -(void)updateField:(SkinField)field withValue:(NSObject*)value;
 
--(UIImage*)getImageOfSize:(CGSize)size andScale:(CGFloat)scale;
--(UIImage*)getImageOfSize:(CGSize)size andScale:(CGFloat)scale blur:(CGFloat)blurStrength;
+-(UIImage*)getSkinImage;
+-(UIImage*)getSkinImageWithBlur:(CGFloat)blurStrength;
 
 -(void)moveContentUp;
 -(void)moveContentDown;

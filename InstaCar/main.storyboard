@@ -52,7 +52,7 @@
                                     <constraint firstAttribute="width" constant="320" id="p43-mh-v34"/>
                                 </constraints>
                             </scrollView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PZn-uN-nYb">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PZn-uN-nYb">
                                 <rect key="frame" x="0.0" y="352" width="64" height="64"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -61,14 +61,14 @@
                                     <constraint firstAttribute="height" constant="64" id="QUx-4q-FEj"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Loc">
+                                <state key="normal" image="Location">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="btnLocationPressed:" destination="vLK-Ar-ArR" eventType="touchUpInside" id="h6U-pb-Yma"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AIv-dK-ka2">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AIv-dK-ka2">
                                 <rect key="frame" x="256" y="352" width="64" height="64"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -77,7 +77,7 @@
                                     <constraint firstAttribute="height" constant="64" id="z8M-24-8cn"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Skins">
+                                <state key="normal" image="Mask">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -103,7 +103,7 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4oZ-cn-B3n">
                                         <rect key="frame" x="64" y="0.0" width="64" height="64"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="backgroundColor" red="0.46274513006210327" green="0.54509806632995605" blue="0.68235296010971069" alpha="1" colorSpace="deviceRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="64" id="g4j-Mv-gDK"/>
                                         </constraints>
@@ -155,11 +155,11 @@
                                 </constraints>
                             </imageView>
                             <view opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kdr-lZ-7HS" customClass="UIBluredView">
-                                <rect key="frame" x="0.0" y="320" width="320" height="30"/>
+                                <rect key="frame" x="0.0" y="320" width="320" height="16"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="tzc-nQ-TxX"/>
+                                    <constraint firstAttribute="height" constant="16" id="tzc-nQ-TxX"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -583,9 +583,11 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Camera" width="24" height="24"/>
-        <image name="PicLandscape" width="22" height="17"/>
-        <image name="Repeat" width="22" height="17"/>
+        <image name="Camera" width="32" height="32"/>
+        <image name="Location" width="15" height="24"/>
+        <image name="Mask" width="24" height="24"/>
+        <image name="PicLandscape" width="24" height="24"/>
+        <image name="Repeat" width="24" height="24"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

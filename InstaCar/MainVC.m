@@ -154,6 +154,8 @@ typedef enum {
     pageControl.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
     
     pageControl.userInteractionEnabled = NO;
+    pageControl.indicatorDiameter = 5.0f;
+    pageControl.indicatorMargin = 4.0f;
     
     //pageControl.pageIndicatorImage = [UIImage imageNamed:@"pageDot.png"];
     //pageControl.currentPageIndicatorImage = [UIImage imageNamed:@"currentPageDot.png"];
@@ -330,18 +332,14 @@ typedef enum {
 
 -(void)doSharePressed{
     UIImage *imageTaken = self.imagePreview.image;
-    UIImage *imageSkin = [activeSkin getImageOfSize:imageTaken.size andScale:imageTaken.scale];
+    UIImage *imageSkin = [activeSkin getSkinImage];
     
     UIImage *imageToShare = [self drawImage:imageSkin inImage:imageTaken atPoint:CGPointMake(0, 0)];
     
     SHKItem *item = [SHKItem image:imageToShare title:@"Hohoho"];
     SHKActionSheet *actionSheet = [SHKActionSheet actionSheetForItem:item];
-    
-    // ShareKit detects top view controller (the one intended to present ShareKit UI) automatically,
-    // but sometimes it may not find one. To be safe, set it explicitly
     [SHK setRootViewController:self];
     
-    // Display the action sheet
     [actionSheet showInView:self.view];
 }
 
@@ -351,16 +349,16 @@ typedef enum {
     swipeDown.enabled = NO;
 }
 
-- (void)menuControllerWillShowRootViewController{
+-(void)menuControllerWillShowRootViewController{
     swipeUp.enabled = YES;
     swipeDown.enabled = YES;
 }
 
 #pragma mark UIImagePickerControllerDelegate
 
--(void) imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
+-(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
-    UIImage *image =  [info objectForKey:UIImagePickerControllerOriginalImage];
+    UIImage *image =  [Utils image:[info objectForKey:UIImagePickerControllerOriginalImage] byScalingProportionallyToSize:CGSizeMake(612.0, 612.0)];
     NSURL *assetURL = [info objectForKey:UIImagePickerControllerReferenceURL];
     
     [assetLibrary assetForURL:assetURL resultBlock:^(ALAsset *asset) {
