@@ -15,7 +15,9 @@
 
 @interface MainVC : UIViewController <SelectedDataChangeActionProtocol,
                                       DDMenuControllerDelegate,
-                                      UIScrollViewDelegate>
+                                      UIScrollViewDelegate,
+                                      UIImagePickerControllerDelegate,
+                                      UINavigationControllerDelegate>
 
 @property CaptureSessionManager *captureManager;
 

@@ -74,6 +74,10 @@
 		7F419E2717D65EBB00255E56 /* CellSkinSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F419E2617D65EBB00255E56 /* CellSkinSet.m */; };
 		7F419E2D17D6698000255E56 /* CellAuto.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F419E2C17D6698000255E56 /* CellAuto.m */; };
 		7F4ECC2D17C8062800BF1671 /* SideViewControllerBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F4ECC2C17C8062800BF1671 /* SideViewControllerBase.m */; };
+		7F4F684317F6F97600F1017B /* HFImageEditorFrameView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F4F683F17F6F97600F1017B /* HFImageEditorFrameView.m */; };
+		7F4F684417F6F97600F1017B /* HFImageEditorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F4F684217F6F97600F1017B /* HFImageEditorViewController.m */; };
+		7F4F684817F6FDF500F1017B /* ImageEditor.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F4F684617F6FDF500F1017B /* ImageEditor.m */; };
+		7F4F684917F6FDF500F1017B /* ImageEditor.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F4F684717F6FDF500F1017B /* ImageEditor.xib */; };
 		7F59AC5A17D3BA2900B87457 /* DataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F59AC5917D3BA2900B87457 /* DataManager.m */; };
 		7F59AC5D17D3BA4700B87457 /* AutoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F59AC5C17D3BA4700B87457 /* AutoModel.m */; };
 		7F59AC5F17D3C1F400B87457 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F59AC5E17D3C1F400B87457 /* libsqlite3.0.dylib */; };
@@ -247,6 +251,14 @@
 		7F419E2C17D6698000255E56 /* CellAuto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CellAuto.m; path = InstaCar/TableCells/CellAuto.m; sourceTree = "<group>"; };
 		7F4ECC2B17C8062800BF1671 /* SideViewControllerBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SideViewControllerBase.h; sourceTree = "<group>"; };
 		7F4ECC2C17C8062800BF1671 /* SideViewControllerBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SideViewControllerBase.m; sourceTree = "<group>"; };
+		7F4F683E17F6F97600F1017B /* HFImageEditorFrameView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFImageEditorFrameView.h; sourceTree = "<group>"; };
+		7F4F683F17F6F97600F1017B /* HFImageEditorFrameView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFImageEditorFrameView.m; sourceTree = "<group>"; };
+		7F4F684017F6F97600F1017B /* HFImageEditorViewController+SubclassingHooks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "HFImageEditorViewController+SubclassingHooks.h"; sourceTree = "<group>"; };
+		7F4F684117F6F97600F1017B /* HFImageEditorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFImageEditorViewController.h; sourceTree = "<group>"; };
+		7F4F684217F6F97600F1017B /* HFImageEditorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFImageEditorViewController.m; sourceTree = "<group>"; };
+		7F4F684517F6FDF500F1017B /* ImageEditor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageEditor.h; sourceTree = "<group>"; };
+		7F4F684617F6FDF500F1017B /* ImageEditor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageEditor.m; sourceTree = "<group>"; };
+		7F4F684717F6FDF500F1017B /* ImageEditor.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImageEditor.xib; sourceTree = "<group>"; };
 		7F59AC5817D3BA2900B87457 /* DataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DataManager.h; path = InstaCar/Data/DataManager.h; sourceTree = "<group>"; };
 		7F59AC5917D3BA2900B87457 /* DataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DataManager.m; path = InstaCar/Data/DataManager.m; sourceTree = "<group>"; };
 		7F59AC5B17D3BA4700B87457 /* AutoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AutoModel.h; path = InstaCar/Data/AutoModel.h; sourceTree = "<group>"; };
@@ -652,6 +664,7 @@
 		7F3871DB17BE4F1000D8E39D /* CustomControls */ = {
 			isa = PBXGroup;
 			children = (
+				7F4F683D17F6F97600F1017B /* ImageEditor */,
 				7F2AD48217EDE9B40096EC8D /* ShareKit */,
 				7FC4136A17C7E8450025DD2C /* Foursquare */,
 				7F1767AA17C76F0F00724BD6 /* CaptureSessionManager.h */,
@@ -696,6 +709,21 @@
 				7F2E97DB17DBDF9D003598EC /* CellVenue.m */,
 			);
 			name = TableCells;
+			sourceTree = "<group>";
+		};
+		7F4F683D17F6F97600F1017B /* ImageEditor */ = {
+			isa = PBXGroup;
+			children = (
+				7F4F684517F6FDF500F1017B /* ImageEditor.h */,
+				7F4F684617F6FDF500F1017B /* ImageEditor.m */,
+				7F4F684717F6FDF500F1017B /* ImageEditor.xib */,
+				7F4F683E17F6F97600F1017B /* HFImageEditorFrameView.h */,
+				7F4F683F17F6F97600F1017B /* HFImageEditorFrameView.m */,
+				7F4F684017F6F97600F1017B /* HFImageEditorViewController+SubclassingHooks.h */,
+				7F4F684117F6F97600F1017B /* HFImageEditorViewController.h */,
+				7F4F684217F6F97600F1017B /* HFImageEditorViewController.m */,
+			);
+			path = ImageEditor;
 			sourceTree = "<group>";
 		};
 		7F59AC6017D3C20C00B87457 /* Database */ = {
@@ -850,6 +878,7 @@
 				7F2AD5CA17EDE9B40096EC8D /* SHKShareFileIcon.png in Resources */,
 				7F2AD59A17EDE9B40096EC8D /* DETweetPaperClip.png in Resources */,
 				7F2AD59D17EDE9B40096EC8D /* DETweetURLAttachment@2x.png in Resources */,
+				7F4F684917F6FDF500F1017B /* ImageEditor.xib in Resources */,
 				7F3A16FC17F612C500584614 /* SetDefault.xib in Resources */,
 				7F2AD48117EDE9390096EC8D /* SHKCustomSharers.plist in Resources */,
 				7F2AD59917EDE9B40096EC8D /* SHKSharers.plist in Resources */,
@@ -891,6 +920,8 @@
 				7F2AD58017EDE9B40096EC8D /* NSData+SaveItemAttachment.m in Sources */,
 				7F7FF47017CF8634000E0ABD /* Location.m in Sources */,
 				7F419E2D17D6698000255E56 /* CellAuto.m in Sources */,
+				7F4F684317F6F97600F1017B /* HFImageEditorFrameView.m in Sources */,
+				7F4F684417F6F97600F1017B /* HFImageEditorViewController.m in Sources */,
 				7F2AD57F17EDE9B40096EC8D /* NSData+md5.m in Sources */,
 				7F2AD58217EDE9B40096EC8D /* NSMutableDictionary+NSNullsToEmptyStrings.m in Sources */,
 				7F2AD5A417EDE9B40096EC8D /* SHKPrint.m in Sources */,
@@ -913,6 +944,7 @@
 				7F59AC7817D3E67000B87457 /* Utils.m in Sources */,
 				7F2AD57B17EDE9B40096EC8D /* SHKSharer.m in Sources */,
 				7F3A16FD17F612C500584614 /* SkinSimple.m in Sources */,
+				7F4F684817F6FDF500F1017B /* ImageEditor.m in Sources */,
 				7F59AC6E17D3C20C00B87457 /* DbManager.m in Sources */,
 				7F5AC64D17CC06CE00C01658 /* Auto.m in Sources */,
 				7F2AD58317EDE9B40096EC8D /* UIImage+OurBundle.m in Sources */,

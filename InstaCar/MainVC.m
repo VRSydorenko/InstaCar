@@ -6,9 +6,11 @@
 //  Copyright (c) 2013 Viktor Sydorenko. All rights reserved.
 //
 
+#import <AssetsLibrary/AssetsLibrary.h>
 #import "MainVC.h"
 #import "Utils.h"
 #import "ShareKit.h"
+#import "ImageEditor.h"
 
 #define SWITCH_TIME 1.0
 #define IMAGE_SIDE_SIZE 612.0
@@ -27,6 +29,10 @@ typedef enum {
     UISwipeGestureRecognizer *swipeUp;
     UISwipeGestureRecognizer *swipeDown;
     SMPageControl *pageControl;
+    
+    ALAssetsLibrary *assetLibrary;
+    ImageEditor *imageEditor;
+    __weak UIImage *selectedImage;
 }
 
 @end
@@ -37,12 +43,19 @@ typedef enum {
 {
     [super viewDidLoad];
     
+    [self.btnMiddleLeft setImage:[UIImage imageNamed:@"PicLandscape.png"] forState:UIControlStateNormal];
+    [self.btnMiddleLeft setTitle:@"" forState:UIControlStateNormal];
+    
+    [self.btnMiddleRight setImage:[UIImage imageNamed:@"Repeat.png"] forState:UIControlStateNormal];
+    [self.btnMiddleRight setTitle:@"" forState:UIControlStateNormal];
+    
     navCon = (MainNavController*)self.navigationController;
     navCon.dataSelectionChangeDelegate = self;
     navCon.menuControllerDelegate = self;
     
     buttonsInInitialState = YES;
     isChangingPage = NO;
+    selectedImage = nil;
     
     [self initCaptureManager];
     
@@ -215,13 +228,19 @@ typedef enum {
                 if (buttonsInInitialState){
                     self.constraintBtnMakeWidth.constant = 0;
                     
-                    [self.btnMiddleLeft setTitle:@"New" forState:UIControlStateNormal];
+                    [self.btnMiddleLeft setTitle:@"New photo" forState:UIControlStateNormal];
+                    [self.btnMiddleLeft setImage:nil forState:UIControlStateNormal];
+                    
                     [self.btnMiddleRight setTitle:@"Share" forState:UIControlStateNormal];
+                    [self.btnMiddleRight setImage:nil forState:UIControlStateNormal];
                 } else {
                     self.constraintBtnMakeWidth.constant = 64.0;
                     
-                    [self.btnMiddleLeft setTitle:@"Pick" forState:UIControlStateNormal];
-                    [self.btnMiddleRight setTitle:@"Flash" forState:UIControlStateNormal];
+                    [self.btnMiddleLeft setImage:[UIImage imageNamed:@"PicLandscape.png"] forState:UIControlStateNormal];
+                    [self.btnMiddleLeft setTitle:@"" forState:UIControlStateNormal];
+                    
+                    [self.btnMiddleRight setImage:[UIImage imageNamed:@"Repeat.png"] forState:UIControlStateNormal];
+                    [self.btnMiddleRight setTitle:@"" forState:UIControlStateNormal];
                 }
             }
      ];
@@ -277,7 +296,25 @@ typedef enum {
 }
 
 -(void)doPickPhotoPressed{
+    UIImagePickerController *picker = [[UIImagePickerController alloc] init];
     
+    picker.allowsEditing = NO;
+    picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    picker.delegate = self;
+    
+    assetLibrary = [[ALAssetsLibrary alloc] init];
+    imageEditor = [[ImageEditor alloc] initWithNibName:@"ImageEditor" bundle:nil];
+    imageEditor.checkBounds = YES;
+    
+    imageEditor.doneCallback = ^(UIImage *editedImage, BOOL canceled){
+        if(!canceled) {
+            self.captureManager.stillImage = editedImage;
+            [self imageCaptured];
+        }
+        [picker dismissViewControllerAnimated:YES completion:nil];
+    };
+    
+    [self presentViewController:picker animated:YES completion:nil];
 }
 
 -(void)doCamSettingsPressed{
@@ -319,6 +356,28 @@ typedef enum {
     swipeDown.enabled = YES;
 }
 
+#pragma mark UIImagePickerControllerDelegate
+
+-(void) imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
+{
+    UIImage *image =  [info objectForKey:UIImagePickerControllerOriginalImage];
+    NSURL *assetURL = [info objectForKey:UIImagePickerControllerReferenceURL];
+    
+    [assetLibrary assetForURL:assetURL resultBlock:^(ALAsset *asset) {
+        UIImage *preview = [UIImage imageWithCGImage:[asset aspectRatioThumbnail]];
+        
+        imageEditor.sourceImage = image;
+        imageEditor.previewImage = preview;
+        [imageEditor reset:NO];
+        
+        [picker pushViewController:imageEditor animated:YES];
+        [picker setNavigationBarHidden:YES animated:NO];
+        
+    } failureBlock:^(NSError *error) {
+        NSLog(@"Failed to get asset from library");
+    }];
+}
+
 #pragma mark -
 
 -(void) imageCaptured{
@@ -351,7 +410,7 @@ typedef enum {
 - (void)image:(UIImage*)image didFinishSavingWithError:(NSError*)error contextInfo:(void*)contextInfo
 {
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Image" message:error!=NULL?@"Image couldn't be saved":@"Saved!" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
-        [alert show];
+    [alert show];
 }
 
 @end
