@@ -35,18 +35,20 @@
     
     // init with data
     for (id object in bundle) {
+        SkinViewBase *skin = nil;
         if ([object isKindOfClass:[SkinSimple class]]){
-            SkinSimple *skinSimple = (SkinSimple*)object;
-            [skinSimple initialise];
-            [self putSkin:skinSimple intoArray:skinsArray];
-            continue;
+            skin = (SkinSimple*)object;
+        } else if ([object isKindOfClass:[SkinSimple2 class]]){
+            skin = (SkinSimple2*)object;
+        } else if ([object isKindOfClass:[LogoRight class]]){
+            skin = (LogoRight*)object;
+        } else if ([object isKindOfClass:[LogoNameLeft class]]){
+            skin = (LogoNameLeft*)object;
         }
-        if ([object isKindOfClass:[SkinSimple2 class]]){
-            SkinSimple2 *skinSimple = (SkinSimple2*)object;
-            [skinSimple initialise];
-            [self putSkin:skinSimple intoArray:skinsArray];
-            continue;
-        }
+        
+        NSAssert(skin, @"Undefined skin!");
+        [skin initialise];
+        [self putSkin:skin intoArray:skinsArray];
     }
     
     [self freeSkins];

@@ -104,6 +104,8 @@
 		7FCD262C17F5BFEC00BFDF4E /* SMPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FCD262B17F5BFEC00BFDF4E /* SMPageControl.m */; };
 		7FEF908917D505E800C07A05 /* AutosVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FEF908817D505E800C07A05 /* AutosVC.m */; };
 		7FF3389317D4C0E700B046C4 /* SkinsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FF3389217D4C0E700B046C4 /* SkinsVC.m */; };
+		7FF3FFE817FA3B940051A1F2 /* LogoNameLeft.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FF3FFE517FA3B940051A1F2 /* LogoNameLeft.m */; };
+		7FF3FFE917FA3B940051A1F2 /* LogoRight.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FF3FFE717FA3B940051A1F2 /* LogoRight.m */; };
 		7FFEBC5517DBA54F00B1DC9A /* auto_logos.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7FFEBC5417DBA54F00B1DC9A /* auto_logos.xcassets */; };
 /* End PBXBuildFile section */
 
@@ -310,6 +312,10 @@
 		7FEF908817D505E800C07A05 /* AutosVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AutosVC.m; path = InstaCar/AutosVC.m; sourceTree = "<group>"; };
 		7FF3389117D4C0E700B046C4 /* SkinsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SkinsVC.h; path = InstaCar/SkinsVC.h; sourceTree = "<group>"; };
 		7FF3389217D4C0E700B046C4 /* SkinsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SkinsVC.m; path = InstaCar/SkinsVC.m; sourceTree = "<group>"; };
+		7FF3FFE417FA3B940051A1F2 /* LogoNameLeft.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogoNameLeft.h; sourceTree = "<group>"; };
+		7FF3FFE517FA3B940051A1F2 /* LogoNameLeft.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogoNameLeft.m; sourceTree = "<group>"; };
+		7FF3FFE617FA3B940051A1F2 /* LogoRight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogoRight.h; sourceTree = "<group>"; };
+		7FF3FFE717FA3B940051A1F2 /* LogoRight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogoRight.m; sourceTree = "<group>"; };
 		7FFEBC5417DBA54F00B1DC9A /* auto_logos.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = auto_logos.xcassets; path = InstaCar/Data/auto_logos.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -688,10 +694,14 @@
 				7F3A16F417F612C500584614 /* SetDefault.h */,
 				7F3A16F517F612C500584614 /* SetDefault.m */,
 				7F3A16F617F612C500584614 /* SetDefault.xib */,
-				7F3A16F717F612C500584614 /* SkinSimple.h */,
-				7F3A16F817F612C500584614 /* SkinSimple.m */,
 				7F3A16F917F612C500584614 /* SkinSimple2.h */,
 				7F3A16FA17F612C500584614 /* SkinSimple2.m */,
+				7FF3FFE617FA3B940051A1F2 /* LogoRight.h */,
+				7FF3FFE717FA3B940051A1F2 /* LogoRight.m */,
+				7FF3FFE417FA3B940051A1F2 /* LogoNameLeft.h */,
+				7FF3FFE517FA3B940051A1F2 /* LogoNameLeft.m */,
+				7F3A16F717F612C500584614 /* SkinSimple.h */,
+				7F3A16F817F612C500584614 /* SkinSimple.m */,
 			);
 			path = SetDefault;
 			sourceTree = "<group>";
@@ -936,6 +946,7 @@
 				7F2AD5D417EDE9B40096EC8D /* SHKFormFieldLargeTextSettings.m in Sources */,
 				7F4ECC2D17C8062800BF1671 /* SideViewControllerBase.m in Sources */,
 				7F2AD5A517EDE9B40096EC8D /* SHKPhotoAlbum.m in Sources */,
+				7FF3FFE917FA3B940051A1F2 /* LogoRight.m in Sources */,
 				7F3871D917BE4D4C00D8E39D /* MainVC.m in Sources */,
 				7F2AD5C417EDE9B40096EC8D /* SHKiOSTwitter.m in Sources */,
 				7F70812117D0CE170094D759 /* SkinViewBase.m in Sources */,
@@ -970,6 +981,7 @@
 				7F3A16FB17F612C500584614 /* SetDefault.m in Sources */,
 				7F2AD5D917EDE9B40096EC8D /* SHKShareMenu.m in Sources */,
 				7F2AD5CF17EDE9B40096EC8D /* SHKFormFieldCell.m in Sources */,
+				7FF3FFE817FA3B940051A1F2 /* LogoNameLeft.m in Sources */,
 				7F2AD57E17EDE9B40096EC8D /* NSArray+JoinValues.m in Sources */,
 				7F59AC5A17D3BA2900B87457 /* DataManager.m in Sources */,
 				7F2AD59317EDE9B40096EC8D /* SHKFile.m in Sources */,

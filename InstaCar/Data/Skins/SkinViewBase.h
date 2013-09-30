@@ -11,6 +11,7 @@
 #import "Auto.h"
 #import "MainNavController.h"
 #import "UIBluredView.h"
+#import "UIAlphaGradientView.h"
 
 #define MOVINGVIEW_TIME 0.5
 
@@ -53,6 +54,7 @@ typedef enum {
 }
 
 -(void)initialise;
+-(void)setupGradient:(CGFloat)alpha inDirection:(GradientDirection)direction;
 -(void)setMovingViewConstraint:(NSLayoutConstraint*)topMargin andViewHeight:(unsigned short)height;
 -(BOOL)canEditField:(SkinField)field;
 -(void)updateField:(SkinField)field withValue:(NSObject*)value;

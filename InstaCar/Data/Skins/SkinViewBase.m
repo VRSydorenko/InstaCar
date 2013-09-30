@@ -27,6 +27,16 @@
     return self;
 }
 
+-(void)setupGradient:(CGFloat)alpha inDirection:(GradientDirection)direction{
+    UIAlphaGradientView *gradient = [[UIAlphaGradientView alloc] initWithFrame:self.frame];
+    gradient.color = [UIColor blackColor];
+    gradient.direction = direction;
+    gradient.alpha = alpha;
+    gradient.autoresizingMask = UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleWidth;
+    [self addSubview:gradient];
+    [self sendSubviewToBack:gradient];
+}
+
 #pragma mark -
 
 -(BOOL) canEditField:(SkinField)field{

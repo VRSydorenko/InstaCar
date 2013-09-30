@@ -7,11 +7,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view tag="1" contentMode="scaleToFill" id="1" customClass="SkinSimple" propertyAccessControl="none">
+        <view tag="3" contentMode="scaleToFill" id="1" customClass="SkinSimple" propertyAccessControl="none">
             <rect key="frame" x="0.0" y="0.0" width="320" height="320"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QqS-cI-X27" customClass="UIBluredView">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QqS-cI-X27">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <subviews>
@@ -29,11 +29,12 @@
                             <constraints>
                                 <constraint firstAttribute="width" constant="1" id="xqm-68-GDy"/>
                             </constraints>
-                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                            <fontDescription key="fontDescription" name="AvenirNextCondensed-Regular" family="Avenir Next Condensed" pointSize="25"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
-                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstItem="IEM-D4-Cc5" firstAttribute="top" secondItem="QqS-cI-X27" secondAttribute="top" id="8s2-A0-TRU"/>
                         <constraint firstAttribute="height" constant="50" id="Agd-0q-RnN"/>
@@ -100,6 +101,102 @@
                 <outlet property="movingView" destination="Pmx-JJ-kVN" id="O9Q-7s-xwB"/>
                 <outlet property="topMargin" destination="pDC-Za-dpR" id="VkK-i9-o1O"/>
                 <outlet property="widthLogoConstraint" destination="gsm-df-rgg" id="4C6-a8-DqV"/>
+            </connections>
+        </view>
+        <view tag="1" contentMode="scaleToFill" id="ZGU-o7-psB" customClass="LogoRight">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="320"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iYf-x9-4Hy">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="anycarLogo" translatesAutoresizingMaskIntoConstraints="NO" id="wgO-Wi-prF">
+                            <rect key="frame" x="245" y="5" width="70" height="70"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="70" id="06W-fH-zn1"/>
+                            </constraints>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="wgO-Wi-prF" secondAttribute="bottom" constant="5" id="1sq-mH-2SO"/>
+                        <constraint firstAttribute="trailing" secondItem="wgO-Wi-prF" secondAttribute="trailing" constant="5" id="DTa-45-HDR"/>
+                        <constraint firstItem="wgO-Wi-prF" firstAttribute="top" secondItem="iYf-x9-4Hy" secondAttribute="top" constant="5" id="lBe-Pd-Wg2"/>
+                        <constraint firstAttribute="height" constant="80" id="mKH-u8-b8V"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="iYf-x9-4Hy" secondAttribute="trailing" id="WgI-WT-5Kg"/>
+                <constraint firstItem="iYf-x9-4Hy" firstAttribute="top" secondItem="ZGU-o7-psB" secondAttribute="top" id="b0Z-3z-4ac"/>
+                <constraint firstItem="iYf-x9-4Hy" firstAttribute="leading" secondItem="ZGU-o7-psB" secondAttribute="leading" id="z9I-Tk-CUC"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="heightConstraint" destination="mKH-u8-b8V" id="bIQ-xz-Xg6"/>
+                <outlet property="imgEmblem" destination="wgO-Wi-prF" id="D1X-Q1-YYU"/>
+                <outlet property="movingView" destination="iYf-x9-4Hy" id="Qom-Sm-zWr"/>
+                <outlet property="topMargin" destination="b0Z-3z-4ac" id="xsS-5X-A3y"/>
+                <outlet property="widthLogoConstraint" destination="06W-fH-zn1" id="JuN-EM-B7g"/>
+            </connections>
+        </view>
+        <view tag="2" contentMode="scaleToFill" id="6Yb-YK-wAO" customClass="LogoNameLeft" propertyAccessControl="none">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="320"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RsD-ea-ulE">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="anycarLogo" translatesAutoresizingMaskIntoConstraints="NO" id="oIa-gw-7N1">
+                            <rect key="frame" x="3" y="4" width="54" height="42"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="54" id="tgI-Jn-gmP"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="OoH-9J-VpT">
+                            <rect key="frame" x="60" y="0.0" width="1" height="50"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="1" id="fgQ-bg-Hd2"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="AvenirNextCondensed-Regular" family="Avenir Next Condensed" pointSize="25"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="oIa-gw-7N1" firstAttribute="leading" secondItem="RsD-ea-ulE" secondAttribute="leading" constant="3" id="2fU-gZ-53c"/>
+                        <constraint firstItem="OoH-9J-VpT" firstAttribute="leading" secondItem="oIa-gw-7N1" secondAttribute="trailing" constant="3" id="2sB-7v-Nw2"/>
+                        <constraint firstAttribute="bottom" secondItem="oIa-gw-7N1" secondAttribute="bottom" constant="4" id="7cb-3t-P7W"/>
+                        <constraint firstItem="oIa-gw-7N1" firstAttribute="top" secondItem="RsD-ea-ulE" secondAttribute="top" constant="4" id="Msf-JC-avc"/>
+                        <constraint firstItem="OoH-9J-VpT" firstAttribute="top" secondItem="RsD-ea-ulE" secondAttribute="top" id="aUF-jF-7PM"/>
+                        <constraint firstItem="OoH-9J-VpT" firstAttribute="bottom" secondItem="RsD-ea-ulE" secondAttribute="bottom" id="jn2-Ae-j19"/>
+                        <constraint firstAttribute="height" constant="50" id="y6B-Sd-esx"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="RsD-ea-ulE" firstAttribute="top" secondItem="6Yb-YK-wAO" secondAttribute="top" id="4Mg-EF-iU7"/>
+                <constraint firstItem="RsD-ea-ulE" firstAttribute="leading" secondItem="6Yb-YK-wAO" secondAttribute="leading" id="b7D-1S-aCl"/>
+                <constraint firstItem="RsD-ea-ulE" firstAttribute="trailing" secondItem="6Yb-YK-wAO" secondAttribute="trailing" id="qvy-Uz-Tzg"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="autoTitleWidth" destination="fgQ-bg-Hd2" id="8Op-s9-AKP"/>
+                <outlet property="heightConstraint" destination="y6B-Sd-esx" id="jNU-Np-EUn"/>
+                <outlet property="imgEmblem" destination="oIa-gw-7N1" id="JBY-Xp-h3b"/>
+                <outlet property="movingView" destination="RsD-ea-ulE" id="80a-AZ-9aQ"/>
+                <outlet property="textAuto" destination="OoH-9J-VpT" id="u1L-8w-CW5"/>
+                <outlet property="topMargin" destination="4Mg-EF-iU7" id="Xdk-Xc-Nvt"/>
+                <outlet property="widthLogoConstraint" destination="tgI-Jn-gmP" id="K6d-7o-Ni6"/>
             </connections>
         </view>
     </objects>

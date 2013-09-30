@@ -9,8 +9,10 @@
 #import <Foundation/Foundation.h>
 #import "SkinViewBase.h"
 
-#import "SkinSimple.h" // the first skin
 #import "SkinSimple2.h" // only logo at left side
+#import "LogoRight.h"
+#import "SkinSimple.h" // the first skin
+#import "LogoNameLeft.h"
 
 @interface SetDefault : NSObject <SkinSetProtocol>
 

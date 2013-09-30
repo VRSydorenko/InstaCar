@@ -1,15 +1,15 @@
 //
-//  SkinSimple2.m
+//  LogoRight.m
 //  InstaCar
 //
 //  Created by VRS on 8/30/13.
 //  Copyright (c) 2013 Viktor Sydorenko. All rights reserved.
 //
 
-#import "SkinSimple2.h"
+#import "LogoRight.h"
 #import "DataManager.h"
 
-@interface SkinSimple2(){
+@interface LogoRight(){
     CGFloat heightScaleFactor;
 }
 
@@ -20,7 +20,7 @@
 
 @end
 
-@implementation SkinSimple2
+@implementation LogoRight
 
 -(void)layoutSubviews{
     self.heightConstraint.constant = self.bounds.size.height * heightScaleFactor;
@@ -30,7 +30,7 @@
 }
 
 -(void)initialise{
-    [self setupGradient:0.2 inDirection:GRADIENT_RIGHT];
+    [self setupGradient:0.2 inDirection:GRADIENT_LEFT];
     heightScaleFactor = self.movingView.bounds.size.height / self.bounds.size.height;
     [self.imgEmblem.layer setMinificationFilter:kCAFilterTrilinear];
     self.movingView.backgroundColor = [UIColor clearColor];
