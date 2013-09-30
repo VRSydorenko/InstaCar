@@ -66,6 +66,9 @@
     [super didReceiveMemoryWarning];
 }
 
+-(BOOL)prefersStatusBarHidden{
+    return YES;
+}
 
 #pragma mark - View lifecycle
 
