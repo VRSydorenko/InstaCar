@@ -37,7 +37,7 @@
 
 @property (weak, nonatomic) IBOutlet UIImageView *imagePreview;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollSkins;
-@property (weak, nonatomic) IBOutlet UIBluredView *pageControlContainer;
+@property (weak, nonatomic) IBOutlet UIView *pageControlContainer;
 
 // Actions
 - (IBAction)btnLocationPressed:(id)sender;

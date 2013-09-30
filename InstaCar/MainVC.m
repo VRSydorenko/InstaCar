@@ -149,7 +149,7 @@ typedef enum {
         return;
     }
     
-    CGRect pageControlFrame = CGRectMake(0, 0, self.pageControlContainer.bounds.size.width, self.pageControlContainer.bounds.size.height);
+    CGRect pageControlFrame = CGRectMake(0, 0, self.pageControlContainer.bounds.size.width, 20.0);
     pageControl = [[SMPageControl alloc] initWithFrame:pageControlFrame];
     pageControl.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
     
@@ -162,7 +162,7 @@ typedef enum {
     pageControl.backgroundColor = [UIColor clearColor];
     //pageControl.pageIndicatorTintColor = [UIColor whiteColor];
     
-    [self.pageControlContainer setBarTintColor:navCon.navigationBar.barTintColor];
+    //[self.pageControlContainer setBarTintColor:navCon.navigationBar.barTintColor];
     [self.pageControlContainer addSubview:pageControl];
 }
 
