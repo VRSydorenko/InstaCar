@@ -24,20 +24,27 @@
 }
 
 -(void)loadSkins{
-    NSMutableArray *skinsArray = [[NSMutableArray alloc] init];
     NSArray *bundle = [[NSBundle mainBundle] loadNibNamed:@"SetDefault" owner:self options:nil];
+    NSMutableArray *skinsArray = [[NSMutableArray alloc] initWithCapacity:bundle.count];
+    NSLog(@"Bundle objects: %lu",(unsigned long)bundle.count);
     
+    // init with placeholders
+    for (int i = 0; i < bundle.count; i++){
+        [skinsArray addObject:[NSNull null]];
+    }
+    
+    // init with data
     for (id object in bundle) {
         if ([object isKindOfClass:[SkinSimple class]]){
             SkinSimple *skinSimple = (SkinSimple*)object;
             [skinSimple initialise];
-            [skinsArray addObject:skinSimple];
+            [self putSkin:skinSimple intoArray:skinsArray];
             continue;
         }
         if ([object isKindOfClass:[SkinSimple2 class]]){
             SkinSimple2 *skinSimple = (SkinSimple2*)object;
             [skinSimple initialise];
-            [skinsArray addObject:skinSimple];
+            [self putSkin:skinSimple intoArray:skinsArray];
             continue;
         }
     }
@@ -45,6 +52,13 @@
     [self freeSkins];
     
     skins = [[NSArray alloc] initWithArray:skinsArray];
+}
+
+-(void)putSkin:(SkinViewBase*)skin intoArray:(NSMutableArray*)array{
+    NSAssert(array.count > skin.tag, @"Skin index in higher than configured skins count");
+    NSAssert([array objectAtIndex:skin.tag] == [NSNull null], @"Attempt to replace already configured skin");
+    
+    [array replaceObjectAtIndex:skin.tag withObject:skin];
 }
 
 #pragma mark SkinSetProtocol
