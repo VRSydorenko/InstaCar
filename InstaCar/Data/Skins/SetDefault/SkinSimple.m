@@ -7,7 +7,6 @@
 //
 
 #import "SkinSimple.h"
-#import "DataManager.h"
 
 @interface SkinSimple(){
     CGFloat heightScaleFactor;
@@ -45,10 +44,9 @@
 }
 
 -(void)fieldAuto1DidUpdate{
-    Auto *auto1 = [DataManager getSelectedAuto1];
     self.imgEmblem.contentMode = UIViewContentModeScaleAspectFit;
-    self.imgEmblem.image = [UIImage imageNamed:auto1.logo];
-    self.textAuto.text = auto1.selectedText;
+    self.imgEmblem.image = [UIImage imageNamed:fieldAuto1.logo];
+    self.textAuto.text = fieldAuto1.selectedText;
     
     [self adjustAutoLabelSizeAccordingToText];
 }

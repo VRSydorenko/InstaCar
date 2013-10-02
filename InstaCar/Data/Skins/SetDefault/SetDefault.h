@@ -13,6 +13,7 @@
 #import "LogoRight.h"
 #import "SkinSimple.h" // the first skin
 #import "LogoNameLeft.h"
+#import "LocationSimple.h"
 
 @interface SetDefault : NSObject <SkinSetProtocol>
 

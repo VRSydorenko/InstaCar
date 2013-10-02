@@ -191,7 +191,7 @@ typedef enum {
 -(void) selectedData:(SelectedDataChange)dataType changedTo:(id)newValue{
     if (dataType == SKIN_SET){
         // load new set
-    } else { // other fields are skin relevant so pass the update to selected skin
+    } else { // other fields are skin relevant so pass the update to selected skin set
         [[SkinProvider getInstance].selectedSkinSet updateData:newValue ofType:dataType];
     }
 }

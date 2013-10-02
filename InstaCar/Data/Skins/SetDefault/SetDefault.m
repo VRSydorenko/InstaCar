@@ -44,6 +44,8 @@
             skin = (LogoRight*)object;
         } else if ([object isKindOfClass:[LogoNameLeft class]]){
             skin = (LogoNameLeft*)object;
+        } else if ([object isKindOfClass:[LocationSimple class]]){
+            skin = (LocationSimple*)object;
         }
         
         NSAssert(skin, @"Undefined skin!");

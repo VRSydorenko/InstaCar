@@ -23,18 +23,27 @@
         canEditFieldText2 = NO;
         
         self.userInteractionEnabled = YES;
+        gradient = nil;
+        gradientInitialized = NO;
     }
     return self;
 }
 
 -(void)setupGradient:(CGFloat)alpha inDirection:(GradientDirection)direction{
-    UIAlphaGradientView *gradient = [[UIAlphaGradientView alloc] initWithFrame:self.frame];
-    gradient.color = [UIColor blackColor];
+    if (!gradient){
+        gradient = [[UIAlphaGradientView alloc] initWithFrame:self.frame];
+        gradient.color = [UIColor blackColor];
+        gradient.autoresizingMask = UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleWidth;
+    }
+    
     gradient.direction = direction;
     gradient.alpha = alpha;
-    gradient.autoresizingMask = UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleWidth;
-    [self addSubview:gradient];
-    [self sendSubviewToBack:gradient];
+    
+    if (!gradientInitialized){
+        [self addSubview:gradient];
+        [self sendSubviewToBack:gradient];
+        gradientInitialized = YES;
+    }
 }
 
 #pragma mark -
@@ -62,8 +71,8 @@
     }
     switch (field) {
         case fLOCATION:
-            if ([value isKindOfClass:Location.class]){
-                fieldLocation = (Location*)value;
+            if ([value isKindOfClass:FSVenue.class]){
+                fieldLocation = [[Location alloc] initWIthVenue:(FSVenue*)value];
                 [self fieldLocationDidUpdate];
             }
             break;

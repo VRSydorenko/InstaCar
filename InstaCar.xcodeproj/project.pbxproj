@@ -94,6 +94,7 @@
 		7F72A06517D7AED10075FC0B /* AutoSubmodel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F72A06417D7AED10075FC0B /* AutoSubmodel.m */; };
 		7F7FF47017CF8634000E0ABD /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F7FF46F17CF8634000E0ABD /* Location.m */; };
 		7FB233B317D6773C003751B5 /* CellSelectedAuto.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FB233B217D6773C003751B5 /* CellSelectedAuto.m */; };
+		7FBFA11217FC5EDE001EFDC7 /* LocationSimple.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FBFA11117FC5EDE001EFDC7 /* LocationSimple.m */; };
 		7FC28FC217F31EF200638697 /* UIBluredView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FC28FC117F31EF200638697 /* UIBluredView.m */; };
 		7FC4137517C7E8450025DD2C /* Foursquare2.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FC4136C17C7E8450025DD2C /* Foursquare2.m */; };
 		7FC4137617C7E8450025DD2C /* FSConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FC4136E17C7E8450025DD2C /* FSConverter.m */; };
@@ -293,6 +294,8 @@
 		7F7FF46F17CF8634000E0ABD /* Location.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Location.m; path = InstaCar/Data/Location.m; sourceTree = "<group>"; };
 		7FB233B117D6773C003751B5 /* CellSelectedAuto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CellSelectedAuto.h; path = InstaCar/TableCells/CellSelectedAuto.h; sourceTree = "<group>"; };
 		7FB233B217D6773C003751B5 /* CellSelectedAuto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CellSelectedAuto.m; path = InstaCar/TableCells/CellSelectedAuto.m; sourceTree = "<group>"; };
+		7FBFA11017FC5EDE001EFDC7 /* LocationSimple.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationSimple.h; sourceTree = "<group>"; };
+		7FBFA11117FC5EDE001EFDC7 /* LocationSimple.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationSimple.m; sourceTree = "<group>"; };
 		7FC28FC017F31EF200638697 /* UIBluredView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIBluredView.h; sourceTree = "<group>"; };
 		7FC28FC117F31EF200638697 /* UIBluredView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIBluredView.m; sourceTree = "<group>"; };
 		7FC4136B17C7E8450025DD2C /* Foursquare2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Foursquare2.h; sourceTree = "<group>"; };
@@ -705,6 +708,8 @@
 				7FF3FFE517FA3B940051A1F2 /* LogoNameLeft.m */,
 				7F3A16F717F612C500584614 /* SkinSimple.h */,
 				7F3A16F817F612C500584614 /* SkinSimple.m */,
+				7FBFA11017FC5EDE001EFDC7 /* LocationSimple.h */,
+				7FBFA11117FC5EDE001EFDC7 /* LocationSimple.m */,
 			);
 			path = SetDefault;
 			sourceTree = "<group>";
@@ -987,6 +992,7 @@
 				7F3A16FB17F612C500584614 /* SetDefault.m in Sources */,
 				7F2AD5D917EDE9B40096EC8D /* SHKShareMenu.m in Sources */,
 				7F2AD5CF17EDE9B40096EC8D /* SHKFormFieldCell.m in Sources */,
+				7FBFA11217FC5EDE001EFDC7 /* LocationSimple.m in Sources */,
 				7FF3FFE817FA3B940051A1F2 /* LogoNameLeft.m in Sources */,
 				7F2AD57E17EDE9B40096EC8D /* NSArray+JoinValues.m in Sources */,
 				7F59AC5A17D3BA2900B87457 /* DataManager.m in Sources */,

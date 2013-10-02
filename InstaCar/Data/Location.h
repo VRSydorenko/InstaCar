@@ -7,7 +7,17 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "FSVenue.h"
 
 @interface Location : NSObject
+
+@property (nonatomic) NSString* name;
+
+@property (nonatomic) NSString* countryCode;
+@property (nonatomic) NSString* country;
+@property (nonatomic) NSString* state;
+@property (nonatomic) NSString* city;
+
+-(id)initWIthVenue:(FSVenue*)venue;
 
 @end

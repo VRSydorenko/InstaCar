@@ -51,6 +51,8 @@ typedef enum {
 @private
     NSLayoutConstraint *movingViewTopMarginConstraint;
     unsigned short movingViewHeight;
+    UIAlphaGradientView *gradient;
+    BOOL gradientInitialized;
 }
 
 -(void)initialise;

@@ -199,6 +199,62 @@
                 <outlet property="widthLogoConstraint" destination="tgI-Jn-gmP" id="K6d-7o-Ni6"/>
             </connections>
         </view>
+        <view tag="4" contentMode="scaleToFill" id="1te-Go-nfM" customClass="LocationSimple">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="320"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EFi-98-3rq">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    <subviews>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select place..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.40000000000000002" translatesAutoresizingMaskIntoConstraints="NO" id="Wgs-tY-bON">
+                            <rect key="frame" x="5" y="0.0" width="310" height="40"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="40" id="MOg-yS-R1F"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="35"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LOCATION" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k0F-5E-UhS">
+                            <rect key="frame" x="0.0" y="40" width="320" height="20"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="k0F-5E-UhS" secondAttribute="trailing" id="2QI-qD-to5"/>
+                        <constraint firstAttribute="bottom" secondItem="k0F-5E-UhS" secondAttribute="bottom" id="592-3C-By4"/>
+                        <constraint firstItem="Wgs-tY-bON" firstAttribute="top" secondItem="EFi-98-3rq" secondAttribute="top" id="65S-HS-B56"/>
+                        <constraint firstItem="k0F-5E-UhS" firstAttribute="top" secondItem="Wgs-tY-bON" secondAttribute="bottom" id="9iN-EN-ZDb"/>
+                        <constraint firstItem="Wgs-tY-bON" firstAttribute="leading" secondItem="EFi-98-3rq" secondAttribute="leading" constant="5" id="U7A-Ay-v6E"/>
+                        <constraint firstAttribute="height" constant="60" id="WCz-dC-MiQ"/>
+                        <constraint firstAttribute="trailing" secondItem="Wgs-tY-bON" secondAttribute="trailing" constant="5" id="eTU-tj-WgV"/>
+                        <constraint firstItem="k0F-5E-UhS" firstAttribute="leading" secondItem="EFi-98-3rq" secondAttribute="leading" id="z0B-lO-gX4"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="EFi-98-3rq" secondAttribute="trailing" id="4IJ-32-7QY"/>
+                <constraint firstItem="EFi-98-3rq" firstAttribute="leading" secondItem="1te-Go-nfM" secondAttribute="leading" id="4jb-9J-gZu"/>
+                <constraint firstItem="EFi-98-3rq" firstAttribute="top" secondItem="1te-Go-nfM" secondAttribute="top" id="iV1-Of-Aun"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="movingView" destination="EFi-98-3rq" id="P9y-2R-O7i"/>
+                <outlet property="movingViewHeightConstraint" destination="WCz-dC-MiQ" id="udF-xg-SuW"/>
+                <outlet property="placeLabelHeightConstraint" destination="MOg-yS-R1F" id="fv4-PP-eu9"/>
+                <outlet property="textLocation" destination="k0F-5E-UhS" id="ke8-IM-cLf"/>
+                <outlet property="textPlace" destination="Wgs-tY-bON" id="Ias-sp-jss"/>
+                <outlet property="topMargin" destination="iV1-Of-Aun" id="NCZ-oX-cOH"/>
+            </connections>
+        </view>
     </objects>
     <resources>
         <image name="anycarLogo" width="32" height="32"/>
