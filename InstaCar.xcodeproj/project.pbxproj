@@ -102,6 +102,7 @@
 		7FC4137917C7E8450025DD2C /* FSVenue.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FC4137417C7E8450025DD2C /* FSVenue.m */; };
 		7FC4137C17C7EFF70025DD2C /* LocationsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FC4137B17C7EFF70025DD2C /* LocationsVC.m */; };
 		7FCD262C17F5BFEC00BFDF4E /* SMPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FCD262B17F5BFEC00BFDF4E /* SMPageControl.m */; };
+		7FD71B0F17FC0D4D000517B7 /* VenueProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FD71B0E17FC0D4D000517B7 /* VenueProvider.m */; };
 		7FEF908917D505E800C07A05 /* AutosVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FEF908817D505E800C07A05 /* AutosVC.m */; };
 		7FF3389317D4C0E700B046C4 /* SkinsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FF3389217D4C0E700B046C4 /* SkinsVC.m */; };
 		7FF3FFE817FA3B940051A1F2 /* LogoNameLeft.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FF3FFE517FA3B940051A1F2 /* LogoNameLeft.m */; };
@@ -308,6 +309,8 @@
 		7FC4137B17C7EFF70025DD2C /* LocationsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationsVC.m; sourceTree = "<group>"; };
 		7FCD262A17F5BFEC00BFDF4E /* SMPageControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMPageControl.h; sourceTree = "<group>"; };
 		7FCD262B17F5BFEC00BFDF4E /* SMPageControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMPageControl.m; sourceTree = "<group>"; };
+		7FD71B0D17FC0D4D000517B7 /* VenueProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VenueProvider.h; path = InstaCar/Data/VenueProvider.h; sourceTree = "<group>"; };
+		7FD71B0E17FC0D4D000517B7 /* VenueProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VenueProvider.m; path = InstaCar/Data/VenueProvider.m; sourceTree = "<group>"; };
 		7FEF908717D505E800C07A05 /* AutosVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AutosVC.h; path = InstaCar/AutosVC.h; sourceTree = "<group>"; };
 		7FEF908817D505E800C07A05 /* AutosVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AutosVC.m; path = InstaCar/AutosVC.m; sourceTree = "<group>"; };
 		7FF3389117D4C0E700B046C4 /* SkinsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SkinsVC.h; path = InstaCar/SkinsVC.h; sourceTree = "<group>"; };
@@ -761,6 +764,8 @@
 				7F2AD47E17EDE9190096EC8D /* CustomSHKConfigurator.m */,
 				7F5AC64217CC000400C01658 /* SkinProvider.h */,
 				7F5AC64317CC000400C01658 /* SkinProvider.m */,
+				7FD71B0D17FC0D4D000517B7 /* VenueProvider.h */,
+				7FD71B0E17FC0D4D000517B7 /* VenueProvider.m */,
 				7F5AC64B17CC06CE00C01658 /* Auto.h */,
 				7F5AC64C17CC06CE00C01658 /* Auto.m */,
 				7F59AC5B17D3BA4700B87457 /* AutoModel.h */,
@@ -920,6 +925,7 @@
 				7F3871D617BE4CA900D8E39D /* MainNavController.m in Sources */,
 				7F3871DE17BE4F1000D8E39D /* DDMenuController.m in Sources */,
 				7F59AC6B17D3C20C00B87457 /* DBDefinition.m in Sources */,
+				7FD71B0F17FC0D4D000517B7 /* VenueProvider.m in Sources */,
 				7F2AD59417EDE9B40096EC8D /* SHKRequest.m in Sources */,
 				7FC4137C17C7EFF70025DD2C /* LocationsVC.m in Sources */,
 				7F3871E117BE5A4F00D8E39D /* AppMenuTableVC.m in Sources */,

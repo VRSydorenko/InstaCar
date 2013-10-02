@@ -8,7 +8,6 @@
 
 #import "SideViewControllerBase.h"
 #import <CoreLocation/CoreLocation.h>
-#import "FSVenue.h"
 
 @interface LocationsVC : SideViewControllerBase <UITableViewDelegate,
                                                  UITableViewDataSource,

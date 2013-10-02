@@ -11,6 +11,7 @@
 #import "FSConverter.h"
 #import "CellVenue.h"
 #import "DataManager.h"
+#import "VenueProvider.h"
 
 @interface LocationsVC (){
     CLLocationManager *locationManager;
@@ -32,7 +33,11 @@
     locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters;
     locationManager.delegate = self;
     
-    [self btnRefreshPressed:self.btnRefresh];
+    if ([VenueProvider getInstance].venuesInitialized){
+        self.nearbyVenues = [[VenueProvider getInstance] getAllVenues];
+    } else {
+        [self btnRefreshPressed:self.btnRefresh];
+    }
 }
 
 #pragma mark Table methods
@@ -51,7 +56,9 @@
     
     cell.textVenueName.text =  venue.name;
     
-    if (venue.iconURL && venue.iconURL.length > 0){
+    if ([venue isKindOfClass:[FSGlobalVenue class]]){
+        cell.imgVenueIcon.image = [UIImage imageNamed:@"Pin.png"];
+    } else if (venue.iconURL && venue.iconURL.length > 0){
         UIImage *icon = [DataManager getIconForPath:venue.iconURL];
         if (!icon){
             NSURL *url = [NSURL URLWithString:venue.iconURL];
@@ -92,7 +99,8 @@
                          NSDictionary *dic = result;
                          NSArray* venues = [dic valueForKeyPath:@"response.venues"];
                          FSConverter *converter = [[FSConverter alloc]init];
-                         self.nearbyVenues = [converter convertToObjects:venues];
+                         [[VenueProvider getInstance] setVenues:[converter convertToObjects:venues]];
+                         self.nearbyVenues = [[VenueProvider getInstance] getAllVenues];
                          [self.tableVenues reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationAutomatic];
                          
                          [self restoreRefreshButtonIfHidden];
