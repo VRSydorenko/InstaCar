@@ -67,27 +67,34 @@
 }
 
 -(UITableViewCellAccessoryType)getAccessoryTypeForMenuItem:(NSString*)itemTitle{
-    UITableViewCellAccessoryType type = UITableViewCellAccessoryNone;
+    UITableViewCellAccessoryType type = UITableViewCellAccessoryDisclosureIndicator;
+    return type;
+}
 
-    if ([itemTitle isEqualToString:INSTACARAPP_USER]
-        || [itemTitle isEqualToString:INSTACARAPP_TAG]
-        || [itemTitle isEqualToString:LIKE_IT]
-        || [itemTitle isEqualToString:RATE_APP]
-        || [itemTitle isEqualToString:CONTACT_US]){
-        
-        type = UITableViewCellAccessoryDisclosureIndicator;
+-(SideAction)getSideActionForMenuItem:(NSString*)itemTitle{
+    SideAction action = ACT_EMPTY;
+    
+    if ([itemTitle isEqualToString:INSTACARAPP_USER]){
+        action = ACT_OPEN_INSTA_SELF_PROFILE;
+    } if ([itemTitle isEqualToString:INSTACARAPP_TAG]){
+        action = ACT_OPEN_INSTA_SELF_TAG;
+    } if ([itemTitle isEqualToString:LIKE_IT]){
+        action = ACT_OPEN_FB_PAGE;
+    } if ([itemTitle isEqualToString:RATE_APP]){
+        action = ACT_OPEN_APPSTORE_TO_RATE;
+    } if ([itemTitle isEqualToString:CONTACT_US]){
+        action = ACT_PREPARE_FEEDBACK_MAIL;
     }
     
-    return type;
+    return action;
 }
 
 #pragma mark - UITableViewDelegate
 
 - (void)tableView:(UITableView*)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    NSString *menuItemTitle = [data objectAtIndex:indexPath.row];
     
-    // TODO: determine the action and pass it in the delegate method further
-    
-    [self.sideActionDelegate performSideAction:ACT_EMPTY withArgument:nil hidingSideController:YES];
+    [self.sideActionDelegate performSideAction:[self getSideActionForMenuItem:menuItemTitle] withArgument:nil hidingSideController:YES];
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 

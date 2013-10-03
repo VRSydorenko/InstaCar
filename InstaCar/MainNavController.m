@@ -117,8 +117,75 @@
         case ACT_UPDATE_SKINS_LOCATION:
             [self.dataSelectionChangeDelegate selectedData:LOCATION changedTo:object];
             break;
+        case ACT_OPEN_INSTA_SELF_PROFILE:{
+            NSURL *instagramURL = [NSURL URLWithString:@"instagram://user?username=instacarapp"];
+            if ([[UIApplication sharedApplication] canOpenURL:instagramURL]) {
+                [[UIApplication sharedApplication] openURL:instagramURL];
+            } else {
+                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Warning" message:@"You do not have Instagram App installed. Do you want to download it now?" delegate:self cancelButtonTitle:@"No" otherButtonTitles:@"Yes", nil];
+                [alert show];
+            }
+            break;
+        }
+        case ACT_OPEN_INSTA_SELF_TAG:{
+            NSURL *instagramURL = [NSURL URLWithString:@"instagram://tag?name=instacarapp"];
+            if ([[UIApplication sharedApplication] canOpenURL:instagramURL]) {
+                [[UIApplication sharedApplication] openURL:instagramURL];
+            } else {
+                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Warning" message:@"You do not have Instagram App installed. Do you want to download it now?" delegate:self cancelButtonTitle:@"No" otherButtonTitles:@"Yes", nil];
+                [alert show];
+            }
+            break;
+        }
+        case ACT_OPEN_FB_PAGE:
+            break;
+        case ACT_OPEN_APPSTORE_TO_RATE:{
+            // TODO: change app url
+            NSString* url = @"itms-apps://itunes.apple.com/app/id595828753";
+            [[UIApplication sharedApplication] openURL: [NSURL URLWithString: url]];
+            break;
+        }
+        case ACT_PREPARE_FEEDBACK_MAIL:{
+            if ([MFMailComposeViewController canSendMail]){
+                MFMailComposeViewController *picker = [[MFMailComposeViewController alloc] init];
+                
+                picker.mailComposeDelegate = self;
+                picker.Subject = @"InstaCar feedback";
+                // TODO: change email address
+                picker.toRecipients = [NSArray arrayWithObject:@"viktor.sydorenko@gmail.com"];
+                [picker setMessageBody:@"" isHTML:NO];
+
+                [self presentViewController:picker animated:YES completion:NULL];
+            } else {
+                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Warning" message:@"Device not configured to send mail" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+                [alert show];
+            }
+            break;
+        }
         default:
             break;
+    }
+}
+
+#pragma mark Mail composer delegate
+
+- (void)mailComposeController:(MFMailComposeViewController*)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError*)error{
+    [controller dismissViewControllerAnimated:YES completion:^(void){
+        if (result == MFMailComposeResultSent){
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Info" message:@"Thank you so much for your feedback!" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+            [alert show];
+        }
+    }];
+}
+
+#pragma mark UIAlertViewDelegate
+
+-(void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex{
+    // 0 is OK
+    // 1 is Yes about downloading Instagram
+    if (buttonIndex == 1){
+        NSString* url = @"itms-apps://itunes.apple.com/app/id389801252";
+        [[UIApplication sharedApplication] openURL: [NSURL URLWithString: url]];
     }
 }
 

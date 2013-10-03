@@ -116,7 +116,7 @@ typedef enum {
 
 #pragma mark SublevelPickerDelegate
 
--(void)sublevelButtonPressedAtIndex:(int)index{
+-(void)sublevelButtonPressedAtIndex:(long)index{
     switch (currentContentType) {
         case CONTENT_AUTOS:{
             selectedAuto = [data objectAtIndex:index];

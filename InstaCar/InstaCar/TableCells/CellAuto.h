@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @protocol SublevelPickerDelegate <NSObject>
--(void)sublevelButtonPressedAtIndex:(int)index;
+-(void)sublevelButtonPressedAtIndex:(long)index;
 @end
 
 @interface CellAuto : UITableViewCell
