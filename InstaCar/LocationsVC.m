@@ -72,7 +72,7 @@
 - (void)tableView:(UITableView*)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     FSVenue *selectedVenue = [self.nearbyVenues objectAtIndex:indexPath.row];
     [DataManager setSelectedVenue:selectedVenue];
-    [self.sideActionDelegate performSideAction:ACT_UPDATE_SKINS_LOCATION withArgument:selectedVenue];
+    [self.sideActionDelegate performSideAction:ACT_UPDATE_SKINS_LOCATION withArgument:selectedVenue hidingSideController:YES];
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
@@ -91,7 +91,7 @@
     [self restoreRefreshButtonIfHidden];
     
     if (self.sideActionDelegate){
-        [self.sideActionDelegate performSideAction:ACT_EMPTY withArgument:nil];
+        [self.sideActionDelegate performSideAction:ACT_EMPTY withArgument:nil hidingSideController:YES];
     }
 }
 

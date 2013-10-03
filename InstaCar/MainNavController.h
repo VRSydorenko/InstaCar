@@ -31,7 +31,7 @@ typedef enum {
 } SelectedDataChange; // navCon tells MainVC what has changed
 
 @protocol SideActionProtocol <NSObject>
--(void) performSideAction:(SideAction)action withArgument:(id)object;
+-(void) performSideAction:(SideAction)action withArgument:(id)object hidingSideController:(BOOL)hiding;
 @end
 
 @protocol SelectedDataChangeActionProtocol <NSObject>

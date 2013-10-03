@@ -98,14 +98,17 @@
 
 // should get this notification when Location view is null (has not been opened or has been destroyed)
 -(void)locationDidUpdate{
-    [self performSideAction:ACT_UPDATE_SKINS_LOCATION withArgument:[DataManager getSelectedVenue]];
+    NSLog(@"Location did update");
+    [self performSideAction:ACT_UPDATE_SKINS_LOCATION withArgument:[DataManager getSelectedVenue] hidingSideController:NO];
 }
 
 #pragma mark SideActionProtocol methods
 
--(void) performSideAction:(SideAction)action withArgument:(id)object{
-    DDMenuController *menuController = (DDMenuController*)((AppDelegate*)[[UIApplication sharedApplication] delegate]).menuController;
-    [menuController showRootController:YES];
+-(void) performSideAction:(SideAction)action withArgument:(id)object hidingSideController:(BOOL)hiding{
+    if (hiding){
+        DDMenuController *menuController = (DDMenuController*)((AppDelegate*)[[UIApplication sharedApplication] delegate]).menuController;
+        [menuController showRootController:YES];
+    }
     
     switch (action) {
         case ACT_LOAD_NEW_SKINSET:
