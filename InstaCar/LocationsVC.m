@@ -8,13 +8,12 @@
 
 #import "LocationsVC.h"
 #import "Foursquare2.h"
-#import "FSConverter.h"
 #import "CellVenue.h"
 #import "DataManager.h"
 #import "VenueProvider.h"
 
 @interface LocationsVC (){
-    CLLocationManager *locationManager;
+    
 }
 
 @end
@@ -29,9 +28,7 @@
     self.tableVenues.delegate = self;
     self.tableVenues.dataSource = self;
     
-    locationManager = [[CLLocationManager alloc]init];
-    locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters;
-    locationManager.delegate = self;
+    ((AppDelegate*)[UIApplication sharedApplication].delegate).locationUpdateReceiverDelegate = self;
     
     if ([VenueProvider getInstance].venuesInitialized){
         self.nearbyVenues = [[VenueProvider getInstance] getAllVenues];
@@ -79,42 +76,17 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
-#pragma mark Location manager delegate
-
--(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations{
-    [locationManager stopUpdatingLocation];
-    CLLocation *newLocation = (CLLocation*)locations.lastObject;
-    [Foursquare2 searchVenuesNearByLatitude:@(newLocation.coordinate.latitude)
-                 longitude:@(newLocation.coordinate.longitude)
-                 accuracyLL:nil
-                 altitude:nil
-                 accuracyAlt:nil
-                 query:nil
-                 limit:nil
-                 intent:intentBrowse
-                 radius:@(500)
-                 categoryId:nil
-                 callback:^(BOOL success, id result){
-                     if (success) {
-                         NSDictionary *dic = result;
-                         NSArray* venues = [dic valueForKeyPath:@"response.venues"];
-                         FSConverter *converter = [[FSConverter alloc]init];
-                         [[VenueProvider getInstance] setVenues:[converter convertToObjects:venues]];
-                         self.nearbyVenues = [[VenueProvider getInstance] getAllVenues];
-                         [self.tableVenues reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationAutomatic];
-                         
-                         [self restoreRefreshButtonIfHidden];
-                     } else {
-                         [locationManager startUpdatingLocation];
-                     }
-                }
-     ];
-}
-
 #pragma mark Event handlers
 
+-(void)locationDidUpdate{
+    self.nearbyVenues = [[VenueProvider getInstance] getAllVenues];
+    [self.tableVenues reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationAutomatic];
+    
+    [self restoreRefreshButtonIfHidden];
+}
+
 - (IBAction)btnBackPressed {
-    [locationManager stopUpdatingLocation];
+    [((AppDelegate*)[UIApplication sharedApplication].delegate).locationManager stopUpdatingLocation];
     
     [self restoreRefreshButtonIfHidden];
     
@@ -130,7 +102,7 @@
     self.toolBar.items = toolBarButtons;
     [self.activityIndicator startAnimating];
     
-    [locationManager startUpdatingLocation];
+    [((AppDelegate*)[UIApplication sharedApplication].delegate).locationManager startUpdatingLocation];
 }
 
 #pragma marj private methods

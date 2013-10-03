@@ -7,6 +7,7 @@
 //
 
 #import "VenueProvider.h"
+#import "DataManager.h"
 
 @implementation VenueProvider
 
@@ -70,12 +71,21 @@
     NSMutableArray *venuesArray = [[NSMutableArray alloc] initWithArray:data];
     if (venueCity){
         [venuesArray insertObject:venueCity atIndex:0];
+        _city = venueCity.name;
+        
+        // if no venue selected then let a city be thois
+        if (![DataManager getSelectedVenue]){
+            [DataManager setSelectedVenue:venueCity];
+        }
     }
     if (venueState){
         [venuesArray insertObject:venueState atIndex:0];
+        _state = venueState.name;
     }
     if (venueCountry){
         [venuesArray insertObject:venueCountry atIndex:0];
+        _country = venueCountry.name;
+        _countryCode = venueCountry.location.countryCode;
     }
     
     venues = [[NSArray alloc] initWithArray:venuesArray];

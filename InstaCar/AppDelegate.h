@@ -9,11 +9,20 @@
 #import <UIKit/UIKit.h>
 #import "DDMenuController.h"
 #import "DbManager.h"
+#import <CoreLocation/CoreLocation.h>
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+@protocol LocationUpdateReceiverDelegate <NSObject>
+-(void)locationDidUpdate;
+@end
+
+@interface AppDelegate : UIResponder <UIApplicationDelegate,
+                                      CLLocationManagerDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 @property (strong, nonatomic) DDMenuController *menuController;
+@property (nonatomic) id<LocationUpdateReceiverDelegate> locationUpdateReceiverDelegate;
+
 @property DbManager* dbManager;
+@property CLLocationManager *locationManager;
 
 @end

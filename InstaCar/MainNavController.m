@@ -11,6 +11,7 @@
 #import "AppDelegate.h"
 #import "AppMenuTableVC.h"
 #import "LocationsVC.h"
+#import "DataManager.h"
 
 @interface MainNavController (){
     SideViewControllerBase *sideViewController;
@@ -93,7 +94,14 @@
     [menuController showRightController:YES];
 }
 
-#pragma mark - SideActionProtocol methods
+#pragma mark Location update delegate
+
+// should get this notification when Location view is null (has not been opened or has been destroyed)
+-(void)locationDidUpdate{
+    [self performSideAction:ACT_UPDATE_SKINS_LOCATION withArgument:[DataManager getSelectedVenue]];
+}
+
+#pragma mark SideActionProtocol methods
 
 -(void) performSideAction:(SideAction)action withArgument:(id)object{
     DDMenuController *menuController = (DDMenuController*)((AppDelegate*)[[UIApplication sharedApplication] delegate]).menuController;

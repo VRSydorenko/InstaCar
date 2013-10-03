@@ -12,6 +12,8 @@
 #import "ShareKit.h"
 #import "SHKConfiguration.h"
 #import "CustomSHKConfigurator.h"
+#import "FSConverter.h"
+#import "VenueProvider.h"
 
 @implementation AppDelegate
 
@@ -19,6 +21,12 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    // Location manager
+    self.locationManager = [[CLLocationManager alloc]init];
+    self.locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters;
+    self.locationManager.delegate = self;
+    [self.locationManager startUpdatingLocation];
+    
     // ShareKit
     DefaultSHKConfigurator *configurator = [[CustomSHKConfigurator alloc] init];
     [SHKConfiguration sharedInstanceWithConfigurator:configurator];
@@ -27,6 +35,7 @@
     self.dbManager = [[DbManager alloc] init];
     
     // Foursquare
+    // TODO: create the app at foursquare
     [Foursquare2 setupFoursquareWithKey:@"WU4W30WXTHPBEIMQWLGJBFFC2V3NITOGLKLNMWPXL0O5MP2N"
                  secret:@"YGMNXG45YV2RSRYRSVW2NHBFANQWB3MAGUIWNDZNUUTEUR3R"
                  callbackURL:@"app://instatest"];
@@ -35,7 +44,7 @@
     
     // Slide controller
     MainNavController *mainNavController = [[UIStoryboard storyboardWithName:@"main" bundle:nil] instantiateViewControllerWithIdentifier:@"mainNavController"];
-    
+    self.locationUpdateReceiverDelegate = mainNavController; // for the first location update and before Location view is set as a delegate
     DDMenuController *rootController = [[DDMenuController alloc] initWithRootViewController:mainNavController];
     rootController.delegate = mainNavController;
     _menuController = rootController;
@@ -45,8 +54,37 @@
     self.window.backgroundColor = [UIColor whiteColor];
     
     [self.window makeKeyAndVisible];
+    
     return YES;
+}
 
+#pragma mark Location manager delegate
+
+-(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations{
+    [self.locationManager stopUpdatingLocation];
+    CLLocation *newLocation = (CLLocation*)locations.lastObject;
+    [Foursquare2 searchVenuesNearByLatitude:@(newLocation.coordinate.latitude)
+                                  longitude:@(newLocation.coordinate.longitude)
+                                 accuracyLL:nil
+                                   altitude:nil
+                                accuracyAlt:nil
+                                      query:nil
+                                      limit:nil
+                                     intent:intentBrowse
+                                     radius:@(500)
+                                 categoryId:nil
+                                   callback:^(BOOL success, id result){
+                                       if (success) {
+                                           NSDictionary *dic = result;
+                                           NSArray* venues = [dic valueForKeyPath:@"response.venues"];
+                                           FSConverter *converter = [[FSConverter alloc]init];
+                                           [[VenueProvider getInstance] setVenues:[converter convertToObjects:venues]];
+                                           [self.locationUpdateReceiverDelegate locationDidUpdate];
+                                       } else {
+                                           [self.locationManager startUpdatingLocation];
+                                       }
+                                   }
+     ];
 }
 							
 - (void)applicationWillResignActive:(UIApplication *)application

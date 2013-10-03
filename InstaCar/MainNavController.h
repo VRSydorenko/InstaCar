@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "DDMenuController.h"
+#import "AppDelegate.h"
 
 typedef enum {
     APP_MENU = 0,
@@ -39,7 +40,8 @@ typedef enum {
 
 
 @interface MainNavController : UINavigationController <SideActionProtocol,
-                                                       DDMenuControllerDelegate>
+                                                       DDMenuControllerDelegate,
+                                                       LocationUpdateReceiverDelegate>
 
 @property NSObject<SelectedDataChangeActionProtocol> *dataSelectionChangeDelegate;
 @property NSObject<DDMenuControllerDelegate> *menuControllerDelegate;

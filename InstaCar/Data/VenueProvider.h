@@ -16,6 +16,12 @@
 +(VenueProvider*) getInstance;
 
 @property (readonly) BOOL venuesInitialized;
+
+@property (readonly) NSString* city;
+@property (readonly) NSString* state;
+@property (readonly) NSString* country;
+@property (readonly) NSString* countryCode;
+
 -(void)setVenues:(NSArray*)data;
 -(NSArray*)getAllVenues;
 
