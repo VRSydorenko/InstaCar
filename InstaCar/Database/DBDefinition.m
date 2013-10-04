@@ -34,7 +34,7 @@
     
     DbTable* tAutos = [[DbTable alloc] initWithTableName:T_AUTOS];
     [tAutos addField:F_NAME type:DBTYPE_TEXT notNull:YES];
-    [tAutos addField:F_COUNTRY_ID type:DBTYPE_REAL notNull:NO];
+    [tAutos addField:F_COUNTRY_ID type:DBTYPE_REAL notNull:YES];
     [tAutos addField:F_LOGO_ID type:DBTYPE_REAL notNull:NO];
     [tAutos addForeignKey:F_COUNTRY_ID refTable:T_COUNTRIES refField:F_ID];
     [tAutos addForeignKey:F_LOGO_ID refTable:T_LOGOS refField:F_ID];
