@@ -27,7 +27,7 @@
 +(UIImage*)image:(UIImage*)sourceImage byScalingProportionallyToSize:(CGSize)targetSize{
     CGFloat widthFactor = targetSize.width / sourceImage.size.width;
     CGFloat heightFactor = targetSize.height / sourceImage.size.height;
-    CGFloat scaleFactor = (widthFactor < heightFactor) ? widthFactor : heightFactor;
+    CGFloat scaleFactor = MAX(widthFactor, heightFactor);
     
     CGFloat scaledWidth  = sourceImage.size.width * scaleFactor;
     CGFloat scaledHeight = sourceImage.size.height * scaleFactor;

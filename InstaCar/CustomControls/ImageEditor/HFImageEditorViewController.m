@@ -2,7 +2,7 @@
 #import <QuartzCore/QuartzCore.h>
 
 static const CGFloat kMaxUIImageSize = 1024;
-static const CGFloat kPreviewImageSize = 120;
+static const CGFloat kPreviewImageSize = 320;
 static const CGFloat kDefaultCropWidth = 320;
 static const CGFloat kDefaultCropHeight = 320;
 static const CGFloat kBoundingBoxInset = 15;
