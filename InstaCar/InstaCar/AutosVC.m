@@ -58,11 +58,11 @@ typedef enum {
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     static NSString *CellIdentifier = @"cellAuto";
     CellAuto *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    cell.tag = indexPath.row; // for sublevel picker callback
     
     switch (currentContentType) {
         case CONTENT_AUTOS:{
             Auto *_auto = [data objectAtIndex:indexPath.row];
-            cell.tag = indexPath.row;
             cell.autoTitleLabel.text = _auto.name;
             cell.autoLogo.image = [UIImage imageNamed:_auto.logo];
             cell.sublevelPickerDelegate = self;
@@ -73,13 +73,13 @@ typedef enum {
         }
         case CONTENT_MODELS:{
             AutoModel *model = [data objectAtIndex:indexPath.row];
-            cell.tag = indexPath.row;
             cell.autoTitleLabel.text = model.name;
             cell.autoLogo.image = [UIImage imageNamed:model.logo];
             cell.sublevelPickerDelegate = self;
             
             NSArray *submodels = [DataManager getSubmodelsOfModel:model.modelId];
-            cell.autoModelsButton.hidden = submodels.count == 0;
+            cell.autoModelsButton.hidden = !model.isSelectable || submodels.count == 0;
+            cell.accessoryType = model.isSelectable ? UITableViewCellAccessoryNone : UITableViewCellAccessoryDisclosureIndicator;
             break;
         }
         case CONTENT_SUBMODELS:{
@@ -103,6 +103,11 @@ typedef enum {
             }
             case CONTENT_MODELS:{
                 selectedModel = [data objectAtIndex:indexPath.row];
+                // is current model cannot be picked then simulate its '...' button click and return
+                if (!selectedModel.isSelectable){
+                   [self sublevelButtonPressedAtIndex:indexPath.row];
+                    return;
+                }
                 break;
             }
             case CONTENT_SUBMODELS:{

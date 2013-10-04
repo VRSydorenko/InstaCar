@@ -17,6 +17,7 @@
 @property (nonatomic) int endYear;
 @property (nonatomic) int modelId;
 @property AutoSubmodel *submodel;
+@property (nonatomic) BOOL isSelectable;
 
 -(id)initWithId:(int)modelId andName:(NSString*)name;
 

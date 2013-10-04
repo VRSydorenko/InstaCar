@@ -32,6 +32,7 @@
 #define F_AUTO_ID @"f_auto_id"
 #define F_YEAR_START @"f_year_start"
 #define F_YEAR_END @"f_year_end"
+#define F_SELECTABLE @"f_is_selectable"
 // F_LOGO_ID
 // F_NAME
 

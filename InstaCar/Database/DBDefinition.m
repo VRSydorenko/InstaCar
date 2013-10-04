@@ -46,6 +46,7 @@
     [tModels addField:F_LOGO_ID type:DBTYPE_REAL notNull:YES];
     [tModels addField:F_YEAR_START type:DBTYPE_REAL notNull:NO];
     [tModels addField:F_YEAR_END type:DBTYPE_REAL notNull:NO];
+    [tModels addField:F_SELECTABLE type:DBTYPE_BOOL notNull:YES];
     [tModels addForeignKey:F_AUTO_ID refTable:T_AUTOS refField:F_ID];
     [tModels addForeignKey:F_LOGO_ID refTable:T_LOGOS refField:F_ID];
     [tables addObject:tModels];
