@@ -21,13 +21,7 @@
 		7F2AD57917EDE9B40096EC8D /* SHKiOSSharer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F2AD48C17EDE9B40096EC8D /* SHKiOSSharer.m */; };
 		7F2AD57B17EDE9B40096EC8D /* SHKSharer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F2AD49117EDE9B40096EC8D /* SHKSharer.m */; };
 		7F2AD57C17EDE9B40096EC8D /* SHKSharerDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F2AD49317EDE9B40096EC8D /* SHKSharerDelegate.m */; };
-		7F2AD57D17EDE9B40096EC8D /* GTMNSString+HTML.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F2AD49617EDE9B40096EC8D /* GTMNSString+HTML.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		7F2AD57E17EDE9B40096EC8D /* NSArray+JoinValues.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F2AD49817EDE9B40096EC8D /* NSArray+JoinValues.m */; };
-		7F2AD57F17EDE9B40096EC8D /* NSData+md5.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F2AD49A17EDE9B40096EC8D /* NSData+md5.m */; };
-		7F2AD58017EDE9B40096EC8D /* NSData+SaveItemAttachment.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F2AD49C17EDE9B40096EC8D /* NSData+SaveItemAttachment.m */; };
-		7F2AD58117EDE9B40096EC8D /* NSHTTPCookieStorage+DeleteForURL.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F2AD49E17EDE9B40096EC8D /* NSHTTPCookieStorage+DeleteForURL.m */; };
-		7F2AD58217EDE9B40096EC8D /* NSMutableDictionary+NSNullsToEmptyStrings.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F2AD4A017EDE9B40096EC8D /* NSMutableDictionary+NSNullsToEmptyStrings.m */; };
-		7F2AD58317EDE9B40096EC8D /* UIImage+OurBundle.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F2AD4A217EDE9B40096EC8D /* UIImage+OurBundle.m */; };
 		7F2AD59317EDE9B40096EC8D /* SHKFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F2AD4CA17EDE9B40096EC8D /* SHKFile.m */; };
 		7F2AD59417EDE9B40096EC8D /* SHKRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F2AD4CC17EDE9B40096EC8D /* SHKRequest.m */; };
 		7F2AD59517EDE9B40096EC8D /* SHKXMLResponseParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F2AD4CE17EDE9B40096EC8D /* SHKXMLResponseParser.m */; };
@@ -151,21 +145,8 @@
 		7F2AD49117EDE9B40096EC8D /* SHKSharer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHKSharer.m; sourceTree = "<group>"; };
 		7F2AD49217EDE9B40096EC8D /* SHKSharerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHKSharerDelegate.h; sourceTree = "<group>"; };
 		7F2AD49317EDE9B40096EC8D /* SHKSharerDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHKSharerDelegate.m; sourceTree = "<group>"; };
-		7F2AD49517EDE9B40096EC8D /* GTMNSString+HTML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GTMNSString+HTML.h"; sourceTree = "<group>"; };
-		7F2AD49617EDE9B40096EC8D /* GTMNSString+HTML.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GTMNSString+HTML.m"; sourceTree = "<group>"; };
 		7F2AD49717EDE9B40096EC8D /* NSArray+JoinValues.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+JoinValues.h"; sourceTree = "<group>"; };
 		7F2AD49817EDE9B40096EC8D /* NSArray+JoinValues.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+JoinValues.m"; sourceTree = "<group>"; };
-		7F2AD49917EDE9B40096EC8D /* NSData+md5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+md5.h"; sourceTree = "<group>"; };
-		7F2AD49A17EDE9B40096EC8D /* NSData+md5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+md5.m"; sourceTree = "<group>"; };
-		7F2AD49B17EDE9B40096EC8D /* NSData+SaveItemAttachment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+SaveItemAttachment.h"; sourceTree = "<group>"; };
-		7F2AD49C17EDE9B40096EC8D /* NSData+SaveItemAttachment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+SaveItemAttachment.m"; sourceTree = "<group>"; };
-		7F2AD49D17EDE9B40096EC8D /* NSHTTPCookieStorage+DeleteForURL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSHTTPCookieStorage+DeleteForURL.h"; sourceTree = "<group>"; };
-		7F2AD49E17EDE9B40096EC8D /* NSHTTPCookieStorage+DeleteForURL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSHTTPCookieStorage+DeleteForURL.m"; sourceTree = "<group>"; };
-		7F2AD49F17EDE9B40096EC8D /* NSMutableDictionary+NSNullsToEmptyStrings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableDictionary+NSNullsToEmptyStrings.h"; sourceTree = "<group>"; };
-		7F2AD4A017EDE9B40096EC8D /* NSMutableDictionary+NSNullsToEmptyStrings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableDictionary+NSNullsToEmptyStrings.m"; sourceTree = "<group>"; };
-		7F2AD4A117EDE9B40096EC8D /* UIImage+OurBundle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+OurBundle.h"; sourceTree = "<group>"; };
-		7F2AD4A217EDE9B40096EC8D /* UIImage+OurBundle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+OurBundle.m"; sourceTree = "<group>"; };
-		7F2AD4A417EDE9B40096EC8D /* Debug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Debug.h; sourceTree = "<group>"; };
 		7F2AD4A517EDE9B40096EC8D /* FormControllerCallback.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FormControllerCallback.h; sourceTree = "<group>"; };
 		7F2AD4C917EDE9B40096EC8D /* SHKFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHKFile.h; sourceTree = "<group>"; };
 		7F2AD4CA17EDE9B40096EC8D /* SHKFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHKFile.m; sourceTree = "<group>"; };
@@ -494,20 +475,8 @@
 		7F2AD49417EDE9B40096EC8D /* Categories */ = {
 			isa = PBXGroup;
 			children = (
-				7F2AD49517EDE9B40096EC8D /* GTMNSString+HTML.h */,
-				7F2AD49617EDE9B40096EC8D /* GTMNSString+HTML.m */,
 				7F2AD49717EDE9B40096EC8D /* NSArray+JoinValues.h */,
 				7F2AD49817EDE9B40096EC8D /* NSArray+JoinValues.m */,
-				7F2AD49917EDE9B40096EC8D /* NSData+md5.h */,
-				7F2AD49A17EDE9B40096EC8D /* NSData+md5.m */,
-				7F2AD49B17EDE9B40096EC8D /* NSData+SaveItemAttachment.h */,
-				7F2AD49C17EDE9B40096EC8D /* NSData+SaveItemAttachment.m */,
-				7F2AD49D17EDE9B40096EC8D /* NSHTTPCookieStorage+DeleteForURL.h */,
-				7F2AD49E17EDE9B40096EC8D /* NSHTTPCookieStorage+DeleteForURL.m */,
-				7F2AD49F17EDE9B40096EC8D /* NSMutableDictionary+NSNullsToEmptyStrings.h */,
-				7F2AD4A017EDE9B40096EC8D /* NSMutableDictionary+NSNullsToEmptyStrings.m */,
-				7F2AD4A117EDE9B40096EC8D /* UIImage+OurBundle.h */,
-				7F2AD4A217EDE9B40096EC8D /* UIImage+OurBundle.m */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -515,7 +484,6 @@
 		7F2AD4A317EDE9B40096EC8D /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				7F2AD4A417EDE9B40096EC8D /* Debug.h */,
 				7F2AD4A517EDE9B40096EC8D /* FormControllerCallback.h */,
 				7F2AD4C917EDE9B40096EC8D /* SHKFile.h */,
 				7F2AD4CA17EDE9B40096EC8D /* SHKFile.m */,
@@ -938,13 +906,10 @@
 				7FF3389317D4C0E700B046C4 /* SkinsVC.m in Sources */,
 				7F59AC6F17D3C20C00B87457 /* DbTable.m in Sources */,
 				7F5AC64417CC000400C01658 /* SkinProvider.m in Sources */,
-				7F2AD58017EDE9B40096EC8D /* NSData+SaveItemAttachment.m in Sources */,
 				7F7FF47017CF8634000E0ABD /* Location.m in Sources */,
 				7F419E2D17D6698000255E56 /* CellAuto.m in Sources */,
 				7F4F684317F6F97600F1017B /* HFImageEditorFrameView.m in Sources */,
 				7F4F684417F6F97600F1017B /* HFImageEditorViewController.m in Sources */,
-				7F2AD57F17EDE9B40096EC8D /* NSData+md5.m in Sources */,
-				7F2AD58217EDE9B40096EC8D /* NSMutableDictionary+NSNullsToEmptyStrings.m in Sources */,
 				7F2AD5A417EDE9B40096EC8D /* SHKPrint.m in Sources */,
 				7FC28FC217F31EF200638697 /* UIBluredView.m in Sources */,
 				7F2AD5D517EDE9B40096EC8D /* SHKFormFieldOptionPickerSettings.m in Sources */,
@@ -969,7 +934,6 @@
 				7F4F684817F6FDF500F1017B /* ImageEditor.m in Sources */,
 				7F59AC6E17D3C20C00B87457 /* DbManager.m in Sources */,
 				7F5AC64D17CC06CE00C01658 /* Auto.m in Sources */,
-				7F2AD58317EDE9B40096EC8D /* UIImage+OurBundle.m in Sources */,
 				7F59AC6C17D3C20C00B87457 /* DbField.m in Sources */,
 				7F2AD59517EDE9B40096EC8D /* SHKXMLResponseParser.m in Sources */,
 				7F2767221791E80000A1C1A0 /* AppDelegate.m in Sources */,
@@ -997,8 +961,6 @@
 				7F2AD57E17EDE9B40096EC8D /* NSArray+JoinValues.m in Sources */,
 				7F59AC5A17D3BA2900B87457 /* DataManager.m in Sources */,
 				7F2AD59317EDE9B40096EC8D /* SHKFile.m in Sources */,
-				7F2AD57D17EDE9B40096EC8D /* GTMNSString+HTML.m in Sources */,
-				7F2AD58117EDE9B40096EC8D /* NSHTTPCookieStorage+DeleteForURL.m in Sources */,
 				7FC4137717C7E8450025DD2C /* FSRequester.m in Sources */,
 				7F2AD5D217EDE9B40096EC8D /* SHKFormFieldCellText.m in Sources */,
 				7F2AD59617EDE9B40096EC8D /* SHK.m in Sources */,

@@ -26,7 +26,6 @@
 //
 
 #import "SHKRequest.h"
-#import "Debug.h"
 
 #define SHK_TIMEOUT 90
 
@@ -82,7 +81,7 @@
 	}
 	
 	// Start Connection
-	SHKLog(@"Start SHKRequest:\nURL: %@\nparams: %@", self.url, self.params);
+	NSLog(@"Start SHKRequest:\nURL: %@\nparams: %@", self.url, self.params);
 	NSURLConnection *aConnection = [[NSURLConnection alloc] initWithRequest:request delegate:self startImmediately:YES];
     self.connection = aConnection;	
 }
@@ -132,8 +131,7 @@
 #pragma mark -
 
 - (NSString *)description {
-    
-    NSString *functionResult = [NSString stringWithFormat:@"method: %@\nurl: %@\nparams: %@\nresponse: %i (%@)\ndata: %@", self.method, [self.url absoluteString], self.params, [self.response statusCode], [NSHTTPURLResponse localizedStringForStatusCode:[self.response statusCode]], [[NSString alloc] initWithData:self.data encoding:NSUTF8StringEncoding]];
+    NSString *functionResult = [NSString stringWithFormat:@"method: %@\nurl: %@\nparams: %@\nresponse: %li (%@)\ndata: %@", self.method, [self.url absoluteString], self.params, (long)[self.response statusCode], [NSHTTPURLResponse localizedStringForStatusCode:[self.response statusCode]], [[NSString alloc] initWithData:self.data encoding:NSUTF8StringEncoding]];
     
     return functionResult;    
 }
