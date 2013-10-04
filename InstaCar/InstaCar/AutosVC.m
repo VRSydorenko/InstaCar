@@ -59,6 +59,7 @@ typedef enum {
     static NSString *CellIdentifier = @"cellAuto";
     CellAuto *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     cell.tag = indexPath.row; // for sublevel picker callback
+    cell.accessoryType = UITableViewCellAccessoryNone;
     
     switch (currentContentType) {
         case CONTENT_AUTOS:{
@@ -79,7 +80,9 @@ typedef enum {
             
             NSArray *submodels = [DataManager getSubmodelsOfModel:model.modelId];
             cell.autoModelsButton.hidden = !model.isSelectable || submodels.count == 0;
-            cell.accessoryType = model.isSelectable ? UITableViewCellAccessoryNone : UITableViewCellAccessoryDisclosureIndicator;
+            if (!model.isSelectable){
+                cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+            }
             break;
         }
         case CONTENT_SUBMODELS:{
