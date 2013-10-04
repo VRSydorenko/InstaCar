@@ -132,10 +132,14 @@
             CGRect subImageRect = CGRectMake(topOffset, 0, currentMinSideLength, currentMinSideLength);
             
             ciImage = [ciImage imageByCroppingToRect:subImageRect];
-            ciImage = [ciImage imageByApplyingTransform:CGAffineTransformMakeRotation(-M_PI_2)];
+            //ciImage = [ciImage imageByApplyingTransform:CGAffineTransformMakeRotation(-M_PI_2)];
                                
             CGFloat imageScale = currentMinSideLength/desiredSideLength;
-            self.stillImage = [[UIImage alloc] initWithCIImage:ciImage scale:imageScale orientation:UIImageOrientationUp];
+            UIImageOrientation orientation = UIImageOrientationRight;
+            if (activeInputFront){
+                orientation = UIImageOrientationUp | UIImageOrientationLeftMirrored;
+            }
+            self.stillImage = [[UIImage alloc] initWithCIImage:ciImage scale:imageScale orientation:orientation];
             [[NSNotificationCenter defaultCenter] postNotificationName:kImageCapturedSuccessfully object:nil];
         }
      ];

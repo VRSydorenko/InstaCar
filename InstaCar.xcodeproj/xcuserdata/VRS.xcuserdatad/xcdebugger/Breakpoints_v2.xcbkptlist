@@ -20,11 +20,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "InstaCar/CustomControls/CaptureSessionManager.m"
-            timestampString = "401463825.15966"
+            timestampString = "402613820.63806"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "124"
-            endingLineNumber = "124"
+            startingLineNumber = "128"
+            endingLineNumber = "128"
             landmarkName = "-captureStillImage"
             landmarkType = "5">
          </BreakpointContent>
