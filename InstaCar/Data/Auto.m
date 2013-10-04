@@ -25,9 +25,9 @@
 -(NSString*)selectedText{
     if (self.model){
         if (self.model.submodel){
-            return self.model.submodel.name;
+            return [NSString stringWithFormat:@"%@ %@", self.model.isSelectable?self.model.name:self.name, self.model.submodel.name];
         } else {
-            return self.model.name;
+            return [NSString stringWithFormat:@"%@ %@", self.name, self.model.name];
         }
     }
     return self.name;
