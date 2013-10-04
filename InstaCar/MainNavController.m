@@ -137,8 +137,14 @@
             }
             break;
         }
-        case ACT_OPEN_FB_PAGE:
+        case ACT_OPEN_FB_PAGE:{
+            NSURL *facebookPageUrl = [NSURL URLWithString:@"fb://profile/496058110489790"];
+            if (![[UIApplication sharedApplication] canOpenURL:facebookPageUrl]) {
+                facebookPageUrl = [NSURL URLWithString:@"http://www.facebook.com/InstacarApp"];
+            }
+            [[UIApplication sharedApplication] openURL:facebookPageUrl];
             break;
+        }
         case ACT_OPEN_APPSTORE_TO_RATE:{
             // TODO: change app url
             NSString* url = @"itms-apps://itunes.apple.com/app/id595828753";
