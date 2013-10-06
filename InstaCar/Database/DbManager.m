@@ -101,7 +101,7 @@
 #pragma mark === France ===
     countryId = [self addCountry:@"France"];
 #pragma mark |---- Citroёn
-    logoId = [self addLogo:@"citroen_256.png"];
+    logoId = [self addLogo:@"citroen_256.png"]; // TODO: add second Citroen logo
     autoId = [self addAuto:@"CITROËN" country:countryId logo:logoId];
     modelId = [self addAutoModel:@"Pre war" ofAuto:autoId logo:logoId startYear:1919 endYear:1941 isSelectable:NO];
     {
@@ -651,6 +651,43 @@
         [self addAutoSubmodel:@"F 800 Style" ofModel:modelId logo:logoId startYear:2010 endYear:-1];
         [self addAutoSubmodel:@"F 125" ofModel:modelId logo:logoId startYear:2011 endYear:-1];
     }
+    // H
+    // I
+#pragma mark === Italy ===
+    countryId = [self addCountry:@"Italy"];
+#pragma mark |---- Alfa Romeo
+    logoId = [self addLogo:@"alfaromeo_256.png"];
+    autoId = [self addAuto:@"Alfa Romeo" country:countryId logo:logoId];
+    modelId = [self addAutoModel:@"Model" ofAuto:autoId logo:logoId startYear:0 endYear:0];
+    {
+        [self addAutoSubmodel:@"Submodel" ofModel:modelId logo:logoId startYear:0 endYear:0];
+        //[self addAutoSubmodel:@"" ofModel:modelId logo:logoId startYear:0 endYear:0];
+        
+    }
+    /*modelId = [self addAutoModel:@"" ofAuto:autoId logo:logoId startYear:0 endYear:0];
+    {
+        [self addAutoSubmodel:@"" ofModel:modelId logo:logoId startYear:0 endYear:0];
+        [self addAutoSubmodel:@"" ofModel:modelId logo:logoId startYear:0 endYear:0];
+        [self addAutoSubmodel:@"" ofModel:modelId logo:logoId startYear:0 endYear:0];
+        [self addAutoSubmodel:@"" ofModel:modelId logo:logoId startYear:0 endYear:0];
+    }*/
+    // J
+    // K
+    // L
+    // M
+    // N
+    // O
+    // P
+    // Q
+    // R
+    // S
+    // T
+    // U
+    // V
+    // W
+    // X
+    // Y
+    // Z
 }
 
 #pragma mark -
