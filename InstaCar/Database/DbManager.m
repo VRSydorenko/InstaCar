@@ -658,19 +658,140 @@
 #pragma mark |---- Alfa Romeo
     logoId = [self addLogo:@"alfaromeo_256.png"];
     autoId = [self addAuto:@"Alfa Romeo" country:countryId logo:logoId];
-    modelId = [self addAutoModel:@"Model" ofAuto:autoId logo:logoId startYear:0 endYear:0];
+    modelId = [self addAutoModel:@"1910s" ofAuto:autoId logo:logoId startYear:0 endYear:0];
     {
-        [self addAutoSubmodel:@"Submodel" ofModel:modelId logo:logoId startYear:0 endYear:0];
-        //[self addAutoSubmodel:@"" ofModel:modelId logo:logoId startYear:0 endYear:0];
-        
+        [self addAutoSubmodel:@"24 HP" ofModel:modelId logo:logoId startYear:1910 endYear:1920];
+        [self addAutoSubmodel:@"12 HP" ofModel:modelId logo:logoId startYear:1910 endYear:1911];
+        [self addAutoSubmodel:@"15 HP" ofModel:modelId logo:logoId startYear:1911 endYear:1920];
+        [self addAutoSubmodel:@"40/60 HP" ofModel:modelId logo:logoId startYear:1913 endYear:1922];
+        [self addAutoSubmodel:@"15 HP Corsa" ofModel:modelId logo:logoId startYear:1911 endYear:-1];
+        [self addAutoSubmodel:@"40-60 HP Corsa" ofModel:modelId logo:logoId startYear:1913 endYear:-1];
+        [self addAutoSubmodel:@"Grand Prix" ofModel:modelId logo:logoId startYear:1914 endYear:-1];
+    }
+    modelId = [self addAutoModel:@"1920s" ofAuto:autoId logo:logoId startYear:0 endYear:0];
+    {
+        [self addAutoSubmodel:@"20-30 HP" ofModel:modelId logo:logoId startYear:1921 endYear:1922];
+        [self addAutoSubmodel:@"G1" ofModel:modelId logo:logoId startYear:1920 endYear:1921];
+        [self addAutoSubmodel:@"G2" ofModel:modelId logo:logoId startYear:1921 endYear:1921];
+        [self addAutoSubmodel:@"RL" ofModel:modelId logo:logoId startYear:1922 endYear:1927];
+        [self addAutoSubmodel:@"RM" ofModel:modelId logo:logoId startYear:1923 endYear:1925];
+        [self addAutoSubmodel:@"6C 1500" ofModel:modelId logo:logoId startYear:1927 endYear:1929];
+        [self addAutoSubmodel:@"6C 1750" ofModel:modelId logo:logoId startYear:1929 endYear:1933];
+        [self addAutoSubmodel:@"RL Super Sport" ofModel:modelId logo:logoId startYear:1922 endYear:-1];
+        [self addAutoSubmodel:@"RL Targa Florio" ofModel:modelId logo:logoId startYear:1923 endYear:-1];
+        [self addAutoSubmodel:@"P1" ofModel:modelId logo:logoId startYear:1923 endYear:-1];
+        [self addAutoSubmodel:@"P2" ofModel:modelId logo:logoId startYear:1924 endYear:-1];
+        [self addAutoSubmodel:@"6C 1500 MMS" ofModel:modelId logo:logoId startYear:1928 endYear:-1];
+        [self addAutoSubmodel:@"6C 1750 Super Sport" ofModel:modelId logo:logoId startYear:1929 endYear:-1];
+    }
+    modelId = [self addAutoModel:@"1930s" ofAuto:autoId logo:logoId startYear:0 endYear:0];
+    {
+        [self addAutoSubmodel:@"8C 2300" ofModel:modelId logo:logoId startYear:1931 endYear:1934];
+        [self addAutoSubmodel:@"6C 1900" ofModel:modelId logo:logoId startYear:1933 endYear:1933];
+        [self addAutoSubmodel:@"6C 2300" ofModel:modelId logo:logoId startYear:1934 endYear:1937];
+        [self addAutoSubmodel:@"8C 2900" ofModel:modelId logo:logoId startYear:1935 endYear:1939];
+        [self addAutoSubmodel:@"6C 2500" ofModel:modelId logo:logoId startYear:1939 endYear:1950];
+        [self addAutoSubmodel:@"Tipo A" ofModel:modelId logo:logoId startYear:1931 endYear:-1];
+        [self addAutoSubmodel:@"8C 2300 Monza" ofModel:modelId logo:logoId startYear:1931 endYear:-1];
+        [self addAutoSubmodel:@"Tipo B (P3)" ofModel:modelId logo:logoId startYear:1932 endYear:-1];
+        [self addAutoSubmodel:@"Bimotore" ofModel:modelId logo:logoId startYear:1935 endYear:-1];
+        [self addAutoSubmodel:@"8C 35" ofModel:modelId logo:logoId startYear:1935 endYear:-1];
+        [self addAutoSubmodel:@"8C 2900A" ofModel:modelId logo:logoId startYear:1935 endYear:-1];
+        [self addAutoSubmodel:@"12C 36" ofModel:modelId logo:logoId startYear:1936 endYear:-1];
+        [self addAutoSubmodel:@"12C 37" ofModel:modelId logo:logoId startYear:1937 endYear:-1];
+        [self addAutoSubmodel:@"6C 2300B Mille Miglia" ofModel:modelId logo:logoId startYear:1937 endYear:-1];
+        [self addAutoSubmodel:@"8C 2900B Mille Miglia" ofModel:modelId logo:logoId startYear:1937 endYear:-1];
+        [self addAutoSubmodel:@"308" ofModel:modelId logo:logoId startYear:1938 endYear:-1];
+        [self addAutoSubmodel:@"312" ofModel:modelId logo:logoId startYear:1938 endYear:-1];
+        [self addAutoSubmodel:@"316" ofModel:modelId logo:logoId startYear:1938 endYear:-1];
+        [self addAutoSubmodel:@"158" ofModel:modelId logo:logoId startYear:1938 endYear:-1];
+        [self addAutoSubmodel:@"6C 2500 Super Sport Corsa" ofModel:modelId logo:logoId startYear:1939 endYear:-1];
+    }
+    modelId = [self addAutoModel:@"1940s" ofAuto:autoId logo:logoId startYear:0 endYear:0];
+    {
+        [self addAutoSubmodel:@"6C 2500 Competizione" ofModel:modelId logo:logoId startYear:1948 endYear:-1];
+    }
+    modelId = [self addAutoModel:@"1950s" ofAuto:autoId logo:logoId startYear:0 endYear:0];
+    {
+        [self addAutoSubmodel:@"1900" ofModel:modelId logo:logoId startYear:1950 endYear:1958];
+        [self addAutoSubmodel:@"Matta" ofModel:modelId logo:logoId startYear:1951 endYear:1953];
+        [self addAutoSubmodel:@"Giulietta" ofModel:modelId logo:logoId startYear:1954 endYear:1962];
+        [self addAutoSubmodel:@"2000" ofModel:modelId logo:logoId startYear:1958 endYear:1962];
+        [self addAutoSubmodel:@"Dauphine" ofModel:modelId logo:logoId startYear:1959 endYear:1964];
+        [self addAutoSubmodel:@"159" ofModel:modelId logo:logoId startYear:1951 endYear:-1];
+        [self addAutoSubmodel:@"6C 3000 CM" ofModel:modelId logo:logoId startYear:1952 endYear:-1];
+    }
+    modelId = [self addAutoModel:@"1960s" ofAuto:autoId logo:logoId startYear:0 endYear:0];
+    {
+        [self addAutoSubmodel:@"2600" ofModel:modelId logo:logoId startYear:1962 endYear:1968];
+        [self addAutoSubmodel:@"Giulia Saloon" ofModel:modelId logo:logoId startYear:1962 endYear:1976];
+        [self addAutoSubmodel:@"Giulia TZ" ofModel:modelId logo:logoId startYear:1963 endYear:1967];
+        [self addAutoSubmodel:@"Giulia Sprint" ofModel:modelId logo:logoId startYear:1963 endYear:1977];
+        [self addAutoSubmodel:@"Giulia Sprint Speciale" ofModel:modelId logo:logoId startYear:1963 endYear:1966];
+        [self addAutoSubmodel:@"Gran Sport Quattroruote" ofModel:modelId logo:logoId startYear:1965 endYear:1967];
+        [self addAutoSubmodel:@"GTA" ofModel:modelId logo:logoId startYear:1965 endYear:1971];
+        [self addAutoSubmodel:@"Spider" ofModel:modelId logo:logoId startYear:1966 endYear:1993];
+        [self addAutoSubmodel:@"33 Stradale" ofModel:modelId logo:logoId startYear:1967 endYear:1969];
+        [self addAutoSubmodel:@"1750/2000 Berlina" ofModel:modelId logo:logoId startYear:1967 endYear:1977];
+        [self addAutoSubmodel:@"Giulietta SZ" ofModel:modelId logo:logoId startYear:1960 endYear:-1];
+        [self addAutoSubmodel:@"Giulia TZ" ofModel:modelId logo:logoId startYear:1963 endYear:-1];
+        [self addAutoSubmodel:@"GTA" ofModel:modelId logo:logoId startYear:1965 endYear:-1];
+        [self addAutoSubmodel:@"Tipo 33" ofModel:modelId logo:logoId startYear:1965 endYear:-1];
+        [self addAutoSubmodel:@"33/2" ofModel:modelId logo:logoId startYear:1968 endYear:-1];
+        [self addAutoSubmodel:@"33/3" ofModel:modelId logo:logoId startYear:1969 endYear:-1];
+    }
+    modelId = [self addAutoModel:@"1970s" ofAuto:autoId logo:logoId startYear:0 endYear:0];
+    {
+        [self addAutoSubmodel:@"Montreal" ofModel:modelId logo:logoId startYear:1970 endYear:1977];
+        [self addAutoSubmodel:@"Alfasud" ofModel:modelId logo:logoId startYear:1972 endYear:1983];
+        [self addAutoSubmodel:@"Alfetta saloon" ofModel:modelId logo:logoId startYear:1972 endYear:1984];
+        [self addAutoSubmodel:@"Alfetta GT/GTV" ofModel:modelId logo:logoId startYear:1974 endYear:1987];
+        [self addAutoSubmodel:@"Alfasud Sprint" ofModel:modelId logo:logoId startYear:1976 endYear:1989];
+        [self addAutoSubmodel:@"Nuova Giulietta" ofModel:modelId logo:logoId startYear:1977 endYear:1985];
+        [self addAutoSubmodel:@"Alfa 6" ofModel:modelId logo:logoId startYear:1979 endYear:1986];
+        [self addAutoSubmodel:@"33/4" ofModel:modelId logo:logoId startYear:1972 endYear:-1];
+        [self addAutoSubmodel:@"33TT12" ofModel:modelId logo:logoId startYear:1973 endYear:-1];
+        [self addAutoSubmodel:@"33SC12" ofModel:modelId logo:logoId startYear:1976 endYear:-1];
+        [self addAutoSubmodel:@"177" ofModel:modelId logo:logoId startYear:1979 endYear:-1];
+        [self addAutoSubmodel:@"179" ofModel:modelId logo:logoId startYear:1979 endYear:-1];
+    }
+    modelId = [self addAutoModel:@"1980s" ofAuto:autoId logo:logoId startYear:0 endYear:0];
+    {
+        [self addAutoSubmodel:@"33" ofModel:modelId logo:logoId startYear:1983 endYear:1994];
+        [self addAutoSubmodel:@"Arna" ofModel:modelId logo:logoId startYear:1984 endYear:1987];
+        [self addAutoSubmodel:@"90" ofModel:modelId logo:logoId startYear:1984 endYear:1987];
+        [self addAutoSubmodel:@"75" ofModel:modelId logo:logoId startYear:1985 endYear:1992];
+        [self addAutoSubmodel:@"164" ofModel:modelId logo:logoId startYear:1987 endYear:1998];
+        [self addAutoSubmodel:@"SZ/RZ" ofModel:modelId logo:logoId startYear:1989 endYear:1993];
+        [self addAutoSubmodel:@"182" ofModel:modelId logo:logoId startYear:1982 endYear:-1];
+        [self addAutoSubmodel:@"183" ofModel:modelId logo:logoId startYear:1983 endYear:-1];
+        [self addAutoSubmodel:@"184" ofModel:modelId logo:logoId startYear:1984 endYear:-1];
+        [self addAutoSubmodel:@"185" ofModel:modelId logo:logoId startYear:1985 endYear:-1];
+    }
+    modelId = [self addAutoModel:@"1990s" ofAuto:autoId logo:logoId startYear:0 endYear:0];
+    {
+        [self addAutoSubmodel:@"155" ofModel:modelId logo:logoId startYear:19920 endYear:1998];
+        [self addAutoSubmodel:@"145" ofModel:modelId logo:logoId startYear:19940 endYear:2000];
+        [self addAutoSubmodel:@"146" ofModel:modelId logo:logoId startYear:19940 endYear:2000];
+        [self addAutoSubmodel:@"GTV/Spider" ofModel:modelId logo:logoId startYear:19950 endYear:2006];
+        [self addAutoSubmodel:@"156" ofModel:modelId logo:logoId startYear:19970 endYear:2005];
+        [self addAutoSubmodel:@"166" ofModel:modelId logo:logoId startYear:19980 endYear:2007];
+        [self addAutoSubmodel:@"155 V6 TI" ofModel:modelId logo:logoId startYear:19930 endYear:0];
+    }
+    modelId = [self addAutoModel:@"2000s" ofAuto:autoId logo:logoId startYear:0 endYear:0];
+    {
+        [self addAutoSubmodel:@"147" ofModel:modelId logo:logoId startYear:2000 endYear:2010];
+        [self addAutoSubmodel:@"8C Competizione" ofModel:modelId logo:logoId startYear:2007 endYear:2009];
+        [self addAutoSubmodel:@"8C Spider" ofModel:modelId logo:logoId startYear:2008 endYear:2010];
+        [self addAutoSubmodel:@"GT" ofModel:modelId logo:logoId startYear:2003 endYear:2010];
+        [self addAutoSubmodel:@"Brera" ofModel:modelId logo:logoId startYear:2005 endYear:2010];
+        [self addAutoSubmodel:@"159" ofModel:modelId logo:logoId startYear:2005 endYear:2011];
+        [self addAutoSubmodel:@"Spider" ofModel:modelId logo:logoId startYear:2006 endYear:2010];
     }
     /*modelId = [self addAutoModel:@"" ofAuto:autoId logo:logoId startYear:0 endYear:0];
-    {
-        [self addAutoSubmodel:@"" ofModel:modelId logo:logoId startYear:0 endYear:0];
-        [self addAutoSubmodel:@"" ofModel:modelId logo:logoId startYear:0 endYear:0];
-        [self addAutoSubmodel:@"" ofModel:modelId logo:logoId startYear:0 endYear:0];
-        [self addAutoSubmodel:@"" ofModel:modelId logo:logoId startYear:0 endYear:0];
-    }*/
+     {
+     [self addAutoSubmodel:@"" ofModel:modelId logo:logoId startYear:0 endYear:0];
+     }*/
     // J
     // K
     // L
