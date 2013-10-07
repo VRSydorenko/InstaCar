@@ -276,6 +276,13 @@
     // G
 #pragma mark === Germany ===
     countryId = [self addCountry:@"Germany"];
+#pragma mark |---- Audi
+    logoId = [self addLogo:@"audi_256.png"];
+    autoId = [self addAuto:@"Audi" country:countryId logo:logoId];
+    modelId = [self addAutoModel:@"Model" ofAuto:autoId logo:logoId startYear:0 endYear:0];
+    {
+        [self addAutoSubmodel:@"Submodel" ofModel:modelId logo:logoId startYear:0 endYear:0];
+    }
 #pragma mark |---- BMW
     logoId = [self addLogo:@"bmw_256.png"];
     autoId = [self addAuto:@"BMW" country:countryId logo:logoId];
