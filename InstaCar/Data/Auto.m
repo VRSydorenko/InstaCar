@@ -33,4 +33,18 @@
     return self.name;
 }
 
+-(CGFloat)logoWidthHeightRate{
+    NSString *logoName = self.logo;
+    if (self.model){
+        if (self.model.submodel){
+            logoName = self.model.submodel.logo;
+        } else {
+            logoName = self.model.logo;
+        }
+    }
+    UIImage *logoImage = [UIImage imageNamed:logoName];
+    
+    return logoImage.size.width / logoImage.size.height;
+}
+
 @end

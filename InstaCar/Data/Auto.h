@@ -18,6 +18,7 @@
 @property (nonatomic) NSString *country;
 @property (nonatomic) AutoModel *model;
 @property (readonly) NSString* selectedText;
+@property (readonly) CGFloat logoWidthHeightRate;
 
 -(id)initWithId:(int)_id name:(NSString*)name logo:(NSString*)logo country:(NSString*)country;
 

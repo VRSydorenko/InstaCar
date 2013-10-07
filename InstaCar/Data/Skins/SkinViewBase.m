@@ -101,6 +101,8 @@
             }
             break;
     }
+    [self setNeedsLayout];
+    [self layoutIfNeeded];
 }
 
 -(void)initialise{

@@ -23,7 +23,8 @@
 
 -(void)layoutSubviews{
     self.heightConstraint.constant = self.bounds.size.height * heightScaleFactor;
-    self.widthLogoConstraint.constant = self.imgEmblem.bounds.size.height; // 30% wider than taller
+    CGFloat widthHeightRate = fieldAuto1 ? fieldAuto1.logoWidthHeightRate : 1.0;
+    self.widthLogoConstraint.constant = widthHeightRate * self.imgEmblem.bounds.size.height; // adjust place for logo
     
     [super layoutSubviews];
 }
