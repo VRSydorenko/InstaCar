@@ -15,7 +15,6 @@ typedef void(^HFImageEditorDoneCallback)(UIImage *image, BOOL canceled);
 @property(nonatomic,copy) UIImage *sourceImage;
 @property(nonatomic,copy) UIImage *previewImage;
 @property(nonatomic,assign) CGSize cropSize;
-@property(nonatomic,assign) CGFloat outputWidth;
 @property(nonatomic,assign) CGFloat minimumScale;
 @property(nonatomic,assign) CGFloat maximumScale;
 

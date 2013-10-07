@@ -35,7 +35,6 @@ static const NSTimeInterval kAnimationIntervalTransform = 0.2;
 @synthesize sourceImage = _sourceImage;
 @synthesize previewImage = _previewImage;
 @synthesize cropSize = _cropSize;
-@synthesize outputWidth = _outputWidth;
 @synthesize frameView = _frameView;
 @synthesize imageView = _imageView;
 @synthesize panRecognizer = _panRecognizer;
@@ -284,12 +283,11 @@ static const NSTimeInterval kAnimationIntervalTransform = 0.2;
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         CGImageRef resultRef = [self newTransformedImage:self.imageView.transform
-                                        sourceImage:self.sourceImage.CGImage
-                                         sourceSize:self.sourceImage.size
-                                  sourceOrientation:self.sourceImage.imageOrientation
-                                        outputWidth:self.outputWidth ? self.outputWidth : self.sourceImage.size.width
-                                            cropSize:self.cropSize
-                                    imageViewSize:self.imageView.bounds.size];
+                                             sourceImage:self.sourceImage.CGImage
+                                              sourceSize:self.sourceImage.size
+                                       sourceOrientation:self.sourceImage.imageOrientation
+                                                cropSize:self.cropSize
+                                           imageViewSize:self.imageView.bounds.size];
         dispatch_async(dispatch_get_main_queue(), ^{
             UIImage *transform =  [UIImage imageWithCGImage:resultRef scale:1.0 orientation:UIImageOrientationUp];
             CGImageRelease(resultRef);
@@ -560,7 +558,6 @@ static const NSTimeInterval kAnimationIntervalTransform = 0.2;
                      sourceImage:(CGImageRef)sourceImage
                     sourceSize:(CGSize)sourceSize
            sourceOrientation:(UIImageOrientation)sourceOrientation
-                 outputWidth:(CGFloat)outputWidth
                     cropSize:(CGSize)cropSize
                imageViewSize:(CGSize)imageViewSize
 {
@@ -569,8 +566,7 @@ static const NSTimeInterval kAnimationIntervalTransform = 0.2;
                                   toSize:sourceSize
                              withQuality:kCGInterpolationNone];
     
-    CGFloat aspect = cropSize.height/cropSize.width;
-    CGSize outputSize = CGSizeMake(outputWidth, outputWidth*aspect);
+    CGSize outputSize = CGSizeMake(612.0, 612.0);
     
     CGContextRef context = CGBitmapContextCreate(NULL,
                                                  outputSize.width,
@@ -591,11 +587,8 @@ static const NSTimeInterval kAnimationIntervalTransform = 0.2;
     CGContextConcatCTM(context, transform);
     CGContextScaleCTM(context, 1.0, -1.0);
     
-    CGContextDrawImage(context, CGRectMake(-imageViewSize.width/2.0,
-                                           -imageViewSize.height/2.0,
-                                           imageViewSize.width,
-                                           imageViewSize.height)
-                       ,source);
+    CGContextDrawImage(context, CGRectMake(-imageViewSize.width/2.0, -imageViewSize.height/2.0, imageViewSize.width, imageViewSize.height),
+                       source);
     
     CGImageRef resultRef = CGBitmapContextCreateImage(context);
     CGContextRelease(context);
