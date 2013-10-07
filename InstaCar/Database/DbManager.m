@@ -10,6 +10,17 @@
 #import "DBDefinition.h"
 #import "sqlite3.h"
 
+// IMPORTANT: NEVER CHANGE THESE ID's !!!
+// Adding allowed but not change
+typedef enum {
+    first = 0,
+    CITROEN,
+    AUDI,
+    BMW,
+    MERCEDES,
+    ALFA_ROMEO,
+} IndependentCarIds;
+
 @implementation DbManager{
     sqlite3 *instacarDb;
 }
@@ -102,7 +113,7 @@
     countryId = [self addCountry:@"France"];
 #pragma mark |---- Citroёn
     logoId = [self addLogo:@"citroen_256.png"]; // TODO: add second Citroen logo
-    autoId = [self addAuto:@"CITROËN" country:countryId logo:logoId];
+    autoId = [self addAuto:@"CITROËN" country:countryId logo:logoId independentId:CITROEN];
     modelId = [self addAutoModel:@"Pre war" ofAuto:autoId logo:logoId startYear:1919 endYear:1941 isSelectable:NO];
     {
         [self addAutoSubmodel:@"Kégresse track" ofModel:modelId logo:logoId startYear:0 endYear:0];
@@ -278,14 +289,14 @@
     countryId = [self addCountry:@"Germany"];
 #pragma mark |---- Audi
     logoId = [self addLogo:@"audi_256.png"];
-    autoId = [self addAuto:@"Audi" country:countryId logo:logoId];
+    autoId = [self addAuto:@"Audi" country:countryId logo:logoId independentId:AUDI];
     modelId = [self addAutoModel:@"Model" ofAuto:autoId logo:logoId startYear:0 endYear:0];
     {
         [self addAutoSubmodel:@"Submodel" ofModel:modelId logo:logoId startYear:0 endYear:0];
     }
 #pragma mark |---- BMW
     logoId = [self addLogo:@"bmw_256.png"];
-    autoId = [self addAuto:@"BMW" country:countryId logo:logoId];
+    autoId = [self addAuto:@"BMW" country:countryId logo:logoId independentId:BMW];
     modelId = [self addAutoModel:@"Retro" ofAuto:autoId logo:logoId startYear:0 endYear:0 isSelectable:NO];
     {
         [self addAutoSubmodel:@"Dixi DA-1" ofModel:modelId logo:logoId startYear:1927 endYear:1929];
@@ -438,7 +449,7 @@
     }
 #pragma mark |---- Mercedes
     logoId = [self addLogo:@"mercedes_256.png"];
-    autoId = [self addAuto:@"Mercedes-Benz" country:countryId logo:logoId];
+    autoId = [self addAuto:@"Mercedes-Benz" country:countryId logo:logoId independentId:MERCEDES];
     modelId = [self addAutoModel:@"1920s" ofAuto:autoId logo:logoId startYear:0 endYear:0 isSelectable:NO];
     {
         [self addAutoSubmodel:@"K" ofModel:modelId logo:logoId startYear:1926 endYear:-1];
@@ -664,7 +675,7 @@
     countryId = [self addCountry:@"Italy"];
 #pragma mark |---- Alfa Romeo
     logoId = [self addLogo:@"alfaromeo_256.png"];
-    autoId = [self addAuto:@"Alfa Romeo" country:countryId logo:logoId];
+    autoId = [self addAuto:@"Alfa Romeo" country:countryId logo:logoId independentId:ALFA_ROMEO];
     modelId = [self addAutoModel:@"1910s" ofAuto:autoId logo:logoId startYear:0 endYear:0];
     {
         [self addAutoSubmodel:@"24 HP" ofModel:modelId logo:logoId startYear:1910 endYear:1920];
@@ -869,8 +880,8 @@
     return [self getIdForLogo:filename];
 }
 
--(int)addAuto:(NSString*)name country:(int)countryId logo:(int)logoId{
-    NSString* sql = [NSString stringWithFormat: @"INSERT INTO %@ (%@, %@, %@) VALUES (?, %d, %d)", T_AUTOS, F_NAME, F_COUNTRY_ID, F_LOGO_ID, countryId, logoId];
+-(int)addAuto:(NSString*)name country:(int)countryId logo:(int)logoId independentId:(int)indId{
+    NSString* sql = [NSString stringWithFormat: @"INSERT INTO %@ (%@, %@, %@, %@) VALUES (?, %d, %d, %d)", T_AUTOS, F_NAME, F_COUNTRY_ID, F_LOGO_ID, F_IND_ID, countryId, logoId, indId];
     
     const char *insert_stmt = [sql UTF8String];
     
