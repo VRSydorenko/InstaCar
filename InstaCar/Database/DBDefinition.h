@@ -12,6 +12,7 @@
 
 #define DBTYPE_TEXT @"text"
 #define DBTYPE_REAL @"real"
+#define DBTYPE_INT  @"integer"
 #define DBTYPE_BOOL @"boolean"
 #define DBTYPE_BLOB @"blob"
 
@@ -34,6 +35,7 @@
 #define F_YEAR_START @"f_year_start"
 #define F_YEAR_END @"f_year_end"
 #define F_SELECTABLE @"f_is_selectable"
+#define F_IS_USER_DEFINED @"f_is_user_defined"
 // F_LOGO_ID
 // F_NAME
 

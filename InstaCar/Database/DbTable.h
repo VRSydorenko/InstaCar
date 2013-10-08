@@ -19,6 +19,7 @@
 @interface DbTable : NSObject
 
 -(id) initWithTableName:(NSString*)tableName;
+-(void) addField:(NSString*)name type:(NSString*)type;
 -(void) addField:(NSString*)name type:(NSString*)type notNull:(BOOL)notNull;
 -(void) addForeignKey:(NSString*)name refTable:(NSString*)refTable refField:(NSString*)refField;
 -(NSString*) getTableCreationSQL;

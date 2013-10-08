@@ -68,7 +68,7 @@ typedef enum {
             cell.autoLogo.image = [UIImage imageNamed:_auto.logo];
             cell.sublevelPickerDelegate = self;
             
-            NSArray *models = [DataManager getModelsOfAuto:_auto._id];
+            NSArray *models = [DataManager getModelsOfAuto:_auto._id]; // TODO: get count instead of all models
             cell.autoModelsButton.hidden = models.count == 0;
             break;
         }
@@ -78,7 +78,7 @@ typedef enum {
             cell.autoLogo.image = [UIImage imageNamed:model.logo];
             cell.sublevelPickerDelegate = self;
             
-            NSArray *submodels = [DataManager getSubmodelsOfModel:model.modelId];
+            NSArray *submodels = [DataManager getSubmodelsOfModel:model.modelId]; // TODO: get count instead of all submodels
             cell.autoModelsButton.hidden = !model.isSelectable || submodels.count == 0;
             if (!model.isSelectable){
                 cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
@@ -106,7 +106,7 @@ typedef enum {
             }
             case CONTENT_MODELS:{
                 selectedModel = [data objectAtIndex:indexPath.row];
-                // is current model cannot be picked then simulate its '...' button click and return
+                // if current model cannot be picked then simulate its '...' button click and return
                 if (!selectedModel.isSelectable){
                    [self sublevelButtonPressedAtIndex:indexPath.row];
                     return;

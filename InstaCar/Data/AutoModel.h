@@ -18,6 +18,7 @@
 @property (nonatomic) int modelId;
 @property AutoSubmodel *submodel;
 @property (nonatomic) BOOL isSelectable;
+@property (nonatomic) BOOL isUserDefined;
 
 -(id)initWithId:(int)modelId andName:(NSString*)name;
 
