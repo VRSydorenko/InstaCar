@@ -12,6 +12,8 @@
 
 @interface DataManager : NSObject
 
++(BOOL)isFullVersion;
+
 +(NSArray*)getAutos; // type: Auto
 +(NSArray*)getModelsOfAuto:(int)autoId; // type: AutoModel
 +(NSArray*)getSubmodelsOfModel:(int)modelId; // type: AutoSubModel

@@ -11,6 +11,10 @@
 
 @implementation DataManager
 
++(BOOL)isFullVersion{
+    return YES; // TODO: change depending on the app version
+}
+
 +(DbManager*)dbManager{
     return ((AppDelegate*)[UIApplication sharedApplication].delegate).dbManager;
 }
