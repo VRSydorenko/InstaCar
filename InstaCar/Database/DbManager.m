@@ -21,6 +21,12 @@ typedef enum {
     ALFA_ROMEO,
 } IndependentCarIds;
 
+typedef enum { // Do not change the numbers!
+    MODELS_BUILTIN = 0,
+    MODELS_DEFINED = 1,
+    MODELS_ALL = 2,
+} UserModelsDefintion;
+
 @implementation DbManager{
     sqlite3 *instacarDb;
 }
@@ -342,6 +348,7 @@ typedef enum {
         [self addAutoSubmodel:@"F20" ofModel:modelId logo:logoId startYear:2011 endYear:0];
         [self addAutoSubmodel:@"F21" ofModel:modelId logo:logoId startYear:2011 endYear:0];
     }
+    [self addAutoModel:@"My Series" ofAuto:autoId logo:logoId startYear:1975 endYear:0 isUserDefined:YES];
     modelId = [self addAutoModel:@"3 Series" ofAuto:autoId logo:logoId startYear:1975 endYear:0];
     {
         [self addAutoSubmodel:@"Compact" ofModel:modelId logo:logoId startYear:1993 endYear:2000];
@@ -916,30 +923,6 @@ typedef enum {
     return [self addAutoModel:name ofAuto:autoId logo:logoId startYear:startYear endYear:endYear isSelectable:YES isUserDefined:isUserDefined];
 }
 
--(int)addAutoModel:(NSString*)name ofAuto:(int)autoId logo:(int)logoId startYear:(int)startYear endYear:(int)endYear isSelectable:(BOOL)isSelectable isUserDefined:(BOOL)isUserDefined{
-    NSString* sql = [NSString stringWithFormat: @"INSERT INTO %@ (%@, %@, %@, %@, %@, %@, %@) VALUES (?, %d, %d, %d, %d, %d, %d)", T_MODELS, F_NAME, F_AUTO_ID, F_LOGO_ID, F_YEAR_START, F_YEAR_END, F_SELECTABLE, F_IS_USER_DEFINED, autoId, logoId, startYear, endYear, isSelectable, isUserDefined];
-    
-    const char *insert_stmt = [sql UTF8String];
-    
-    sqlite3_stmt *statement;
-    if (sqlite3_prepare_v2(instacarDb, insert_stmt, -1, &statement, NULL) == SQLITE_OK){
-        sqlite3_bind_text(statement, 1, [name cStringUsingEncoding:NSUTF8StringEncoding], -1, SQLITE_TRANSIENT);
-        
-        if (sqlite3_step(statement) == SQLITE_DONE)
-        {
-            NSLog(@"Added model: %@", name);
-        } else {
-            NSLog(@"Failed to add model %@", name);
-            NSLog(@"Info:%s", sqlite3_errmsg(instacarDb));
-        }
-    } else {
-        NSLog(@"Error:%s", sqlite3_errmsg(instacarDb));
-    }
-    sqlite3_finalize(statement);
-    
-    return [self getIdForAutoModel:name ofAuto:autoId];
-}
-
 -(void)addAutoSubmodel:(NSString*)name ofModel:(int)modelId logo:(int)logoId startYear:(int)startYear endYear:(int)endYear{
     NSString* sql = [NSString stringWithFormat: @"INSERT INTO %@ (%@, %@, %@, %@, %@) VALUES (?, %d, %d, %d, %d)", T_SUBMODELS, F_NAME, F_MODEL_ID, F_LOGO_ID, F_YEAR_START, F_YEAR_END, modelId, logoId, startYear, endYear];
     
@@ -1020,36 +1003,16 @@ typedef enum {
     return [[NSArray alloc] initWithArray:mutableAutos];
 }
 
--(NSArray*)getModelsOfAuto:(int)autoId{
-    NSMutableArray *mutableModels = [[NSMutableArray alloc] init];
-    
-    //                                                        id     name   logo   sYear  eYear  sel    usrDef
-    NSString *querySQL = [NSString stringWithFormat: @"SELECT %@.%@, %@.%@, %@.%@, %@.%@, %@.%@, %@.%@, %@.%@ FROM %@, %@ WHERE %@.%@=%@.%@ AND %@.%@=%d", T_MODELS, F_ID, T_MODELS, F_NAME, T_LOGOS, F_NAME, T_MODELS, F_YEAR_START, T_MODELS, F_YEAR_END, T_MODELS, F_SELECTABLE, T_MODELS, F_IS_USER_DEFINED, T_MODELS, T_LOGOS, T_MODELS, F_LOGO_ID, T_LOGOS, F_ID, T_MODELS, F_AUTO_ID, autoId];
-    const char *query_stmt = [querySQL UTF8String];
-    
-    sqlite3_stmt *statement;
-    if (sqlite3_prepare_v2(instacarDb, query_stmt, -1, &statement, NULL) == SQLITE_OK){
-        while (sqlite3_step(statement) == SQLITE_ROW){
-            int modelId = sqlite3_column_int(statement, 0);
-            NSString *nameField = [[NSString alloc] initWithUTF8String:(const char *) sqlite3_column_text(statement, 1)];
-            NSString *logoField = [[NSString alloc] initWithUTF8String:(const char *) sqlite3_column_text(statement, 2)];
-            
-            AutoModel *model = [[AutoModel alloc] initWithId:modelId andName:nameField];
-            model.logo = logoField;
-            model.startYear = sqlite3_column_int(statement, 3);
-            model.endYear = sqlite3_column_int(statement, 4);
-            model.isSelectable = sqlite3_column_int(statement, 5);
-            model.isUserDefined = sqlite3_column_int(statement, 6);
-            
-            [mutableModels addObject:model];
-        }
-    } else {
-        NSLog(@"Failed to query model");
-        NSLog(@"Info:%s", sqlite3_errmsg(instacarDb));
-    }
-    sqlite3_finalize(statement);
-    
-    return [[NSArray alloc] initWithArray:mutableModels];
+-(NSArray*)getAllModelsOfAuto:(int)autoId{
+    return [self getModelsOfAuto:autoId definedByUser:MODELS_ALL];
+}
+
+-(NSArray*)getBuiltInModelsOfAuto:(int)autoId{
+    return [self getModelsOfAuto:autoId definedByUser:MODELS_BUILTIN];
+}
+
+-(NSArray*)getUserDefinedModelsOfAuto:(int)autoId{
+    return [self getModelsOfAuto:autoId definedByUser:MODELS_DEFINED];
 }
 
 -(NSArray*)getSubmodelsOfModel:(int)modelId{
@@ -1109,6 +1072,66 @@ typedef enum {
 }
 
 #pragma mark Getting data private methods
+
+-(int)addAutoModel:(NSString*)name ofAuto:(int)autoId logo:(int)logoId startYear:(int)startYear endYear:(int)endYear isSelectable:(BOOL)isSelectable isUserDefined:(BOOL)isUserDefined{
+    NSString* sql = [NSString stringWithFormat: @"INSERT INTO %@ (%@, %@, %@, %@, %@, %@, %@) VALUES (?, %d, %d, %d, %d, %d, %d)", T_MODELS, F_NAME, F_AUTO_ID, F_LOGO_ID, F_YEAR_START, F_YEAR_END, F_SELECTABLE, F_IS_USER_DEFINED, autoId, logoId, startYear, endYear, isSelectable, isUserDefined];
+    
+    const char *insert_stmt = [sql UTF8String];
+    
+    sqlite3_stmt *statement;
+    if (sqlite3_prepare_v2(instacarDb, insert_stmt, -1, &statement, NULL) == SQLITE_OK){
+        sqlite3_bind_text(statement, 1, [name cStringUsingEncoding:NSUTF8StringEncoding], -1, SQLITE_TRANSIENT);
+        
+        if (sqlite3_step(statement) == SQLITE_DONE)
+        {
+            NSLog(@"Added model: %@", name);
+        } else {
+            NSLog(@"Failed to add model %@", name);
+            NSLog(@"Info:%s", sqlite3_errmsg(instacarDb));
+        }
+    } else {
+        NSLog(@"Error:%s", sqlite3_errmsg(instacarDb));
+    }
+    sqlite3_finalize(statement);
+    
+    return [self getIdForAutoModel:name ofAuto:autoId];
+}
+
+-(NSArray*)getModelsOfAuto:(int)autoId definedByUser:(UserModelsDefintion)userModelDefinition{
+    NSMutableArray *mutableModels = [[NSMutableArray alloc] init];
+    
+    //                                                           id     name   logo   sYear  eYear  sel    usrDef
+    NSString *queryAllSQL = [NSString stringWithFormat: @"SELECT %@.%@, %@.%@, %@.%@, %@.%@, %@.%@, %@.%@, %@.%@ FROM %@, %@ WHERE %@.%@=%@.%@ AND %@.%@=%d", T_MODELS, F_ID, T_MODELS, F_NAME, T_LOGOS, F_NAME, T_MODELS, F_YEAR_START, T_MODELS, F_YEAR_END, T_MODELS, F_SELECTABLE, T_MODELS, F_IS_USER_DEFINED, T_MODELS, T_LOGOS, T_MODELS, F_LOGO_ID, T_LOGOS, F_ID, T_MODELS, F_AUTO_ID, autoId];
+    NSString *conditionSQL = @"";
+    if (userModelDefinition != MODELS_ALL){
+        conditionSQL = [NSString stringWithFormat:@"AND %@.%@=%d", T_MODELS, F_IS_USER_DEFINED, userModelDefinition];
+    }
+    const char *query_stmt = [[NSString stringWithFormat:@"%@ %@", queryAllSQL, conditionSQL] UTF8String];
+    
+    sqlite3_stmt *statement;
+    if (sqlite3_prepare_v2(instacarDb, query_stmt, -1, &statement, NULL) == SQLITE_OK){
+        while (sqlite3_step(statement) == SQLITE_ROW){
+            int modelId = sqlite3_column_int(statement, 0);
+            NSString *nameField = [[NSString alloc] initWithUTF8String:(const char *) sqlite3_column_text(statement, 1)];
+            NSString *logoField = [[NSString alloc] initWithUTF8String:(const char *) sqlite3_column_text(statement, 2)];
+            
+            AutoModel *model = [[AutoModel alloc] initWithId:modelId andName:nameField];
+            model.logo = logoField;
+            model.startYear = sqlite3_column_int(statement, 3);
+            model.endYear = sqlite3_column_int(statement, 4);
+            model.isSelectable = sqlite3_column_int(statement, 5);
+            model.isUserDefined = sqlite3_column_int(statement, 6);
+            
+            [mutableModels addObject:model];
+        }
+    } else {
+        NSLog(@"Failed to query model");
+        NSLog(@"Info:%s", sqlite3_errmsg(instacarDb));
+    }
+    sqlite3_finalize(statement);
+    
+    return [[NSArray alloc] initWithArray:mutableModels];
+}
 
 -(int)getIdForCountry:(NSString*)name{
     NSString *querySQL = [NSString stringWithFormat: @"SELECT %@ FROM %@ WHERE %@=?", F_ID, T_COUNTRIES, F_NAME];

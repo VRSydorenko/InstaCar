@@ -15,7 +15,9 @@
 +(BOOL)isFullVersion;
 
 +(NSArray*)getAutos; // type: Auto
-+(NSArray*)getModelsOfAuto:(int)autoId; // type: AutoModel
++(NSArray*)getAllModelsOfAuto:(int)autoId; // type: AutoModel
++(NSArray*)getBuiltInModelsOfAuto:(int)autoId; // type: AutoModel
++(NSArray*)getUserDefinedModelsOfAuto:(int)autoId; // type: AutoModel
 +(NSArray*)getSubmodelsOfModel:(int)modelId; // type: AutoSubModel
 +(NSArray*)getSkinSets; // type: SkinSet
 +(UIImage*)getIconForPath:(NSString*)path;

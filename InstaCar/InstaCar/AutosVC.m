@@ -16,6 +16,7 @@ typedef enum {
 
 @interface AutosVC (){
     NSArray *data;
+    NSArray *userDefinedData;
     
     int selectingModelForAutoIndex;
     
@@ -36,6 +37,8 @@ typedef enum {
 	
     selectingModelForAutoIndex = -1;
     data = [DataManager getAutos];
+    userDefinedData = nil;
+    
     currentContentType = CONTENT_AUTOS;
     //[self.btnBack setTitle:@"Back" forState:UIControlStateNormal];
     
@@ -51,7 +54,14 @@ typedef enum {
 
 #pragma mark Table methods
 
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    return 2;
+}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    if (section == 1){
+        return userDefinedData ? userDefinedData.count : 0;
+    }
     return data.count;
 }
 
@@ -68,20 +78,27 @@ typedef enum {
             cell.autoLogo.image = [UIImage imageNamed:_auto.logo];
             cell.sublevelPickerDelegate = self;
             
-            NSArray *models = [DataManager getModelsOfAuto:_auto._id]; // TODO: get count instead of all models
+            NSArray *models = [DataManager getAllModelsOfAuto:_auto._id]; // TODO: get count instead of all models
             cell.autoModelsButton.hidden = models.count == 0;
             break;
         }
         case CONTENT_MODELS:{
-            AutoModel *model = [data objectAtIndex:indexPath.row];
-            cell.autoTitleLabel.text = model.name;
-            cell.autoLogo.image = [UIImage imageNamed:model.logo];
-            cell.sublevelPickerDelegate = self;
-            
-            NSArray *submodels = [DataManager getSubmodelsOfModel:model.modelId]; // TODO: get count instead of all submodels
-            cell.autoModelsButton.hidden = !model.isSelectable || submodels.count == 0;
-            if (!model.isSelectable){
-                cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+            if (indexPath.section == 0){ // built-in model
+                AutoModel *model = [data objectAtIndex:indexPath.row];
+                cell.autoTitleLabel.text = model.name;
+                cell.autoLogo.image = [UIImage imageNamed:model.logo];
+                cell.sublevelPickerDelegate = self;
+                
+                NSArray *submodels = [DataManager getSubmodelsOfModel:model.modelId]; // TODO: get count instead of all submodels
+                cell.autoModelsButton.hidden = !model.isSelectable || submodels.count == 0;
+                if (!model.isSelectable){
+                    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+                }
+            } else { // user defined model
+                AutoModel *model = [userDefinedData objectAtIndex:indexPath.row];
+                cell.autoTitleLabel.text = model.name;
+                cell.autoLogo.image = [UIImage imageNamed:model.logo];
+                cell.autoModelsButton.hidden = YES;
             }
             break;
         }
@@ -128,18 +145,12 @@ typedef enum {
     switch (currentContentType) {
         case CONTENT_AUTOS:{
             selectedAuto = [data objectAtIndex:index];
-            data = [DataManager getModelsOfAuto:selectedAuto._id];
-            currentContentType = CONTENT_MODELS;
-            [self.tableAutos reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationAutomatic];
-            //[self.btnBack setTitle:@"Cars" forState:UIControlStateNormal];
+            [self updateTableSourceDataWithNewContentType:CONTENT_MODELS];
             break;
         }
         case CONTENT_MODELS:{
             selectedModel = [data objectAtIndex:index];
-            data = [DataManager getSubmodelsOfModel:selectedModel.modelId];
-            currentContentType = CONTENT_SUBMODELS;
-            [self.tableAutos reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationAutomatic];
-            //[self.btnBack setTitle:@"Models" forState:UIControlStateNormal];
+            [self updateTableSourceDataWithNewContentType:CONTENT_SUBMODELS];
             break;
         }
         default:
@@ -163,21 +174,14 @@ typedef enum {
     switch (currentContentType) {
         case CONTENT_AUTOS:{
             [self dismissViewControllerAnimated:YES completion:nil];
-//            [self.autoSelectorDelegate newAutoSelected:nil];
             break;
         }
         case CONTENT_MODELS:{
-            data = [DataManager getAutos];
-            currentContentType = CONTENT_AUTOS;
-            [self.tableAutos reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationAutomatic];
-            //[self.btnBack setTitle:@"Back" forState:UIControlStateNormal];
+            [self updateTableSourceDataWithNewContentType:CONTENT_AUTOS];
             break;
         }
         case CONTENT_SUBMODELS:{
-            data = [DataManager getModelsOfAuto:selectedAuto._id];
-            currentContentType = CONTENT_MODELS;
-            [self.tableAutos reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationAutomatic];
-            //[self.btnBack setTitle:@"Cars" forState:UIControlStateNormal];
+            [self updateTableSourceDataWithNewContentType:CONTENT_MODELS];
             break;
         }
     }
@@ -186,4 +190,53 @@ typedef enum {
 - (IBAction)btnClosePressed:(id)sender {
     [self.autoSelectorDelegate newAutoSelected:nil];
 }
+
+-(void)updateTableSourceDataWithNewContentType:(ContentType)type{
+    NSUInteger dataRowsDelta = data.count;
+    data = nil;
+    switch (type) {
+        case CONTENT_AUTOS:{ data = [DataManager getAutos]; break;}
+        case CONTENT_MODELS:{ data = [DataManager getBuiltInModelsOfAuto:selectedAuto._id]; break;}
+        case CONTENT_SUBMODELS:{ data = [DataManager getSubmodelsOfModel:selectedModel.modelId]; break;}
+    }
+    dataRowsDelta = data.count - dataRowsDelta;
+    
+    NSUInteger userDataRowsDelta = userDefinedData ? userDefinedData.count : 0;
+    if (type == CONTENT_MODELS){
+        userDefinedData = [DataManager getUserDefinedModelsOfAuto:selectedAuto._id];
+    } else {
+        userDefinedData = nil;
+    }
+    userDataRowsDelta = (userDefinedData ? userDefinedData.count : 0) - userDataRowsDelta;
+    
+    currentContentType = type;
+    
+    [self.tableAutos beginUpdates];
+    [self updateRowsInTable:self.tableAutos section:0 byAddingRows:dataRowsDelta];
+    [self updateRowsInTable:self.tableAutos section:1 byAddingRows:userDataRowsDelta];
+    [self.tableAutos endUpdates];
+    
+    [self.tableAutos reloadSections:[NSIndexSet indexSetWithIndexesInRange:NSMakeRange(0, 1)] withRowAnimation:UITableViewRowAnimationAutomatic];
+}
+
+-(void)updateRowsInTable:(UITableView*)tableView section:(NSInteger)section byAddingRows:(NSInteger)rows{
+    if (rows == 0){
+        return;
+    }
+    
+    NSInteger rowsCount = ABS(rows);
+    NSMutableArray *paths = [[NSMutableArray alloc] init];
+    for (int i = 0; i < rowsCount; i++)
+    {
+        NSIndexPath *path = [NSIndexPath indexPathForRow:i inSection:section];
+        [paths addObject:path];
+    }
+    
+    if (rows > 0){
+        [tableView insertRowsAtIndexPaths:paths withRowAnimation:UITableViewRowAnimationAutomatic];
+    } else {
+        [tableView deleteRowsAtIndexPaths:paths withRowAnimation:UITableViewRowAnimationAutomatic];
+    }
+}
+
 @end
