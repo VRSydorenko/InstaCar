@@ -10,4 +10,8 @@
 
 @implementation SideViewControllerBase
 
+-(BOOL)prefersStatusBarHidden{
+    return YES;
+}
+
 @end

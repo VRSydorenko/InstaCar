@@ -19,7 +19,7 @@
 - (void)shareWithServiceType:(NSString *)serviceType {
     
     if ([self.item shareType] == SHKShareTypeUserInfo) {
-        SHKLog(@"User info not possible to download on iOS sharing. You can get service enabled user info from Accounts framework");
+        NSLog(@"User info not possible to download on iOS sharing. You can get service enabled user info from Accounts framework");
         return;
     }
     

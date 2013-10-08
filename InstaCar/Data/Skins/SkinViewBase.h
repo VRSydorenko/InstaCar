@@ -10,6 +10,8 @@
 #import "Location.h"
 #import "Auto.h"
 #import "MainNavController.h"
+#import "UIBluredView.h"
+#import "UIAlphaGradientView.h"
 
 #define MOVINGVIEW_TIME 0.5
 
@@ -49,13 +51,18 @@ typedef enum {
 @private
     NSLayoutConstraint *movingViewTopMarginConstraint;
     unsigned short movingViewHeight;
+    UIAlphaGradientView *gradient;
+    BOOL gradientInitialized;
 }
 
 -(void)initialise;
+-(void)setupGradient:(CGFloat)alpha inDirection:(GradientDirection)direction;
 -(void)setMovingViewConstraint:(NSLayoutConstraint*)topMargin andViewHeight:(unsigned short)height;
 -(BOOL)canEditField:(SkinField)field;
 -(void)updateField:(SkinField)field withValue:(NSObject*)value;
--(UIImage*)getImageOfSize:(CGSize)size andScale:(CGFloat)scale;
+
+-(UIImage*)getSkinImage;
+-(UIImage*)getSkinImageWithBlur:(CGFloat)blurStrength;
 
 -(void)moveContentUp;
 -(void)moveContentDown;

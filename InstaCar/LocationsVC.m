@@ -8,12 +8,12 @@
 
 #import "LocationsVC.h"
 #import "Foursquare2.h"
-#import "FSConverter.h"
 #import "CellVenue.h"
 #import "DataManager.h"
+#import "VenueProvider.h"
 
 @interface LocationsVC (){
-    CLLocationManager *locationManager;
+    
 }
 
 @end
@@ -28,11 +28,13 @@
     self.tableVenues.delegate = self;
     self.tableVenues.dataSource = self;
     
-    locationManager = [[CLLocationManager alloc]init];
-    locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters;
-    locationManager.delegate = self;
+    ((AppDelegate*)[UIApplication sharedApplication].delegate).locationUpdateReceiverDelegate = self;
     
-    [self btnRefreshPressed:self.btnRefresh];
+    if ([VenueProvider getInstance].venuesInitialized){
+        self.nearbyVenues = [[VenueProvider getInstance] getAllVenues];
+    } else {
+        [self btnRefreshPressed:self.btnRefresh];
+    }
 }
 
 #pragma mark Table methods
@@ -51,7 +53,9 @@
     
     cell.textVenueName.text =  venue.name;
     
-    if (venue.iconURL && venue.iconURL.length > 0){
+    if ([venue isKindOfClass:[FSGlobalVenue class]]){
+        cell.imgVenueIcon.image = [UIImage imageNamed:@"Pin.png"];
+    } else if (venue.iconURL && venue.iconURL.length > 0){
         UIImage *icon = [DataManager getIconForPath:venue.iconURL];
         if (!icon){
             NSURL *url = [NSURL URLWithString:venue.iconURL];
@@ -68,50 +72,26 @@
 - (void)tableView:(UITableView*)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     FSVenue *selectedVenue = [self.nearbyVenues objectAtIndex:indexPath.row];
     [DataManager setSelectedVenue:selectedVenue];
-    [self.sideActionDelegate performSideAction:ACT_UPDATE_SKINS_LOCATION withArgument:selectedVenue];
+    [self.sideActionDelegate performSideAction:ACT_UPDATE_SKINS_LOCATION withArgument:selectedVenue hidingSideController:YES];
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-}
-
-#pragma mark Location manager delegate
-
--(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations{
-    [locationManager stopUpdatingLocation];
-    CLLocation *newLocation = (CLLocation*)locations.lastObject;
-    [Foursquare2 searchVenuesNearByLatitude:@(newLocation.coordinate.latitude)
-                 longitude:@(newLocation.coordinate.longitude)
-                 accuracyLL:nil
-                 altitude:nil
-                 accuracyAlt:nil
-                 query:nil
-                 limit:nil
-                 intent:intentBrowse
-                 radius:@(500)
-                 categoryId:nil
-                 callback:^(BOOL success, id result){
-                     if (success) {
-                         NSDictionary *dic = result;
-                         NSArray* venues = [dic valueForKeyPath:@"response.venues"];
-                         FSConverter *converter = [[FSConverter alloc]init];
-                         self.nearbyVenues = [converter convertToObjects:venues];
-                         [self.tableVenues reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationAutomatic];
-                         
-                         [self restoreRefreshButtonIfHidden];
-                     } else {
-                         [locationManager startUpdatingLocation];
-                     }
-                }
-     ];
 }
 
 #pragma mark Event handlers
 
+-(void)locationDidUpdate{
+    self.nearbyVenues = [[VenueProvider getInstance] getAllVenues];
+    [self.tableVenues reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationAutomatic];
+    
+    [self restoreRefreshButtonIfHidden];
+}
+
 - (IBAction)btnBackPressed {
-    [locationManager stopUpdatingLocation];
+    [((AppDelegate*)[UIApplication sharedApplication].delegate).locationManager stopUpdatingLocation];
     
     [self restoreRefreshButtonIfHidden];
     
     if (self.sideActionDelegate){
-        [self.sideActionDelegate performSideAction:ACT_EMPTY withArgument:nil];
+        [self.sideActionDelegate performSideAction:ACT_EMPTY withArgument:nil hidingSideController:YES];
     }
 }
 
@@ -122,7 +102,7 @@
     self.toolBar.items = toolBarButtons;
     [self.activityIndicator startAnimating];
     
-    [locationManager startUpdatingLocation];
+    [((AppDelegate*)[UIApplication sharedApplication].delegate).locationManager startUpdatingLocation];
 }
 
 #pragma marj private methods

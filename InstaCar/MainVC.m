@@ -6,9 +6,11 @@
 //  Copyright (c) 2013 Viktor Sydorenko. All rights reserved.
 //
 
+#import <AssetsLibrary/AssetsLibrary.h>
 #import "MainVC.h"
 #import "Utils.h"
 #import "ShareKit.h"
+#import "ImageEditor.h"
 
 #define SWITCH_TIME 1.0
 #define IMAGE_SIDE_SIZE 612.0
@@ -21,10 +23,16 @@ typedef enum {
 @interface MainVC (){
     MainNavController *navCon;
     BOOL buttonsInInitialState;
+    BOOL isChangingPage;
     
     SkinViewBase *activeSkin;
     UISwipeGestureRecognizer *swipeUp;
     UISwipeGestureRecognizer *swipeDown;
+    SMPageControl *pageControl;
+    
+    ALAssetsLibrary *assetLibrary;
+    ImageEditor *imageEditor;
+    __weak UIImage *selectedImage;
 }
 
 @end
@@ -35,18 +43,29 @@ typedef enum {
 {
     [super viewDidLoad];
     
+    [self.btnMiddleLeft setImage:[UIImage imageNamed:@"PicLandscape.png"] forState:UIControlStateNormal];
+    [self.btnMiddleLeft setTitle:@"" forState:UIControlStateNormal];
+    
+    [self.btnMiddleRight setImage:[UIImage imageNamed:@"Repeat.png"] forState:UIControlStateNormal];
+    [self.btnMiddleRight setTitle:@"" forState:UIControlStateNormal];
+    
     navCon = (MainNavController*)self.navigationController;
     navCon.dataSelectionChangeDelegate = self;
     navCon.menuControllerDelegate = self;
     
     buttonsInInitialState = YES;
+    isChangingPage = NO;
+    selectedImage = nil;
     
     [self initCaptureManager];
+    
+    [self initPageControl];
     
     [self initSkins];
     
     [self initGestures];
     
+    self.scrollSkins.delegate = self;
     [self.view bringSubviewToFront:self.scrollSkins];
     
     // Navitgation item transparency
@@ -60,7 +79,7 @@ typedef enum {
 }
 
 -(void)viewDidAppear:(BOOL)animated{
-    CGPoint convertedPreviewPoint = [self.view convertPoint:self.imagePreview.frame.origin toView:nil];
+    CGPoint convertedPreviewPoint = [self.imagePreview convertPoint:self.imagePreview.frame.origin toView:nil];
     self.captureManager.imageTopCropMargin = convertedPreviewPoint.y;
 }
 
@@ -101,10 +120,70 @@ typedef enum {
 }
 
 -(void)initSkins{
-    SkinViewBase *skinView = [[SkinProvider getInstance].selectedSkinSet getSkinAtIndex:0];
-    [self.scrollSkins addSubview:skinView];
+    SkinSet *skinSet = [SkinProvider getInstance].selectedSkinSet;
+    activeSkin = [skinSet getSkinAtIndex:0];
 
-    activeSkin = skinView;
+	self.scrollSkins.indicatorStyle = UIScrollViewIndicatorStyleWhite;
+    
+    const unsigned short pageCount = [skinSet getSkinsCount];
+    const int skinWidth = 320;
+    
+    for (unsigned short i = 0; i < pageCount; i++) {
+        SkinViewBase *skinToAdd = [skinSet getSkinAtIndex:i];
+		
+		CGRect skinRect = skinToAdd.frame;
+        skinRect.origin.x = i * skinWidth;
+        skinRect.origin.y = 0;
+        
+		skinToAdd.frame = skinRect;
+        
+        [self.scrollSkins addSubview:skinToAdd];
+	}
+    
+	[self.scrollSkins setContentSize:CGSizeMake(skinWidth * pageCount, [self.scrollSkins bounds].size.height)];
+    pageControl.numberOfPages = pageCount;
+}
+
+-(void)initPageControl{
+    if (pageControl){
+        return;
+    }
+    
+    CGRect pageControlFrame = CGRectMake(0, 0, self.pageControlContainer.bounds.size.width, 20.0);
+    pageControl = [[SMPageControl alloc] initWithFrame:pageControlFrame];
+    pageControl.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
+    
+    pageControl.userInteractionEnabled = NO;
+    pageControl.indicatorDiameter = 5.0f;
+    pageControl.indicatorMargin = 4.0f;
+    
+    //pageControl.pageIndicatorImage = [UIImage imageNamed:@"pageDot.png"];
+    //pageControl.currentPageIndicatorImage = [UIImage imageNamed:@"currentPageDot.png"];
+    pageControl.backgroundColor = [UIColor clearColor];
+    //pageControl.pageIndicatorTintColor = [UIColor whiteColor];
+    
+    //[self.pageControlContainer setBarTintColor:navCon.navigationBar.barTintColor];
+    [self.pageControlContainer addSubview:pageControl];
+}
+
+#pragma UIScrollViewDelegate
+
+- (void)scrollViewDidScroll:(UIScrollView *)sender
+{
+    if (isChangingPage){
+        return;
+    }
+    
+	// Switch page at 50% across
+    CGFloat pageWidth = sender.frame.size.width;
+    int page = floor((sender.contentOffset.x - pageWidth / 2) / pageWidth) + 1;
+    pageControl.currentPage = page;
+    
+    activeSkin = [[SkinProvider getInstance].selectedSkinSet getSkinAtIndex:page];
+}
+
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)sender{
+    isChangingPage = NO;
 }
 
 #pragma mark SelectedDataChangeActionProtocol
@@ -112,7 +191,7 @@ typedef enum {
 -(void) selectedData:(SelectedDataChange)dataType changedTo:(id)newValue{
     if (dataType == SKIN_SET){
         // load new set
-    } else { // other fields are skin relevant so pass the update to selected skin
+    } else { // other fields are skin relevant so pass the update to selected skin set
         [[SkinProvider getInstance].selectedSkinSet updateData:newValue ofType:dataType];
     }
 }
@@ -151,13 +230,19 @@ typedef enum {
                 if (buttonsInInitialState){
                     self.constraintBtnMakeWidth.constant = 0;
                     
-                    [self.btnMiddleLeft setTitle:@"New" forState:UIControlStateNormal];
+                    [self.btnMiddleLeft setTitle:@"New photo" forState:UIControlStateNormal];
+                    [self.btnMiddleLeft setImage:nil forState:UIControlStateNormal];
+                    
                     [self.btnMiddleRight setTitle:@"Share" forState:UIControlStateNormal];
+                    [self.btnMiddleRight setImage:nil forState:UIControlStateNormal];
                 } else {
                     self.constraintBtnMakeWidth.constant = 64.0;
                     
-                    [self.btnMiddleLeft setTitle:@"Pick" forState:UIControlStateNormal];
-                    [self.btnMiddleRight setTitle:@"Flash" forState:UIControlStateNormal];
+                    [self.btnMiddleLeft setImage:[UIImage imageNamed:@"PicLandscape.png"] forState:UIControlStateNormal];
+                    [self.btnMiddleLeft setTitle:@"" forState:UIControlStateNormal];
+                    
+                    [self.btnMiddleRight setImage:[UIImage imageNamed:@"Repeat.png"] forState:UIControlStateNormal];
+                    [self.btnMiddleRight setTitle:@"" forState:UIControlStateNormal];
                 }
             }
      ];
@@ -213,7 +298,25 @@ typedef enum {
 }
 
 -(void)doPickPhotoPressed{
+    UIImagePickerController *picker = [[UIImagePickerController alloc] init];
     
+    picker.allowsEditing = NO;
+    picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    picker.delegate = self;
+    
+    assetLibrary = [[ALAssetsLibrary alloc] init];
+    imageEditor = [[ImageEditor alloc] initWithNibName:@"ImageEditor" bundle:nil];
+    imageEditor.checkBounds = YES;
+    
+    imageEditor.doneCallback = ^(UIImage *editedImage, BOOL canceled){
+        if(!canceled) {
+            self.captureManager.stillImage = editedImage;
+            [self imageCaptured];
+        }
+        [picker dismissViewControllerAnimated:YES completion:nil];
+    };
+    
+    [self presentViewController:picker animated:YES completion:nil];
 }
 
 -(void)doCamSettingsPressed{
@@ -229,21 +332,15 @@ typedef enum {
 
 -(void)doSharePressed{
     UIImage *imageTaken = self.imagePreview.image;
-    UIImage *imageSkin = [activeSkin getImageOfSize:imageTaken.size andScale:imageTaken.scale];
+    UIImage *imageSkin = [activeSkin getSkinImage];
+    
     UIImage *imageToShare = [self drawImage:imageSkin inImage:imageTaken atPoint:CGPointMake(0, 0)];
-    //imageToShare = [UIImage imageWithData:[Utils compressImage:imageToShare]];
     
     SHKItem *item = [SHKItem image:imageToShare title:@"Hohoho"];
-    
-    // Get the ShareKit action sheet
     SHKActionSheet *actionSheet = [SHKActionSheet actionSheetForItem:item];
-    
-    // ShareKit detects top view controller (the one intended to present ShareKit UI) automatically,
-    // but sometimes it may not find one. To be safe, set it explicitly
     [SHK setRootViewController:self];
     
-    // Display the action sheet
-    [actionSheet showFromToolbar:navCon.toolbar];
+    [actionSheet showInView:self.view];
 }
 
 #pragma mark DDMenuControllerDelegate
@@ -252,18 +349,37 @@ typedef enum {
     swipeDown.enabled = NO;
 }
 
-- (void)menuControllerWillShowRootViewController{
+-(void)menuControllerWillShowRootViewController{
     swipeUp.enabled = YES;
     swipeDown.enabled = YES;
+}
+
+#pragma mark UIImagePickerControllerDelegate
+
+-(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
+{
+    UIImage *image =  [Utils image:[info objectForKey:UIImagePickerControllerOriginalImage] byScalingProportionallyToSize:CGSizeMake(612.0, 612.0)];
+    NSURL *assetURL = [info objectForKey:UIImagePickerControllerReferenceURL];
+    
+    [assetLibrary assetForURL:assetURL resultBlock:^(ALAsset *asset) {
+        UIImage *preview = [UIImage imageWithCGImage:[asset aspectRatioThumbnail]];
+        
+        imageEditor.sourceImage = image;
+        imageEditor.previewImage = preview;
+        [imageEditor reset:NO];
+        
+        [picker pushViewController:imageEditor animated:YES];
+        [picker setNavigationBarHidden:YES animated:NO];
+        
+    } failureBlock:^(NSError *error) {
+        NSLog(@"Failed to get asset from library");
+    }];
 }
 
 #pragma mark -
 
 -(void) imageCaptured{
-    //[self prepareSquareImage];
-    //CGSize desiredSize = CGSizeMake(IMAGE_SIDE_SIZE, IMAGE_SIDE_SIZE);
-    
-    self.imagePreview.image = self.captureManager.stillImage;//[Utils image:self.captureManager.stillImage byScalingProportionallyToSize:desiredSize];
+    self.imagePreview.image = self.captureManager.stillImage;
     self.captureManager.stillImage = nil;
     
     [self.captureManager clearInputs];
@@ -292,7 +408,7 @@ typedef enum {
 - (void)image:(UIImage*)image didFinishSavingWithError:(NSError*)error contextInfo:(void*)contextInfo
 {
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Image" message:error!=NULL?@"Image couldn't be saved":@"Saved!" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
-        [alert show];
+    [alert show];
 }
 
 @end

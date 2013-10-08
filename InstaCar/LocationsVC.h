@@ -6,13 +6,13 @@
 //  Copyright (c) 2013 Viktor Sydorenko. All rights reserved.
 //
 
+#import "AppDelegate.h"
 #import "SideViewControllerBase.h"
 #import <CoreLocation/CoreLocation.h>
-#import "FSVenue.h"
 
 @interface LocationsVC : SideViewControllerBase <UITableViewDelegate,
                                                  UITableViewDataSource,
-                                                 CLLocationManagerDelegate>
+                                                 LocationUpdateReceiverDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableVenues;
 @property (strong,nonatomic) NSArray *nearbyVenues; // FSVenue

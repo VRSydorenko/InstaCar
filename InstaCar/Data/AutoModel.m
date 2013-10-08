@@ -19,6 +19,7 @@
         self.startYear = 0;
         self.endYear = 0;
         self.submodel = nil;
+        self.isSelectable = YES;
     }
     return self;
 }

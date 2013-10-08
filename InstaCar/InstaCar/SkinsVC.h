@@ -16,8 +16,7 @@
                                              DDMenuControllerDelegate,
                                              AutoSelectorDelegate>
 
-@property (weak, nonatomic) IBOutlet UITableView *tableSets;
-@property (weak, nonatomic) IBOutlet UITableView *tableSelectedAuto;
+@property (weak, nonatomic) IBOutlet UITableView *tableSelectedData;
 - (IBAction)btnClosePressed:(id)sender;
 
 @end

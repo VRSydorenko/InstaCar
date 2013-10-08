@@ -20,6 +20,10 @@
         ann.venueId = v[@"id"];
         ann.location.address = v[@"location"][@"address"];
         ann.location.distance = v[@"location"][@"distance"];
+        ann.location.countryCode = v[@"location"][@"cc"];
+        ann.location.country = v[@"location"][@"country"];
+        ann.location.state = v[@"location"][@"state"];
+        ann.location.city = v[@"location"][@"city"];
 
         NSArray *categories = [v objectForKey:@"categories"];
         if (categories && categories.count > 0){

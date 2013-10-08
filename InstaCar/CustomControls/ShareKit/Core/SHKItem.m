@@ -28,7 +28,6 @@
 #import "SHKItem.h"
 
 #import "SHKConfiguration.h"
-#import "NSData+SaveItemAttachment.h"
 #import <MobileCoreServices/MobileCoreServices.h>
 #import "SHKFormFieldSettings.h"
 

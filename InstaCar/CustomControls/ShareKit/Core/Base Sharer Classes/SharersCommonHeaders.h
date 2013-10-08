@@ -12,7 +12,6 @@
 #define ShareKit_SharersCommonHeaders_h
 
 #import "SHK.h"
-#import "Debug.h"
 #import "SHKActivityIndicator.h"
 #import "SHKFormFieldSettings.h"
 #import "SHKFormFieldOptionPickerSettings.h"

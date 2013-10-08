@@ -7,6 +7,7 @@
 //
 
 #import "SkinViewBase.h"
+#import "Utils.h"
 
 @implementation SkinViewBase
 
@@ -22,8 +23,27 @@
         canEditFieldText2 = NO;
         
         self.userInteractionEnabled = YES;
+        gradient = nil;
+        gradientInitialized = NO;
     }
     return self;
+}
+
+-(void)setupGradient:(CGFloat)alpha inDirection:(GradientDirection)direction{
+    if (!gradient){
+        gradient = [[UIAlphaGradientView alloc] initWithFrame:self.frame];
+        gradient.color = [UIColor blackColor];
+        gradient.autoresizingMask = UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleWidth;
+    }
+    
+    gradient.direction = direction;
+    gradient.alpha = alpha;
+    
+    if (!gradientInitialized){
+        [self addSubview:gradient];
+        [self sendSubviewToBack:gradient];
+        gradientInitialized = YES;
+    }
 }
 
 #pragma mark -
@@ -51,8 +71,8 @@
     }
     switch (field) {
         case fLOCATION:
-            if ([value isKindOfClass:Location.class]){
-                fieldLocation = (Location*)value;
+            if ([value isKindOfClass:FSVenue.class]){
+                fieldLocation = [[Location alloc] initWIthVenue:(FSVenue*)value];
                 [self fieldLocationDidUpdate];
             }
             break;
@@ -81,6 +101,8 @@
             }
             break;
     }
+    [self setNeedsLayout];
+    [self layoutIfNeeded];
 }
 
 -(void)initialise{
@@ -92,23 +114,42 @@
     movingViewHeight = height;
 }
 
--(UIImage*)getImageOfSize:(CGSize)size andScale:(CGFloat)scale{
-    CGFloat scaleFactorHeight = size.height/self.frame.size.height;
-    CGFloat scaleFactorWidth = size.width/self.frame.size.width;
-    
-    //[self setViewContentScaleFactor:scale forView:self];
-        
-    //self.transform = CGAffineTransformMakeScale(scaleFactorWidth, scaleFactorHeight);
-    //[self setNeedsDisplay];
+-(UIImage*)getSkinImage{
+    return [self getSkinImageWithBlur:0.0];
+}
 
+-(UIImage*)getSkinImageWithBlur:(CGFloat)blurStrength {
+    CGFloat scaleFactorHeight = 612.0/self.bounds.size.height;
+    
     self.layer.contentsScale = scaleFactorHeight;
     CGRect currentFrame = self.frame;
-    self.frame = CGRectMake(0, 0, size.width, size.height);
-    UIGraphicsBeginImageContextWithOptions(size, NO, scaleFactorHeight);
+    if (movingViewTopMarginConstraint.constant > 0){
+        movingViewTopMarginConstraint.constant = 612.0 - (int)(movingViewHeight*scaleFactorHeight) + 1;
+    }
+    
+    self.frame = CGRectMake(self.frame.origin.x, self.frame.origin.y, 612.0, 612.0);
+    [self setNeedsLayout];
+    [self layoutIfNeeded];
+    [self layoutSubviews];
+    
+    UIGraphicsBeginImageContextWithOptions(CGSizeMake(612.0, 612.0), NO, scaleFactorHeight);
     [self.layer renderInContext:UIGraphicsGetCurrentContext()];
     UIImage *result = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
+    
     self.frame = currentFrame;
+    if (movingViewTopMarginConstraint.constant > 0){
+        movingViewTopMarginConstraint.constant = currentFrame.size.height - movingViewHeight;
+    }
+    
+    [self setNeedsLayout];
+    [self layoutIfNeeded];
+    [self layoutSubviews];
+    
+    if (blurStrength > 0){
+        result = [Utils blurImage:result strength:blurStrength];
+    }
+    
     return result;
 }
 
@@ -149,7 +190,7 @@
     
     [UIView animateWithDuration:MOVINGVIEW_TIME
             animations:^(void){
-                movingViewTopMarginConstraint.constant = self.frame.size.height - movingViewHeight;
+                movingViewTopMarginConstraint.constant = self.bounds.size.height - movingViewHeight;
                 [self layoutIfNeeded];
             }
             completion:^(BOOL finished){

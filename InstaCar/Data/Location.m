@@ -10,4 +10,17 @@
 
 @implementation Location
 
+-(id)initWIthVenue:(FSVenue*)venue{
+    self = [super init];
+    if (self){
+        self.name = venue.name;
+        
+        self.countryCode = venue.location.countryCode;
+        self.country = venue.location.country;
+        self.state = venue.location.state;
+        self.city = venue.location.city;
+    }
+    return self;
+}
+
 @end

@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MessageUI/MessageUI.h>
 #import "DDMenuController.h"
+#import "AppDelegate.h"
 
 typedef enum {
     APP_MENU = 0,
@@ -17,9 +19,13 @@ typedef enum {
 
 typedef enum {
     ACT_EMPTY = 0,
-    ACT_SHOW_SETTINGS = 1,
-    ACT_LOAD_NEW_SKINSET = 2,
-    ACT_UPDATE_SKINS_LOCATION = 3,
+    ACT_LOAD_NEW_SKINSET = 1,
+    ACT_UPDATE_SKINS_LOCATION = 2,
+    ACT_OPEN_INSTA_SELF_TAG = 3,
+    ACT_OPEN_INSTA_SELF_PROFILE = 4,
+    ACT_OPEN_FB_PAGE = 5,
+    ACT_PREPARE_FEEDBACK_MAIL = 6,
+    ACT_OPEN_APPSTORE_TO_RATE = 7,
 } SideAction; // side controller tells navCon what to do
 
 typedef enum {
@@ -30,7 +36,7 @@ typedef enum {
 } SelectedDataChange; // navCon tells MainVC what has changed
 
 @protocol SideActionProtocol <NSObject>
--(void) performSideAction:(SideAction)action withArgument:(id)object;
+-(void) performSideAction:(SideAction)action withArgument:(id)object hidingSideController:(BOOL)hiding;
 @end
 
 @protocol SelectedDataChangeActionProtocol <NSObject>
@@ -39,7 +45,10 @@ typedef enum {
 
 
 @interface MainNavController : UINavigationController <SideActionProtocol,
-                                                       DDMenuControllerDelegate>
+                                                       DDMenuControllerDelegate,
+                                                       LocationUpdateReceiverDelegate,
+                                                       UIAlertViewDelegate,
+                                                       MFMailComposeViewControllerDelegate>
 
 @property NSObject<SelectedDataChangeActionProtocol> *dataSelectionChangeDelegate;
 @property NSObject<DDMenuControllerDelegate> *menuControllerDelegate;

@@ -31,3 +31,7 @@
 }
 
 @end
+
+@implementation FSGlobalVenue
+
+@end

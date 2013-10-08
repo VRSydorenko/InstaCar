@@ -58,28 +58,31 @@ typedef enum {
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     static NSString *CellIdentifier = @"cellAuto";
     CellAuto *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    cell.tag = indexPath.row; // for sublevel picker callback
+    cell.accessoryType = UITableViewCellAccessoryNone;
     
     switch (currentContentType) {
         case CONTENT_AUTOS:{
             Auto *_auto = [data objectAtIndex:indexPath.row];
-            cell.tag = indexPath.row;
             cell.autoTitleLabel.text = _auto.name;
             cell.autoLogo.image = [UIImage imageNamed:_auto.logo];
             cell.sublevelPickerDelegate = self;
             
-            NSArray *models = [DataManager getModelsOfAuto:_auto._id];
+            NSArray *models = [DataManager getModelsOfAuto:_auto._id]; // TODO: get count instead of all models
             cell.autoModelsButton.hidden = models.count == 0;
             break;
         }
         case CONTENT_MODELS:{
             AutoModel *model = [data objectAtIndex:indexPath.row];
-            cell.tag = indexPath.row;
             cell.autoTitleLabel.text = model.name;
             cell.autoLogo.image = [UIImage imageNamed:model.logo];
             cell.sublevelPickerDelegate = self;
             
-            NSArray *submodels = [DataManager getSubmodelsOfModel:model.modelId];
-            cell.autoModelsButton.hidden = submodels.count == 0;
+            NSArray *submodels = [DataManager getSubmodelsOfModel:model.modelId]; // TODO: get count instead of all submodels
+            cell.autoModelsButton.hidden = !model.isSelectable || submodels.count == 0;
+            if (!model.isSelectable){
+                cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+            }
             break;
         }
         case CONTENT_SUBMODELS:{
@@ -103,6 +106,11 @@ typedef enum {
             }
             case CONTENT_MODELS:{
                 selectedModel = [data objectAtIndex:indexPath.row];
+                // if current model cannot be picked then simulate its '...' button click and return
+                if (!selectedModel.isSelectable){
+                   [self sublevelButtonPressedAtIndex:indexPath.row];
+                    return;
+                }
                 break;
             }
             case CONTENT_SUBMODELS:{
@@ -116,7 +124,7 @@ typedef enum {
 
 #pragma mark SublevelPickerDelegate
 
--(void)sublevelButtonPressedAtIndex:(int)index{
+-(void)sublevelButtonPressedAtIndex:(long)index{
     switch (currentContentType) {
         case CONTENT_AUTOS:{
             selectedAuto = [data objectAtIndex:index];

@@ -24,6 +24,10 @@
     return self;
 }
 
+-(void) addField:(NSString*)name type:(NSString*)type{
+    [self addField:name type:type notNull:YES];
+}
+
 -(void) addField:(NSString*)name type:(NSString*)type notNull:(BOOL)notNull{
     DbField* field = [[DbField alloc] initWithName:name type:type notNull:notNull];
     [tFields addObject:field];

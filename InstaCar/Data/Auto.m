@@ -22,4 +22,29 @@
     return self;
 }
 
+-(NSString*)selectedText{
+    if (self.model){
+        if (self.model.submodel){
+            return [NSString stringWithFormat:@"%@ %@", self.model.isSelectable?self.model.name:self.name, self.model.submodel.name];
+        } else {
+            return [NSString stringWithFormat:@"%@ %@", self.name, self.model.name];
+        }
+    }
+    return self.name;
+}
+
+-(CGFloat)logoWidthHeightRate{
+    NSString *logoName = self.logo;
+    if (self.model){
+        if (self.model.submodel){
+            logoName = self.model.submodel.logo;
+        } else {
+            logoName = self.model.logo;
+        }
+    }
+    UIImage *logoImage = [UIImage imageNamed:logoName];
+    
+    return logoImage.size.width / logoImage.size.height;
+}
+
 @end
