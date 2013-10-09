@@ -944,9 +944,40 @@ typedef enum { // Do not change the numbers!
     sqlite3_finalize(statement);
 }
 
-#pragma mark -
+-(int)addAutoModel:(NSString*)name ofAuto:(int)autoId logo:(int)logoId startYear:(int)startYear endYear:(int)endYear isSelectable:(BOOL)isSelectable isUserDefined:(BOOL)isUserDefined{
+    NSAssert(isUserDefined?isSelectable:YES, @"User defined cars have to be selectable!");
+    NSAssert(isSelectable?YES:!isUserDefined, @"Non-selectable cars cannot be user defined!");
+    
+    NSString* sql = [NSString stringWithFormat: @"INSERT INTO %@ (%@, %@, %@, %@, %@, %@, %@) VALUES (?, %d, %d, %d, %d, %d, %d)", T_MODELS, F_NAME, F_AUTO_ID, F_LOGO_ID, F_YEAR_START, F_YEAR_END, F_SELECTABLE, F_IS_USER_DEFINED, autoId, logoId, startYear, endYear, isSelectable, isUserDefined];
+    
+    const char *insert_stmt = [sql UTF8String];
+    
+    sqlite3_stmt *statement;
+    if (sqlite3_prepare_v2(instacarDb, insert_stmt, -1, &statement, NULL) == SQLITE_OK){
+        sqlite3_bind_text(statement, 1, [name cStringUsingEncoding:NSUTF8StringEncoding], -1, SQLITE_TRANSIENT);
+        
+        if (sqlite3_step(statement) == SQLITE_DONE)
+        {
+            NSLog(@"Added model: %@", name);
+        } else {
+            NSLog(@"Failed to add model %@", name);
+            NSLog(@"Info:%s", sqlite3_errmsg(instacarDb));
+        }
+    } else {
+        NSLog(@"Error:%s", sqlite3_errmsg(instacarDb));
+    }
+    sqlite3_finalize(statement);
+    
+    return [self getIdForAutoModel:name ofAuto:autoId];
+}
 
 #pragma mark Saving data public methods
+
+-(void)addCustomAutoModel:(NSString*)name ofAuto:(int)autoId logo:(NSString*)logoFileName startYear:(int)startYear endYear:(int)endYear{
+    int logoId = [self getIdForLogo:logoFileName];
+    [self addAutoModel:name ofAuto:autoId logo:logoId startYear:startYear endYear:endYear isUserDefined:YES];
+}
+
 -(void)addIcon:(UIImage*)icon forPath:(NSString*)iconPath{
     NSString* sql = [NSString stringWithFormat: @"INSERT INTO %@ (%@, %@) VALUES (?, ?)", T_ICONS, F_FILENAME, F_DATA];
     
@@ -1084,33 +1115,6 @@ typedef enum { // Do not change the numbers!
 }
 
 #pragma mark Getting data private methods
-
--(int)addAutoModel:(NSString*)name ofAuto:(int)autoId logo:(int)logoId startYear:(int)startYear endYear:(int)endYear isSelectable:(BOOL)isSelectable isUserDefined:(BOOL)isUserDefined{
-    NSAssert(isUserDefined?isSelectable:YES, @"User defined cars have to be selectable!");
-    NSAssert(isSelectable?YES:!isUserDefined, @"Non-selectable cars cannot be user defined!");
-    
-    NSString* sql = [NSString stringWithFormat: @"INSERT INTO %@ (%@, %@, %@, %@, %@, %@, %@) VALUES (?, %d, %d, %d, %d, %d, %d)", T_MODELS, F_NAME, F_AUTO_ID, F_LOGO_ID, F_YEAR_START, F_YEAR_END, F_SELECTABLE, F_IS_USER_DEFINED, autoId, logoId, startYear, endYear, isSelectable, isUserDefined];
-    
-    const char *insert_stmt = [sql UTF8String];
-    
-    sqlite3_stmt *statement;
-    if (sqlite3_prepare_v2(instacarDb, insert_stmt, -1, &statement, NULL) == SQLITE_OK){
-        sqlite3_bind_text(statement, 1, [name cStringUsingEncoding:NSUTF8StringEncoding], -1, SQLITE_TRANSIENT);
-        
-        if (sqlite3_step(statement) == SQLITE_DONE)
-        {
-            NSLog(@"Added model: %@", name);
-        } else {
-            NSLog(@"Failed to add model %@", name);
-            NSLog(@"Info:%s", sqlite3_errmsg(instacarDb));
-        }
-    } else {
-        NSLog(@"Error:%s", sqlite3_errmsg(instacarDb));
-    }
-    sqlite3_finalize(statement);
-    
-    return [self getIdForAutoModel:name ofAuto:autoId];
-}
 
 -(NSArray*)getModelsOfAuto:(int)autoId definedByUser:(UserModelsDefintion)userModelDefinition{
     NSMutableArray *mutableModels = [[NSMutableArray alloc] init];

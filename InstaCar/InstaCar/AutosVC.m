@@ -25,6 +25,8 @@ typedef enum {
     Auto *selectedAuto;
     AutoModel *selectedModel;
     AutoSubmodel *selectedSubmodel;
+    
+    CustomCarFormVC *customCarForm;
 }
 
 @end
@@ -38,6 +40,7 @@ typedef enum {
     selectingModelForAutoIndex = -1;
     data = [DataManager getAutos];
     userDefinedData = nil;
+    customCarForm = nil;
     
     currentContentType = CONTENT_AUTOS;
     //[self.btnBack setTitle:@"Back" forState:UIControlStateNormal];
@@ -46,10 +49,22 @@ typedef enum {
     self.tableAutos.dataSource = self;
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+-(void)hideCustomCarFormIfOpened{
+    if (customCarForm){
+        [customCarForm dismissViewControllerAnimated:NO completion:nil];
+        customCarForm = nil;
+    }
+}
+
+#pragma mark CustomCarFormDelegate
+
+-(void)newAutoModelPreparedToAdd:(AutoModel*)model  preparedForAuto:(int)autoId{
+    [DataManager addCustomAutoModel:model.name ofAuto:autoId logo:model.logo startYear:model.startYear endYear:model.endYear];
+    [customCarForm dismissViewControllerAnimated:YES
+                                      completion:^(void){
+                                          customCarForm = nil;
+                                      }
+     ];
 }
 
 #pragma mark Table methods
@@ -188,7 +203,14 @@ typedef enum {
 #pragma mark private methods
 
 -(void)addCustomCarPressed{
+    if (!customCarForm){
+        customCarForm = [[UIStoryboard storyboardWithName:@"main" bundle:nil] instantiateViewControllerWithIdentifier:@"customCarFormVC"];
+        customCarForm.customCarDelegate = self;
+    }
+    customCarForm.autoId = selectedAuto._id;
+    customCarForm.logoFilename = selectedAuto.logo;
     
+    [self presentViewController:customCarForm animated:YES completion:nil];
 }
 
 -(Auto*)prepareResult{

@@ -14,6 +14,7 @@
 
 +(BOOL)isFullVersion;
 
++(void)addCustomAutoModel:(NSString*)name ofAuto:(int)autoId logo:(NSString*)logoFileName startYear:(int)startYear endYear:(int)endYear;
 +(NSArray*)getAutos; // type: Auto
 +(NSInteger)getModelsCountForAuto:(int)autoId;
 +(NSArray*)getBuiltInModelsOfAuto:(int)autoId; // type: AutoModel

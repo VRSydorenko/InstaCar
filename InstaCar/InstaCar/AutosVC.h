@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "DataManager.h"
 #import "CellAuto.h"
+#import "CustomCarFormVC.h"
 
 @protocol AutoSelectorDelegate <NSObject>
 -(void)newAutoSelected:(Auto*)newAuto;
@@ -16,12 +17,15 @@
 
 @interface AutosVC : UIViewController <UITableViewDelegate,
                                        UITableViewDataSource,
-                                       SublevelPickerDelegate>
+                                       SublevelPickerDelegate,
+                                       CustomCarFormDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableAutos;
 @property id<AutoSelectorDelegate> autoSelectorDelegate;
 
 - (IBAction)btnBackPressed;
 - (IBAction)btnClosePressed:(id)sender;
+
+-(void)hideCustomCarFormIfOpened;
 
 @end

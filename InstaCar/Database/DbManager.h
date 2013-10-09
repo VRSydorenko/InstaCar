@@ -19,6 +19,7 @@
 
 #pragma mark Custom methods
 
+-(void)addCustomAutoModel:(NSString*)name ofAuto:(int)autoId logo:(NSString*)logoFileName startYear:(int)startYear endYear:(int)endYear;
 -(NSArray*)getAllAutos; // type: Auto
 -(NSInteger)getModelsCountForAuto:(int)autoId;
 -(NSArray*)getBuiltInModelsOfAuto:(int)autoId; // type: AutoModel

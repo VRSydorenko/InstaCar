@@ -161,6 +161,7 @@
 
 -(void)menuControllerWillShowRootViewController{
     if (autosVC){
+        [autosVC hideCustomCarFormIfOpened];
         [autosVC dismissViewControllerAnimated:NO completion:nil];
     }
 }

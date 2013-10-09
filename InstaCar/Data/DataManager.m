@@ -19,6 +19,10 @@
     return ((AppDelegate*)[UIApplication sharedApplication].delegate).dbManager;
 }
 
++(void)addCustomAutoModel:(NSString*)name ofAuto:(int)autoId logo:(NSString*)logoFileName startYear:(int)startYear endYear:(int)endYear{
+    [[self dbManager] addCustomAutoModel:name ofAuto:autoId logo:logoFileName startYear:startYear endYear:endYear];
+}
+
 +(NSArray*)getAutos{
     return [[self dbManager] getAllAutos];
 }

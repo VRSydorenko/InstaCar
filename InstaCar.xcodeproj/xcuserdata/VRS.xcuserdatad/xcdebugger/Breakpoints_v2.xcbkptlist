@@ -20,27 +20,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "InstaCar/Database/DbManager.m"
-            timestampString = "403038671.898681"
+            timestampString = "403042453.236809"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1094"
-            endingLineNumber = "1094"
-            landmarkName = "-addAutoModel:ofAuto:logo:startYear:endYear:isSelectable:isUserDefined:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "InstaCar/Database/DbManager.m"
-            timestampString = "403038671.898681"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1122"
-            endingLineNumber = "1122"
+            startingLineNumber = "1126"
+            endingLineNumber = "1126"
             landmarkName = "-getModelsOfAuto:definedByUser:"
             landmarkType = "5">
          </BreakpointContent>
@@ -52,11 +36,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "InstaCar/Database/DbManager.m"
-            timestampString = "403038671.898681"
+            timestampString = "403042453.236809"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1126"
-            endingLineNumber = "1126"
+            startingLineNumber = "1130"
+            endingLineNumber = "1130"
             landmarkName = "-getModelsOfAuto:definedByUser:"
             landmarkType = "5">
          </BreakpointContent>
