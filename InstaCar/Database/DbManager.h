@@ -20,8 +20,7 @@
 #pragma mark Custom methods
 
 -(NSArray*)getAllAutos; // type: Auto
-// TODO: delete?
--(NSArray*)getAllModelsOfAuto:(int)autoId; // type: AutoModel
+-(NSInteger)getModelsCountForAuto:(int)autoId;
 -(NSArray*)getBuiltInModelsOfAuto:(int)autoId; // type: AutoModel
 -(NSArray*)getUserDefinedModelsOfAuto:(int)autoId; // type: AutoModel
 -(NSArray*)getSubmodelsOfModel:(int)modelId; // type: AutoSubmodel

@@ -15,7 +15,7 @@
 +(BOOL)isFullVersion;
 
 +(NSArray*)getAutos; // type: Auto
-+(NSArray*)getAllModelsOfAuto:(int)autoId; // type: AutoModel
++(NSInteger)getModelsCountForAuto:(int)autoId;
 +(NSArray*)getBuiltInModelsOfAuto:(int)autoId; // type: AutoModel
 +(NSArray*)getUserDefinedModelsOfAuto:(int)autoId; // type: AutoModel
 +(NSArray*)getSubmodelsOfModel:(int)modelId; // type: AutoSubModel

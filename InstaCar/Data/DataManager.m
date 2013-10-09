@@ -23,8 +23,8 @@
     return [[self dbManager] getAllAutos];
 }
 
-+(NSArray*)getAllModelsOfAuto:(int)autoId{
-    return [[self dbManager] getAllModelsOfAuto:autoId];
++(NSInteger)getModelsCountForAuto:(int)autoId{
+    return [[self dbManager] getModelsCountForAuto:autoId];
 }
 
 +(NSArray*)getBuiltInModelsOfAuto:(int)autoId{

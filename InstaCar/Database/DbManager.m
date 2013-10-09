@@ -591,7 +591,7 @@ typedef enum { // Do not change the numbers!
         [self addAutoSubmodel:@"W164" ofModel:modelId logo:logoId startYear:2005 endYear:2011];
         [self addAutoSubmodel:@"W166" ofModel:modelId logo:logoId startYear:2011 endYear:0];
     }
-    modelId = [self addAutoModel:@"R class" ofAuto:autoId logo:logoId startYear:2005 endYear:0];
+    [self addAutoModel:@"R class" ofAuto:autoId logo:logoId startYear:2005 endYear:0];
     modelId = [self addAutoModel:@"S class" ofAuto:autoId logo:logoId startYear:0 endYear:0];
     {
         [self addAutoSubmodel:@"W108" ofModel:modelId logo:logoId startYear:1965 endYear:1972];
@@ -1003,8 +1003,21 @@ typedef enum { // Do not change the numbers!
     return [[NSArray alloc] initWithArray:mutableAutos];
 }
 
--(NSArray*)getAllModelsOfAuto:(int)autoId{
-    return [self getModelsOfAuto:autoId definedByUser:MODELS_ALL];
+-(NSInteger)getModelsCountForAuto:(int)autoId{
+    NSString *querySQL = [NSString stringWithFormat: @"SELECT COUNT(%@) FROM %@ WHERE %@=%d", F_ID, T_MODELS, F_AUTO_ID, autoId];
+    const char *query_stmt = [querySQL UTF8String];
+        
+    int result = 0;
+        
+    sqlite3_stmt *statement;
+    if (sqlite3_prepare_v2(instacarDb, query_stmt, -1, &statement, NULL) == SQLITE_OK){
+        if (sqlite3_step(statement) == SQLITE_ROW){
+            result = sqlite3_column_int(statement, 0);
+        }
+    }
+    sqlite3_finalize(statement);
+        
+    return result;
 }
 
 -(NSArray*)getBuiltInModelsOfAuto:(int)autoId{

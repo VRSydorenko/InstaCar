@@ -78,8 +78,8 @@ typedef enum {
             cell.autoLogo.image = [UIImage imageNamed:_auto.logo];
             cell.sublevelPickerDelegate = self;
             
-            NSArray *models = [DataManager getAllModelsOfAuto:_auto._id]; // TODO: get count instead of all models
-            cell.autoModelsButton.hidden = models.count == 0;
+            NSInteger modelsCount = [DataManager getModelsCountForAuto:_auto._id]; // TODO: get count instead of all models
+            cell.autoModelsButton.hidden = modelsCount == 0;
             break;
         }
         case CONTENT_MODELS:{
