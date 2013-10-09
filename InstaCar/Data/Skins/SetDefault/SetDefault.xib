@@ -23,7 +23,7 @@
                                 <constraint firstAttribute="width" constant="54" id="Oej-UT-i2Y"/>
                             </constraints>
                         </imageView>
-                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="IEM-D4-Cc5">
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.20000000000000007" translatesAutoresizingMaskIntoConstraints="NO" id="IEM-D4-Cc5">
                             <rect key="frame" x="309" y="0.0" width="1" height="50"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <constraints>
@@ -159,12 +159,9 @@
                                 <constraint firstAttribute="width" constant="54" id="tgI-Jn-gmP"/>
                             </constraints>
                         </imageView>
-                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="OoH-9J-VpT">
-                            <rect key="frame" x="60" y="0.0" width="1" height="50"/>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.20000000000000007" translatesAutoresizingMaskIntoConstraints="NO" id="OoH-9J-VpT">
+                            <rect key="frame" x="60" y="0.0" width="260" height="50"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <constraints>
-                                <constraint firstAttribute="width" constant="1" id="fgQ-bg-Hd2"/>
-                            </constraints>
                             <fontDescription key="fontDescription" name="AvenirNextCondensed-Regular" family="Avenir Next Condensed" pointSize="25"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
@@ -175,6 +172,7 @@
                         <constraint firstItem="oIa-gw-7N1" firstAttribute="leading" secondItem="RsD-ea-ulE" secondAttribute="leading" constant="3" id="2fU-gZ-53c"/>
                         <constraint firstItem="OoH-9J-VpT" firstAttribute="leading" secondItem="oIa-gw-7N1" secondAttribute="trailing" constant="3" id="2sB-7v-Nw2"/>
                         <constraint firstAttribute="bottom" secondItem="oIa-gw-7N1" secondAttribute="bottom" constant="4" id="7cb-3t-P7W"/>
+                        <constraint firstAttribute="trailing" secondItem="OoH-9J-VpT" secondAttribute="trailing" id="9rY-Ej-s7e"/>
                         <constraint firstItem="oIa-gw-7N1" firstAttribute="top" secondItem="RsD-ea-ulE" secondAttribute="top" constant="4" id="Msf-JC-avc"/>
                         <constraint firstItem="OoH-9J-VpT" firstAttribute="top" secondItem="RsD-ea-ulE" secondAttribute="top" id="aUF-jF-7PM"/>
                         <constraint firstItem="OoH-9J-VpT" firstAttribute="bottom" secondItem="RsD-ea-ulE" secondAttribute="bottom" id="jn2-Ae-j19"/>
@@ -190,7 +188,6 @@
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
-                <outlet property="autoTitleWidth" destination="fgQ-bg-Hd2" id="8Op-s9-AKP"/>
                 <outlet property="heightConstraint" destination="y6B-Sd-esx" id="jNU-Np-EUn"/>
                 <outlet property="imgEmblem" destination="oIa-gw-7N1" id="JBY-Xp-h3b"/>
                 <outlet property="movingView" destination="RsD-ea-ulE" id="80a-AZ-9aQ"/>

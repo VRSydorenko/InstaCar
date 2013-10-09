@@ -28,8 +28,7 @@
     
     float newFontSize = self.bounds.size.width > 320.0 ? 50.0 : 25.0;
     self.textAuto.font = [UIFont fontWithName:self.textAuto.font.fontName size:newFontSize];
-    [self adjustAutoLabelSizeAccordingToText];
-    
+
     [super layoutSubviews];
 }
 
@@ -48,13 +47,6 @@
     self.imgEmblem.contentMode = UIViewContentModeScaleAspectFit;
     self.imgEmblem.image = [UIImage imageNamed:fieldAuto1.logo];
     self.textAuto.text = fieldAuto1.selectedText;
-    
-    [self adjustAutoLabelSizeAccordingToText];
-}
-
--(void)adjustAutoLabelSizeAccordingToText{
-    CGSize textSize = [self.textAuto.text sizeWithAttributes:[NSDictionary dictionaryWithObject:self.textAuto.font forKey:NSFontAttributeName]];
-    self.autoTitleWidth.constant = textSize.width;
 }
 
 @end
