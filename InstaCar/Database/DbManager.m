@@ -348,7 +348,6 @@ typedef enum { // Do not change the numbers!
         [self addAutoSubmodel:@"F20" ofModel:modelId logo:logoId startYear:2011 endYear:0];
         [self addAutoSubmodel:@"F21" ofModel:modelId logo:logoId startYear:2011 endYear:0];
     }
-    [self addAutoModel:@"My Series" ofAuto:autoId logo:logoId startYear:1975 endYear:0 isUserDefined:YES];
     modelId = [self addAutoModel:@"3 Series" ofAuto:autoId logo:logoId startYear:1975 endYear:0];
     {
         [self addAutoSubmodel:@"Compact" ofModel:modelId logo:logoId startYear:1993 endYear:2000];
@@ -1087,6 +1086,9 @@ typedef enum { // Do not change the numbers!
 #pragma mark Getting data private methods
 
 -(int)addAutoModel:(NSString*)name ofAuto:(int)autoId logo:(int)logoId startYear:(int)startYear endYear:(int)endYear isSelectable:(BOOL)isSelectable isUserDefined:(BOOL)isUserDefined{
+    NSAssert(isUserDefined?isSelectable:YES, @"User defined cars have to be selectable!");
+    NSAssert(isSelectable?YES:!isUserDefined, @"Non-selectable cars cannot be user defined!");
+    
     NSString* sql = [NSString stringWithFormat: @"INSERT INTO %@ (%@, %@, %@, %@, %@, %@, %@) VALUES (?, %d, %d, %d, %d, %d, %d)", T_MODELS, F_NAME, F_AUTO_ID, F_LOGO_ID, F_YEAR_START, F_YEAR_END, F_SELECTABLE, F_IS_USER_DEFINED, autoId, logoId, startYear, endYear, isSelectable, isUserDefined];
     
     const char *insert_stmt = [sql UTF8String];

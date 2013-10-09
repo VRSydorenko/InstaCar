@@ -20,11 +20,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "InstaCar/Database/DbManager.m"
-            timestampString = "403019040.119319"
+            timestampString = "403038671.898681"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1092"
-            endingLineNumber = "1092"
+            startingLineNumber = "1094"
+            endingLineNumber = "1094"
             landmarkName = "-addAutoModel:ofAuto:logo:startYear:endYear:isSelectable:isUserDefined:"
             landmarkType = "5">
          </BreakpointContent>
@@ -36,11 +36,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "InstaCar/Database/DbManager.m"
-            timestampString = "403019040.119319"
+            timestampString = "403038671.898681"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1120"
-            endingLineNumber = "1120"
+            startingLineNumber = "1122"
+            endingLineNumber = "1122"
             landmarkName = "-getModelsOfAuto:definedByUser:"
             landmarkType = "5">
          </BreakpointContent>
@@ -52,11 +52,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "InstaCar/Database/DbManager.m"
-            timestampString = "403019040.119319"
+            timestampString = "403038671.898681"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1124"
-            endingLineNumber = "1124"
+            startingLineNumber = "1126"
+            endingLineNumber = "1126"
             landmarkName = "-getModelsOfAuto:definedByUser:"
             landmarkType = "5">
          </BreakpointContent>

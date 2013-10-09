@@ -54,6 +54,33 @@ typedef enum {
 
 #pragma mark Table methods
 
+-(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
+    return [DataManager isFullVersion] && section == 1 && currentContentType == CONTENT_MODELS ? 30.0 : 0;
+}
+
+-(UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
+    if ([DataManager isFullVersion] && section == 1 && currentContentType == CONTENT_MODELS){ // user cars
+        UIToolbar *header = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, self.tableAutos.bounds.size.width, 30.0)];
+        header.barTintColor = [UIColor blackColor];
+        header.tintColor = [UIColor lightTextColor];
+        
+        UIBarButtonItem *fixSpace = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:self action:@selector(addCustomCarPressed)];
+        fixSpace.width = 40.0;
+        NSString *barString = (userDefinedData ? userDefinedData.count : 0) == 0 ? @"Didn't found a car? Add it!" : @"Your custom cars";
+        UIBarButtonItem *barText = [[UIBarButtonItem alloc] initWithTitle:barString style:UIBarButtonItemStylePlain target:nil action:nil];
+        [barText setTitleTextAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:17.0f]} forState:UIControlStateNormal];
+
+        UIBarButtonItem *flexSpace = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
+        UIBarButtonItem *btnAdd = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addCustomCarPressed)];
+        
+        NSArray *barButtonItems = [[NSArray alloc] initWithObjects:fixSpace, barText, flexSpace, btnAdd, nil];
+        header.items = barButtonItems;
+        
+        return header;
+    }
+    return [[UIView alloc] initWithFrame:CGRectMake(0, 0, 0, 0)];
+}
+
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     return 2;
 }
@@ -159,6 +186,10 @@ typedef enum {
 }
 
 #pragma mark private methods
+
+-(void)addCustomCarPressed{
+    
+}
 
 -(Auto*)prepareResult{
     if (selectedModel){
