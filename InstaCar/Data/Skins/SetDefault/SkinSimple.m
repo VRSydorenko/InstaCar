@@ -25,7 +25,7 @@
     self.heightConstraint.constant = self.bounds.size.height * heightScaleFactor;
     self.widthLogoConstraint.constant = self.imgEmblem.bounds.size.height * 1.33; // 30% wider than taller
     
-    float newFontSize = self.bounds.size.width > 320.0 ? 50.0 : 25.0;
+    float newFontSize = self.bounds.size.width > 320.0 ? 40.0 : 25.0;
     self.textAuto.font = [UIFont fontWithName:self.textAuto.font.fontName size:newFontSize];
     [self adjustAutoLabelSizeAccordingToText];
     
@@ -41,6 +41,7 @@
     [self setMovingViewConstraint:self.topMargin andViewHeight:self.movingView.bounds.size.height];
 
     canEditFieldAuto1 = YES;
+    self.textAuto.adjustsFontSizeToFitWidth = YES;
 }
 
 -(void)fieldAuto1DidUpdate{
@@ -53,7 +54,7 @@
 
 -(void)adjustAutoLabelSizeAccordingToText{
     CGSize textSize = [self.textAuto.text sizeWithAttributes:[NSDictionary dictionaryWithObject:self.textAuto.font forKey:NSFontAttributeName]];
-    self.autoTitleWidth.constant = textSize.width;
+    self.autoTitleWidth.constant = MIN(textSize.width, self.bounds.size.width - self.widthLogoConstraint.constant - 5);
 }
 
 @end
