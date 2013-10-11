@@ -72,6 +72,7 @@
 		7F4F684417F6F97600F1017B /* HFImageEditorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F4F684217F6F97600F1017B /* HFImageEditorViewController.m */; };
 		7F4F684817F6FDF500F1017B /* ImageEditor.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F4F684617F6FDF500F1017B /* ImageEditor.m */; };
 		7F4F684917F6FDF500F1017B /* ImageEditor.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F4F684717F6FDF500F1017B /* ImageEditor.xib */; };
+		7F544A3918085378001FFEC3 /* ALAssetsLibrary+CustomPhotoAlbum.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F544A3818085378001FFEC3 /* ALAssetsLibrary+CustomPhotoAlbum.m */; };
 		7F59AC5A17D3BA2900B87457 /* DataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F59AC5917D3BA2900B87457 /* DataManager.m */; };
 		7F59AC5D17D3BA4700B87457 /* AutoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F59AC5C17D3BA4700B87457 /* AutoModel.m */; };
 		7F59AC5F17D3C1F400B87457 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F59AC5E17D3C1F400B87457 /* libsqlite3.0.dylib */; };
@@ -245,6 +246,8 @@
 		7F4F684517F6FDF500F1017B /* ImageEditor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageEditor.h; sourceTree = "<group>"; };
 		7F4F684617F6FDF500F1017B /* ImageEditor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageEditor.m; sourceTree = "<group>"; };
 		7F4F684717F6FDF500F1017B /* ImageEditor.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImageEditor.xib; sourceTree = "<group>"; };
+		7F544A3718085377001FFEC3 /* ALAssetsLibrary+CustomPhotoAlbum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ALAssetsLibrary+CustomPhotoAlbum.h"; sourceTree = "<group>"; };
+		7F544A3818085378001FFEC3 /* ALAssetsLibrary+CustomPhotoAlbum.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ALAssetsLibrary+CustomPhotoAlbum.m"; sourceTree = "<group>"; };
 		7F59AC5817D3BA2900B87457 /* DataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DataManager.h; path = InstaCar/Data/DataManager.h; sourceTree = "<group>"; };
 		7F59AC5917D3BA2900B87457 /* DataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DataManager.m; path = InstaCar/Data/DataManager.m; sourceTree = "<group>"; };
 		7F59AC5B17D3BA4700B87457 /* AutoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AutoModel.h; path = InstaCar/Data/AutoModel.h; sourceTree = "<group>"; };
@@ -652,6 +655,8 @@
 				7F4F683D17F6F97600F1017B /* ImageEditor */,
 				7F2AD48217EDE9B40096EC8D /* ShareKit */,
 				7FC4136A17C7E8450025DD2C /* Foursquare */,
+				7F544A3718085377001FFEC3 /* ALAssetsLibrary+CustomPhotoAlbum.h */,
+				7F544A3818085378001FFEC3 /* ALAssetsLibrary+CustomPhotoAlbum.m */,
 				7F1767AA17C76F0F00724BD6 /* CaptureSessionManager.h */,
 				7F1767AB17C76F0F00724BD6 /* CaptureSessionManager.m */,
 				7F3871DC17BE4F1000D8E39D /* DDMenuController.h */,
@@ -916,6 +921,7 @@
 				7F4F684317F6F97600F1017B /* HFImageEditorFrameView.m in Sources */,
 				7F4F684417F6F97600F1017B /* HFImageEditorViewController.m in Sources */,
 				7F2AD5A417EDE9B40096EC8D /* SHKPrint.m in Sources */,
+				7F544A3918085378001FFEC3 /* ALAssetsLibrary+CustomPhotoAlbum.m in Sources */,
 				7FC28FC217F31EF200638697 /* UIBluredView.m in Sources */,
 				7F2AD5D517EDE9B40096EC8D /* SHKFormFieldOptionPickerSettings.m in Sources */,
 				7F419E2717D65EBB00255E56 /* CellSkinSet.m in Sources */,

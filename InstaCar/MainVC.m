@@ -6,7 +6,7 @@
 //  Copyright (c) 2013 Viktor Sydorenko. All rights reserved.
 //
 
-#import <AssetsLibrary/AssetsLibrary.h>
+#import "ALAssetsLibrary+CustomPhotoAlbum.h"
 #import "MainVC.h"
 #import "Utils.h"
 #import "ShareKit.h"
@@ -30,7 +30,7 @@ typedef enum {
     UISwipeGestureRecognizer *swipeDown;
     SMPageControl *pageControl;
     
-    ALAssetsLibrary *assetLibrary;
+    ALAssetsLibrary *assetsLibrary;
     ImageEditor *imageEditor;
     __weak UIImage *selectedImage;
 }
@@ -53,6 +53,7 @@ typedef enum {
     navCon.dataSelectionChangeDelegate = self;
     navCon.menuControllerDelegate = self;
     
+    assetsLibrary = [[ALAssetsLibrary alloc] init];
     buttonsInInitialState = YES;
     isChangingPage = NO;
     selectedImage = nil;
@@ -304,7 +305,6 @@ typedef enum {
     picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
     picker.delegate = self;
     
-    assetLibrary = [[ALAssetsLibrary alloc] init];
     imageEditor = [[ImageEditor alloc] initWithNibName:@"ImageEditor" bundle:nil];
     imageEditor.checkBounds = YES;
     
@@ -340,6 +340,8 @@ typedef enum {
     SHKActionSheet *actionSheet = [SHKActionSheet actionSheetForItem:item];
     [SHK setRootViewController:self];
     
+    [assetsLibrary saveImage:imageToShare toAlbum:@"InstaCar" completion:nil failure:nil]; // TODO: do it after sharing is done
+    
     [actionSheet showInView:self.view];
 }
 
@@ -361,7 +363,7 @@ typedef enum {
     UIImage *image =  [Utils image:[info objectForKey:UIImagePickerControllerOriginalImage] byScalingProportionallyToSize:CGSizeMake(612.0, 612.0)];
     NSURL *assetURL = [info objectForKey:UIImagePickerControllerReferenceURL];
     
-    [assetLibrary assetForURL:assetURL resultBlock:^(ALAsset *asset) {
+    [assetsLibrary assetForURL:assetURL resultBlock:^(ALAsset *asset) {
         UIImage *preview = [UIImage imageWithCGImage:[asset aspectRatioThumbnail]];
         
         imageEditor.sourceImage = image;
@@ -377,6 +379,7 @@ typedef enum {
 }
 
 #pragma mark -
+
 
 -(void) imageCaptured{
     self.imagePreview.image = self.captureManager.stillImage;
@@ -398,17 +401,6 @@ typedef enum {
     UIGraphicsEndImageContext();
     
     return newImage;
-}
-
-- (void)saveImageToPhotoAlbum
-{
-    UIImageWriteToSavedPhotosAlbum(self.captureManager.stillImage, self, @selector(image:didFinishSavingWithError:contextInfo:), nil);
-}
-
-- (void)image:(UIImage*)image didFinishSavingWithError:(NSError*)error contextInfo:(void*)contextInfo
-{
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Image" message:error!=NULL?@"Image couldn't be saved":@"Saved!" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
-    [alert show];
 }
 
 @end
