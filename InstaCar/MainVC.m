@@ -11,6 +11,7 @@
 #import "Utils.h"
 #import "ShareKit.h"
 #import "ImageEditor.h"
+#import "SHKSharer.h"
 
 #define SWITCH_TIME 1.0
 #define IMAGE_SIDE_SIZE 612.0
@@ -330,9 +331,8 @@ typedef enum {
     
     SHKItem *item = [SHKItem image:imageToShare title:@"Hohoho"];
     SHKActionSheet *actionSheet = [SHKActionSheet actionSheetForItem:item];
+    actionSheet.shareDelegate = self;
     [SHK setRootViewController:self];
-    
-    [assetsLibrary saveImage:imageToShare toAlbum:@"InstaCar" completion:nil failure:nil]; // TODO: do it after sharing is done
     
     [actionSheet showInView:self.view];
 }
@@ -370,8 +370,14 @@ typedef enum {
     }];
 }
 
-#pragma mark -
+#pragma mark SHKShareItemDelegate
 
+- (BOOL)aboutToShareItem:(SHKItem *)item withSharer:(SHKSharer *)sharer{
+    [assetsLibrary saveImage:item.image toAlbum:@"InstaCar" completion:nil failure:nil];
+    return [sharer shouldSavePhotoToCustomAppAlbum]; // if NO then it is 'Save to Album' sharer and we have already saved this photo to the album a moment ago.
+}
+
+#pragma mark -
 
 -(void) imageCaptured{
     self.imagePreview.image = self.captureManager.stillImage;

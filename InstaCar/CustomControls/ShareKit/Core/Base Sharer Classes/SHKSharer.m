@@ -155,6 +155,10 @@ static NSString *const kSHKStoredShareInfoKey=@"kSHKStoredShareInfo";
 	return [[NSUserDefaults standardUserDefaults] boolForKey:[NSString stringWithFormat:@"%@_shouldAutoShare", [self sharerId]]];
 }
 
+- (BOOL)shouldSavePhotoToCustomAppAlbum{
+    return YES;
+}
+
 #pragma mark -
 #pragma mark Initialization
 
