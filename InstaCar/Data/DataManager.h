@@ -19,6 +19,7 @@
 +(NSInteger)getModelsCountForAuto:(int)autoId;
 +(NSArray*)getBuiltInModelsOfAuto:(int)autoId; // type: AutoModel
 +(NSArray*)getUserDefinedModelsOfAuto:(int)autoId; // type: AutoModel
++(NSInteger)getSubmodelsCountOfModel:(int)modelId;
 +(NSArray*)getSubmodelsOfModel:(int)modelId; // type: AutoSubModel
 +(NSArray*)getSkinSets; // type: SkinSet
 +(UIImage*)getIconForPath:(NSString*)path;

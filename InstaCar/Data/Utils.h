@@ -15,5 +15,6 @@
 
 +(UIImage*)image:(UIImage*)sourceImage byScalingProportionallyToSize:(CGSize)targetSize;
 +(UIImage*)blurImage:(UIImage*)image strength:(CGFloat)strength;
++(NSString*)trimWhitespaces:(NSString*)string;
 
 @end

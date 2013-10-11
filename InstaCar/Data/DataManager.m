@@ -39,6 +39,10 @@
     return [[self dbManager] getUserDefinedModelsOfAuto:autoId];
 }
 
++(NSInteger)getSubmodelsCountOfModel:(int)modelId{
+    return [[self dbManager] getSubmodelsCountOfModel:(int)modelId];
+}
+
 +(NSArray*)getSubmodelsOfModel:(int)modelId{
     return [[self dbManager] getSubmodelsOfModel:modelId];
 }

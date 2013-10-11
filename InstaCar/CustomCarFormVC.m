@@ -94,7 +94,7 @@
         endYear = -1; // concept car
     }
     
-    AutoModel *toAdd = [[AutoModel alloc] initWithId:-1 andName:self.textModel.text];
+    AutoModel *toAdd = [[AutoModel alloc] initWithId:-1 andName:[Utils trimWhitespaces:self.textModel.text]];
     toAdd.logo = self.logoFilename;
     toAdd.startYear = startYear;
     toAdd.endYear = endYear;

@@ -17,6 +17,8 @@
 
 @interface AutosVC : UIViewController <UITableViewDelegate,
                                        UITableViewDataSource,
+                                       UIAlertViewDelegate,
+                                       MFMailComposeViewControllerDelegate,
                                        SublevelPickerDelegate,
                                        CustomCarFormDelegate>
 

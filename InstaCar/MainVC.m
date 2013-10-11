@@ -68,15 +68,7 @@ typedef enum {
     
     self.scrollSkins.delegate = self;
     [self.view bringSubviewToFront:self.scrollSkins];
-    
-    // Navitgation item transparency
-    /*self.navigationController.navigationBar.translucent = YES;
-    const float colorMask[6] = {222, 255, 222, 255, 222, 255};
-    UIImage *img = [[UIImage alloc] init];
-    UIImage *maskedImage = [UIImage imageWithCGImage: CGImageCreateWithMaskingColors(img.CGImage, colorMask)];
-    
-    [self.navigationController.navigationBar setBackgroundImage:maskedImage forBarMetrics:UIBarMetricsDefault];
-     */
+  
 }
 
 -(void)viewDidAppear:(BOOL)animated{

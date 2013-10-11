@@ -41,4 +41,8 @@
     return newImage;
 }
 
++(NSString*)trimWhitespaces:(NSString*)string{
+    return [string stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+}
+
 @end

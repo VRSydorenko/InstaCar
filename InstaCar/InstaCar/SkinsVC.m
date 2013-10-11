@@ -141,7 +141,6 @@
 #pragma mark AutoSelectorDelegate
 
 -(void)newAutoSelected:(Auto*)newAuto{
-    //[autosVC dismissViewControllerAnimated:NO completion:nil];
     if (newAuto){
         if (isSelectingSecondAuto){
             [DataManager setSelectedAuto2:newAuto];
@@ -151,7 +150,6 @@
             [[DataManager getSelectedSkinSet] updateData:newAuto ofType:AUTO1];
         }
         [self.tableSelectedData reloadData];
-        //[self.tableSelectedAuto reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationAutomatic];
     }
     
     [self.sideActionDelegate performSideAction:ACT_EMPTY withArgument:nil hidingSideController:YES];

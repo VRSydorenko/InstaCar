@@ -159,7 +159,8 @@
                 picker.Subject = @"InstaCar feedback";
                 // TODO: change email address
                 picker.toRecipients = [NSArray arrayWithObject:@"viktor.sydorenko@gmail.com"];
-                [picker setMessageBody:@"" isHTML:NO];
+                NSString *messageBody = [object isKindOfClass:[NSString class]] ? (NSString*)object : @"";
+                [picker setMessageBody:messageBody isHTML:NO];
 
                 [self presentViewController:picker animated:YES completion:NULL];
             } else {

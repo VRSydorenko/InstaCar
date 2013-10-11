@@ -1058,6 +1058,23 @@ typedef enum { // Do not change the numbers!
     return [self getModelsOfAuto:autoId definedByUser:MODELS_DEFINED];
 }
 
+-(NSInteger)getSubmodelsCountOfModel:(int)modelId{
+    NSString *querySQL = [NSString stringWithFormat: @"SELECT COUNT(%@) FROM %@ WHERE %@=%d", F_ID, T_SUBMODELS, F_MODEL_ID, modelId];
+    const char *query_stmt = [querySQL UTF8String];
+    
+    int result = 0;
+    
+    sqlite3_stmt *statement;
+    if (sqlite3_prepare_v2(instacarDb, query_stmt, -1, &statement, NULL) == SQLITE_OK){
+        if (sqlite3_step(statement) == SQLITE_ROW){
+            result = sqlite3_column_int(statement, 0);
+        }
+    }
+    sqlite3_finalize(statement);
+    
+    return result;
+}
+
 -(NSArray*)getSubmodelsOfModel:(int)modelId{
     NSMutableArray *mutableSubmodels = [[NSMutableArray alloc] init];
     

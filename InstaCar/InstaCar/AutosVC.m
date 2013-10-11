@@ -27,6 +27,7 @@ typedef enum {
     AutoSubmodel *selectedSubmodel;
     
     CustomCarFormVC *customCarForm;
+    AutoModel *addingModelBufferForEmail;
 }
 
 @end
@@ -41,6 +42,7 @@ typedef enum {
     data = [DataManager getAutos];
     userDefinedData = nil;
     customCarForm = nil;
+    addingModelBufferForEmail = nil;
     
     currentContentType = CONTENT_AUTOS;
     //[self.btnBack setTitle:@"Back" forState:UIControlStateNormal];
@@ -66,6 +68,11 @@ typedef enum {
         [DataManager addCustomAutoModel:model.name ofAuto:autoId logo:model.logo startYear:model.startYear endYear:model.endYear];
         
         [self updateTableSourceDataWithNewContentType:currentContentType];
+        [self.tableAutos reloadData];
+        [self scrollTableToBottom];
+        
+        addingModelBufferForEmail = model;
+        [self proceedWithAskingAboutAddingCarToDb];
     }
 }
 
@@ -122,7 +129,7 @@ typedef enum {
             cell.autoLogo.image = [UIImage imageNamed:_auto.logo];
             cell.sublevelPickerDelegate = self;
             
-            NSInteger modelsCount = [DataManager getModelsCountForAuto:_auto._id]; // TODO: get count instead of all models
+            NSInteger modelsCount = [DataManager getModelsCountForAuto:_auto._id];
             cell.autoModelsButton.hidden = modelsCount == 0;
             break;
         }
@@ -133,8 +140,8 @@ typedef enum {
                 cell.autoLogo.image = [UIImage imageNamed:model.logo];
                 cell.sublevelPickerDelegate = self;
                 
-                NSArray *submodels = [DataManager getSubmodelsOfModel:model.modelId]; // TODO: get count instead of all submodels
-                cell.autoModelsButton.hidden = !model.isSelectable || submodels.count == 0;
+                NSInteger submodelsCount = [DataManager getSubmodelsCountOfModel:model.modelId];
+                cell.autoModelsButton.hidden = !model.isSelectable || submodelsCount == 0;
                 if (!model.isSelectable){
                     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
                 }
@@ -206,7 +213,55 @@ typedef enum {
     }
 }
 
+#pragma mark UIAlertViewDelegate
+
+-(void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex{
+    // 0 is No
+    // 1 is Yes about proposing to add auto to the database
+    if (buttonIndex == 1){
+        MFMailComposeViewController *picker = [[MFMailComposeViewController alloc] init];
+        
+        picker.mailComposeDelegate = self;
+        picker.Subject = @"What about new car?";
+        // TODO: change email address
+        picker.toRecipients = [NSArray arrayWithObject:@"viktor.sydorenko@gmail.com"];
+        // format placeholders order: 1) auto title; 2) model name; 3) start year; 4) end year
+        NSString *messageBodyFormat = @"Hi there,\n\nConsider adding the following car to the app cars list:\n\nAuto: %@\nModel: %@\nProduction years:\n    - start: %d\n    - end: %d\n\nThanks!";
+        NSString *messageBody = [NSString stringWithFormat:messageBodyFormat, selectedAuto.name, addingModelBufferForEmail.name, addingModelBufferForEmail.startYear, addingModelBufferForEmail.endYear];
+        [picker setMessageBody:messageBody isHTML:NO];
+        
+        [[self topMostController] presentViewController:picker animated:YES completion:NULL];
+    }
+}
+
+#pragma mark Mail composer delegate
+
+- (void)mailComposeController:(MFMailComposeViewController*)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError*)error{
+    [controller dismissViewControllerAnimated:YES completion:nil];
+    addingModelBufferForEmail = nil;
+}
+
 #pragma mark private methods
+
+-(void)scrollTableToBottom{
+    CGPoint contentOffset = CGPointMake(0, MAX(self.tableAutos.contentSize.height -  self.tableAutos.bounds.size.height, 0)); // 44 is a cell height
+    [self.tableAutos setContentOffset:contentOffset animated:YES];
+}
+
+-(UIViewController*) topMostController {
+    UIViewController *topController = [[[[UIApplication sharedApplication] delegate] window] rootViewController];
+    while (topController.presentedViewController) {
+        topController = topController.presentedViewController;
+    }
+    return topController;
+}
+
+-(void)proceedWithAskingAboutAddingCarToDb{
+    if ([MFMailComposeViewController canSendMail] && addingModelBufferForEmail){
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Question" message:@"Would you like us to add this car to the app cars database?" delegate:self cancelButtonTitle:@"No" otherButtonTitles:@"Yes", nil]; // TODO: rephrase
+        [alert show];
+    }
+}
 
 -(void)addCustomCarPressed{
     if (!customCarForm){
