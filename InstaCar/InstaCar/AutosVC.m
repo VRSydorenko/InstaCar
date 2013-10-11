@@ -83,7 +83,7 @@ typedef enum {
         
         UIBarButtonItem *fixSpace = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:self action:@selector(addCustomCarPressed)];
         fixSpace.width = 40.0;
-        NSString *barString = (userDefinedData ? userDefinedData.count : 0) == 0 ? @"Didn't found a car? Add it!" : @"Your custom cars";
+        NSString *barString = (userDefinedData ? userDefinedData.count : 0) == 0 ? @"Didn't find a car? Add it!" : @"Your custom cars";
         UIBarButtonItem *barText = [[UIBarButtonItem alloc] initWithTitle:barString style:UIBarButtonItemStylePlain target:nil action:nil];
         [barText setTitleTextAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:17.0f]} forState:UIControlStateNormal];
 
