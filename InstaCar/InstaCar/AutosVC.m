@@ -59,12 +59,14 @@ typedef enum {
 #pragma mark CustomCarFormDelegate
 
 -(void)newAutoModelPreparedToAdd:(AutoModel*)model  preparedForAuto:(int)autoId{
-    [DataManager addCustomAutoModel:model.name ofAuto:autoId logo:model.logo startYear:model.startYear endYear:model.endYear];
-    [customCarForm dismissViewControllerAnimated:YES
-                                      completion:^(void){
-                                          customCarForm = nil;
-                                      }
-     ];
+    [customCarForm dismissViewControllerAnimated:NO completion:nil];
+    customCarForm = nil;
+    
+    if (model){
+        [DataManager addCustomAutoModel:model.name ofAuto:autoId logo:model.logo startYear:model.startYear endYear:model.endYear];
+        
+        [self updateTableSourceDataWithNewContentType:currentContentType];
+    }
 }
 
 #pragma mark Table methods
@@ -164,7 +166,11 @@ typedef enum {
                 break;
             }
             case CONTENT_MODELS:{
-                selectedModel = [data objectAtIndex:indexPath.row];
+                if (indexPath.section == 0){
+                    selectedModel = [data objectAtIndex:indexPath.row];
+                } else {
+                    selectedModel = [userDefinedData objectAtIndex:indexPath.row];
+                }
                 // if current model cannot be picked then simulate its '...' button click and return
                 if (!selectedModel.isSelectable){
                    [self sublevelButtonPressedAtIndex:indexPath.row];
@@ -209,6 +215,7 @@ typedef enum {
     }
     customCarForm.autoId = selectedAuto._id;
     customCarForm.logoFilename = selectedAuto.logo;
+    customCarForm.autoName = selectedAuto.name;
     
     [self presentViewController:customCarForm animated:YES completion:nil];
 }
