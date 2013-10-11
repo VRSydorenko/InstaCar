@@ -6,11 +6,12 @@
 //  Copyright (c) 2013 Viktor Sydorenko. All rights reserved.
 //
 
-#import <AssetsLibrary/AssetsLibrary.h>
+#import "ALAssetsLibrary+CustomPhotoAlbum.h"
 #import "MainVC.h"
 #import "Utils.h"
 #import "ShareKit.h"
 #import "ImageEditor.h"
+#import "SHKSharer.h"
 
 #define SWITCH_TIME 1.0
 #define IMAGE_SIDE_SIZE 612.0
@@ -30,7 +31,7 @@ typedef enum {
     UISwipeGestureRecognizer *swipeDown;
     SMPageControl *pageControl;
     
-    ALAssetsLibrary *assetLibrary;
+    ALAssetsLibrary *assetsLibrary;
     ImageEditor *imageEditor;
     __weak UIImage *selectedImage;
 }
@@ -53,6 +54,7 @@ typedef enum {
     navCon.dataSelectionChangeDelegate = self;
     navCon.menuControllerDelegate = self;
     
+    assetsLibrary = [[ALAssetsLibrary alloc] init];
     buttonsInInitialState = YES;
     isChangingPage = NO;
     selectedImage = nil;
@@ -67,15 +69,7 @@ typedef enum {
     
     self.scrollSkins.delegate = self;
     [self.view bringSubviewToFront:self.scrollSkins];
-    
-    // Navitgation item transparency
-    /*self.navigationController.navigationBar.translucent = YES;
-    const float colorMask[6] = {222, 255, 222, 255, 222, 255};
-    UIImage *img = [[UIImage alloc] init];
-    UIImage *maskedImage = [UIImage imageWithCGImage: CGImageCreateWithMaskingColors(img.CGImage, colorMask)];
-    
-    [self.navigationController.navigationBar setBackgroundImage:maskedImage forBarMetrics:UIBarMetricsDefault];
-     */
+  
 }
 
 -(void)viewDidAppear:(BOOL)animated{
@@ -304,7 +298,6 @@ typedef enum {
     picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
     picker.delegate = self;
     
-    assetLibrary = [[ALAssetsLibrary alloc] init];
     imageEditor = [[ImageEditor alloc] initWithNibName:@"ImageEditor" bundle:nil];
     imageEditor.checkBounds = YES;
     
@@ -338,6 +331,7 @@ typedef enum {
     
     SHKItem *item = [SHKItem image:imageToShare title:@"Hohoho"];
     SHKActionSheet *actionSheet = [SHKActionSheet actionSheetForItem:item];
+    actionSheet.shareDelegate = self;
     [SHK setRootViewController:self];
     
     [actionSheet showInView:self.view];
@@ -361,7 +355,7 @@ typedef enum {
     UIImage *image =  [Utils image:[info objectForKey:UIImagePickerControllerOriginalImage] byScalingProportionallyToSize:CGSizeMake(612.0, 612.0)];
     NSURL *assetURL = [info objectForKey:UIImagePickerControllerReferenceURL];
     
-    [assetLibrary assetForURL:assetURL resultBlock:^(ALAsset *asset) {
+    [assetsLibrary assetForURL:assetURL resultBlock:^(ALAsset *asset) {
         UIImage *preview = [UIImage imageWithCGImage:[asset aspectRatioThumbnail]];
         
         imageEditor.sourceImage = image;
@@ -374,6 +368,13 @@ typedef enum {
     } failureBlock:^(NSError *error) {
         NSLog(@"Failed to get asset from library");
     }];
+}
+
+#pragma mark SHKShareItemDelegate
+
+- (BOOL)aboutToShareItem:(SHKItem *)item withSharer:(SHKSharer *)sharer{
+    [assetsLibrary saveImage:item.image toAlbum:@"InstaCar" completion:nil failure:nil];
+    return [sharer shouldSavePhotoToCustomAppAlbum]; // if NO then it is 'Save to Album' sharer and we have already saved this photo to the album a moment ago.
 }
 
 #pragma mark -
@@ -398,17 +399,6 @@ typedef enum {
     UIGraphicsEndImageContext();
     
     return newImage;
-}
-
-- (void)saveImageToPhotoAlbum
-{
-    UIImageWriteToSavedPhotosAlbum(self.captureManager.stillImage, self, @selector(image:didFinishSavingWithError:contextInfo:), nil);
-}
-
-- (void)image:(UIImage*)image didFinishSavingWithError:(NSError*)error contextInfo:(void*)contextInfo
-{
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Image" message:error!=NULL?@"Image couldn't be saved":@"Saved!" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
-    [alert show];
 }
 
 @end

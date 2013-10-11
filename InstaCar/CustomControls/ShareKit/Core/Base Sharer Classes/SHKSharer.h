@@ -81,6 +81,7 @@
 
 + (BOOL)canShare;
 - (BOOL)shouldAutoShare;
+- (BOOL)shouldSavePhotoToCustomAppAlbum;
 
 #pragma mark -
 #pragma mark Initialization

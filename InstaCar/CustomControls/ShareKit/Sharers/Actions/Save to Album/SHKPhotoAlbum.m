@@ -62,6 +62,9 @@
 	return YES;
 }
 
+-(BOOL)shouldSavePhotoToCustomAppAlbum{
+    return NO;
+}
 
 #pragma mark -
 #pragma mark Share API Methods

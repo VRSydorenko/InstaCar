@@ -19,12 +19,28 @@
     return ((AppDelegate*)[UIApplication sharedApplication].delegate).dbManager;
 }
 
++(void)addCustomAutoModel:(NSString*)name ofAuto:(int)autoId logo:(NSString*)logoFileName startYear:(int)startYear endYear:(int)endYear{
+    [[self dbManager] addCustomAutoModel:name ofAuto:autoId logo:logoFileName startYear:startYear endYear:endYear];
+}
+
 +(NSArray*)getAutos{
     return [[self dbManager] getAllAutos];
 }
 
-+(NSArray*)getModelsOfAuto:(int)autoId{
-    return [[self dbManager] getModelsOfAuto:autoId];
++(NSInteger)getModelsCountForAuto:(int)autoId{
+    return [[self dbManager] getModelsCountForAuto:autoId];
+}
+
++(NSArray*)getBuiltInModelsOfAuto:(int)autoId{
+    return [[self dbManager] getBuiltInModelsOfAuto:autoId];
+}
+
++(NSArray*)getUserDefinedModelsOfAuto:(int)autoId{
+    return [[self dbManager] getUserDefinedModelsOfAuto:autoId];
+}
+
++(NSInteger)getSubmodelsCountOfModel:(int)modelId{
+    return [[self dbManager] getSubmodelsCountOfModel:(int)modelId];
 }
 
 +(NSArray*)getSubmodelsOfModel:(int)modelId{

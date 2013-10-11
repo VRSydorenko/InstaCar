@@ -16,6 +16,7 @@ typedef enum {
 
 @interface AutosVC (){
     NSArray *data;
+    NSArray *userDefinedData;
     
     int selectingModelForAutoIndex;
     
@@ -24,6 +25,9 @@ typedef enum {
     Auto *selectedAuto;
     AutoModel *selectedModel;
     AutoSubmodel *selectedSubmodel;
+    
+    CustomCarFormVC *customCarForm;
+    AutoModel *addingModelBufferForEmail;
 }
 
 @end
@@ -36,6 +40,10 @@ typedef enum {
 	
     selectingModelForAutoIndex = -1;
     data = [DataManager getAutos];
+    userDefinedData = nil;
+    customCarForm = nil;
+    addingModelBufferForEmail = nil;
+    
     currentContentType = CONTENT_AUTOS;
     //[self.btnBack setTitle:@"Back" forState:UIControlStateNormal];
     
@@ -43,15 +51,68 @@ typedef enum {
     self.tableAutos.dataSource = self;
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+-(void)hideCustomCarFormIfOpened{
+    if (customCarForm){
+        [customCarForm dismissViewControllerAnimated:NO completion:nil];
+        customCarForm = nil;
+    }
+}
+
+#pragma mark CustomCarFormDelegate
+
+-(void)newAutoModelPreparedToAdd:(AutoModel*)model  preparedForAuto:(int)autoId{
+    [customCarForm dismissViewControllerAnimated:NO completion:nil];
+    customCarForm = nil;
+    
+    if (model){
+        [DataManager addCustomAutoModel:model.name ofAuto:autoId logo:model.logo startYear:model.startYear endYear:model.endYear];
+        
+        [self updateTableSourceDataWithNewContentType:currentContentType];
+        [self.tableAutos reloadData];
+        [self scrollTableToBottom];
+        
+        addingModelBufferForEmail = model;
+        [self proceedWithAskingAboutAddingCarToDb];
+    }
 }
 
 #pragma mark Table methods
 
+-(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
+    return [DataManager isFullVersion] && section == 1 && currentContentType == CONTENT_MODELS ? 30.0 : 0;
+}
+
+-(UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
+    if ([DataManager isFullVersion] && section == 1 && currentContentType == CONTENT_MODELS){ // user cars
+        UIToolbar *header = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, self.tableAutos.bounds.size.width, 30.0)];
+        header.barTintColor = [UIColor blackColor];
+        header.tintColor = [UIColor lightTextColor];
+        
+        UIBarButtonItem *fixSpace = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:self action:@selector(addCustomCarPressed)];
+        fixSpace.width = 40.0;
+        NSString *barString = (userDefinedData ? userDefinedData.count : 0) == 0 ? @"Didn't find a car? Add it!" : @"Your custom cars";
+        UIBarButtonItem *barText = [[UIBarButtonItem alloc] initWithTitle:barString style:UIBarButtonItemStylePlain target:nil action:nil];
+        [barText setTitleTextAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:17.0f]} forState:UIControlStateNormal];
+
+        UIBarButtonItem *flexSpace = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
+        UIBarButtonItem *btnAdd = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addCustomCarPressed)];
+        
+        NSArray *barButtonItems = [[NSArray alloc] initWithObjects:fixSpace, barText, flexSpace, btnAdd, nil];
+        header.items = barButtonItems;
+        
+        return header;
+    }
+    return [[UIView alloc] initWithFrame:CGRectMake(0, 0, 0, 0)];
+}
+
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    return 2;
+}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    if (section == 1){
+        return userDefinedData ? userDefinedData.count : 0;
+    }
     return data.count;
 }
 
@@ -68,20 +129,27 @@ typedef enum {
             cell.autoLogo.image = [UIImage imageNamed:_auto.logo];
             cell.sublevelPickerDelegate = self;
             
-            NSArray *models = [DataManager getModelsOfAuto:_auto._id]; // TODO: get count instead of all models
-            cell.autoModelsButton.hidden = models.count == 0;
+            NSInteger modelsCount = [DataManager getModelsCountForAuto:_auto._id];
+            cell.autoModelsButton.hidden = modelsCount == 0;
             break;
         }
         case CONTENT_MODELS:{
-            AutoModel *model = [data objectAtIndex:indexPath.row];
-            cell.autoTitleLabel.text = model.name;
-            cell.autoLogo.image = [UIImage imageNamed:model.logo];
-            cell.sublevelPickerDelegate = self;
-            
-            NSArray *submodels = [DataManager getSubmodelsOfModel:model.modelId]; // TODO: get count instead of all submodels
-            cell.autoModelsButton.hidden = !model.isSelectable || submodels.count == 0;
-            if (!model.isSelectable){
-                cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+            if (indexPath.section == 0){ // built-in model
+                AutoModel *model = [data objectAtIndex:indexPath.row];
+                cell.autoTitleLabel.text = model.name;
+                cell.autoLogo.image = [UIImage imageNamed:model.logo];
+                cell.sublevelPickerDelegate = self;
+                
+                NSInteger submodelsCount = [DataManager getSubmodelsCountOfModel:model.modelId];
+                cell.autoModelsButton.hidden = !model.isSelectable || submodelsCount == 0;
+                if (!model.isSelectable){
+                    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+                }
+            } else { // user defined model
+                AutoModel *model = [userDefinedData objectAtIndex:indexPath.row];
+                cell.autoTitleLabel.text = model.name;
+                cell.autoLogo.image = [UIImage imageNamed:model.logo];
+                cell.autoModelsButton.hidden = YES;
             }
             break;
         }
@@ -105,7 +173,11 @@ typedef enum {
                 break;
             }
             case CONTENT_MODELS:{
-                selectedModel = [data objectAtIndex:indexPath.row];
+                if (indexPath.section == 0){
+                    selectedModel = [data objectAtIndex:indexPath.row];
+                } else {
+                    selectedModel = [userDefinedData objectAtIndex:indexPath.row];
+                }
                 // if current model cannot be picked then simulate its '...' button click and return
                 if (!selectedModel.isSelectable){
                    [self sublevelButtonPressedAtIndex:indexPath.row];
@@ -128,18 +200,12 @@ typedef enum {
     switch (currentContentType) {
         case CONTENT_AUTOS:{
             selectedAuto = [data objectAtIndex:index];
-            data = [DataManager getModelsOfAuto:selectedAuto._id];
-            currentContentType = CONTENT_MODELS;
-            [self.tableAutos reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationAutomatic];
-            //[self.btnBack setTitle:@"Cars" forState:UIControlStateNormal];
+            [self updateTableSourceDataWithNewContentType:CONTENT_MODELS];
             break;
         }
         case CONTENT_MODELS:{
             selectedModel = [data objectAtIndex:index];
-            data = [DataManager getSubmodelsOfModel:selectedModel.modelId];
-            currentContentType = CONTENT_SUBMODELS;
-            [self.tableAutos reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationAutomatic];
-            //[self.btnBack setTitle:@"Models" forState:UIControlStateNormal];
+            [self updateTableSourceDataWithNewContentType:CONTENT_SUBMODELS];
             break;
         }
         default:
@@ -147,7 +213,67 @@ typedef enum {
     }
 }
 
+#pragma mark UIAlertViewDelegate
+
+-(void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex{
+    // 0 is No
+    // 1 is Yes about proposing to add auto to the database
+    if (buttonIndex == 1){
+        MFMailComposeViewController *picker = [[MFMailComposeViewController alloc] init];
+        
+        picker.mailComposeDelegate = self;
+        picker.Subject = @"What about new car?";
+        // TODO: change email address
+        picker.toRecipients = [NSArray arrayWithObject:@"viktor.sydorenko@gmail.com"];
+        // format placeholders order: 1) auto title; 2) model name; 3) start year; 4) end year
+        NSString *messageBodyFormat = @"Hi there,\n\nConsider adding the following car to the app cars list:\n\nAuto: %@\nModel: %@\nProduction years:\n    - start: %d\n    - end: %d\n\nThanks!";
+        NSString *messageBody = [NSString stringWithFormat:messageBodyFormat, selectedAuto.name, addingModelBufferForEmail.name, addingModelBufferForEmail.startYear, addingModelBufferForEmail.endYear];
+        [picker setMessageBody:messageBody isHTML:NO];
+        
+        [[self topMostController] presentViewController:picker animated:YES completion:NULL];
+    }
+}
+
+#pragma mark Mail composer delegate
+
+- (void)mailComposeController:(MFMailComposeViewController*)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError*)error{
+    [controller dismissViewControllerAnimated:YES completion:nil];
+    addingModelBufferForEmail = nil;
+}
+
 #pragma mark private methods
+
+-(void)scrollTableToBottom{
+    CGPoint contentOffset = CGPointMake(0, MAX(self.tableAutos.contentSize.height -  self.tableAutos.bounds.size.height, 0)); // 44 is a cell height
+    [self.tableAutos setContentOffset:contentOffset animated:YES];
+}
+
+-(UIViewController*) topMostController {
+    UIViewController *topController = [[[[UIApplication sharedApplication] delegate] window] rootViewController];
+    while (topController.presentedViewController) {
+        topController = topController.presentedViewController;
+    }
+    return topController;
+}
+
+-(void)proceedWithAskingAboutAddingCarToDb{
+    if ([MFMailComposeViewController canSendMail] && addingModelBufferForEmail){
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Question" message:@"Would you like us to add this car to the app cars database?" delegate:self cancelButtonTitle:@"No" otherButtonTitles:@"Yes", nil]; // TODO: rephrase
+        [alert show];
+    }
+}
+
+-(void)addCustomCarPressed{
+    if (!customCarForm){
+        customCarForm = [[UIStoryboard storyboardWithName:@"main" bundle:nil] instantiateViewControllerWithIdentifier:@"customCarFormVC"];
+        customCarForm.customCarDelegate = self;
+    }
+    customCarForm.autoId = selectedAuto._id;
+    customCarForm.logoFilename = selectedAuto.logo;
+    customCarForm.autoName = selectedAuto.name;
+    
+    [self presentViewController:customCarForm animated:YES completion:nil];
+}
 
 -(Auto*)prepareResult{
     if (selectedModel){
@@ -163,21 +289,14 @@ typedef enum {
     switch (currentContentType) {
         case CONTENT_AUTOS:{
             [self dismissViewControllerAnimated:YES completion:nil];
-//            [self.autoSelectorDelegate newAutoSelected:nil];
             break;
         }
         case CONTENT_MODELS:{
-            data = [DataManager getAutos];
-            currentContentType = CONTENT_AUTOS;
-            [self.tableAutos reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationAutomatic];
-            //[self.btnBack setTitle:@"Back" forState:UIControlStateNormal];
+            [self updateTableSourceDataWithNewContentType:CONTENT_AUTOS];
             break;
         }
         case CONTENT_SUBMODELS:{
-            data = [DataManager getModelsOfAuto:selectedAuto._id];
-            currentContentType = CONTENT_MODELS;
-            [self.tableAutos reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationAutomatic];
-            //[self.btnBack setTitle:@"Cars" forState:UIControlStateNormal];
+            [self updateTableSourceDataWithNewContentType:CONTENT_MODELS];
             break;
         }
     }
@@ -186,4 +305,53 @@ typedef enum {
 - (IBAction)btnClosePressed:(id)sender {
     [self.autoSelectorDelegate newAutoSelected:nil];
 }
+
+-(void)updateTableSourceDataWithNewContentType:(ContentType)type{
+    NSUInteger dataRowsDelta = data.count;
+    data = nil;
+    switch (type) {
+        case CONTENT_AUTOS:{ data = [DataManager getAutos]; break;}
+        case CONTENT_MODELS:{ data = [DataManager getBuiltInModelsOfAuto:selectedAuto._id]; break;}
+        case CONTENT_SUBMODELS:{ data = [DataManager getSubmodelsOfModel:selectedModel.modelId]; break;}
+    }
+    dataRowsDelta = data.count - dataRowsDelta;
+    
+    NSUInteger userDataRowsDelta = userDefinedData ? userDefinedData.count : 0;
+    if (type == CONTENT_MODELS){
+        userDefinedData = [DataManager getUserDefinedModelsOfAuto:selectedAuto._id];
+    } else {
+        userDefinedData = nil;
+    }
+    userDataRowsDelta = (userDefinedData ? userDefinedData.count : 0) - userDataRowsDelta;
+    
+    currentContentType = type;
+    
+    [self.tableAutos beginUpdates];
+    [self updateRowsInTable:self.tableAutos section:0 byAddingRows:dataRowsDelta];
+    [self updateRowsInTable:self.tableAutos section:1 byAddingRows:userDataRowsDelta];
+    [self.tableAutos endUpdates];
+    
+    [self.tableAutos reloadSections:[NSIndexSet indexSetWithIndexesInRange:NSMakeRange(0, 1)] withRowAnimation:UITableViewRowAnimationAutomatic];
+}
+
+-(void)updateRowsInTable:(UITableView*)tableView section:(NSInteger)section byAddingRows:(NSInteger)rows{
+    if (rows == 0){
+        return;
+    }
+    
+    NSInteger rowsCount = ABS(rows);
+    NSMutableArray *paths = [[NSMutableArray alloc] init];
+    for (int i = 0; i < rowsCount; i++)
+    {
+        NSIndexPath *path = [NSIndexPath indexPathForRow:i inSection:section];
+        [paths addObject:path];
+    }
+    
+    if (rows > 0){
+        [tableView insertRowsAtIndexPaths:paths withRowAnimation:UITableViewRowAnimationAutomatic];
+    } else {
+        [tableView deleteRowsAtIndexPaths:paths withRowAnimation:UITableViewRowAnimationAutomatic];
+    }
+}
+
 @end

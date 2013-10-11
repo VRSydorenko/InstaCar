@@ -12,12 +12,14 @@
 #import "SkinProvider.h"
 #import "SMPageControl.h"
 #import "UIBluredView.h"
+#import "SHKShareItemDelegate.h"
 
 @interface MainVC : UIViewController <SelectedDataChangeActionProtocol,
                                       DDMenuControllerDelegate,
                                       UIScrollViewDelegate,
                                       UIImagePickerControllerDelegate,
-                                      UINavigationControllerDelegate>
+                                      UINavigationControllerDelegate,
+                                      SHKShareItemDelegate>
 
 @property CaptureSessionManager *captureManager;
 
