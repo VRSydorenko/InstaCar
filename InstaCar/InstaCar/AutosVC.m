@@ -49,6 +49,11 @@ typedef enum {
     
     self.tableAutos.delegate = self;
     self.tableAutos.dataSource = self;
+    [iCloudHandler getInstance].delegate = self;
+}
+
+-(void)dealloc{
+    [iCloudHandler getInstance].delegate = nil;
 }
 
 -(void)hideCustomCarFormIfOpened{
@@ -65,14 +70,14 @@ typedef enum {
     customCarForm = nil;
     
     if (model){
-        [DataManager addCustomAutoModel:model.name ofAuto:autoId logo:model.logo startYear:model.startYear endYear:model.endYear];
+        if ([DataManager addCustomAutoModel:model.name ofAuto:autoId logo:model.logo startYear:model.startYear endYear:model.endYear]){
+            [self updateTableSourceDataWithNewContentType:currentContentType];
+            [self.tableAutos reloadData];
+            [self scrollTableToBottom];
         
-        [self updateTableSourceDataWithNewContentType:currentContentType];
-        [self.tableAutos reloadData];
-        [self scrollTableToBottom];
-        
-        addingModelBufferForEmail = model;
-        [self proceedWithAskingAboutAddingCarToDb];
+            addingModelBufferForEmail = model;
+            [self proceedWithAskingAboutAddingCarToDb];
+        }
     }
 }
 
@@ -239,6 +244,22 @@ typedef enum {
 - (void)mailComposeController:(MFMailComposeViewController*)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError*)error{
     [controller dismissViewControllerAnimated:YES completion:nil];
     addingModelBufferForEmail = nil;
+}
+
+#pragma mark iCloudHandlerDelegate
+
+-(void)modelsChangedForAutos:(NSArray *)autoIds{
+    if (!selectedAuto || currentContentType != CONTENT_MODELS){
+        return;
+    }
+    
+    for (NSNumber *autoId in autoIds) {
+        if (autoId.intValue == selectedAuto._id){
+            [self updateTableSourceDataWithNewContentType:currentContentType];
+            [self.tableAutos reloadData];
+            [self scrollTableToBottom];
+        }
+    }
 }
 
 #pragma mark private methods

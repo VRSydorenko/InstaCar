@@ -14,6 +14,7 @@
 #import "CustomSHKConfigurator.h"
 #import "FSConverter.h"
 #import "VenueProvider.h"
+#import "iCloudHandler.h"
 
 @implementation AppDelegate
 
@@ -21,6 +22,13 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    // iCloud
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(storeDidChange:)
+                                                 name:NSUbiquitousKeyValueStoreDidChangeExternallyNotification
+                                               object:[NSUbiquitousKeyValueStore defaultStore]];
+    [[NSUbiquitousKeyValueStore defaultStore] synchronize];
+    
     // Location manager
     self.locationManager = [[CLLocationManager alloc]init];
     self.locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters;
@@ -56,6 +64,27 @@
     [self.window makeKeyAndVisible];
     
     return YES;
+}
+
+#pragma mark iCloud store change handler
+
+-(void)storeDidChange:(NSNotification*)notification{
+    NSDictionary* userInfo = [notification userInfo];
+
+    NSNumber* reasonForChange = [userInfo objectForKey:NSUbiquitousKeyValueStoreChangeReasonKey];
+    if (!reasonForChange){
+        return;
+    }
+    
+    NSArray *changedKeys = [userInfo objectForKey:NSUbiquitousKeyValueStoreChangedKeysKey];
+    if (changedKeys){
+        NSMutableDictionary *changedData = [[NSMutableDictionary alloc] init];
+        NSUbiquitousKeyValueStore *store = [NSUbiquitousKeyValueStore defaultStore];
+        for (NSString *keyAutoId in changedKeys) {
+            [changedData setValue:[store objectForKey:keyAutoId] forKey:keyAutoId];
+        }
+        [[iCloudHandler getInstance] saveFromCloudNewModels:changedData];
+    }
 }
 
 #pragma mark Location manager delegate
@@ -112,6 +141,10 @@
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    
+    [[NSNotificationCenter defaultCenter] removeObserver:self
+                                                    name:NSUbiquitousKeyValueStoreDidChangeExternallyNotification
+                                                  object:[NSUbiquitousKeyValueStore defaultStore]];
 }
 
 @end

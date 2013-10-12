@@ -10,6 +10,7 @@
 #import "DataManager.h"
 #import "CellAuto.h"
 #import "CustomCarFormVC.h"
+#include "iCloudHandler.h"
 
 @protocol AutoSelectorDelegate <NSObject>
 -(void)newAutoSelected:(Auto*)newAuto;
@@ -20,7 +21,8 @@
                                        UIAlertViewDelegate,
                                        MFMailComposeViewControllerDelegate,
                                        SublevelPickerDelegate,
-                                       CustomCarFormDelegate>
+                                       CustomCarFormDelegate,
+                                       iCloudHandlerDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableAutos;
 @property id<AutoSelectorDelegate> autoSelectorDelegate;

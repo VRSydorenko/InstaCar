@@ -973,9 +973,16 @@ typedef enum { // Do not change the numbers!
 
 #pragma mark Saving data public methods
 
--(void)addCustomAutoModel:(NSString*)name ofAuto:(int)autoId logo:(NSString*)logoFileName startYear:(int)startYear endYear:(int)endYear{
+-(BOOL)addCustomAutoModel:(NSString*)name ofAuto:(int)autoId logo:(NSString*)logoFileName startYear:(int)startYear endYear:(int)endYear{
     int logoId = [self getIdForLogo:logoFileName];
-    [self addAutoModel:name ofAuto:autoId logo:logoId startYear:startYear endYear:endYear isUserDefined:YES];
+    
+    BOOL suchCustomModelExists = [self existUserModel:name ofAuto:autoId withLogoId:logoId startYear:startYear endYear:endYear];
+    
+    if(!suchCustomModelExists){
+        [self addAutoModel:name ofAuto:autoId logo:logoId startYear:startYear endYear:endYear isUserDefined:YES];
+    }
+    
+    return !suchCustomModelExists;
 }
 
 -(void)addIcon:(UIImage*)icon forPath:(NSString*)iconPath{
@@ -1006,6 +1013,44 @@ typedef enum { // Do not change the numbers!
 
 #pragma mark Getting data public methods
 
+-(int)getIdOfAutoWithIndependentId:(NSUInteger)indId{
+    NSString *querySQL = [NSString stringWithFormat: @"SELECT %@ FROM %@ WHERE %@=%lu", F_ID, T_AUTOS, F_IND_ID, (unsigned long)indId];
+    const char *query_stmt = [querySQL UTF8String];
+    
+    int result = -1;
+    
+    sqlite3_stmt *statement;
+    if (sqlite3_prepare_v2(instacarDb, query_stmt, -1, &statement, NULL) == SQLITE_OK){
+        if (sqlite3_step(statement) == SQLITE_ROW){
+            result = sqlite3_column_int(statement, 0);
+        } else{
+            NSLog(@"Error getting auto database id");
+        }
+    }
+    sqlite3_finalize(statement);
+    
+    return result;
+}
+
+-(int)getIndependentIdOfAutoWithDbId:(NSUInteger)dbId{
+    NSString *querySQL = [NSString stringWithFormat: @"SELECT %@ FROM %@ WHERE %@=%lu", F_IND_ID, T_AUTOS, F_ID, (unsigned long)dbId];
+    const char *query_stmt = [querySQL UTF8String];
+    
+    int result = -1;
+    
+    sqlite3_stmt *statement;
+    if (sqlite3_prepare_v2(instacarDb, query_stmt, -1, &statement, NULL) == SQLITE_OK){
+        if (sqlite3_step(statement) == SQLITE_ROW){
+            result = sqlite3_column_int(statement, 0);
+        } else{
+            NSLog(@"Error getting auto independent id");
+        }
+    }
+    sqlite3_finalize(statement);
+    
+    return result;
+}
+
 -(NSArray*)getAllAutos{
     NSMutableArray *mutableAutos = [[NSMutableArray alloc] init];
     
@@ -1033,8 +1078,8 @@ typedef enum { // Do not change the numbers!
     return [[NSArray alloc] initWithArray:mutableAutos];
 }
 
--(NSInteger)getModelsCountForAuto:(int)autoId{
-    NSString *querySQL = [NSString stringWithFormat: @"SELECT COUNT(%@) FROM %@ WHERE %@=%d", F_ID, T_MODELS, F_AUTO_ID, autoId];
+-(NSInteger)getModelsCountForAuto:(NSUInteger)autoId{
+    NSString *querySQL = [NSString stringWithFormat: @"SELECT COUNT(%@) FROM %@ WHERE %@=%lu", F_ID, T_MODELS, F_AUTO_ID, (unsigned long)autoId];
     const char *query_stmt = [querySQL UTF8String];
         
     int result = 0;
@@ -1050,16 +1095,16 @@ typedef enum { // Do not change the numbers!
     return result;
 }
 
--(NSArray*)getBuiltInModelsOfAuto:(int)autoId{
+-(NSArray*)getBuiltInModelsOfAuto:(NSUInteger)autoId{
     return [self getModelsOfAuto:autoId definedByUser:MODELS_BUILTIN];
 }
 
--(NSArray*)getUserDefinedModelsOfAuto:(int)autoId{
+-(NSArray*)getUserDefinedModelsOfAuto:(NSUInteger)autoId{
     return [self getModelsOfAuto:autoId definedByUser:MODELS_DEFINED];
 }
 
--(NSInteger)getSubmodelsCountOfModel:(int)modelId{
-    NSString *querySQL = [NSString stringWithFormat: @"SELECT COUNT(%@) FROM %@ WHERE %@=%d", F_ID, T_SUBMODELS, F_MODEL_ID, modelId];
+-(NSInteger)getSubmodelsCountOfModel:(NSUInteger)modelId{
+    NSString *querySQL = [NSString stringWithFormat: @"SELECT COUNT(%@) FROM %@ WHERE %@=%lu", F_ID, T_SUBMODELS, F_MODEL_ID, (unsigned long)modelId];
     const char *query_stmt = [querySQL UTF8String];
     
     int result = 0;
@@ -1075,11 +1120,11 @@ typedef enum { // Do not change the numbers!
     return result;
 }
 
--(NSArray*)getSubmodelsOfModel:(int)modelId{
+-(NSArray*)getSubmodelsOfModel:(NSUInteger)modelId{
     NSMutableArray *mutableSubmodels = [[NSMutableArray alloc] init];
     
     //                                                        name   logo   sYear  eYear
-    NSString *querySQL = [NSString stringWithFormat: @"SELECT %@.%@, %@.%@, %@.%@, %@.%@ FROM %@, %@ WHERE %@.%@=%@.%@ AND %@.%@=%d", T_SUBMODELS, F_NAME, T_LOGOS, F_NAME, T_SUBMODELS, F_YEAR_START, T_SUBMODELS, F_YEAR_END, T_SUBMODELS, T_LOGOS, T_SUBMODELS, F_LOGO_ID, T_LOGOS, F_ID, T_SUBMODELS, F_MODEL_ID, modelId];
+    NSString *querySQL = [NSString stringWithFormat: @"SELECT %@.%@, %@.%@, %@.%@, %@.%@ FROM %@, %@ WHERE %@.%@=%@.%@ AND %@.%@=%lu", T_SUBMODELS, F_NAME, T_LOGOS, F_NAME, T_SUBMODELS, F_YEAR_START, T_SUBMODELS, F_YEAR_END, T_SUBMODELS, T_LOGOS, T_SUBMODELS, F_LOGO_ID, T_LOGOS, F_ID, T_SUBMODELS, F_MODEL_ID, (unsigned long)modelId];
     const char *query_stmt = [querySQL UTF8String];
     
     sqlite3_stmt *statement;
@@ -1133,11 +1178,31 @@ typedef enum { // Do not change the numbers!
 
 #pragma mark Getting data private methods
 
--(NSArray*)getModelsOfAuto:(int)autoId definedByUser:(UserModelsDefintion)userModelDefinition{
+-(BOOL)existUserModel:(NSString*)name ofAuto:(int)autoId withLogoId:(int)logoId startYear:(int)startYear endYear:(int)endYear{
+    NSString *querySQL = [NSString stringWithFormat: @"SELECT COUNT(%@) FROM %@ WHERE %@=? AND %@=%d AND %@=%d AND %@=%d AND %@=%d AND %@=1", F_ID, T_MODELS, F_NAME, F_AUTO_ID, autoId, F_LOGO_ID, logoId, F_YEAR_START, startYear, F_YEAR_END, endYear, F_IS_USER_DEFINED];
+    
+    const char *query_stmt = [querySQL UTF8String];
+        
+    int result = 0;
+        
+    sqlite3_stmt *statement;
+    if (sqlite3_prepare_v2(instacarDb, query_stmt, -1, &statement, NULL) == SQLITE_OK){
+        sqlite3_bind_text(statement, 1, [name cStringUsingEncoding:NSUTF8StringEncoding], -1, SQLITE_TRANSIENT);
+        
+        if (sqlite3_step(statement) == SQLITE_ROW){
+            result = sqlite3_column_int(statement, 0);
+        }
+    }
+    sqlite3_finalize(statement);
+    
+    return result != 0;
+}
+
+-(NSArray*)getModelsOfAuto:(NSUInteger)autoId definedByUser:(UserModelsDefintion)userModelDefinition{
     NSMutableArray *mutableModels = [[NSMutableArray alloc] init];
     
     //                                                           id     name   logo   sYear  eYear  sel    usrDef
-    NSString *queryAllSQL = [NSString stringWithFormat: @"SELECT %@.%@, %@.%@, %@.%@, %@.%@, %@.%@, %@.%@, %@.%@ FROM %@, %@ WHERE %@.%@=%@.%@ AND %@.%@=%d", T_MODELS, F_ID, T_MODELS, F_NAME, T_LOGOS, F_NAME, T_MODELS, F_YEAR_START, T_MODELS, F_YEAR_END, T_MODELS, F_SELECTABLE, T_MODELS, F_IS_USER_DEFINED, T_MODELS, T_LOGOS, T_MODELS, F_LOGO_ID, T_LOGOS, F_ID, T_MODELS, F_AUTO_ID, autoId];
+    NSString *queryAllSQL = [NSString stringWithFormat: @"SELECT %@.%@, %@.%@, %@.%@, %@.%@, %@.%@, %@.%@, %@.%@ FROM %@, %@ WHERE %@.%@=%@.%@ AND %@.%@=%lu", T_MODELS, F_ID, T_MODELS, F_NAME, T_LOGOS, F_NAME, T_MODELS, F_YEAR_START, T_MODELS, F_YEAR_END, T_MODELS, F_SELECTABLE, T_MODELS, F_IS_USER_DEFINED, T_MODELS, T_LOGOS, T_MODELS, F_LOGO_ID, T_LOGOS, F_ID, T_MODELS, F_AUTO_ID, (unsigned long)autoId];
     NSString *conditionSQL = @"";
     if (userModelDefinition != MODELS_ALL){
         conditionSQL = [NSString stringWithFormat:@"AND %@.%@=%d", T_MODELS, F_IS_USER_DEFINED, userModelDefinition];

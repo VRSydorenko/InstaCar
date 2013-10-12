@@ -19,31 +19,35 @@
     return ((AppDelegate*)[UIApplication sharedApplication].delegate).dbManager;
 }
 
-+(void)addCustomAutoModel:(NSString*)name ofAuto:(int)autoId logo:(NSString*)logoFileName startYear:(int)startYear endYear:(int)endYear{
-    [[self dbManager] addCustomAutoModel:name ofAuto:autoId logo:logoFileName startYear:startYear endYear:endYear];
++(BOOL)addCustomAutoModel:(NSString*)name ofAuto:(int)autoId logo:(NSString*)logoFileName startYear:(int)startYear endYear:(int)endYear{
+    BOOL modelAcceptedAsNew = [[self dbManager] addCustomAutoModel:name ofAuto:autoId logo:logoFileName startYear:startYear endYear:endYear];
+    if (modelAcceptedAsNew){ // if it is a new model then add it to iCloud
+        [[iCloudHandler getInstance] putToCloudModelsDataOfAuto:autoId];
+    }
+    return modelAcceptedAsNew;
 }
 
 +(NSArray*)getAutos{
     return [[self dbManager] getAllAutos];
 }
 
-+(NSInteger)getModelsCountForAuto:(int)autoId{
++(NSInteger)getModelsCountForAuto:(NSUInteger)autoId{
     return [[self dbManager] getModelsCountForAuto:autoId];
 }
 
-+(NSArray*)getBuiltInModelsOfAuto:(int)autoId{
++(NSArray*)getBuiltInModelsOfAuto:(NSUInteger)autoId{
     return [[self dbManager] getBuiltInModelsOfAuto:autoId];
 }
 
-+(NSArray*)getUserDefinedModelsOfAuto:(int)autoId{
++(NSArray*)getUserDefinedModelsOfAuto:(NSUInteger)autoId{
     return [[self dbManager] getUserDefinedModelsOfAuto:autoId];
 }
 
-+(NSInteger)getSubmodelsCountOfModel:(int)modelId{
++(NSInteger)getSubmodelsCountOfModel:(NSUInteger)modelId{
     return [[self dbManager] getSubmodelsCountOfModel:(int)modelId];
 }
 
-+(NSArray*)getSubmodelsOfModel:(int)modelId{
++(NSArray*)getSubmodelsOfModel:(NSUInteger)modelId{
     return [[self dbManager] getSubmodelsOfModel:modelId];
 }
 
@@ -56,6 +60,13 @@
 }
 +(void)addIcon:(UIImage*)icon forPath:(NSString*)path{
     [[self dbManager] addIcon:icon forPath:path];
+}
+
++(int)getIdOfAutoWithIndependentId:(NSUInteger)intId{
+    return [[self dbManager] getIdOfAutoWithIndependentId:intId];
+}
++(int)getIndependentIdOfAutoWithDbId:(NSUInteger)dbId{
+    return [[self dbManager] getIndependentIdOfAutoWithDbId:dbId];
 }
 
 +(Auto*)getSelectedAuto1{

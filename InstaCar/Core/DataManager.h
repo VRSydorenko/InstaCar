@@ -9,21 +9,24 @@
 #import <Foundation/Foundation.h>
 #import "DbManager.h"
 #import "SkinProvider.h"
+#import "iCloudHandler.h"
 
 @interface DataManager : NSObject
 
 +(BOOL)isFullVersion;
 
-+(void)addCustomAutoModel:(NSString*)name ofAuto:(int)autoId logo:(NSString*)logoFileName startYear:(int)startYear endYear:(int)endYear;
++(BOOL)addCustomAutoModel:(NSString*)name ofAuto:(int)autoId logo:(NSString*)logoFileName startYear:(int)startYear endYear:(int)endYear;
 +(NSArray*)getAutos; // type: Auto
-+(NSInteger)getModelsCountForAuto:(int)autoId;
-+(NSArray*)getBuiltInModelsOfAuto:(int)autoId; // type: AutoModel
-+(NSArray*)getUserDefinedModelsOfAuto:(int)autoId; // type: AutoModel
-+(NSInteger)getSubmodelsCountOfModel:(int)modelId;
-+(NSArray*)getSubmodelsOfModel:(int)modelId; // type: AutoSubModel
++(NSInteger)getModelsCountForAuto:(NSUInteger)autoId;
++(NSArray*)getBuiltInModelsOfAuto:(NSUInteger)autoId; // type: AutoModel
++(NSArray*)getUserDefinedModelsOfAuto:(NSUInteger)autoId; // type: AutoModel
++(NSInteger)getSubmodelsCountOfModel:(NSUInteger)modelId;
++(NSArray*)getSubmodelsOfModel:(NSUInteger)modelId; // type: AutoSubModel
 +(NSArray*)getSkinSets; // type: SkinSet
 +(UIImage*)getIconForPath:(NSString*)path;
 +(void)addIcon:(UIImage*)icon forPath:(NSString*)path;
++(int)getIdOfAutoWithIndependentId:(NSUInteger)intId;
++(int)getIndependentIdOfAutoWithDbId:(NSUInteger)dbId;
 
 +(Auto*)getSelectedAuto1;
 +(void)setSelectedAuto1:(Auto*)selectedAuto;

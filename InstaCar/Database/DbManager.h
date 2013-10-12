@@ -19,14 +19,16 @@
 
 #pragma mark Custom methods
 
--(void)addCustomAutoModel:(NSString*)name ofAuto:(int)autoId logo:(NSString*)logoFileName startYear:(int)startYear endYear:(int)endYear;
+-(BOOL)addCustomAutoModel:(NSString*)name ofAuto:(int)autoId logo:(NSString*)logoFileName startYear:(int)startYear endYear:(int)endYear;
 -(NSArray*)getAllAutos; // type: Auto
--(NSInteger)getModelsCountForAuto:(int)autoId;
--(NSArray*)getBuiltInModelsOfAuto:(int)autoId; // type: AutoModel
--(NSArray*)getUserDefinedModelsOfAuto:(int)autoId; // type: AutoModel
--(NSInteger)getSubmodelsCountOfModel:(int)modelId;
--(NSArray*)getSubmodelsOfModel:(int)modelId; // type: AutoSubmodel
+-(NSInteger)getModelsCountForAuto:(NSUInteger)autoId;
+-(NSArray*)getBuiltInModelsOfAuto:(NSUInteger)autoId; // type: AutoModel
+-(NSArray*)getUserDefinedModelsOfAuto:(NSUInteger)autoId; // type: AutoModel
+-(NSInteger)getSubmodelsCountOfModel:(NSUInteger)modelId;
+-(NSArray*)getSubmodelsOfModel:(NSUInteger)modelId; // type: AutoSubmodel
 -(UIImage*)getIconForPath:(NSString*)path;
+-(int)getIdOfAutoWithIndependentId:(NSUInteger)indId;
+-(int)getIndependentIdOfAutoWithDbId:(NSUInteger)dbId;
 
 -(void)addIcon:(UIImage*)icon forPath:(NSString*)iconPath;
 
