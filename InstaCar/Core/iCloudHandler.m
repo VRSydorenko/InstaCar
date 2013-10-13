@@ -25,6 +25,10 @@
 }
 
 -(void)putToCloudModelsDataOfAuto:(NSUInteger)autoId{
+    if (![DataManager getUseICloud]){
+        return;
+    }
+    
     NSUbiquitousKeyValueStore *store = [NSUbiquitousKeyValueStore defaultStore];
     
     NSArray *models = [DataManager getUserDefinedModelsOfAuto:autoId];
@@ -55,6 +59,10 @@
 // key: number as NSString; value: NSString to parse
 // string format: modelName:logoFilename:startYear:endYear
 -(void)saveFromCloudNewModels:(NSDictionary*)data{
+    if (![DataManager getUseICloud]){
+        return;
+    }
+    
     NSMutableArray *updatedAutoIds = [[NSMutableArray alloc] init];
     
     for (NSString *autoIndId in data) {

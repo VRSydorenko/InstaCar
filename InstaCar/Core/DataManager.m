@@ -12,7 +12,7 @@
 @implementation DataManager
 
 +(BOOL)isFullVersion{
-    return YES; // TODO: change depending on the app version
+    return [UserSettings isFullVersion];
 }
 
 +(DbManager*)dbManager{
@@ -98,17 +98,18 @@
     [SkinProvider getInstance].selectedVenue = venue;
 }
 
-+(BOOL)getLogoOverlayDisabled{
++(BOOL)getLogoOverlayEnabled{
     if (![self isFullVersion]){
         return YES;
     }
-    return [UserSettings getLogoOverlayDisabled];
+    return [UserSettings getLogoOverlayEnabled];
 }
-+(void)setLogoOverlayDisabled:(BOOL)disabled{
+
++(BOOL)getUseICloud{
     if (![self isFullVersion]){
-        return;
+        return NO;
     }
-    [UserSettings setLogoOverlayDisabled:disabled];
+    return [UserSettings getUseICloud];
 }
 
 @end

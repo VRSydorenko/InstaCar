@@ -56,6 +56,7 @@ typedef enum {
     BOOL isContentOnTop;
 }
 
+-(void)baseInit;
 -(void)initialise;
 -(void)setupGradient:(CGFloat)alpha inDirection:(GradientDirection)direction;
 -(void)setMovingViewConstraint:(NSLayoutConstraint*)topMargin andViewHeight:(unsigned short)height;

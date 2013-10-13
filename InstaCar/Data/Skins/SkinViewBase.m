@@ -13,23 +13,6 @@
 
 #pragma mark Initialization
 
--(id)init{
-    self = [super init];
-    if (self) {
-        canEditFieldLocation = NO;
-        canEditFieldAuto1 = NO;
-        canEditFieldAuto2 = NO;
-        canEditFieldText1 = NO;
-        canEditFieldText2 = NO;
-        
-        self.userInteractionEnabled = YES;
-        gradient = nil;
-        gradientInitialized = NO;
-        isContentOnTop = YES;
-    }
-    return self;
-}
-
 -(void)setupGradient:(CGFloat)alpha inDirection:(GradientDirection)direction{
     if (!gradient){
         gradient = [[UIAlphaGradientView alloc] initWithFrame:self.frame];
@@ -104,6 +87,20 @@
     }
     [self setNeedsLayout];
     [self layoutIfNeeded];
+}
+
+// initial values for the base class
+-(void)baseInit{
+    canEditFieldLocation = NO;
+    canEditFieldAuto1 = NO;
+    canEditFieldAuto2 = NO;
+    canEditFieldText1 = NO;
+    canEditFieldText2 = NO;
+    
+    self.userInteractionEnabled = YES;
+    gradient = nil;
+    gradientInitialized = NO;
+    isContentOnTop = YES;
 }
 
 -(void)initialise{

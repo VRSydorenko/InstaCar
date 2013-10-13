@@ -10,9 +10,12 @@
 
 #define STORED_APP_VERSION @"stored_app_version"
 #define LAST_USED_SKINSET @"stored_last_used_skinset"
-#define LOGO_OVERLAY_DISABLED @"stored_logo_overlay_disabled"
+#define PREF_LOGO_OVERLAY @"preference_logo_overlay"
+#define PREF_USE_ICLOUD @"preference_use_icloud"
 
 @interface UserSettings : NSObject
+
++(BOOL)isFullVersion;
 
 +(NSString*) getStoredAppVersion;
 +(void) setStoredAppVersion;
@@ -20,7 +23,7 @@
 +(NSString*) getLastUsedSkinSet;
 +(void) setLastUsedSkinSet:(NSString*)name;
 
-+(BOOL)getLogoOverlayDisabled;
-+(void)setLogoOverlayDisabled:(BOOL)disabled;
++(BOOL)getLogoOverlayEnabled;
++(BOOL)getUseICloud;
 
 @end

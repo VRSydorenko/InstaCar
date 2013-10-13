@@ -10,6 +10,10 @@
 
 @implementation UserSettings
 
++(BOOL)isFullVersion{
+    return YES; // TODO: change before release
+}
+
 +(NSString*) getStoredAppVersion{
     return [[NSUserDefaults standardUserDefaults] stringForKey:STORED_APP_VERSION];
 }
@@ -25,11 +29,14 @@
     [[NSUserDefaults standardUserDefaults] setValue:name forKey:LAST_USED_SKINSET];
 }
 
-+(BOOL)getLogoOverlayDisabled{
-    return [[NSUserDefaults standardUserDefaults] boolForKey:LOGO_OVERLAY_DISABLED];
++(BOOL)getLogoOverlayEnabled{
+    NSObject *configuredValue = [[NSUserDefaults standardUserDefaults] objectForKey:PREF_LOGO_OVERLAY];
+    return configuredValue == nil ? YES : (BOOL)configuredValue;
 }
-+(void)setLogoOverlayDisabled:(BOOL)disabled{
-    [[NSUserDefaults standardUserDefaults] setBool:disabled forKey:LOGO_OVERLAY_DISABLED];
+
++(BOOL)getUseICloud{
+    NSObject *configuredValue = [[NSUserDefaults standardUserDefaults] objectForKey:PREF_USE_ICLOUD];
+    return [self isFullVersion] ? (configuredValue == nil ? YES : (BOOL)configuredValue) : NO;
 }
 
 @end

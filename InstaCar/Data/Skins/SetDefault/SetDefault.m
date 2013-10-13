@@ -49,6 +49,7 @@
         }
         
         NSAssert(skin, @"Undefined skin!");
+        [skin baseInit];
         [skin initialise];
         [self putSkin:skin intoArray:skinsArray];
     }

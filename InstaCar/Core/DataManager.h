@@ -28,8 +28,8 @@
 +(int)getIdOfAutoWithIndependentId:(NSUInteger)intId;
 +(int)getIndependentIdOfAutoWithDbId:(NSUInteger)dbId;
 
-+(BOOL)getLogoOverlayDisabled;
-+(void)setLogoOverlayDisabled:(BOOL)disabled;
++(BOOL)getLogoOverlayEnabled;
++(BOOL)getUseICloud;
 
 +(Auto*)getSelectedAuto1;
 +(void)setSelectedAuto1:(Auto*)selectedAuto;
