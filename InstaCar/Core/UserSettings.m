@@ -25,4 +25,11 @@
     [[NSUserDefaults standardUserDefaults] setValue:name forKey:LAST_USED_SKINSET];
 }
 
++(BOOL)getLogoOverlayEnabled{
+    return [[NSUserDefaults standardUserDefaults] boolForKey:LOGO_OVERLAY_ENABLED];
+}
++(void)setLogoOverlayEnabled:(BOOL)enabled{
+    [[NSUserDefaults standardUserDefaults] setBool:enabled forKey:LOGO_OVERLAY_ENABLED];
+}
+
 @end

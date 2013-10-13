@@ -28,6 +28,9 @@
 +(int)getIdOfAutoWithIndependentId:(NSUInteger)intId;
 +(int)getIndependentIdOfAutoWithDbId:(NSUInteger)dbId;
 
++(BOOL)getLogoOverlayEnabled;
++(void)setLogoOverlayEnabled:(BOOL)enabled;
+
 +(Auto*)getSelectedAuto1;
 +(void)setSelectedAuto1:(Auto*)selectedAuto;
 

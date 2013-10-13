@@ -10,6 +10,7 @@
 
 #define STORED_APP_VERSION @"stored_app_version"
 #define LAST_USED_SKINSET @"stored_last_used_skinset"
+#define LOGO_OVERLAY_ENABLED @"stored_logo_overlay_enabled"
 
 @interface UserSettings : NSObject
 
@@ -18,5 +19,8 @@
 
 +(NSString*) getLastUsedSkinSet;
 +(void) setLastUsedSkinSet:(NSString*)name;
+
++(BOOL)getLogoOverlayEnabled;
++(void)setLogoOverlayEnabled:(BOOL)enabled;
 
 @end
