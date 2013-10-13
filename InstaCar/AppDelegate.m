@@ -22,6 +22,9 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    // Database
+    self.dbManager = [[DbManager alloc] init];
+    
     // iCloud
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(storeDidChange:)
@@ -39,16 +42,10 @@
     DefaultSHKConfigurator *configurator = [[CustomSHKConfigurator alloc] init];
     [SHKConfiguration sharedInstanceWithConfigurator:configurator];
     
-    // Database
-    self.dbManager = [[DbManager alloc] init];
-    
     // Foursquare
-    // TODO: create the app at foursquare
-    [Foursquare2 setupFoursquareWithKey:@"WU4W30WXTHPBEIMQWLGJBFFC2V3NITOGLKLNMWPXL0O5MP2N"
-                 secret:@"YGMNXG45YV2RSRYRSVW2NHBFANQWB3MAGUIWNDZNUUTEUR3R"
-                 callbackURL:@"app://instatest"];
-    
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    [Foursquare2 setupFoursquareWithKey:@"TO4MVS54WIFOEB0334JMA1GL2KUZKQCMKXL3XBPXYPS3KNVI"
+                 secret:@"GOOE5TWEZG32OHZNW341W3FCIJFIIT2GVWMPDC3HXUVZCAPX"
+                 callbackURL:@"app://instacar"];
     
     // Slide controller
     MainNavController *mainNavController = [[UIStoryboard storyboardWithName:@"main" bundle:nil] instantiateViewControllerWithIdentifier:@"mainNavController"];
@@ -57,9 +54,9 @@
     rootController.delegate = mainNavController;
     _menuController = rootController;
     
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.rootViewController = rootController;
-    
-    self.window.backgroundColor = [UIColor whiteColor];
+    self.window.backgroundColor = [UIColor darkGrayColor];
     
     [self.window makeKeyAndVisible];
     
