@@ -98,14 +98,17 @@
     [SkinProvider getInstance].selectedVenue = venue;
 }
 
-+(BOOL)getLogoOverlayEnabled{
++(BOOL)getLogoOverlayDisabled{
     if (![self isFullVersion]){
         return YES;
     }
-    return [UserSettings getLogoOverlayEnabled];
+    return [UserSettings getLogoOverlayDisabled];
 }
-+(void)setLogoOverlayEnabled:(BOOL)enabled{
-    [UserSettings setLogoOverlayEnabled:enabled];
++(void)setLogoOverlayDisabled:(BOOL)disabled{
+    if (![self isFullVersion]){
+        return;
+    }
+    [UserSettings setLogoOverlayDisabled:disabled];
 }
 
 @end

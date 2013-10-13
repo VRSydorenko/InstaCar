@@ -12,6 +12,7 @@
 #import "ShareKit.h"
 #import "ImageEditor.h"
 #import "SHKSharer.h"
+#import "DataManager.h"
 
 #define SWITCH_TIME 1.0
 #define IMAGE_SIDE_SIZE 612.0
@@ -328,6 +329,12 @@ typedef enum {
     UIImage *imageSkin = [activeSkin getSkinImage];
     
     UIImage *imageToShare = [self drawImage:imageSkin inImage:imageTaken atPoint:CGPointMake(0, 0)];
+    
+    if (![DataManager getLogoOverlayDisabled]){
+        UIImage *logoOverlay = [UIImage imageNamed:@"logoOverlay.png"];
+        CGPoint logoOverlayPoint = CGPointMake(imageToShare.size.width - logoOverlay.size.width - 15.0, [activeSkin isSkinContentAtTheTop] ? imageToShare.size.height - logoOverlay.size.height - 15.0 : 15.0);
+        imageToShare = [self drawImage:logoOverlay inImage:imageToShare atPoint:logoOverlayPoint];
+    }
     
     SHKItem *item = [SHKItem image:imageToShare title:@"Hohoho"];
     SHKActionSheet *actionSheet = [SHKActionSheet actionSheetForItem:item];

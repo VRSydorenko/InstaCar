@@ -25,6 +25,7 @@
         self.userInteractionEnabled = YES;
         gradient = nil;
         gradientInitialized = NO;
+        isContentOnTop = YES;
     }
     return self;
 }
@@ -160,6 +161,10 @@
     }
 }
 
+-(BOOL)isSkinContentAtTheTop{
+    return isContentOnTop;
+}
+
 -(void)moveContentUp{
     if (!movingViewTopMarginConstraint || movingViewHeight == 0){
         return;
@@ -177,6 +182,7 @@
             completion:^(BOOL finished){
             }
      ];
+    isContentOnTop = YES;
 }
 
 -(void)moveContentDown{
@@ -196,6 +202,7 @@
             completion:^(BOOL finished){
             }
      ];
+    isContentOnTop = NO;
 }
 
 -(void)fieldLocationDidUpdate{

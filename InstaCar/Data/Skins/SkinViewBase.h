@@ -53,6 +53,7 @@ typedef enum {
     unsigned short movingViewHeight;
     UIAlphaGradientView *gradient;
     BOOL gradientInitialized;
+    BOOL isContentOnTop;
 }
 
 -(void)initialise;
@@ -60,6 +61,7 @@ typedef enum {
 -(void)setMovingViewConstraint:(NSLayoutConstraint*)topMargin andViewHeight:(unsigned short)height;
 -(BOOL)canEditField:(SkinField)field;
 -(void)updateField:(SkinField)field withValue:(NSObject*)value;
+-(BOOL)isSkinContentAtTheTop;
 
 -(UIImage*)getSkinImage;
 -(UIImage*)getSkinImageWithBlur:(CGFloat)blurStrength;
