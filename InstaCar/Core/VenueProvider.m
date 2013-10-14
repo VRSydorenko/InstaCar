@@ -91,24 +91,33 @@
     venues = [[NSArray alloc] initWithArray:venuesArray];
     _venuesInitialized = YES;
     
-    // async load icons to the app db for the future fast access
-    dispatch_queue_t refreshQueue = dispatch_queue_create("foursquare icons queue", NULL);
-    dispatch_async(refreshQueue, ^{
-        @try {
-            for (FSVenue *v in venues) {
-                UIImage *icon = [DataManager getIconForPath:v.iconURL];
-                if (!icon && v.iconURL){
-                    NSURL *url = [NSURL URLWithString:v.iconURL];
+    // Next: async load icons to the app db for the future fast access
+    
+    // prepare list of paths to load
+    NSMutableArray *iconPathsToLoad = [[NSMutableArray alloc] init];
+    for (FSVenue *v in venues) {
+        UIImage *icon = [DataManager getIconForPath:v.iconURL];
+        if (!icon && v.iconURL){
+            [iconPathsToLoad addObject:v.iconURL];
+        }
+    }
+    if (iconPathsToLoad.count > 0){
+        // load missing icons
+        dispatch_queue_t refreshQueue = dispatch_queue_create("foursquare icons queue", NULL);
+        dispatch_async(refreshQueue, ^{
+            @try {
+                for (NSString *path in iconPathsToLoad) {
+                    NSURL *url = [NSURL URLWithString:path];
                     NSData *data = [NSData dataWithContentsOfURL:url];
-                    icon = [UIImage imageWithData:data];
-                    [DataManager addIcon:icon forPath:v.iconURL];
+                    UIImage *icon = [UIImage imageWithData:data];
+                    [DataManager addIcon:icon forPath:path];
                 }
             }
-        }
-        @catch (NSException *exception) {
-            NSLog(@"%@", exception);
-        }
-    });
+            @catch (NSException *exception) {
+                NSLog(@"%@", exception);
+            }
+        });
+    }
 }
 
 -(NSArray*)getAllVenues{
