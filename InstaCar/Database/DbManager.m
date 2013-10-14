@@ -296,10 +296,146 @@ typedef enum { // Do not change the numbers!
 #pragma mark |---- Audi
     logoId = [self addLogo:@"audi_256.png"];
     autoId = [self addAuto:@"Audi" country:countryId logo:logoId independentId:AUDI];
-    modelId = [self addAutoModel:@"Model" ofAuto:autoId logo:logoId startYear:0 endYear:0];
+    [self addAutoModel:@"50" ofAuto:autoId logo:logoId startYear:1974 endYear:1978];
+    modelId = [self addAutoModel:@"80" ofAuto:autoId logo:logoId startYear:1966 endYear:1996];
     {
-        [self addAutoSubmodel:@"Submodel" ofModel:modelId logo:logoId startYear:0 endYear:0];
+        [self addAutoSubmodel:@"90" ofModel:modelId logo:logoId startYear:1966 endYear:1996];
+        [self addAutoSubmodel:@"Fox" ofModel:modelId logo:logoId startYear:1966 endYear:1996];
+        [self addAutoSubmodel:@"5+5" ofModel:modelId logo:logoId startYear:1966 endYear:1996];
+        [self addAutoSubmodel:@"Cabriolet" ofModel:modelId logo:logoId startYear:1966 endYear:1996];
+        [self addAutoSubmodel:@"F103" ofModel:modelId logo:logoId startYear:1966 endYear:1969];
+        [self addAutoSubmodel:@"B1" ofModel:modelId logo:logoId startYear:1972 endYear:1978];
+        [self addAutoSubmodel:@"B2" ofModel:modelId logo:logoId startYear:1978 endYear:1986];
+        [self addAutoSubmodel:@"4000" ofModel:modelId logo:logoId startYear:1980 endYear:1987];
+        [self addAutoSubmodel:@"4000S" ofModel:modelId logo:logoId startYear:1980 endYear:1987];
+        [self addAutoSubmodel:@"4000CS Quattro" ofModel:modelId logo:logoId startYear:1980 endYear:1987];
+        [self addAutoSubmodel:@"B3" ofModel:modelId logo:logoId startYear:1986 endYear:1991];
+        [self addAutoSubmodel:@"B4" ofModel:modelId logo:logoId startYear:1991 endYear:1996];
+        [self addAutoSubmodel:@"S2" ofModel:modelId logo:logoId startYear:1990 endYear:1995];
+        [self addAutoSubmodel:@"RS2 Avant" ofModel:modelId logo:logoId startYear:1994 endYear:1995];
     }
+    modelId = [self addAutoModel:@"100" ofAuto:autoId logo:logoId startYear:1968 endYear:1994];
+    {
+        [self addAutoSubmodel:@"C1" ofModel:modelId logo:logoId startYear:1968 endYear:1976];
+        [self addAutoSubmodel:@"C2" ofModel:modelId logo:logoId startYear:1976 endYear:1982];
+        [self addAutoSubmodel:@"C3" ofModel:modelId logo:logoId startYear:1982 endYear:1991];
+        [self addAutoSubmodel:@"C4" ofModel:modelId logo:logoId startYear:1991 endYear:1994];
+        [self addAutoSubmodel:@"C4 Avant" ofModel:modelId logo:logoId startYear:1991 endYear:1994];
+        [self addAutoSubmodel:@"Coupe S" ofModel:modelId logo:logoId startYear:1970 endYear:1989];
+        [self addAutoSubmodel:@"LS" ofModel:modelId logo:logoId startYear:1970 endYear:1977];
+        [self addAutoSubmodel:@"5000" ofModel:modelId logo:logoId startYear:1977 endYear:1978];
+        [self addAutoSubmodel:@"5E" ofModel:modelId logo:logoId startYear:1976 endYear:1982];
+        [self addAutoSubmodel:@"" ofModel:modelId logo:logoId startYear:0 endYear:0];
+        [self addAutoSubmodel:@"" ofModel:modelId logo:logoId startYear:0 endYear:0];
+        [self addAutoSubmodel:@"" ofModel:modelId logo:logoId startYear:0 endYear:0];
+    }
+    modelId = [self addAutoModel:@"200" ofAuto:autoId logo:logoId startYear:1982 endYear:1991];
+    {
+        [self addAutoSubmodel:@"C3" ofModel:modelId logo:logoId startYear:1982 endYear:1991];
+        [self addAutoSubmodel:@"Quattro Trans AM" ofModel:modelId logo:logoId startYear:1988 endYear:0];
+    }
+    [self addAutoModel:@"920" ofAuto:autoId logo:logoId startYear:1938 endYear:1940];
+    modelId = [self addAutoModel:@"A" ofAuto:autoId logo:logoId startYear:0 endYear:0 isSelectable:NO];
+    {
+        [self addAutoSubmodel:@"A1" ofModel:modelId logo:logoId startYear:2010 endYear:0];
+        [self addAutoSubmodel:@"A1 Sportback Concept" ofModel:modelId logo:logoId startYear:2008 endYear:-1];
+        [self addAutoSubmodel:@"A1 Clubsport Quattro" ofModel:modelId logo:logoId startYear:2011 endYear:-1];
+        [self addAutoSubmodel:@"A2" ofModel:modelId logo:logoId startYear:1999 endYear:2005];
+        [self addAutoSubmodel:@"A2" ofModel:modelId logo:logoId startYear:2014 endYear:0];
+        [self addAutoSubmodel:@"A3" ofModel:modelId logo:logoId startYear:1996 endYear:0];
+        [self addAutoSubmodel:@"A4" ofModel:modelId logo:logoId startYear:1994 endYear:0];
+        [self addAutoSubmodel:@"A4 B5" ofModel:modelId logo:logoId startYear:1997 endYear:2001];
+        [self addAutoSubmodel:@"A4 B6" ofModel:modelId logo:logoId startYear:2000 endYear:2006];
+        [self addAutoSubmodel:@"A4 B7" ofModel:modelId logo:logoId startYear:2004 endYear:2008];
+        [self addAutoSubmodel:@"A4 B6" ofModel:modelId logo:logoId startYear:2008 endYear:0];
+        [self addAutoSubmodel:@"A4 Allroad Quattro" ofModel:modelId logo:logoId startYear:2009 endYear:0];
+        [self addAutoSubmodel:@"A5" ofModel:modelId logo:logoId startYear:2007 endYear:0];
+        [self addAutoSubmodel:@"A5 Coupe" ofModel:modelId logo:logoId startYear:2007 endYear:0];
+        [self addAutoSubmodel:@"A5 Cabriolet" ofModel:modelId logo:logoId startYear:2009 endYear:0];
+        [self addAutoSubmodel:@"A6" ofModel:modelId logo:logoId startYear:1994 endYear:0];
+        [self addAutoSubmodel:@"A6 C4" ofModel:modelId logo:logoId startYear:1994 endYear:1997];
+        [self addAutoSubmodel:@"A6 C5" ofModel:modelId logo:logoId startYear:1997 endYear:2004];
+        [self addAutoSubmodel:@"A6 C6" ofModel:modelId logo:logoId startYear:2004 endYear:2011];
+        [self addAutoSubmodel:@"A6 C7" ofModel:modelId logo:logoId startYear:2011 endYear:0];
+        [self addAutoSubmodel:@"Allroad Quattro" ofModel:modelId logo:logoId startYear:1999 endYear:0];
+        [self addAutoSubmodel:@"A6 Allroad Quattro" ofModel:modelId logo:logoId startYear:1999 endYear:0];
+        [self addAutoSubmodel:@"A7" ofModel:modelId logo:logoId startYear:2010 endYear:0];
+        [self addAutoSubmodel:@"A7 Sportback Concept" ofModel:modelId logo:logoId startYear:2009 endYear:-1];
+        [self addAutoSubmodel:@"A8" ofModel:modelId logo:logoId startYear:1994 endYear:0];
+        [self addAutoSubmodel:@"A8 D2" ofModel:modelId logo:logoId startYear:1994 endYear:2002];
+        [self addAutoSubmodel:@"A8 D3" ofModel:modelId logo:logoId startYear:2003 endYear:2009];
+        [self addAutoSubmodel:@"A8 D4" ofModel:modelId logo:logoId startYear:2010 endYear:0];
+        [self addAutoSubmodel:@"A8 Coupe" ofModel:modelId logo:logoId startYear:2008 endYear:-1];
+        [self addAutoSubmodel:@"Avantissimo" ofModel:modelId logo:logoId startYear:2001 endYear:-1];
+        [self addAutoSubmodel:@"Avus quattro" ofModel:modelId logo:logoId startYear:1991 endYear:-1];
+    }
+    modelId = [self addAutoModel:@"Type (retro)" ofAuto:autoId logo:logoId startYear:0 endYear:0 isSelectable:NO];
+    {
+        [self addAutoSubmodel:@"Type A" ofModel:modelId logo:logoId startYear:1910 endYear:1912];
+        [self addAutoSubmodel:@"Type B" ofModel:modelId logo:logoId startYear:1910 endYear:1914];
+        [self addAutoSubmodel:@"Type C" ofModel:modelId logo:logoId startYear:1912 endYear:1921];
+        [self addAutoSubmodel:@"Type D" ofModel:modelId logo:logoId startYear:1912 endYear:1920];
+        [self addAutoSubmodel:@"Type E" ofModel:modelId logo:logoId startYear:1911 endYear:1924];
+        [self addAutoSubmodel:@"Type G" ofModel:modelId logo:logoId startYear:1914 endYear:1923];
+        [self addAutoSubmodel:@"Type K" ofModel:modelId logo:logoId startYear:1922 endYear:1925];
+        [self addAutoSubmodel:@"Type M" ofModel:modelId logo:logoId startYear:1924 endYear:1927];
+        [self addAutoSubmodel:@"Type P" ofModel:modelId logo:logoId startYear:1931 endYear:1932];
+        [self addAutoSubmodel:@"Type R" ofModel:modelId logo:logoId startYear:1928 endYear:1932];
+        [self addAutoSubmodel:@"Type SS" ofModel:modelId logo:logoId startYear:1929 endYear:1932];
+        [self addAutoSubmodel:@"Type T" ofModel:modelId logo:logoId startYear:1931 endYear:1932];
+    }
+    modelId = [self addAutoModel:@"Q" ofAuto:autoId logo:logoId startYear:0 endYear:0 isSelectable:NO];
+    {
+        [self addAutoSubmodel:@"Q3" ofModel:modelId logo:logoId startYear:2011 endYear:0];
+        [self addAutoSubmodel:@"Q3 Vail" ofModel:modelId logo:logoId startYear:2012 endYear:-1];
+        [self addAutoSubmodel:@"Q3 Concept" ofModel:modelId logo:logoId startYear:2012 endYear:-1];
+        [self addAutoSubmodel:@"Q3 RS" ofModel:modelId logo:logoId startYear:2013 endYear:-1];
+        [self addAutoSubmodel:@"Q3 jinlong yufeng" ofModel:modelId logo:logoId startYear:2012 endYear:-1];
+        [self addAutoSubmodel:@"Q3 red track" ofModel:modelId logo:logoId startYear:2012 endYear:-1];
+        [self addAutoSubmodel:@"Q5" ofModel:modelId logo:logoId startYear:2008 endYear:0];
+        [self addAutoSubmodel:@"Q5 Cross Cabriolet Quattro" ofModel:modelId logo:logoId startYear:2007 endYear:-1];
+        [self addAutoSubmodel:@"Q5 Custom Concept" ofModel:modelId logo:logoId startYear:2009 endYear:-1];
+        [self addAutoSubmodel:@"Q7" ofModel:modelId logo:logoId startYear:2006 endYear:0];
+        [self addAutoSubmodel:@"Quattro" ofModel:modelId logo:logoId startYear:1980 endYear:1991];
+        [self addAutoSubmodel:@"Quattro S1" ofModel:modelId logo:logoId startYear:1985 endYear:1991];
+    }
+    modelId = [self addAutoModel:@"R & RS" ofAuto:autoId logo:logoId startYear:0 endYear:0 isSelectable:NO];
+    {
+        [self addAutoSubmodel:@"R8 Race" ofModel:modelId logo:logoId startYear:1999 endYear:2005];
+        [self addAutoSubmodel:@"R8" ofModel:modelId logo:logoId startYear:2006 endYear:0];
+        [self addAutoSubmodel:@"R8 Coupe" ofModel:modelId logo:logoId startYear:2007 endYear:2012];
+        [self addAutoSubmodel:@"R8 Spyder" ofModel:modelId logo:logoId startYear:2010 endYear:2012];
+        [self addAutoSubmodel:@"R8 Le Mans Concept" ofModel:modelId logo:logoId startYear:2008 endYear:-1];
+        [self addAutoSubmodel:@"R8R" ofModel:modelId logo:logoId startYear:1999 endYear:-1];
+        [self addAutoSubmodel:@"R10 TDI" ofModel:modelId logo:logoId startYear:2005 endYear:2008];
+        [self addAutoSubmodel:@"R15 TDI" ofModel:modelId logo:logoId startYear:2009 endYear:2010];
+        [self addAutoSubmodel:@"R18" ofModel:modelId logo:logoId startYear:2011 endYear:0];
+        [self addAutoSubmodel:@"Roadjet" ofModel:modelId logo:logoId startYear:2006 endYear:-1];
+        [self addAutoSubmodel:@"Rosemeyer" ofModel:modelId logo:logoId startYear:2000 endYear:-1];
+        [self addAutoSubmodel:@"RS" ofModel:modelId logo:logoId startYear:0 endYear:0];
+        [self addAutoSubmodel:@"RS 2 Avant" ofModel:modelId logo:logoId startYear:1994 endYear:1995];
+        [self addAutoSubmodel:@"RS 4" ofModel:modelId logo:logoId startYear:2004 endYear:0];
+        [self addAutoSubmodel:@"RS 6" ofModel:modelId logo:logoId startYear:2002 endYear:0];
+        [self addAutoSubmodel:@"RSQ" ofModel:modelId logo:logoId startYear:2004 endYear:-1];
+    }
+    modelId = [self addAutoModel:@"S" ofAuto:autoId logo:logoId startYear:0 endYear:0 isSelectable:NO];
+    {
+        [self addAutoSubmodel:@"S2" ofModel:modelId logo:logoId startYear:1991 endYear:1996];
+        [self addAutoSubmodel:@"S4" ofModel:modelId logo:logoId startYear:1991 endYear:0];
+        [self addAutoSubmodel:@"S4 25quattro" ofModel:modelId logo:logoId startYear:2005 endYear:0];
+        [self addAutoSubmodel:@"S5" ofModel:modelId logo:logoId startYear:2007 endYear:0];
+        [self addAutoSubmodel:@"S6" ofModel:modelId logo:logoId startYear:1994 endYear:0];
+        [self addAutoSubmodel:@"S6 C4" ofModel:modelId logo:logoId startYear:1994 endYear:1997];
+        [self addAutoSubmodel:@"S6 C5" ofModel:modelId logo:logoId startYear:1999 endYear:2003];
+        [self addAutoSubmodel:@"S6 C6" ofModel:modelId logo:logoId startYear:2006 endYear:2011];
+        [self addAutoSubmodel:@"S6 C7" ofModel:modelId logo:logoId startYear:2012 endYear:0];
+        [self addAutoSubmodel:@"S8" ofModel:modelId logo:logoId startYear:1994 endYear:0];
+    }
+    [self addAutoModel:@"Shooting Brake" ofAuto:autoId logo:logoId startYear:2005 endYear:-1];
+    [self addAutoModel:@"Steppenwolf" ofAuto:autoId logo:logoId startYear:2001 endYear:-1];
+    [self addAutoModel:@"TT" ofAuto:autoId logo:logoId startYear:1998 endYear:0];
+    [self addAutoModel:@"TT RS" ofAuto:autoId logo:logoId startYear:2009 endYear:0];
+    [self addAutoModel:@"V8" ofAuto:autoId logo:logoId startYear:1988 endYear:1993];
 #pragma mark |---- BMW
     logoId = [self addLogo:@"bmw_256.png"];
     autoId = [self addAuto:@"BMW" country:countryId logo:logoId independentId:BMW];
