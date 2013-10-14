@@ -30,13 +30,29 @@
 }
 
 +(BOOL)getLogoOverlayEnabled{
+    if (NO == [self isFullVersion]){
+        return NO;
+    }
+    
     NSObject *configuredValue = [[NSUserDefaults standardUserDefaults] objectForKey:PREF_LOGO_OVERLAY];
-    return [self isFullVersion] ? (configuredValue == nil ? YES : (BOOL)configuredValue) : NO;
+    if (nil == configuredValue){
+        return NO;
+    }
+    
+    return [[NSUserDefaults standardUserDefaults] boolForKey:PREF_LOGO_OVERLAY];
 }
 
 +(BOOL)getUseICloud{
+    if (NO == [self isFullVersion]){
+        return NO;
+    }
+    
     NSObject *configuredValue = [[NSUserDefaults standardUserDefaults] objectForKey:PREF_USE_ICLOUD];
-    return [self isFullVersion] ? (configuredValue == nil ? YES : (BOOL)configuredValue) : NO;
+    if (nil == configuredValue){
+        return NO;
+    }
+    
+    return [[NSUserDefaults standardUserDefaults] boolForKey:PREF_USE_ICLOUD];
 }
 
 @end

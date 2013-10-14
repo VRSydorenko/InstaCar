@@ -330,7 +330,7 @@ typedef enum {
     
     UIImage *imageToShare = [self drawImage:imageSkin inImage:imageTaken atPoint:CGPointMake(0, 0)];
     
-    if ([DataManager getLogoOverlayEnabled] == YES){
+    if (YES == [DataManager getLogoOverlayEnabled]){
         UIImage *logoOverlay = [UIImage imageNamed:@"logoOverlay.png"];
         CGPoint logoOverlayPoint = CGPointMake(imageToShare.size.width - logoOverlay.size.width - 15.0, [activeSkin isSkinContentAtTheTop] ? imageToShare.size.height - logoOverlay.size.height - 15.0 : 15.0);
         imageToShare = [self drawImage:logoOverlay inImage:imageToShare atPoint:logoOverlayPoint];
