@@ -336,7 +336,8 @@ typedef enum {
         imageToShare = [self drawImage:logoOverlay inImage:imageToShare atPoint:logoOverlayPoint];
     }
     
-    SHKItem *item = [SHKItem image:imageToShare title:@"Hohoho"];
+    NSString *hashTagString = [Utils getHashTagString];
+    SHKItem *item = [SHKItem image:imageToShare title:hashTagString];
     SHKActionSheet *actionSheet = [SHKActionSheet actionSheetForItem:item];
     actionSheet.shareDelegate = self;
     [SHK setRootViewController:self];
