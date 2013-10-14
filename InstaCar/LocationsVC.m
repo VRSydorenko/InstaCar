@@ -52,6 +52,7 @@
     FSVenue *venue = [self.nearbyVenues objectAtIndex:indexPath.row];
     
     cell.textVenueName.text =  venue.name;
+    cell.imgVenueIcon.image = [UIImage imageNamed:@"PinWhite.png"];;
     
     if ([venue isKindOfClass:[FSGlobalVenue class]]){
         cell.imgVenueIcon.image = [UIImage imageNamed:@"Pin.png"];

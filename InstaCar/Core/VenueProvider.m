@@ -73,7 +73,7 @@
         [venuesArray insertObject:venueCity atIndex:0];
         _city = venueCity.name;
         
-        // if no venue selected then let a city be thois
+        // if no venue selected then let a city be this
         if (![DataManager getSelectedVenue]){
             [DataManager setSelectedVenue:venueCity];
         }
@@ -90,6 +90,25 @@
     
     venues = [[NSArray alloc] initWithArray:venuesArray];
     _venuesInitialized = YES;
+    
+    // async load icons to the app db for the future fast access
+    dispatch_queue_t refreshQueue = dispatch_queue_create("foursquare icons queue", NULL);
+    dispatch_async(refreshQueue, ^{
+        @try {
+            for (FSVenue *v in venues) {
+                UIImage *icon = [DataManager getIconForPath:v.iconURL];
+                if (!icon){
+                    NSURL *url = [NSURL URLWithString:v.iconURL];
+                    NSData *data = [NSData dataWithContentsOfURL:url];
+                    icon = [UIImage imageWithData:data];
+                    [DataManager addIcon:icon forPath:v.iconURL];
+                }
+            }
+        }
+        @catch (NSException *exception) {
+            NSLog(@"%@", exception);
+        }
+    });
 }
 
 -(NSArray*)getAllVenues{
