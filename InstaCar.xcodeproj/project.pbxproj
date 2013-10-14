@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7F002D1F180B43320076879F /* logoOverlay@2x.psd in Resources */ = {isa = PBXBuildFile; fileRef = 7F002D1E180B43320076879F /* logoOverlay@2x.psd */; };
 		7F002D21180B49C60076879F /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 7F002D20180B49C60076879F /* Settings.bundle */; };
 		7F1767AC17C76F0F00724BD6 /* CaptureSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F1767AB17C76F0F00724BD6 /* CaptureSessionManager.m */; };
 		7F27671C1791E80000A1C1A0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7F27671A1791E80000A1C1A0 /* InfoPlist.strings */; };
@@ -121,7 +120,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		7F002D1E180B43320076879F /* logoOverlay@2x.psd */ = {isa = PBXFileReference; lastKnownFileType = file; name = "logoOverlay@2x.psd"; path = "Supporting Files/logoOverlay@2x.psd"; sourceTree = "<group>"; };
 		7F002D20180B49C60076879F /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Settings.bundle; path = InstaCar/Settings.bundle; sourceTree = "<group>"; };
 		7F1767AA17C76F0F00724BD6 /* CaptureSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CaptureSessionManager.h; sourceTree = "<group>"; };
 		7F1767AB17C76F0F00724BD6 /* CaptureSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CaptureSessionManager.m; sourceTree = "<group>"; };
@@ -409,7 +407,6 @@
 				7F27671D1791E80000A1C1A0 /* main.m */,
 				7F27671F1791E80000A1C1A0 /* InstaCar-Prefix.pch */,
 				7F62E7851808ABA00017136F /* InstaCar.entitlements */,
-				7F002D1E180B43320076879F /* logoOverlay@2x.psd */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -902,7 +899,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				7F27672A1791E80000A1C1A0 /* Images.xcassets in Resources */,
-				7F002D1F180B43320076879F /* logoOverlay@2x.psd in Resources */,
 				7F2AD5CA17EDE9B40096EC8D /* SHKShareFileIcon.png in Resources */,
 				7F2AD59A17EDE9B40096EC8D /* DETweetPaperClip.png in Resources */,
 				7F2AD59D17EDE9B40096EC8D /* DETweetURLAttachment@2x.png in Resources */,
