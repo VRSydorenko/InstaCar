@@ -133,7 +133,7 @@
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
     // if user has activated using iCloud in the app settings then sync the store
-    if ([DataManager getUseICloud]){
+    if ([DataManager getUseICloud] == YES){
         [[NSUbiquitousKeyValueStore defaultStore] synchronize];
     }
 }

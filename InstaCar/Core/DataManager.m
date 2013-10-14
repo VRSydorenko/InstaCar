@@ -99,16 +99,10 @@
 }
 
 +(BOOL)getLogoOverlayEnabled{
-    if (![self isFullVersion]){
-        return YES;
-    }
     return [UserSettings getLogoOverlayEnabled];
 }
 
 +(BOOL)getUseICloud{
-    if (![self isFullVersion]){
-        return NO;
-    }
     return [UserSettings getUseICloud];
 }
 

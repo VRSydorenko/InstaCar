@@ -31,7 +31,7 @@
 
 +(BOOL)getLogoOverlayEnabled{
     NSObject *configuredValue = [[NSUserDefaults standardUserDefaults] objectForKey:PREF_LOGO_OVERLAY];
-    return configuredValue == nil ? YES : (BOOL)configuredValue;
+    return [self isFullVersion] ? (configuredValue == nil ? YES : (BOOL)configuredValue) : NO;
 }
 
 +(BOOL)getUseICloud{

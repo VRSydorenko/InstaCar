@@ -25,7 +25,7 @@
 }
 
 -(void)putToCloudModelsDataOfAuto:(NSUInteger)autoId{
-    if (![DataManager getUseICloud]){
+    if ([DataManager getUseICloud] == NO){
         return;
     }
     
@@ -59,7 +59,7 @@
 // key: number as NSString; value: NSString to parse
 // string format: modelName:logoFilename:startYear:endYear
 -(void)saveFromCloudNewModels:(NSDictionary*)data{
-    if (![DataManager getUseICloud]){
+    if ([DataManager getUseICloud] == NO){
         return;
     }
     
