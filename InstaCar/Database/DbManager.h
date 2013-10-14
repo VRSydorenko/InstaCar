@@ -19,7 +19,10 @@
 
 #pragma mark Custom methods
 
--(BOOL)addCustomAutoModel:(NSString*)name ofAuto:(int)autoId logo:(NSString*)logoFileName startYear:(int)startYear endYear:(int)endYear;
+-(int)addCustomAutoModel:(NSString*)name ofAuto:(int)autoId logo:(NSString*)logoFileName startYear:(int)startYear endYear:(int)endYear;
+-(int)getIdOfAutoTheModelBelongsTo:(int)modelId;
+-(void)deleteCustomAutoModel:(int)modelId;
+-(void)deleteCustomModelsOfAuto:(int)autoId;
 -(NSArray*)getAllAutos; // type: Auto
 -(NSInteger)getModelsCountForAuto:(NSUInteger)autoId;
 -(NSArray*)getBuiltInModelsOfAuto:(NSUInteger)autoId; // type: AutoModel

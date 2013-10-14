@@ -83,6 +83,21 @@ typedef enum {
 
 #pragma mark Table methods
 
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+    return indexPath.section == 1; // editing is allowed for user cars only
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        AutoModel *modelToDelete = [userDefinedData objectAtIndex:indexPath.row];
+        [DataManager deleteCustomModel:modelToDelete.modelId];
+        
+        [self updateTableSourceDataWithNewContentType:currentContentType];
+        [self.tableAutos reloadData];
+        [self scrollTableToBottom];
+    }
+}
+
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
     return [DataManager isFullVersion] && section == 1 && currentContentType == CONTENT_MODELS ? 30.0 : 0;
 }

@@ -19,7 +19,7 @@
 +(iCloudHandler*)getInstance;
 
 @property id<iCloudHandlerDelegate> delegate;
--(void)putToCloudModelsDataOfAuto:(NSUInteger)autoId;
+-(void)updateInCloudModelsDataOfAuto:(NSUInteger)autoId;
 -(void)saveFromCloudNewModels:(NSDictionary*)models; // key: NSNumber as auto independent id; NSString as one or more models
 
 @end

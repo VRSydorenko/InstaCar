@@ -1107,23 +1107,35 @@ typedef enum { // Do not change the numbers!
     return [self getIdForAutoModel:name ofAuto:autoId];
 }
 
+-(void)deleteCustomAutoModel:(int)modelId{
+    NSString *sql = [NSString stringWithFormat: @"DELETE FROM %@ WHERE %@=%d", T_MODELS, F_ID, modelId];
+    const char *delete_stmt = [sql UTF8String];
+    sqlite3_exec(instacarDb, delete_stmt, NULL, NULL, NULL);
+}
+
+-(void)deleteCustomModelsOfAuto:(int)autoId{
+    NSString *sql = [NSString stringWithFormat: @"DELETE FROM %@ WHERE %@=%d AND %@=1", T_MODELS, F_AUTO_ID, autoId, F_IS_USER_DEFINED];
+    const char *delete_stmt = [sql UTF8String];
+    sqlite3_exec(instacarDb, delete_stmt, NULL, NULL, NULL);
+    NSLog(@"Custom models cleared for auto id: %d", autoId);
+}
+
 #pragma mark Saving data public methods
 
--(BOOL)addCustomAutoModel:(NSString*)name ofAuto:(int)autoId logo:(NSString*)logoFileName startYear:(int)startYear endYear:(int)endYear{
+-(int)addCustomAutoModel:(NSString*)name ofAuto:(int)autoId logo:(NSString*)logoFileName startYear:(int)startYear endYear:(int)endYear{
     int logoId = [self getIdForLogo:logoFileName];
     
     BOOL suchCustomModelExists = [self existUserModel:name ofAuto:autoId withLogoId:logoId startYear:startYear endYear:endYear];
     
     if(!suchCustomModelExists){
-        [self addAutoModel:name ofAuto:autoId logo:logoId startYear:startYear endYear:endYear isUserDefined:YES];
+        return [self addAutoModel:name ofAuto:autoId logo:logoId startYear:startYear endYear:endYear isUserDefined:YES];
     }
     
-    return !suchCustomModelExists;
+    return -1;
 }
 
 -(void)addIcon:(UIImage*)icon forPath:(NSString*)iconPath{
     NSString* sql = [NSString stringWithFormat: @"INSERT INTO %@ (%@, %@) VALUES (?, ?)", T_ICONS, F_FILENAME, F_DATA];
-    
     const char *insert_stmt = [sql UTF8String];
     
     sqlite3_stmt *statement;
@@ -1148,6 +1160,28 @@ typedef enum { // Do not change the numbers!
 
 
 #pragma mark Getting data public methods
+
+-(int)getIdOfAutoTheModelBelongsTo:(int)modelId{
+    NSString *querySQL = [NSString stringWithFormat: @"SELECT %@ FROM %@ WHERE %@=%d", F_AUTO_ID, T_MODELS, F_ID, modelId];
+    const char *query_stmt = [querySQL UTF8String];
+    int _id = -1;
+    
+    sqlite3_stmt *statement;
+    if (sqlite3_prepare_v2(instacarDb, query_stmt, -1, &statement, NULL) == SQLITE_OK)
+    {
+        if (sqlite3_step(statement) == SQLITE_ROW)
+        {
+            _id = sqlite3_column_int(statement, 0);
+        } else {
+            NSLog(@"Error getting auto by model id");
+        }
+    } else {
+        NSLog(@"Error getting auto for Model is:%s", sqlite3_errmsg(instacarDb));
+    }
+    sqlite3_finalize(statement);
+    
+    return _id;
+}
 
 -(int)getIdOfAutoWithIndependentId:(NSUInteger)indId{
     NSString *querySQL = [NSString stringWithFormat: @"SELECT %@ FROM %@ WHERE %@=%lu", F_ID, T_AUTOS, F_IND_ID, (unsigned long)indId];

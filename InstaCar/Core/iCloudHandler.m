@@ -24,7 +24,7 @@
     return sharedInstance;
 }
 
--(void)putToCloudModelsDataOfAuto:(NSUInteger)autoId{
+-(void)updateInCloudModelsDataOfAuto:(NSUInteger)autoId{
     if ([DataManager getUseICloud] == NO){
         return;
     }
@@ -67,6 +67,8 @@
     
     for (NSString *autoIndId in data) {
         NSArray *models = [[data objectForKey:autoIndId] componentsSeparatedByString:MODEL_SEPARATOR];
+        int autoDbId = [DataManager getIdOfAutoWithIndependentId:autoIndId.intValue];
+        [DataManager deleteCustomModelsOfAuto:autoDbId];
         
         for (NSString *modelToParse in models) {
             if (modelToParse.length == 0){
@@ -75,7 +77,6 @@
             
             NSArray *modelParts = [modelToParse componentsSeparatedByString:MODEL_PARTS_SEPARATOR];
             
-            int autoDbId = [DataManager getIdOfAutoWithIndependentId:autoIndId.intValue];
             NSString *name = [modelParts objectAtIndex:0];
             NSString *logo = [modelParts objectAtIndex:1];
             int startYear = ((NSString*)[modelParts objectAtIndex:2]).intValue;

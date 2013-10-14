@@ -22,9 +22,21 @@
 +(BOOL)addCustomAutoModel:(NSString*)name ofAuto:(int)autoId logo:(NSString*)logoFileName startYear:(int)startYear endYear:(int)endYear{
     BOOL modelAcceptedAsNew = [[self dbManager] addCustomAutoModel:name ofAuto:autoId logo:logoFileName startYear:startYear endYear:endYear];
     if (modelAcceptedAsNew){ // if it is a new model then add it to iCloud
-        [[iCloudHandler getInstance] putToCloudModelsDataOfAuto:autoId];
+        [[iCloudHandler getInstance] updateInCloudModelsDataOfAuto:autoId];
     }
     return modelAcceptedAsNew;
+}
+
++(void)deleteCustomModel:(int)modelId{
+    int autoId = [[self dbManager] getIdOfAutoTheModelBelongsTo:modelId];
+    if (-1 != autoId){
+        [[self dbManager] deleteCustomAutoModel:modelId];
+        [[iCloudHandler getInstance] updateInCloudModelsDataOfAuto:autoId];
+    }
+}
+
++(void)deleteCustomModelsOfAuto:(int)autoId{
+    [[self dbManager] deleteCustomModelsOfAuto:autoId];
 }
 
 +(NSArray*)getAutos{

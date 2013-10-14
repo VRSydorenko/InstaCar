@@ -49,7 +49,7 @@
     
     NSObject *configuredValue = [[NSUserDefaults standardUserDefaults] objectForKey:PREF_USE_ICLOUD];
     if (nil == configuredValue){
-        return NO;
+        return YES;
     }
     
     return [[NSUserDefaults standardUserDefaults] boolForKey:PREF_USE_ICLOUD];
