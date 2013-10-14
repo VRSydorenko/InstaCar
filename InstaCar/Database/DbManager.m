@@ -1320,6 +1320,10 @@ typedef enum { // Do not change the numbers!
 }
 
 -(UIImage*)getIconForPath:(NSString*)path{
+    if (!path){
+        return nil;
+    }
+    
     NSString *querySQL = [NSString stringWithFormat: @"SELECT %@ FROM %@ WHERE %@=?", F_DATA, T_ICONS, F_FILENAME];
     const char *query_stmt = [querySQL UTF8String];
     UIImage *icon = nil;

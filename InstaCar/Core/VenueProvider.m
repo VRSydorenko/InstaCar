@@ -97,7 +97,7 @@
         @try {
             for (FSVenue *v in venues) {
                 UIImage *icon = [DataManager getIconForPath:v.iconURL];
-                if (!icon){
+                if (!icon && v.iconURL){
                     NSURL *url = [NSURL URLWithString:v.iconURL];
                     NSData *data = [NSData dataWithContentsOfURL:url];
                     icon = [UIImage imageWithData:data];
