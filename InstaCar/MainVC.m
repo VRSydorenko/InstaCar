@@ -68,14 +68,17 @@ typedef enum {
     
     [self initGestures];
     
+    [self initIAd];
+    
     self.scrollSkins.delegate = self;
     [self.view bringSubviewToFront:self.scrollSkins];
-  
 }
 
 -(void)viewDidAppear:(BOOL)animated{
     CGPoint convertedPreviewPoint = [self.imagePreview convertPoint:self.imagePreview.frame.origin toView:nil];
     self.captureManager.imageTopCropMargin = convertedPreviewPoint.y;
+    
+    self.constraintButtonsCoverViewHeight.constant = self.view.bounds.size.height - self.constraintViewAdContainerHeight.constant - self.btnLocation.bounds.size.height - 1.0 - self.pageControlContainer.frame.origin.y;
 }
 
 #pragma mark Initialization
@@ -155,6 +158,15 @@ typedef enum {
     pageControl.backgroundColor = [UIColor clearColor];
     
     [self.pageControlContainer addSubview:pageControl];
+}
+
+-(void)initIAd{
+    if ([DataManager isFullVersion]){
+        self.constraintViewAdContainerHeight.constant = 0.0; // invisible for full version
+    } else {
+        self.constraintViewAdContainerHeight.constant = 50.0; // standard Ad banner height for iAd
+        
+    }
 }
 
 #pragma UIScrollViewDelegate
