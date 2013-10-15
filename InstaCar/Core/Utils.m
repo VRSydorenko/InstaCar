@@ -7,6 +7,7 @@
 //
 
 #import "Utils.h"
+#import "DataManager.h"
 
 @implementation Utils
 
@@ -43,6 +44,17 @@
 
 +(NSString*)trimWhitespaces:(NSString*)string{
     return [string stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+}
+
++(NSString*)getHashTagString{
+    Auto *auto1 = [DataManager getSelectedAuto1];
+    Auto *auto2 = [DataManager getSelectedAuto2];
+    if (!auto1 && !auto2){
+        return @"";
+    }
+
+    NSString *andCar2 = auto2 ? [NSString stringWithFormat:@" and #%@", auto2.name] : @"";
+    return [NSString stringWithFormat:@"Great #instacar #%@%@ from the #instacarapp", [DataManager getSelectedAuto1].name, andCar2];
 }
 
 @end

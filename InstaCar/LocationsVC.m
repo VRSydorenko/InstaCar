@@ -52,6 +52,7 @@
     FSVenue *venue = [self.nearbyVenues objectAtIndex:indexPath.row];
     
     cell.textVenueName.text =  venue.name;
+    cell.imgVenueIcon.image = [UIImage imageNamed:@"PinWhite.png"];;
     
     if ([venue isKindOfClass:[FSGlobalVenue class]]){
         cell.imgVenueIcon.image = [UIImage imageNamed:@"Pin.png"];
@@ -83,6 +84,9 @@
     [self.tableVenues reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationAutomatic];
     
     [self restoreRefreshButtonIfHidden];
+    
+    // triggering skins to update their locations (in case user opened this VC before location change notification came to the app)
+    [self.sideActionDelegate performSideAction:ACT_UPDATE_SKINS_LOCATION withArgument:[DataManager getSelectedVenue] hidingSideController:NO];
 }
 
 - (IBAction)btnBackPressed {

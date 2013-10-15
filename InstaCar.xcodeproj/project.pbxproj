@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7F002D21180B49C60076879F /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 7F002D20180B49C60076879F /* Settings.bundle */; };
 		7F1767AC17C76F0F00724BD6 /* CaptureSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F1767AB17C76F0F00724BD6 /* CaptureSessionManager.m */; };
 		7F27671C1791E80000A1C1A0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7F27671A1791E80000A1C1A0 /* InfoPlist.strings */; };
 		7F27671E1791E80000A1C1A0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F27671D1791E80000A1C1A0 /* main.m */; };
@@ -14,7 +15,6 @@
 		7F27672A1791E80000A1C1A0 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7F2767291791E80000A1C1A0 /* Images.xcassets */; };
 		7F27673B1791E80000A1C1A0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7F2767391791E80000A1C1A0 /* InfoPlist.strings */; };
 		7F27673D1791E80000A1C1A0 /* InstaCarTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F27673C1791E80000A1C1A0 /* InstaCarTests.m */; };
-		7F2AD47F17EDE9190096EC8D /* CustomSHKConfigurator.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F2AD47E17EDE9190096EC8D /* CustomSHKConfigurator.m */; };
 		7F2AD48117EDE9390096EC8D /* SHKCustomSharers.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7F2AD48017EDE9390096EC8D /* SHKCustomSharers.plist */; };
 		7F2AD57717EDE9B40096EC8D /* DefaultSHKConfigurator.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F2AD48517EDE9B40096EC8D /* DefaultSHKConfigurator.m */; };
 		7F2AD57817EDE9B40096EC8D /* SHKConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F2AD48717EDE9B40096EC8D /* SHKConfiguration.m */; };
@@ -60,20 +60,30 @@
 		7F3871D917BE4D4C00D8E39D /* MainVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F3871D817BE4D4C00D8E39D /* MainVC.m */; };
 		7F3871DE17BE4F1000D8E39D /* DDMenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F3871DD17BE4F1000D8E39D /* DDMenuController.m */; };
 		7F3871E117BE5A4F00D8E39D /* AppMenuTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F3871E017BE5A4F00D8E39D /* AppMenuTableVC.m */; };
-		7F3A16FB17F612C500584614 /* SetDefault.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F3A16F517F612C500584614 /* SetDefault.m */; };
-		7F3A16FC17F612C500584614 /* SetDefault.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F3A16F617F612C500584614 /* SetDefault.xib */; };
-		7F3A16FD17F612C500584614 /* SkinSimple.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F3A16F817F612C500584614 /* SkinSimple.m */; };
-		7F3A16FE17F612C500584614 /* SkinSimple2.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F3A16FA17F612C500584614 /* SkinSimple2.m */; };
 		7F3A170117F627A200584614 /* UIAlphaGradientView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F3A170017F627A200584614 /* UIAlphaGradientView.m */; };
 		7F419E2717D65EBB00255E56 /* CellSkinSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F419E2617D65EBB00255E56 /* CellSkinSet.m */; };
 		7F419E2D17D6698000255E56 /* CellAuto.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F419E2C17D6698000255E56 /* CellAuto.m */; };
+		7F4CB669180977DF008B5CA2 /* iCloudHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F4CB668180977DF008B5CA2 /* iCloudHandler.m */; };
+		7F4CB677180978CF008B5CA2 /* CustomSHKConfigurator.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F4CB66C180978CF008B5CA2 /* CustomSHKConfigurator.m */; };
+		7F4CB678180978CF008B5CA2 /* DataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F4CB66E180978CF008B5CA2 /* DataManager.m */; };
+		7F4CB679180978CF008B5CA2 /* SkinProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F4CB670180978CF008B5CA2 /* SkinProvider.m */; };
+		7F4CB67A180978CF008B5CA2 /* UserSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F4CB672180978CF008B5CA2 /* UserSettings.m */; };
+		7F4CB67B180978CF008B5CA2 /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F4CB674180978CF008B5CA2 /* Utils.m */; };
+		7F4CB67C180978CF008B5CA2 /* VenueProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F4CB676180978CF008B5CA2 /* VenueProvider.m */; };
+		7F4CB68E18097908008B5CA2 /* LocationSimple.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F4CB68018097908008B5CA2 /* LocationSimple.m */; };
+		7F4CB68F18097908008B5CA2 /* LogoNameLeft.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F4CB68218097908008B5CA2 /* LogoNameLeft.m */; };
+		7F4CB69018097908008B5CA2 /* LogoRight.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F4CB68418097908008B5CA2 /* LogoRight.m */; };
+		7F4CB69118097908008B5CA2 /* SetDefault.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F4CB68618097908008B5CA2 /* SetDefault.m */; };
+		7F4CB69218097908008B5CA2 /* SetDefault.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F4CB68718097908008B5CA2 /* SetDefault.xib */; };
+		7F4CB69318097908008B5CA2 /* SkinSimple.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F4CB68918097908008B5CA2 /* SkinSimple.m */; };
+		7F4CB69418097908008B5CA2 /* SkinSimple2.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F4CB68B18097908008B5CA2 /* SkinSimple2.m */; };
+		7F4CB69518097908008B5CA2 /* SkinViewBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F4CB68D18097908008B5CA2 /* SkinViewBase.m */; };
 		7F4ECC2D17C8062800BF1671 /* SideViewControllerBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F4ECC2C17C8062800BF1671 /* SideViewControllerBase.m */; };
 		7F4F684317F6F97600F1017B /* HFImageEditorFrameView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F4F683F17F6F97600F1017B /* HFImageEditorFrameView.m */; };
 		7F4F684417F6F97600F1017B /* HFImageEditorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F4F684217F6F97600F1017B /* HFImageEditorViewController.m */; };
 		7F4F684817F6FDF500F1017B /* ImageEditor.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F4F684617F6FDF500F1017B /* ImageEditor.m */; };
 		7F4F684917F6FDF500F1017B /* ImageEditor.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F4F684717F6FDF500F1017B /* ImageEditor.xib */; };
 		7F544A3918085378001FFEC3 /* ALAssetsLibrary+CustomPhotoAlbum.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F544A3818085378001FFEC3 /* ALAssetsLibrary+CustomPhotoAlbum.m */; };
-		7F59AC5A17D3BA2900B87457 /* DataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F59AC5917D3BA2900B87457 /* DataManager.m */; };
 		7F59AC5D17D3BA4700B87457 /* AutoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F59AC5C17D3BA4700B87457 /* AutoModel.m */; };
 		7F59AC5F17D3C1F400B87457 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F59AC5E17D3C1F400B87457 /* libsqlite3.0.dylib */; };
 		7F59AC6B17D3C20C00B87457 /* DBDefinition.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F59AC6217D3C20C00B87457 /* DBDefinition.m */; };
@@ -81,15 +91,10 @@
 		7F59AC6D17D3C20C00B87457 /* DbForeignKey.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F59AC6617D3C20C00B87457 /* DbForeignKey.m */; };
 		7F59AC6E17D3C20C00B87457 /* DbManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F59AC6817D3C20C00B87457 /* DbManager.m */; };
 		7F59AC6F17D3C20C00B87457 /* DbTable.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F59AC6A17D3C20C00B87457 /* DbTable.m */; };
-		7F59AC7517D3C8CC00B87457 /* UserSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F59AC7417D3C8CC00B87457 /* UserSettings.m */; };
-		7F59AC7817D3E67000B87457 /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F59AC7717D3E67000B87457 /* Utils.m */; };
-		7F5AC64417CC000400C01658 /* SkinProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F5AC64317CC000400C01658 /* SkinProvider.m */; };
 		7F5AC64D17CC06CE00C01658 /* Auto.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F5AC64C17CC06CE00C01658 /* Auto.m */; };
-		7F70812117D0CE170094D759 /* SkinViewBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F70811F17D0CE170094D759 /* SkinViewBase.m */; };
 		7F72A06517D7AED10075FC0B /* AutoSubmodel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F72A06417D7AED10075FC0B /* AutoSubmodel.m */; };
 		7F7FF47017CF8634000E0ABD /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F7FF46F17CF8634000E0ABD /* Location.m */; };
 		7FB233B317D6773C003751B5 /* CellSelectedAuto.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FB233B217D6773C003751B5 /* CellSelectedAuto.m */; };
-		7FBFA11217FC5EDE001EFDC7 /* LocationSimple.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FBFA11117FC5EDE001EFDC7 /* LocationSimple.m */; };
 		7FC28FC217F31EF200638697 /* UIBluredView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FC28FC117F31EF200638697 /* UIBluredView.m */; };
 		7FC4137517C7E8450025DD2C /* Foursquare2.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FC4136C17C7E8450025DD2C /* Foursquare2.m */; };
 		7FC4137617C7E8450025DD2C /* FSConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FC4136E17C7E8450025DD2C /* FSConverter.m */; };
@@ -99,11 +104,8 @@
 		7FC4137C17C7EFF70025DD2C /* LocationsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FC4137B17C7EFF70025DD2C /* LocationsVC.m */; };
 		7FCD262C17F5BFEC00BFDF4E /* SMPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FCD262B17F5BFEC00BFDF4E /* SMPageControl.m */; };
 		7FD356341805E704008EC167 /* CustomCarFormVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FD356331805E704008EC167 /* CustomCarFormVC.m */; };
-		7FD71B0F17FC0D4D000517B7 /* VenueProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FD71B0E17FC0D4D000517B7 /* VenueProvider.m */; };
 		7FEF908917D505E800C07A05 /* AutosVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FEF908817D505E800C07A05 /* AutosVC.m */; };
 		7FF3389317D4C0E700B046C4 /* SkinsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FF3389217D4C0E700B046C4 /* SkinsVC.m */; };
-		7FF3FFE817FA3B940051A1F2 /* LogoNameLeft.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FF3FFE517FA3B940051A1F2 /* LogoNameLeft.m */; };
-		7FF3FFE917FA3B940051A1F2 /* LogoRight.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FF3FFE717FA3B940051A1F2 /* LogoRight.m */; };
 		7FFEBC5517DBA54F00B1DC9A /* auto_logos.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7FFEBC5417DBA54F00B1DC9A /* auto_logos.xcassets */; };
 /* End PBXBuildFile section */
 
@@ -118,6 +120,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7F002D20180B49C60076879F /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Settings.bundle; path = InstaCar/Settings.bundle; sourceTree = "<group>"; };
 		7F1767AA17C76F0F00724BD6 /* CaptureSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CaptureSessionManager.h; sourceTree = "<group>"; };
 		7F1767AB17C76F0F00724BD6 /* CaptureSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CaptureSessionManager.m; sourceTree = "<group>"; };
 		7F27670E1791E80000A1C1A0 /* InstaCar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstaCar.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -132,8 +135,6 @@
 		7F2767381791E80000A1C1A0 /* InstaCarTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "InstaCarTests-Info.plist"; sourceTree = "<group>"; };
 		7F27673A1791E80000A1C1A0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		7F27673C1791E80000A1C1A0 /* InstaCarTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InstaCarTests.m; sourceTree = "<group>"; };
-		7F2AD47D17EDE9190096EC8D /* CustomSHKConfigurator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CustomSHKConfigurator.h; path = InstaCar/Data/CustomSHKConfigurator.h; sourceTree = "<group>"; };
-		7F2AD47E17EDE9190096EC8D /* CustomSHKConfigurator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CustomSHKConfigurator.m; path = InstaCar/Data/CustomSHKConfigurator.m; sourceTree = "<group>"; };
 		7F2AD48017EDE9390096EC8D /* SHKCustomSharers.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = SHKCustomSharers.plist; path = "Supporting Files/SHKCustomSharers.plist"; sourceTree = "<group>"; };
 		7F2AD48417EDE9B40096EC8D /* DefaultSHKConfigurator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DefaultSHKConfigurator.h; sourceTree = "<group>"; };
 		7F2AD48517EDE9B40096EC8D /* DefaultSHKConfigurator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DefaultSHKConfigurator.m; sourceTree = "<group>"; };
@@ -223,19 +224,41 @@
 		7F3871DD17BE4F1000D8E39D /* DDMenuController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDMenuController.m; sourceTree = "<group>"; };
 		7F3871DF17BE5A4F00D8E39D /* AppMenuTableVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppMenuTableVC.h; sourceTree = "<group>"; };
 		7F3871E017BE5A4F00D8E39D /* AppMenuTableVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppMenuTableVC.m; sourceTree = "<group>"; };
-		7F3A16F417F612C500584614 /* SetDefault.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetDefault.h; sourceTree = "<group>"; };
-		7F3A16F517F612C500584614 /* SetDefault.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetDefault.m; sourceTree = "<group>"; };
-		7F3A16F617F612C500584614 /* SetDefault.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SetDefault.xib; sourceTree = "<group>"; };
-		7F3A16F717F612C500584614 /* SkinSimple.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkinSimple.h; sourceTree = "<group>"; };
-		7F3A16F817F612C500584614 /* SkinSimple.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SkinSimple.m; sourceTree = "<group>"; };
-		7F3A16F917F612C500584614 /* SkinSimple2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkinSimple2.h; sourceTree = "<group>"; };
-		7F3A16FA17F612C500584614 /* SkinSimple2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SkinSimple2.m; sourceTree = "<group>"; };
 		7F3A16FF17F627A200584614 /* UIAlphaGradientView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIAlphaGradientView.h; sourceTree = "<group>"; };
 		7F3A170017F627A200584614 /* UIAlphaGradientView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIAlphaGradientView.m; sourceTree = "<group>"; };
 		7F419E2517D65EBB00255E56 /* CellSkinSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CellSkinSet.h; path = InstaCar/TableCells/CellSkinSet.h; sourceTree = "<group>"; };
 		7F419E2617D65EBB00255E56 /* CellSkinSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CellSkinSet.m; path = InstaCar/TableCells/CellSkinSet.m; sourceTree = "<group>"; };
 		7F419E2B17D6698000255E56 /* CellAuto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CellAuto.h; path = InstaCar/TableCells/CellAuto.h; sourceTree = "<group>"; };
 		7F419E2C17D6698000255E56 /* CellAuto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CellAuto.m; path = InstaCar/TableCells/CellAuto.m; sourceTree = "<group>"; };
+		7F4CB667180977DF008B5CA2 /* iCloudHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = iCloudHandler.h; path = InstaCar/Core/iCloudHandler.h; sourceTree = "<group>"; };
+		7F4CB668180977DF008B5CA2 /* iCloudHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = iCloudHandler.m; path = InstaCar/Core/iCloudHandler.m; sourceTree = "<group>"; };
+		7F4CB66B180978CF008B5CA2 /* CustomSHKConfigurator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CustomSHKConfigurator.h; path = InstaCar/Core/CustomSHKConfigurator.h; sourceTree = "<group>"; };
+		7F4CB66C180978CF008B5CA2 /* CustomSHKConfigurator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CustomSHKConfigurator.m; path = InstaCar/Core/CustomSHKConfigurator.m; sourceTree = "<group>"; };
+		7F4CB66D180978CF008B5CA2 /* DataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DataManager.h; path = InstaCar/Core/DataManager.h; sourceTree = "<group>"; };
+		7F4CB66E180978CF008B5CA2 /* DataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DataManager.m; path = InstaCar/Core/DataManager.m; sourceTree = "<group>"; };
+		7F4CB66F180978CF008B5CA2 /* SkinProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SkinProvider.h; path = InstaCar/Core/SkinProvider.h; sourceTree = "<group>"; };
+		7F4CB670180978CF008B5CA2 /* SkinProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SkinProvider.m; path = InstaCar/Core/SkinProvider.m; sourceTree = "<group>"; };
+		7F4CB671180978CF008B5CA2 /* UserSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserSettings.h; path = InstaCar/Core/UserSettings.h; sourceTree = "<group>"; };
+		7F4CB672180978CF008B5CA2 /* UserSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserSettings.m; path = InstaCar/Core/UserSettings.m; sourceTree = "<group>"; };
+		7F4CB673180978CF008B5CA2 /* Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Utils.h; path = InstaCar/Core/Utils.h; sourceTree = "<group>"; };
+		7F4CB674180978CF008B5CA2 /* Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Utils.m; path = InstaCar/Core/Utils.m; sourceTree = "<group>"; };
+		7F4CB675180978CF008B5CA2 /* VenueProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VenueProvider.h; path = InstaCar/Core/VenueProvider.h; sourceTree = "<group>"; };
+		7F4CB676180978CF008B5CA2 /* VenueProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VenueProvider.m; path = InstaCar/Core/VenueProvider.m; sourceTree = "<group>"; };
+		7F4CB67F18097908008B5CA2 /* LocationSimple.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationSimple.h; sourceTree = "<group>"; };
+		7F4CB68018097908008B5CA2 /* LocationSimple.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationSimple.m; sourceTree = "<group>"; };
+		7F4CB68118097908008B5CA2 /* LogoNameLeft.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogoNameLeft.h; sourceTree = "<group>"; };
+		7F4CB68218097908008B5CA2 /* LogoNameLeft.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogoNameLeft.m; sourceTree = "<group>"; };
+		7F4CB68318097908008B5CA2 /* LogoRight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogoRight.h; sourceTree = "<group>"; };
+		7F4CB68418097908008B5CA2 /* LogoRight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogoRight.m; sourceTree = "<group>"; };
+		7F4CB68518097908008B5CA2 /* SetDefault.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetDefault.h; sourceTree = "<group>"; };
+		7F4CB68618097908008B5CA2 /* SetDefault.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetDefault.m; sourceTree = "<group>"; };
+		7F4CB68718097908008B5CA2 /* SetDefault.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SetDefault.xib; sourceTree = "<group>"; };
+		7F4CB68818097908008B5CA2 /* SkinSimple.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkinSimple.h; sourceTree = "<group>"; };
+		7F4CB68918097908008B5CA2 /* SkinSimple.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SkinSimple.m; sourceTree = "<group>"; };
+		7F4CB68A18097908008B5CA2 /* SkinSimple2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkinSimple2.h; sourceTree = "<group>"; };
+		7F4CB68B18097908008B5CA2 /* SkinSimple2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SkinSimple2.m; sourceTree = "<group>"; };
+		7F4CB68C18097908008B5CA2 /* SkinViewBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkinViewBase.h; sourceTree = "<group>"; };
+		7F4CB68D18097908008B5CA2 /* SkinViewBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SkinViewBase.m; sourceTree = "<group>"; };
 		7F4ECC2B17C8062800BF1671 /* SideViewControllerBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SideViewControllerBase.h; sourceTree = "<group>"; };
 		7F4ECC2C17C8062800BF1671 /* SideViewControllerBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SideViewControllerBase.m; sourceTree = "<group>"; };
 		7F4F683E17F6F97600F1017B /* HFImageEditorFrameView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFImageEditorFrameView.h; sourceTree = "<group>"; };
@@ -248,8 +271,6 @@
 		7F4F684717F6FDF500F1017B /* ImageEditor.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImageEditor.xib; sourceTree = "<group>"; };
 		7F544A3718085377001FFEC3 /* ALAssetsLibrary+CustomPhotoAlbum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ALAssetsLibrary+CustomPhotoAlbum.h"; sourceTree = "<group>"; };
 		7F544A3818085378001FFEC3 /* ALAssetsLibrary+CustomPhotoAlbum.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ALAssetsLibrary+CustomPhotoAlbum.m"; sourceTree = "<group>"; };
-		7F59AC5817D3BA2900B87457 /* DataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DataManager.h; path = InstaCar/Data/DataManager.h; sourceTree = "<group>"; };
-		7F59AC5917D3BA2900B87457 /* DataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DataManager.m; path = InstaCar/Data/DataManager.m; sourceTree = "<group>"; };
 		7F59AC5B17D3BA4700B87457 /* AutoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AutoModel.h; path = InstaCar/Data/AutoModel.h; sourceTree = "<group>"; };
 		7F59AC5C17D3BA4700B87457 /* AutoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AutoModel.m; path = InstaCar/Data/AutoModel.m; sourceTree = "<group>"; };
 		7F59AC5E17D3C1F400B87457 /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
@@ -263,24 +284,15 @@
 		7F59AC6817D3C20C00B87457 /* DbManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DbManager.m; sourceTree = "<group>"; };
 		7F59AC6917D3C20C00B87457 /* DbTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DbTable.h; sourceTree = "<group>"; };
 		7F59AC6A17D3C20C00B87457 /* DbTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DbTable.m; sourceTree = "<group>"; };
-		7F59AC7317D3C8CC00B87457 /* UserSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserSettings.h; path = InstaCar/Data/UserSettings.h; sourceTree = "<group>"; };
-		7F59AC7417D3C8CC00B87457 /* UserSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserSettings.m; path = InstaCar/Data/UserSettings.m; sourceTree = "<group>"; };
-		7F59AC7617D3E67000B87457 /* Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Utils.h; path = InstaCar/Data/Utils.h; sourceTree = "<group>"; };
-		7F59AC7717D3E67000B87457 /* Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Utils.m; path = InstaCar/Data/Utils.m; sourceTree = "<group>"; };
-		7F5AC64217CC000400C01658 /* SkinProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SkinProvider.h; path = InstaCar/Data/SkinProvider.h; sourceTree = "<group>"; };
-		7F5AC64317CC000400C01658 /* SkinProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SkinProvider.m; path = InstaCar/Data/SkinProvider.m; sourceTree = "<group>"; };
 		7F5AC64B17CC06CE00C01658 /* Auto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Auto.h; path = InstaCar/Data/Auto.h; sourceTree = "<group>"; };
 		7F5AC64C17CC06CE00C01658 /* Auto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Auto.m; path = InstaCar/Data/Auto.m; sourceTree = "<group>"; };
-		7F70811E17D0CE170094D759 /* SkinViewBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkinViewBase.h; sourceTree = "<group>"; };
-		7F70811F17D0CE170094D759 /* SkinViewBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SkinViewBase.m; sourceTree = "<group>"; };
+		7F62E7851808ABA00017136F /* InstaCar.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = InstaCar.entitlements; sourceTree = "<group>"; };
 		7F72A06317D7AED10075FC0B /* AutoSubmodel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AutoSubmodel.h; path = InstaCar/Data/AutoSubmodel.h; sourceTree = "<group>"; };
 		7F72A06417D7AED10075FC0B /* AutoSubmodel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AutoSubmodel.m; path = InstaCar/Data/AutoSubmodel.m; sourceTree = "<group>"; };
 		7F7FF46E17CF8634000E0ABD /* Location.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Location.h; path = InstaCar/Data/Location.h; sourceTree = "<group>"; };
 		7F7FF46F17CF8634000E0ABD /* Location.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Location.m; path = InstaCar/Data/Location.m; sourceTree = "<group>"; };
 		7FB233B117D6773C003751B5 /* CellSelectedAuto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CellSelectedAuto.h; path = InstaCar/TableCells/CellSelectedAuto.h; sourceTree = "<group>"; };
 		7FB233B217D6773C003751B5 /* CellSelectedAuto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CellSelectedAuto.m; path = InstaCar/TableCells/CellSelectedAuto.m; sourceTree = "<group>"; };
-		7FBFA11017FC5EDE001EFDC7 /* LocationSimple.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationSimple.h; sourceTree = "<group>"; };
-		7FBFA11117FC5EDE001EFDC7 /* LocationSimple.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationSimple.m; sourceTree = "<group>"; };
 		7FC28FC017F31EF200638697 /* UIBluredView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIBluredView.h; sourceTree = "<group>"; };
 		7FC28FC117F31EF200638697 /* UIBluredView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIBluredView.m; sourceTree = "<group>"; };
 		7FC4136B17C7E8450025DD2C /* Foursquare2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Foursquare2.h; sourceTree = "<group>"; };
@@ -299,16 +311,10 @@
 		7FCD262B17F5BFEC00BFDF4E /* SMPageControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMPageControl.m; sourceTree = "<group>"; };
 		7FD356321805E704008EC167 /* CustomCarFormVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomCarFormVC.h; sourceTree = "<group>"; };
 		7FD356331805E704008EC167 /* CustomCarFormVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomCarFormVC.m; sourceTree = "<group>"; };
-		7FD71B0D17FC0D4D000517B7 /* VenueProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VenueProvider.h; path = InstaCar/Data/VenueProvider.h; sourceTree = "<group>"; };
-		7FD71B0E17FC0D4D000517B7 /* VenueProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VenueProvider.m; path = InstaCar/Data/VenueProvider.m; sourceTree = "<group>"; };
 		7FEF908717D505E800C07A05 /* AutosVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AutosVC.h; path = InstaCar/AutosVC.h; sourceTree = "<group>"; };
 		7FEF908817D505E800C07A05 /* AutosVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AutosVC.m; path = InstaCar/AutosVC.m; sourceTree = "<group>"; };
 		7FF3389117D4C0E700B046C4 /* SkinsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SkinsVC.h; path = InstaCar/SkinsVC.h; sourceTree = "<group>"; };
 		7FF3389217D4C0E700B046C4 /* SkinsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SkinsVC.m; path = InstaCar/SkinsVC.m; sourceTree = "<group>"; };
-		7FF3FFE417FA3B940051A1F2 /* LogoNameLeft.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogoNameLeft.h; sourceTree = "<group>"; };
-		7FF3FFE517FA3B940051A1F2 /* LogoNameLeft.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogoNameLeft.m; sourceTree = "<group>"; };
-		7FF3FFE617FA3B940051A1F2 /* LogoRight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogoRight.h; sourceTree = "<group>"; };
-		7FF3FFE717FA3B940051A1F2 /* LogoRight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogoRight.m; sourceTree = "<group>"; };
 		7FFEBC5417DBA54F00B1DC9A /* auto_logos.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = auto_logos.xcassets; path = InstaCar/Data/auto_logos.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -336,7 +342,7 @@
 			children = (
 				7F3871DB17BE4F1000D8E39D /* 3rdParty */,
 				7F59AC6017D3C20C00B87457 /* Database */,
-				7F70811C17D0CE170094D759 /* Skins */,
+				7F4CB66A180977E9008B5CA2 /* Core */,
 				7F5AC64117CBFFDD00C01658 /* Data */,
 				7F2767171791E80000A1C1A0 /* InstaCar */,
 				7F2767361791E80000A1C1A0 /* InstaCarTests */,
@@ -385,6 +391,7 @@
 				7FD356331805E704008EC167 /* CustomCarFormVC.m */,
 				7F2767291791E80000A1C1A0 /* Images.xcassets */,
 				7F2767181791E80000A1C1A0 /* Supporting Files */,
+				7F002D20180B49C60076879F /* Settings.bundle */,
 			);
 			path = InstaCar;
 			sourceTree = "<group>";
@@ -399,6 +406,7 @@
 				7F27671A1791E80000A1C1A0 /* InfoPlist.strings */,
 				7F27671D1791E80000A1C1A0 /* main.m */,
 				7F27671F1791E80000A1C1A0 /* InstaCar-Prefix.pch */,
+				7F62E7851808ABA00017136F /* InstaCar.entitlements */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -672,26 +680,6 @@
 			path = InstaCar/CustomControls;
 			sourceTree = "<group>";
 		};
-		7F3A16F317F612C500584614 /* SetDefault */ = {
-			isa = PBXGroup;
-			children = (
-				7F3A16F417F612C500584614 /* SetDefault.h */,
-				7F3A16F517F612C500584614 /* SetDefault.m */,
-				7F3A16F617F612C500584614 /* SetDefault.xib */,
-				7F3A16F917F612C500584614 /* SkinSimple2.h */,
-				7F3A16FA17F612C500584614 /* SkinSimple2.m */,
-				7FF3FFE617FA3B940051A1F2 /* LogoRight.h */,
-				7FF3FFE717FA3B940051A1F2 /* LogoRight.m */,
-				7FF3FFE417FA3B940051A1F2 /* LogoNameLeft.h */,
-				7FF3FFE517FA3B940051A1F2 /* LogoNameLeft.m */,
-				7F3A16F717F612C500584614 /* SkinSimple.h */,
-				7F3A16F817F612C500584614 /* SkinSimple.m */,
-				7FBFA11017FC5EDE001EFDC7 /* LocationSimple.h */,
-				7FBFA11117FC5EDE001EFDC7 /* LocationSimple.m */,
-			);
-			path = SetDefault;
-			sourceTree = "<group>";
-		};
 		7F419E1D17D6549C00255E56 /* TableCells */ = {
 			isa = PBXGroup;
 			children = (
@@ -705,6 +693,58 @@
 				7F2E97DB17DBDF9D003598EC /* CellVenue.m */,
 			);
 			name = TableCells;
+			sourceTree = "<group>";
+		};
+		7F4CB66A180977E9008B5CA2 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				7F4CB66B180978CF008B5CA2 /* CustomSHKConfigurator.h */,
+				7F4CB66C180978CF008B5CA2 /* CustomSHKConfigurator.m */,
+				7F4CB66D180978CF008B5CA2 /* DataManager.h */,
+				7F4CB66E180978CF008B5CA2 /* DataManager.m */,
+				7F4CB66F180978CF008B5CA2 /* SkinProvider.h */,
+				7F4CB670180978CF008B5CA2 /* SkinProvider.m */,
+				7F4CB671180978CF008B5CA2 /* UserSettings.h */,
+				7F4CB672180978CF008B5CA2 /* UserSettings.m */,
+				7F4CB673180978CF008B5CA2 /* Utils.h */,
+				7F4CB674180978CF008B5CA2 /* Utils.m */,
+				7F4CB675180978CF008B5CA2 /* VenueProvider.h */,
+				7F4CB676180978CF008B5CA2 /* VenueProvider.m */,
+				7F4CB667180977DF008B5CA2 /* iCloudHandler.h */,
+				7F4CB668180977DF008B5CA2 /* iCloudHandler.m */,
+			);
+			name = Core;
+			sourceTree = "<group>";
+		};
+		7F4CB67D18097908008B5CA2 /* Skins */ = {
+			isa = PBXGroup;
+			children = (
+				7F4CB68C18097908008B5CA2 /* SkinViewBase.h */,
+				7F4CB68D18097908008B5CA2 /* SkinViewBase.m */,
+				7F4CB67E18097908008B5CA2 /* SetDefault */,
+			);
+			name = Skins;
+			path = InstaCar/Data/Skins;
+			sourceTree = "<group>";
+		};
+		7F4CB67E18097908008B5CA2 /* SetDefault */ = {
+			isa = PBXGroup;
+			children = (
+				7F4CB68518097908008B5CA2 /* SetDefault.h */,
+				7F4CB68618097908008B5CA2 /* SetDefault.m */,
+				7F4CB68718097908008B5CA2 /* SetDefault.xib */,
+				7F4CB67F18097908008B5CA2 /* LocationSimple.h */,
+				7F4CB68018097908008B5CA2 /* LocationSimple.m */,
+				7F4CB68118097908008B5CA2 /* LogoNameLeft.h */,
+				7F4CB68218097908008B5CA2 /* LogoNameLeft.m */,
+				7F4CB68318097908008B5CA2 /* LogoRight.h */,
+				7F4CB68418097908008B5CA2 /* LogoRight.m */,
+				7F4CB68818097908008B5CA2 /* SkinSimple.h */,
+				7F4CB68918097908008B5CA2 /* SkinSimple.m */,
+				7F4CB68A18097908008B5CA2 /* SkinSimple2.h */,
+				7F4CB68B18097908008B5CA2 /* SkinSimple2.m */,
+			);
+			path = SetDefault;
 			sourceTree = "<group>";
 		};
 		7F4F683D17F6F97600F1017B /* ImageEditor */ = {
@@ -743,12 +783,7 @@
 		7F5AC64117CBFFDD00C01658 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				7F2AD47D17EDE9190096EC8D /* CustomSHKConfigurator.h */,
-				7F2AD47E17EDE9190096EC8D /* CustomSHKConfigurator.m */,
-				7F5AC64217CC000400C01658 /* SkinProvider.h */,
-				7F5AC64317CC000400C01658 /* SkinProvider.m */,
-				7FD71B0D17FC0D4D000517B7 /* VenueProvider.h */,
-				7FD71B0E17FC0D4D000517B7 /* VenueProvider.m */,
+				7F4CB67D18097908008B5CA2 /* Skins */,
 				7F5AC64B17CC06CE00C01658 /* Auto.h */,
 				7F5AC64C17CC06CE00C01658 /* Auto.m */,
 				7F59AC5B17D3BA4700B87457 /* AutoModel.h */,
@@ -757,26 +792,9 @@
 				7F72A06417D7AED10075FC0B /* AutoSubmodel.m */,
 				7F7FF46E17CF8634000E0ABD /* Location.h */,
 				7F7FF46F17CF8634000E0ABD /* Location.m */,
-				7F59AC5817D3BA2900B87457 /* DataManager.h */,
-				7F59AC5917D3BA2900B87457 /* DataManager.m */,
-				7F59AC7317D3C8CC00B87457 /* UserSettings.h */,
-				7F59AC7417D3C8CC00B87457 /* UserSettings.m */,
-				7F59AC7617D3E67000B87457 /* Utils.h */,
-				7F59AC7717D3E67000B87457 /* Utils.m */,
 				7FFEBC5417DBA54F00B1DC9A /* auto_logos.xcassets */,
 			);
 			name = Data;
-			sourceTree = "<group>";
-		};
-		7F70811C17D0CE170094D759 /* Skins */ = {
-			isa = PBXGroup;
-			children = (
-				7F70811E17D0CE170094D759 /* SkinViewBase.h */,
-				7F70811F17D0CE170094D759 /* SkinViewBase.m */,
-				7F3A16F317F612C500584614 /* SetDefault */,
-			);
-			name = Skins;
-			path = InstaCar/Data/Skins;
 			sourceTree = "<group>";
 		};
 		7FC4136A17C7E8450025DD2C /* Foursquare */ = {
@@ -843,6 +861,14 @@
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "Viktor Sydorenko";
 				TargetAttributes = {
+					7F27670D1791E80000A1C1A0 = {
+						DevelopmentTeam = LB9983BHHS;
+						SystemCapabilities = {
+							com.apple.iCloud = {
+								enabled = 1;
+							};
+						};
+					};
 					7F27672E1791E80000A1C1A0 = {
 						TestTargetID = 7F27670D1791E80000A1C1A0;
 					};
@@ -877,14 +903,15 @@
 				7F2AD59A17EDE9B40096EC8D /* DETweetPaperClip.png in Resources */,
 				7F2AD59D17EDE9B40096EC8D /* DETweetURLAttachment@2x.png in Resources */,
 				7F4F684917F6FDF500F1017B /* ImageEditor.xib in Resources */,
-				7F3A16FC17F612C500584614 /* SetDefault.xib in Resources */,
 				7F2AD48117EDE9390096EC8D /* SHKCustomSharers.plist in Resources */,
 				7F2AD59917EDE9B40096EC8D /* SHKSharers.plist in Resources */,
+				7F002D21180B49C60076879F /* Settings.bundle in Resources */,
 				7FFEBC5517DBA54F00B1DC9A /* auto_logos.xcassets in Resources */,
 				7F2AD5CB17EDE9B40096EC8D /* SHKShareFileIcon@2x.png in Resources */,
 				7F2AD59B17EDE9B40096EC8D /* DETweetPaperClip@2x.png in Resources */,
 				7F27671C1791E80000A1C1A0 /* InfoPlist.strings in Resources */,
 				7F3871D317BE4B7900D8E39D /* main.storyboard in Resources */,
+				7F4CB69218097908008B5CA2 /* SetDefault.xib in Resources */,
 				7F2AD59C17EDE9B40096EC8D /* DETweetURLAttachment.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -904,18 +931,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7F2AD47F17EDE9190096EC8D /* CustomSHKConfigurator.m in Sources */,
 				7F3871D617BE4CA900D8E39D /* MainNavController.m in Sources */,
 				7F3871DE17BE4F1000D8E39D /* DDMenuController.m in Sources */,
+				7F4CB68E18097908008B5CA2 /* LocationSimple.m in Sources */,
 				7F59AC6B17D3C20C00B87457 /* DBDefinition.m in Sources */,
-				7FD71B0F17FC0D4D000517B7 /* VenueProvider.m in Sources */,
 				7F2AD59417EDE9B40096EC8D /* SHKRequest.m in Sources */,
 				7FC4137C17C7EFF70025DD2C /* LocationsVC.m in Sources */,
+				7F4CB69518097908008B5CA2 /* SkinViewBase.m in Sources */,
+				7F4CB69318097908008B5CA2 /* SkinSimple.m in Sources */,
 				7F3871E117BE5A4F00D8E39D /* AppMenuTableVC.m in Sources */,
-				7F3A16FE17F612C500584614 /* SkinSimple2.m in Sources */,
 				7FF3389317D4C0E700B046C4 /* SkinsVC.m in Sources */,
 				7F59AC6F17D3C20C00B87457 /* DbTable.m in Sources */,
-				7F5AC64417CC000400C01658 /* SkinProvider.m in Sources */,
+				7F4CB679180978CF008B5CA2 /* SkinProvider.m in Sources */,
 				7F7FF47017CF8634000E0ABD /* Location.m in Sources */,
 				7F419E2D17D6698000255E56 /* CellAuto.m in Sources */,
 				7F4F684317F6F97600F1017B /* HFImageEditorFrameView.m in Sources */,
@@ -926,31 +953,36 @@
 				7F2AD5D517EDE9B40096EC8D /* SHKFormFieldOptionPickerSettings.m in Sources */,
 				7F419E2717D65EBB00255E56 /* CellSkinSet.m in Sources */,
 				7F2AD57717EDE9B40096EC8D /* DefaultSHKConfigurator.m in Sources */,
+				7F4CB678180978CF008B5CA2 /* DataManager.m in Sources */,
 				7F2AD57817EDE9B40096EC8D /* SHKConfiguration.m in Sources */,
 				7FCD262C17F5BFEC00BFDF4E /* SMPageControl.m in Sources */,
+				7F4CB68F18097908008B5CA2 /* LogoNameLeft.m in Sources */,
 				7F2AD57C17EDE9B40096EC8D /* SHKSharerDelegate.m in Sources */,
 				7F2AD5D017EDE9B40096EC8D /* SHKFormFieldCellOptionPicker.m in Sources */,
+				7F4CB69418097908008B5CA2 /* SkinSimple2.m in Sources */,
+				7F4CB669180977DF008B5CA2 /* iCloudHandler.m in Sources */,
 				7F2AD5D417EDE9B40096EC8D /* SHKFormFieldLargeTextSettings.m in Sources */,
+				7F4CB67B180978CF008B5CA2 /* Utils.m in Sources */,
 				7F4ECC2D17C8062800BF1671 /* SideViewControllerBase.m in Sources */,
 				7F2AD5A517EDE9B40096EC8D /* SHKPhotoAlbum.m in Sources */,
-				7FF3FFE917FA3B940051A1F2 /* LogoRight.m in Sources */,
+				7F4CB677180978CF008B5CA2 /* CustomSHKConfigurator.m in Sources */,
 				7F3871D917BE4D4C00D8E39D /* MainVC.m in Sources */,
 				7F2AD5C417EDE9B40096EC8D /* SHKiOSTwitter.m in Sources */,
-				7F70812117D0CE170094D759 /* SkinViewBase.m in Sources */,
 				7F59AC5D17D3BA4700B87457 /* AutoModel.m in Sources */,
 				7FC4137917C7E8450025DD2C /* FSVenue.m in Sources */,
-				7F59AC7817D3E67000B87457 /* Utils.m in Sources */,
 				7F2AD57B17EDE9B40096EC8D /* SHKSharer.m in Sources */,
-				7F3A16FD17F612C500584614 /* SkinSimple.m in Sources */,
 				7F4F684817F6FDF500F1017B /* ImageEditor.m in Sources */,
 				7F59AC6E17D3C20C00B87457 /* DbManager.m in Sources */,
 				7F5AC64D17CC06CE00C01658 /* Auto.m in Sources */,
+				7F4CB67A180978CF008B5CA2 /* UserSettings.m in Sources */,
 				7F59AC6C17D3C20C00B87457 /* DbField.m in Sources */,
+				7F4CB67C180978CF008B5CA2 /* VenueProvider.m in Sources */,
 				7F2AD59517EDE9B40096EC8D /* SHKXMLResponseParser.m in Sources */,
 				7F2767221791E80000A1C1A0 /* AppDelegate.m in Sources */,
 				7F2AD5A017EDE9B40096EC8D /* SHKCopy.m in Sources */,
 				7F27671E1791E80000A1C1A0 /* main.m in Sources */,
 				7FC4137817C7E8450025DD2C /* FSTargetCallback.m in Sources */,
+				7F4CB69118097908008B5CA2 /* SetDefault.m in Sources */,
 				7F72A06517D7AED10075FC0B /* AutoSubmodel.m in Sources */,
 				7F1767AC17C76F0F00724BD6 /* CaptureSessionManager.m in Sources */,
 				7F3A170117F627A200584614 /* UIAlphaGradientView.m in Sources */,
@@ -960,18 +992,14 @@
 				7FEF908917D505E800C07A05 /* AutosVC.m in Sources */,
 				7F2AD5CC17EDE9B40096EC8D /* SHKActionSheet.m in Sources */,
 				7F2AD5AF17EDE9B40096EC8D /* SHKiOSFacebook.m in Sources */,
+				7F4CB69018097908008B5CA2 /* LogoRight.m in Sources */,
 				7F2AD57917EDE9B40096EC8D /* SHKiOSSharer.m in Sources */,
 				7F2AD5A317EDE9B40096EC8D /* SHKSafari.m in Sources */,
-				7F59AC7517D3C8CC00B87457 /* UserSettings.m in Sources */,
 				7FD356341805E704008EC167 /* CustomCarFormVC.m in Sources */,
 				7F2E97DC17DBDF9D003598EC /* CellVenue.m in Sources */,
-				7F3A16FB17F612C500584614 /* SetDefault.m in Sources */,
 				7F2AD5D917EDE9B40096EC8D /* SHKShareMenu.m in Sources */,
 				7F2AD5CF17EDE9B40096EC8D /* SHKFormFieldCell.m in Sources */,
-				7FBFA11217FC5EDE001EFDC7 /* LocationSimple.m in Sources */,
-				7FF3FFE817FA3B940051A1F2 /* LogoNameLeft.m in Sources */,
 				7F2AD57E17EDE9B40096EC8D /* NSArray+JoinValues.m in Sources */,
-				7F59AC5A17D3BA2900B87457 /* DataManager.m in Sources */,
 				7F2AD59317EDE9B40096EC8D /* SHKFile.m in Sources */,
 				7FC4137717C7E8450025DD2C /* FSRequester.m in Sources */,
 				7F2AD5D217EDE9B40096EC8D /* SHKFormFieldCellText.m in Sources */,
@@ -1102,6 +1130,9 @@
 				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = InstaCar/InstaCar.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "InstaCar/InstaCar-Prefix.pch";
 				INFOPLIST_FILE = "InstaCar/InstaCar-Info.plist";
@@ -1111,6 +1142,7 @@
 					"-ObjC",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 				USER_HEADER_SEARCH_PATHS = "Submodules/**";
 				WRAPPER_EXTENSION = app;
@@ -1123,6 +1155,9 @@
 				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = InstaCar/InstaCar.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "InstaCar/InstaCar-Prefix.pch";
 				INFOPLIST_FILE = "InstaCar/InstaCar-Info.plist";
@@ -1132,6 +1167,7 @@
 					"-ObjC",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 				USER_HEADER_SEARCH_PATHS = "Submodules/**";
 				WRAPPER_EXTENSION = app;

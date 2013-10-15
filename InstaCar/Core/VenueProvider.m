@@ -73,7 +73,7 @@
         [venuesArray insertObject:venueCity atIndex:0];
         _city = venueCity.name;
         
-        // if no venue selected then let a city be thois
+        // if no venue selected then let a city be this
         if (![DataManager getSelectedVenue]){
             [DataManager setSelectedVenue:venueCity];
         }
@@ -90,6 +90,43 @@
     
     venues = [[NSArray alloc] initWithArray:venuesArray];
     _venuesInitialized = YES;
+    
+    // Next: async load icons to the app db for the future fast access
+    
+    // prepare list of paths to load
+    NSMutableArray *iconPathsToLoad = [[NSMutableArray alloc] init];
+    for (FSVenue *v in venues) {
+        UIImage *icon = [DataManager getIconForPath:v.iconURL];
+        if (!icon && v.iconURL){
+            [iconPathsToLoad addObject:v.iconURL];
+        }
+    }
+    if (iconPathsToLoad.count > 0){
+        // load missing icons
+        dispatch_queue_t refreshQueue = dispatch_queue_create("foursquare icons queue", NULL);
+        dispatch_async(refreshQueue, ^{
+            @try {
+                NSMutableDictionary *iconsToSave = [[NSMutableDictionary alloc] init];
+                for (NSString *path in iconPathsToLoad) {
+                    NSURL *url = [NSURL URLWithString:path];
+                    NSData *data = [NSData dataWithContentsOfURL:url];
+                    UIImage *icon = [UIImage imageWithData:data];
+                    [iconsToSave setObject:icon forKey:path];
+                }
+                if (iconsToSave.count > 0){
+                    // save icons on the main thread
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        for (NSString *keyPath in iconsToSave.allKeys) {
+                            [DataManager addIcon:[iconsToSave objectForKey:keyPath] forPath:keyPath];
+                        }
+                    });
+                }
+            }
+            @catch (NSException *exception) {
+                NSLog(@"%@", exception);
+            }
+        });
+    }
 }
 
 -(NSArray*)getAllVenues{
