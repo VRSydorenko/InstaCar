@@ -79,7 +79,7 @@ typedef enum {
     CGPoint convertedPreviewPoint = [self.imagePreview convertPoint:self.imagePreview.frame.origin toView:nil];
     self.captureManager.imageTopCropMargin = convertedPreviewPoint.y;
     
-    self.constraintButtonsCoverViewHeight.constant = self.view.bounds.size.height - self.constraintViewAdContainerHeight.constant - self.btnLocation.bounds.size.height - 1.0 - self.pageControlContainer.frame.origin.y;
+    self.constraintButtonsCoverViewHeight.constant = [self calcPageControlHeight];
 }
 
 #pragma mark Initialization
@@ -162,16 +162,42 @@ typedef enum {
 }
 
 -(void)initIAd{
-    if ([DataManager isFullVersion]){
-        self.constraintViewAdContainerHeight.constant = 0.0; // invisible for full version
-    } else {
-        self.constraintViewAdContainerHeight.constant = 50.0; // standard Ad banner height for iAd
-        
+    // banner view container is initially hidden and will remain so if app is running as full version
+    self.constraintViewAdContainerHeight.constant = 0.0;
+    
+    if (NO == [DataManager isFullVersion]){
         bannerView = [[ADBannerView alloc] initWithAdType:ADAdTypeBanner];
         bannerView.delegate = self;
         bannerView.frame = CGRectMake(0, 0, self.iAdView.bounds.size.width, self.iAdView.bounds.size.height);
         
         [self.iAdView addSubview:bannerView];
+    }
+}
+
+#pragma Banner view delegate
+
+-(void)bannerViewDidLoadAd:(ADBannerView *)banner{
+    if (NO == [DataManager isFullVersion] && self.constraintViewAdContainerHeight.constant == 0){
+        self.constraintViewAdContainerHeight.constant = 50.0;
+        self.constraintButtonsCoverViewHeight.constant = [self calcPageControlHeight];
+        [UIView animateWithDuration:0.25
+                         animations:^(void){
+                             [self.view layoutIfNeeded];
+                         }
+         ];
+    }
+}
+
+-(void) bannerView:(ADBannerView *)banner didFailToReceiveAdWithError:(NSError *)error{
+    if (NO == [DataManager isFullVersion] && self.constraintViewAdContainerHeight.constant == 50.0){
+        self.constraintViewAdContainerHeight.constant = 0.0;
+        self.constraintButtonsCoverViewHeight.constant = [self calcPageControlHeight];
+        
+        [UIView animateWithDuration:0.25
+                         animations:^(void){
+                             [self.view layoutIfNeeded];
+                         }
+         ];
     }
 }
 
@@ -262,7 +288,7 @@ typedef enum {
             delay:0.0
             options:UIViewAnimationOptionAllowAnimatedContent
             animations:^{
-                self.constraintButtonsCoverViewHeight.constant = self.view.bounds.size.height - self.constraintViewAdContainerHeight.constant - self.btnLocation.bounds.size.height - 1.0 - self.pageControlContainer.frame.origin.y;
+                self.constraintButtonsCoverViewHeight.constant = [self calcPageControlHeight];
                 
                 //self.constraintMidBtnLeftWidth.constant -= 32.0;
                 //self.constraintMidBtnRigthWidth.constant -= 32.0;
@@ -405,6 +431,10 @@ typedef enum {
 }
 
 #pragma mark -
+
+-(CGFloat)calcPageControlHeight{
+    return self.view.bounds.size.height - self.constraintViewAdContainerHeight.constant - self.btnLocation.bounds.size.height - 1.0 - self.pageControlContainer.frame.origin.y;
+}
 
 -(void) imageCaptured{
     self.imagePreview.image = self.captureManager.stillImage;
