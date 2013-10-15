@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <iAd/iAd.h>
 #import "MainNavController.h"
 #import "CaptureSessionManager.h"
 #import "SkinProvider.h"
@@ -19,7 +20,8 @@
                                       UIScrollViewDelegate,
                                       UIImagePickerControllerDelegate,
                                       UINavigationControllerDelegate,
-                                      SHKShareItemDelegate>
+                                      SHKShareItemDelegate,
+                                      ADBannerViewDelegate>
 
 @property CaptureSessionManager *captureManager;
 

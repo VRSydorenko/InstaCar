@@ -11,7 +11,7 @@
 @implementation UserSettings
 
 +(BOOL)isFullVersion{
-    return YES; // TODO: change before release
+    return NO; // TODO: change before release
 }
 
 +(NSString*) getStoredAppVersion{

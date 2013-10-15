@@ -35,6 +35,7 @@ typedef enum {
     ALAssetsLibrary *assetsLibrary;
     ImageEditor *imageEditor;
     __weak UIImage *selectedImage;
+    ADBannerView *bannerView;
 }
 
 @end
@@ -166,6 +167,11 @@ typedef enum {
     } else {
         self.constraintViewAdContainerHeight.constant = 50.0; // standard Ad banner height for iAd
         
+        bannerView = [[ADBannerView alloc] initWithAdType:ADAdTypeBanner];
+        bannerView.delegate = self;
+        bannerView.frame = CGRectMake(0, 0, self.iAdView.bounds.size.width, self.iAdView.bounds.size.height);
+        
+        [self.iAdView addSubview:bannerView];
     }
 }
 
