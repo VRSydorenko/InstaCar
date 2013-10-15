@@ -31,15 +31,16 @@
 @property (weak, nonatomic) IBOutlet UIButton *btnRightSide;
 
 // Constraints
-@property (weak, nonatomic) IBOutlet UIView *viewMiddleButtons;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *constraintViewMiddleButtonsHeight;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *constraintViewMiddleButtonsBottomMargin;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *constraintBtnMakeWidth;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *constraintImagePreviewHeight;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *constraintMidBtnLeftWidth;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *constraintMidBtnWidth;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *constraintMidBtnRigthWidth;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *constraintButtonsCoverViewHeight;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *constraintViewAdContainerHeight;
 
 @property (weak, nonatomic) IBOutlet UIImageView *imagePreview;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollSkins;
 @property (weak, nonatomic) IBOutlet UIView *pageControlContainer;
+@property (weak, nonatomic) IBOutlet UIView *iAdView;
 
 // Actions
 - (IBAction)btnLocationPressed:(id)sender;

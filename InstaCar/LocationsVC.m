@@ -84,6 +84,9 @@
     [self.tableVenues reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationAutomatic];
     
     [self restoreRefreshButtonIfHidden];
+    
+    // triggering skins to update their locations (in case user opened this VC before location change notification came to the app)
+    [self.sideActionDelegate performSideAction:ACT_UPDATE_SKINS_LOCATION withArgument:[DataManager getSelectedVenue] hidingSideController:NO];
 }
 
 - (IBAction)btnBackPressed {

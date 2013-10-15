@@ -98,7 +98,6 @@
 
 // should get this notification when Location view is null (has not been opened or has been destroyed)
 -(void)locationDidUpdate{
-    NSLog(@"Location did update");
     [self performSideAction:ACT_UPDATE_SKINS_LOCATION withArgument:[DataManager getSelectedVenue] hidingSideController:NO];
 }
 

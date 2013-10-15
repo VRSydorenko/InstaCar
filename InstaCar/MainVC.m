@@ -144,20 +144,16 @@ typedef enum {
         return;
     }
     
-    CGRect pageControlFrame = CGRectMake(0, 0, self.pageControlContainer.bounds.size.width, 20.0);
+    CGRect pageControlFrame = CGRectMake(0, 0, self.pageControlContainer.bounds.size.width, 10.0);
     pageControl = [[SMPageControl alloc] initWithFrame:pageControlFrame];
-    pageControl.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
+    pageControl.autoresizingMask = UIViewAutoresizingFlexibleWidth;
     
     pageControl.userInteractionEnabled = NO;
-    pageControl.indicatorDiameter = 5.0f;
-    pageControl.indicatorMargin = 4.0f;
+    pageControl.indicatorDiameter = 4.0f;
+    pageControl.indicatorMargin = 3.0f;
     
-    //pageControl.pageIndicatorImage = [UIImage imageNamed:@"pageDot.png"];
-    //pageControl.currentPageIndicatorImage = [UIImage imageNamed:@"currentPageDot.png"];
     pageControl.backgroundColor = [UIColor clearColor];
-    //pageControl.pageIndicatorTintColor = [UIColor whiteColor];
     
-    //[self.pageControlContainer setBarTintColor:navCon.navigationBar.barTintColor];
     [self.pageControlContainer addSubview:pageControl];
 }
 
@@ -213,8 +209,8 @@ typedef enum {
             delay:0.0
             options:UIViewAnimationOptionAllowAnimatedContent
             animations:^{
-                self.constraintViewMiddleButtonsBottomMargin.constant = -32.0; // half of the view container height
-                self.constraintViewMiddleButtonsHeight.constant = 1;
+                self.constraintButtonsCoverViewHeight.constant = self.view.bounds.size.height - self.constraintViewAdContainerHeight.constant - self.pageControlContainer.frame.origin.y;
+                
                 self.btnMiddleLeft.titleLabel.alpha = 0.0;
                 self.btnMiddle.titleLabel.alpha = 0.0;
                 self.btnMiddleRight.titleLabel.alpha = 0.0;
@@ -223,19 +219,19 @@ typedef enum {
             }
             completion:^(BOOL finished){
                 if (buttonsInInitialState){
-                    self.constraintBtnMakeWidth.constant = 0;
-                    
+                    self.constraintMidBtnLeftWidth.constant = 96.0;
                     [self.btnMiddleLeft setTitle:@"New photo" forState:UIControlStateNormal];
                     [self.btnMiddleLeft setImage:nil forState:UIControlStateNormal];
                     
+                    self.constraintMidBtnRigthWidth.constant = 96.0;
                     [self.btnMiddleRight setTitle:@"Share" forState:UIControlStateNormal];
                     [self.btnMiddleRight setImage:nil forState:UIControlStateNormal];
                 } else {
-                    self.constraintBtnMakeWidth.constant = 64.0;
-                    
+                    self.constraintMidBtnLeftWidth.constant = 64.0;
                     [self.btnMiddleLeft setImage:[UIImage imageNamed:@"PicLandscape.png"] forState:UIControlStateNormal];
                     [self.btnMiddleLeft setTitle:@"" forState:UIControlStateNormal];
                     
+                    self.constraintMidBtnRigthWidth.constant = 64.0;
                     [self.btnMiddleRight setImage:[UIImage imageNamed:@"Repeat.png"] forState:UIControlStateNormal];
                     [self.btnMiddleRight setTitle:@"" forState:UIControlStateNormal];
                 }
@@ -248,8 +244,11 @@ typedef enum {
             delay:0.0
             options:UIViewAnimationOptionAllowAnimatedContent
             animations:^{
-                self.constraintViewMiddleButtonsBottomMargin.constant = 0;
-                self.constraintViewMiddleButtonsHeight.constant = 64.0;
+                self.constraintButtonsCoverViewHeight.constant = self.view.bounds.size.height - self.constraintViewAdContainerHeight.constant - self.btnLocation.bounds.size.height - 1.0 - self.pageControlContainer.frame.origin.y;
+                
+                //self.constraintMidBtnLeftWidth.constant -= 32.0;
+                //self.constraintMidBtnRigthWidth.constant -= 32.0;
+                
                 self.btnMiddleLeft.titleLabel.alpha = 1.0;
                 self.btnMiddle.titleLabel.alpha = 1.0;
                 self.btnMiddleRight.titleLabel.alpha = 1.0;
@@ -285,7 +284,9 @@ typedef enum {
 }
 
 - (IBAction)btnMiddlePressed {
-    [self.captureManager captureStillImage];
+    if (buttonsInInitialState){
+        [self.captureManager captureStillImage];
+    }
 }
 
 - (IBAction)btnSkinsPressed:(id)sender {

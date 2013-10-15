@@ -36,7 +36,7 @@
     
     NSObject *configuredValue = [[NSUserDefaults standardUserDefaults] objectForKey:PREF_LOGO_OVERLAY];
     if (nil == configuredValue){
-        return NO;
+        return YES;
     }
     
     return [[NSUserDefaults standardUserDefaults] boolForKey:PREF_LOGO_OVERLAY];

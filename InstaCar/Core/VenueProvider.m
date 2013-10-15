@@ -106,11 +106,20 @@
         dispatch_queue_t refreshQueue = dispatch_queue_create("foursquare icons queue", NULL);
         dispatch_async(refreshQueue, ^{
             @try {
+                NSMutableDictionary *iconsToSave = [[NSMutableDictionary alloc] init];
                 for (NSString *path in iconPathsToLoad) {
                     NSURL *url = [NSURL URLWithString:path];
                     NSData *data = [NSData dataWithContentsOfURL:url];
                     UIImage *icon = [UIImage imageWithData:data];
-                    [DataManager addIcon:icon forPath:path];
+                    [iconsToSave setObject:icon forKey:path];
+                }
+                if (iconsToSave.count > 0){
+                    // save icons on the main thread
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        for (NSString *keyPath in iconsToSave.allKeys) {
+                            [DataManager addIcon:[iconsToSave objectForKey:keyPath] forPath:keyPath];
+                        }
+                    });
                 }
             }
             @catch (NSException *exception) {
