@@ -1225,7 +1225,7 @@ typedef enum { // Do not change the numbers!
     NSMutableArray *mutableAutos = [[NSMutableArray alloc] init];
     
     //                                                        id     name   logo   country
-    NSString *querySQL = [NSString stringWithFormat: @"SELECT %@.%@, %@.%@, %@.%@, %@.%@ FROM %@, %@, %@ WHERE %@.%@=%@.%@ AND %@.%@=%@.%@", T_AUTOS, F_ID, T_AUTOS, F_NAME, T_LOGOS, F_NAME, T_COUNTRIES, F_NAME, T_AUTOS, T_LOGOS, T_COUNTRIES, T_AUTOS, F_LOGO_ID, T_LOGOS, F_ID, T_AUTOS, F_COUNTRY_ID, T_COUNTRIES, F_ID];
+    NSString *querySQL = [NSString stringWithFormat: @"SELECT %@.%@, %@.%@, %@.%@, %@.%@ FROM %@, %@, %@ WHERE %@.%@=%@.%@ AND %@.%@=%@.%@ ORDER BY %@.%@", T_AUTOS, F_ID, T_AUTOS, F_NAME, T_LOGOS, F_NAME, T_COUNTRIES, F_NAME, T_AUTOS, T_LOGOS, T_COUNTRIES, T_AUTOS, F_LOGO_ID, T_LOGOS, F_ID, T_AUTOS, F_COUNTRY_ID, T_COUNTRIES, F_ID, T_AUTOS, F_NAME];
     const char *query_stmt = [querySQL UTF8String];
     
     sqlite3_stmt *statement;
@@ -1294,7 +1294,7 @@ typedef enum { // Do not change the numbers!
     NSMutableArray *mutableSubmodels = [[NSMutableArray alloc] init];
     
     //                                                        name   logo   sYear  eYear
-    NSString *querySQL = [NSString stringWithFormat: @"SELECT %@.%@, %@.%@, %@.%@, %@.%@ FROM %@, %@ WHERE %@.%@=%@.%@ AND %@.%@=%lu", T_SUBMODELS, F_NAME, T_LOGOS, F_NAME, T_SUBMODELS, F_YEAR_START, T_SUBMODELS, F_YEAR_END, T_SUBMODELS, T_LOGOS, T_SUBMODELS, F_LOGO_ID, T_LOGOS, F_ID, T_SUBMODELS, F_MODEL_ID, (unsigned long)modelId];
+    NSString *querySQL = [NSString stringWithFormat: @"SELECT %@.%@, %@.%@, %@.%@, %@.%@ FROM %@, %@ WHERE %@.%@=%@.%@ AND %@.%@=%lu ORDER BY %@.%@", T_SUBMODELS, F_NAME, T_LOGOS, F_NAME, T_SUBMODELS, F_YEAR_START, T_SUBMODELS, F_YEAR_END, T_SUBMODELS, T_LOGOS, T_SUBMODELS, F_LOGO_ID, T_LOGOS, F_ID, T_SUBMODELS, F_MODEL_ID, (unsigned long)modelId, T_SUBMODELS, F_NAME];
     const char *query_stmt = [querySQL UTF8String];
     
     sqlite3_stmt *statement;
@@ -1381,7 +1381,7 @@ typedef enum { // Do not change the numbers!
     if (userModelDefinition != MODELS_ALL){
         conditionSQL = [NSString stringWithFormat:@"AND %@.%@=%d", T_MODELS, F_IS_USER_DEFINED, userModelDefinition];
     }
-    const char *query_stmt = [[NSString stringWithFormat:@"%@ %@", queryAllSQL, conditionSQL] UTF8String];
+    const char *query_stmt = [[NSString stringWithFormat:@"%@ %@ ORDER BY %@.%@", queryAllSQL, conditionSQL, T_MODELS, F_NAME] UTF8String];
     
     sqlite3_stmt *statement;
     if (sqlite3_prepare_v2(instacarDb, query_stmt, -1, &statement, NULL) == SQLITE_OK){
@@ -1405,7 +1405,7 @@ typedef enum { // Do not change the numbers!
     }
     sqlite3_finalize(statement);
     
-    return [[NSArray alloc] initWithArray:mutableModels];
+    return mutableModels;
 }
 
 -(int)getIdForCountry:(NSString*)name{
