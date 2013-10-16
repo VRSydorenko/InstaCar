@@ -69,7 +69,10 @@ typedef enum {
     
     [self initGestures];
     
-    [self initIAd];
+    // iAd will be initialised when the view appeared or when first launch info screen has gone
+    
+    // banner view container is initially hidden and will remain so if app is running as full version
+    self.constraintViewAdContainerHeight.constant = 0.0;
     
     self.scrollSkins.delegate = self;
     [self.view bringSubviewToFront:self.scrollSkins];
@@ -80,6 +83,18 @@ typedef enum {
     self.captureManager.imageTopCropMargin = convertedPreviewPoint.y;
     
     self.constraintButtonsCoverViewHeight.constant = [self calcPageControlHeight];
+    
+    if (NO == [DataManager getHasLaunchedBefore]){
+        FirstTimeInfoVC *infoVC = [[UIStoryboard storyboardWithName:@"main" bundle:nil] instantiateViewControllerWithIdentifier:@"firstTimeInfoVC"];
+        //infoVC.view.backgroundColor = [UIColor clearColor];
+        infoVC.delegate = self;
+        //self.modalPresentationStyle = UIModalPresentationCurrentContext;
+        //[self presentViewController:infoVC animated:NO completion:nil];
+        [self addChildViewController:infoVC];
+        [self.view addSubview:infoVC.view];
+    } else {
+        [self initIAd];
+    }
 }
 
 #pragma mark Initialization
@@ -162,10 +177,7 @@ typedef enum {
 }
 
 -(void)initIAd{
-    // banner view container is initially hidden and will remain so if app is running as full version
-    self.constraintViewAdContainerHeight.constant = 0.0;
-    
-    if (NO == [DataManager isFullVersion]){
+    if (NO == [DataManager isFullVersion] && !bannerView){
         bannerView = [[ADBannerView alloc] initWithAdType:ADAdTypeBanner];
         bannerView.delegate = self;
         bannerView.frame = CGRectMake(0, 0, self.iAdView.bounds.size.width, self.iAdView.bounds.size.height);
@@ -229,6 +241,15 @@ typedef enum {
     } else { // other fields are skin relevant so pass the update to selected skin set
         [[SkinProvider getInstance].selectedSkinSet updateData:newValue ofType:dataType];
     }
+}
+
+#pragma mark FirstTimeInfoVC delegate
+
+-(void)firstTimeVCNeedsToDismiss:(FirstTimeInfoVC*)viewController{
+    [viewController.view removeFromSuperview];
+    [viewController removeFromParentViewController];
+    [self initIAd];
+    [DataManager setHasLaunchedBefore];
 }
 
 #pragma mark Gestures

@@ -55,6 +55,7 @@
 		7F2AD5D717EDE9B40096EC8D /* SHKFormOptionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F2AD57117EDE9B40096EC8D /* SHKFormOptionController.m */; };
 		7F2AD5D917EDE9B40096EC8D /* SHKShareMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F2AD57617EDE9B40096EC8D /* SHKShareMenu.m */; };
 		7F2E97DC17DBDF9D003598EC /* CellVenue.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F2E97DB17DBDF9D003598EC /* CellVenue.m */; };
+		7F3648B3180F2A1900B95693 /* FirstTimeInfoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F3648B2180F2A1900B95693 /* FirstTimeInfoVC.m */; };
 		7F3871D317BE4B7900D8E39D /* main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F3871D217BE4B7900D8E39D /* main.storyboard */; };
 		7F3871D617BE4CA900D8E39D /* MainNavController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F3871D517BE4CA900D8E39D /* MainNavController.m */; };
 		7F3871D917BE4D4C00D8E39D /* MainVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F3871D817BE4D4C00D8E39D /* MainVC.m */; };
@@ -215,6 +216,8 @@
 		7F2AD57617EDE9B40096EC8D /* SHKShareMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHKShareMenu.m; sourceTree = "<group>"; };
 		7F2E97DA17DBDF9D003598EC /* CellVenue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CellVenue.h; path = InstaCar/TableCells/CellVenue.h; sourceTree = "<group>"; };
 		7F2E97DB17DBDF9D003598EC /* CellVenue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CellVenue.m; path = InstaCar/TableCells/CellVenue.m; sourceTree = "<group>"; };
+		7F3648B1180F2A1900B95693 /* FirstTimeInfoVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FirstTimeInfoVC.h; path = InstaCar/FirstTimeInfoVC.h; sourceTree = "<group>"; };
+		7F3648B2180F2A1900B95693 /* FirstTimeInfoVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FirstTimeInfoVC.m; path = InstaCar/FirstTimeInfoVC.m; sourceTree = "<group>"; };
 		7F3871D217BE4B7900D8E39D /* main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = main.storyboard; sourceTree = "<group>"; };
 		7F3871D417BE4CA900D8E39D /* MainNavController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainNavController.h; sourceTree = "<group>"; };
 		7F3871D517BE4CA900D8E39D /* MainNavController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainNavController.m; sourceTree = "<group>"; };
@@ -389,6 +392,8 @@
 				7FEF908817D505E800C07A05 /* AutosVC.m */,
 				7FD356321805E704008EC167 /* CustomCarFormVC.h */,
 				7FD356331805E704008EC167 /* CustomCarFormVC.m */,
+				7F3648B1180F2A1900B95693 /* FirstTimeInfoVC.h */,
+				7F3648B2180F2A1900B95693 /* FirstTimeInfoVC.m */,
 				7F2767291791E80000A1C1A0 /* Images.xcassets */,
 				7F2767181791E80000A1C1A0 /* Supporting Files */,
 				7F002D20180B49C60076879F /* Settings.bundle */,
@@ -936,6 +941,7 @@
 				7F4CB68E18097908008B5CA2 /* LocationSimple.m in Sources */,
 				7F59AC6B17D3C20C00B87457 /* DBDefinition.m in Sources */,
 				7F2AD59417EDE9B40096EC8D /* SHKRequest.m in Sources */,
+				7F3648B3180F2A1900B95693 /* FirstTimeInfoVC.m in Sources */,
 				7FC4137C17C7EFF70025DD2C /* LocationsVC.m in Sources */,
 				7F4CB69518097908008B5CA2 /* SkinViewBase.m in Sources */,
 				7F4CB69318097908008B5CA2 /* SkinSimple.m in Sources */,

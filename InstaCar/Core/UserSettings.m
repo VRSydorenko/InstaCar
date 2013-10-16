@@ -29,6 +29,13 @@
     [[NSUserDefaults standardUserDefaults] setValue:name forKey:LAST_USED_SKINSET];
 }
 
++(BOOL)getHasLaunchedBefore{
+    return [[NSUserDefaults standardUserDefaults] boolForKey:HAS_LAUNCHED_BEFORE];
+}
++(void)setHasLaunchedBefore{
+    [[NSUserDefaults standardUserDefaults] setBool:YES forKey:HAS_LAUNCHED_BEFORE];
+}
+
 +(BOOL)getLogoOverlayEnabled{
     if (NO == [self isFullVersion]){
         return YES;

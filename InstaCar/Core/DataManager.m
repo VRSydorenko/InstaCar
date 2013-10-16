@@ -81,6 +81,13 @@
     return [[self dbManager] getIndependentIdOfAutoWithDbId:dbId];
 }
 
++(BOOL)getHasLaunchedBefore{
+    return [UserSettings getHasLaunchedBefore];
+}
++(void)setHasLaunchedBefore{
+    [UserSettings setHasLaunchedBefore];
+}
+
 +(Auto*)getSelectedAuto1{
     return [SkinProvider getInstance].selectedAuto1;
 }

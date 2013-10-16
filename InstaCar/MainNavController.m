@@ -27,10 +27,8 @@
     
     self.dataSelectionChangeDelegate = nil;
     
-    UIBarButtonItem *button = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"nav_menu_icon.png"] style:UIBarButtonItemStyleBordered target:self action:@selector(showAppMenuButtonPressed)];
-    button.TintColor = [UIColor whiteColor];
-    UIViewController *topController = [self.viewControllers objectAtIndex:0];
-    topController.navigationItem.leftBarButtonItem = button;
+    [self initLeftBarButton];
+    [self initRightBarButton];
 }
 
 - (void)didReceiveMemoryWarning
@@ -82,6 +80,10 @@
 
 -(void)showAppMenuButtonPressed{
     [self setSideViewController:APP_MENU andShowOnTheLeftSide:YES];
+}
+
+-(void)showAboutProVersionButtonPressed{
+    
 }
 
 -(void)showLeft{
@@ -211,6 +213,24 @@
 - (void)menuControllerWillShowRootViewController{
     if (self.menuControllerDelegate && [self.menuControllerDelegate respondsToSelector:@selector(menuControllerWillShowRootViewController)]){
         [self.menuControllerDelegate menuControllerWillShowRootViewController];
+    }
+}
+
+#pragma mark private methods
+
+-(void)initLeftBarButton{
+    UIBarButtonItem *button = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"nav_menu_icon.png"] style:UIBarButtonItemStyleBordered target:self action:@selector(showAppMenuButtonPressed)];
+    button.TintColor = [UIColor whiteColor];
+    UIViewController *topController = [self.viewControllers objectAtIndex:0];
+    topController.navigationItem.leftBarButtonItem = button;
+}
+
+-(void)initRightBarButton{
+    if (NO == [DataManager isFullVersion]){
+        UIBarButtonItem *button = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"nav_about_pro_icon.png"] style:UIBarButtonItemStyleBordered target:self action:@selector(showAboutProVersionButtonPressed)];
+        button.TintColor = [UIColor whiteColor];
+        UIViewController *topController = [self.viewControllers objectAtIndex:0];
+        topController.navigationItem.rightBarButtonItem = button;
     }
 }
 
