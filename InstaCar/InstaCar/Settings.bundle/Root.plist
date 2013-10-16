@@ -12,7 +12,7 @@
 			<key>Key</key>
 			<string>preference_use_icloud</string>
 			<key>DefaultValue</key>
-			<true/>
+			<false/>
 		</dict>
 		<dict>
 			<key>DefaultValue</key>
