@@ -145,8 +145,13 @@
             break;
         }
         case ACT_OPEN_APPSTORE_TO_RATE:{
-            // TODO: change app url
-            NSString* url = @"itms-apps://itunes.apple.com/app/id595828753";
+            NSString *url = @"";
+            if (YES == [DataManager isFullVersion]){
+                url = @"itms-apps://itunes.apple.com/app/id726603505";
+            } else {
+                url = @"itms-apps://itunes.apple.com/app/id726603550";
+            }
+            
             [[UIApplication sharedApplication] openURL: [NSURL URLWithString: url]];
             break;
         }
