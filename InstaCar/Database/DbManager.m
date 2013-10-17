@@ -22,6 +22,7 @@ typedef enum {
     FORD,
     TOYOTA,
     NISSAN,
+    ACURA,
 } IndependentCarIds;
 
 typedef enum { // Do not change the numbers!
@@ -978,6 +979,28 @@ typedef enum { // Do not change the numbers!
 #pragma mark J
 #pragma mark === Japan ===
     countryId = [self addCountry:@"Japan"];
+#pragma mark |---- Acura
+    logoId = [self addLogo:@"acura_256.png"];
+    autoId = [self addAuto:@"Acura" country:countryId logo:logoId independentId:ACURA];
+    [self addAutoModel:@"NSX" ofAuto:autoId logo:logoId startYear:2015 endYear:0];
+	[self addAutoModel:@"ARX-01" ofAuto:autoId logo:logoId startYear:2007 endYear:0];
+	[self addAutoModel:@"ARX-02a" ofAuto:autoId logo:logoId startYear:2009 endYear:0];
+	[self addAutoModel:@"CL" ofAuto:autoId logo:logoId startYear:1997 endYear:2003];
+	[self addAutoModel:@"CSX" ofAuto:autoId logo:logoId startYear:2005 endYear:2011];
+	[self addAutoModel:@"EL" ofAuto:autoId logo:logoId startYear:1997 endYear:2005];
+	[self addAutoModel:@"ILX" ofAuto:autoId logo:logoId startYear:2012 endYear:0];
+	[self addAutoModel:@"Integra" ofAuto:autoId logo:logoId startYear:1985 endYear:2006];
+	[self addAutoModel:@"Legend" ofAuto:autoId logo:logoId startYear:1986 endYear:1995];
+	[self addAutoModel:@"MDX" ofAuto:autoId logo:logoId startYear:2001 endYear:0];
+	[self addAutoModel:@"RDX" ofAuto:autoId logo:logoId startYear:2006 endYear:0];
+	[self addAutoModel:@"RL" ofAuto:autoId logo:logoId startYear:1995 endYear:2012];
+	[self addAutoModel:@"RLX" ofAuto:autoId logo:logoId startYear:2013 endYear:0];
+	[self addAutoModel:@"Integra DC5" ofAuto:autoId logo:logoId startYear:2001 endYear:2006];
+	[self addAutoModel:@"SLX" ofAuto:autoId logo:logoId startYear:1996 endYear:1999];
+	[self addAutoModel:@"TL" ofAuto:autoId logo:logoId startYear:1996 endYear:0];
+	[self addAutoModel:@"TSX" ofAuto:autoId logo:logoId startYear:2004 endYear:0];
+	[self addAutoModel:@"Vigor" ofAuto:autoId logo:logoId startYear:1981 endYear:1995];
+	[self addAutoModel:@"ZDX" ofAuto:autoId logo:logoId startYear:2009 endYear:0];
 #pragma mark |---- Nissan
     logoId = [self addLogo:@"nissan_256.png"];
     autoId = [self addAuto:@"Nissan" country:countryId logo:logoId independentId:NISSAN];

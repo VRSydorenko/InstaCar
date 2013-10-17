@@ -20,11 +20,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "InstaCar/Database/DbManager.m"
-            timestampString = "403740286.266014"
+            timestampString = "403740739.701664"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "2553"
-            endingLineNumber = "2553"
+            startingLineNumber = "2576"
+            endingLineNumber = "2576"
             landmarkName = "-getModelsOfAuto:definedByUser:"
             landmarkType = "5">
          </BreakpointContent>
