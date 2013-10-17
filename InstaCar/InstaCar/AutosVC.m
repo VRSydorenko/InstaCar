@@ -139,6 +139,7 @@ typedef enum {
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     static NSString *CellIdentifier = @"cellAuto";
     CellAuto *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    [cell.autoLogo.layer setMinificationFilter:kCAFilterTrilinear];
     cell.tag = indexPath.row; // for sublevel picker callback
     cell.accessoryType = UITableViewCellAccessoryNone;
     

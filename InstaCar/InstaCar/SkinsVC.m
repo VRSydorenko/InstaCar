@@ -96,6 +96,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForSelectedAutoAtIndexPath:(NSIndexPath*)indexPath{
     CellSelectedAuto *cell = [tableView dequeueReusableCellWithIdentifier:@"cellSelectedAuto" forIndexPath:indexPath];
+    [cell.autoLogo.layer setMinificationFilter:kCAFilterTrilinear];
     Auto *_auto = indexPath.row == 0 ? [DataManager getSelectedAuto1] : [DataManager getSelectedAuto2];
     
     if (_auto){
