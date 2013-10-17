@@ -54,7 +54,7 @@
 
 -(void)adjustAutoLabelSizeAccordingToText{
     CGSize textSize = [self.textAuto.text sizeWithAttributes:[NSDictionary dictionaryWithObject:self.textAuto.font forKey:NSFontAttributeName]];
-    self.autoTitleWidth.constant = MIN(textSize.width, self.bounds.size.width - self.widthLogoConstraint.constant - 5);
+    self.autoTitleWidth.constant = MIN(textSize.width, self.bounds.size.width - self.widthLogoConstraint.constant - 10);
 }
 
 @end
