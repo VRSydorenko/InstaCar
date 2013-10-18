@@ -141,6 +141,7 @@ typedef enum {
     CellAuto *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     [cell.autoLogo.layer setMinificationFilter:kCAFilterTrilinear];
     cell.tag = indexPath.row; // for sublevel picker callback
+    cell.autoYearsLabel.text = @"";
     cell.accessoryType = UITableViewCellAccessoryNone;
     
     switch (currentContentType) {
@@ -158,6 +159,7 @@ typedef enum {
             if (indexPath.section == 0){ // built-in model
                 AutoModel *model = [data objectAtIndex:indexPath.row];
                 cell.autoTitleLabel.text = model.name;
+                cell.autoYearsLabel.text = [Utils getAutoYearsString:model.startYear endYear:model.endYear];
                 cell.autoLogo.image = [UIImage imageNamed:model.logo];
                 cell.sublevelPickerDelegate = self;
                 
@@ -169,6 +171,7 @@ typedef enum {
             } else { // user defined model
                 AutoModel *model = [userDefinedData objectAtIndex:indexPath.row];
                 cell.autoTitleLabel.text = model.name;
+                cell.autoYearsLabel.text = [Utils getAutoYearsString:model.startYear endYear:model.endYear];
                 cell.autoLogo.image = [UIImage imageNamed:model.logo];
                 cell.autoModelsButton.hidden = YES;
             }
@@ -177,11 +180,14 @@ typedef enum {
         case CONTENT_SUBMODELS:{
             AutoSubmodel *submodel = [data objectAtIndex:indexPath.row];
             cell.autoTitleLabel.text = submodel.name;
+            cell.autoYearsLabel.text = [Utils getAutoYearsString:submodel.startYear endYear:submodel.endYear];
             cell.autoLogo.image = [UIImage imageNamed:submodel.logo];
             cell.autoModelsButton.hidden = YES;
             break;
         }
     }
+    
+    cell.constraintDetailTextHeight.constant = cell.autoYearsLabel.text.length > 0 ? 10.0 : 0.0;
     
     return cell;
 }

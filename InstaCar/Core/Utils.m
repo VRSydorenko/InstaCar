@@ -57,4 +57,20 @@
     return [NSString stringWithFormat:@"Great #instacar #%@%@ from the #instacarapp", [DataManager getSelectedAuto1].name, andCar2];
 }
 
++(NSString*)getAutoYearsString:(int)startYear endYear:(int)endYear{
+    NSString *result = @"";
+    
+    if (startYear > 0){
+        if (endYear == -1){
+            result = [NSString stringWithFormat:@"%d", startYear];
+        } else if (endYear == 0){
+            result = [NSString stringWithFormat:@"%d-...", startYear];
+        } else if (endYear > 0){
+            result = [NSString stringWithFormat:@"%d-%d", startYear, endYear];
+        }
+    }
+    
+    return result;
+}
+
 @end
