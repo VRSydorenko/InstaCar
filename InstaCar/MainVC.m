@@ -440,7 +440,7 @@ typedef enum {
         [picker setNavigationBarHidden:YES animated:NO];
         
     } failureBlock:^(NSError *error) {
-        NSLog(@"Failed to get asset from library");
+        DLog(@"Failed to get asset from library");
     }];
 }
 

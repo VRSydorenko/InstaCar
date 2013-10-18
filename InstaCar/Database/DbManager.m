@@ -41,7 +41,9 @@ typedef enum { // Do not change the numbers!
         [self initDatabase];
         
         if ([Utils appVersionDiffers]){
+            DLog(@"Database initialization start...");
             [self initData];
+            DLog(@"Database initialization finished.");
             [UserSettings setStoredAppVersion]; // TODO: uncomment in production
         }
     }
@@ -75,8 +77,8 @@ typedef enum { // Do not change the numbers!
         
         [self createTables];
     } else {
-        NSLog(@"Failed to open/create database");
-        NSLog(@"Info:%s", sqlite3_errmsg(instacarDb));
+        DLog(@"Failed to open/create database");
+        DLog(@"Info:%s", sqlite3_errmsg(instacarDb));
     }
 }
 
@@ -86,9 +88,9 @@ typedef enum { // Do not change the numbers!
     NSString *eraseSql = [NSString stringWithFormat:@"DELETE FROM %@;DELETE FROM %@;DELETE FROM %@;DELETE FROM %@;DELETE FROM %@;", T_SUBMODELS, T_MODELS, T_AUTOS, T_LOGOS, T_COUNTRIES]; // development query
     char *err;
     if (sqlite3_exec(instacarDb, [eraseSql UTF8String], nil, nil, &err) == SQLITE_OK){
-        NSLog(@"Tables erased");
+        DLog(@"Tables erased");
     } else {
-        NSLog(@"Table erase failed: %@", [NSString stringWithUTF8String:err]);
+        DLog(@"Table erase failed: %@", [NSString stringWithUTF8String:err]);
         sqlite3_free(err);
     }
 }
@@ -98,9 +100,9 @@ typedef enum { // Do not change the numbers!
     char *err;
     for (NSString *sql in [dbDef getTablesCreationQueries]) {
         if (sqlite3_exec(instacarDb, [sql UTF8String], nil, nil, &err) == SQLITE_OK){
-            NSLog(@"Table created");
+            DLog(@"Table created");
         } else {
-            NSLog(@"Table creation failed: %@", [NSString stringWithUTF8String:err]);
+            DLog(@"Table creation failed: %@", [NSString stringWithUTF8String:err]);
             sqlite3_free(err);
         }
     }
@@ -2185,13 +2187,13 @@ typedef enum { // Do not change the numbers!
         
         if (sqlite3_step(statement) == SQLITE_DONE)
         {
-            NSLog(@"Added country: %@", name);
+            DLog(@"Added country: %@", name);
         } else {
-            NSLog(@"Failed to add country %@", name);
-            NSLog(@"Info:%s", sqlite3_errmsg(instacarDb));
+            DLog(@"Failed to add country %@", name);
+            DLog(@"Info:%s", sqlite3_errmsg(instacarDb));
         }
     } else {
-        NSLog(@"Error:%s", sqlite3_errmsg(instacarDb));
+        DLog(@"Error:%s", sqlite3_errmsg(instacarDb));
     }
     sqlite3_finalize(statement);
     
@@ -2209,13 +2211,13 @@ typedef enum { // Do not change the numbers!
         
         if (sqlite3_step(statement) == SQLITE_DONE)
         {
-            NSLog(@"Added logo: %@", filename);
+            DLog(@"Added logo: %@", filename);
         } else {
-            NSLog(@"Failed to add logo %@", filename);
-            NSLog(@"Info:%s", sqlite3_errmsg(instacarDb));
+            DLog(@"Failed to add logo %@", filename);
+            DLog(@"Info:%s", sqlite3_errmsg(instacarDb));
         }
     } else {
-        NSLog(@"Error:%s", sqlite3_errmsg(instacarDb));
+        DLog(@"Error:%s", sqlite3_errmsg(instacarDb));
     }
     sqlite3_finalize(statement);
     
@@ -2233,13 +2235,13 @@ typedef enum { // Do not change the numbers!
         
         if (sqlite3_step(statement) == SQLITE_DONE)
         {
-            NSLog(@"Added auto: %@", name);
+            DLog(@"Added auto: %@", name);
         } else {
-            NSLog(@"Failed to add auto %@", name);
-            NSLog(@"Info:%s", sqlite3_errmsg(instacarDb));
+            DLog(@"Failed to add auto %@", name);
+            DLog(@"Info:%s", sqlite3_errmsg(instacarDb));
         }
     } else {
-        NSLog(@"Error:%s", sqlite3_errmsg(instacarDb));
+        DLog(@"Error:%s", sqlite3_errmsg(instacarDb));
     }
     sqlite3_finalize(statement);
     
@@ -2269,13 +2271,13 @@ typedef enum { // Do not change the numbers!
         
         if (sqlite3_step(statement) == SQLITE_DONE)
         {
-            NSLog(@"Added submodel: %@", name);
+            DLog(@"Added submodel: %@", name);
         } else {
-            NSLog(@"Failed to add submodel %@", name);
-            NSLog(@"Info:%s", sqlite3_errmsg(instacarDb));
+            DLog(@"Failed to add submodel %@", name);
+            DLog(@"Info:%s", sqlite3_errmsg(instacarDb));
         }
     } else {
-        NSLog(@"Error:%s", sqlite3_errmsg(instacarDb));
+        DLog(@"Error:%s", sqlite3_errmsg(instacarDb));
     }
     sqlite3_finalize(statement);
 }
@@ -2294,13 +2296,13 @@ typedef enum { // Do not change the numbers!
         
         if (sqlite3_step(statement) == SQLITE_DONE)
         {
-            NSLog(@"Added model: %@", name);
+            DLog(@"Added model: %@", name);
         } else {
-            NSLog(@"Failed to add model %@", name);
-            NSLog(@"Info:%s", sqlite3_errmsg(instacarDb));
+            DLog(@"Failed to add model %@", name);
+            DLog(@"Info:%s", sqlite3_errmsg(instacarDb));
         }
     } else {
-        NSLog(@"Error:%s", sqlite3_errmsg(instacarDb));
+        DLog(@"Error:%s", sqlite3_errmsg(instacarDb));
     }
     sqlite3_finalize(statement);
     
@@ -2317,7 +2319,7 @@ typedef enum { // Do not change the numbers!
     NSString *sql = [NSString stringWithFormat: @"DELETE FROM %@ WHERE %@=%d AND %@=1", T_MODELS, F_AUTO_ID, autoId, F_IS_USER_DEFINED];
     const char *delete_stmt = [sql UTF8String];
     sqlite3_exec(instacarDb, delete_stmt, NULL, NULL, NULL);
-    NSLog(@"Custom models cleared for auto id: %d", autoId);
+    DLog(@"Custom models cleared for auto id: %d", autoId);
 }
 
 #pragma mark Saving data public methods
@@ -2347,13 +2349,13 @@ typedef enum { // Do not change the numbers!
         
         if (sqlite3_step(statement) == SQLITE_DONE)
         {
-            NSLog(@"Added icon: %@", iconPath);
+            DLog(@"Added icon: %@", iconPath);
         } else {
-            NSLog(@"Failed to add icon %@", iconPath);
-            NSLog(@"Info:%s", sqlite3_errmsg(instacarDb));
+            DLog(@"Failed to add icon %@", iconPath);
+            DLog(@"Info:%s", sqlite3_errmsg(instacarDb));
         }
     } else {
-        NSLog(@"Error:%s", sqlite3_errmsg(instacarDb));
+        DLog(@"Error:%s", sqlite3_errmsg(instacarDb));
     }
     sqlite3_finalize(statement);    
 }
@@ -2373,10 +2375,10 @@ typedef enum { // Do not change the numbers!
         {
             _id = sqlite3_column_int(statement, 0);
         } else {
-            NSLog(@"Error getting auto by model id");
+            DLog(@"Error getting auto by model id");
         }
     } else {
-        NSLog(@"Error getting auto for Model is:%s", sqlite3_errmsg(instacarDb));
+        DLog(@"Error getting auto for Model is:%s", sqlite3_errmsg(instacarDb));
     }
     sqlite3_finalize(statement);
     
@@ -2394,7 +2396,7 @@ typedef enum { // Do not change the numbers!
         if (sqlite3_step(statement) == SQLITE_ROW){
             result = sqlite3_column_int(statement, 0);
         } else{
-            NSLog(@"Error getting auto database id");
+            DLog(@"Error getting auto database id");
         }
     }
     sqlite3_finalize(statement);
@@ -2413,7 +2415,7 @@ typedef enum { // Do not change the numbers!
         if (sqlite3_step(statement) == SQLITE_ROW){
             result = sqlite3_column_int(statement, 0);
         } else{
-            NSLog(@"Error getting auto independent id");
+            DLog(@"Error getting auto independent id");
         }
     }
     sqlite3_finalize(statement);
@@ -2440,8 +2442,8 @@ typedef enum { // Do not change the numbers!
             [mutableAutos addObject:_auto];
         }
     } else {
-        NSLog(@"Failed to query auto");
-        NSLog(@"Info:%s", sqlite3_errmsg(instacarDb));
+        DLog(@"Failed to query auto");
+        DLog(@"Info:%s", sqlite3_errmsg(instacarDb));
     }
     sqlite3_finalize(statement);
         
@@ -2511,8 +2513,8 @@ typedef enum { // Do not change the numbers!
             [mutableSubmodels addObject:submodel];
         }
     } else {
-        NSLog(@"Failed to query submodel");
-        NSLog(@"Info:%s", sqlite3_errmsg(instacarDb));
+        DLog(@"Failed to query submodel");
+        DLog(@"Info:%s", sqlite3_errmsg(instacarDb));
     }
     sqlite3_finalize(statement);
     
@@ -2540,10 +2542,10 @@ typedef enum { // Do not change the numbers!
                 icon = [UIImage imageWithData:imageData];
             }
         } else {
-            NSLog(@"Icon not found");
+            DLog(@"Icon not found");
         }
     } else {
-        NSLog(@"Error getting data for icon: %s", sqlite3_errmsg(instacarDb));
+        DLog(@"Error getting data for icon: %s", sqlite3_errmsg(instacarDb));
     }
     sqlite3_finalize(statement);
     
@@ -2600,8 +2602,8 @@ typedef enum { // Do not change the numbers!
             [mutableModels addObject:model];
         }
     } else {
-        NSLog(@"Failed to query model");
-        NSLog(@"Info:%s", sqlite3_errmsg(instacarDb));
+        DLog(@"Failed to query model");
+        DLog(@"Info:%s", sqlite3_errmsg(instacarDb));
     }
     sqlite3_finalize(statement);
     
@@ -2621,10 +2623,10 @@ typedef enum { // Do not change the numbers!
         {
             _id = sqlite3_column_int(statement, 0);
         } else {
-            NSLog(@"Country not found");
+            DLog(@"Country not found");
         }
     } else {
-        NSLog(@"Error getting id for Country:%s", sqlite3_errmsg(instacarDb));
+        DLog(@"Error getting id for Country:%s", sqlite3_errmsg(instacarDb));
     }
     sqlite3_finalize(statement);
     
@@ -2644,10 +2646,10 @@ typedef enum { // Do not change the numbers!
         {
             _id = sqlite3_column_int(statement, 0);
         } else {
-            NSLog(@"Logo not found");
+            DLog(@"Logo not found");
         }
     } else {
-        NSLog(@"Error getting id for Logo:%s", sqlite3_errmsg(instacarDb));
+        DLog(@"Error getting id for Logo:%s", sqlite3_errmsg(instacarDb));
     }
     sqlite3_finalize(statement);
     
@@ -2667,10 +2669,10 @@ typedef enum { // Do not change the numbers!
         {
             _id = sqlite3_column_int(statement, 0);
         } else {
-            NSLog(@"Auto not found");
+            DLog(@"Auto not found");
         }
     } else {
-        NSLog(@"Error getting id for Auto:%s", sqlite3_errmsg(instacarDb));
+        DLog(@"Error getting id for Auto:%s", sqlite3_errmsg(instacarDb));
     }
     sqlite3_finalize(statement);
     
@@ -2690,10 +2692,10 @@ typedef enum { // Do not change the numbers!
         {
             _id = sqlite3_column_int(statement, 0);
         } else {
-            NSLog(@"Model not found");
+            DLog(@"Model not found");
         }
     } else {
-        NSLog(@"Error getting id for Model:%s", sqlite3_errmsg(instacarDb));
+        DLog(@"Error getting id for Model:%s", sqlite3_errmsg(instacarDb));
     }
     sqlite3_finalize(statement);
     
