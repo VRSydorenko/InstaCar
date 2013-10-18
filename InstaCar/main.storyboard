@@ -310,6 +310,21 @@
                                             <outlet property="textVenueName" destination="Mie-1t-Soz" id="sZg-ki-pmW"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cellFoursquare" rowHeight="50" id="cQk-AR-fC1" customClass="CellVenue">
+                                        <rect key="frame" x="0.0" y="66" width="320" height="50"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cQk-AR-fC1" id="wR4-uS-iZZ">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="powByFour" translatesAutoresizingMaskIntoConstraints="NO" id="E6S-C1-THY">
+                                                    <rect key="frame" x="20" y="0.0" width="250" height="49"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                </imageView>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                    </tableViewCell>
                                 </prototypes>
                             </tableView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" barStyle="black" translatesAutoresizingMaskIntoConstraints="NO" id="XLT-F9-0Qw">
@@ -778,8 +793,10 @@
         <image name="PicLandscape" width="24" height="24"/>
         <image name="Repeat" width="24" height="24"/>
         <image name="arrowDown" width="24" height="24"/>
+        <image name="arrowDown" width="24" height="24"/>
         <image name="arrowLeft" width="24" height="24"/>
         <image name="arrowRight" width="24" height="24"/>
+        <image name="powByFour" width="241" height="60"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
