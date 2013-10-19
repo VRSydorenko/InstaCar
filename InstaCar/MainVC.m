@@ -310,10 +310,7 @@ typedef enum {
             options:UIViewAnimationOptionAllowAnimatedContent
             animations:^{
                 self.constraintButtonsCoverViewHeight.constant = [self calcPageControlHeight];
-                
-                //self.constraintMidBtnLeftWidth.constant -= 32.0;
-                //self.constraintMidBtnRigthWidth.constant -= 32.0;
-                
+               
                 self.btnMiddleLeft.titleLabel.alpha = 1.0;
                 self.btnMiddle.titleLabel.alpha = 1.0;
                 self.btnMiddleRight.titleLabel.alpha = 1.0;
@@ -368,10 +365,11 @@ typedef enum {
     imageEditor = [[ImageEditor alloc] initWithNibName:@"ImageEditor" bundle:nil];
     imageEditor.checkBounds = YES;
     
+    __weak MainVC *pSelf = self;
     imageEditor.doneCallback = ^(UIImage *editedImage, BOOL canceled){
         if(!canceled) {
-            self.captureManager.stillImage = editedImage;
-            [self imageCaptured];
+            pSelf.captureManager.stillImage = editedImage;
+            [pSelf imageCaptured];
         }
         [picker dismissViewControllerAnimated:YES completion:nil];
     };

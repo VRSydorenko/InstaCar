@@ -2345,7 +2345,7 @@ typedef enum { // Do not change the numbers!
         sqlite3_bind_text(statement, 1, [iconPath cStringUsingEncoding:NSUTF8StringEncoding], -1, SQLITE_TRANSIENT);
         
         NSData *iconData = UIImagePNGRepresentation(icon);
-        sqlite3_bind_blob(statement, 2, iconData.bytes, iconData.length, SQLITE_TRANSIENT);
+        sqlite3_bind_blob(statement, 2, iconData.bytes, (int)iconData.length, SQLITE_TRANSIENT);
         
         if (sqlite3_step(statement) == SQLITE_DONE)
         {

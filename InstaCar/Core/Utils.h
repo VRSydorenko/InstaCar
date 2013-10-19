@@ -19,4 +19,7 @@
 +(NSString*)getHashTagString;
 +(NSString*)getAutoYearsString:(int)startYear endYear:(int)endYear;
 
++(void)openAppInAppStore:(BOOL)proVersion;
++(void)openAppPageOnFacebook;
+
 @end

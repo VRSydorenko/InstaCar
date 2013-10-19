@@ -73,4 +73,23 @@
     return result;
 }
 
++(void)openAppInAppStore:(BOOL)proVersion{
+    NSString *url = @"";
+    if (proVersion){
+        url = @"itms-apps://itunes.apple.com/app/id726603505";
+    } else {
+        url = @"itms-apps://itunes.apple.com/app/id726603550";
+    }
+    
+    [[UIApplication sharedApplication] openURL: [NSURL URLWithString: url]];
+}
+
++(void)openAppPageOnFacebook{
+    NSURL *facebookPageUrl = [NSURL URLWithString:@"fb://profile/496058110489790"];
+    if (![[UIApplication sharedApplication] canOpenURL:facebookPageUrl]) {
+        facebookPageUrl = [NSURL URLWithString:@"http://www.facebook.com/InstacarApp"];
+    }
+    [[UIApplication sharedApplication] openURL:facebookPageUrl];
+}
+
 @end
