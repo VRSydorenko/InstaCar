@@ -13,6 +13,7 @@
 #define HAS_LAUNCHED_BEFORE @"stored_has_launched_before"
 #define PREF_LOGO_OVERLAY @"preference_logo_overlay"
 #define PREF_USE_ICLOUD @"preference_use_icloud"
+#define PREF_SAVE_WHEN_SHARING @"preference_save_when_sharing"
 
 @interface UserSettings : NSObject
 
@@ -29,5 +30,6 @@
 
 +(BOOL)getLogoOverlayEnabled;
 +(BOOL)getUseICloud;
++(BOOL)getSaveWhenSharing;
 
 @end

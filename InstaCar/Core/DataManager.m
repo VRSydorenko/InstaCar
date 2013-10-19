@@ -125,4 +125,8 @@
     return [UserSettings getUseICloud];
 }
 
++(BOOL)getSaveWhenSharing{
+    return [UserSettings getSaveWhenSharing];
+}
+
 @end

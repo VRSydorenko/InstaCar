@@ -58,4 +58,13 @@
     return [[NSUserDefaults standardUserDefaults] boolForKey:PREF_USE_ICLOUD];
 }
 
++(BOOL)getSaveWhenSharing{
+    NSObject *configuredValue = [[NSUserDefaults standardUserDefaults] objectForKey:PREF_SAVE_WHEN_SHARING];
+    if (nil == configuredValue){
+        return YES;
+    }
+    
+    return [[NSUserDefaults standardUserDefaults] boolForKey:PREF_SAVE_WHEN_SHARING];
+}
+
 @end

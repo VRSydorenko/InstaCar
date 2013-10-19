@@ -447,8 +447,10 @@ typedef enum {
 #pragma mark SHKShareItemDelegate
 
 - (BOOL)aboutToShareItem:(SHKItem *)item withSharer:(SHKSharer *)sharer{
-    [assetsLibrary saveImage:item.image toAlbum:@"InstaCar" completion:nil failure:nil];
-    return [sharer shouldSavePhotoToCustomAppAlbum]; // if NO then it is 'Save to Album' sharer and we have already saved this photo to the album a moment ago.
+    if ([sharer shouldSavePhotoToCustomAppAlbum] && YES == [DataManager getSaveWhenSharing]){
+        [assetsLibrary saveImage:item.image toAlbum:@"InstaCar" completion:nil failure:nil];
+    }
+    return YES;
 }
 
 #pragma mark -

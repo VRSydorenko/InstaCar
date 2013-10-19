@@ -8,6 +8,16 @@
 			<key>Type</key>
 			<string>PSToggleSwitchSpecifier</string>
 			<key>Title</key>
+			<string>Save image when sharing</string>
+			<key>Key</key>
+			<string>preference_save_when_sharing</string>
+			<key>DefaultValue</key>
+			<false/>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSToggleSwitchSpecifier</string>
+			<key>Title</key>
 			<string>Use iCloud</string>
 			<key>Key</key>
 			<string>preference_use_icloud</string>

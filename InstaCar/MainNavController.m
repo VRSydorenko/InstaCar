@@ -12,6 +12,7 @@
 #import "AppMenuTableVC.h"
 #import "LocationsVC.h"
 #import "DataManager.h"
+#import "ProInfoVC.h"
 
 @interface MainNavController (){
     SideViewControllerBase *sideViewController;
@@ -83,7 +84,10 @@
 }
 
 -(void)showAboutProVersionButtonPressed{
+    ProInfoVC *infoVC = [[UIStoryboard storyboardWithName:@"main" bundle:nil] instantiateViewControllerWithIdentifier:@"proInfoVC"];
     
+    infoVC.delegate = self;
+    [self presentViewController:infoVC animated:YES completion:nil];
 }
 
 -(void)showLeft{
@@ -216,6 +220,12 @@
     }
 }
 
+#pragma mark Info view delegate
+
+-(void)proInfoViewFinished:(ProInfoVC *)controller{
+    [controller dismissViewControllerAnimated:YES completion:nil];
+}
+
 #pragma mark private methods
 
 -(void)initLeftBarButton{
@@ -227,7 +237,7 @@
 
 -(void)initRightBarButton{
     if (NO == [DataManager isFullVersion]){
-        UIBarButtonItem *button = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"nav_about_pro_icon.png"] style:UIBarButtonItemStyleBordered target:self action:@selector(showAboutProVersionButtonPressed)];
+        UIBarButtonItem *button = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:/*@"nav_about_pro_icon.png"*/@"nav_menu_icon.png"] style:UIBarButtonItemStyleBordered target:self action:@selector(showAboutProVersionButtonPressed)];
         button.TintColor = [UIColor whiteColor];
         UIViewController *topController = [self.viewControllers objectAtIndex:0];
         topController.navigationItem.rightBarButtonItem = button;
