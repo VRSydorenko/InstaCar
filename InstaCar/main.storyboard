@@ -217,9 +217,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" barStyle="black" translatesAutoresizingMaskIntoConstraints="NO" id="ajc-Bm-9BW">
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="black" translatesAutoresizingMaskIntoConstraints="NO" id="ajc-Bm-9BW">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="WxM-U8-BA2"/>
+                                </constraints>
                                 <items>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="utL-AR-urM"/>
                                     <barButtonItem enabled="NO" title="About Pro version" id="dfb-G9-Siq">
@@ -233,9 +236,12 @@
                                     </barButtonItem>
                                 </items>
                             </toolbar>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EAl-cr-AVt">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EAl-cr-AVt">
                                 <rect key="frame" x="101" y="430" width="119" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="9Xr-iy-t7u"/>
+                                </constraints>
                                 <state key="normal" title="Get full version">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -244,7 +250,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Consider pro version" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tfZ-Po-Itj">
-                                <rect key="frame" x="20" y="79" width="280" height="21"/>
+                                <rect key="frame" x="20" y="52" width="280" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -261,6 +267,14 @@
                             </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="EAl-cr-AVt" firstAttribute="leading" secondItem="mG4-GI-kJa" secondAttribute="leading" constant="101" id="9OX-vw-YKs"/>
+                            <constraint firstAttribute="trailing" secondItem="EAl-cr-AVt" secondAttribute="trailing" constant="100" id="AIq-ov-l9M"/>
+                            <constraint firstItem="ajc-Bm-9BW" firstAttribute="top" secondItem="mG4-GI-kJa" secondAttribute="top" id="Tpc-AF-z5E"/>
+                            <constraint firstItem="ajc-Bm-9BW" firstAttribute="leading" secondItem="mG4-GI-kJa" secondAttribute="leading" id="aDt-Z2-7GK"/>
+                            <constraint firstAttribute="trailing" secondItem="ajc-Bm-9BW" secondAttribute="trailing" id="snk-W3-kbU"/>
+                            <constraint firstItem="GdK-P0-4Em" firstAttribute="top" secondItem="EAl-cr-AVt" secondAttribute="bottom" constant="20" id="vAC-I1-65n"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Z3n-qS-ajH" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -304,9 +318,12 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" barStyle="black" translatesAutoresizingMaskIntoConstraints="NO" id="odf-6S-QJf">
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="black" translatesAutoresizingMaskIntoConstraints="NO" id="odf-6S-QJf">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="KNO-fb-DLy"/>
+                                </constraints>
                                 <items>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="qIq-U4-hsh"/>
                                     <barButtonItem systemItem="stop" id="8sn-SS-pBc">
@@ -319,6 +336,11 @@
                             </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="odf-6S-QJf" firstAttribute="top" secondItem="gJA-xl-C7F" secondAttribute="top" id="JbM-60-8dR"/>
+                            <constraint firstAttribute="trailing" secondItem="odf-6S-QJf" secondAttribute="trailing" id="PTu-Rc-TUo"/>
+                            <constraint firstItem="odf-6S-QJf" firstAttribute="leading" secondItem="gJA-xl-C7F" secondAttribute="leading" id="bEB-x7-9v9"/>
+                        </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <connections>
@@ -389,9 +411,12 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" barStyle="black" translatesAutoresizingMaskIntoConstraints="NO" id="XLT-F9-0Qw">
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="black" translatesAutoresizingMaskIntoConstraints="NO" id="XLT-F9-0Qw">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="7RL-vl-iqQ"/>
+                                </constraints>
                                 <items>
                                     <barButtonItem systemItem="refresh" id="kmK-va-5ng">
                                         <connections>
@@ -413,6 +438,11 @@
                             </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="XLT-F9-0Qw" firstAttribute="leading" secondItem="CjO-QL-eWn" secondAttribute="leading" id="AVd-fN-F3L"/>
+                            <constraint firstItem="XLT-F9-0Qw" firstAttribute="top" secondItem="CjO-QL-eWn" secondAttribute="top" id="aGz-eJ-Bf3"/>
+                            <constraint firstAttribute="trailing" secondItem="XLT-F9-0Qw" secondAttribute="trailing" id="mol-G0-C8S"/>
+                        </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <connections>
@@ -643,9 +673,12 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" barStyle="black" translatesAutoresizingMaskIntoConstraints="NO" id="aPR-vf-a9q">
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="black" translatesAutoresizingMaskIntoConstraints="NO" id="aPR-vf-a9q">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="k3d-y5-rKU"/>
+                                </constraints>
                                 <items>
                                     <barButtonItem width="45" systemItem="fixedSpace" id="6ha-zt-Fvf"/>
                                     <barButtonItem title="&lt; Back" id="6VE-Ht-BeX">
@@ -663,6 +696,11 @@
                             </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="aPR-vf-a9q" firstAttribute="leading" secondItem="5Mu-gr-xr9" secondAttribute="leading" id="AHq-w2-txA"/>
+                            <constraint firstItem="aPR-vf-a9q" firstAttribute="top" secondItem="5Mu-gr-xr9" secondAttribute="top" id="uAz-gN-lT6"/>
+                            <constraint firstAttribute="trailing" secondItem="aPR-vf-a9q" secondAttribute="trailing" id="zf4-wl-LiJ"/>
+                        </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <connections>
@@ -685,9 +723,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" barStyle="black" translatesAutoresizingMaskIntoConstraints="NO" id="PHv-tB-GW3">
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="black" translatesAutoresizingMaskIntoConstraints="NO" id="PHv-tB-GW3">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="drc-7G-U5E"/>
+                                </constraints>
                                 <items>
                                     <barButtonItem width="34" style="plain" systemItem="fixedSpace" id="kXT-AG-NOw"/>
                                     <barButtonItem enabled="NO" title="New Car Model" style="plain" id="Y4K-ZM-N6r">
@@ -747,6 +788,11 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="PHv-tB-GW3" firstAttribute="leading" secondItem="i11-eA-cIw" secondAttribute="leading" id="a8m-nB-zTg"/>
+                            <constraint firstItem="PHv-tB-GW3" firstAttribute="top" secondItem="i11-eA-cIw" secondAttribute="top" id="whm-ZQ-i8x"/>
+                            <constraint firstAttribute="trailing" secondItem="PHv-tB-GW3" secondAttribute="trailing" id="ylS-Fv-pvy"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="barBottom" destination="9fk-yr-PFT" id="55g-fb-MA7"/>
