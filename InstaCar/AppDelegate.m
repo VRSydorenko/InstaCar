@@ -126,11 +126,7 @@
     NSString *settingsBundle = [[NSBundle mainBundle] pathForResource:@"Settings" ofType:@"bundle"];
     if(!settingsBundle)
     {
-        // TODO: rename bundle before release
-        settingsBundle = [[NSBundle mainBundle] pathForResource:@"Settings_disabled" ofType:@"bundle"];
-        if (!settingsBundle){
-            return;
-        }
+        return;
     }
     
     NSDictionary *settings = [NSDictionary dictionaryWithContentsOfFile:[settingsBundle stringByAppendingPathComponent:@"Root.plist"]];

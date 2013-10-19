@@ -10,6 +10,11 @@
 
 @implementation UserSettings
 
+/* to be changed before release:
+ * isFullVersion method return value
+ * Setting bundle name
+ */
+
 +(BOOL)isFullVersion{
     return NO; // TODO: change before release
 }
@@ -59,6 +64,7 @@
 }
 
 +(BOOL)getSaveWhenSharing{
+    // TODO: rename Setting bundle
     NSObject *configuredValue = [[NSUserDefaults standardUserDefaults] objectForKey:PREF_SAVE_WHEN_SHARING];
     if (nil == configuredValue){
         return YES;
