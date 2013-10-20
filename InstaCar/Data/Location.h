@@ -20,4 +20,6 @@
 
 -(id)initWIthVenue:(FSVenue*)venue;
 
+-(NSString*)getLocationString;
+
 @end

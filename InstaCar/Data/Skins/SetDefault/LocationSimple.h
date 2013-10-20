@@ -12,5 +12,6 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *textPlace;
 @property (weak, nonatomic) IBOutlet UILabel *textLocation;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *constraintLocationHeight;
 
 @end

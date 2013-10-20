@@ -122,7 +122,7 @@
     self.layer.contentsScale = scaleFactorHeight;
     CGRect currentFrame = self.frame;
     if (movingViewTopMarginConstraint.constant > 0){
-        movingViewTopMarginConstraint.constant = 612.0 - (int)(movingViewHeight*scaleFactorHeight) + 1;
+        movingViewTopMarginConstraint.constant = 612.0 - movingViewHeight*scaleFactorHeight;
     }
     
     self.frame = CGRectMake(self.frame.origin.x, self.frame.origin.y, 612.0, 612.0);

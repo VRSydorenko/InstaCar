@@ -86,10 +86,7 @@ typedef enum {
     
     if (NO == [DataManager getHasLaunchedBefore]){
         FirstTimeInfoVC *infoVC = [[UIStoryboard storyboardWithName:@"main" bundle:nil] instantiateViewControllerWithIdentifier:@"firstTimeInfoVC"];
-        //infoVC.view.backgroundColor = [UIColor clearColor];
         infoVC.delegate = self;
-        //self.modalPresentationStyle = UIModalPresentationCurrentContext;
-        //[self presentViewController:infoVC animated:NO completion:nil];
         [self addChildViewController:infoVC];
         [self.view addSubview:infoVC.view];
     } else {

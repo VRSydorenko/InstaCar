@@ -58,9 +58,8 @@
 -(void)fieldLocationDidUpdate{
     self.textPlace.text = [fieldLocation.name uppercaseString];
     
-    NSString *first = [fieldLocation.city uppercaseString];
-    NSString *second = [fieldLocation.countryCode uppercaseString];
-    self.textLocation.text = [NSString stringWithFormat:@"%@, %@", first, second];
+    self.textLocation.text = [fieldLocation getLocationString];
+    self.constraintLocationHeight.constant = self.textLocation.text.length > 0 ? 20.0 : 0.0;
 }
 
 @end

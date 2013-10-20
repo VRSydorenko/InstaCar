@@ -208,16 +208,16 @@
                             <rect key="frame" x="5" y="0.0" width="310" height="40"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="40" id="MOg-yS-R1F"/>
-                            </constraints>
                             <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="35"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LOCATION" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k0F-5E-UhS">
-                            <rect key="frame" x="0.0" y="40" width="320" height="20"/>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k0F-5E-UhS">
+                            <rect key="frame" x="5" y="40" width="310" height="20"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="20" id="miJ-4e-g88"/>
+                            </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
@@ -225,14 +225,17 @@
                     </subviews>
                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstAttribute="trailing" secondItem="k0F-5E-UhS" secondAttribute="trailing" id="2QI-qD-to5"/>
+                        <constraint firstItem="Wgs-tY-bON" firstAttribute="top" secondItem="EFi-98-3rq" secondAttribute="top" id="3Ib-jL-UH8"/>
+                        <constraint firstItem="k0F-5E-UhS" firstAttribute="top" secondItem="Wgs-tY-bON" secondAttribute="bottom" id="4Kf-Hm-A7i"/>
                         <constraint firstAttribute="bottom" secondItem="k0F-5E-UhS" secondAttribute="bottom" id="592-3C-By4"/>
                         <constraint firstItem="Wgs-tY-bON" firstAttribute="top" secondItem="EFi-98-3rq" secondAttribute="top" id="65S-HS-B56"/>
                         <constraint firstItem="k0F-5E-UhS" firstAttribute="top" secondItem="Wgs-tY-bON" secondAttribute="bottom" id="9iN-EN-ZDb"/>
                         <constraint firstItem="Wgs-tY-bON" firstAttribute="leading" secondItem="EFi-98-3rq" secondAttribute="leading" constant="5" id="U7A-Ay-v6E"/>
                         <constraint firstAttribute="height" constant="60" id="WCz-dC-MiQ"/>
                         <constraint firstAttribute="trailing" secondItem="Wgs-tY-bON" secondAttribute="trailing" constant="5" id="eTU-tj-WgV"/>
-                        <constraint firstItem="k0F-5E-UhS" firstAttribute="leading" secondItem="EFi-98-3rq" secondAttribute="leading" id="z0B-lO-gX4"/>
+                        <constraint firstAttribute="bottom" secondItem="k0F-5E-UhS" secondAttribute="bottom" id="lAc-ww-EAr"/>
+                        <constraint firstAttribute="trailing" secondItem="k0F-5E-UhS" secondAttribute="trailing" constant="5" id="tzj-gK-Cxg"/>
+                        <constraint firstItem="k0F-5E-UhS" firstAttribute="leading" secondItem="EFi-98-3rq" secondAttribute="leading" constant="5" id="z0B-lO-gX4"/>
                     </constraints>
                 </view>
             </subviews>
@@ -244,9 +247,9 @@
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
+                <outlet property="constraintLocationHeight" destination="miJ-4e-g88" id="Jh3-B6-ZSh"/>
                 <outlet property="movingView" destination="EFi-98-3rq" id="P9y-2R-O7i"/>
                 <outlet property="movingViewHeightConstraint" destination="WCz-dC-MiQ" id="udF-xg-SuW"/>
-                <outlet property="placeLabelHeightConstraint" destination="MOg-yS-R1F" id="fv4-PP-eu9"/>
                 <outlet property="textLocation" destination="k0F-5E-UhS" id="ke8-IM-cLf"/>
                 <outlet property="textPlace" destination="Wgs-tY-bON" id="Ias-sp-jss"/>
                 <outlet property="topMargin" destination="iV1-Of-Aun" id="NCZ-oX-cOH"/>
