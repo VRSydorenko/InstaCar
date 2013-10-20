@@ -8,6 +8,7 @@
 
 #import "DbManager.h"
 #import "sqlite3.h"
+#import "DataManager.h"
 
 typedef enum { // Do not change the numbers!
     MODELS_BUILTIN = 0,
@@ -39,7 +40,8 @@ typedef enum { // Do not change the numbers!
     NSString *docsDir = [dirPaths objectAtIndex:0];
     
     // Build the path to the database file
-    NSString* databasePath = [[NSString alloc] initWithString: [docsDir stringByAppendingPathComponent: DATABASE_NAME]];
+    NSString *dbName = [DataManager isFullVersion] ? DATABASE_NAME_PRO : DATABASE_NAME_FREE;
+    NSString* databasePath = [[NSString alloc] initWithString: [docsDir stringByAppendingPathComponent: dbName]];
     
     if ([Utils appVersionDiffers]){
         // TODO: get user defined autos
@@ -76,10 +78,11 @@ typedef enum { // Do not change the numbers!
         DLog(@"Database not found. Creating...");
     }
     
-    // Create the database if it doesn't yet exists in the file system
+    // Create the database if it doesn't exist in the file system
     if (!databaseAlreadyExists)
     {
-        NSString *databasePathFromApp = [[NSBundle mainBundle] pathForResource:DATABASE_NAME ofType:@"sqlite"];
+        NSString *dbName = [DataManager isFullVersion] ? DATABASE_NAME_PRO : DATABASE_NAME_FREE;
+        NSString *databasePathFromApp = [[NSBundle mainBundle] pathForResource:dbName ofType:@"sqlite"];
         [fileManager copyItemAtPath:databasePathFromApp toPath:databasePath error:nil];
         
         DLog(@"Database created");

@@ -10,7 +10,8 @@
 #import "Utils.h"
 #import "Auto.h"
 
-#define DATABASE_NAME @"instacardb"
+#define DATABASE_NAME_FREE @"instacardb"
+#define DATABASE_NAME_PRO @"instacarprodb"
 
 #define DBTYPE_TEXT @"text"
 #define DBTYPE_REAL @"real"
