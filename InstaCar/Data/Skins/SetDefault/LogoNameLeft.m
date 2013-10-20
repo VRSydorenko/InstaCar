@@ -35,7 +35,7 @@
 -(void)initialise{
     [self setupGradient:0.4 inDirection:GRADIENT_RIGHT];
     
-    heightScaleFactor = self.movingView.bounds.size.height / self.bounds.size.height;
+    heightScaleFactor = self.heightConstraint.constant / self.bounds.size.height;
     [self.imgEmblem.layer setMinificationFilter:kCAFilterTrilinear];
     
     [self setMovingViewConstraint:self.topMargin andViewHeight:self.movingView.bounds.size.height];

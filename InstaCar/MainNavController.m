@@ -184,7 +184,7 @@
     // 0 is OK
     // 1 is Yes about downloading Instagram
     if (buttonIndex == 1){
-        NSString* url = @"itms-apps://itunes.apple.com/app/id389801252";
+        NSString* url = @"itms-apps://itunes.apple.com/app/id389801252"; // Instargam app
         [[UIApplication sharedApplication] openURL: [NSURL URLWithString: url]];
     }
 }

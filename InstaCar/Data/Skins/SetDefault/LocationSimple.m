@@ -15,7 +15,6 @@
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *topMargin;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *movingViewHeightConstraint;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *placeLabelHeightConstraint;
 @property (weak, nonatomic) IBOutlet UIView *movingView;
 
 @end
@@ -24,7 +23,7 @@
 
 -(void)layoutSubviews{
     self.movingViewHeightConstraint.constant = self.bounds.size.height * heightScaleFactor;
-    self.placeLabelHeightConstraint.constant = self.movingView.bounds.size.height * placeLabelHeightScaleFactor;
+    self.constraintLocationHeight.constant = self.movingView.bounds.size.height * placeLabelHeightScaleFactor;
     
     float newPlaceFontSize = self.bounds.size.width > 320.0 ? 70.0 : 35.0;
     self.textPlace.font = [UIFont fontWithName:self.textPlace.font.fontName size:newPlaceFontSize];
@@ -38,7 +37,7 @@
 -(void)initialise{
     [self setupGradient:0.3 inDirection:GRADIENT_UP];
     heightScaleFactor = self.movingView.bounds.size.height / self.bounds.size.height;
-    placeLabelHeightScaleFactor = self.textPlace.bounds.size.height / self.movingView.bounds.size.height;
+    placeLabelHeightScaleFactor = self.constraintLocationHeight.constant / self.movingView.bounds.size.height;
     [self setMovingViewConstraint:self.topMargin andViewHeight:self.movingView.bounds.size.height];
     self.movingView.backgroundColor = [UIColor clearColor];
     
