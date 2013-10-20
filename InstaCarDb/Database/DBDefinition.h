@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-#define DATABASE_NAME @"instacardb.sqlite"
+#define DATABASE_NAME @"db.sqlite"
 
 #define DBTYPE_TEXT @"text"
 #define DBTYPE_REAL @"real"

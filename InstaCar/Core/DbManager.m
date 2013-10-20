@@ -81,7 +81,7 @@ typedef enum { // Do not change the numbers!
     // Create the database if it doesn't exist in the file system
     if (!databaseAlreadyExists)
     {
-        NSString *databasePathFromApp = [[NSBundle mainBundle] pathForResource:@"instacardb" ofType:@"sqlite"];
+        NSString *databasePathFromApp = [[NSBundle mainBundle] pathForResource:@"db" ofType:@"sqlite"];
         [fileManager copyItemAtPath:databasePathFromApp toPath:databasePath error:nil];
         
         DLog(@"Database created");

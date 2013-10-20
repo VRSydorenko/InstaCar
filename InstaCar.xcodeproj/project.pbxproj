@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		7F002D21180B49C60076879F /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 7F002D20180B49C60076879F /* Settings.bundle */; };
 		7F00E86518142EE7004F435A /* DbManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F00E86418142EE7004F435A /* DbManager.m */; };
-		7F00E86718142F43004F435A /* instacardb.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 7F00E86618142F43004F435A /* instacardb.sqlite */; };
+		7F00E86718142F43004F435A /* db.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 7F00E86618142F43004F435A /* db.sqlite */; };
 		7F1767AC17C76F0F00724BD6 /* CaptureSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F1767AB17C76F0F00724BD6 /* CaptureSessionManager.m */; };
 		7F27671C1791E80000A1C1A0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7F27671A1791E80000A1C1A0 /* InfoPlist.strings */; };
 		7F27671E1791E80000A1C1A0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F27671D1791E80000A1C1A0 /* main.m */; };
@@ -123,7 +123,7 @@
 		7F002D20180B49C60076879F /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Settings.bundle; path = InstaCar/Settings.bundle; sourceTree = "<group>"; };
 		7F00E86318142EE7004F435A /* DbManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DbManager.h; path = InstaCar/Core/DbManager.h; sourceTree = "<group>"; };
 		7F00E86418142EE7004F435A /* DbManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DbManager.m; path = InstaCar/Core/DbManager.m; sourceTree = "<group>"; };
-		7F00E86618142F43004F435A /* instacardb.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; name = instacardb.sqlite; path = InstaCar/Data/instacardb.sqlite; sourceTree = "<group>"; };
+		7F00E86618142F43004F435A /* db.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; name = db.sqlite; path = InstaCar/Data/db.sqlite; sourceTree = "<group>"; };
 		7F1767AA17C76F0F00724BD6 /* CaptureSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CaptureSessionManager.h; sourceTree = "<group>"; };
 		7F1767AB17C76F0F00724BD6 /* CaptureSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CaptureSessionManager.m; sourceTree = "<group>"; };
 		7F27670E1791E80000A1C1A0 /* InstaCar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstaCar.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -769,7 +769,7 @@
 		7F5AC64117CBFFDD00C01658 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				7F00E86618142F43004F435A /* instacardb.sqlite */,
+				7F00E86618142F43004F435A /* db.sqlite */,
 				7F4CB67D18097908008B5CA2 /* Skins */,
 				7F5AC64B17CC06CE00C01658 /* Auto.h */,
 				7F5AC64C17CC06CE00C01658 /* Auto.m */,
@@ -885,7 +885,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7F00E86718142F43004F435A /* instacardb.sqlite in Resources */,
+				7F00E86718142F43004F435A /* db.sqlite in Resources */,
 				7F27672A1791E80000A1C1A0 /* Images.xcassets in Resources */,
 				7F2AD5CA17EDE9B40096EC8D /* SHKShareFileIcon.png in Resources */,
 				7F2AD59A17EDE9B40096EC8D /* DETweetPaperClip.png in Resources */,
