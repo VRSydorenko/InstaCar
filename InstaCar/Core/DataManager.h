@@ -32,6 +32,10 @@
 
 +(BOOL)getLogoOverlayEnabled;
 +(BOOL)getUseICloud;
++(BOOL)getSaveWhenSharing;
+
++(BOOL)getHasLaunchedBefore;
++(void)setHasLaunchedBefore;
 
 +(Auto*)getSelectedAuto1;
 +(void)setSelectedAuto1:(Auto*)selectedAuto;

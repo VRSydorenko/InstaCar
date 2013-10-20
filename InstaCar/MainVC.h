@@ -14,14 +14,16 @@
 #import "SMPageControl.h"
 #import "UIBluredView.h"
 #import "SHKShareItemDelegate.h"
+#import "FirstTimeInfoVC.h"
 
-@interface MainVC : UIViewController <SelectedDataChangeActionProtocol,
-                                      DDMenuControllerDelegate,
-                                      UIScrollViewDelegate,
+@interface MainVC : UIViewController <UIScrollViewDelegate,
                                       UIImagePickerControllerDelegate,
                                       UINavigationControllerDelegate,
+                                      ADBannerViewDelegate,
+                                      SelectedDataChangeActionProtocol,
+                                      DDMenuControllerDelegate,
                                       SHKShareItemDelegate,
-                                      ADBannerViewDelegate>
+                                      FirstTimeVCDelegate>
 
 @property CaptureSessionManager *captureManager;
 
@@ -34,7 +36,6 @@
 
 // Constraints
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *constraintMidBtnLeftWidth;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *constraintMidBtnWidth;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *constraintMidBtnRigthWidth;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *constraintButtonsCoverViewHeight;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *constraintViewAdContainerHeight;

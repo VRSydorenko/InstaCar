@@ -10,6 +10,7 @@
 #import <MessageUI/MessageUI.h>
 #import "DDMenuController.h"
 #import "AppDelegate.h"
+#import "ProInfoVC.h"
 
 typedef enum {
     APP_MENU = 0,
@@ -47,6 +48,7 @@ typedef enum {
 @interface MainNavController : UINavigationController <SideActionProtocol,
                                                        DDMenuControllerDelegate,
                                                        LocationUpdateReceiverDelegate,
+                                                       ProInfoViewControllerDelegate,
                                                        UIAlertViewDelegate,
                                                        MFMailComposeViewControllerDelegate>
 

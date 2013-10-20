@@ -27,6 +27,7 @@
 
 #import "SHKPhotoAlbum.h"
 #import "SharersCommonHeaders.h"
+#import "ALAssetsLibrary+CustomPhotoAlbum.h"
 
 @implementation SHKPhotoAlbum
 
@@ -77,18 +78,18 @@
 	return YES;
 }
 
-- (void) writeImageToAlbum
+- (void)writeImageToAlbum
 {
-	UIImageWriteToSavedPhotosAlbum(self.item.image, self, @selector(image:didFinishSavingWithError:contextInfo:), nil);
-}
-
-- (void)image:(UIImage *)image didFinishSavingWithError:(NSError *)error contextInfo:(void *)ctxInfo
-{
-    if (error) {
-        [self sendShowSimpleErrorAlert];
-    } else {
+    ALAssetsLibraryWriteImageCompletionBlock completionBlock = ^void(NSURL *assetURL, NSError *error){
         [self sendDidFinish];
-    }
+    };
+    ALAssetsLibraryAccessFailureBlock failureBlock = ^void(NSError *error){
+        [self sendShowSimpleErrorAlert];
+    };
+    
+    ALAssetsLibrary *library = [[ALAssetsLibrary alloc] init];
+    [library saveImage:self.item.image toAlbum:@"InstaCar" completion:completionBlock failure:failureBlock
+     ];
 }
 
 @end

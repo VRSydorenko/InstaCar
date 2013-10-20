@@ -26,7 +26,7 @@
 -(void)loadSkins{
     NSArray *bundle = [[NSBundle mainBundle] loadNibNamed:@"SetDefault" owner:self options:nil];
     NSMutableArray *skinsArray = [[NSMutableArray alloc] initWithCapacity:bundle.count];
-    NSLog(@"Bundle objects: %lu",(unsigned long)bundle.count);
+    DLog(@"Bundle objects: %lu",(unsigned long)bundle.count);
     
     // init with placeholders
     for (int i = 0; i < bundle.count; i++){

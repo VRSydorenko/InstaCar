@@ -15,6 +15,9 @@
 @interface CellAuto : UITableViewCell
 
 @property (nonatomic, weak) IBOutlet UILabel *autoTitleLabel;
+@property (nonatomic, weak) IBOutlet UILabel *autoYearsLabel;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *constraintDetailTextHeight;
+
 @property (nonatomic, weak) IBOutlet UIImageView *autoLogo;
 @property (nonatomic, weak) IBOutlet UIButton *autoModelsButton;
 @property id<SublevelPickerDelegate> sublevelPickerDelegate;

@@ -174,8 +174,8 @@ BOOL SHKinit;
 }
 
 - (void)presentVC:(UIViewController *)vc {
-    
-    BOOL isSocialOrTwitterComposeVc = [vc respondsToSelector:@selector(setInitialText:)];
+    SEL socialComposeVCCheckSelector = sel_registerName("setInitialText:");
+    BOOL isSocialOrTwitterComposeVc = [vc respondsToSelector:socialComposeVCCheckSelector];
 
     if ([vc respondsToSelector:@selector(modalPresentationStyle)] && !isSocialOrTwitterComposeVc)
         vc.modalPresentationStyle = [SHK modalPresentationStyleForController:vc];

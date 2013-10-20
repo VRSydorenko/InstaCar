@@ -12,6 +12,7 @@
 #import "AppMenuTableVC.h"
 #import "LocationsVC.h"
 #import "DataManager.h"
+#import "ProInfoVC.h"
 
 @interface MainNavController (){
     SideViewControllerBase *sideViewController;
@@ -27,16 +28,8 @@
     
     self.dataSelectionChangeDelegate = nil;
     
-    UIBarButtonItem *button = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"nav_menu_icon.png"] style:UIBarButtonItemStyleBordered target:self action:@selector(showAppMenuButtonPressed)];
-    button.TintColor = [UIColor whiteColor];
-    UIViewController *topController = [self.viewControllers objectAtIndex:0];
-    topController.navigationItem.leftBarButtonItem = button;
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    [self initLeftBarButton];
+    [self initRightBarButton];
 }
 
 -(void) setSideViewController:(SideView)sideView andShowOnTheLeftSide:(BOOL)isLeft{
@@ -82,6 +75,13 @@
 
 -(void)showAppMenuButtonPressed{
     [self setSideViewController:APP_MENU andShowOnTheLeftSide:YES];
+}
+
+-(void)showAboutProVersionButtonPressed{
+    ProInfoVC *infoVC = [[UIStoryboard storyboardWithName:@"main" bundle:nil] instantiateViewControllerWithIdentifier:@"proInfoVC"];
+    
+    infoVC.delegate = self;
+    [self presentViewController:infoVC animated:YES completion:nil];
 }
 
 -(void)showLeft{
@@ -137,17 +137,11 @@
             break;
         }
         case ACT_OPEN_FB_PAGE:{
-            NSURL *facebookPageUrl = [NSURL URLWithString:@"fb://profile/496058110489790"];
-            if (![[UIApplication sharedApplication] canOpenURL:facebookPageUrl]) {
-                facebookPageUrl = [NSURL URLWithString:@"http://www.facebook.com/InstacarApp"];
-            }
-            [[UIApplication sharedApplication] openURL:facebookPageUrl];
+            [Utils openAppPageOnFacebook];
             break;
         }
         case ACT_OPEN_APPSTORE_TO_RATE:{
-            // TODO: change app url
-            NSString* url = @"itms-apps://itunes.apple.com/app/id595828753";
-            [[UIApplication sharedApplication] openURL: [NSURL URLWithString: url]];
+            [Utils openAppInAppStore:[DataManager isFullVersion]];
             break;
         }
         case ACT_PREPARE_FEEDBACK_MAIL:{
@@ -206,6 +200,30 @@
 - (void)menuControllerWillShowRootViewController{
     if (self.menuControllerDelegate && [self.menuControllerDelegate respondsToSelector:@selector(menuControllerWillShowRootViewController)]){
         [self.menuControllerDelegate menuControllerWillShowRootViewController];
+    }
+}
+
+#pragma mark Info view delegate
+
+-(void)proInfoViewFinished:(ProInfoVC *)controller{
+    [controller dismissViewControllerAnimated:YES completion:nil];
+}
+
+#pragma mark private methods
+
+-(void)initLeftBarButton{
+    UIBarButtonItem *button = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"nav_menu_icon.png"] style:UIBarButtonItemStyleBordered target:self action:@selector(showAppMenuButtonPressed)];
+    button.TintColor = [UIColor whiteColor];
+    UIViewController *topController = [self.viewControllers objectAtIndex:0];
+    topController.navigationItem.leftBarButtonItem = button;
+}
+
+-(void)initRightBarButton{
+    if (NO == [DataManager isFullVersion]){
+        UIBarButtonItem *button = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:/*@"nav_about_pro_icon.png"*/@"nav_menu_icon.png"] style:UIBarButtonItemStyleBordered target:self action:@selector(showAboutProVersionButtonPressed)];
+        button.TintColor = [UIColor whiteColor];
+        UIViewController *topController = [self.viewControllers objectAtIndex:0];
+        topController.navigationItem.rightBarButtonItem = button;
     }
 }
 

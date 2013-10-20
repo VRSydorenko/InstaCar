@@ -352,7 +352,7 @@
     } 
 
     if (navController == nil) {
-        NSLog(@"root controller is not a navigation controller.");
+        DLog(@"root controller is not a navigation controller.");
         return;
     }
     

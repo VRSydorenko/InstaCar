@@ -10,6 +10,11 @@
 
 @implementation UserSettings
 
+/* to be changed before release:
+ * isFullVersion method return value
+ * Setting bundle name
+ */
+
 +(BOOL)isFullVersion{
     return NO; // TODO: change before release
 }
@@ -29,9 +34,16 @@
     [[NSUserDefaults standardUserDefaults] setValue:name forKey:LAST_USED_SKINSET];
 }
 
++(BOOL)getHasLaunchedBefore{
+    return [[NSUserDefaults standardUserDefaults] boolForKey:HAS_LAUNCHED_BEFORE];
+}
++(void)setHasLaunchedBefore{
+    [[NSUserDefaults standardUserDefaults] setBool:YES forKey:HAS_LAUNCHED_BEFORE];
+}
+
 +(BOOL)getLogoOverlayEnabled{
     if (NO == [self isFullVersion]){
-        return NO;
+        return YES;
     }
     
     NSObject *configuredValue = [[NSUserDefaults standardUserDefaults] objectForKey:PREF_LOGO_OVERLAY];
@@ -43,16 +55,22 @@
 }
 
 +(BOOL)getUseICloud{
-    if (NO == [self isFullVersion]){
-        return NO;
-    }
-    
     NSObject *configuredValue = [[NSUserDefaults standardUserDefaults] objectForKey:PREF_USE_ICLOUD];
     if (nil == configuredValue){
         return YES;
     }
     
     return [[NSUserDefaults standardUserDefaults] boolForKey:PREF_USE_ICLOUD];
+}
+
++(BOOL)getSaveWhenSharing{
+    // TODO: rename Setting bundle
+    NSObject *configuredValue = [[NSUserDefaults standardUserDefaults] objectForKey:PREF_SAVE_WHEN_SHARING];
+    if (nil == configuredValue){
+        return YES;
+    }
+    
+    return [[NSUserDefaults standardUserDefaults] boolForKey:PREF_SAVE_WHEN_SHARING];
 }
 
 @end

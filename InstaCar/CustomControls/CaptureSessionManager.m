@@ -30,13 +30,13 @@
     AVCaptureDevice *backCamera;
     
     for (AVCaptureDevice *device in devices) {
-        NSLog(@"Device name: %@", device.localizedName);
+        DLog(@"Device name: %@", device.localizedName);
         if ([device hasMediaType:AVMediaTypeVideo]) {
             if (device.position == AVCaptureDevicePositionBack) {
-                NSLog(@"Device position: back");
+                DLog(@"Device position: back");
                 backCamera = device;
             } else {
-                NSLog(@"Device position: front");
+                DLog(@"Device position: front");
                 frontCamera = device;
             }
         }
@@ -53,7 +53,7 @@
                 [self.captureSession addInput:frontFacingCameraDeviceInput];
                 activeInputFront = YES;
             } else {
-                NSLog(@"Couldn't add front facing video input");
+                ALog(@"Couldn't add front facing video input");
             }
         }
     } else {
@@ -65,7 +65,7 @@
                 [self.captureSession addInput:backFacingCameraDeviceInput];
                 activeInputFront = NO;
             } else {
-                NSLog(@"Couldn't add back facing video input");
+                ALog(@"Couldn't add back facing video input");
             }
         }
     }
@@ -111,14 +111,14 @@
         }
 	}
     
-	NSLog(@"about to request a capture from: %@", [self stillImageOutput]);
+	DLog(@"about to request a capture from: %@", [self stillImageOutput]);
 	[self.stillImageOutput captureStillImageAsynchronouslyFromConnection:videoConnection
         completionHandler:^(CMSampleBufferRef imageSampleBuffer, NSError *error) {
             /*CFDictionaryRef exifAttachments = CMGetAttachment(imageSampleBuffer, kCGImagePropertyExifDictionary, NULL);
             if (exifAttachments) {
-                NSLog(@"attachements: %@", exifAttachments);
+                DLog(@"attachements: %@", exifAttachments);
             } else {
-                NSLog(@"no attachments");
+                DLog(@"no attachments");
             }*/
                                
             CVPixelBufferRef pixelBuffer = CMSampleBufferGetImageBuffer(imageSampleBuffer);

@@ -69,7 +69,10 @@ typedef enum {
     
     [self initGestures];
     
-    [self initIAd];
+    // iAd will be initialised when the view appeared or when first launch info screen has gone
+    
+    // banner view container is initially hidden and will remain so if app is running as full version
+    self.constraintViewAdContainerHeight.constant = 0.0;
     
     self.scrollSkins.delegate = self;
     [self.view bringSubviewToFront:self.scrollSkins];
@@ -80,6 +83,18 @@ typedef enum {
     self.captureManager.imageTopCropMargin = convertedPreviewPoint.y;
     
     self.constraintButtonsCoverViewHeight.constant = [self calcPageControlHeight];
+    
+    if (NO == [DataManager getHasLaunchedBefore]){
+        FirstTimeInfoVC *infoVC = [[UIStoryboard storyboardWithName:@"main" bundle:nil] instantiateViewControllerWithIdentifier:@"firstTimeInfoVC"];
+        //infoVC.view.backgroundColor = [UIColor clearColor];
+        infoVC.delegate = self;
+        //self.modalPresentationStyle = UIModalPresentationCurrentContext;
+        //[self presentViewController:infoVC animated:NO completion:nil];
+        [self addChildViewController:infoVC];
+        [self.view addSubview:infoVC.view];
+    } else {
+        [self initIAd];
+    }
 }
 
 #pragma mark Initialization
@@ -162,10 +177,7 @@ typedef enum {
 }
 
 -(void)initIAd{
-    // banner view container is initially hidden and will remain so if app is running as full version
-    self.constraintViewAdContainerHeight.constant = 0.0;
-    
-    if (NO == [DataManager isFullVersion]){
+    if (NO == [DataManager isFullVersion] && !bannerView){
         bannerView = [[ADBannerView alloc] initWithAdType:ADAdTypeBanner];
         bannerView.delegate = self;
         bannerView.frame = CGRectMake(0, 0, self.iAdView.bounds.size.width, self.iAdView.bounds.size.height);
@@ -231,6 +243,15 @@ typedef enum {
     }
 }
 
+#pragma mark FirstTimeInfoVC delegate
+
+-(void)firstTimeVCNeedsToDismiss:(FirstTimeInfoVC*)viewController{
+    [viewController.view removeFromSuperview];
+    [viewController removeFromParentViewController];
+    [self initIAd];
+    [DataManager setHasLaunchedBefore];
+}
+
 #pragma mark Gestures
 
 -(void)swipeUp{
@@ -289,10 +310,7 @@ typedef enum {
             options:UIViewAnimationOptionAllowAnimatedContent
             animations:^{
                 self.constraintButtonsCoverViewHeight.constant = [self calcPageControlHeight];
-                
-                //self.constraintMidBtnLeftWidth.constant -= 32.0;
-                //self.constraintMidBtnRigthWidth.constant -= 32.0;
-                
+               
                 self.btnMiddleLeft.titleLabel.alpha = 1.0;
                 self.btnMiddle.titleLabel.alpha = 1.0;
                 self.btnMiddleRight.titleLabel.alpha = 1.0;
@@ -347,10 +365,11 @@ typedef enum {
     imageEditor = [[ImageEditor alloc] initWithNibName:@"ImageEditor" bundle:nil];
     imageEditor.checkBounds = YES;
     
+    __weak MainVC *pSelf = self;
     imageEditor.doneCallback = ^(UIImage *editedImage, BOOL canceled){
         if(!canceled) {
-            self.captureManager.stillImage = editedImage;
-            [self imageCaptured];
+            pSelf.captureManager.stillImage = editedImage;
+            [pSelf imageCaptured];
         }
         [picker dismissViewControllerAnimated:YES completion:nil];
     };
@@ -419,15 +438,17 @@ typedef enum {
         [picker setNavigationBarHidden:YES animated:NO];
         
     } failureBlock:^(NSError *error) {
-        NSLog(@"Failed to get asset from library");
+        DLog(@"Failed to get asset from library");
     }];
 }
 
 #pragma mark SHKShareItemDelegate
 
 - (BOOL)aboutToShareItem:(SHKItem *)item withSharer:(SHKSharer *)sharer{
-    [assetsLibrary saveImage:item.image toAlbum:@"InstaCar" completion:nil failure:nil];
-    return [sharer shouldSavePhotoToCustomAppAlbum]; // if NO then it is 'Save to Album' sharer and we have already saved this photo to the album a moment ago.
+    if ([sharer shouldSavePhotoToCustomAppAlbum] && YES == [DataManager getSaveWhenSharing]){
+        [assetsLibrary saveImage:item.image toAlbum:@"InstaCar" completion:nil failure:nil];
+    }
+    return YES;
 }
 
 #pragma mark -

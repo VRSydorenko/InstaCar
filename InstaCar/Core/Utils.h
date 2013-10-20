@@ -17,5 +17,9 @@
 +(UIImage*)blurImage:(UIImage*)image strength:(CGFloat)strength;
 +(NSString*)trimWhitespaces:(NSString*)string;
 +(NSString*)getHashTagString;
++(NSString*)getAutoYearsString:(int)startYear endYear:(int)endYear;
+
++(void)openAppInAppStore:(BOOL)proVersion;
++(void)openAppPageOnFacebook;
 
 @end

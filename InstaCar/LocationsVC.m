@@ -41,11 +41,15 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return self.nearbyVenues.count;
+    return self.nearbyVenues.count + 1; // +1 for Foursquare copyright badge
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    if (indexPath.row == self.nearbyVenues.count){ // Foursquare badge cell
+        return [tableView dequeueReusableCellWithIdentifier:@"cellFoursquare" forIndexPath:indexPath];
+    }
+    
     static NSString *CellIdentifier = @"cellVenue";
     CellVenue *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     

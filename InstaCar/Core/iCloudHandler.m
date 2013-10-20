@@ -59,6 +59,9 @@
 // key: number as NSString; value: NSString to parse
 // string format: modelName:logoFilename:startYear:endYear
 -(void)saveFromCloudNewModels:(NSDictionary*)data{
+    if ([DataManager isFullVersion] == NO){
+        return;
+    }
     if ([DataManager getUseICloud] == NO){
         return;
     }
