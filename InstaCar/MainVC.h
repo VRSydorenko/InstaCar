@@ -27,6 +27,8 @@
 
 @property CaptureSessionManager *captureManager;
 
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityShareInProgress;
+
 // Buttons
 @property (weak, nonatomic) IBOutlet UIButton *btnLocation;
 @property (weak, nonatomic) IBOutlet UIButton *btnMiddleLeft;

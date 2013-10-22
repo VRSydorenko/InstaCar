@@ -15,7 +15,7 @@
 #import "DataManager.h"
 
 #define SWITCH_TIME 1.0
-#define IMAGE_SIDE_SIZE 612.0
+#define IMAGE_SIDE_SIZE 918.0
 
 typedef enum {
     COLLAPSE,
@@ -26,6 +26,7 @@ typedef enum {
     MainNavController *navCon;
     BOOL buttonsInInitialState;
     BOOL isChangingPage;
+    BOOL imageInProcessing;
     
     SkinViewBase *activeSkin;
     UISwipeGestureRecognizer *swipeUp;
@@ -60,6 +61,8 @@ typedef enum {
     buttonsInInitialState = YES;
     isChangingPage = NO;
     selectedImage = nil;
+    imageInProcessing = NO;
+    self.activityShareInProgress.hidden = YES;
     
     [self initCaptureManager];
     
@@ -252,10 +255,18 @@ typedef enum {
 #pragma mark Gestures
 
 -(void)swipeUp{
+    if (imageInProcessing){
+        return;
+    }
+    
     [activeSkin moveContentUp];
 }
 
 -(void)swipeDown{
+    if (imageInProcessing){
+        return;
+    }
+    
     [activeSkin moveContentDown];
 }
 
@@ -339,6 +350,10 @@ typedef enum {
 #pragma mark Button Actions
 
 - (IBAction)btnLocationPressed:(id)sender {
+    if (imageInProcessing){
+        return;
+    }
+    
     [navCon setSideViewController:LOCATIONS andShowOnTheLeftSide:YES];
 }
 
@@ -349,6 +364,10 @@ typedef enum {
 }
 
 - (IBAction)btnSkinsPressed:(id)sender {
+    if (imageInProcessing){
+        return;
+    }
+    
     [navCon setSideViewController:SKINS andShowOnTheLeftSide:NO];
 }
 
@@ -379,6 +398,10 @@ typedef enum {
 }
 
 -(void)doPickNewPhotoPressed{
+    if (imageInProcessing){
+        imageInProcessing = NO;
+    }
+    
     [self.captureManager addLastVideoInput];
     [self initPreviewLayer];
     self.captureManager.stillImage = nil;
@@ -386,24 +409,40 @@ typedef enum {
 }
 
 -(void)doSharePressed{
-    UIImage *imageTaken = self.imagePreview.image;
-    UIImage *imageSkin = [activeSkin getSkinImage];
-    
-    UIImage *imageToShare = [self drawImage:imageSkin inImage:imageTaken atPoint:CGPointMake(0, 0)];
-    
-    if (YES == [DataManager getLogoOverlayEnabled]){
-        UIImage *logoOverlay = [UIImage imageNamed:@"logoOverlay.png"];
-        CGPoint logoOverlayPoint = CGPointMake(imageToShare.size.width - logoOverlay.size.width - 15.0, [activeSkin isSkinContentAtTheTop] ? imageToShare.size.height - logoOverlay.size.height - 15.0 : 15.0);
-        imageToShare = [self drawImage:logoOverlay inImage:imageToShare atPoint:logoOverlayPoint];
+    if (imageInProcessing){
+        return;
     }
     
-    NSString *hashTagString = [Utils getHashTagString];
-    SHKItem *item = [SHKItem image:imageToShare title:hashTagString];
-    SHKActionSheet *actionSheet = [SHKActionSheet actionSheetForItem:item];
-    actionSheet.shareDelegate = self;
-    [SHK setRootViewController:self];
+    [self showActivityIndicator];
     
-    [actionSheet showInView:self.view];
+    dispatch_queue_t refreshQueue = dispatch_queue_create("foursquare icons queue", NULL);
+    dispatch_async(refreshQueue, ^{
+        UIImage *imageTaken = self.imagePreview.image;
+        UIImage *imageSkin = [activeSkin getSkinImage];
+        
+        UIImage *imageToShare = [self drawImage:imageSkin inImage:imageTaken atPoint:CGPointMake(0, 0)];
+        
+        if (YES == [DataManager getLogoOverlayEnabled]){
+            UIImage *logoOverlay = [UIImage imageNamed:@"logoOverlay.png"];
+            CGPoint logoOverlayPoint = CGPointMake(imageToShare.size.width - logoOverlay.size.width - 15.0, [activeSkin isSkinContentAtTheTop] ? imageToShare.size.height - logoOverlay.size.height - 15.0 : 15.0);
+            imageToShare = [self drawImage:logoOverlay inImage:imageToShare atPoint:logoOverlayPoint];
+        }
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            // if we still wait for the picture to be ready
+            if (imageInProcessing){ // (user might have pressed PickNewPhoto for example)
+                NSString *hashTagString = [Utils getHashTagString];
+                SHKItem *item = [SHKItem image:imageToShare title:hashTagString];
+                SHKActionSheet *actionSheet = [SHKActionSheet actionSheetForItem:item];
+                actionSheet.shareDelegate = self;
+                [SHK setRootViewController:self];
+            
+                [actionSheet showInView:self.view];
+            
+                [self hideActivityIndicator];
+            }
+        });
+    });
 }
 
 #pragma mark DDMenuControllerDelegate
@@ -421,7 +460,7 @@ typedef enum {
 
 -(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
-    UIImage *image =  [Utils image:[info objectForKey:UIImagePickerControllerOriginalImage] byScalingProportionallyToSize:CGSizeMake(612.0, 612.0)];
+    UIImage *image =  [Utils image:[info objectForKey:UIImagePickerControllerOriginalImage] byScalingProportionallyToSize:CGSizeMake(IMAGE_SIDE_SIZE, IMAGE_SIDE_SIZE)];
     NSURL *assetURL = [info objectForKey:UIImagePickerControllerReferenceURL];
     
     [assetsLibrary assetForURL:assetURL resultBlock:^(ALAsset *asset) {
@@ -449,6 +488,22 @@ typedef enum {
 }
 
 #pragma mark -
+
+-(void)showActivityIndicator{
+    [self.btnMiddleRight setTitle:@"" forState:UIControlStateNormal];
+    self.scrollSkins.userInteractionEnabled = NO;
+    self.activityShareInProgress.hidden = NO;
+    imageInProcessing = YES;
+    [self.activityShareInProgress startAnimating];
+}
+
+-(void)hideActivityIndicator{
+    [self.btnMiddleRight setTitle:@"Share" forState:UIControlStateNormal];
+    self.scrollSkins.userInteractionEnabled = YES;
+    [self.activityShareInProgress stopAnimating];
+    self.activityShareInProgress.hidden = YES;
+    imageInProcessing = NO;
+}
 
 -(CGFloat)calcPageControlHeight{
     return self.view.bounds.size.height - self.constraintViewAdContainerHeight.constant - self.btnLocation.bounds.size.height - 1.0 - self.pageControlContainer.frame.origin.y;

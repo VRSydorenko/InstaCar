@@ -139,6 +139,10 @@
                                     <action selector="btnMiddleRightPressed" destination="vLK-Ar-ArR" eventType="touchUpInside" id="xtK-ck-eFP"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="H6A-is-85W">
+                                <rect key="frame" x="198" y="349" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
                             <view opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kdr-lZ-7HS">
                                 <rect key="frame" x="0.0" y="320" width="320" height="10"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -163,6 +167,7 @@
                             <constraint firstAttribute="trailing" secondItem="AIv-dK-ka2" secondAttribute="trailing" id="E1p-C6-FPh"/>
                             <constraint firstItem="sCG-cl-3fd" firstAttribute="top" secondItem="4oZ-cn-B3n" secondAttribute="bottom" id="E6j-bu-UaL"/>
                             <constraint firstItem="PZn-uN-nYb" firstAttribute="leading" secondItem="K25-XF-Jiu" secondAttribute="leading" id="EWb-W2-4N9"/>
+                            <constraint firstItem="sCG-cl-3fd" firstAttribute="top" secondItem="H6A-is-85W" secondAttribute="bottom" constant="17" id="Kcw-bB-4r4"/>
                             <constraint firstAttribute="trailing" secondItem="sCG-cl-3fd" secondAttribute="trailing" id="Kug-1y-glA"/>
                             <constraint firstItem="kdr-lZ-7HS" firstAttribute="leading" secondItem="K25-XF-Jiu" secondAttribute="leading" id="LWs-gn-l8x"/>
                             <constraint firstItem="4Xz-0E-p37" firstAttribute="top" secondItem="VxQ-Yl-MmO" secondAttribute="bottom" id="SlW-mA-GTK"/>
@@ -170,6 +175,7 @@
                             <constraint firstItem="sCG-cl-3fd" firstAttribute="top" secondItem="AkF-py-Nas" secondAttribute="bottom" id="WaO-jB-No5"/>
                             <constraint firstAttribute="bottom" secondItem="sCG-cl-3fd" secondAttribute="bottom" id="Wsf-7v-IiH"/>
                             <constraint firstItem="sCG-cl-3fd" firstAttribute="leading" secondItem="K25-XF-Jiu" secondAttribute="leading" id="X5g-xb-kQ1"/>
+                            <constraint firstAttribute="trailing" secondItem="H6A-is-85W" secondAttribute="trailing" constant="102" id="YSQ-mn-skI"/>
                             <constraint firstItem="sCG-cl-3fd" firstAttribute="top" secondItem="GJ3-KC-Oir" secondAttribute="bottom" id="Z6w-Lc-Zl8"/>
                             <constraint firstItem="AIv-dK-ka2" firstAttribute="leading" secondItem="AkF-py-Nas" secondAttribute="trailing" id="bFT-ly-rxK"/>
                             <constraint firstItem="sCG-cl-3fd" firstAttribute="top" secondItem="PZn-uN-nYb" secondAttribute="bottom" id="cUZ-5P-pim"/>
@@ -186,6 +192,7 @@
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationItem key="navigationItem" title="INSTACAR" id="mIi-6y-OnM"/>
                     <connections>
+                        <outlet property="activityShareInProgress" destination="H6A-is-85W" id="aje-0O-d4S"/>
                         <outlet property="btnLocation" destination="PZn-uN-nYb" id="jcG-Cn-cmO"/>
                         <outlet property="btnMiddle" destination="4oZ-cn-B3n" id="Q0R-Sb-oYL"/>
                         <outlet property="btnMiddleLeft" destination="GJ3-KC-Oir" id="lJP-dk-eKX"/>
@@ -901,6 +908,7 @@
         <image name="Mask" width="24" height="24"/>
         <image name="PicLandscape" width="24" height="24"/>
         <image name="Repeat" width="24" height="24"/>
+        <image name="arrowDown" width="24" height="24"/>
         <image name="arrowDown" width="24" height="24"/>
         <image name="arrowLeft" width="24" height="24"/>
         <image name="arrowRight" width="24" height="24"/>

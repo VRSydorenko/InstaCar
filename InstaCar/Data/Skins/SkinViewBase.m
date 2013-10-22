@@ -117,20 +117,21 @@
 }
 
 -(UIImage*)getSkinImageWithBlur:(CGFloat)blurStrength {
-    CGFloat scaleFactorHeight = 612.0/self.bounds.size.height;
+    CGFloat desiredSideLength = 918.0;
+    CGFloat scaleFactorHeight = desiredSideLength/self.bounds.size.height;
     
     self.layer.contentsScale = scaleFactorHeight;
     CGRect currentFrame = self.frame;
     if (movingViewTopMarginConstraint.constant > 0){
-        movingViewTopMarginConstraint.constant = 612.0 - movingViewHeight*scaleFactorHeight;
+        movingViewTopMarginConstraint.constant = desiredSideLength - movingViewHeight*scaleFactorHeight;
     }
     
-    self.frame = CGRectMake(self.frame.origin.x, self.frame.origin.y, 612.0, 612.0);
+    self.frame = CGRectMake(self.frame.origin.x, self.frame.origin.y, desiredSideLength, desiredSideLength);
     [self setNeedsLayout];
     [self layoutIfNeeded];
     [self layoutSubviews];
     
-    UIGraphicsBeginImageContextWithOptions(CGSizeMake(612.0, 612.0), NO, scaleFactorHeight);
+    UIGraphicsBeginImageContextWithOptions(CGSizeMake(desiredSideLength, desiredSideLength), NO, scaleFactorHeight);
     [self.layer renderInContext:UIGraphicsGetCurrentContext()];
     UIImage *result = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
@@ -149,13 +150,6 @@
     }
     
     return result;
-}
-
--(void)setViewContentScaleFactor:(CGFloat)scale forView:(UIView*)view{
-    view.contentScaleFactor = scale;
-    for (UIView *subview in view.subviews) {
-        [self setViewContentScaleFactor:scale forView:subview];
-    }
 }
 
 -(BOOL)isSkinContentAtTheTop{

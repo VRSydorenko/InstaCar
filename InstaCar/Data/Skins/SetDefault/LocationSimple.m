@@ -23,12 +23,14 @@
 
 -(void)layoutSubviews{
     self.movingViewHeightConstraint.constant = self.bounds.size.height * heightScaleFactor;
-    self.constraintLocationHeight.constant = self.movingView.bounds.size.height * placeLabelHeightScaleFactor;
+    if (self.textLocation.text.length > 0){
+        self.constraintLocationHeight.constant = self.movingView.bounds.size.height * placeLabelHeightScaleFactor;
+    }
     
-    float newPlaceFontSize = self.bounds.size.width > 320.0 ? 70.0 : 35.0;
+    float newPlaceFontSize = self.bounds.size.width > 320.0 ? 90.0 : 35.0;
     self.textPlace.font = [UIFont fontWithName:self.textPlace.font.fontName size:newPlaceFontSize];
     
-    float newLocationFontSize = self.bounds.size.width > 320.0 ? 30.0 : 15.0;
+    float newLocationFontSize = self.bounds.size.width > 320.0 ? 50.0 : 15.0;
     self.textLocation.font = [UIFont fontWithName:self.textLocation.font.fontName size:newLocationFontSize];
     
     [super layoutSubviews];

@@ -566,7 +566,7 @@ static const NSTimeInterval kAnimationIntervalTransform = 0.2;
                                   toSize:sourceSize
                              withQuality:kCGInterpolationNone];
     
-    CGSize outputSize = CGSizeMake(612.0, 612.0);
+    CGSize outputSize = CGSizeMake(918.0, 918.0);
     
     CGContextRef context = CGBitmapContextCreate(NULL,
                                                  outputSize.width,
