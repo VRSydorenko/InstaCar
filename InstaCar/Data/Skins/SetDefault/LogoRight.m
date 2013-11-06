@@ -8,9 +8,7 @@
 
 #import "LogoRight.h"
 
-@interface LogoRight(){
-    CGFloat heightScaleFactor;
-}
+@interface LogoRight()
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *topMargin;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *heightConstraint;
@@ -31,7 +29,6 @@
 
 -(void)initialise{
     [self setupGradient:0.2 inDirection:GRADIENT_LEFT];
-    heightScaleFactor = self.movingView.bounds.size.height / self.bounds.size.height;
     [self.imgEmblem.layer setMinificationFilter:kCAFilterTrilinear];
     self.movingView.backgroundColor = [UIColor clearColor];
     

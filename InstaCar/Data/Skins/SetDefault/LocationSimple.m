@@ -9,7 +9,6 @@
 #import "LocationSimple.h"
 
 @interface LocationSimple(){
-    CGFloat heightScaleFactor;
     CGFloat placeLabelHeightScaleFactor;
 }
 
@@ -38,7 +37,6 @@
 
 -(void)initialise{
     [self setupGradient:0.3 inDirection:GRADIENT_UP];
-    heightScaleFactor = self.movingView.bounds.size.height / self.bounds.size.height;
     placeLabelHeightScaleFactor = self.constraintLocationHeight.constant / self.movingView.bounds.size.height;
     [self setMovingViewConstraint:self.topMargin andViewHeight:self.movingView.bounds.size.height];
     self.movingView.backgroundColor = [UIColor clearColor];

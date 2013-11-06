@@ -24,4 +24,18 @@
     return self;
 }
 
+-(int)startYear{
+    if (self.submodel){
+        return self.submodel.startYear;
+    }
+    return _startYear;
+}
+
+-(int)endYear{
+    if (self.submodel){
+        return self.submodel.endYear;
+    }
+    return _endYear;
+}
+
 @end

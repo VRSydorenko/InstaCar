@@ -46,6 +46,8 @@
             skin = (LogoNameLeft*)object;
         } else if ([object isKindOfClass:[LocationSimple class]]){
             skin = (LocationSimple*)object;
+        } else if ([object isKindOfClass:[SkinLogoCountryBadge class]]){
+            skin = (SkinLogoCountryBadge*)object;
         }
         
         NSAssert(skin, @"Undefined skin!");
@@ -69,7 +71,7 @@
 #pragma mark SkinSetProtocol
 
 -(NSString*)getTitle{
-    return @"Default";
+    return @"Basic";
 }
 
 -(unsigned short)getSkinsCount{

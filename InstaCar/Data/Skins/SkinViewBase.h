@@ -48,12 +48,16 @@ typedef enum {
     NSString *fieldText1;
     NSString *fieldText2;
     
+    CGFloat heightScaleFactor;
+    CGFloat movingViewTopBottomMargin;
+    
+    BOOL isContentOnTop;
+    
 @private
     NSLayoutConstraint *movingViewTopMarginConstraint;
     unsigned short movingViewHeight;
     UIAlphaGradientView *gradient;
     BOOL gradientInitialized;
-    BOOL isContentOnTop;
 }
 
 -(void)baseInit;

@@ -87,6 +87,7 @@
 		7F4F684417F6F97600F1017B /* HFImageEditorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F4F684217F6F97600F1017B /* HFImageEditorViewController.m */; };
 		7F4F684817F6FDF500F1017B /* ImageEditor.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F4F684617F6FDF500F1017B /* ImageEditor.m */; };
 		7F4F684917F6FDF500F1017B /* ImageEditor.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F4F684717F6FDF500F1017B /* ImageEditor.xib */; };
+		7F4FE8921826FF0B00045ABD /* SkinLogoCountryBadge.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F4FE8911826FF0B00045ABD /* SkinLogoCountryBadge.m */; };
 		7F544A3918085378001FFEC3 /* ALAssetsLibrary+CustomPhotoAlbum.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F544A3818085378001FFEC3 /* ALAssetsLibrary+CustomPhotoAlbum.m */; };
 		7F59AC5D17D3BA4700B87457 /* AutoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F59AC5C17D3BA4700B87457 /* AutoModel.m */; };
 		7F59AC5F17D3C1F400B87457 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F59AC5E17D3C1F400B87457 /* libsqlite3.0.dylib */; };
@@ -275,6 +276,8 @@
 		7F4F684517F6FDF500F1017B /* ImageEditor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageEditor.h; sourceTree = "<group>"; };
 		7F4F684617F6FDF500F1017B /* ImageEditor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageEditor.m; sourceTree = "<group>"; };
 		7F4F684717F6FDF500F1017B /* ImageEditor.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImageEditor.xib; sourceTree = "<group>"; };
+		7F4FE8901826FF0B00045ABD /* SkinLogoCountryBadge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkinLogoCountryBadge.h; sourceTree = "<group>"; };
+		7F4FE8911826FF0B00045ABD /* SkinLogoCountryBadge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SkinLogoCountryBadge.m; sourceTree = "<group>"; };
 		7F544A3718085377001FFEC3 /* ALAssetsLibrary+CustomPhotoAlbum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ALAssetsLibrary+CustomPhotoAlbum.h"; sourceTree = "<group>"; };
 		7F544A3818085378001FFEC3 /* ALAssetsLibrary+CustomPhotoAlbum.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ALAssetsLibrary+CustomPhotoAlbum.m"; sourceTree = "<group>"; };
 		7F59AC5B17D3BA4700B87457 /* AutoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AutoModel.h; path = InstaCar/Data/AutoModel.h; sourceTree = "<group>"; };
@@ -747,6 +750,8 @@
 				7F4CB68918097908008B5CA2 /* SkinSimple.m */,
 				7F4CB68A18097908008B5CA2 /* SkinSimple2.h */,
 				7F4CB68B18097908008B5CA2 /* SkinSimple2.m */,
+				7F4FE8901826FF0B00045ABD /* SkinLogoCountryBadge.h */,
+				7F4FE8911826FF0B00045ABD /* SkinLogoCountryBadge.m */,
 			);
 			path = SetDefault;
 			sourceTree = "<group>";
@@ -975,6 +980,7 @@
 				7F1767AC17C76F0F00724BD6 /* CaptureSessionManager.m in Sources */,
 				7F3A170117F627A200584614 /* UIAlphaGradientView.m in Sources */,
 				7FB233B317D6773C003751B5 /* CellSelectedAuto.m in Sources */,
+				7F4FE8921826FF0B00045ABD /* SkinLogoCountryBadge.m in Sources */,
 				7F2AD5A617EDE9B40096EC8D /* SHKTextMessage.m in Sources */,
 				7F2AD5D617EDE9B40096EC8D /* SHKFormFieldSettings.m in Sources */,
 				7FEF908917D505E800C07A05 /* AutosVC.m in Sources */,

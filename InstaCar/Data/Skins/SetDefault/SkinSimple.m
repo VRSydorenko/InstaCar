@@ -8,9 +8,7 @@
 
 #import "SkinSimple.h"
 
-@interface SkinSimple(){
-    CGFloat heightScaleFactor;
-}
+@interface SkinSimple()
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *topMargin;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *heightConstraint;
@@ -34,10 +32,7 @@
 
 -(void)initialise{
     [self setupGradient:0.4 inDirection:GRADIENT_LEFT];
-    
-    heightScaleFactor = self.movingView.bounds.size.height / self.bounds.size.height;
     [self.imgEmblem.layer setMinificationFilter:kCAFilterTrilinear];
-    
     [self setMovingViewConstraint:self.topMargin andViewHeight:self.movingView.bounds.size.height];
 
     canEditFieldAuto1 = YES;

@@ -101,6 +101,7 @@
     gradient = nil;
     gradientInitialized = NO;
     isContentOnTop = YES;
+    movingViewTopBottomMargin = 0.0;
 }
 
 -(void)initialise{
@@ -110,6 +111,7 @@
 -(void)setMovingViewConstraint:(NSLayoutConstraint*)topMargin andViewHeight:(unsigned short)height{
     movingViewTopMarginConstraint = topMargin;
     movingViewHeight = height;
+    heightScaleFactor = height / self.bounds.size.height;
 }
 
 -(UIImage*)getSkinImage{
@@ -122,8 +124,11 @@
     
     self.layer.contentsScale = scaleFactorHeight;
     CGRect currentFrame = self.frame;
-    if (movingViewTopMarginConstraint.constant > 0){
-        movingViewTopMarginConstraint.constant = desiredSideLength - movingViewHeight*scaleFactorHeight;
+    bool movingViewIsOnTop = movingViewTopMarginConstraint.constant == movingViewTopBottomMargin;
+    if (movingViewIsOnTop){
+        movingViewTopMarginConstraint.constant = movingViewTopBottomMargin*scaleFactorHeight;
+    } else {
+        movingViewTopMarginConstraint.constant = desiredSideLength - movingViewHeight*scaleFactorHeight - movingViewTopBottomMargin*scaleFactorHeight;
     }
     
     self.frame = CGRectMake(self.frame.origin.x, self.frame.origin.y, desiredSideLength, desiredSideLength);
@@ -137,8 +142,10 @@
     UIGraphicsEndImageContext();
     
     self.frame = currentFrame;
-    if (movingViewTopMarginConstraint.constant > 0){
-        movingViewTopMarginConstraint.constant = currentFrame.size.height - movingViewHeight;
+    if (movingViewIsOnTop){
+        movingViewTopMarginConstraint.constant = movingViewTopBottomMargin;
+    } else {
+        movingViewTopMarginConstraint.constant = currentFrame.size.height - movingViewHeight - movingViewTopBottomMargin;
     }
     
     [self setNeedsLayout];
@@ -161,13 +168,13 @@
         return;
     }
     
-    if (movingViewTopMarginConstraint.constant == 0){
+    if (movingViewTopMarginConstraint.constant == movingViewTopBottomMargin){
         return; // already at the top
     }
 
     [UIView animateWithDuration:MOVINGVIEW_TIME
             animations:^(void){
-                movingViewTopMarginConstraint.constant = 0;
+                movingViewTopMarginConstraint.constant = movingViewTopBottomMargin;
                 [self layoutIfNeeded];
             }
             completion:^(BOOL finished){
@@ -181,13 +188,13 @@
         return;
     }
     
-    if (movingViewTopMarginConstraint.constant != 0){
+    if (movingViewTopMarginConstraint.constant != movingViewTopBottomMargin){
         return; // already at the bottom (at least not on the top)
     }
     
     [UIView animateWithDuration:MOVINGVIEW_TIME
             animations:^(void){
-                movingViewTopMarginConstraint.constant = self.bounds.size.height - movingViewHeight;
+                movingViewTopMarginConstraint.constant = self.bounds.size.height - movingViewHeight - movingViewTopBottomMargin;
                 [self layoutIfNeeded];
             }
             completion:^(BOOL finished){
