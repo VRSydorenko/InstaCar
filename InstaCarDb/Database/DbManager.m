@@ -26,6 +26,8 @@ typedef enum {
     OPEL,
     SUBARU,
     VOLKSWAGEN,
+    BENTLEY,
+    BOGDAN,
 } IndependentCarIds;
 
 @implementation DbManager{
@@ -2476,6 +2478,71 @@ typedef enum {
 		[self addAutoSubmodel:@"Zag" ofModel:modelId logo:logoId startYear:1990 endYear:-1];
 		[self addAutoSubmodel:@"Zig" ofModel:modelId logo:logoId startYear:1990 endYear:-1];
     }
+#pragma mark === UK ===
+    countryId = [self addCountry:@"UK"];
+#pragma mark |---- Bentley
+    logoId = [self addLogo:@"bentley_256.png"];
+    autoId = [self addAuto:@"Bentley" country:countryId logo:logoId independentId:BENTLEY];
+    
+    [self addAutoModel:@"Speed 8" ofAuto:autoId logo:logoId startYear:2001 endYear:-1];
+	[self addAutoModel:@"Brooklands" ofAuto:autoId logo:logoId startYear:1992 endYear:1998];
+	modelId = [self addAutoModel:@"Retro Car" ofAuto:autoId logo:logoId startYear:0 endYear:0];
+	{
+		[self addAutoSubmodel:@"Continental" ofModel:modelId logo:logoId startYear:1952 endYear:1965];
+		[self addAutoSubmodel:@"Continental Flying Spur" ofModel:modelId logo:logoId startYear:1957 endYear:1966];
+		[self addAutoSubmodel:@"Blower No.1" ofModel:modelId logo:logoId startYear:1931 endYear:1934];
+		[self addAutoSubmodel:@"3 Litre" ofModel:modelId logo:logoId startYear:1921 endYear:1929];
+		[self addAutoSubmodel:@"3.5 Litre" ofModel:modelId logo:logoId startYear:1933 endYear:1939];
+		[self addAutoSubmodel:@"4 Litre" ofModel:modelId logo:logoId startYear:1931 endYear:-1];
+		[self addAutoSubmodel:@"4.5 Litre" ofModel:modelId logo:logoId startYear:1927 endYear:1931];
+		[self addAutoSubmodel:@"Speed Six" ofModel:modelId logo:logoId startYear:1929 endYear:1930];
+		[self addAutoSubmodel:@"8 Litre" ofModel:modelId logo:logoId startYear:1930 endYear:1932];
+		[self addAutoSubmodel:@"Arnage" ofModel:modelId logo:logoId startYear:1998 endYear:2009];
+		[self addAutoSubmodel:@"Azure" ofModel:modelId logo:logoId startYear:1995 endYear:2003];
+		[self addAutoSubmodel:@"Black Adder 6" ofModel:modelId logo:logoId startYear:0000 endYear:0];
+		[self addAutoSubmodel:@"Blue Train" ofModel:modelId logo:logoId startYear:1928 endYear:-1];
+		[self addAutoSubmodel:@"Mark V" ofModel:modelId logo:logoId startYear:1939 endYear:1941];
+		[self addAutoSubmodel:@"Mark VI" ofModel:modelId logo:logoId startYear:1946 endYear:1952];
+		[self addAutoSubmodel:@"R Type" ofModel:modelId logo:logoId startYear:1952 endYear:1955];
+		[self addAutoSubmodel:@"S1" ofModel:modelId logo:logoId startYear:1955 endYear:1959];
+		[self addAutoSubmodel:@"S2" ofModel:modelId logo:logoId startYear:1959 endYear:1962];
+		[self addAutoSubmodel:@"S3" ofModel:modelId logo:logoId startYear:1962 endYear:1965];
+	}
+	
+	modelId = [self addAutoModel:@"Continental" ofAuto:autoId logo:logoId startYear:1952 endYear:0];
+	{
+		[self addAutoSubmodel:@"Flying Spur	" ofModel:modelId logo:logoId startYear:1957 endYear:1966];
+		[self addAutoSubmodel:@"Flying Spur	" ofModel:modelId logo:logoId startYear:2005 endYear:0];
+		[self addAutoSubmodel:@"GT" ofModel:modelId logo:logoId startYear:2003 endYear:0];
+		[self addAutoSubmodel:@"GTC" ofModel:modelId logo:logoId startYear:2003 endYear:0];
+		[self addAutoSubmodel:@"R" ofModel:modelId logo:logoId startYear:1991 endYear:2003];
+		[self addAutoSubmodel:@"S" ofModel:modelId logo:logoId startYear:1994 endYear:1995];
+		[self addAutoSubmodel:@"T" ofModel:modelId logo:logoId startYear:1992 endYear:2002];
+	}
+    
+	[self addAutoModel:@"Eight" ofAuto:autoId logo:logoId startYear:1984 endYear:1992];
+	[self addAutoModel:@"EXP 9 F" ofAuto:autoId logo:logoId startYear:2012 endYear:-1];
+	[self addAutoModel:@"Hunaudières" ofAuto:autoId logo:logoId startYear:1999 endYear:-1];
+	[self addAutoModel:@"Java" ofAuto:autoId logo:logoId startYear:1994 endYear:-1];
+	[self addAutoModel:@"Mulsanne" ofAuto:autoId logo:logoId startYear:1980 endYear:1992];
+	[self addAutoModel:@"Mulsanne" ofAuto:autoId logo:logoId startYear:2010 endYear:0];
+	[self addAutoModel:@"State Limousine" ofAuto:autoId logo:logoId startYear:2002 endYear:-1];
+	[self addAutoModel:@"T-series" ofAuto:autoId logo:logoId startYear:1965 endYear:1980];
+	[self addAutoModel:@"Turbo R" ofAuto:autoId logo:logoId startYear:1985 endYear:1997];
+	[self addAutoModel:@"Turbo RT" ofAuto:autoId logo:logoId startYear:1997 endYear:1999];
+	[self addAutoModel:@"Turbo S" ofAuto:autoId logo:logoId startYear:1995 endYear:-1];
+#pragma mark === Ukraine ===
+    countryId = [self addCountry:@"Ukraine"];
+#pragma mark |---- Bogdan
+    logoId = [self addLogo:@"bogdan_256.png"];
+    autoId = [self addAuto:@"Bogdan" country:countryId logo:logoId independentId:BOGDAN];
+    
+    [self addAutoModel:@"Bus" ofAuto:autoId logo:logoId startYear:0 endYear:0];
+	[self addAutoModel:@"Trolleybus" ofAuto:autoId logo:logoId startYear:0 endYear:0];
+	[self addAutoModel:@"A092" ofAuto:autoId logo:logoId startYear:0 endYear:0];
+	[self addAutoModel:@"A092.80" ofAuto:autoId logo:logoId startYear:0 endYear:0];
+	[self addAutoModel:@"A1445" ofAuto:autoId logo:logoId startYear:0 endYear:0];
+	[self addAutoModel:@"T601" ofAuto:autoId logo:logoId startYear:0 endYear:0];
     // V
 #pragma mark -
 #pragma mark V
