@@ -106,6 +106,8 @@
     return [SkinProvider getInstance].selectedSkinSet;
 }
 +(void)setSelectedSkinSet:(SkinSet*)set{
+    [[SkinProvider getInstance].selectedSkinSet freeSkins];
+    [SkinProvider getInstance].selectedSkinSet = nil;
     [SkinProvider getInstance].selectedSkinSet = set;
     [UserSettings setLastUsedSkinSet:[set getTitle]];
 }

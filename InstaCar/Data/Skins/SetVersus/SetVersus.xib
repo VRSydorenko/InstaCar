@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="4514" systemVersion="13A603" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment defaultVersion="1792" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3746"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="Tnr-oz-4iU" customClass="SkinVersusName">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="320"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xs5-Ya-u5b">
+                    <rect key="frame" x="0.0" y="260" width="320" height="60"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NhV-R1-nM2">
+                            <rect key="frame" x="159" y="0.0" width="4" height="60"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="4" id="zWp-iW-ITf"/>
+                            </constraints>
+                        </view>
+                        <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="anycarLogo" translatesAutoresizingMaskIntoConstraints="NO" id="BAC-hV-PXa">
+                            <rect key="frame" x="5" y="10" width="40" height="40"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="40" id="5yM-ns-bHf"/>
+                            </constraints>
+                        </imageView>
+                        <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="anycarLogo" translatesAutoresizingMaskIntoConstraints="NO" id="zwt-LL-gNa">
+                            <rect key="frame" x="272" y="10" width="40" height="40"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="40" id="xEg-Tx-QIA"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Auto 1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.20000000000000007" translatesAutoresizingMaskIntoConstraints="NO" id="dFg-D3-oqp">
+                            <rect key="frame" x="48" y="10" width="103" height="40"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Auto 2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.20000000000000007" translatesAutoresizingMaskIntoConstraints="NO" id="FWr-vU-qGM">
+                            <rect key="frame" x="166" y="10" width="103" height="40"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.20000000000000001" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="zwt-LL-gNa" secondAttribute="bottom" constant="10" id="0cc-Mm-RZC"/>
+                        <constraint firstAttribute="bottom" secondItem="dFg-D3-oqp" secondAttribute="bottom" constant="10" id="0oE-Gn-xYu"/>
+                        <constraint firstAttribute="bottom" secondItem="NhV-R1-nM2" secondAttribute="bottom" id="BdU-RM-wbW"/>
+                        <constraint firstItem="dFg-D3-oqp" firstAttribute="leading" secondItem="BAC-hV-PXa" secondAttribute="trailing" constant="3" id="Gwk-ap-wAd"/>
+                        <constraint firstItem="FWr-vU-qGM" firstAttribute="top" secondItem="Xs5-Ya-u5b" secondAttribute="top" constant="10" id="JKI-fF-hBM"/>
+                        <constraint firstItem="NhV-R1-nM2" firstAttribute="leading" secondItem="dFg-D3-oqp" secondAttribute="trailing" constant="8" id="Kaf-e4-Zsd"/>
+                        <constraint firstAttribute="bottom" secondItem="BAC-hV-PXa" secondAttribute="bottom" constant="10" id="Kta-gw-ZVj"/>
+                        <constraint firstItem="FWr-vU-qGM" firstAttribute="leading" secondItem="NhV-R1-nM2" secondAttribute="trailing" constant="3" id="L2H-Fg-WXh"/>
+                        <constraint firstItem="dFg-D3-oqp" firstAttribute="top" secondItem="Xs5-Ya-u5b" secondAttribute="top" constant="10" id="LQd-Zt-PbW"/>
+                        <constraint firstItem="BAC-hV-PXa" firstAttribute="top" secondItem="Xs5-Ya-u5b" secondAttribute="top" constant="10" id="LVG-Rg-O5Q"/>
+                        <constraint firstItem="NhV-R1-nM2" firstAttribute="leading" secondItem="Xs5-Ya-u5b" secondAttribute="leading" constant="159" id="OvS-W5-9Bj"/>
+                        <constraint firstItem="zwt-LL-gNa" firstAttribute="top" secondItem="Xs5-Ya-u5b" secondAttribute="top" constant="10" id="Pcj-AX-m1p"/>
+                        <constraint firstAttribute="trailing" secondItem="zwt-LL-gNa" secondAttribute="trailing" constant="8" id="QJg-4U-VDQ"/>
+                        <constraint firstItem="NhV-R1-nM2" firstAttribute="top" secondItem="Xs5-Ya-u5b" secondAttribute="top" id="fhE-rk-Ga2"/>
+                        <constraint firstAttribute="height" constant="60" id="gyI-Nm-vDq"/>
+                        <constraint firstItem="BAC-hV-PXa" firstAttribute="leading" secondItem="Xs5-Ya-u5b" secondAttribute="leading" constant="5" id="hKf-a4-YEh"/>
+                        <constraint firstItem="zwt-LL-gNa" firstAttribute="leading" secondItem="FWr-vU-qGM" secondAttribute="trailing" constant="3" id="p6c-jQ-rog"/>
+                        <constraint firstAttribute="bottom" secondItem="FWr-vU-qGM" secondAttribute="bottom" constant="10" id="p8o-0x-juC"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="Xs5-Ya-u5b" firstAttribute="leading" secondItem="Tnr-oz-4iU" secondAttribute="leading" id="LwA-N8-LlD"/>
+                <constraint firstAttribute="trailing" secondItem="Xs5-Ya-u5b" secondAttribute="trailing" id="XFK-Sa-wnB"/>
+                <constraint firstItem="Xs5-Ya-u5b" firstAttribute="top" secondItem="Tnr-oz-4iU" secondAttribute="top" constant="260" id="rv5-Sv-Liy"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="constraintHeight" destination="gyI-Nm-vDq" id="DEB-Eu-4ul"/>
+                <outlet property="constraintLogo1BottomMargin" destination="Kta-gw-ZVj" id="jSa-9R-4Ap"/>
+                <outlet property="constraintLogo1TopMargin" destination="LVG-Rg-O5Q" id="KoU-Tz-8yt"/>
+                <outlet property="constraintLogo2BottomMargin" destination="0cc-Mm-RZC" id="vAz-bY-bRZ"/>
+                <outlet property="constraintLogo2TopMargin" destination="Pcj-AX-m1p" id="m17-ZJ-iM0"/>
+                <outlet property="constraintTopMargin" destination="rv5-Sv-Liy" id="2Qx-xU-yE7"/>
+                <outlet property="constraintVSSeparatorLeftMargin" destination="OvS-W5-9Bj" id="Hnp-at-xyn"/>
+                <outlet property="constraintVSSeparatorWidth" destination="zWp-iW-ITf" id="XtY-bz-X8d"/>
+                <outlet property="constraintWidthLogo1" destination="5yM-ns-bHf" id="D9Y-dz-waC"/>
+                <outlet property="constraintwidthLogo2" destination="xEg-Tx-QIA" id="Rxm-VO-0cY"/>
+                <outlet property="imgEmblem1" destination="BAC-hV-PXa" id="OB8-Zy-gHv"/>
+                <outlet property="imgEmblem2" destination="zwt-LL-gNa" id="NWO-JU-hzh"/>
+                <outlet property="movingView" destination="Xs5-Ya-u5b" id="e2i-8x-WxC"/>
+                <outlet property="textAuto1" destination="dFg-D3-oqp" id="oRt-a3-AeW"/>
+                <outlet property="textAuto2" destination="FWr-vU-qGM" id="Vw5-Fb-cih"/>
+            </connections>
+        </view>
+    </objects>
+    <resources>
+        <image name="anycarLogo" width="32" height="32"/>
+    </resources>
+</document>

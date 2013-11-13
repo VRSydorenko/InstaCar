@@ -32,9 +32,12 @@
 -(void)initSkins{
     NSMutableArray *sets = [[NSMutableArray alloc] init];
     
-    SetDefault *skinDefault = [[SetDefault alloc] init];
-    [sets addObject:skinDefault];
-    self.selectedSkinSet = skinDefault; // setting default skin set
+    SetDefault *setDefault = [[SetDefault alloc] init];
+    [sets addObject:setDefault];
+    SetVersus *setVersus = [[SetVersus alloc] init];
+    [sets addObject:setVersus];
+    
+    self.selectedSkinSet = setDefault; // setting default skin set
     self.selectedAuto1 = nil;
     self.selectedAuto2 = nil;
     self.selectedVenue = nil;

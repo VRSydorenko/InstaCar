@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "SkinViewBase.h"
+#import "SkinSetBase.h"
 
 #import "SkinSimple2.h" // only logo at left side
 #import "LogoRight.h"
@@ -16,6 +16,6 @@
 #import "LocationSimple.h"
 #import "SkinLogoCountryBadge.h"
 
-@interface SetDefault : NSObject <SkinSetProtocol>
+@interface SetDefault : SkinSetBase
 
 @end

@@ -142,6 +142,7 @@ typedef enum {
     const unsigned short pageCount = [skinSet getSkinsCount];
     const int skinWidth = 320;
     
+    // add skin views to the scroll area
     for (unsigned short i = 0; i < pageCount; i++) {
         SkinViewBase *skinToAdd = [skinSet getSkinAtIndex:i];
 		
@@ -237,7 +238,14 @@ typedef enum {
 
 -(void) selectedData:(SelectedDataChange)dataType changedTo:(id)newValue{
     if (dataType == SKIN_SET){
-        // load new set
+        // clean up the scroll area
+        for (UIView *subview in self.scrollSkins.subviews){
+            [subview removeFromSuperview];
+        }
+        
+        [DataManager setSelectedSkinSet:newValue];
+        
+        [self initSkins];
     } else { // other fields are skin relevant so pass the update to selected skin set
         [[SkinProvider getInstance].selectedSkinSet updateData:newValue ofType:dataType];
     }
