@@ -34,6 +34,12 @@ typedef enum {
     BUICK,
     MERCURY,
     JEEP,
+    INFINITI,
+    MAZDA,
+    SCANIA,
+    ROLLSROYCE,
+    BUGATTI,
+    ASTONMARTIN,
 } IndependentCarIds;
 
 @implementation DbManager{
@@ -45,7 +51,13 @@ typedef enum {
     if (self){
         [self initDatabase];
         
+        NSDate *start = [NSDate date];
+        
         [self initData];
+        
+        NSDate *elapsed = [NSDate date];
+        NSTimeInterval executionTime = [elapsed timeIntervalSinceDate:start];
+        NSLog(@"Execution Time: %f", executionTime);
     }
     return self;
 }
@@ -299,6 +311,67 @@ typedef enum {
         [self addAutoSubmodel:@"SM Sport" ofModel:modelId logo:logoId startYear:1970 endYear:-1];
         [self addAutoSubmodel:@"C5 Airscape" ofModel:modelId logo:logoId startYear:2007 endYear:-1];
         [self addAutoSubmodel:@"DS2" ofModel:modelId logo:logoId startYear:0 endYear:0];
+    }
+    
+#pragma mark |---- Bugatti
+    logoId = [self addLogo:@"bugatti_256.png"];
+    autoId = [self addAuto:@"Bugatti" country:countryId logo:logoId independentId:BUGATTI];
+    
+    [self addAutoModel:@"16C Galibier" ofAuto:autoId logo:logoId startYear:2009 endYear:-1];
+    [self addAutoModel:@"18/3 Chiron" ofAuto:autoId logo:logoId startYear:1999 endYear:-1];
+    [self addAutoModel:@"Dietrich" ofAuto:autoId logo:logoId startYear:1901 endYear:-1];
+    [self addAutoModel:@"EB110" ofAuto:autoId logo:logoId startYear:1991 endYear:1995];
+    [self addAutoModel:@"EB118" ofAuto:autoId logo:logoId startYear:1998 endYear:-1];
+    [self addAutoModel:@"EB218" ofAuto:autoId logo:logoId startYear:1999 endYear:-1];
+    [self addAutoModel:@"Royale" ofAuto:autoId logo:logoId startYear:1927 endYear:1933];
+    [self addAutoModel:@"Veyron" ofAuto:autoId logo:logoId startYear:2005 endYear:0];
+    
+    modelId = [self addAutoModel:@"Types" ofAuto:autoId logo:logoId startYear:0 endYear:0 isSelectable:NO];
+    {
+        [self addAutoSubmodel:@"Type 1" ofModel:modelId logo:logoId startYear:1899 endYear:-1];
+        [self addAutoSubmodel:@"Type 10	" ofModel:modelId logo:logoId startYear:1908 endYear:1909];
+        [self addAutoSubmodel:@"Type 101" ofModel:modelId logo:logoId startYear:1951 endYear:1956];
+        [self addAutoSubmodel:@"Type 13" ofModel:modelId logo:logoId startYear:1910 endYear:1920];
+        [self addAutoSubmodel:@"Type 15" ofModel:modelId logo:logoId startYear:1910 endYear:1920];
+        [self addAutoSubmodel:@"Type 17" ofModel:modelId logo:logoId startYear:1910 endYear:1920];
+        [self addAutoSubmodel:@"Type 18" ofModel:modelId logo:logoId startYear:1912 endYear:1914];
+        [self addAutoSubmodel:@"Type 22" ofModel:modelId logo:logoId startYear:1910 endYear:1920];
+        [self addAutoSubmodel:@"Type 23" ofModel:modelId logo:logoId startYear:1910 endYear:1920];
+        [self addAutoSubmodel:@"Type 251" ofModel:modelId logo:logoId startYear:1955 endYear:-1];
+        [self addAutoSubmodel:@"Type 252" ofModel:modelId logo:logoId startYear:1957 endYear:1962];
+        [self addAutoSubmodel:@"Type 30" ofModel:modelId logo:logoId startYear:1922 endYear:1926];
+        [self addAutoSubmodel:@"Type 32" ofModel:modelId logo:logoId startYear:1923 endYear:-1];
+        [self addAutoSubmodel:@"Type 35" ofModel:modelId logo:logoId startYear:1924 endYear:1929];
+        [self addAutoSubmodel:@"Type 36" ofModel:modelId logo:logoId startYear:1925 endYear:-1];
+        [self addAutoSubmodel:@"Type 37" ofModel:modelId logo:logoId startYear:0000 endYear:0];
+        [self addAutoSubmodel:@"Type 37A" ofModel:modelId logo:logoId startYear:0000 endYear:0];
+        [self addAutoSubmodel:@"Type 38" ofModel:modelId logo:logoId startYear:1926 endYear:1927];
+        [self addAutoSubmodel:@"Type 39" ofModel:modelId logo:logoId startYear:1924 endYear:1929];
+        [self addAutoSubmodel:@"Type 40" ofModel:modelId logo:logoId startYear:1926 endYear:1930];
+        
+        [self addAutoSubmodel:@"Type 41" ofModel:modelId logo:logoId startYear:1927 endYear:1933];
+        [self addAutoSubmodel:@"Type 43" ofModel:modelId logo:logoId startYear:1922 endYear:1934];
+        [self addAutoSubmodel:@"Type 44" ofModel:modelId logo:logoId startYear:1927 endYear:1930];
+        [self addAutoSubmodel:@"Type 45" ofModel:modelId logo:logoId startYear:0000 endYear:0];
+        [self addAutoSubmodel:@"Type 46" ofModel:modelId logo:logoId startYear:1929 endYear:1939];
+        [self addAutoSubmodel:@"Type 47" ofModel:modelId logo:logoId startYear:0000 endYear:0];
+        [self addAutoSubmodel:@"Type 49" ofModel:modelId logo:logoId startYear:1922 endYear:1934];
+        [self addAutoSubmodel:@"Type 50" ofModel:modelId logo:logoId startYear:1929 endYear:1939];
+        [self addAutoSubmodel:@"Type 51" ofModel:modelId logo:logoId startYear:1931 endYear:1934];
+        [self addAutoSubmodel:@"Type 52" ofModel:modelId logo:logoId startYear:1927 endYear:1936];
+        [self addAutoSubmodel:@"Type 53" ofModel:modelId logo:logoId startYear:1931 endYear:1932];
+        [self addAutoSubmodel:@"Type 54" ofModel:modelId logo:logoId startYear:1931 endYear:1934];
+        [self addAutoSubmodel:@"Type 55" ofModel:modelId logo:logoId startYear:1932 endYear:1935];
+        [self addAutoSubmodel:@"Type 56" ofModel:modelId logo:logoId startYear:0000 endYear:0];
+        [self addAutoSubmodel:@"Type 57" ofModel:modelId logo:logoId startYear:1934 endYear:1940];
+        [self addAutoSubmodel:@"Type 57S Atalante" ofModel:modelId logo:logoId startYear:0000 endYear:0];
+        [self addAutoSubmodel:@"Type 57S" ofModel:modelId logo:logoId startYear:0000 endYear:0];
+        [self addAutoSubmodel:@"Type 59" ofModel:modelId logo:logoId startYear:1934 endYear:-1];
+        [self addAutoSubmodel:@"Type 64" ofModel:modelId logo:logoId startYear:1939 endYear:-1];
+        [self addAutoSubmodel:@"Type 73" ofModel:modelId logo:logoId startYear:1943 endYear:1947];
+        
+        [self addAutoSubmodel:@"Type 8" ofModel:modelId logo:logoId startYear:1907 endYear:-1];
+        [self addAutoSubmodel:@"Type 9" ofModel:modelId logo:logoId startYear:1907 endYear:-1];
     }
     // G
 #pragma mark -
@@ -1912,6 +1985,188 @@ typedef enum {
 	[self addAutoModel:@"Vivio" ofAuto:autoId logo:logoId startYear:1992 endYear:1998];
 	[self addAutoModel:@"Vortex" ofAuto:autoId logo:logoId startYear:1985 endYear:1991];
 	[self addAutoModel:@"XT" ofAuto:autoId logo:logoId startYear:1985 endYear:1991];
+#pragma mark |---- Infiniti
+    logoId = [self addLogo:@"infiniti_256.png"];
+    autoId = [self addAuto:@"Infiniti" country:countryId logo:logoId independentId:INFINITI];
+    
+    modelId = [self addAutoModel:@"G" ofAuto:autoId logo:logoId startYear:1990 endYear:0];
+    {
+        [self addAutoSubmodel:@"P10" ofModel:modelId logo:logoId startYear:1990 endYear:1996];
+        [self addAutoSubmodel:@"P20" ofModel:modelId logo:logoId startYear:1999 endYear:2002];
+        [self addAutoSubmodel:@"G35" ofModel:modelId logo:logoId startYear:2003 endYear:2007];
+        [self addAutoSubmodel:@"G35x" ofModel:modelId logo:logoId startYear:2003 endYear:2007];
+        [self addAutoSubmodel:@"G37" ofModel:modelId logo:logoId startYear:2006 endYear:0];
+        [self addAutoSubmodel:@"G37x" ofModel:modelId logo:logoId startYear:2006 endYear:0];
+        [self addAutoSubmodel:@"Sedan" ofModel:modelId logo:logoId startYear:0000 endYear:0];
+        [self addAutoSubmodel:@"Coupe" ofModel:modelId logo:logoId startYear:0000 endYear:0];
+        [self addAutoSubmodel:@"Convertible" ofModel:modelId logo:logoId startYear:0000 endYear:0];
+        [self addAutoSubmodel:@"IPL" ofModel:modelId logo:logoId startYear:2010 endYear:0];
+        [self addAutoSubmodel:@"G25" ofModel:modelId logo:logoId startYear:2006 endYear:0];
+    }
+    
+    modelId = [self addAutoModel:@"M" ofAuto:autoId logo:logoId startYear:1990 endYear:0];
+    {
+        [self addAutoSubmodel:@"M25" ofModel:modelId logo:logoId startYear:0000 endYear:0];
+        [self addAutoSubmodel:@"M30d" ofModel:modelId logo:logoId startYear:1989 endYear:1992];
+        [self addAutoSubmodel:@"M35h" ofModel:modelId logo:logoId startYear:0000 endYear:0];
+        [self addAutoSubmodel:@"M37" ofModel:modelId logo:logoId startYear:0000 endYear:0];
+        [self addAutoSubmodel:@"M37x" ofModel:modelId logo:logoId startYear:0000 endYear:0];
+        [self addAutoSubmodel:@"M56" ofModel:modelId logo:logoId startYear:0000 endYear:0];
+        [self addAutoSubmodel:@"M56x" ofModel:modelId logo:logoId startYear:0000 endYear:0];
+        [self addAutoSubmodel:@"M30" ofModel:modelId logo:logoId startYear:1989 endYear:1992];
+        [self addAutoSubmodel:@"Coupe" ofModel:modelId logo:logoId startYear:0000 endYear:0];
+        [self addAutoSubmodel:@"Convertible" ofModel:modelId logo:logoId startYear:0000 endYear:0];
+        [self addAutoSubmodel:@"M35" ofModel:modelId logo:logoId startYear:0000 endYear:0];
+        [self addAutoSubmodel:@"M45" ofModel:modelId logo:logoId startYear:2002 endYear:2004];
+    }
+    
+    [self addAutoModel:@"EX" ofAuto:autoId logo:logoId startYear:2007 endYear:0];
+    
+    modelId = [self addAutoModel:@"FX" ofAuto:autoId logo:logoId startYear:2002 endYear:0];
+    {
+        [self addAutoSubmodel:@"FX30d" ofModel:modelId logo:logoId startYear:2010 endYear:0];
+        [self addAutoSubmodel:@"FX35" ofModel:modelId logo:logoId startYear:2003 endYear:0];
+        [self addAutoSubmodel:@"FX45" ofModel:modelId logo:logoId startYear:2003 endYear:0];
+        [self addAutoSubmodel:@"FX37" ofModel:modelId logo:logoId startYear:2008 endYear:0];
+        [self addAutoSubmodel:@"FX50" ofModel:modelId logo:logoId startYear:0000 endYear:0];
+    }
+    
+    [self addAutoModel:@"QX56" ofAuto:autoId logo:logoId startYear:1996 endYear:0];
+    [self addAutoModel:@"JX" ofAuto:autoId logo:logoId startYear:2012 endYear:0];
+    [self addAutoModel:@"QX4" ofAuto:autoId logo:logoId startYear:1996 endYear:2003];
+    [self addAutoModel:@"J30" ofAuto:autoId logo:logoId startYear:1992 endYear:1997];
+    [self addAutoModel:@"I30" ofAuto:autoId logo:logoId startYear:1988 endYear:2003];
+    [self addAutoModel:@"I35" ofAuto:autoId logo:logoId startYear:1988 endYear:2003];
+    [self addAutoModel:@"Q45" ofAuto:autoId logo:logoId startYear:1989 endYear:2006];
+    
+    modelId = [self addAutoModel:@"Concept" ofAuto:autoId logo:logoId startYear:0 endYear:0];
+    {
+        [self addAutoSubmodel:@"Essence" ofModel:modelId logo:logoId startYear:2009 endYear:-1];
+        [self addAutoSubmodel:@"Triant" ofModel:modelId logo:logoId startYear:2003 endYear:-1];
+        [self addAutoSubmodel:@"Kuraza" ofModel:modelId logo:logoId startYear:2005 endYear:-1];
+        [self addAutoSubmodel:@"Essence" ofModel:modelId logo:logoId startYear:2009 endYear:-1];
+        [self addAutoSubmodel:@"Etherea" ofModel:modelId logo:logoId startYear:2011 endYear:-1];
+        [self addAutoSubmodel:@"Emerg-e" ofModel:modelId logo:logoId startYear:2012 endYear:-1];
+        [self addAutoSubmodel:@"LE" ofModel:modelId logo:logoId startYear:2012 endYear:-1];
+        [self addAutoSubmodel:@"Q30" ofModel:modelId logo:logoId startYear:2013 endYear:-1];
+    }
+    
+#pragma mark |---- Mazda
+    logoId = [self addLogo:@"mazda_256.png"];
+    autoId = [self addAuto:@"Mazda" country:countryId logo:logoId independentId:MAZDA];
+    
+    modelId = [self addAutoModel:@"Concepts" ofAuto:autoId logo:logoId startYear:0 endYear:0 isSelectable:NO];
+    {
+        [self addAutoSubmodel:@"717C" ofModel:modelId logo:logoId startYear:1983 endYear:-1];
+        [self addAutoSubmodel:@"727C" ofModel:modelId logo:logoId startYear:1984 endYear:-1];
+        [self addAutoSubmodel:@"737C" ofModel:modelId logo:logoId startYear:1985 endYear:-1];
+        [self addAutoSubmodel:@"757" ofModel:modelId logo:logoId startYear:1986 endYear:-1];
+        [self addAutoSubmodel:@"767" ofModel:modelId logo:logoId startYear:1988 endYear:-1];
+        [self addAutoSubmodel:@"RX-792P" ofModel:modelId logo:logoId startYear:1992 endYear:-1];
+        [self addAutoSubmodel:@"Furai" ofModel:modelId logo:logoId startYear:2007 endYear:-1];
+    }
+    
+    modelId = [self addAutoModel:@"CX" ofAuto:autoId logo:logoId startYear:0 endYear:0 isSelectable:NO];
+    {
+        [self addAutoSubmodel:@"CX-5" ofModel:modelId logo:logoId startYear:2012 endYear:0];
+        [self addAutoSubmodel:@"CX-7" ofModel:modelId logo:logoId startYear:2007 endYear:2012];
+        [self addAutoSubmodel:@"CX-9" ofModel:modelId logo:logoId startYear:2007 endYear:0];
+    }
+    
+    modelId = [self addAutoModel:@"MX" ofAuto:autoId logo:logoId startYear:0 endYear:0 isSelectable:NO];
+    {
+        [self addAutoSubmodel:@"MX-3" ofModel:modelId logo:logoId startYear:1992 endYear:1998];
+        [self addAutoSubmodel:@"MX-5" ofModel:modelId logo:logoId startYear:1992 endYear:1998];
+        [self addAutoSubmodel:@"MX-6" ofModel:modelId logo:logoId startYear:1989 endYear:0];
+    }
+    
+    modelId = [self addAutoModel:@"Proceed" ofAuto:autoId logo:logoId startYear:0 endYear:0 isSelectable:NO];
+    {
+        [self addAutoSubmodel:@"Proceed" ofModel:modelId logo:logoId startYear:1961 endYear:2006];
+        [self addAutoSubmodel:@"Proceed Levante" ofModel:modelId logo:logoId startYear:1988 endYear:0];
+        [self addAutoSubmodel:@"Proceed Marvie" ofModel:modelId logo:logoId startYear:1961 endYear:2006];
+    }
+    
+    modelId = [self addAutoModel:@"RX" ofAuto:autoId logo:logoId startYear:0 endYear:0 isSelectable:NO];
+    {
+        [self addAutoSubmodel:@"RX-3" ofModel:modelId logo:logoId startYear:1971 endYear:1978];
+        [self addAutoSubmodel:@"RX-5" ofModel:modelId logo:logoId startYear:1967 endYear:1995];
+        [self addAutoSubmodel:@"RX-7" ofModel:modelId logo:logoId startYear:1978 endYear:2002];
+        [self addAutoSubmodel:@"RX-792P" ofModel:modelId logo:logoId startYear:1992 endYear:-1];
+        [self addAutoSubmodel:@"RX-8" ofModel:modelId logo:logoId startYear:2003 endYear:2012];
+    }
+    
+    modelId = [self addAutoModel:@"Xedos" ofAuto:autoId logo:logoId startYear:1992 endYear:2002];
+    {
+        [self addAutoSubmodel:@"6" ofModel:modelId logo:logoId startYear:1992 endYear:1999];
+        [self addAutoSubmodel:@"9" ofModel:modelId logo:logoId startYear:1993 endYear:2002];
+    }
+    
+    [self addAutoModel:@"121" ofAuto:autoId logo:logoId startYear:1975 endYear:2002];
+    [self addAutoModel:@"2" ofAuto:autoId logo:logoId startYear:1996 endYear:0];
+    [self addAutoModel:@"323" ofAuto:autoId logo:logoId startYear:1963 endYear:2003];
+    [self addAutoModel:@"3" ofAuto:autoId logo:logoId startYear:2003 endYear:0];
+    [self addAutoModel:@"5" ofAuto:autoId logo:logoId startYear:1999 endYear:0];
+    [self addAutoModel:@"616" ofAuto:autoId logo:logoId startYear:1970 endYear:2002];
+    [self addAutoModel:@"6" ofAuto:autoId logo:logoId startYear:2002 endYear:0];
+    [self addAutoModel:@"787B" ofAuto:autoId logo:logoId startYear:1990 endYear:1991];
+    [self addAutoModel:@"808" ofAuto:autoId logo:logoId startYear:1971 endYear:1978];
+    [self addAutoModel:@"818" ofAuto:autoId logo:logoId startYear:1971 endYear:1978];
+    [self addAutoModel:@"8" ofAuto:autoId logo:logoId startYear:2007 endYear:0];
+    [self addAutoModel:@"929" ofAuto:autoId logo:logoId startYear:1973 endYear:1995];
+    [self addAutoModel:@"929 Coupe" ofAuto:autoId logo:logoId startYear:1986 endYear:1987];
+    [self addAutoModel:@"Allegro" ofAuto:autoId logo:logoId startYear:1963 endYear:2003];
+    [self addAutoModel:@"AZ-3" ofAuto:autoId logo:logoId startYear:1992 endYear:1998];
+    [self addAutoModel:@"AZ-Wagon" ofAuto:autoId logo:logoId startYear:1993 endYear:0];
+    [self addAutoModel:@"B-Series" ofAuto:autoId logo:logoId startYear:1961 endYear:2006];
+    [self addAutoModel:@"B360" ofAuto:autoId logo:logoId startYear:1961 endYear:1968];
+    [self addAutoModel:@"B600" ofAuto:autoId logo:logoId startYear:1960 endYear:1966];
+    [self addAutoModel:@"Biante" ofAuto:autoId logo:logoId startYear:2008 endYear:0];
+    
+    [self addAutoModel:@"Bongo" ofAuto:autoId logo:logoId startYear:1966 endYear:0];
+    [self addAutoModel:@"BT-50" ofAuto:autoId logo:logoId startYear:2006 endYear:0];
+    [self addAutoModel:@"Capella" ofAuto:autoId logo:logoId startYear:1970 endYear:2002];
+    [self addAutoModel:@"Carol" ofAuto:autoId logo:logoId startYear:1962 endYear:0];
+    [self addAutoModel:@"Chantez" ofAuto:autoId logo:logoId startYear:1972 endYear:1976];
+    [self addAutoModel:@"Cosmo" ofAuto:autoId logo:logoId startYear:1967 endYear:1995];
+    [self addAutoModel:@"Cronos" ofAuto:autoId logo:logoId startYear:1991 endYear:1995];
+    [self addAutoModel:@"Demio" ofAuto:autoId logo:logoId startYear:1996 endYear:0];
+    [self addAutoModel:@"Étude" ofAuto:autoId logo:logoId startYear:1987 endYear:1989];
+    [self addAutoModel:@"Familia" ofAuto:autoId logo:logoId startYear:1963 endYear:2003];
+    [self addAutoModel:@"Grand Familia" ofAuto:autoId logo:logoId startYear:1971 endYear:1978];
+    [self addAutoModel:@"Lantis" ofAuto:autoId logo:logoId startYear:1994 endYear:1998];
+    [self addAutoModel:@"Laputa" ofAuto:autoId logo:logoId startYear:1999 endYear:2006];
+    [self addAutoModel:@"Luce" ofAuto:autoId logo:logoId startYear:1966 endYear:1990];
+    [self addAutoModel:@"GTP" ofAuto:autoId logo:logoId startYear:1981 endYear:1985];
+    [self addAutoModel:@"K360" ofAuto:autoId logo:logoId startYear:1959 endYear:1969];
+    [self addAutoModel:@"Mazdago" ofAuto:autoId logo:logoId startYear:1930 endYear:1945];
+    [self addAutoModel:@"Metro" ofAuto:autoId logo:logoId startYear:1996 endYear:0];
+    [self addAutoModel:@"Millenia" ofAuto:autoId logo:logoId startYear:1992 endYear:2003];
+    [self addAutoModel:@"Mizer" ofAuto:autoId logo:logoId startYear:1971 endYear:1978];
+    
+    [self addAutoModel:@"MPV" ofAuto:autoId logo:logoId startYear:1989 endYear:0];
+    [self addAutoModel:@"MXR-01" ofAuto:autoId logo:logoId startYear:1987 endYear:1993];
+    [self addAutoModel:@"Navajo" ofAuto:autoId logo:logoId startYear:1991 endYear:1994];
+    [self addAutoModel:@"P360" ofAuto:autoId logo:logoId startYear:1962 endYear:0];
+    [self addAutoModel:@"Persona" ofAuto:autoId logo:logoId startYear:1988 endYear:1993];
+    [self addAutoModel:@"Porter" ofAuto:autoId logo:logoId startYear:1961 endYear:1968];
+    [self addAutoModel:@"Precedia" ofAuto:autoId logo:logoId startYear:1992 endYear:1998];
+    [self addAutoModel:@"Premacy" ofAuto:autoId logo:logoId startYear:1999 endYear:0];
+    [self addAutoModel:@"R100" ofAuto:autoId logo:logoId startYear:1968 endYear:1973];
+    [self addAutoModel:@"R130" ofAuto:autoId logo:logoId startYear:1966 endYear:1990];
+    [self addAutoModel:@"R360" ofAuto:autoId logo:logoId startYear:1960 endYear:1966];
+    [self addAutoModel:@"Revue" ofAuto:autoId logo:logoId startYear:1990 endYear:1998];
+    [self addAutoModel:@"Roadpacer AP" ofAuto:autoId logo:logoId startYear:1975 endYear:1977];
+    [self addAutoModel:@"Roadster" ofAuto:autoId logo:logoId startYear:1989 endYear:0];
+    [self addAutoModel:@"Savanna" ofAuto:autoId logo:logoId startYear:1971 endYear:1992];
+    [self addAutoModel:@"Scrum" ofAuto:autoId logo:logoId startYear:1989 endYear:0];
+    [self addAutoModel:@"Sentia" ofAuto:autoId logo:logoId startYear:1991 endYear:1999];
+    [self addAutoModel:@"Spiano" ofAuto:autoId logo:logoId startYear:2002 endYear:2008];
+    [self addAutoModel:@"Titan" ofAuto:autoId logo:logoId startYear:1971 endYear:2000];
+    [self addAutoModel:@"Tribute" ofAuto:autoId logo:logoId startYear:2001 endYear:2011];
+    
+    [self addAutoModel:@"Verisa" ofAuto:autoId logo:logoId startYear:2004 endYear:0];
+
     // K
 #pragma mark -
 #pragma mark K
@@ -1939,6 +2194,38 @@ typedef enum {
     // S
 #pragma mark -
 #pragma mark S
+#pragma mark === Sweden ===
+    countryId = [self addCountry:@"Sweden"];
+#pragma mark |---- Scania
+    logoId = [self addLogo:@"scania_256.png"];
+    autoId = [self addAuto:@"Scania" country:countryId logo:logoId independentId:SCANIA];
+    
+    modelId = [self addAutoModel:@"Bus" ofAuto:autoId logo:logoId startYear:0 endYear:0];
+    {
+        [self addAutoSubmodel:@"4-series" ofModel:modelId logo:logoId startYear:1997 endYear:0];
+        [self addAutoSubmodel:@"F-series" ofModel:modelId logo:logoId startYear:0000 endYear:0];
+        [self addAutoSubmodel:@"K-series" ofModel:modelId logo:logoId startYear:0000 endYear:0];
+        [self addAutoSubmodel:@"L113" ofModel:modelId logo:logoId startYear:1989 endYear:1998];
+        [self addAutoSubmodel:@"Metropolitan" ofModel:modelId logo:logoId startYear:1973 endYear:1978];
+        [self addAutoSubmodel:@"N-series" ofModel:modelId logo:logoId startYear:0000 endYear:0];
+        [self addAutoSubmodel:@"N112" ofModel:modelId logo:logoId startYear:1978 endYear:1987];
+        [self addAutoSubmodel:@"N113" ofModel:modelId logo:logoId startYear:1988 endYear:2000];
+        [self addAutoSubmodel:@"N94" ofModel:modelId logo:logoId startYear:0000 endYear:0];
+        [self addAutoSubmodel:@"OmniCity" ofModel:modelId logo:logoId startYear:0000 endYear:0];
+        [self addAutoSubmodel:@"OmniDekka" ofModel:modelId logo:logoId startYear:0000 endYear:0];
+        [self addAutoSubmodel:@"OmniLink" ofModel:modelId logo:logoId startYear:1998 endYear:0];
+        [self addAutoSubmodel:@"OmniTown" ofModel:modelId logo:logoId startYear:0000 endYear:0];
+        [self addAutoSubmodel:@"3-series" ofModel:modelId logo:logoId startYear:0000 endYear:0];
+    }
+    
+    modelId = [self addAutoModel:@"Truck" ofAuto:autoId logo:logoId startYear:0 endYear:0];
+    {
+        [self addAutoSubmodel:@"4-series" ofModel:modelId logo:logoId startYear:1995 endYear:0];
+        [self addAutoSubmodel:@"5-series" ofModel:modelId logo:logoId startYear:2004 endYear:2009];
+        [self addAutoSubmodel:@"6-series" ofModel:modelId logo:logoId startYear:2009 endYear:0];
+        [self addAutoSubmodel:@"SBA111" ofModel:modelId logo:logoId startYear:1975 endYear:1981];
+        [self addAutoSubmodel:@"3-series" ofModel:modelId logo:logoId startYear:1987 endYear:1997];
+    }
     // T
 #pragma mark -
 #pragma mark T
@@ -2772,6 +3059,127 @@ typedef enum {
 	[self addAutoModel:@"Turbo R" ofAuto:autoId logo:logoId startYear:1985 endYear:1997];
 	[self addAutoModel:@"Turbo RT" ofAuto:autoId logo:logoId startYear:1997 endYear:1999];
 	[self addAutoModel:@"Turbo S" ofAuto:autoId logo:logoId startYear:1995 endYear:-1];
+    
+#pragma mark |---- Rolls Royce
+    logoId = [self addLogo:@"rr_256.png"];
+    autoId = [self addAuto:@"Rolls Royce" country:countryId logo:logoId independentId:ROLLSROYCE];
+    
+    modelId = [self addAutoModel:@"RR Limited" ofAuto:autoId logo:logoId startYear:0 endYear:0 isSelectable:NO];
+    {
+        [self addAutoSubmodel:@"10 hp" ofModel:modelId logo:logoId startYear:1904 endYear:1906];
+        [self addAutoSubmodel:@"15 hp" ofModel:modelId logo:logoId startYear:1905 endYear:1905];
+        [self addAutoSubmodel:@"20 hp" ofModel:modelId logo:logoId startYear:1905 endYear:1908];
+        [self addAutoSubmodel:@"30 hp" ofModel:modelId logo:logoId startYear:1905 endYear:1906];
+        [self addAutoSubmodel:@"V-8" ofModel:modelId logo:logoId startYear:1905 endYear:1906];
+        [self addAutoSubmodel:@"40/50 Silver Ghost" ofModel:modelId logo:logoId startYear:1906 endYear:1925];
+        [self addAutoSubmodel:@"Twenty" ofModel:modelId logo:logoId startYear:1922 endYear:1929];
+        [self addAutoSubmodel:@"40/50 Phantom" ofModel:modelId logo:logoId startYear:1925 endYear:1929];
+        [self addAutoSubmodel:@"20/25" ofModel:modelId logo:logoId startYear:1929 endYear:1936];
+        [self addAutoSubmodel:@"Phantom II" ofModel:modelId logo:logoId startYear:1929 endYear:1935];
+        [self addAutoSubmodel:@"25/30" ofModel:modelId logo:logoId startYear:1936 endYear:1938];
+        [self addAutoSubmodel:@"Phantom III" ofModel:modelId logo:logoId startYear:1936 endYear:1939];
+        [self addAutoSubmodel:@"Wraith" ofModel:modelId logo:logoId startYear:1938 endYear:1939];
+        [self addAutoSubmodel:@"Silver Wraith" ofModel:modelId logo:logoId startYear:1946 endYear:1959];
+        [self addAutoSubmodel:@"Silver Dawn" ofModel:modelId logo:logoId startYear:1949 endYear:1955];
+        [self addAutoSubmodel:@"Phantom IV" ofModel:modelId logo:logoId startYear:1950 endYear:1956];
+        [self addAutoSubmodel:@"Silver Cloud" ofModel:modelId logo:logoId startYear:1955 endYear:1966];
+        [self addAutoSubmodel:@"Phantom V" ofModel:modelId logo:logoId startYear:1959 endYear:1968];
+        [self addAutoSubmodel:@"Silver Shadow" ofModel:modelId logo:logoId startYear:1965 endYear:1980];
+        [self addAutoSubmodel:@"Phantom VI" ofModel:modelId logo:logoId startYear:1968 endYear:1991];
+        
+        [self addAutoSubmodel:@"Corniche I–V" ofModel:modelId logo:logoId startYear:1971 endYear:1996];
+        [self addAutoSubmodel:@"Silver Spirit" ofModel:modelId logo:logoId startYear:1980 endYear:1998];
+    }
+    
+    [self addAutoModel:@"Camargue" ofAuto:autoId logo:logoId startYear:1975 endYear:1986];
+    [self addAutoModel:@"Silver Spirit" ofAuto:autoId logo:logoId startYear:1980 endYear:1998];
+    [self addAutoModel:@"Silver Spur" ofAuto:autoId logo:logoId startYear:1980 endYear:1998];
+    [self addAutoModel:@"Silver Seraph" ofAuto:autoId logo:logoId startYear:1998 endYear:2002];
+    [self addAutoModel:@"Corniche V" ofAuto:autoId logo:logoId startYear:2000 endYear:2002];
+    [self addAutoModel:@"Phantom" ofAuto:autoId logo:logoId startYear:2003 endYear:0];
+    [self addAutoModel:@"Phantom Drophead Coupé" ofAuto:autoId logo:logoId startYear:2007 endYear:0];
+    [self addAutoModel:@"Phantom Coupé" ofAuto:autoId logo:logoId startYear:2008 endYear:0];
+    [self addAutoModel:@"Ghost" ofAuto:autoId logo:logoId startYear:2010 endYear:0];
+    [self addAutoModel:@"Wraith" ofAuto:autoId logo:logoId startYear:2013 endYear:0];
+
+#pragma mark |---- Aston Martin
+    logoId = [self addLogo:@"astonmartin_256.png"];
+    autoId = [self addAuto:@"Aston Martin" country:countryId logo:logoId independentId:ASTONMARTIN];
+    
+    [self addAutoModel:@"2-Litre Sports	" ofAuto:autoId logo:logoId startYear:1948 endYear:1950];
+    [self addAutoModel:@"Atom" ofAuto:autoId logo:logoId startYear:1939 endYear:1944];
+    [self addAutoModel:@"Bulldog" ofAuto:autoId logo:logoId startYear:1979 endYear:-1];
+    [self addAutoModel:@"CC100" ofAuto:autoId logo:logoId startYear:2013 endYear:-1];
+    [self addAutoModel:@"Cygnet" ofAuto:autoId logo:logoId startYear:2008 endYear:0];
+    [self addAutoModel:@"DB AR1" ofAuto:autoId logo:logoId startYear:2003 endYear:2004];
+    [self addAutoModel:@"DB2" ofAuto:autoId logo:logoId startYear:1950 endYear:1953];
+    [self addAutoModel:@"DB2/4" ofAuto:autoId logo:logoId startYear:1953 endYear:1957];
+    [self addAutoModel:@"DB Mark III" ofAuto:autoId logo:logoId startYear:1957 endYear:1959];
+    
+    modelId = [self addAutoModel:@"DB4" ofAuto:autoId logo:logoId startYear:1958 endYear:1963];
+    {
+        [self addAutoSubmodel:@"GT Zagato" ofModel:modelId logo:logoId startYear:1960 endYear:1963];
+    }
+    
+    [self addAutoModel:@"DB5" ofAuto:autoId logo:logoId startYear:1963 endYear:1965];
+    [self addAutoModel:@"DB6" ofAuto:autoId logo:logoId startYear:1965 endYear:1971];
+    
+    modelId = [self addAutoModel:@"DB7" ofAuto:autoId logo:logoId startYear:1994 endYear:2004];
+    {
+        [self addAutoSubmodel:@"Zagato" ofModel:modelId logo:logoId startYear:2002 endYear:2003];
+    }
+    
+    [self addAutoModel:@"DB9" ofAuto:autoId logo:logoId startYear:2004 endYear:0];
+    
+    modelId = [self addAutoModel:@"DBS" ofAuto:autoId logo:logoId startYear:1967 endYear:1972];
+    {
+        [self addAutoSubmodel:@"V12" ofModel:modelId logo:logoId startYear:2007 endYear:2012];
+    }
+    
+    [self addAutoModel:@"Halford Special" ofAuto:autoId logo:logoId startYear:1922 endYear:-1];
+    [self addAutoModel:@"Lagonda" ofAuto:autoId logo:logoId startYear:1976 endYear:1990];
+    [self addAutoModel:@"Le Mans" ofAuto:autoId logo:logoId startYear:1932 endYear:1934];
+    [self addAutoModel:@"Lola B08/60" ofAuto:autoId logo:logoId startYear:1992 endYear:0];
+    [self addAutoModel:@"Lola B11/40" ofAuto:autoId logo:logoId startYear:2010 endYear:0];
+    [self addAutoModel:@"One-77" ofAuto:autoId logo:logoId startYear:2009 endYear:2012];
+    
+    modelId = [self addAutoModel:@"DBS" ofAuto:autoId logo:logoId startYear:1967 endYear:1972];
+    {
+        [self addAutoSubmodel:@"V12" ofModel:modelId logo:logoId startYear:2007 endYear:2012];
+    }
+    
+    modelId = [self addAutoModel:@"Rapide" ofAuto:autoId logo:logoId startYear:2010 endYear:0];
+    {
+        [self addAutoSubmodel:@"Bertone Jet" ofModel:modelId logo:logoId startYear:2013 endYear:-1];
+    }
+    
+    [self addAutoModel:@"Razor Blade" ofAuto:autoId logo:logoId startYear:1923 endYear:-1];
+    [self addAutoModel:@"Short Chassis Volante" ofAuto:autoId logo:logoId startYear:1965 endYear:1966];
+    
+    modelId = [self addAutoModel:@"V12 Vantage" ofAuto:autoId logo:logoId startYear:2005 endYear:0];
+    {
+        [self addAutoSubmodel:@"RS" ofModel:modelId logo:logoId startYear:2006 endYear:0];
+    }
+    
+    modelId = [self addAutoModel:@"V8" ofAuto:autoId logo:logoId startYear:1969 endYear:0];
+    {
+        [self addAutoSubmodel:@"Vantage" ofModel:modelId logo:logoId startYear:1989 endYear:2000];
+        [self addAutoSubmodel:@"Vantage" ofModel:modelId logo:logoId startYear:1977 endYear:1989];
+        [self addAutoSubmodel:@"Zagato" ofModel:modelId logo:logoId startYear:1986 endYear:1990];
+    }
+    
+    modelId = [self addAutoModel:@"Vantage" ofAuto:autoId logo:logoId startYear:2005 endYear:0];
+    {
+        [self addAutoSubmodel:@"GT2" ofModel:modelId logo:logoId startYear:2008 endYear:0];
+        [self addAutoSubmodel:@"GT4" ofModel:modelId logo:logoId startYear:2008 endYear:0];
+        [self addAutoSubmodel:@"N24" ofModel:modelId logo:logoId startYear:2008 endYear:0];
+    }
+    
+    [self addAutoModel:@"Vanquish" ofAuto:autoId logo:logoId startYear:2001 endYear:0];
+    [self addAutoModel:@"VH platform" ofAuto:autoId logo:logoId startYear:2004 endYear:0];
+    [self addAutoModel:@"Virage" ofAuto:autoId logo:logoId startYear:1993 endYear:2000];
+    [self addAutoModel:@"Volante" ofAuto:autoId logo:logoId startYear:1996 endYear:0];
+    
 #pragma mark === Ukraine ===
     countryId = [self addCountry:@"Ukraine"];
 #pragma mark |---- Bogdan
