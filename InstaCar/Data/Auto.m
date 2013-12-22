@@ -44,7 +44,7 @@
     }
     UIImage *logoImage = [UIImage imageNamed:logoName];
     
-    return logoImage.size.width / logoImage.size.height;
+    return MIN(logoImage.size.width / logoImage.size.height, 1.5);
 }
 
 @end
