@@ -6,14 +6,12 @@
 //  Copyright (c) 2013 Viktor Sydorenko. All rights reserved.
 //
 
-#import "SkinVersusName.h"
+#import "SkinVersusLogo.h"
 
-@interface SkinVersusName()
+@interface SkinVersusLogo()
 
 @property (weak, nonatomic) IBOutlet UIImageView *imgEmblem1;
 @property (weak, nonatomic) IBOutlet UIImageView *imgEmblem2;
-@property (weak, nonatomic) IBOutlet UILabel *textAuto1;
-@property (weak, nonatomic) IBOutlet UILabel *textAuto2;
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *constraintTopMargin;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *constraintHeight;
@@ -32,7 +30,7 @@
 @end
 
 
-@implementation SkinVersusName
+@implementation SkinVersusLogo
 
 -(void)initialise{
     [self setMovingViewConstraint:self.constraintTopMargin andViewHeight:self.movingView.bounds.size.height];
@@ -45,13 +43,11 @@
 -(void)fieldAuto1DidUpdate{
     self.imgEmblem1.contentMode = UIViewContentModeScaleAspectFit;
     self.imgEmblem1.image = [UIImage imageNamed:fieldAuto1.logo];
-    self.textAuto1.text = fieldAuto1.name;
 }
 
 -(void)fieldAuto2DidUpdate{
     self.imgEmblem2.contentMode = UIViewContentModeScaleAspectFit;
     self.imgEmblem2.image = [UIImage imageNamed:fieldAuto2.logo];
-    self.textAuto2.text = fieldAuto2.name;
 }
 
 -(void)layoutSubviews{
@@ -61,7 +57,7 @@
     self.constraintHeight.constant = self.bounds.size.height * heightScaleFactor;
     
     // logo top & bottom margins
-    CGFloat logosTopBottomMargin = 5.0;//self.movingView.bounds.size.height / 7.0;
+    CGFloat logosTopBottomMargin = 5.0;//self.movingView.bounds.size.height / 6.0;
     self.constraintLogo1TopMargin.constant = logosTopBottomMargin;
     self.constraintLogo1BottomMargin.constant = logosTopBottomMargin;
     self.constraintLogo2TopMargin.constant = logosTopBottomMargin;
@@ -79,12 +75,6 @@
     
     // separator position
     self.constraintVSSeparatorLeftMargin.constant = 0.5 * (boundsWidth - self.constraintVSSeparatorWidth.constant);
-    
-    // text fonts
-    float newAutoFontSize = boundsWidth > 320.0 ? 50.0 : 25.0;
-    
-    self.textAuto1.font = [UIFont fontWithName:self.textAuto1.font.fontName size:newAutoFontSize];
-    self.textAuto2.font = [UIFont fontWithName:self.textAuto2.font.fontName size:newAutoFontSize];
     
     [super layoutSubviews];
 }

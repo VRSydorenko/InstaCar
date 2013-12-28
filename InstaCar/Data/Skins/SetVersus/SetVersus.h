@@ -10,6 +10,7 @@
 #import "SkinSetBase.h"
 
 #import "SkinVersusName.h"
+#import "SkinVersusLogo.h"
 
 @interface SetVersus : SkinSetBase
 @end

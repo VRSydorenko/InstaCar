@@ -27,6 +27,8 @@
         SkinViewBase *skin = nil;
         if ([object isKindOfClass:[SkinVersusName class]]){
             skin = (SkinVersusName*)object;
+        } else if ([object isKindOfClass:[SkinVersusLogo class]]){
+            skin = (SkinVersusLogo*)object;
         }
         
         NSAssert(skin, @"Undefined skin!");

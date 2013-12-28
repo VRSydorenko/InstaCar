@@ -99,6 +99,7 @@
 		7F882C251832EBE50083CFC9 /* SetVersus.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F882C211832EBE50083CFC9 /* SetVersus.xib */; };
 		7F882C261832EBE50083CFC9 /* SkinVersusName.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F882C231832EBE50083CFC9 /* SkinVersusName.m */; };
 		7F882C291832ECC60083CFC9 /* SkinSetBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F882C281832ECC60083CFC9 /* SkinSetBase.m */; };
+		7F9656D91866F463000325B9 /* SkinVersusLogo.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F9656D81866F463000325B9 /* SkinVersusLogo.m */; };
 		7FB233B317D6773C003751B5 /* CellSelectedAuto.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FB233B217D6773C003751B5 /* CellSelectedAuto.m */; };
 		7FC28FC217F31EF200638697 /* UIBluredView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FC28FC117F31EF200638697 /* UIBluredView.m */; };
 		7FC4137517C7E8450025DD2C /* Foursquare2.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FC4136C17C7E8450025DD2C /* Foursquare2.m */; };
@@ -303,6 +304,8 @@
 		7F882C231832EBE50083CFC9 /* SkinVersusName.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SkinVersusName.m; path = SetVersus/SkinVersusName.m; sourceTree = "<group>"; };
 		7F882C271832ECC60083CFC9 /* SkinSetBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkinSetBase.h; sourceTree = "<group>"; };
 		7F882C281832ECC60083CFC9 /* SkinSetBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SkinSetBase.m; sourceTree = "<group>"; };
+		7F9656D71866F463000325B9 /* SkinVersusLogo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SkinVersusLogo.h; path = SetVersus/SkinVersusLogo.h; sourceTree = "<group>"; };
+		7F9656D81866F463000325B9 /* SkinVersusLogo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SkinVersusLogo.m; path = SetVersus/SkinVersusLogo.m; sourceTree = "<group>"; };
 		7FB233B117D6773C003751B5 /* CellSelectedAuto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CellSelectedAuto.h; path = InstaCar/TableCells/CellSelectedAuto.h; sourceTree = "<group>"; };
 		7FB233B217D6773C003751B5 /* CellSelectedAuto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CellSelectedAuto.m; path = InstaCar/TableCells/CellSelectedAuto.m; sourceTree = "<group>"; };
 		7FC28FC017F31EF200638697 /* UIBluredView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIBluredView.h; sourceTree = "<group>"; };
@@ -811,6 +814,8 @@
 				7F882C211832EBE50083CFC9 /* SetVersus.xib */,
 				7F882C221832EBE50083CFC9 /* SkinVersusName.h */,
 				7F882C231832EBE50083CFC9 /* SkinVersusName.m */,
+				7F9656D71866F463000325B9 /* SkinVersusLogo.h */,
+				7F9656D81866F463000325B9 /* SkinVersusLogo.m */,
 			);
 			name = SetVersus;
 			sourceTree = "<group>";
@@ -978,6 +983,7 @@
 				7F2AD57817EDE9B40096EC8D /* SHKConfiguration.m in Sources */,
 				7F00E86518142EE7004F435A /* DbManager.m in Sources */,
 				7FCD262C17F5BFEC00BFDF4E /* SMPageControl.m in Sources */,
+				7F9656D91866F463000325B9 /* SkinVersusLogo.m in Sources */,
 				7F4CB68F18097908008B5CA2 /* LogoNameLeft.m in Sources */,
 				7F2AD57C17EDE9B40096EC8D /* SHKSharerDelegate.m in Sources */,
 				7F2AD5D017EDE9B40096EC8D /* SHKFormFieldCellOptionPicker.m in Sources */,

@@ -83,7 +83,7 @@
 #pragma mark Internal methods
 
 -(void)putSkin:(SkinViewBase*)skin intoArray:(NSMutableArray*)array{
-    NSAssert(array.count > skin.tag, @"Skin index in higher than configured skins count");
+    NSAssert(array.count > skin.tag, @"Skin index is higher than configured skins count");
     NSAssert([array objectAtIndex:skin.tag] == [NSNull null], @"Attempt to replace already configured skin");
     
     [array replaceObjectAtIndex:skin.tag withObject:skin];
