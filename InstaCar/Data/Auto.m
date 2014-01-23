@@ -10,14 +10,15 @@
 
 @implementation Auto
 
--(id)initWithId:(int)_id name:(NSString*)name logo:(NSString*)logo country:(NSString*)country{
+-(id)initWithId:(int)_id name:(NSString*)name logo:(NSString*)logo logoAsName:(BOOL)logoAsName country:(NSString*)country{
     self = [super init];
     if (self){
-        self._id = _id;
-        self.name = name;
-        self.logo = logo;
-        self.country = country;
-        self.model = nil;
+        __id = _id;
+        _name = name;
+        _logo = logo;
+        _country = country;
+        _model = nil;
+        _logoAsName = logoAsName;
     }
     return self;
 }

@@ -36,6 +36,7 @@
     [tAutos addField:F_NAME type:DBTYPE_TEXT];
     [tAutos addField:F_COUNTRY_ID type:DBTYPE_INT];
     [tAutos addField:F_LOGO_ID type:DBTYPE_INT];
+    [tAutos addField:F_LOGO_IS_NAME type:DBTYPE_BOOL];
     [tAutos addField:F_IND_ID type:DBTYPE_INT];
     [tAutos addForeignKey:F_COUNTRY_ID refTable:T_COUNTRIES refField:F_ID];
     [tAutos addForeignKey:F_LOGO_ID refTable:T_LOGOS refField:F_ID];

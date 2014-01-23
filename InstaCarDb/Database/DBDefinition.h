@@ -28,6 +28,7 @@
 #define F_COUNTRY_ID @"f_country_id"
 #define F_LOGO_ID @"f_logo_id"
 // F_NAME
+#define F_LOGO_IS_NAME @"f_logo_as_name"
 #define F_IND_ID @"f_ind_id"
 
 #define T_MODELS @"t_models"

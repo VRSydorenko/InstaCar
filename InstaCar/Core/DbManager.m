@@ -235,8 +235,8 @@ typedef enum { // Do not change the numbers!
 -(NSArray*)getAllAutos{
     NSMutableArray *mutableAutos = [[NSMutableArray alloc] init];
     
-    //                                                        id     name   logo   country
-    NSString *querySQL = [NSString stringWithFormat: @"SELECT %@.%@, %@.%@, %@.%@, %@.%@ FROM %@, %@, %@ WHERE %@.%@=%@.%@ AND %@.%@=%@.%@ ORDER BY %@.%@", T_AUTOS, F_ID, T_AUTOS, F_NAME, T_LOGOS, F_NAME, T_COUNTRIES, F_NAME, T_AUTOS, T_LOGOS, T_COUNTRIES, T_AUTOS, F_LOGO_ID, T_LOGOS, F_ID, T_AUTOS, F_COUNTRY_ID, T_COUNTRIES, F_ID, T_AUTOS, F_NAME];
+    //                                                        id     name   logo   asName country
+    NSString *querySQL = [NSString stringWithFormat: @"SELECT %@.%@, %@.%@, %@.%@, %@.%@, %@.%@ FROM %@, %@, %@ WHERE %@.%@=%@.%@ AND %@.%@=%@.%@ ORDER BY %@.%@", T_AUTOS, F_ID, T_AUTOS, F_NAME, T_LOGOS, F_NAME, T_AUTOS, F_LOGO_AS_NAME, T_COUNTRIES, F_NAME, T_AUTOS, T_LOGOS, T_COUNTRIES, T_AUTOS, F_LOGO_ID, T_LOGOS, F_ID, T_AUTOS, F_COUNTRY_ID, T_COUNTRIES, F_ID, T_AUTOS, F_NAME];
     const char *query_stmt = [querySQL UTF8String];
     
     sqlite3_stmt *statement;
@@ -245,9 +245,10 @@ typedef enum { // Do not change the numbers!
             int idField = sqlite3_column_int(statement, 0);
             NSString *nameField = [[NSString alloc] initWithUTF8String:(const char *) sqlite3_column_text(statement, 1)];
             NSString *logoField = [[NSString alloc] initWithUTF8String:(const char *) sqlite3_column_text(statement, 2)];
-            NSString *countryField = [[NSString alloc] initWithUTF8String:(const char *) sqlite3_column_text(statement, 3)];
+            BOOL logoAsName = sqlite3_column_int(statement, 3);
+            NSString *countryField = [[NSString alloc] initWithUTF8String:(const char *) sqlite3_column_text(statement, 4)];
             
-            Auto *_auto = [[Auto alloc] initWithId: idField name:nameField logo:logoField country:countryField];
+            Auto *_auto = [[Auto alloc] initWithId: idField name:nameField logo:logoField logoAsName:logoAsName country:countryField];
             [mutableAutos addObject:_auto];
         }
     } else {

@@ -10,6 +10,7 @@
 		7F002D21180B49C60076879F /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 7F002D20180B49C60076879F /* Settings.bundle */; };
 		7F00E86518142EE7004F435A /* DbManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F00E86418142EE7004F435A /* DbManager.m */; };
 		7F1767AC17C76F0F00724BD6 /* CaptureSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F1767AB17C76F0F00724BD6 /* CaptureSessionManager.m */; };
+		7F1BDDE71891D710005176CB /* db.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 7F1BDDE61891D710005176CB /* db.sqlite */; };
 		7F27671C1791E80000A1C1A0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7F27671A1791E80000A1C1A0 /* InfoPlist.strings */; };
 		7F27671E1791E80000A1C1A0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F27671D1791E80000A1C1A0 /* main.m */; };
 		7F2767221791E80000A1C1A0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F2767211791E80000A1C1A0 /* AppDelegate.m */; };
@@ -81,7 +82,6 @@
 		7F4CB69318097908008B5CA2 /* SkinSimple.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F4CB68918097908008B5CA2 /* SkinSimple.m */; };
 		7F4CB69418097908008B5CA2 /* SkinSimple2.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F4CB68B18097908008B5CA2 /* SkinSimple2.m */; };
 		7F4CB69518097908008B5CA2 /* SkinViewBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F4CB68D18097908008B5CA2 /* SkinViewBase.m */; };
-		7F4E0C37186103C9007A9DB9 /* db.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 7F4E0C36186103C9007A9DB9 /* db.sqlite */; };
 		7F4ECC2D17C8062800BF1671 /* SideViewControllerBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F4ECC2C17C8062800BF1671 /* SideViewControllerBase.m */; };
 		7F4F684317F6F97600F1017B /* HFImageEditorFrameView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F4F683F17F6F97600F1017B /* HFImageEditorFrameView.m */; };
 		7F4F684417F6F97600F1017B /* HFImageEditorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F4F684217F6F97600F1017B /* HFImageEditorViewController.m */; };
@@ -131,6 +131,7 @@
 		7F00E86418142EE7004F435A /* DbManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DbManager.m; path = InstaCar/Core/DbManager.m; sourceTree = "<group>"; };
 		7F1767AA17C76F0F00724BD6 /* CaptureSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CaptureSessionManager.h; sourceTree = "<group>"; };
 		7F1767AB17C76F0F00724BD6 /* CaptureSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CaptureSessionManager.m; sourceTree = "<group>"; };
+		7F1BDDE61891D710005176CB /* db.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = db.sqlite; sourceTree = "<group>"; };
 		7F27670E1791E80000A1C1A0 /* InstaCar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstaCar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F2767191791E80000A1C1A0 /* InstaCar-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "InstaCar-Info.plist"; sourceTree = "<group>"; };
 		7F27671B1791E80000A1C1A0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -270,7 +271,6 @@
 		7F4CB68B18097908008B5CA2 /* SkinSimple2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SkinSimple2.m; sourceTree = "<group>"; };
 		7F4CB68C18097908008B5CA2 /* SkinViewBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkinViewBase.h; sourceTree = "<group>"; };
 		7F4CB68D18097908008B5CA2 /* SkinViewBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SkinViewBase.m; sourceTree = "<group>"; };
-		7F4E0C36186103C9007A9DB9 /* db.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = db.sqlite; sourceTree = "<group>"; };
 		7F4ECC2B17C8062800BF1671 /* SideViewControllerBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SideViewControllerBase.h; sourceTree = "<group>"; };
 		7F4ECC2C17C8062800BF1671 /* SideViewControllerBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SideViewControllerBase.m; sourceTree = "<group>"; };
 		7F4F683E17F6F97600F1017B /* HFImageEditorFrameView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFImageEditorFrameView.h; sourceTree = "<group>"; };
@@ -791,7 +791,7 @@
 		7F5AC64117CBFFDD00C01658 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				7F4E0C36186103C9007A9DB9 /* db.sqlite */,
+				7F1BDDE61891D710005176CB /* db.sqlite */,
 				7F4CB67D18097908008B5CA2 /* Skins */,
 				7F5AC64B17CC06CE00C01658 /* Auto.h */,
 				7F5AC64C17CC06CE00C01658 /* Auto.m */,
@@ -928,7 +928,7 @@
 				7F4F684917F6FDF500F1017B /* ImageEditor.xib in Resources */,
 				7F2AD48117EDE9390096EC8D /* SHKCustomSharers.plist in Resources */,
 				7F2AD59917EDE9B40096EC8D /* SHKSharers.plist in Resources */,
-				7F4E0C37186103C9007A9DB9 /* db.sqlite in Resources */,
+				7F1BDDE71891D710005176CB /* db.sqlite in Resources */,
 				7F882C251832EBE50083CFC9 /* SetVersus.xib in Resources */,
 				7F002D21180B49C60076879F /* Settings.bundle in Resources */,
 				7F27AE081812F58E00168424 /* Settings_disabled.bundle in Resources */,

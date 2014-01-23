@@ -2779,7 +2779,7 @@ typedef enum {
     }
 #pragma mark |---- GMC
     logoId = [self addLogo:@"gmc_256.png"];
-    autoId = [self addAuto:@"GMC" country:countryId logo:logoId independentId:GMC];
+    autoId = [self addAuto:@"GMC" country:countryId logoAsName:logoId independentId:GMC];
     
     [self addAutoModel:@"Acadia" ofAuto:autoId logo:logoId startYear:2006 endYear:0];
 	[self addAutoModel:@"B-Series" ofAuto:autoId logo:logoId startYear:1966 endYear:2003];
@@ -2978,7 +2978,7 @@ typedef enum {
 	}
 #pragma mark |---- Jeep
     logoId = [self addLogo:@"jeep_256.png"];
-    autoId = [self addAuto:@"Jeep" country:countryId logo:logoId independentId:BENTLEY];
+    autoId = [self addAuto:@"Jeep" country:countryId logoAsName:logoId independentId:BENTLEY];
 
     modelId = [self addAutoModel:@"Cherokee" ofAuto:autoId logo:logoId startYear:1974 endYear:0];
 	{
@@ -3259,7 +3259,15 @@ typedef enum {
 }
 
 -(int)addAuto:(NSString*)name country:(int)countryId logo:(int)logoId independentId:(int)indId{
-    NSString* sql = [NSString stringWithFormat: @"INSERT INTO %@ (%@, %@, %@, %@) VALUES (?, %d, %d, %d)", T_AUTOS, F_NAME, F_COUNTRY_ID, F_LOGO_ID, F_IND_ID, countryId, logoId, indId];
+    return [self addAuto:name country:countryId logo:logoId logoIsName:false independentId:indId];
+}
+
+-(int)addAuto:(NSString*)name country:(int)countryId logoAsName:(int)logoId independentId:(int)indId{
+    return [self addAuto:name country:countryId logo:logoId logoIsName:true independentId:indId];
+}
+
+-(int)addAuto:(NSString*)name country:(int)countryId logo:(int)logoId logoIsName:(bool)logoIsName independentId:(int)indId{
+    NSString* sql = [NSString stringWithFormat: @"INSERT INTO %@ (%@, %@, %@, %@, %@) VALUES (?, %d, %d, %d, %d)", T_AUTOS, F_NAME, F_COUNTRY_ID, F_LOGO_ID, F_LOGO_IS_NAME, F_IND_ID, countryId, logoId, logoIsName, indId];
     
     const char *insert_stmt = [sql UTF8String];
     
