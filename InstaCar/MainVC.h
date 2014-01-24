@@ -10,9 +10,7 @@
 #import <iAd/iAd.h>
 #import "MainNavController.h"
 #import "CaptureSessionManager.h"
-#import "SkinProvider.h"
 #import "SMPageControl.h"
-#import "UIBluredView.h"
 #import "SHKShareItemDelegate.h"
 #import "FirstTimeInfoVC.h"
 

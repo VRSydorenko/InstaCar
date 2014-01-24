@@ -8,7 +8,6 @@
 
 #import <Foundation/Foundation.h>
 #import "Utils.h"
-#import "Auto.h"
 
 #define DATABASE_NAME_FREE @"instacardb"
 #define DATABASE_NAME_PRO @"instacarprodb"

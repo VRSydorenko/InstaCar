@@ -134,7 +134,7 @@ typedef enum {
 }
 
 -(void)initSkins{
-    SkinSet *skinSet = [SkinProvider getInstance].selectedSkinSet;
+    SkinSet *skinSet = [DataManager getSelectedSkinSet];
     activeSkin = [skinSet getSkinAtIndex:0];
 
 	self.scrollSkins.indicatorStyle = UIScrollViewIndicatorStyleWhite;
@@ -227,7 +227,7 @@ typedef enum {
     int page = floor((sender.contentOffset.x - pageWidth / 2) / pageWidth) + 1;
     pageControl.currentPage = page;
     
-    activeSkin = [[SkinProvider getInstance].selectedSkinSet getSkinAtIndex:page];
+    activeSkin = [[DataManager getSelectedSkinSet] getSkinAtIndex:page];
 }
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)sender{
@@ -250,7 +250,7 @@ typedef enum {
         // if any car is currently selected - apply it to newly selected skinset
         [self applyCurrentlySelectedCarsToNewlySelectedSkin];
     } else { // other fields are skin relevant so pass the update to selected skin set
-        [[SkinProvider getInstance].selectedSkinSet updateData:newValue ofType:dataType];
+        [[DataManager getSelectedSkinSet] updateData:newValue ofType:dataType];
     }
 }
 
@@ -440,7 +440,7 @@ typedef enum {
         }
         
         dispatch_async(dispatch_get_main_queue(), ^{
-            // if we still wait for the picture to be ready
+            // if we are still waiting for the picture to be ready
             if (imageInProcessing){ // (user might have pressed PickNewPhoto for example)
                 NSString *hashTagString = [Utils getHashTagString];
                 SHKItem *item = [SHKItem image:imageToShare title:hashTagString];
@@ -501,15 +501,15 @@ typedef enum {
 #pragma mark -
 
 -(void)applyCurrentlySelectedCarsToNewlySelectedSkin{
-    Auto *selectedAuto1 = [SkinProvider getInstance].selectedAuto1;
+    Auto *selectedAuto1 = [DataManager getSelectedAuto1];
     if (selectedAuto1 != nil){
-        [[SkinProvider getInstance].selectedSkinSet updateData:selectedAuto1 ofType:AUTO1];
+        [[DataManager getSelectedSkinSet] updateData:selectedAuto1 ofType:AUTO1];
     }
     
-    if ([SkinProvider getInstance].selectedSkinSet.supportsSecondCar){
-        Auto *selectedAuto2 = [SkinProvider getInstance].selectedAuto2;
+    if ([DataManager getSelectedSkinSet].supportsSecondCar){
+        Auto *selectedAuto2 = [DataManager getSelectedAuto1];
         if (selectedAuto2 != nil){
-            [[SkinProvider getInstance].selectedSkinSet updateData:selectedAuto2 ofType:AUTO2];
+            [[DataManager getSelectedSkinSet] updateData:selectedAuto2 ofType:AUTO2];
         }
     }
 }
