@@ -24,11 +24,12 @@
 }
 
 -(NSString*)selectedText{
+    NSString *autoName = self.logoAsName ? @"" : self.name;
     if (self.model){
         if (self.model.submodel){
-            return [NSString stringWithFormat:@"%@ %@", self.model.isSelectable?self.model.name:self.name, self.model.submodel.name];
+            return [NSString stringWithFormat:@"%@ %@", (self.model.isSelectable ? self.model.name : autoName), self.model.submodel.name];
         } else {
-            return [NSString stringWithFormat:@"%@ %@", self.name, self.model.name];
+            return [NSString stringWithFormat:@"%@ %@", autoName, self.model.name];
         }
     }
     return self.name;
