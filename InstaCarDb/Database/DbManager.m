@@ -3228,7 +3228,7 @@ typedef enum {
 	
 #pragma mark |---- Chevrolet
     logoId = [self addLogo:@"chevrolet_256.png"];
-    autoId = [self addAuto:@"Chevrolet" country:countryId logoAsName:logoId independentId:CHEVROLET];
+    autoId = [self addAuto:@"Chevrolet" country:countryId logo:logoId independentId:CHEVROLET];
     [self addAutoModel:@"Camaro" ofAuto:autoId logo:logoId startYear:1967 endYear:2002];
 	[self addAutoModel:@"Camaro" ofAuto:autoId logo:logoId startYear:2010 endYear:0];
 	modelId = [self addAutoModel:@"Camaro" ofAuto:autoId logo:logoId startYear:1967 endYear:0];
