@@ -8,18 +8,18 @@
 
 #import <Foundation/Foundation.h>
 #import "AutoModel.h"
-#import "AutoSubmodel.h"
 
 @interface Auto : NSObject
 
-@property (nonatomic) int _id;
-@property (nonatomic) NSString *name;
-@property (nonatomic) NSString *logo;
-@property (nonatomic) NSString *country;
+@property (readonly, nonatomic) int _id;
+@property (readonly, nonatomic) NSString *name;
+@property (readonly, nonatomic) NSString *logo;
+@property (readonly, nonatomic) BOOL logoAsName;
+@property (readonly, nonatomic) NSString *country;
 @property (nonatomic) AutoModel *model;
-@property (readonly) NSString* selectedText;
-@property (readonly) CGFloat logoWidthHeightRate;
+@property (readonly, nonatomic) NSString* selectedText;
+@property (readonly, nonatomic) CGFloat logoWidthHeightRate;
 
--(id)initWithId:(int)_id name:(NSString*)name logo:(NSString*)logo country:(NSString*)country;
+-(id)initWithId:(int)_id name:(NSString*)name logo:(NSString*)logo logoAsName:(BOOL)logoAsName country:(NSString*)country;
 
 @end

@@ -101,6 +101,7 @@
     gradient = nil;
     gradientInitialized = NO;
     isContentOnTop = YES;
+    movingViewTopBottomMargin = 0.0;
 }
 
 -(void)initialise{
@@ -110,6 +111,7 @@
 -(void)setMovingViewConstraint:(NSLayoutConstraint*)topMargin andViewHeight:(unsigned short)height{
     movingViewTopMarginConstraint = topMargin;
     movingViewHeight = height;
+    heightScaleFactor = height / self.bounds.size.height;
 }
 
 -(UIImage*)getSkinImage{
@@ -117,27 +119,33 @@
 }
 
 -(UIImage*)getSkinImageWithBlur:(CGFloat)blurStrength {
-    CGFloat scaleFactorHeight = 612.0/self.bounds.size.height;
+    CGFloat desiredSideLength = 918.0;
+    CGFloat scaleFactorHeight = desiredSideLength/self.bounds.size.height;
     
     self.layer.contentsScale = scaleFactorHeight;
     CGRect currentFrame = self.frame;
-    if (movingViewTopMarginConstraint.constant > 0){
-        movingViewTopMarginConstraint.constant = 612.0 - (int)(movingViewHeight*scaleFactorHeight) + 1;
+    bool movingViewIsOnTop = movingViewTopMarginConstraint.constant == movingViewTopBottomMargin;
+    if (movingViewIsOnTop){
+        movingViewTopMarginConstraint.constant = movingViewTopBottomMargin*scaleFactorHeight;
+    } else {
+        movingViewTopMarginConstraint.constant = desiredSideLength - movingViewHeight*scaleFactorHeight - movingViewTopBottomMargin*scaleFactorHeight;
     }
     
-    self.frame = CGRectMake(self.frame.origin.x, self.frame.origin.y, 612.0, 612.0);
+    self.frame = CGRectMake(self.frame.origin.x, self.frame.origin.y, desiredSideLength, desiredSideLength);
     [self setNeedsLayout];
     [self layoutIfNeeded];
     [self layoutSubviews];
     
-    UIGraphicsBeginImageContextWithOptions(CGSizeMake(612.0, 612.0), NO, scaleFactorHeight);
+    UIGraphicsBeginImageContextWithOptions(CGSizeMake(desiredSideLength, desiredSideLength), NO, scaleFactorHeight);
     [self.layer renderInContext:UIGraphicsGetCurrentContext()];
     UIImage *result = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     
     self.frame = currentFrame;
-    if (movingViewTopMarginConstraint.constant > 0){
-        movingViewTopMarginConstraint.constant = currentFrame.size.height - movingViewHeight;
+    if (movingViewIsOnTop){
+        movingViewTopMarginConstraint.constant = movingViewTopBottomMargin;
+    } else {
+        movingViewTopMarginConstraint.constant = currentFrame.size.height - movingViewHeight - movingViewTopBottomMargin;
     }
     
     [self setNeedsLayout];
@@ -151,13 +159,6 @@
     return result;
 }
 
--(void)setViewContentScaleFactor:(CGFloat)scale forView:(UIView*)view{
-    view.contentScaleFactor = scale;
-    for (UIView *subview in view.subviews) {
-        [self setViewContentScaleFactor:scale forView:subview];
-    }
-}
-
 -(BOOL)isSkinContentAtTheTop{
     return isContentOnTop;
 }
@@ -167,13 +168,13 @@
         return;
     }
     
-    if (movingViewTopMarginConstraint.constant == 0){
+    if (movingViewTopMarginConstraint.constant == movingViewTopBottomMargin){
         return; // already at the top
     }
 
     [UIView animateWithDuration:MOVINGVIEW_TIME
             animations:^(void){
-                movingViewTopMarginConstraint.constant = 0;
+                movingViewTopMarginConstraint.constant = movingViewTopBottomMargin;
                 [self layoutIfNeeded];
             }
             completion:^(BOOL finished){
@@ -187,13 +188,13 @@
         return;
     }
     
-    if (movingViewTopMarginConstraint.constant != 0){
+    if (movingViewTopMarginConstraint.constant != movingViewTopBottomMargin){
         return; // already at the bottom (at least not on the top)
     }
     
     [UIView animateWithDuration:MOVINGVIEW_TIME
             animations:^(void){
-                movingViewTopMarginConstraint.constant = self.bounds.size.height - movingViewHeight;
+                movingViewTopMarginConstraint.constant = self.bounds.size.height - movingViewHeight - movingViewTopBottomMargin;
                 [self layoutIfNeeded];
             }
             completion:^(BOOL finished){

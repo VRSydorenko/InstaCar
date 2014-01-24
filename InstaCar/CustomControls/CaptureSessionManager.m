@@ -126,7 +126,7 @@
 
             // calculating rect for cropping
             CGFloat currentMinSideLength = MIN(ciImage.extent.size.width, ciImage.extent.size.height);
-            CGFloat desiredSideLength = 612.0;
+            CGFloat desiredSideLength = 918.0;
             CGRect screenRect = [UIScreen mainScreen].bounds;
             CGFloat topOffset = self.imageTopCropMargin * currentMinSideLength/MIN(screenRect.size.width, screenRect.size.height); // 'top' is 'right' here
             CGRect subImageRect = CGRectMake(topOffset, 0, currentMinSideLength, currentMinSideLength);

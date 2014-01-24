@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4510" systemVersion="12F45" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="5PD-ZC-8Rm">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="5PD-ZC-8Rm">
     <dependencies>
         <deployment defaultVersion="1792" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3742"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
     </dependencies>
     <scenes>
         <!--Main Nav Controller-->
@@ -139,6 +139,10 @@
                                     <action selector="btnMiddleRightPressed" destination="vLK-Ar-ArR" eventType="touchUpInside" id="xtK-ck-eFP"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="H6A-is-85W">
+                                <rect key="frame" x="198" y="349" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
                             <view opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kdr-lZ-7HS">
                                 <rect key="frame" x="0.0" y="320" width="320" height="10"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -163,6 +167,7 @@
                             <constraint firstAttribute="trailing" secondItem="AIv-dK-ka2" secondAttribute="trailing" id="E1p-C6-FPh"/>
                             <constraint firstItem="sCG-cl-3fd" firstAttribute="top" secondItem="4oZ-cn-B3n" secondAttribute="bottom" id="E6j-bu-UaL"/>
                             <constraint firstItem="PZn-uN-nYb" firstAttribute="leading" secondItem="K25-XF-Jiu" secondAttribute="leading" id="EWb-W2-4N9"/>
+                            <constraint firstItem="sCG-cl-3fd" firstAttribute="top" secondItem="H6A-is-85W" secondAttribute="bottom" constant="17" id="Kcw-bB-4r4"/>
                             <constraint firstAttribute="trailing" secondItem="sCG-cl-3fd" secondAttribute="trailing" id="Kug-1y-glA"/>
                             <constraint firstItem="kdr-lZ-7HS" firstAttribute="leading" secondItem="K25-XF-Jiu" secondAttribute="leading" id="LWs-gn-l8x"/>
                             <constraint firstItem="4Xz-0E-p37" firstAttribute="top" secondItem="VxQ-Yl-MmO" secondAttribute="bottom" id="SlW-mA-GTK"/>
@@ -170,6 +175,7 @@
                             <constraint firstItem="sCG-cl-3fd" firstAttribute="top" secondItem="AkF-py-Nas" secondAttribute="bottom" id="WaO-jB-No5"/>
                             <constraint firstAttribute="bottom" secondItem="sCG-cl-3fd" secondAttribute="bottom" id="Wsf-7v-IiH"/>
                             <constraint firstItem="sCG-cl-3fd" firstAttribute="leading" secondItem="K25-XF-Jiu" secondAttribute="leading" id="X5g-xb-kQ1"/>
+                            <constraint firstAttribute="trailing" secondItem="H6A-is-85W" secondAttribute="trailing" constant="102" id="YSQ-mn-skI"/>
                             <constraint firstItem="sCG-cl-3fd" firstAttribute="top" secondItem="GJ3-KC-Oir" secondAttribute="bottom" id="Z6w-Lc-Zl8"/>
                             <constraint firstItem="AIv-dK-ka2" firstAttribute="leading" secondItem="AkF-py-Nas" secondAttribute="trailing" id="bFT-ly-rxK"/>
                             <constraint firstItem="sCG-cl-3fd" firstAttribute="top" secondItem="PZn-uN-nYb" secondAttribute="bottom" id="cUZ-5P-pim"/>
@@ -186,6 +192,7 @@
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationItem key="navigationItem" title="INSTACAR" id="mIi-6y-OnM"/>
                     <connections>
+                        <outlet property="activityShareInProgress" destination="H6A-is-85W" id="aje-0O-d4S"/>
                         <outlet property="btnLocation" destination="PZn-uN-nYb" id="jcG-Cn-cmO"/>
                         <outlet property="btnMiddle" destination="4oZ-cn-B3n" id="Q0R-Sb-oYL"/>
                         <outlet property="btnMiddleLeft" destination="GJ3-KC-Oir" id="lJP-dk-eKX"/>
@@ -261,7 +268,8 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <string key="text"> - No ads
- - Add your custom car models</string>
+ - Add your custom car models
+ - Turn on/off app logo overlay</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -394,7 +402,7 @@
                                             <outlet property="textVenueName" destination="Mie-1t-Soz" id="sZg-ki-pmW"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cellFoursquare" rowHeight="50" id="cQk-AR-fC1" customClass="CellVenue">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cellFoursquare" rowHeight="50" id="cQk-AR-fC1" customClass="CellVenue">
                                         <rect key="frame" x="0.0" y="66" width="320" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cQk-AR-fC1" id="wR4-uS-iZZ">

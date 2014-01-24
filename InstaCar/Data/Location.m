@@ -23,4 +23,28 @@
     return self;
 }
 
+-(NSString*)getLocationString{
+    NSString *first = @"";
+    NSString *separator = @"";
+    NSString *second = @"";
+    
+    if (self.country){
+        second = self.country;
+    }
+    
+    if (self.city){
+        first = self.city;
+    } else if (self.state && second){
+        first = self.state;
+    } else { // if there is no city & no state then what's the reason to show the country...
+        second = @"";
+    }
+    
+    if (first.length > 0 && second.length > 0){
+        separator = @", ";
+    }
+    
+    return [NSString stringWithFormat:@"%@%@%@", first, separator, second];
+}
+
 @end

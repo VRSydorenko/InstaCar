@@ -10,24 +10,26 @@
 
 @implementation Auto
 
--(id)initWithId:(int)_id name:(NSString*)name logo:(NSString*)logo country:(NSString*)country{
+-(id)initWithId:(int)_id name:(NSString*)name logo:(NSString*)logo logoAsName:(BOOL)logoAsName country:(NSString*)country{
     self = [super init];
     if (self){
-        self._id = _id;
-        self.name = name;
-        self.logo = logo;
-        self.country = country;
-        self.model = nil;
+        __id = _id;
+        _name = name;
+        _logo = logo;
+        _country = country;
+        _model = nil;
+        _logoAsName = logoAsName;
     }
     return self;
 }
 
 -(NSString*)selectedText{
+    NSString *autoName = self.logoAsName ? @"" : self.name;
     if (self.model){
         if (self.model.submodel){
-            return [NSString stringWithFormat:@"%@ %@", self.model.isSelectable?self.model.name:self.name, self.model.submodel.name];
+            return [NSString stringWithFormat:@"%@ %@", (self.model.isSelectable ? self.model.name : autoName), self.model.submodel.name];
         } else {
-            return [NSString stringWithFormat:@"%@ %@", self.name, self.model.name];
+            return [NSString stringWithFormat:@"%@ %@", autoName, self.model.name];
         }
     }
     return self.name;
@@ -44,7 +46,7 @@
     }
     UIImage *logoImage = [UIImage imageNamed:logoName];
     
-    return logoImage.size.width / logoImage.size.height;
+    return MIN(logoImage.size.width / logoImage.size.height, 1.5);
 }
 
 @end

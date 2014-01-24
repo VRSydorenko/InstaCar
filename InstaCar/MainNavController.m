@@ -184,7 +184,7 @@
     // 0 is OK
     // 1 is Yes about downloading Instagram
     if (buttonIndex == 1){
-        NSString* url = @"itms-apps://itunes.apple.com/app/id389801252";
+        NSString* url = @"itms-apps://itunes.apple.com/app/id389801252"; // Instargam app
         [[UIApplication sharedApplication] openURL: [NSURL URLWithString: url]];
     }
 }
@@ -220,7 +220,7 @@
 
 -(void)initRightBarButton{
     if (NO == [DataManager isFullVersion]){
-        UIBarButtonItem *button = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:/*@"nav_about_pro_icon.png"*/@"nav_menu_icon.png"] style:UIBarButtonItemStyleBordered target:self action:@selector(showAboutProVersionButtonPressed)];
+        UIBarButtonItem *button = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"nav_about_pro_icon.png"] style:UIBarButtonItemStyleBordered target:self action:@selector(showAboutProVersionButtonPressed)];
         button.TintColor = [UIColor whiteColor];
         UIViewController *topController = [self.viewControllers objectAtIndex:0];
         topController.navigationItem.rightBarButtonItem = button;

@@ -42,29 +42,31 @@
         if (!venueCountry && v.location.country.length > 0){
             venueCountry = [[FSGlobalVenue alloc] init];
             venueCountry.name = v.location.country;
-            venueCountry.location.country = v.location.country;
-            venueCountry.location.countryCode = v.location.countryCode;
         }
         if (!venueState && v.location.state.length > 0){
             venueState = [[FSGlobalVenue alloc] init];
             venueState.name = v.location.state;
-            
-            venueState.location.country = v.location.country;
-            venueState.location.countryCode = v.location.countryCode;
-            venueState.location.state = v.location.state;
         }
         if (!venueCity && v.location.city.length > 0){
             venueCity = [[FSGlobalVenue alloc] init];
             venueCity.name = v.location.city;
-            
-            venueCity.location.country = v.location.country;
-            venueCity.location.countryCode = v.location.countryCode;
-            venueCity.location.state = v.location.state;
-            venueCity.location.city = v.location.city;
         }
         
         if (venueCountry && venueState && venueCity){
             break;
+        }
+    }
+    
+    if (venueState && venueCountry){
+        venueState.location.country = venueCountry.name;
+    }
+    
+    if (venueCity){
+        if (venueState){
+            venueCity.location.state = venueState.name;
+        }
+        if (venueCountry){
+            venueCity.location.country = venueCountry.name;
         }
     }
     

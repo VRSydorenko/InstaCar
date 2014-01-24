@@ -127,8 +127,8 @@
         case 1: {// skinsets
             SkinSet *newSet = [sets objectAtIndex:indexPath.row];
             if (![[newSet getTitle] isEqualToString:[[DataManager getSelectedSkinSet] getTitle]]){
-                [DataManager setSelectedSkinSet:newSet];
-                [self.sideActionDelegate performSideAction:ACT_LOAD_NEW_SKINSET withArgument:nil hidingSideController:YES]; // TODO: pass set instead of nil?
+                //[DataManager setSelectedSkinSet:newSet];
+                [self.sideActionDelegate performSideAction:ACT_LOAD_NEW_SKINSET withArgument:newSet hidingSideController:YES];
             } else {
                 [self.sideActionDelegate performSideAction:ACT_EMPTY withArgument:nil hidingSideController:YES];
             }

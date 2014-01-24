@@ -9,9 +9,7 @@
 #import "LogoNameLeft.h"
 #import "DataManager.h"
 
-@interface LogoNameLeft(){
-    CGFloat heightScaleFactor;
-}
+@interface LogoNameLeft()
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *topMargin;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *heightConstraint;
@@ -26,7 +24,7 @@
     self.heightConstraint.constant = self.bounds.size.height * heightScaleFactor;
     self.widthLogoConstraint.constant = self.imgEmblem.bounds.size.height * 1.33; // 30% wider than taller
     
-    float newFontSize = self.bounds.size.width > 320.0 ? 50.0 : 25.0;
+    float newFontSize = self.bounds.size.width > 320.0 ? 70.0 : 25.0;
     self.textAuto.font = [UIFont fontWithName:self.textAuto.font.fontName size:newFontSize];
 
     [super layoutSubviews];
@@ -34,8 +32,6 @@
 
 -(void)initialise{
     [self setupGradient:0.4 inDirection:GRADIENT_RIGHT];
-    
-    heightScaleFactor = self.movingView.bounds.size.height / self.bounds.size.height;
     [self.imgEmblem.layer setMinificationFilter:kCAFilterTrilinear];
     
     [self setMovingViewConstraint:self.topMargin andViewHeight:self.movingView.bounds.size.height];

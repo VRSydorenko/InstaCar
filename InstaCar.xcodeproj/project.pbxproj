@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		7F002D21180B49C60076879F /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 7F002D20180B49C60076879F /* Settings.bundle */; };
 		7F00E86518142EE7004F435A /* DbManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F00E86418142EE7004F435A /* DbManager.m */; };
-		7F00E86718142F43004F435A /* instacardb.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 7F00E86618142F43004F435A /* instacardb.sqlite */; };
 		7F1767AC17C76F0F00724BD6 /* CaptureSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F1767AB17C76F0F00724BD6 /* CaptureSessionManager.m */; };
 		7F27671C1791E80000A1C1A0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7F27671A1791E80000A1C1A0 /* InfoPlist.strings */; };
 		7F27671E1791E80000A1C1A0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F27671D1791E80000A1C1A0 /* main.m */; };
@@ -87,6 +86,7 @@
 		7F4F684417F6F97600F1017B /* HFImageEditorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F4F684217F6F97600F1017B /* HFImageEditorViewController.m */; };
 		7F4F684817F6FDF500F1017B /* ImageEditor.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F4F684617F6FDF500F1017B /* ImageEditor.m */; };
 		7F4F684917F6FDF500F1017B /* ImageEditor.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F4F684717F6FDF500F1017B /* ImageEditor.xib */; };
+		7F4FE8921826FF0B00045ABD /* SkinLogoCountryBadge.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F4FE8911826FF0B00045ABD /* SkinLogoCountryBadge.m */; };
 		7F544A3918085378001FFEC3 /* ALAssetsLibrary+CustomPhotoAlbum.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F544A3818085378001FFEC3 /* ALAssetsLibrary+CustomPhotoAlbum.m */; };
 		7F59AC5D17D3BA4700B87457 /* AutoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F59AC5C17D3BA4700B87457 /* AutoModel.m */; };
 		7F59AC5F17D3C1F400B87457 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F59AC5E17D3C1F400B87457 /* libsqlite3.0.dylib */; };
@@ -94,6 +94,12 @@
 		7F5C46671811E87900DF94B1 /* ProInfoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F5C46661811E87900DF94B1 /* ProInfoVC.m */; };
 		7F72A06517D7AED10075FC0B /* AutoSubmodel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F72A06417D7AED10075FC0B /* AutoSubmodel.m */; };
 		7F7FF47017CF8634000E0ABD /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F7FF46F17CF8634000E0ABD /* Location.m */; };
+		7F882C241832EBE50083CFC9 /* SetVersus.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F882C201832EBE50083CFC9 /* SetVersus.m */; };
+		7F882C251832EBE50083CFC9 /* SetVersus.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F882C211832EBE50083CFC9 /* SetVersus.xib */; };
+		7F882C261832EBE50083CFC9 /* SkinVersusName.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F882C231832EBE50083CFC9 /* SkinVersusName.m */; };
+		7F882C291832ECC60083CFC9 /* SkinSetBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F882C281832ECC60083CFC9 /* SkinSetBase.m */; };
+		7F9656D91866F463000325B9 /* SkinVersusLogo.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F9656D81866F463000325B9 /* SkinVersusLogo.m */; };
+		7FA88456189323A000007569 /* db.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 7FA88455189323A000007569 /* db.sqlite */; };
 		7FB233B317D6773C003751B5 /* CellSelectedAuto.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FB233B217D6773C003751B5 /* CellSelectedAuto.m */; };
 		7FC28FC217F31EF200638697 /* UIBluredView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FC28FC117F31EF200638697 /* UIBluredView.m */; };
 		7FC4137517C7E8450025DD2C /* Foursquare2.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FC4136C17C7E8450025DD2C /* Foursquare2.m */; };
@@ -123,7 +129,6 @@
 		7F002D20180B49C60076879F /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Settings.bundle; path = InstaCar/Settings.bundle; sourceTree = "<group>"; };
 		7F00E86318142EE7004F435A /* DbManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DbManager.h; path = InstaCar/Core/DbManager.h; sourceTree = "<group>"; };
 		7F00E86418142EE7004F435A /* DbManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DbManager.m; path = InstaCar/Core/DbManager.m; sourceTree = "<group>"; };
-		7F00E86618142F43004F435A /* instacardb.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; name = instacardb.sqlite; path = InstaCar/Data/instacardb.sqlite; sourceTree = "<group>"; };
 		7F1767AA17C76F0F00724BD6 /* CaptureSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CaptureSessionManager.h; sourceTree = "<group>"; };
 		7F1767AB17C76F0F00724BD6 /* CaptureSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CaptureSessionManager.m; sourceTree = "<group>"; };
 		7F27670E1791E80000A1C1A0 /* InstaCar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstaCar.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -275,6 +280,8 @@
 		7F4F684517F6FDF500F1017B /* ImageEditor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageEditor.h; sourceTree = "<group>"; };
 		7F4F684617F6FDF500F1017B /* ImageEditor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageEditor.m; sourceTree = "<group>"; };
 		7F4F684717F6FDF500F1017B /* ImageEditor.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImageEditor.xib; sourceTree = "<group>"; };
+		7F4FE8901826FF0B00045ABD /* SkinLogoCountryBadge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkinLogoCountryBadge.h; sourceTree = "<group>"; };
+		7F4FE8911826FF0B00045ABD /* SkinLogoCountryBadge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SkinLogoCountryBadge.m; sourceTree = "<group>"; };
 		7F544A3718085377001FFEC3 /* ALAssetsLibrary+CustomPhotoAlbum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ALAssetsLibrary+CustomPhotoAlbum.h"; sourceTree = "<group>"; };
 		7F544A3818085378001FFEC3 /* ALAssetsLibrary+CustomPhotoAlbum.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ALAssetsLibrary+CustomPhotoAlbum.m"; sourceTree = "<group>"; };
 		7F59AC5B17D3BA4700B87457 /* AutoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AutoModel.h; path = InstaCar/Data/AutoModel.h; sourceTree = "<group>"; };
@@ -289,6 +296,16 @@
 		7F72A06417D7AED10075FC0B /* AutoSubmodel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AutoSubmodel.m; path = InstaCar/Data/AutoSubmodel.m; sourceTree = "<group>"; };
 		7F7FF46E17CF8634000E0ABD /* Location.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Location.h; path = InstaCar/Data/Location.h; sourceTree = "<group>"; };
 		7F7FF46F17CF8634000E0ABD /* Location.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Location.m; path = InstaCar/Data/Location.m; sourceTree = "<group>"; };
+		7F882C1F1832EBE50083CFC9 /* SetVersus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SetVersus.h; path = SetVersus/SetVersus.h; sourceTree = "<group>"; };
+		7F882C201832EBE50083CFC9 /* SetVersus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SetVersus.m; path = SetVersus/SetVersus.m; sourceTree = "<group>"; };
+		7F882C211832EBE50083CFC9 /* SetVersus.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SetVersus.xib; path = SetVersus/SetVersus.xib; sourceTree = "<group>"; };
+		7F882C221832EBE50083CFC9 /* SkinVersusName.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SkinVersusName.h; path = SetVersus/SkinVersusName.h; sourceTree = "<group>"; };
+		7F882C231832EBE50083CFC9 /* SkinVersusName.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SkinVersusName.m; path = SetVersus/SkinVersusName.m; sourceTree = "<group>"; };
+		7F882C271832ECC60083CFC9 /* SkinSetBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkinSetBase.h; sourceTree = "<group>"; };
+		7F882C281832ECC60083CFC9 /* SkinSetBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SkinSetBase.m; sourceTree = "<group>"; };
+		7F9656D71866F463000325B9 /* SkinVersusLogo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SkinVersusLogo.h; path = SetVersus/SkinVersusLogo.h; sourceTree = "<group>"; };
+		7F9656D81866F463000325B9 /* SkinVersusLogo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SkinVersusLogo.m; path = SetVersus/SkinVersusLogo.m; sourceTree = "<group>"; };
+		7FA88455189323A000007569 /* db.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = db.sqlite; sourceTree = "<group>"; };
 		7FB233B117D6773C003751B5 /* CellSelectedAuto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CellSelectedAuto.h; path = InstaCar/TableCells/CellSelectedAuto.h; sourceTree = "<group>"; };
 		7FB233B217D6773C003751B5 /* CellSelectedAuto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CellSelectedAuto.m; path = InstaCar/TableCells/CellSelectedAuto.m; sourceTree = "<group>"; };
 		7FC28FC017F31EF200638697 /* UIBluredView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIBluredView.h; sourceTree = "<group>"; };
@@ -723,9 +740,12 @@
 		7F4CB67D18097908008B5CA2 /* Skins */ = {
 			isa = PBXGroup;
 			children = (
+				7F882C271832ECC60083CFC9 /* SkinSetBase.h */,
+				7F882C281832ECC60083CFC9 /* SkinSetBase.m */,
 				7F4CB68C18097908008B5CA2 /* SkinViewBase.h */,
 				7F4CB68D18097908008B5CA2 /* SkinViewBase.m */,
 				7F4CB67E18097908008B5CA2 /* SetDefault */,
+				7F882C161832EB420083CFC9 /* SetVersus */,
 			);
 			name = Skins;
 			path = InstaCar/Data/Skins;
@@ -747,6 +767,8 @@
 				7F4CB68918097908008B5CA2 /* SkinSimple.m */,
 				7F4CB68A18097908008B5CA2 /* SkinSimple2.h */,
 				7F4CB68B18097908008B5CA2 /* SkinSimple2.m */,
+				7F4FE8901826FF0B00045ABD /* SkinLogoCountryBadge.h */,
+				7F4FE8911826FF0B00045ABD /* SkinLogoCountryBadge.m */,
 			);
 			path = SetDefault;
 			sourceTree = "<group>";
@@ -769,7 +791,7 @@
 		7F5AC64117CBFFDD00C01658 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				7F00E86618142F43004F435A /* instacardb.sqlite */,
+				7FA88455189323A000007569 /* db.sqlite */,
 				7F4CB67D18097908008B5CA2 /* Skins */,
 				7F5AC64B17CC06CE00C01658 /* Auto.h */,
 				7F5AC64C17CC06CE00C01658 /* Auto.m */,
@@ -782,6 +804,20 @@
 				7FFEBC5417DBA54F00B1DC9A /* auto_logos.xcassets */,
 			);
 			name = Data;
+			sourceTree = "<group>";
+		};
+		7F882C161832EB420083CFC9 /* SetVersus */ = {
+			isa = PBXGroup;
+			children = (
+				7F882C1F1832EBE50083CFC9 /* SetVersus.h */,
+				7F882C201832EBE50083CFC9 /* SetVersus.m */,
+				7F882C211832EBE50083CFC9 /* SetVersus.xib */,
+				7F882C221832EBE50083CFC9 /* SkinVersusName.h */,
+				7F882C231832EBE50083CFC9 /* SkinVersusName.m */,
+				7F9656D71866F463000325B9 /* SkinVersusLogo.h */,
+				7F9656D81866F463000325B9 /* SkinVersusLogo.m */,
+			);
+			name = SetVersus;
 			sourceTree = "<group>";
 		};
 		7FC4136A17C7E8450025DD2C /* Foursquare */ = {
@@ -885,7 +921,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7F00E86718142F43004F435A /* instacardb.sqlite in Resources */,
 				7F27672A1791E80000A1C1A0 /* Images.xcassets in Resources */,
 				7F2AD5CA17EDE9B40096EC8D /* SHKShareFileIcon.png in Resources */,
 				7F2AD59A17EDE9B40096EC8D /* DETweetPaperClip.png in Resources */,
@@ -893,6 +928,8 @@
 				7F4F684917F6FDF500F1017B /* ImageEditor.xib in Resources */,
 				7F2AD48117EDE9390096EC8D /* SHKCustomSharers.plist in Resources */,
 				7F2AD59917EDE9B40096EC8D /* SHKSharers.plist in Resources */,
+				7FA88456189323A000007569 /* db.sqlite in Resources */,
+				7F882C251832EBE50083CFC9 /* SetVersus.xib in Resources */,
 				7F002D21180B49C60076879F /* Settings.bundle in Resources */,
 				7F27AE081812F58E00168424 /* Settings_disabled.bundle in Resources */,
 				7FFEBC5517DBA54F00B1DC9A /* auto_logos.xcassets in Resources */,
@@ -920,6 +957,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7F882C241832EBE50083CFC9 /* SetVersus.m in Sources */,
 				7F3871D617BE4CA900D8E39D /* MainNavController.m in Sources */,
 				7F3871DE17BE4F1000D8E39D /* DDMenuController.m in Sources */,
 				7F4CB68E18097908008B5CA2 /* LocationSimple.m in Sources */,
@@ -945,6 +983,7 @@
 				7F2AD57817EDE9B40096EC8D /* SHKConfiguration.m in Sources */,
 				7F00E86518142EE7004F435A /* DbManager.m in Sources */,
 				7FCD262C17F5BFEC00BFDF4E /* SMPageControl.m in Sources */,
+				7F9656D91866F463000325B9 /* SkinVersusLogo.m in Sources */,
 				7F4CB68F18097908008B5CA2 /* LogoNameLeft.m in Sources */,
 				7F2AD57C17EDE9B40096EC8D /* SHKSharerDelegate.m in Sources */,
 				7F2AD5D017EDE9B40096EC8D /* SHKFormFieldCellOptionPicker.m in Sources */,
@@ -963,11 +1002,13 @@
 				7F4F684817F6FDF500F1017B /* ImageEditor.m in Sources */,
 				7F5AC64D17CC06CE00C01658 /* Auto.m in Sources */,
 				7F4CB67A180978CF008B5CA2 /* UserSettings.m in Sources */,
+				7F882C291832ECC60083CFC9 /* SkinSetBase.m in Sources */,
 				7F4CB67C180978CF008B5CA2 /* VenueProvider.m in Sources */,
 				7F2AD59517EDE9B40096EC8D /* SHKXMLResponseParser.m in Sources */,
 				7F2767221791E80000A1C1A0 /* AppDelegate.m in Sources */,
 				7F2AD5A017EDE9B40096EC8D /* SHKCopy.m in Sources */,
 				7F27671E1791E80000A1C1A0 /* main.m in Sources */,
+				7F882C261832EBE50083CFC9 /* SkinVersusName.m in Sources */,
 				7FC4137817C7E8450025DD2C /* FSTargetCallback.m in Sources */,
 				7F5C46671811E87900DF94B1 /* ProInfoVC.m in Sources */,
 				7F4CB69118097908008B5CA2 /* SetDefault.m in Sources */,
@@ -975,6 +1016,7 @@
 				7F1767AC17C76F0F00724BD6 /* CaptureSessionManager.m in Sources */,
 				7F3A170117F627A200584614 /* UIAlphaGradientView.m in Sources */,
 				7FB233B317D6773C003751B5 /* CellSelectedAuto.m in Sources */,
+				7F4FE8921826FF0B00045ABD /* SkinLogoCountryBadge.m in Sources */,
 				7F2AD5A617EDE9B40096EC8D /* SHKTextMessage.m in Sources */,
 				7F2AD5D617EDE9B40096EC8D /* SHKFormFieldSettings.m in Sources */,
 				7FEF908917D505E800C07A05 /* AutosVC.m in Sources */,

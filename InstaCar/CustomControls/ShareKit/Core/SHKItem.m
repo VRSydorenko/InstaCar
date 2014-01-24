@@ -295,7 +295,7 @@ static NSString *kSHKPopOverSourceRect = @"kSHKPopOverSourceRect";
                                                     Tags:%@\n\
                                                     Custom fields:%@\n\n\
                                                     Sharer specific\n\n\
-                                                    Print output type: %i\n\
+                                                    Print output type: %i\
 													mailToRecipients: %@\n\
                                                     isMailHTML: %i\n\
                                                     mailJPGQuality: %f\n\

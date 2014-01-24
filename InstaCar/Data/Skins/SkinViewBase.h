@@ -15,17 +15,6 @@
 
 #define MOVINGVIEW_TIME 0.5
 
-@class SkinViewBase;
-
-@protocol SkinSetProtocol <NSObject>
--(NSString*)getTitle;
--(unsigned short)getSkinsCount;
--(SkinViewBase*)getSkinAtIndex:(unsigned short)index;
--(void)freeSkins;
--(void)updateData:(id)data ofType:(SelectedDataChange)type;
--(BOOL)supportsSecondCar;
-@end
-
 typedef enum {
     fLOCATION,
     fAUTO1,
@@ -48,12 +37,16 @@ typedef enum {
     NSString *fieldText1;
     NSString *fieldText2;
     
+    CGFloat heightScaleFactor;
+    CGFloat movingViewTopBottomMargin;
+    
+    BOOL isContentOnTop;
+    
 @private
     NSLayoutConstraint *movingViewTopMarginConstraint;
     unsigned short movingViewHeight;
     UIAlphaGradientView *gradient;
     BOOL gradientInitialized;
-    BOOL isContentOnTop;
 }
 
 -(void)baseInit;

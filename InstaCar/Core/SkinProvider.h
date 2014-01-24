@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "UserSettings.h"
 #import "SetDefault.h"
+#import "SetVersus.h"
 #import "FSVenue.h"
 
 typedef NSObject<SkinSetProtocol> SkinSet;

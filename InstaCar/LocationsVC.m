@@ -75,6 +75,10 @@
 }
 
 - (void)tableView:(UITableView*)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.row == self.nearbyVenues.count){ // Foursquare badge cell
+        return;
+    }
+    
     FSVenue *selectedVenue = [self.nearbyVenues objectAtIndex:indexPath.row];
     [DataManager setSelectedVenue:selectedVenue];
     [self.sideActionDelegate performSideAction:ACT_UPDATE_SKINS_LOCATION withArgument:selectedVenue hidingSideController:YES];
