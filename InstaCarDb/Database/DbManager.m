@@ -853,7 +853,7 @@ typedef enum {
         [self addAutoSubmodel:@"1517L" ofModel:modelId logo:logoId startYear:0 endYear:0];
         [self addAutoSubmodel:@"Arocs" ofModel:modelId logo:logoId startYear:0 endYear:0];
     }
-    modelId = [self addAutoModel:@"Vans" ofAuto:autoId logo:logoId startYear:0 endYear:0];
+    modelId = [self addAutoModel:@"Vans" ofAuto:autoId logo:logoId startYear:0 endYear:0 isSelectable:NO];
     {
         [self addAutoSubmodel:@"Transporter" ofModel:modelId logo:logoId startYear:0 endYear:0];
         [self addAutoSubmodel:@"N1000" ofModel:modelId logo:logoId startYear:1975 endYear:1977];
@@ -872,7 +872,7 @@ typedef enum {
         [self addAutoSubmodel:@"T2" ofModel:modelId logo:logoId startYear:1967 endYear:1996];
         [self addAutoSubmodel:@"Vario" ofModel:modelId logo:logoId startYear:1996 endYear:0];
     }
-    modelId = [self addAutoModel:@"Concept" ofAuto:autoId logo:logoId startYear:0 endYear:0];
+    modelId = [self addAutoModel:@"Concept cars" ofAuto:autoId logo:logoId startYear:0 endYear:0 isSelectable:NO];
     {
         [self addAutoSubmodel:@"C111" ofModel:modelId logo:logoId startYear:1969 endYear:-1]; // also 1970, 1978, 1979
         [self addAutoSubmodel:@"Auto 2000" ofModel:modelId logo:logoId startYear:1981 endYear:-1];
@@ -902,7 +902,7 @@ typedef enum {
     logoId = [self addLogo:@"opel_256.png"];
     autoId = [self addAuto:@"Opel" country:countryId logo:logoId independentId:OPEL];
     
-	modelId = [self addAutoModel:@"Retro Car" ofAuto:autoId logo:logoId startYear:0 endYear:0];
+	modelId = [self addAutoModel:@"Retro cars" ofAuto:autoId logo:logoId startYear:0 endYear:0 isSelectable:NO];
 	{
 		[self addAutoSubmodel:@"1 litre" ofModel:modelId logo:logoId startYear:1933 endYear:1933];
 		[self addAutoSubmodel:@"1.2 litre" ofModel:modelId logo:logoId startYear:1931 endYear:1935];
@@ -1161,7 +1161,7 @@ typedef enum {
 #pragma mark |---- Alfa Romeo
     logoId = [self addLogo:@"alfaromeo_256.png"];
     autoId = [self addAuto:@"Alfa Romeo" country:countryId logo:logoId independentId:ALFA_ROMEO];
-    modelId = [self addAutoModel:@"1910s" ofAuto:autoId logo:logoId startYear:0 endYear:0];
+    modelId = [self addAutoModel:@"1910s" ofAuto:autoId logo:logoId startYear:0 endYear:0 isSelectable:NO];
     {
         [self addAutoSubmodel:@"24 HP" ofModel:modelId logo:logoId startYear:1910 endYear:1920];
         [self addAutoSubmodel:@"12 HP" ofModel:modelId logo:logoId startYear:1910 endYear:1911];
@@ -1171,7 +1171,7 @@ typedef enum {
         [self addAutoSubmodel:@"40-60 HP Corsa" ofModel:modelId logo:logoId startYear:1913 endYear:-1];
         [self addAutoSubmodel:@"Grand Prix" ofModel:modelId logo:logoId startYear:1914 endYear:-1];
     }
-    modelId = [self addAutoModel:@"1920s" ofAuto:autoId logo:logoId startYear:0 endYear:0];
+    modelId = [self addAutoModel:@"1920s" ofAuto:autoId logo:logoId startYear:0 endYear:0 isSelectable:NO];
     {
         [self addAutoSubmodel:@"20-30 HP" ofModel:modelId logo:logoId startYear:1921 endYear:1922];
         [self addAutoSubmodel:@"G1" ofModel:modelId logo:logoId startYear:1920 endYear:1921];
@@ -1187,7 +1187,7 @@ typedef enum {
         [self addAutoSubmodel:@"6C 1500 MMS" ofModel:modelId logo:logoId startYear:1928 endYear:-1];
         [self addAutoSubmodel:@"6C 1750 Super Sport" ofModel:modelId logo:logoId startYear:1929 endYear:-1];
     }
-    modelId = [self addAutoModel:@"1930s" ofAuto:autoId logo:logoId startYear:0 endYear:0];
+    modelId = [self addAutoModel:@"1930s" ofAuto:autoId logo:logoId startYear:0 endYear:0 isSelectable:NO];
     {
         [self addAutoSubmodel:@"8C 2300" ofModel:modelId logo:logoId startYear:1931 endYear:1934];
         [self addAutoSubmodel:@"6C 1900" ofModel:modelId logo:logoId startYear:1933 endYear:1933];
@@ -1210,11 +1210,11 @@ typedef enum {
         [self addAutoSubmodel:@"158" ofModel:modelId logo:logoId startYear:1938 endYear:-1];
         [self addAutoSubmodel:@"6C 2500 Super Sport Corsa" ofModel:modelId logo:logoId startYear:1939 endYear:-1];
     }
-    modelId = [self addAutoModel:@"1940s" ofAuto:autoId logo:logoId startYear:0 endYear:0];
+    modelId = [self addAutoModel:@"1940s" ofAuto:autoId logo:logoId startYear:0 endYear:0 isSelectable:NO];
     {
         [self addAutoSubmodel:@"6C 2500 Competizione" ofModel:modelId logo:logoId startYear:1948 endYear:-1];
     }
-    modelId = [self addAutoModel:@"1950s" ofAuto:autoId logo:logoId startYear:0 endYear:0];
+    modelId = [self addAutoModel:@"1950s" ofAuto:autoId logo:logoId startYear:0 endYear:0 isSelectable:NO];
     {
         [self addAutoSubmodel:@"1900" ofModel:modelId logo:logoId startYear:1950 endYear:1958];
         [self addAutoSubmodel:@"Matta" ofModel:modelId logo:logoId startYear:1951 endYear:1953];
@@ -1224,7 +1224,7 @@ typedef enum {
         [self addAutoSubmodel:@"159" ofModel:modelId logo:logoId startYear:1951 endYear:-1];
         [self addAutoSubmodel:@"6C 3000 CM" ofModel:modelId logo:logoId startYear:1952 endYear:-1];
     }
-    modelId = [self addAutoModel:@"1960s" ofAuto:autoId logo:logoId startYear:0 endYear:0];
+    modelId = [self addAutoModel:@"1960s" ofAuto:autoId logo:logoId startYear:0 endYear:0 isSelectable:NO];
     {
         [self addAutoSubmodel:@"2600" ofModel:modelId logo:logoId startYear:1962 endYear:1968];
         [self addAutoSubmodel:@"Giulia Saloon" ofModel:modelId logo:logoId startYear:1962 endYear:1976];
@@ -1243,7 +1243,7 @@ typedef enum {
         [self addAutoSubmodel:@"33/2" ofModel:modelId logo:logoId startYear:1968 endYear:-1];
         [self addAutoSubmodel:@"33/3" ofModel:modelId logo:logoId startYear:1969 endYear:-1];
     }
-    modelId = [self addAutoModel:@"1970s" ofAuto:autoId logo:logoId startYear:0 endYear:0];
+    modelId = [self addAutoModel:@"1970s" ofAuto:autoId logo:logoId startYear:0 endYear:0 isSelectable:NO];
     {
         [self addAutoSubmodel:@"Montreal" ofModel:modelId logo:logoId startYear:1970 endYear:1977];
         [self addAutoSubmodel:@"Alfasud" ofModel:modelId logo:logoId startYear:1972 endYear:1983];
@@ -1258,7 +1258,7 @@ typedef enum {
         [self addAutoSubmodel:@"177" ofModel:modelId logo:logoId startYear:1979 endYear:-1];
         [self addAutoSubmodel:@"179" ofModel:modelId logo:logoId startYear:1979 endYear:-1];
     }
-    modelId = [self addAutoModel:@"1980s" ofAuto:autoId logo:logoId startYear:0 endYear:0];
+    modelId = [self addAutoModel:@"1980s" ofAuto:autoId logo:logoId startYear:0 endYear:0 isSelectable:NO];
     {
         [self addAutoSubmodel:@"33" ofModel:modelId logo:logoId startYear:1983 endYear:1994];
         [self addAutoSubmodel:@"Arna" ofModel:modelId logo:logoId startYear:1984 endYear:1987];
@@ -1271,7 +1271,7 @@ typedef enum {
         [self addAutoSubmodel:@"184" ofModel:modelId logo:logoId startYear:1984 endYear:-1];
         [self addAutoSubmodel:@"185" ofModel:modelId logo:logoId startYear:1985 endYear:-1];
     }
-    modelId = [self addAutoModel:@"1990s" ofAuto:autoId logo:logoId startYear:0 endYear:0];
+    modelId = [self addAutoModel:@"1990s" ofAuto:autoId logo:logoId startYear:0 endYear:0 isSelectable:NO];
     {
         [self addAutoSubmodel:@"155" ofModel:modelId logo:logoId startYear:19920 endYear:1998];
         [self addAutoSubmodel:@"145" ofModel:modelId logo:logoId startYear:19940 endYear:2000];
@@ -1281,7 +1281,7 @@ typedef enum {
         [self addAutoSubmodel:@"166" ofModel:modelId logo:logoId startYear:19980 endYear:2007];
         [self addAutoSubmodel:@"155 V6 TI" ofModel:modelId logo:logoId startYear:19930 endYear:0];
     }
-    modelId = [self addAutoModel:@"2000s" ofAuto:autoId logo:logoId startYear:0 endYear:0];
+    modelId = [self addAutoModel:@"2000s" ofAuto:autoId logo:logoId startYear:0 endYear:0 isSelectable:NO];
     {
         [self addAutoSubmodel:@"147" ofModel:modelId logo:logoId startYear:2000 endYear:2010];
         [self addAutoSubmodel:@"8C Competizione" ofModel:modelId logo:logoId startYear:2007 endYear:2009];
@@ -1291,10 +1291,7 @@ typedef enum {
         [self addAutoSubmodel:@"159" ofModel:modelId logo:logoId startYear:2005 endYear:2011];
         [self addAutoSubmodel:@"Spider" ofModel:modelId logo:logoId startYear:2006 endYear:2010];
     }
-    /*modelId = [self addAutoModel:@"" ofAuto:autoId logo:logoId startYear:0 endYear:0];
-     {
-     [self addAutoSubmodel:@"" ofModel:modelId logo:logoId startYear:0 endYear:0];
-     }*/
+
 #pragma mark |---- DeLorean
     logoId = [self addLogo:@"delorean_256.png"];
     autoId = [self addAuto:@"DeLorean" country:countryId logo:logoId independentId:DELOREAN];
@@ -1464,10 +1461,10 @@ typedef enum {
 	[self addAutoModel:@"Titan" ofAuto:autoId logo:logoId startYear:2004 endYear:0];
 	modelId = [self addAutoModel:@"Type" ofAuto:autoId logo:logoId startYear:0 endYear:0];
     {
-		[self addAutoSubmodel:@"Type 30" ofModel:modelId logo:logoId startYear:1941 endYear:-1];
-		[self addAutoSubmodel:@"Type 50" ofModel:modelId logo:logoId startYear:1939 endYear:1941];
-		[self addAutoSubmodel:@"Type 53" ofModel:modelId logo:logoId startYear:1941 endYear:-1];
-		[self addAutoSubmodel:@"Type 70" ofModel:modelId logo:logoId startYear:1937 endYear:1943];
+		[self addAutoSubmodel:@"30" ofModel:modelId logo:logoId startYear:1941 endYear:-1];
+		[self addAutoSubmodel:@"50" ofModel:modelId logo:logoId startYear:1939 endYear:1941];
+		[self addAutoSubmodel:@"53" ofModel:modelId logo:logoId startYear:1941 endYear:-1];
+		[self addAutoSubmodel:@"70" ofModel:modelId logo:logoId startYear:1937 endYear:1943];
 	}
 	[self addAutoModel:@"Urvan" ofAuto:autoId logo:logoId startYear:1986 endYear:0];
 	[self addAutoModel:@"Van C22" ofAuto:autoId logo:logoId startYear:1981 endYear:0];
@@ -1720,7 +1717,7 @@ typedef enum {
 		[self addAutoSubmodel:@"Yaris Verso" ofModel:modelId logo:logoId startYear:2000 endYear:2004];
     }
 	
-	modelId = [self addAutoModel:@"Concepts" ofAuto:autoId logo:logoId startYear:0 endYear:0 isSelectable:NO];
+	modelId = [self addAutoModel:@"Concept cars" ofAuto:autoId logo:logoId startYear:0 endYear:0 isSelectable:NO];
     {
 		[self addAutoSubmodel:@"1/X" ofModel:modelId logo:logoId startYear:2007 endYear:-1];
 		[self addAutoSubmodel:@"4500GT" ofModel:modelId logo:logoId startYear:1989 endYear:-1];
@@ -2041,7 +2038,7 @@ typedef enum {
     [self addAutoModel:@"I35" ofAuto:autoId logo:logoId startYear:1988 endYear:2003];
     [self addAutoModel:@"Q45" ofAuto:autoId logo:logoId startYear:1989 endYear:2006];
     
-    modelId = [self addAutoModel:@"Concept" ofAuto:autoId logo:logoId startYear:0 endYear:0];
+    modelId = [self addAutoModel:@"Concept cars" ofAuto:autoId logo:logoId startYear:0 endYear:0 isSelectable:NO];
     {
         [self addAutoSubmodel:@"Essence" ofModel:modelId logo:logoId startYear:2009 endYear:-1];
         [self addAutoSubmodel:@"Triant" ofModel:modelId logo:logoId startYear:2003 endYear:-1];
@@ -2057,7 +2054,7 @@ typedef enum {
     logoId = [self addLogo:@"mazda_256.png"];
     autoId = [self addAuto:@"Mazda" country:countryId logo:logoId independentId:MAZDA];
     
-    modelId = [self addAutoModel:@"Concepts" ofAuto:autoId logo:logoId startYear:0 endYear:0 isSelectable:NO];
+    modelId = [self addAutoModel:@"Concept cars" ofAuto:autoId logo:logoId startYear:0 endYear:0 isSelectable:NO];
     {
         [self addAutoSubmodel:@"717C" ofModel:modelId logo:logoId startYear:1983 endYear:-1];
         [self addAutoSubmodel:@"727C" ofModel:modelId logo:logoId startYear:1984 endYear:-1];
@@ -2656,7 +2653,7 @@ typedef enum {
         [self addAutoSubmodel:@"Tourneo" ofModel:modelId logo:logoId startYear:1995 endYear:0];
 		[self addAutoSubmodel:@"Transit" ofModel:modelId logo:logoId startYear:1965 endYear:0];
     }
-	modelId = [self addAutoModel:@"MPVs" ofAuto:autoId logo:logoId startYear:0 endYear:0];
+	modelId = [self addAutoModel:@"MPVs" ofAuto:autoId logo:logoId startYear:0 endYear:0 isSelectable:NO];
     {
 		[self addAutoSubmodel:@"C-MAX" ofModel:modelId logo:logoId startYear:2007 endYear:0];
 		[self addAutoSubmodel:@"S-Max" ofModel:modelId logo:logoId startYear:2008 endYear:0];
@@ -2665,7 +2662,7 @@ typedef enum {
         [self addAutoSubmodel:@"Aerostar" ofModel:modelId logo:logoId startYear:1986 endYear:1997];
 		[self addAutoSubmodel:@"Freestar" ofModel:modelId logo:logoId startYear:2004 endYear:2007];
     }
-	modelId = [self addAutoModel:@"SUVs" ofAuto:autoId logo:logoId startYear:0 endYear:0];
+	modelId = [self addAutoModel:@"SUVs" ofAuto:autoId logo:logoId startYear:0 endYear:0 isSelectable:NO];
     {
 		[self addAutoSubmodel:@"Bronco" ofModel:modelId logo:logoId startYear:1966 endYear:1996];
 		[self addAutoSubmodel:@"Bronco II" ofModel:modelId logo:logoId startYear:1984 endYear:1990];
@@ -2687,7 +2684,7 @@ typedef enum {
 		[self addAutoSubmodel:@"Taurus X" ofModel:modelId logo:logoId startYear:2008 endYear:2009];
 		[self addAutoSubmodel:@"Territory" ofModel:modelId logo:logoId startYear:2004 endYear:0];
     }
-	modelId = [self addAutoModel:@"Trucks" ofAuto:autoId logo:logoId startYear:0 endYear:0];
+	modelId = [self addAutoModel:@"Trucks" ofAuto:autoId logo:logoId startYear:0 endYear:0 isSelectable:NO];
     {
 		[self addAutoSubmodel:@"A-Series" ofModel:modelId logo:logoId startYear:0000 endYear:0000];
 		[self addAutoSubmodel:@"B-Series" ofModel:modelId logo:logoId startYear:1948 endYear:1998];
@@ -2739,7 +2736,7 @@ typedef enum {
 		[self addAutoSubmodel:@"Vanette" ofModel:modelId logo:logoId startYear:1946 endYear:1965];
 		[self addAutoSubmodel:@"W-Series" ofModel:modelId logo:logoId startYear:1966 endYear:1977];
     }
-	modelId = [self addAutoModel:@"Tractors" ofAuto:autoId logo:logoId startYear:0 endYear:0];
+	modelId = [self addAutoModel:@"Tractors" ofAuto:autoId logo:logoId startYear:0 endYear:0 isSelectable:NO];
     {
 		[self addAutoSubmodel:@"Fordson" ofModel:modelId logo:logoId startYear:1917 endYear:1964];
 		[self addAutoSubmodel:@"N Series" ofModel:modelId logo:logoId startYear:0 endYear:0];
@@ -2749,7 +2746,7 @@ typedef enum {
 		[self addAutoSubmodel:@"Workmaster" ofModel:modelId logo:logoId startYear:0 endYear:0];
 		[self addAutoSubmodel:@"Powermaster" ofModel:modelId logo:logoId startYear:0 endYear:0];
     }
-	modelId = [self addAutoModel:@"Buses" ofAuto:autoId logo:logoId startYear:0 endYear:0];
+	modelId = [self addAutoModel:@"Buses" ofAuto:autoId logo:logoId startYear:0 endYear:0 isSelectable:NO];
     {
 		[self addAutoSubmodel:@"Transit bus" ofModel:modelId logo:logoId startYear:1940 endYear:1949];
 		[self addAutoSubmodel:@"09-B" ofModel:modelId logo:logoId startYear:1939 endYear:1940];
@@ -2781,7 +2778,7 @@ typedef enum {
 		[self addAutoSubmodel:@"72B" ofModel:modelId logo:logoId startYear:0 endYear:0];
 		[self addAutoSubmodel:@"ET7 Aqualina" ofModel:modelId logo:logoId startYear:0 endYear:0];
     }
-	modelId = [self addAutoModel:@"Military" ofAuto:autoId logo:logoId startYear:0 endYear:0];
+	modelId = [self addAutoModel:@"Military" ofAuto:autoId logo:logoId startYear:0 endYear:0 isSelectable:NO];
     {
 		[self addAutoSubmodel:@"Model-T 1917" ofModel:modelId logo:logoId startYear:1917 endYear:-1];
 		[self addAutoSubmodel:@"3-Ton M1918" ofModel:modelId logo:logoId startYear:0 endYear:0];
@@ -3035,7 +3032,7 @@ typedef enum {
 	[self addAutoModel:@"Tahoe" ofAuto:autoId logo:logoId startYear:1995 endYear:0];
 #pragma mark |---- Hummer
     logoId = [self addLogo:@"hummer_256.png"];
-    autoId = [self addAuto:@"HUMMER" country:countryId logo:logoId independentId:HUMMER];
+    autoId = [self addAuto:@"HUMMER" country:countryId logoAsName:logoId independentId:HUMMER];
     
     [self addAutoModel:@"H1" ofAuto:autoId logo:logoId startYear:1992 endYear:2006];
 	[self addAutoModel:@"H2" ofAuto:autoId logo:logoId startYear:2003 endYear:2009];
@@ -3159,7 +3156,7 @@ typedef enum {
 	[self addAutoModel:@"Mariner" ofAuto:autoId logo:logoId startYear:2005 endYear:2011];
 	[self addAutoModel:@"Mountaineer" ofAuto:autoId logo:logoId startYear:1997 endYear:2010];
     
-	modelId = [self addAutoModel:@"Concept Car" ofAuto:autoId logo:logoId startYear:0 endYear:0];
+	modelId = [self addAutoModel:@"Concept cars" ofAuto:autoId logo:logoId startYear:0 endYear:0 isSelectable:NO];
 	{
 		[self addAutoSubmodel:@"Comet Fastback" ofModel:modelId logo:logoId startYear:1964 endYear:-1];
 		[self addAutoSubmodel:@"Comet Cyclone Sportster" ofModel:modelId logo:logoId startYear:1965 endYear:-1];
@@ -3351,7 +3348,7 @@ typedef enum {
 	[self addAutoModel:@"454 SS" ofAuto:autoId logo:logoId startYear:1990 endYear:1993];
 	[self addAutoModel:@"Blazer" ofAuto:autoId logo:logoId startYear:1995 endYear:2012];
 	
-	modelId = [self addAutoModel:@"Old car" ofAuto:autoId logo:logoId startYear:0 endYear:0 isSelectable:NO];
+	modelId = [self addAutoModel:@"Old cars" ofAuto:autoId logo:logoId startYear:0 endYear:0 isSelectable:NO];
 	{
 		[self addAutoSubmodel:@"Task Force" ofModel:modelId logo:logoId startYear:1955 endYear:1959];
 		[self addAutoSubmodel:@"Titan" ofModel:modelId logo:logoId startYear:1969 endYear:1980];
@@ -3509,7 +3506,7 @@ typedef enum {
 	[self addAutoModel:@"W-series" ofAuto:autoId logo:logoId startYear:1998 endYear:2009];
 	[self addAutoModel:@"Zafira" ofAuto:autoId logo:logoId startYear:2001 endYear:2011];
 	
-	modelId = [self addAutoModel:@"Concepts" ofAuto:autoId logo:logoId startYear:0 endYear:0 isSelectable:NO];
+	modelId = [self addAutoModel:@"Concept cars" ofAuto:autoId logo:logoId startYear:0 endYear:0 isSelectable:NO];
 	{
 		[self addAutoSubmodel:@"Aero 2003A" ofModel:modelId logo:logoId startYear:1987 endYear:-1];
 		[self addAutoSubmodel:@"Aerovette" ofModel:modelId logo:logoId startYear:1976 endYear:-1];
