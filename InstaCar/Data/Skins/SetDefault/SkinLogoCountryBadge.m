@@ -27,7 +27,7 @@
 @implementation SkinLogoCountryBadge
 
 -(void)layoutSubviews{
-    // moving viee height
+    // moving view height
     self.constraintMovingViewHeight.constant = self.bounds.size.height * heightScaleFactor;
     
     // left & right margins

@@ -64,7 +64,7 @@
         if (endYear == -1){
             result = [NSString stringWithFormat:@"%d", startYear];
         } else if (endYear == 0){
-            result = [NSString stringWithFormat:@"%d-...", startYear];
+            result = [NSString stringWithFormat:@"since %d", startYear];
         } else if (endYear > 0){
             result = [NSString stringWithFormat:@"%d-%d", startYear, endYear];
         }

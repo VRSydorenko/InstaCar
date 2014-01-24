@@ -3594,7 +3594,7 @@ typedef enum {
     
     [self addAutoModel:@"Speed 8" ofAuto:autoId logo:logoId startYear:2001 endYear:-1];
 	[self addAutoModel:@"Brooklands" ofAuto:autoId logo:logoId startYear:1992 endYear:1998];
-	modelId = [self addAutoModel:@"Retro Car" ofAuto:autoId logo:logoId startYear:0 endYear:0];
+	modelId = [self addAutoModel:@"Retro cars" ofAuto:autoId logo:logoId startYear:0 endYear:0 isSelectable:NO];
 	{
 		[self addAutoSubmodel:@"Continental" ofModel:modelId logo:logoId startYear:1952 endYear:1965];
 		[self addAutoSubmodel:@"Continental Flying Spur" ofModel:modelId logo:logoId startYear:1957 endYear:1966];

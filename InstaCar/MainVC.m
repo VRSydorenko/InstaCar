@@ -246,6 +246,9 @@ typedef enum {
         [DataManager setSelectedSkinSet:newValue];
         
         [self initSkins];
+        
+        // if any car is currently selected - apply it to newly selected skinset
+        [self applyCurrentlySelectedCarsToNewlySelectedSkin];
     } else { // other fields are skin relevant so pass the update to selected skin set
         [[SkinProvider getInstance].selectedSkinSet updateData:newValue ofType:dataType];
     }
@@ -496,6 +499,20 @@ typedef enum {
 }
 
 #pragma mark -
+
+-(void)applyCurrentlySelectedCarsToNewlySelectedSkin{
+    Auto *selectedAuto1 = [SkinProvider getInstance].selectedAuto1;
+    if (selectedAuto1 != nil){
+        [[SkinProvider getInstance].selectedSkinSet updateData:selectedAuto1 ofType:AUTO1];
+    }
+    
+    if ([SkinProvider getInstance].selectedSkinSet.supportsSecondCar){
+        Auto *selectedAuto2 = [SkinProvider getInstance].selectedAuto2;
+        if (selectedAuto2 != nil){
+            [[SkinProvider getInstance].selectedSkinSet updateData:selectedAuto2 ofType:AUTO2];
+        }
+    }
+}
 
 -(void)showActivityIndicator{
     [self.btnMiddleRight setTitle:@"" forState:UIControlStateNormal];
