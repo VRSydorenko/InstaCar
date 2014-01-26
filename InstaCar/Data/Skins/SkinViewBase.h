@@ -10,7 +10,6 @@
 #import "Location.h"
 #import "Auto.h"
 #import "MainNavController.h"
-#import "UIBluredView.h"
 #import "UIAlphaGradientView.h"
 
 #define MOVINGVIEW_TIME 0.5

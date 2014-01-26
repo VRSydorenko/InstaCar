@@ -101,7 +101,6 @@
 		7F9656D91866F463000325B9 /* SkinVersusLogo.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F9656D81866F463000325B9 /* SkinVersusLogo.m */; };
 		7FA88456189323A000007569 /* db.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 7FA88455189323A000007569 /* db.sqlite */; };
 		7FB233B317D6773C003751B5 /* CellSelectedAuto.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FB233B217D6773C003751B5 /* CellSelectedAuto.m */; };
-		7FC28FC217F31EF200638697 /* UIBluredView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FC28FC117F31EF200638697 /* UIBluredView.m */; };
 		7FC4137517C7E8450025DD2C /* Foursquare2.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FC4136C17C7E8450025DD2C /* Foursquare2.m */; };
 		7FC4137617C7E8450025DD2C /* FSConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FC4136E17C7E8450025DD2C /* FSConverter.m */; };
 		7FC4137717C7E8450025DD2C /* FSRequester.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FC4137017C7E8450025DD2C /* FSRequester.m */; };
@@ -308,8 +307,6 @@
 		7FA88455189323A000007569 /* db.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = db.sqlite; sourceTree = "<group>"; };
 		7FB233B117D6773C003751B5 /* CellSelectedAuto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CellSelectedAuto.h; path = InstaCar/TableCells/CellSelectedAuto.h; sourceTree = "<group>"; };
 		7FB233B217D6773C003751B5 /* CellSelectedAuto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CellSelectedAuto.m; path = InstaCar/TableCells/CellSelectedAuto.m; sourceTree = "<group>"; };
-		7FC28FC017F31EF200638697 /* UIBluredView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIBluredView.h; sourceTree = "<group>"; };
-		7FC28FC117F31EF200638697 /* UIBluredView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIBluredView.m; sourceTree = "<group>"; };
 		7FC4136B17C7E8450025DD2C /* Foursquare2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Foursquare2.h; sourceTree = "<group>"; };
 		7FC4136C17C7E8450025DD2C /* Foursquare2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Foursquare2.m; sourceTree = "<group>"; };
 		7FC4136D17C7E8450025DD2C /* FSConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSConverter.h; sourceTree = "<group>"; };
@@ -688,8 +685,6 @@
 				7F1767AB17C76F0F00724BD6 /* CaptureSessionManager.m */,
 				7F3871DC17BE4F1000D8E39D /* DDMenuController.h */,
 				7F3871DD17BE4F1000D8E39D /* DDMenuController.m */,
-				7FC28FC017F31EF200638697 /* UIBluredView.h */,
-				7FC28FC117F31EF200638697 /* UIBluredView.m */,
 				7F3A16FF17F627A200584614 /* UIAlphaGradientView.h */,
 				7F3A170017F627A200584614 /* UIAlphaGradientView.m */,
 				7FCD262A17F5BFEC00BFDF4E /* SMPageControl.h */,
@@ -975,7 +970,6 @@
 				7F4F684417F6F97600F1017B /* HFImageEditorViewController.m in Sources */,
 				7F2AD5A417EDE9B40096EC8D /* SHKPrint.m in Sources */,
 				7F544A3918085378001FFEC3 /* ALAssetsLibrary+CustomPhotoAlbum.m in Sources */,
-				7FC28FC217F31EF200638697 /* UIBluredView.m in Sources */,
 				7F2AD5D517EDE9B40096EC8D /* SHKFormFieldOptionPickerSettings.m in Sources */,
 				7F419E2717D65EBB00255E56 /* CellSkinSet.m in Sources */,
 				7F2AD57717EDE9B40096EC8D /* DefaultSHKConfigurator.m in Sources */,
