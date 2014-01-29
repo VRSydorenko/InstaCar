@@ -42,6 +42,7 @@ typedef enum {
     ASTONMARTIN,
     CHEVROLET,
     MITSUBISHI,
+    CADILLAC,
 } IndependentCarIds;
 
 @implementation DbManager{
@@ -3756,6 +3757,64 @@ typedef enum {
     [self addAutoModel:@"VH platform" ofAuto:autoId logo:logoId startYear:2004 endYear:0];
     [self addAutoModel:@"Virage" ofAuto:autoId logo:logoId startYear:1993 endYear:2000];
     [self addAutoModel:@"Volante" ofAuto:autoId logo:logoId startYear:1996 endYear:0];
+    
+#pragma mark |---- Cadillac
+    logoId = [self addLogo:@"cadillac_256.png"];
+    autoId = [self addAuto:@"Cadillac" country:countryId logo:logoId independentId:CADILLAC];
+    
+    modelId = [self addAutoModel:@"Fleetwood" ofAuto:autoId logo:logoId startYear:1984 endYear:1999];
+	{
+		[self addAutoSubmodel:@"Brougham" ofModel:modelId logo:logoId startYear:1977 endYear:1986];
+	}
+	
+	[self addAutoModel:@"DTS Presidential State" ofAuto:autoId logo:logoId startYear:2005 endYear:-1];
+	[self addAutoModel:@"Model Thirty" ofAuto:autoId logo:logoId startYear:1909 endYear:1914];
+	[self addAutoModel:@"Series 355" ofAuto:autoId logo:logoId startYear:1931 endYear:1935];
+	[self addAutoModel:@"Type 51" ofAuto:autoId logo:logoId startYear:1914 endYear:-1];
+	[self addAutoModel:@"Type 53" ofAuto:autoId logo:logoId startYear:1916 endYear:-1];
+	[self addAutoModel:@"Type 55" ofAuto:autoId logo:logoId startYear:1917 endYear:-1];
+	[self addAutoModel:@"Type 57" ofAuto:autoId logo:logoId startYear:1918 endYear:1919];
+	[self addAutoModel:@"Type 59" ofAuto:autoId logo:logoId startYear:1920 endYear:1921];
+	[self addAutoModel:@"Series 60" ofAuto:autoId logo:logoId startYear:1936 endYear:1938];
+	[self addAutoModel:@"Sixty Special" ofAuto:autoId logo:logoId startYear:1937 endYear:1993];
+	[self addAutoModel:@"Series 61" ofAuto:autoId logo:logoId startYear:1938 endYear:1951];
+	[self addAutoModel:@"Series 62" ofAuto:autoId logo:logoId startYear:1940 endYear:1964];
+	[self addAutoModel:@"Type V-63" ofAuto:autoId logo:logoId startYear:1923 endYear:1925];
+	[self addAutoModel:@"Series 65" ofAuto:autoId logo:logoId startYear:1937 endYear:1938];
+	[self addAutoModel:@"Series 70" ofAuto:autoId logo:logoId startYear:1935 endYear:1987];
+	[self addAutoModel:@"Allanté" ofAuto:autoId logo:logoId startYear:1987 endYear:1993];
+	[self addAutoModel:@"ATS" ofAuto:autoId logo:logoId startYear:2012 endYear:0];
+	[self addAutoModel:@"BLS" ofAuto:autoId logo:logoId startYear:2005 endYear:2010];
+	[self addAutoModel:@"Brougham" ofAuto:autoId logo:logoId startYear:1987 endYear:1992];
+	[self addAutoModel:@"Gage Commando Scout" ofAuto:autoId logo:logoId startYear:1977 endYear:1999];
+	
+	[self addAutoModel:@"Calais" ofAuto:autoId logo:logoId startYear:1965 endYear:1976];
+	[self addAutoModel:@"Catera" ofAuto:autoId logo:logoId startYear:1997 endYear:2001];
+	[self addAutoModel:@"Cimarron" ofAuto:autoId logo:logoId startYear:1982 endYear:1988];
+	[self addAutoModel:@"Commercial Chassis" ofAuto:autoId logo:logoId startYear:0000 endYear:0];
+	[self addAutoModel:@"Coupe de Ville" ofAuto:autoId logo:logoId startYear:1958 endYear:2005];
+	[self addAutoModel:@"CTS" ofAuto:autoId logo:logoId startYear:2002 endYear:0];
+	[self addAutoModel:@"CTS-V" ofAuto:autoId logo:logoId startYear:2004 endYear:0];
+	[self addAutoModel:@"Model D" ofAuto:autoId logo:logoId startYear:1905 endYear:-1];
+	[self addAutoModel:@"DTS" ofAuto:autoId logo:logoId startYear:2006 endYear:2011];
+	[self addAutoModel:@"Eldorado" ofAuto:autoId logo:logoId startYear:1952 endYear:2002];
+	[self addAutoModel:@"Elvis' Pink" ofAuto:autoId logo:logoId startYear:1955 endYear:-1];
+	[self addAutoModel:@"Escalade" ofAuto:autoId logo:logoId startYear:1999 endYear:0];
+	[self addAutoModel:@"Northstar LMP" ofAuto:autoId logo:logoId startYear:0000 endYear:0];
+	[self addAutoModel:@"Runabout" ofAuto:autoId logo:logoId startYear:1902 endYear:1908];
+	[self addAutoModel:@"Tonneau" ofAuto:autoId logo:logoId startYear:1902 endYear:1908];
+	[self addAutoModel:@"de Ville series" ofAuto:autoId logo:logoId startYear:1958 endYear:2005];
+	[self addAutoModel:@"Seville" ofAuto:autoId logo:logoId startYear:1975 endYear:2004];
+	[self addAutoModel:@"SRX" ofAuto:autoId logo:logoId startYear:2004 endYear:0];
+	[self addAutoModel:@"STS" ofAuto:autoId logo:logoId startYear:2005 endYear:2013];
+	[self addAutoModel:@"STS-V" ofAuto:autoId logo:logoId startYear:2006 endYear:2009];
+	
+	[self addAutoModel:@"V-12" ofAuto:autoId logo:logoId startYear:1930 endYear:1937];
+	[self addAutoModel:@"V-12" ofAuto:autoId logo:logoId startYear:2001 endYear:-1];
+	[self addAutoModel:@"V-16" ofAuto:autoId logo:logoId startYear:1930 endYear:1940];
+	[self addAutoModel:@"XLR" ofAuto:autoId logo:logoId startYear:2003 endYear:2009];
+	[self addAutoModel:@"XTS" ofAuto:autoId logo:logoId startYear:2012 endYear:0];
+	
     
 #pragma mark === Ukraine ===
     countryId = [self addCountry:@"Ukraine"];
