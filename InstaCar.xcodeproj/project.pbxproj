@@ -94,13 +94,13 @@
 		7F5C46671811E87900DF94B1 /* ProInfoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F5C46661811E87900DF94B1 /* ProInfoVC.m */; };
 		7F72A06517D7AED10075FC0B /* AutoSubmodel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F72A06417D7AED10075FC0B /* AutoSubmodel.m */; };
 		7F7FF47017CF8634000E0ABD /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F7FF46F17CF8634000E0ABD /* Location.m */; };
+		7F80E97C18A2E00C00709B6A /* db.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 7F80E97B18A2E00C00709B6A /* db.sqlite */; };
 		7F882C241832EBE50083CFC9 /* SetVersus.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F882C201832EBE50083CFC9 /* SetVersus.m */; };
 		7F882C251832EBE50083CFC9 /* SetVersus.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F882C211832EBE50083CFC9 /* SetVersus.xib */; };
 		7F882C261832EBE50083CFC9 /* SkinVersusName.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F882C231832EBE50083CFC9 /* SkinVersusName.m */; };
 		7F882C291832ECC60083CFC9 /* SkinSetBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F882C281832ECC60083CFC9 /* SkinSetBase.m */; };
 		7F9656D91866F463000325B9 /* SkinVersusLogo.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F9656D81866F463000325B9 /* SkinVersusLogo.m */; };
 		7FB233B317D6773C003751B5 /* CellSelectedAuto.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FB233B217D6773C003751B5 /* CellSelectedAuto.m */; };
-		7FB3AEA218A19F550034FFFB /* db.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 7FB3AEA118A19F550034FFFB /* db.sqlite */; };
 		7FC4137517C7E8450025DD2C /* Foursquare2.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FC4136C17C7E8450025DD2C /* Foursquare2.m */; };
 		7FC4137617C7E8450025DD2C /* FSConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FC4136E17C7E8450025DD2C /* FSConverter.m */; };
 		7FC4137717C7E8450025DD2C /* FSRequester.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FC4137017C7E8450025DD2C /* FSRequester.m */; };
@@ -295,6 +295,7 @@
 		7F72A06417D7AED10075FC0B /* AutoSubmodel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AutoSubmodel.m; path = InstaCar/Data/AutoSubmodel.m; sourceTree = "<group>"; };
 		7F7FF46E17CF8634000E0ABD /* Location.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Location.h; path = InstaCar/Data/Location.h; sourceTree = "<group>"; };
 		7F7FF46F17CF8634000E0ABD /* Location.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Location.m; path = InstaCar/Data/Location.m; sourceTree = "<group>"; };
+		7F80E97B18A2E00C00709B6A /* db.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = db.sqlite; sourceTree = "<group>"; };
 		7F882C1F1832EBE50083CFC9 /* SetVersus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SetVersus.h; path = SetVersus/SetVersus.h; sourceTree = "<group>"; };
 		7F882C201832EBE50083CFC9 /* SetVersus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SetVersus.m; path = SetVersus/SetVersus.m; sourceTree = "<group>"; };
 		7F882C211832EBE50083CFC9 /* SetVersus.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SetVersus.xib; path = SetVersus/SetVersus.xib; sourceTree = "<group>"; };
@@ -306,7 +307,6 @@
 		7F9656D81866F463000325B9 /* SkinVersusLogo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SkinVersusLogo.m; path = SetVersus/SkinVersusLogo.m; sourceTree = "<group>"; };
 		7FB233B117D6773C003751B5 /* CellSelectedAuto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CellSelectedAuto.h; path = InstaCar/TableCells/CellSelectedAuto.h; sourceTree = "<group>"; };
 		7FB233B217D6773C003751B5 /* CellSelectedAuto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CellSelectedAuto.m; path = InstaCar/TableCells/CellSelectedAuto.m; sourceTree = "<group>"; };
-		7FB3AEA118A19F550034FFFB /* db.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = db.sqlite; sourceTree = "<group>"; };
 		7FC4136B17C7E8450025DD2C /* Foursquare2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Foursquare2.h; sourceTree = "<group>"; };
 		7FC4136C17C7E8450025DD2C /* Foursquare2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Foursquare2.m; sourceTree = "<group>"; };
 		7FC4136D17C7E8450025DD2C /* FSConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSConverter.h; sourceTree = "<group>"; };
@@ -786,7 +786,7 @@
 		7F5AC64117CBFFDD00C01658 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				7FB3AEA118A19F550034FFFB /* db.sqlite */,
+				7F80E97B18A2E00C00709B6A /* db.sqlite */,
 				7F4CB67D18097908008B5CA2 /* Skins */,
 				7F5AC64B17CC06CE00C01658 /* Auto.h */,
 				7F5AC64C17CC06CE00C01658 /* Auto.m */,
@@ -923,7 +923,7 @@
 				7F4F684917F6FDF500F1017B /* ImageEditor.xib in Resources */,
 				7F2AD48117EDE9390096EC8D /* SHKCustomSharers.plist in Resources */,
 				7F2AD59917EDE9B40096EC8D /* SHKSharers.plist in Resources */,
-				7FB3AEA218A19F550034FFFB /* db.sqlite in Resources */,
+				7F80E97C18A2E00C00709B6A /* db.sqlite in Resources */,
 				7F882C251832EBE50083CFC9 /* SetVersus.xib in Resources */,
 				7F002D21180B49C60076879F /* Settings.bundle in Resources */,
 				7F27AE081812F58E00168424 /* Settings_disabled.bundle in Resources */,
