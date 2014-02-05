@@ -66,6 +66,8 @@
             result = [NSString stringWithFormat:@"%d", startYear];
         } else if (endYear == 0){
             result = [NSString stringWithFormat:@"since %d", startYear];
+        } else if (endYear == startYear) {
+            result = [NSString stringWithFormat:@"in %d", startYear];
         } else if (endYear > 0){
             result = [NSString stringWithFormat:@"%d-%d", startYear, endYear];
         }
