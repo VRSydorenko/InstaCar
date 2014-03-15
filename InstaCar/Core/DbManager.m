@@ -44,9 +44,12 @@ typedef enum { // Do not change the numbers!
     NSString* databasePath = [[NSString alloc] initWithString: [docsDir stringByAppendingPathComponent: dbName]];
     
     if ([Utils appVersionDiffers]){
-        // TODO: get user defined autos
+        NSDictionary *customAutosSnapshot = [self getCustomAutosSnapshot];
+        
         [self overwriteDbAtPath:databasePath];
-        // TODO: restore user defined autos
+        
+        [self restoreCustomAutosFromSnapshot:customAutosSnapshot];
+        
         [UserSettings setStoredAppVersion];
     }
 
@@ -81,7 +84,7 @@ typedef enum { // Do not change the numbers!
     // Create the database if it doesn't exist in the file system
     if (!databaseAlreadyExists)
     {
-        NSString *databasePathFromApp = [[NSBundle mainBundle] pathForResource:@"db" ofType:@"sqlite"];
+        NSString *databasePathFromApp = [[NSBundle mainBundle] pathForResource:DATABASE_NAME_RES ofType:@"sqlite"];
         [fileManager copyItemAtPath:databasePathFromApp toPath:databasePath error:nil];
         
         DLog(@"Database created");
@@ -129,6 +132,13 @@ typedef enum { // Do not change the numbers!
     const char *delete_stmt = [sql UTF8String];
     sqlite3_exec(instacarDb, delete_stmt, NULL, NULL, NULL);
     DLog(@"Custom models cleared for auto id: %d", autoId);
+}
+
+-(void)restoreCustomAutosFromSnapshot:(NSDictionary*)snapshot{
+    for (NSString *keyStr in snapshot.allKeys) {
+        AutoModel *model = [snapshot valueForKey:keyStr];
+        [self addCustomAutoModel:model.name ofAuto:keyStr.intValue logo:model.logo startYear:model.startYear endYear:model.endYear];
+    }
 }
 
 #pragma mark Saving data public methods
@@ -391,7 +401,7 @@ typedef enum { // Do not change the numbers!
     NSString *queryAllSQL = [NSString stringWithFormat: @"SELECT %@.%@, %@.%@, %@.%@, %@.%@, %@.%@, %@.%@, %@.%@ FROM %@, %@ WHERE %@.%@=%@.%@ AND %@.%@=%lu", T_MODELS, F_ID, T_MODELS, F_NAME, T_LOGOS, F_NAME, T_MODELS, F_YEAR_START, T_MODELS, F_YEAR_END, T_MODELS, F_SELECTABLE, T_MODELS, F_IS_USER_DEFINED, T_MODELS, T_LOGOS, T_MODELS, F_LOGO_ID, T_LOGOS, F_ID, T_MODELS, F_AUTO_ID, (unsigned long)autoId];
     NSString *conditionSQL = @"";
     if (userModelDefinition != MODELS_ALL){
-        conditionSQL = [NSString stringWithFormat:@"AND %@.%@=%d", T_MODELS, F_IS_USER_DEFINED, userModelDefinition];
+        conditionSQL = [NSString stringWithFormat:@"AND %@.%@=%d", T_MODELS, F_IS_USER_DEFINED, userModelDefinition/*0 or 1*/];
     }
     const char *query_stmt = [[NSString stringWithFormat:@"%@ %@ ORDER BY %@.%@", queryAllSQL, conditionSQL, T_MODELS, F_NAME] UTF8String];
     
@@ -487,6 +497,40 @@ typedef enum { // Do not change the numbers!
     sqlite3_finalize(statement);
     
     return _id;
+}
+
+-(NSArray*)getAutoIdsWhereCustomModelsDefined{ // type: NSNumber
+    NSMutableArray *mutableIds = [[NSMutableArray alloc] init];
+    
+    NSString *querySQL = [NSString stringWithFormat: @"SELECT %@.%@ FROM %@, %@ WHERE %@.%@=%@.%@ AND %@.%@=1", T_AUTOS, F_ID, T_AUTOS, T_MODELS, T_MODELS, F_AUTO_ID, T_AUTOS, F_ID, T_MODELS, F_IS_USER_DEFINED];
+    
+    const char *query_stmt = [querySQL UTF8String];
+    
+    sqlite3_stmt *statement;
+    if (sqlite3_prepare_v2(instacarDb, query_stmt, -1, &statement, NULL) == SQLITE_OK){
+        while (sqlite3_step(statement) == SQLITE_ROW){
+            int autoId = sqlite3_column_int(statement, 0);
+            
+            [mutableIds addObject:[NSNumber numberWithInt:autoId]];
+        }
+    } else {
+        DLog(@"Failed to query auto ids");
+        DLog(@"Info:%s", sqlite3_errmsg(instacarDb));
+    }
+    sqlite3_finalize(statement);
+    
+    return mutableIds;
+}
+
+-(NSMutableDictionary*)getCustomAutosSnapshot{ // key: NSString auto id (uint); value: NSArray models
+    NSArray *autosWithCustomModels = [self getAutoIdsWhereCustomModelsDefined];
+    
+    NSMutableDictionary *customModels = [[NSMutableDictionary alloc] init];
+    for (NSNumber *autoId in autosWithCustomModels) {
+        NSArray *customModels = [self getUserDefinedModelsOfAuto:autoId.unsignedIntValue];
+        [customModels setValue:customModels forKeyPath:autoId.stringValue];
+    }
+    return  customModels;
 }
 
 @end
