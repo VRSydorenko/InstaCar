@@ -5,19 +5,19 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>D777D182-168A-43E7-8657-D01D4B9FBC58</string>
+	<string>894764D5-FE3E-49A2-A89A-2215E96E8502</string>
 	<key>IDESourceControlProjectName</key>
 	<string>InstaCar</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>3AA2F348-50F1-4060-B7B8-6FED4D3E7B78</key>
+		<key>49A1F6F4-839D-4FC2-A360-64217B431F17</key>
 		<string>https://github.com/VRSydorenko/InstaCar.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>InstaCar.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>3AA2F348-50F1-4060-B7B8-6FED4D3E7B78</key>
+		<key>49A1F6F4-839D-4FC2-A360-64217B431F17</key>
 		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
@@ -25,14 +25,14 @@
 	<key>IDESourceControlProjectVersion</key>
 	<integer>110</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>3AA2F348-50F1-4060-B7B8-6FED4D3E7B78</string>
+	<string>49A1F6F4-839D-4FC2-A360-64217B431F17</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>3AA2F348-50F1-4060-B7B8-6FED4D3E7B78</string>
+			<string>49A1F6F4-839D-4FC2-A360-64217B431F17</string>
 			<key>IDESourceControlWCCName</key>
 			<string>InstaCar</string>
 		</dict>
