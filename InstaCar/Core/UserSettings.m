@@ -10,7 +10,7 @@
 
 @implementation UserSettings
 
-/* to be changed before release:
+/* TODO: to be changed before release:
  * isFullVersion method return value
  * Setting bundle name
  */
@@ -46,31 +46,28 @@
         return YES;
     }
     
-    NSObject *configuredValue = [[NSUserDefaults standardUserDefaults] objectForKey:PREF_LOGO_OVERLAY];
-    if (nil == configuredValue){
-        return YES;
-    }
-    
-    return [[NSUserDefaults standardUserDefaults] boolForKey:PREF_LOGO_OVERLAY];
+    return [self getBoolForKey:PREF_LOGO_OVERLAY defaultValue:YES];
 }
 
 +(BOOL)getUseICloud{
-    NSObject *configuredValue = [[NSUserDefaults standardUserDefaults] objectForKey:PREF_USE_ICLOUD];
-    if (nil == configuredValue){
-        return YES;
-    }
-    
-    return [[NSUserDefaults standardUserDefaults] boolForKey:PREF_USE_ICLOUD];
+    return [self getBoolForKey:PREF_USE_ICLOUD defaultValue:YES];
 }
 
 +(BOOL)getSaveWhenSharing{
     // TODO: rename Setting bundle
-    NSObject *configuredValue = [[NSUserDefaults standardUserDefaults] objectForKey:PREF_SAVE_WHEN_SHARING];
-    if (nil == configuredValue){
-        return YES;
+    return [self getBoolForKey:PREF_SAVE_WHEN_SHARING defaultValue:YES];
+}
+
++(BOOL)getBoolForKey:(NSString*)key defaultValue:(BOOL)defValue{
+    NSObject *savedValue = [[NSUserDefaults standardUserDefaults] objectForKey:key];
+    if (nil == savedValue){
+        return defValue;
     }
     
-    return [[NSUserDefaults standardUserDefaults] boolForKey:PREF_SAVE_WHEN_SHARING];
+    return [[NSUserDefaults standardUserDefaults] boolForKey:key];
+}
++(void)setBool:(BOOL)value forKey:(NSString*)key{
+    [[NSUserDefaults standardUserDefaults] setBool:value forKey:key];
 }
 
 @end

@@ -32,4 +32,7 @@
 +(BOOL)getUseICloud;
 +(BOOL)getSaveWhenSharing;
 
++(BOOL)getBoolForKey:(NSString*)key defaultValue:(BOOL)defValue;
++(void)setBool:(BOOL)value forKey:(NSString*)key;
+
 @end
