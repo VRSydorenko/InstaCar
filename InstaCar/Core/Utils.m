@@ -48,7 +48,8 @@
 
 +(NSString*)getHashTagString{
     Auto *auto1 = [DataManager getSelectedAuto1];
-    Auto *auto2 = [DataManager getSelectedAuto2];
+    BOOL secondAutoSupported = [DataManager getSelectedSkinSet].supportsSecondCar;
+    Auto *auto2 = secondAutoSupported ? [DataManager getSelectedAuto2] : nil;
     if (!auto1 && !auto2){
         return @"";
     }
@@ -65,6 +66,8 @@
             result = [NSString stringWithFormat:@"%d", startYear];
         } else if (endYear == 0){
             result = [NSString stringWithFormat:@"since %d", startYear];
+        } else if (endYear == startYear) {
+            result = [NSString stringWithFormat:@"in %d", startYear];
         } else if (endYear > 0){
             result = [NSString stringWithFormat:@"%d-%d", startYear, endYear];
         }

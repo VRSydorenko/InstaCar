@@ -16,7 +16,7 @@
 		7F27672A1791E80000A1C1A0 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7F2767291791E80000A1C1A0 /* Images.xcassets */; };
 		7F27673B1791E80000A1C1A0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7F2767391791E80000A1C1A0 /* InfoPlist.strings */; };
 		7F27673D1791E80000A1C1A0 /* InstaCarTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F27673C1791E80000A1C1A0 /* InstaCarTests.m */; };
-		7F27AE081812F58E00168424 /* Settings_disabled.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 7F27AE071812F58E00168424 /* Settings_disabled.bundle */; };
+		7F27AE081812F58E00168424 /* Settings_freeVersion.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 7F27AE071812F58E00168424 /* Settings_freeVersion.bundle */; };
 		7F2AD48117EDE9390096EC8D /* SHKCustomSharers.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7F2AD48017EDE9390096EC8D /* SHKCustomSharers.plist */; };
 		7F2AD57717EDE9B40096EC8D /* DefaultSHKConfigurator.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F2AD48517EDE9B40096EC8D /* DefaultSHKConfigurator.m */; };
 		7F2AD57817EDE9B40096EC8D /* SHKConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F2AD48717EDE9B40096EC8D /* SHKConfiguration.m */; };
@@ -99,9 +99,7 @@
 		7F882C261832EBE50083CFC9 /* SkinVersusName.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F882C231832EBE50083CFC9 /* SkinVersusName.m */; };
 		7F882C291832ECC60083CFC9 /* SkinSetBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F882C281832ECC60083CFC9 /* SkinSetBase.m */; };
 		7F9656D91866F463000325B9 /* SkinVersusLogo.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F9656D81866F463000325B9 /* SkinVersusLogo.m */; };
-		7FA88456189323A000007569 /* db.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 7FA88455189323A000007569 /* db.sqlite */; };
 		7FB233B317D6773C003751B5 /* CellSelectedAuto.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FB233B217D6773C003751B5 /* CellSelectedAuto.m */; };
-		7FC28FC217F31EF200638697 /* UIBluredView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FC28FC117F31EF200638697 /* UIBluredView.m */; };
 		7FC4137517C7E8450025DD2C /* Foursquare2.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FC4136C17C7E8450025DD2C /* Foursquare2.m */; };
 		7FC4137617C7E8450025DD2C /* FSConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FC4136E17C7E8450025DD2C /* FSConverter.m */; };
 		7FC4137717C7E8450025DD2C /* FSRequester.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FC4137017C7E8450025DD2C /* FSRequester.m */; };
@@ -110,6 +108,7 @@
 		7FC4137C17C7EFF70025DD2C /* LocationsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FC4137B17C7EFF70025DD2C /* LocationsVC.m */; };
 		7FCD262C17F5BFEC00BFDF4E /* SMPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FCD262B17F5BFEC00BFDF4E /* SMPageControl.m */; };
 		7FD356341805E704008EC167 /* CustomCarFormVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FD356331805E704008EC167 /* CustomCarFormVC.m */; };
+		7FD47D0E18FDC5E300A2CE7F /* db.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 7FD47D0D18FDC5E300A2CE7F /* db.sqlite */; };
 		7FEF908917D505E800C07A05 /* AutosVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FEF908817D505E800C07A05 /* AutosVC.m */; };
 		7FF3389317D4C0E700B046C4 /* SkinsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FF3389217D4C0E700B046C4 /* SkinsVC.m */; };
 		7FFEBC5517DBA54F00B1DC9A /* auto_logos.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7FFEBC5417DBA54F00B1DC9A /* auto_logos.xcassets */; };
@@ -143,7 +142,7 @@
 		7F2767381791E80000A1C1A0 /* InstaCarTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "InstaCarTests-Info.plist"; sourceTree = "<group>"; };
 		7F27673A1791E80000A1C1A0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		7F27673C1791E80000A1C1A0 /* InstaCarTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InstaCarTests.m; sourceTree = "<group>"; };
-		7F27AE071812F58E00168424 /* Settings_disabled.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Settings_disabled.bundle; path = InstaCar/Settings_disabled.bundle; sourceTree = "<group>"; };
+		7F27AE071812F58E00168424 /* Settings_freeVersion.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Settings_freeVersion.bundle; path = InstaCar/Settings_freeVersion.bundle; sourceTree = "<group>"; };
 		7F2AD48017EDE9390096EC8D /* SHKCustomSharers.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = SHKCustomSharers.plist; path = "Supporting Files/SHKCustomSharers.plist"; sourceTree = "<group>"; };
 		7F2AD48417EDE9B40096EC8D /* DefaultSHKConfigurator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DefaultSHKConfigurator.h; sourceTree = "<group>"; };
 		7F2AD48517EDE9B40096EC8D /* DefaultSHKConfigurator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DefaultSHKConfigurator.m; sourceTree = "<group>"; };
@@ -305,11 +304,8 @@
 		7F882C281832ECC60083CFC9 /* SkinSetBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SkinSetBase.m; sourceTree = "<group>"; };
 		7F9656D71866F463000325B9 /* SkinVersusLogo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SkinVersusLogo.h; path = SetVersus/SkinVersusLogo.h; sourceTree = "<group>"; };
 		7F9656D81866F463000325B9 /* SkinVersusLogo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SkinVersusLogo.m; path = SetVersus/SkinVersusLogo.m; sourceTree = "<group>"; };
-		7FA88455189323A000007569 /* db.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = db.sqlite; sourceTree = "<group>"; };
 		7FB233B117D6773C003751B5 /* CellSelectedAuto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CellSelectedAuto.h; path = InstaCar/TableCells/CellSelectedAuto.h; sourceTree = "<group>"; };
 		7FB233B217D6773C003751B5 /* CellSelectedAuto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CellSelectedAuto.m; path = InstaCar/TableCells/CellSelectedAuto.m; sourceTree = "<group>"; };
-		7FC28FC017F31EF200638697 /* UIBluredView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIBluredView.h; sourceTree = "<group>"; };
-		7FC28FC117F31EF200638697 /* UIBluredView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIBluredView.m; sourceTree = "<group>"; };
 		7FC4136B17C7E8450025DD2C /* Foursquare2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Foursquare2.h; sourceTree = "<group>"; };
 		7FC4136C17C7E8450025DD2C /* Foursquare2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Foursquare2.m; sourceTree = "<group>"; };
 		7FC4136D17C7E8450025DD2C /* FSConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSConverter.h; sourceTree = "<group>"; };
@@ -326,6 +322,7 @@
 		7FCD262B17F5BFEC00BFDF4E /* SMPageControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMPageControl.m; sourceTree = "<group>"; };
 		7FD356321805E704008EC167 /* CustomCarFormVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomCarFormVC.h; sourceTree = "<group>"; };
 		7FD356331805E704008EC167 /* CustomCarFormVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomCarFormVC.m; sourceTree = "<group>"; };
+		7FD47D0D18FDC5E300A2CE7F /* db.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = db.sqlite; sourceTree = "<group>"; };
 		7FEF908717D505E800C07A05 /* AutosVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AutosVC.h; path = InstaCar/AutosVC.h; sourceTree = "<group>"; };
 		7FEF908817D505E800C07A05 /* AutosVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AutosVC.m; path = InstaCar/AutosVC.m; sourceTree = "<group>"; };
 		7FF3389117D4C0E700B046C4 /* SkinsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SkinsVC.h; path = InstaCar/SkinsVC.h; sourceTree = "<group>"; };
@@ -410,7 +407,7 @@
 				7F2767291791E80000A1C1A0 /* Images.xcassets */,
 				7F2767181791E80000A1C1A0 /* Supporting Files */,
 				7F002D20180B49C60076879F /* Settings.bundle */,
-				7F27AE071812F58E00168424 /* Settings_disabled.bundle */,
+				7F27AE071812F58E00168424 /* Settings_freeVersion.bundle */,
 			);
 			path = InstaCar;
 			sourceTree = "<group>";
@@ -688,8 +685,6 @@
 				7F1767AB17C76F0F00724BD6 /* CaptureSessionManager.m */,
 				7F3871DC17BE4F1000D8E39D /* DDMenuController.h */,
 				7F3871DD17BE4F1000D8E39D /* DDMenuController.m */,
-				7FC28FC017F31EF200638697 /* UIBluredView.h */,
-				7FC28FC117F31EF200638697 /* UIBluredView.m */,
 				7F3A16FF17F627A200584614 /* UIAlphaGradientView.h */,
 				7F3A170017F627A200584614 /* UIAlphaGradientView.m */,
 				7FCD262A17F5BFEC00BFDF4E /* SMPageControl.h */,
@@ -791,7 +786,7 @@
 		7F5AC64117CBFFDD00C01658 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				7FA88455189323A000007569 /* db.sqlite */,
+				7FD47D0D18FDC5E300A2CE7F /* db.sqlite */,
 				7F4CB67D18097908008B5CA2 /* Skins */,
 				7F5AC64B17CC06CE00C01658 /* Auto.h */,
 				7F5AC64C17CC06CE00C01658 /* Auto.m */,
@@ -881,7 +876,7 @@
 		7F2767061791E7FF00A1C1A0 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0500;
+				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "Viktor Sydorenko";
 				TargetAttributes = {
 					7F27670D1791E80000A1C1A0 = {
@@ -928,10 +923,10 @@
 				7F4F684917F6FDF500F1017B /* ImageEditor.xib in Resources */,
 				7F2AD48117EDE9390096EC8D /* SHKCustomSharers.plist in Resources */,
 				7F2AD59917EDE9B40096EC8D /* SHKSharers.plist in Resources */,
-				7FA88456189323A000007569 /* db.sqlite in Resources */,
+				7FD47D0E18FDC5E300A2CE7F /* db.sqlite in Resources */,
 				7F882C251832EBE50083CFC9 /* SetVersus.xib in Resources */,
 				7F002D21180B49C60076879F /* Settings.bundle in Resources */,
-				7F27AE081812F58E00168424 /* Settings_disabled.bundle in Resources */,
+				7F27AE081812F58E00168424 /* Settings_freeVersion.bundle in Resources */,
 				7FFEBC5517DBA54F00B1DC9A /* auto_logos.xcassets in Resources */,
 				7F2AD5CB17EDE9B40096EC8D /* SHKShareFileIcon@2x.png in Resources */,
 				7F2AD59B17EDE9B40096EC8D /* DETweetPaperClip@2x.png in Resources */,
@@ -975,7 +970,6 @@
 				7F4F684417F6F97600F1017B /* HFImageEditorViewController.m in Sources */,
 				7F2AD5A417EDE9B40096EC8D /* SHKPrint.m in Sources */,
 				7F544A3918085378001FFEC3 /* ALAssetsLibrary+CustomPhotoAlbum.m in Sources */,
-				7FC28FC217F31EF200638697 /* UIBluredView.m in Sources */,
 				7F2AD5D517EDE9B40096EC8D /* SHKFormFieldOptionPickerSettings.m in Sources */,
 				7F419E2717D65EBB00255E56 /* CellSkinSet.m in Sources */,
 				7F2AD57717EDE9B40096EC8D /* DefaultSHKConfigurator.m in Sources */,
@@ -1087,7 +1081,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -1125,7 +1118,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -1156,7 +1148,6 @@
 		7F2767411791E80000A1C1A0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = InstaCar/InstaCar.entitlements;
@@ -1181,7 +1172,6 @@
 		7F2767421791E80000A1C1A0 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = InstaCar/InstaCar.entitlements;

@@ -426,12 +426,12 @@ typedef enum {
     
     [self showActivityIndicator];
     
-    dispatch_queue_t refreshQueue = dispatch_queue_create("foursquare icons queue", NULL);
+    dispatch_queue_t refreshQueue = dispatch_queue_create("image processing queue", NULL);
     dispatch_async(refreshQueue, ^{
         UIImage *imageTaken = self.imagePreview.image;
         UIImage *imageSkin = [activeSkin getSkinImage];
         
-        UIImage *imageToShare = [self drawImage:imageSkin inImage:imageTaken atPoint:CGPointMake(0, 0)];
+        UIImage *imageToShare = [self drawSkin:imageSkin inImageTaken:imageTaken];
         
         if (YES == [DataManager getLogoOverlayEnabled]){
             UIImage *logoOverlay = [UIImage imageNamed:@"logoOverlay.png"];
@@ -507,7 +507,7 @@ typedef enum {
     }
     
     if ([DataManager getSelectedSkinSet].supportsSecondCar){
-        Auto *selectedAuto2 = [DataManager getSelectedAuto1];
+        Auto *selectedAuto2 = [DataManager getSelectedAuto2];
         if (selectedAuto2 != nil){
             [[DataManager getSelectedSkinSet] updateData:selectedAuto2 ofType:AUTO2];
         }
@@ -543,10 +543,19 @@ typedef enum {
     [self switchButtons];
 }
 
--(UIImage*) drawImage:(UIImage*)fgImage
-              inImage:(UIImage*)bgImage
-              atPoint:(CGPoint)point
+-(UIImage*) drawSkin:(UIImage*)skinImage
+        inImageTaken:(UIImage*)imageTaken
 {
+    UIGraphicsBeginImageContext(CGSizeMake(918.0, 918.0));
+    [imageTaken drawAtPoint:CGPointMake(0.0, 0.0)];
+    [skinImage drawAtPoint:CGPointMake(0.0, 0.0)];
+    UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    return newImage;
+}
+
+-(UIImage*) drawImage:(UIImage*)fgImage inImage:(UIImage*)bgImage atPoint:(CGPoint)point{
     UIGraphicsBeginImageContext(bgImage.size);
     [bgImage drawInRect:CGRectMake(0, 0, bgImage.size.width, bgImage.size.height)];
     [fgImage drawInRect:CGRectMake(point.x, point.y, fgImage.size.width, fgImage.size.height)];

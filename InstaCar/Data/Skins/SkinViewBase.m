@@ -115,10 +115,10 @@
 }
 
 -(UIImage*)getSkinImage{
-    return [self getSkinImageWithBlur:0.0];
+    return [self getSkinImageWithBlur2:0.0];
 }
 
--(UIImage*)getSkinImageWithBlur:(CGFloat)blurStrength {
+-(UIImage*)getSkinImageWithBlur2:(CGFloat)blurStrength {
     CGFloat desiredSideLength = 918.0;
     CGFloat scaleFactorHeight = desiredSideLength/self.bounds.size.height;
     
@@ -136,7 +136,7 @@
     [self layoutIfNeeded];
     [self layoutSubviews];
     
-    UIGraphicsBeginImageContextWithOptions(CGSizeMake(desiredSideLength, desiredSideLength), NO, scaleFactorHeight);
+    UIGraphicsBeginImageContextWithOptions(CGSizeMake(desiredSideLength, desiredSideLength), NO, 1);//scaleFactorHeight);
     [self.layer renderInContext:UIGraphicsGetCurrentContext()];
     UIImage *result = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
@@ -157,6 +157,18 @@
     }
     
     return result;
+}
+
+-(UIImage*)getSkinImageWithBlur:(CGFloat)blurStrength {
+    CGFloat desiredSideLength = 918.0;
+    CGFloat scaleFactorHeight = self.bounds.size.height/desiredSideLength;
+//CGSizeMake(desiredSideLength, desiredSideLength)
+    UIGraphicsBeginImageContextWithOptions(self.bounds.size, NO, scaleFactorHeight);
+    
+    [self.layer renderInContext:UIGraphicsGetCurrentContext()];
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return image;
 }
 
 -(BOOL)isSkinContentAtTheTop{

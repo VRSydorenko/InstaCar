@@ -67,28 +67,12 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "InstaCar/Data/Skins/SkinViewBase.m"
-            timestampString = "405447992.251255"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "126"
-            endingLineNumber = "126"
-            landmarkName = "-getSkinImageWithBlur:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "InstaCar/CustomControls/CaptureSessionManager.m"
-            timestampString = "403985609.783457"
+            timestampString = "419092412.138536"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "125"
-            endingLineNumber = "125"
+            startingLineNumber = "128"
+            endingLineNumber = "128"
             landmarkName = "-captureStillImage"
             landmarkType = "5">
          </BreakpointContent>
@@ -132,11 +116,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "InstaCar/MainVC.m"
-            timestampString = "412294751.001535"
+            timestampString = "416611010.739482"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "444"
-            endingLineNumber = "444"
+            startingLineNumber = "455"
+            endingLineNumber = "455"
             landmarkName = "-doSharePressed"
             landmarkType = "5">
          </BreakpointContent>
@@ -163,28 +147,12 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "InstaCar/Data/Skins/SkinViewBase.m"
-            timestampString = "405448223.308659"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "122"
-            endingLineNumber = "122"
-            landmarkName = "-getSkinImageWithBlur:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "InstaCar/MainVC.m"
-            timestampString = "405992961.306039"
+            timestampString = "416610294.37479"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "240"
-            endingLineNumber = "240"
+            startingLineNumber = "242"
+            endingLineNumber = "242"
             landmarkName = "-selectedData:changedTo:"
             landmarkType = "5">
          </BreakpointContent>
@@ -195,13 +163,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "InstaCar/Core/DbManager.m"
-            timestampString = "412210846.030376"
+            filePath = "InstaCar/MainVC.m"
+            timestampString = "416611010.739482"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "239"
-            endingLineNumber = "239"
-            landmarkName = "-getAllAutos"
+            startingLineNumber = "435"
+            endingLineNumber = "435"
+            landmarkName = "-doSharePressed"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

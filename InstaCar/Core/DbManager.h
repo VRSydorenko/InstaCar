@@ -11,6 +11,7 @@
 
 #define DATABASE_NAME_FREE @"instacardb"
 #define DATABASE_NAME_PRO @"instacarprodb"
+#define DATABASE_NAME_RES @"db" // name of the attached db file 
 
 #define DBTYPE_TEXT @"text"
 #define DBTYPE_REAL @"real"
@@ -55,7 +56,6 @@
 #define T_ICONS @"t_icons"
 #define F_FILENAME @"f_filename"
 #define F_DATA @"f_data"
-
 
 @interface DbManager : NSObject
 

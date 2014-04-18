@@ -81,7 +81,7 @@
     self.constraintVSSeparatorLeftMargin.constant = 0.5 * (boundsWidth - self.constraintVSSeparatorWidth.constant);
     
     // text fonts
-    float newAutoFontSize = boundsWidth > 320.0 ? 50.0 : 25.0;
+    float newAutoFontSize = boundsWidth > 320.0 ? 70.0 : 25.0;
     
     self.textAuto1.font = [UIFont fontWithName:self.textAuto1.font.fontName size:newAutoFontSize];
     self.textAuto2.font = [UIFont fontWithName:self.textAuto2.font.fontName size:newAutoFontSize];
