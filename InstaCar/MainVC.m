@@ -318,8 +318,6 @@ typedef enum {
                     self.constraintMidBtnRigthWidth.constant = 64.0;
                     [self.btnMiddleRight setImage:[UIImage imageNamed:@"Repeat.png"] forState:UIControlStateNormal];
                     [self.btnMiddleRight setTitle:@"" forState:UIControlStateNormal];
-                    
-                    self.btnMiddle.enabled = YES; // make the Shot button available for using again
                 }
             }
      ];
@@ -340,6 +338,7 @@ typedef enum {
             }
             completion:^(BOOL finished){
                 buttonsInInitialState = !buttonsInInitialState;
+                self.btnMiddle.enabled = YES; // make the Shot button available for using again
             }
     ];
 }
