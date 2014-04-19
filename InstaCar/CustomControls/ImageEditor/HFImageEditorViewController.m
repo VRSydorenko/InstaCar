@@ -221,15 +221,6 @@ static const NSTimeInterval kAnimationIntervalTransform = 0.2;
     [self.frameView addGestureRecognizer:self.tapRecognizer];
 }
 
-
-- (void)viewDidUnload
-{
-    [super viewDidUnload];
-    
-    [self setFrameView:nil];
-    [self setImageView:nil];
-}
-
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     return (interfaceOrientation == UIInterfaceOrientationPortrait);

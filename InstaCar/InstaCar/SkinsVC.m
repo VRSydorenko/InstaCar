@@ -33,11 +33,6 @@
     self.tableSelectedData.dataSource = self;
 }
 
--(void)dealloc{
-    sets = nil;
-    autosVC = nil;
-}
-
 #pragma mark Table methods
 
 -(UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
