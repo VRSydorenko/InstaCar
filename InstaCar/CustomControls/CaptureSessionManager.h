@@ -3,7 +3,11 @@
 #define kImageCapturedSuccessfully @"imageCapturedSuccessfully"
 
 @interface CaptureSessionManager : NSObject {
+    AVCaptureDevice *frontCamera;
+    AVCaptureDevice *backCamera;
+    
     bool activeInputFront;
+    bool captureInProgress;
 }
 
 @property (retain) AVCaptureVideoPreviewLayer *previewLayer;
