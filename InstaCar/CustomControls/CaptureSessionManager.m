@@ -29,34 +29,6 @@
 	self.previewLayer.videoGravity = AVLayerVideoGravityResizeAspectFill;
 }
 
--(void)initCameras{
-    NSArray *devices = [AVCaptureDevice devices];
-    
-    for (AVCaptureDevice *device in devices) {
-        DLog(@"Device name: %@", device.localizedName);
-        if ([device hasMediaType:AVMediaTypeVideo]) {
-            if (device.position == AVCaptureDevicePositionBack) {
-                DLog(@"Device position: back");
-                backCamera = device;
-            } else {
-                DLog(@"Device position: front");
-                frontCamera = device;
-            }
-        }
-    }
-}
-
--(AVCaptureConnection*)getVideoConnection{
-    for (AVCaptureConnection *connection in self.stillImageOutput.connections) {
-		for (AVCaptureInputPort *port in connection.inputPorts) {
-			if ([port.mediaType isEqual:AVMediaTypeVideo]) {
-				return connection;
-            }
-        }
-    }
-    return nil;
-}
-
 - (void)addVideoInputFrontCamera:(BOOL)front {
     NSError *error = nil;
     
@@ -93,6 +65,11 @@
 }
 
 - (void)captureStillImage{
+    if (captureInProgress){
+        return;
+    }
+    captureInProgress = true;
+    
 	AVCaptureConnection *videoConnection = [self getVideoConnection];
     
 	DLog(@"about to request a capture from: %@", [self stillImageOutput]);
@@ -123,8 +100,11 @@
             if (activeInputFront){
                 orientation = UIImageOrientationUp | UIImageOrientationLeftMirrored;
             }
+            
             self.stillImage = [[UIImage alloc] initWithCIImage:ciImage scale:imageScale orientation:orientation];
             [[NSNotificationCenter defaultCenter] postNotificationName:kImageCapturedSuccessfully object:nil];
+            
+            captureInProgress = false;
         }
      ];
 }
@@ -141,11 +121,36 @@
 
 - (void)dealloc {
 	[self.captureSession stopRunning];
+}
+
+#pragma mark Private methods
+
+-(void)initCameras{
+    NSArray *devices = [AVCaptureDevice devices];
     
-	previewLayer = nil;
-	captureSession = nil;
-    stillImageOutput = nil;
-    stillImage = nil;
+    for (AVCaptureDevice *device in devices) {
+        DLog(@"Device name: %@", device.localizedName);
+        if ([device hasMediaType:AVMediaTypeVideo]) {
+            if (device.position == AVCaptureDevicePositionBack) {
+                DLog(@"Device position: back");
+                backCamera = device;
+            } else {
+                DLog(@"Device position: front");
+                frontCamera = device;
+            }
+        }
+    }
+}
+
+-(AVCaptureConnection*)getVideoConnection{
+    for (AVCaptureConnection *connection in self.stillImageOutput.connections) {
+		for (AVCaptureInputPort *port in connection.inputPorts) {
+			if ([port.mediaType isEqual:AVMediaTypeVideo]) {
+				return connection;
+            }
+        }
+    }
+    return nil;
 }
 
 @end
