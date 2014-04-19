@@ -14,11 +14,11 @@
                                                  UITableViewDataSource,
                                                  LocationUpdateReceiverDelegate>
 
-@property (weak, nonatomic) IBOutlet UITableView *tableVenues;
-@property (strong,nonatomic) NSArray *nearbyVenues; // FSVenue
-@property (strong,nonatomic) IBOutlet UIBarButtonItem *btnRefresh;
-@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
-@property (weak, nonatomic) IBOutlet UIToolbar *toolBar;
+@property (nonatomic) IBOutlet UITableView *tableVenues;
+@property (nonatomic) NSArray *nearbyVenues; // FSVenue
+@property (nonatomic) IBOutlet UIBarButtonItem *btnRefresh;
+@property (nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
+@property (nonatomic) IBOutlet UIToolbar *toolBar;
 
 - (IBAction)btnBackPressed;
 - (IBAction)btnRefreshPressed:(id)sender;

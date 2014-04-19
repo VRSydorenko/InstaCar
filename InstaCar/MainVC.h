@@ -25,24 +25,24 @@
 
 @property CaptureSessionManager *captureManager;
 
-@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityShareInProgress;
+@property (nonatomic) IBOutlet UIActivityIndicatorView *activityShareInProgress;
 
 // Buttons
-@property (weak, nonatomic) IBOutlet UIButton *btnLocation;
-@property (weak, nonatomic) IBOutlet UIButton *btnMiddleLeft;
-@property (weak, nonatomic) IBOutlet UIButton *btnMiddle;
-@property (weak, nonatomic) IBOutlet UIButton *btnMiddleRight;
-@property (weak, nonatomic) IBOutlet UIButton *btnRightSide;
+@property (nonatomic) IBOutlet UIButton *btnLocation;
+@property (nonatomic) IBOutlet UIButton *btnMiddleLeft;
+@property (nonatomic) IBOutlet UIButton *btnMiddle;
+@property (nonatomic) IBOutlet UIButton *btnMiddleRight;
+@property (nonatomic) IBOutlet UIButton *btnRightSide;
 
 // Constraints
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *constraintMidBtnLeftWidth;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *constraintMidBtnRigthWidth;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *constraintButtonsCoverViewHeight;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *constraintViewAdContainerHeight;
+@property (nonatomic) IBOutlet NSLayoutConstraint *constraintMidBtnLeftWidth;
+@property (nonatomic) IBOutlet NSLayoutConstraint *constraintMidBtnRigthWidth;
+@property (nonatomic) IBOutlet NSLayoutConstraint *constraintButtonsCoverViewHeight;
+@property (nonatomic) IBOutlet NSLayoutConstraint *constraintViewAdContainerHeight;
 
-@property (weak, nonatomic) IBOutlet UIImageView *imagePreview;
-@property (weak, nonatomic) IBOutlet UIScrollView *scrollSkins;
-@property (weak, nonatomic) IBOutlet UIView *pageControlContainer;
+@property (nonatomic) IBOutlet UIImageView *imagePreview;
+@property (nonatomic) IBOutlet UIScrollView *scrollSkins;
+@property (nonatomic) IBOutlet UIView *pageControlContainer;
 @property (weak, nonatomic) IBOutlet UIView *iAdView;
 
 // Actions

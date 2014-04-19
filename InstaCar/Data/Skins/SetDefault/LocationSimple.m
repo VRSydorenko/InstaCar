@@ -12,9 +12,9 @@
     CGFloat placeLabelHeightScaleFactor;
 }
 
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *topMargin;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *movingViewHeightConstraint;
-@property (weak, nonatomic) IBOutlet UIView *movingView;
+@property (nonatomic) IBOutlet NSLayoutConstraint *topMargin;
+@property (nonatomic) IBOutlet NSLayoutConstraint *movingViewHeightConstraint;
+@property (nonatomic) IBOutlet UIView *movingView;
 
 @end
 

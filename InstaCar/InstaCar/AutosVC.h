@@ -24,7 +24,7 @@
                                        CustomCarFormDelegate,
                                        iCloudHandlerDelegate>
 
-@property (weak, nonatomic) IBOutlet UITableView *tableAutos;
+@property (nonatomic) IBOutlet UITableView *tableAutos;
 @property id<AutoSelectorDelegate> autoSelectorDelegate;
 
 - (IBAction)btnBackPressed;

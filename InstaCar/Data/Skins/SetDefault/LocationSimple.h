@@ -10,8 +10,8 @@
 
 @interface LocationSimple : SkinViewBase
 
-@property (weak, nonatomic) IBOutlet UILabel *textPlace;
-@property (weak, nonatomic) IBOutlet UILabel *textLocation;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *constraintLocationHeight;
+@property (nonatomic) IBOutlet UILabel *textPlace;
+@property (nonatomic) IBOutlet UILabel *textLocation;
+@property (nonatomic) IBOutlet NSLayoutConstraint *constraintLocationHeight;
 
 @end

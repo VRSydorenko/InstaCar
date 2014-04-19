@@ -18,10 +18,10 @@ typedef NSObject<SkinSetProtocol> SkinSet;
 
 +(SkinProvider*)getInstance;
 
-@property (readonly) NSArray *skinSets;
-@property SkinSet *selectedSkinSet;
-@property Auto *selectedAuto1;
-@property Auto *selectedAuto2;
-@property FSVenue *selectedVenue;
+@property (nonatomic, readonly) NSArray *skinSets;
+@property (nonatomic) SkinSet *selectedSkinSet;
+@property (nonatomic) Auto *selectedAuto1;
+@property (nonatomic) Auto *selectedAuto2;
+@property (nonatomic) FSVenue *selectedVenue;
 
 @end

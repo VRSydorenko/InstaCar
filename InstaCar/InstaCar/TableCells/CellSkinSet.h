@@ -10,6 +10,6 @@
 
 @interface CellSkinSet : UITableViewCell
 
-@property (nonatomic, weak) IBOutlet UILabel *skinTitleLabel;
+@property (nonatomic) IBOutlet UILabel *skinTitleLabel;
 
 @end

@@ -13,14 +13,14 @@
     CGFloat initialSideMargin;
 }
 
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *constraintTopMargin;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *constraintLeftMargin;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *constraintRightMargin;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *constraintMovingViewHeight;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *constraintLogoWidth;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *constraintSeparatorWidth;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *constraintCountryTextHeight;
-@property (weak, nonatomic) IBOutlet UIView *movingView;
+@property (nonatomic) IBOutlet NSLayoutConstraint *constraintTopMargin;
+@property (nonatomic) IBOutlet NSLayoutConstraint *constraintLeftMargin;
+@property (nonatomic) IBOutlet NSLayoutConstraint *constraintRightMargin;
+@property (nonatomic) IBOutlet NSLayoutConstraint *constraintMovingViewHeight;
+@property (nonatomic) IBOutlet NSLayoutConstraint *constraintLogoWidth;
+@property (nonatomic) IBOutlet NSLayoutConstraint *constraintSeparatorWidth;
+@property (nonatomic) IBOutlet NSLayoutConstraint *constraintCountryTextHeight;
+@property (nonatomic) IBOutlet UIView *movingView;
 
 @end
 

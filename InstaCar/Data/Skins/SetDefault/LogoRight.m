@@ -10,10 +10,10 @@
 
 @interface LogoRight()
 
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *topMargin;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *heightConstraint;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *widthLogoConstraint;
-@property (weak, nonatomic) IBOutlet UIView *movingView;
+@property (nonatomic) IBOutlet NSLayoutConstraint *topMargin;
+@property (nonatomic) IBOutlet NSLayoutConstraint *heightConstraint;
+@property (nonatomic) IBOutlet NSLayoutConstraint *widthLogoConstraint;
+@property (nonatomic) IBOutlet UIView *movingView;
 
 @end
 

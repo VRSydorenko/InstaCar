@@ -9,7 +9,6 @@
 #import "ProInfoVC.h"
 
 @interface ProInfoVC ()
-
 @end
 
 @implementation ProInfoVC

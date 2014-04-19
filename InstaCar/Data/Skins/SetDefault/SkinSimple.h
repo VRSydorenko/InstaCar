@@ -10,8 +10,8 @@
 
 @interface SkinSimple : SkinViewBase
 
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *autoTitleWidth;
-@property (weak, nonatomic) IBOutlet UIImageView *imgEmblem;
-@property (weak, nonatomic) IBOutlet UILabel *textAuto;
+@property (nonatomic) IBOutlet NSLayoutConstraint *autoTitleWidth;
+@property (nonatomic) IBOutlet UIImageView *imgEmblem;
+@property (nonatomic) IBOutlet UILabel *textAuto;
 
 @end

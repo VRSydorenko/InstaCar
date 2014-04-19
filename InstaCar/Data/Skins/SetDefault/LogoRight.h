@@ -10,6 +10,6 @@
 
 @interface LogoRight : SkinViewBase
 
-@property (weak, nonatomic) IBOutlet UIImageView *imgEmblem;
+@property (nonatomic) IBOutlet UIImageView *imgEmblem;
 
 @end

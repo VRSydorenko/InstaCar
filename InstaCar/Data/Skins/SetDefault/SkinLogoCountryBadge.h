@@ -10,8 +10,8 @@
 
 @interface SkinLogoCountryBadge : SkinViewBase
 
-@property (weak, nonatomic) IBOutlet UIImageView *imgEmblem;
-@property (weak, nonatomic) IBOutlet UILabel *textAuto;
-@property (weak, nonatomic) IBOutlet UILabel *textCountry;
+@property (nonatomic) IBOutlet UIImageView *imgEmblem;
+@property (nonatomic) IBOutlet UILabel *textAuto;
+@property (nonatomic) IBOutlet UILabel *textCountry;
 
 @end

@@ -16,7 +16,7 @@
 @property (nonatomic) int startYear;
 @property (nonatomic) int endYear;
 @property (nonatomic) int modelId;
-@property AutoSubmodel *submodel;
+@property (nonatomic) AutoSubmodel *submodel;
 @property (nonatomic) BOOL isSelectable;
 @property (nonatomic) BOOL isUserDefined;
 

@@ -27,7 +27,7 @@ typedef NS_ENUM(NSUInteger, SMPageControlTapBehavior) {
 
 @interface SMPageControl : UIControl
 
-@property (nonatomic) NSInteger numberOfPages;
+@property (nonatomic) NSUInteger numberOfPages;
 @property (nonatomic) NSInteger currentPage;
 @property (nonatomic) CGFloat indicatorMargin							UI_APPEARANCE_SELECTOR; // deafult is 10
 @property (nonatomic) CGFloat indicatorDiameter							UI_APPEARANCE_SELECTOR; // deafult is 6
@@ -47,8 +47,8 @@ typedef NS_ENUM(NSUInteger, SMPageControlTapBehavior) {
 
 - (void)updateCurrentPageDisplay;						// update page display to match the currentPage. ignored if defersCurrentPageDisplay is NO. setting the page value directly will update immediately
 
-- (CGRect)rectForPageIndicator:(NSInteger)pageIndex;
-- (CGSize)sizeForNumberOfPages:(NSInteger)pageCount;
+- (CGRect)rectForPageIndicator:(NSUInteger)pageIndex;
+- (CGSize)sizeForNumberOfPages:(NSUInteger)pageCount;
 
 - (void)setImage:(UIImage *)image forPage:(NSInteger)pageIndex;
 - (void)setCurrentImage:(UIImage *)image forPage:(NSInteger)pageIndex;
@@ -69,7 +69,7 @@ typedef NS_ENUM(NSUInteger, SMPageControlTapBehavior) {
 // SMPageControl extends UIPageControl's functionality by allowing you to name specific pages. This is especially useful when using
 // the per-page indicator images, and allows you to provide more context to the user.
 
-- (void)setName:(NSString *)name forPage:(NSInteger)pageIndex;
-- (NSString *)nameForPage:(NSInteger)pageIndex;
+- (void)setName:(NSString *)name forPage:(NSUInteger)pageIndex;
+- (NSString *)nameForPage:(NSUInteger)pageIndex;
 
 @end 

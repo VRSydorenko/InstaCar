@@ -18,7 +18,7 @@
     DLog(@"SetBasic Bundle objects: %lu",(unsigned long)bundle.count);
     
     // init with placeholders
-    for (int i = 0; i < bundle.count; i++){
+    for (NSUInteger i = 0; i < bundle.count; i++){
         [skinsArray addObject:[NSNull null]];
     }
     

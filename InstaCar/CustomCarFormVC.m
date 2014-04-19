@@ -10,9 +10,7 @@
 #import "DataManager.h"
 
 @interface CustomCarFormVC ()
-
-@property (weak, nonatomic) IBOutlet UIImageView *imgLogo;
-
+@property (nonatomic) IBOutlet UIImageView *imgLogo;
 @end
 
 @implementation CustomCarFormVC

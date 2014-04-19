@@ -10,7 +10,7 @@
 
 @interface CellVenue : UITableViewCell
 
-@property (weak, nonatomic) IBOutlet UILabel *textVenueName;
-@property (weak, nonatomic) IBOutlet UIImageView *imgVenueIcon;
+@property (nonatomic) IBOutlet UILabel *textVenueName;
+@property (nonatomic) IBOutlet UIImageView *imgVenueIcon;
 
 @end
