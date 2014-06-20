@@ -19,7 +19,7 @@
 
 @implementation SkinSimple
 
--(void)layoutSubviews{
+/*-(void)layoutSubviews{
     self.heightConstraint.constant = self.bounds.size.height * heightScaleFactor;
     self.widthLogoConstraint.constant = self.imgEmblem.bounds.size.height * 1.33; // 30% wider than taller
     
@@ -28,7 +28,7 @@
     [self adjustAutoLabelSizeAccordingToText];
     
     [super layoutSubviews];
-}
+}*/
 
 -(void)initialise{
     [self setupGradient:0.4 inDirection:GRADIENT_LEFT];

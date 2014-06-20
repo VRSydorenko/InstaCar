@@ -112,6 +112,8 @@
 		7FEF908917D505E800C07A05 /* AutosVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FEF908817D505E800C07A05 /* AutosVC.m */; };
 		7FF3389317D4C0E700B046C4 /* SkinsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FF3389217D4C0E700B046C4 /* SkinsVC.m */; };
 		7FFEBC5517DBA54F00B1DC9A /* auto_logos.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7FFEBC5417DBA54F00B1DC9A /* auto_logos.xcassets */; };
+		841C5EF4195483FF00AD025D /* SkinElementImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 841C5EF3195483FF00AD025D /* SkinElementImage.m */; };
+		84EC58E11954519A00E8C421 /* SkinElementRect.m in Sources */ = {isa = PBXBuildFile; fileRef = 84EC58E01954519A00E8C421 /* SkinElementRect.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -328,6 +330,11 @@
 		7FF3389117D4C0E700B046C4 /* SkinsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SkinsVC.h; path = InstaCar/SkinsVC.h; sourceTree = "<group>"; };
 		7FF3389217D4C0E700B046C4 /* SkinsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SkinsVC.m; path = InstaCar/SkinsVC.m; sourceTree = "<group>"; };
 		7FFEBC5417DBA54F00B1DC9A /* auto_logos.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = auto_logos.xcassets; path = InstaCar/Data/auto_logos.xcassets; sourceTree = "<group>"; };
+		841C5EF2195483FF00AD025D /* SkinElementImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SkinElementImage.h; path = InstaCar/Core/DrawingElements/SkinElementImage.h; sourceTree = "<group>"; };
+		841C5EF3195483FF00AD025D /* SkinElementImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SkinElementImage.m; path = InstaCar/Core/DrawingElements/SkinElementImage.m; sourceTree = "<group>"; };
+		84EC58DE195450A200E8C421 /* DrawingElementProtocolBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DrawingElementProtocolBase.h; path = InstaCar/Core/DrawingElements/DrawingElementProtocolBase.h; sourceTree = "<group>"; };
+		84EC58DF1954519A00E8C421 /* SkinElementRect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SkinElementRect.h; path = InstaCar/Core/DrawingElements/SkinElementRect.h; sourceTree = "<group>"; };
+		84EC58E01954519A00E8C421 /* SkinElementRect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SkinElementRect.m; path = InstaCar/Core/DrawingElements/SkinElementRect.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -712,6 +719,7 @@
 		7F4CB66A180977E9008B5CA2 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				84EC58DD1954506D00E8C421 /* DrawingElements */,
 				7F00E86318142EE7004F435A /* DbManager.h */,
 				7F00E86418142EE7004F435A /* DbManager.m */,
 				7F4CB66D180978CF008B5CA2 /* DataManager.h */,
@@ -830,6 +838,18 @@
 				7FC4137417C7E8450025DD2C /* FSVenue.m */,
 			);
 			path = Foursquare;
+			sourceTree = "<group>";
+		};
+		84EC58DD1954506D00E8C421 /* DrawingElements */ = {
+			isa = PBXGroup;
+			children = (
+				84EC58DE195450A200E8C421 /* DrawingElementProtocolBase.h */,
+				84EC58DF1954519A00E8C421 /* SkinElementRect.h */,
+				84EC58E01954519A00E8C421 /* SkinElementRect.m */,
+				841C5EF2195483FF00AD025D /* SkinElementImage.h */,
+				841C5EF3195483FF00AD025D /* SkinElementImage.m */,
+			);
+			name = DrawingElements;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -954,6 +974,7 @@
 			files = (
 				7F882C241832EBE50083CFC9 /* SetVersus.m in Sources */,
 				7F3871D617BE4CA900D8E39D /* MainNavController.m in Sources */,
+				84EC58E11954519A00E8C421 /* SkinElementRect.m in Sources */,
 				7F3871DE17BE4F1000D8E39D /* DDMenuController.m in Sources */,
 				7F4CB68E18097908008B5CA2 /* LocationSimple.m in Sources */,
 				7F2AD59417EDE9B40096EC8D /* SHKRequest.m in Sources */,
@@ -1030,6 +1051,7 @@
 				7F2AD59617EDE9B40096EC8D /* SHK.m in Sources */,
 				7F2AD5B917EDE9B40096EC8D /* SHKInstagram.m in Sources */,
 				7FC4137617C7E8450025DD2C /* FSConverter.m in Sources */,
+				841C5EF4195483FF00AD025D /* SkinElementImage.m in Sources */,
 				7F2AD5A117EDE9B40096EC8D /* SHKMail.m in Sources */,
 				7F2AD5D717EDE9B40096EC8D /* SHKFormOptionController.m in Sources */,
 				7F2AD5CD17EDE9B40096EC8D /* SHKActivityIndicator.m in Sources */,

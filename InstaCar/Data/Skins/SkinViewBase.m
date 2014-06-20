@@ -8,6 +8,7 @@
 
 #import "SkinViewBase.h"
 #import "Utils.h"
+#import "DrawingElementProtocolBase.h"
 
 @implementation SkinViewBase
 
@@ -115,7 +116,7 @@
 }
 
 -(UIImage*)getSkinImage{
-    return [self getSkinImageWithBlur2:0.0];
+    return [self getSkinImageWithBlur:0.0];
 }
 
 -(UIImage*)getSkinImageWithBlur2:(CGFloat)blurStrength {
@@ -163,13 +164,46 @@
     CGFloat desiredSideLength = 918.0;
     CGFloat scaleFactorHeight = self.bounds.size.height/desiredSideLength;
 //CGSizeMake(desiredSideLength, desiredSideLength)
-    UIGraphicsBeginImageContextWithOptions(self.bounds.size, NO, scaleFactorHeight);
+//    UIGraphicsBeginImageContextWithOptions(self.bounds.size, NO, scaleFactorHeight);
+    CGContextRef ctx = UIGraphicsGetCurrentContext();
+    for (UIView *view in self.subviews) {
+        [self renderControl:view inContext:&ctx AtPoint:CGPointMake(0, 0)];
+    }
     
-    [self.layer renderInContext:UIGraphicsGetCurrentContext()];
+    //[self.layer renderInContext:UIGraphicsGetCurrentContext()];
     UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     return image;
 }
+
+-(void)renderControl:(UIView*)control inContext:(CGContextRef*)context AtPoint:(CGPoint)point{
+    if ([control conformsToProtocol:@protocol(DrawElemBaseProtocol)]){
+        UIView<DrawElemBaseProtocol> *elemBase = (UIView<DrawElemBaseProtocol> *)control;
+        
+        CGRect rect = [elemBase elemRectInParent]; // TODO: adjuct rect to fit parent's corrdinates
+        
+        switch ([elemBase elemType]) {
+            case ELEM_GRADIENT:
+                break;
+            case ELEM_IMAGE:{
+                UIView<DrawElemImageProtocol> *elemImg = (UIView<DrawElemImageProtocol> *)control;
+                
+                [[elemImg elemImage] drawInRect:rect];
+                break;
+            }
+            case ELEM_TEXT:
+                break;
+            default:
+                break;
+        }
+    }
+    
+    [control.layer renderInContext:*context];
+    for (UIView *subView in control.subviews) {
+        [self renderControl:subView inContext:context AtPoint:point];
+    }
+}
+
 
 -(BOOL)isSkinContentAtTheTop{
     return isContentOnTop;

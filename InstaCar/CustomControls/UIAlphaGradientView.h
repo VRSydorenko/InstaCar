@@ -6,11 +6,13 @@
 //
 //
 
-@interface UIAlphaGradientView : UIView
+#import "DrawingElementProtocolBase.h"
 
-typedef enum gradientDirections
+@interface UIAlphaGradientView : UIView <DrawElemGradientProtocol>
+
+typedef enum
 {
-    GRADIENT_UP,
+    GRADIENT_UP = 0,
     GRADIENT_DOWN,
     GRADIENT_LEFT,
     GRADIENT_RIGHT

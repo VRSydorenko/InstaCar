@@ -125,4 +125,23 @@
     UIGraphicsEndImageContext();
 }
 
+#pragma mark DrawElement protocol 
+
+-(UIColor*)elemColor{
+    return self.color;
+}
+
+-(CGRect)elemRectInParent{
+    return self.frame;
+}
+
+-(ElementType)elemType{
+    return ELEM_GRADIENT;
+}
+
+-(int)elemGradDirection
+{
+    return self.direction;
+}
+
 @end
