@@ -15,7 +15,6 @@
 #import "DataManager.h"
 
 #define SWITCH_TIME 1.0
-#define IMAGE_SIDE_SIZE 918.0
 
 typedef enum {
     COLLAPSE,
@@ -473,7 +472,7 @@ typedef enum {
 
 -(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
-    UIImage *image =  [Utils image:[info objectForKey:UIImagePickerControllerOriginalImage] byScalingProportionallyToSize:CGSizeMake(IMAGE_SIDE_SIZE, IMAGE_SIDE_SIZE)];
+    UIImage *image =  [Utils image:[info objectForKey:UIImagePickerControllerOriginalImage] byScalingProportionallyToSize:CGSizeMake(DESIRED_SIDE_LENGTH, DESIRED_SIDE_LENGTH)];
     NSURL *assetURL = [info objectForKey:UIImagePickerControllerReferenceURL];
     
     [assetsLibrary assetForURL:assetURL resultBlock:^(ALAsset *asset) {
@@ -548,7 +547,7 @@ typedef enum {
 -(UIImage*) drawSkin:(UIImage*)skinImage
         inImageTaken:(UIImage*)imageTaken
 {
-    UIGraphicsBeginImageContext(CGSizeMake(918.0, 918.0));
+    UIGraphicsBeginImageContext(CGSizeMake(DESIRED_SIDE_LENGTH, DESIRED_SIDE_LENGTH));
     [imageTaken drawAtPoint:CGPointMake(0.0, 0.0)];
     [skinImage drawAtPoint:CGPointMake(0.0, 0.0)];
     UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();

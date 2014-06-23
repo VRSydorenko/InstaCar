@@ -8,11 +8,12 @@
 
 #import "SkinViewBase.h"
 #import "SkinElementImage.h"
+#import "SkinElementLabel.h"
 
 @interface SkinSimple : SkinViewBase
 
 @property (nonatomic) IBOutlet NSLayoutConstraint *autoTitleWidth;
 @property (nonatomic) IBOutlet SkinElementImage *imgEmblem;
-@property (nonatomic) IBOutlet UILabel *textAuto;
+@property (nonatomic) IBOutlet SkinElementLabel *textAuto;
 
 @end

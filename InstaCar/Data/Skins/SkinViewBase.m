@@ -120,8 +120,7 @@
 }
 
 -(UIImage*)getSkinImageWithBlur2:(CGFloat)blurStrength {
-    CGFloat desiredSideLength = 918.0;
-    CGFloat scaleFactorHeight = desiredSideLength/self.bounds.size.height;
+    CGFloat scaleFactorHeight = DESIRED_SIDE_LENGTH/self.bounds.size.height;
     
     self.layer.contentsScale = scaleFactorHeight;
     CGRect currentFrame = self.frame;
@@ -129,15 +128,15 @@
     if (movingViewIsOnTop){
         movingViewTopMarginConstraint.constant = movingViewTopBottomMargin*scaleFactorHeight;
     } else {
-        movingViewTopMarginConstraint.constant = desiredSideLength - movingViewHeight*scaleFactorHeight - movingViewTopBottomMargin*scaleFactorHeight;
+        movingViewTopMarginConstraint.constant = DESIRED_SIDE_LENGTH - movingViewHeight*scaleFactorHeight - movingViewTopBottomMargin*scaleFactorHeight;
     }
     
-    self.frame = CGRectMake(self.frame.origin.x, self.frame.origin.y, desiredSideLength, desiredSideLength);
+    self.frame = CGRectMake(self.frame.origin.x, self.frame.origin.y, DESIRED_SIDE_LENGTH, DESIRED_SIDE_LENGTH);
     [self setNeedsLayout];
     [self layoutIfNeeded];
     [self layoutSubviews];
     
-    UIGraphicsBeginImageContextWithOptions(CGSizeMake(desiredSideLength, desiredSideLength), NO, 1);//scaleFactorHeight);
+    UIGraphicsBeginImageContextWithOptions(CGSizeMake(DESIRED_SIDE_LENGTH, DESIRED_SIDE_LENGTH), NO, 1);//scaleFactorHeight);
     [self.layer renderInContext:UIGraphicsGetCurrentContext()];
     UIImage *result = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
@@ -161,10 +160,10 @@
 }
 
 -(UIImage*)getSkinImageWithBlur:(CGFloat)blurStrength {
-    CGFloat desiredSideLength = 918.0;
-    CGFloat scaleFactorHeight = self.bounds.size.height/desiredSideLength;
-//CGSizeMake(desiredSideLength, desiredSideLength)
-//    UIGraphicsBeginImageContextWithOptions(self.bounds.size, NO, scaleFactorHeight);
+    CGFloat scaleFactorHeight = self.bounds.size.height/DESIRED_SIDE_LENGTH;
+    CGSizeMake(DESIRED_SIDE_LENGTH, DESIRED_SIDE_LENGTH);
+    
+    UIGraphicsBeginImageContextWithOptions(self.bounds.size, NO, scaleFactorHeight);
     CGContextRef ctx = UIGraphicsGetCurrentContext();
     for (UIView *view in self.subviews) {
         [self renderControl:view inContext:&ctx AtPoint:CGPointMake(0, 0)];
@@ -178,27 +177,39 @@
 
 -(void)renderControl:(UIView*)control inContext:(CGContextRef*)context AtPoint:(CGPoint)point{
     if ([control conformsToProtocol:@protocol(DrawElemBaseProtocol)]){
+        CGFloat scaleFactorHeight = DESIRED_SIDE_LENGTH/self.bounds.size.height;
         UIView<DrawElemBaseProtocol> *elemBase = (UIView<DrawElemBaseProtocol> *)control;
         
-        CGRect rect = [elemBase elemRectInParent]; // TODO: adjuct rect to fit parent's corrdinates
+        CGRect rect = [elemBase elemRectInParent]; // TODO: adjust rect to fit parent's corrdinates
+        rect.origin.x *= scaleFactorHeight;
+        rect.origin.y *= scaleFactorHeight;
+        rect.size.height *= scaleFactorHeight;
+        rect.size.width *= scaleFactorHeight;
         
         switch ([elemBase elemType]) {
             case ELEM_GRADIENT:
                 break;
             case ELEM_IMAGE:{
                 UIView<DrawElemImageProtocol> *elemImg = (UIView<DrawElemImageProtocol> *)control;
-                
-                [[elemImg elemImage] drawInRect:rect];
+                //[[elemImg elemImage] drawInRect:rect];
+//                [[UIImage imageNamed:@"bmw_256.png"] drawInRect:rect];
+                [[UIImage imageNamed:@"bmw_256.png"] drawAtPoint:rect.origin];
                 break;
             }
-            case ELEM_TEXT:
+            case ELEM_TEXT:{
+                UIView<DrawElemTextProtocol> *elemText = (UIView<DrawElemTextProtocol> *)control;
+                
+                NSDictionary *attrs = @{NSFontAttributeName: [elemText elemFont], NSForegroundColorAttributeName: [elemBase elemColor]};
+                NSAttributedString *text = [[NSAttributedString alloc] initWithString:[elemText elemString] attributes:attrs];
+                
+                [text drawAtPoint:point];
                 break;
+            }
             default:
                 break;
         }
     }
     
-    [control.layer renderInContext:*context];
     for (UIView *subView in control.subviews) {
         [self renderControl:subView inContext:context AtPoint:point];
     }

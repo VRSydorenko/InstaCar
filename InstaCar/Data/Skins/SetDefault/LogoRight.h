@@ -7,9 +7,10 @@
 //
 
 #import "SkinViewBase.h"
+#import "SkinElementImage.h"
 
 @interface LogoRight : SkinViewBase
 
-@property (nonatomic) IBOutlet UIImageView *imgEmblem;
+@property (nonatomic) IBOutlet SkinElementImage *imgEmblem;
 
 @end

@@ -13,7 +13,7 @@
 // base
 
 -(UIColor*)elemColor{
-    return [UIColor whiteColor];
+    return [UIColor clearColor];
 }
 
 -(CGRect)elemRectInParent{
@@ -22,7 +22,7 @@
 
 -(ElementType)elemType;
 {
-    return ELEM_BASE;
+    return ELEM_IMAGE;
 }
 
 // image

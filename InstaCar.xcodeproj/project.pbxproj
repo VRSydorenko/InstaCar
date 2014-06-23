@@ -112,6 +112,7 @@
 		7FEF908917D505E800C07A05 /* AutosVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FEF908817D505E800C07A05 /* AutosVC.m */; };
 		7FF3389317D4C0E700B046C4 /* SkinsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FF3389217D4C0E700B046C4 /* SkinsVC.m */; };
 		7FFEBC5517DBA54F00B1DC9A /* auto_logos.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7FFEBC5417DBA54F00B1DC9A /* auto_logos.xcassets */; };
+		8415F44819587F2500708437 /* SkinElementLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8415F44719587F2500708437 /* SkinElementLabel.m */; };
 		841C5EF4195483FF00AD025D /* SkinElementImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 841C5EF3195483FF00AD025D /* SkinElementImage.m */; };
 		84EC58E11954519A00E8C421 /* SkinElementRect.m in Sources */ = {isa = PBXBuildFile; fileRef = 84EC58E01954519A00E8C421 /* SkinElementRect.m */; };
 /* End PBXBuildFile section */
@@ -330,6 +331,8 @@
 		7FF3389117D4C0E700B046C4 /* SkinsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SkinsVC.h; path = InstaCar/SkinsVC.h; sourceTree = "<group>"; };
 		7FF3389217D4C0E700B046C4 /* SkinsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SkinsVC.m; path = InstaCar/SkinsVC.m; sourceTree = "<group>"; };
 		7FFEBC5417DBA54F00B1DC9A /* auto_logos.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = auto_logos.xcassets; path = InstaCar/Data/auto_logos.xcassets; sourceTree = "<group>"; };
+		8415F44619587F2500708437 /* SkinElementLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SkinElementLabel.h; path = InstaCar/Core/DrawingElements/SkinElementLabel.h; sourceTree = "<group>"; };
+		8415F44719587F2500708437 /* SkinElementLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SkinElementLabel.m; path = InstaCar/Core/DrawingElements/SkinElementLabel.m; sourceTree = "<group>"; };
 		841C5EF2195483FF00AD025D /* SkinElementImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SkinElementImage.h; path = InstaCar/Core/DrawingElements/SkinElementImage.h; sourceTree = "<group>"; };
 		841C5EF3195483FF00AD025D /* SkinElementImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SkinElementImage.m; path = InstaCar/Core/DrawingElements/SkinElementImage.m; sourceTree = "<group>"; };
 		84EC58DE195450A200E8C421 /* DrawingElementProtocolBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DrawingElementProtocolBase.h; path = InstaCar/Core/DrawingElements/DrawingElementProtocolBase.h; sourceTree = "<group>"; };
@@ -848,6 +851,8 @@
 				84EC58E01954519A00E8C421 /* SkinElementRect.m */,
 				841C5EF2195483FF00AD025D /* SkinElementImage.h */,
 				841C5EF3195483FF00AD025D /* SkinElementImage.m */,
+				8415F44619587F2500708437 /* SkinElementLabel.h */,
+				8415F44719587F2500708437 /* SkinElementLabel.m */,
 			);
 			name = DrawingElements;
 			sourceTree = "<group>";
@@ -982,6 +987,7 @@
 				7FC4137C17C7EFF70025DD2C /* LocationsVC.m in Sources */,
 				7F4CB69518097908008B5CA2 /* SkinViewBase.m in Sources */,
 				7F4CB69318097908008B5CA2 /* SkinSimple.m in Sources */,
+				8415F44819587F2500708437 /* SkinElementLabel.m in Sources */,
 				7F3871E117BE5A4F00D8E39D /* AppMenuTableVC.m in Sources */,
 				7FF3389317D4C0E700B046C4 /* SkinsVC.m in Sources */,
 				7F4CB679180978CF008B5CA2 /* SkinProvider.m in Sources */,

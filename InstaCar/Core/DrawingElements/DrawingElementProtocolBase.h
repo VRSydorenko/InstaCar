@@ -27,6 +27,7 @@ typedef enum {
 
 @protocol DrawElemTextProtocol <DrawElemBaseProtocol>
 -(UIFont*)elemFont;
+-(NSString*)elemString;
 @end
 
 @protocol DrawElemGradientProtocol <DrawElemBaseProtocol>

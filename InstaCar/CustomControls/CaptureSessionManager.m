@@ -87,7 +87,6 @@
 
             // calculating rect for cropping
             CGFloat currentMinSideLength = MIN(ciImage.extent.size.width, ciImage.extent.size.height);
-            CGFloat desiredSideLength = 918.0;
             CGRect screenRect = [UIScreen mainScreen].bounds;
             CGFloat topOffset = self.imageTopCropMargin * currentMinSideLength/MIN(screenRect.size.width, screenRect.size.height); // 'top' is 'right' here
             CGRect subImageRect = CGRectMake(topOffset, 0, currentMinSideLength, currentMinSideLength);
@@ -95,7 +94,7 @@
             ciImage = [ciImage imageByCroppingToRect:subImageRect];
             //ciImage = [ciImage imageByApplyingTransform:CGAffineTransformMakeRotation(-M_PI_2)];
                                
-            CGFloat imageScale = currentMinSideLength/desiredSideLength;
+            CGFloat imageScale = currentMinSideLength/DESIRED_SIDE_LENGTH;
             UIImageOrientation orientation = UIImageOrientationRight;
             if (activeInputFront){
                 orientation = UIImageOrientationUp | UIImageOrientationLeftMirrored;
