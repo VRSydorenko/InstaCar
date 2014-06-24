@@ -3,11 +3,6 @@
 
 @implementation CaptureSessionManager
 
-@synthesize captureSession;
-@synthesize previewLayer;
-@synthesize stillImageOutput;
-@synthesize stillImage;
-
 #pragma mark Capture Session Configuration
 
 - (id)init {
