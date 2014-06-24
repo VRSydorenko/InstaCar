@@ -160,13 +160,11 @@
 }
 
 -(UIImage*)getSkinImageWithBlur:(CGFloat)blurStrength {
-    CGFloat scaleFactorHeight = self.bounds.size.height/DESIRED_SIDE_LENGTH;
-    CGSizeMake(DESIRED_SIDE_LENGTH, DESIRED_SIDE_LENGTH);
-    
-    UIGraphicsBeginImageContextWithOptions(self.bounds.size, NO, scaleFactorHeight);
+    //CGFloat scaleFactorHeight = self.bounds.size.height/DESIRED_SIDE_LENGTH;
+    UIGraphicsBeginImageContext(CGSizeMake(DESIRED_SIDE_LENGTH, DESIRED_SIDE_LENGTH));
     CGContextRef ctx = UIGraphicsGetCurrentContext();
     for (UIView *view in self.subviews) {
-        [self renderControl:view inContext:&ctx AtPoint:CGPointMake(0, 0)];
+        [self renderControl:view inContext:&ctx withParentPoint:CGPointMake(0, 0)]; // initial point is 0.0
     }
     
     //[self.layer renderInContext:UIGraphicsGetCurrentContext()];
@@ -175,25 +173,35 @@
     return image;
 }
 
--(void)renderControl:(UIView*)control inContext:(CGContextRef*)context AtPoint:(CGPoint)point{
+-(void)renderControl:(UIView*)control inContext:(CGContextRef*)context withParentPoint:(CGPoint)point{
+    //CGFloat selfAbsolutOriginX = [control isKindOfClass:[SkinViewBase class]] ? 0.0 : self.frame.origin.x; // skins should be are at 0.0
+    CGPoint selfAbsoluteOriginPoint = CGPointMake(control.frame.origin.x + point.x, control.frame.origin.y + point.y);
+    
     if ([control conformsToProtocol:@protocol(DrawElemBaseProtocol)]){
         CGFloat scaleFactorHeight = DESIRED_SIDE_LENGTH/self.bounds.size.height;
+        
         UIView<DrawElemBaseProtocol> *elemBase = (UIView<DrawElemBaseProtocol> *)control;
-        
-        CGRect rect = [elemBase elemRectInParent]; // TODO: adjust rect to fit parent's corrdinates
-        rect.origin.x *= scaleFactorHeight;
-        rect.origin.y *= scaleFactorHeight;
-        rect.size.height *= scaleFactorHeight;
-        rect.size.width *= scaleFactorHeight;
-        
         switch ([elemBase elemType]) {
             case ELEM_GRADIENT:
                 break;
             case ELEM_IMAGE:{
                 UIView<DrawElemImageProtocol> *elemImg = (UIView<DrawElemImageProtocol> *)control;
-                //[[elemImg elemImage] drawInRect:rect];
+                
+                CGRect rect = [elemImg elemRectInParent];
+                
+                assert(rect.origin.x == selfAbsoluteOriginPoint.x);
+                assert(rect.origin.y == selfAbsoluteOriginPoint.y);
+                
+                rect.origin.x *= scaleFactorHeight;
+                rect.origin.y *= scaleFactorHeight;
+                rect.size.height *= scaleFactorHeight;
+                rect.size.width *= scaleFactorHeight;
+                
+                [[elemImg elemImage] drawInRect:rect];
 //                [[UIImage imageNamed:@"bmw_256.png"] drawInRect:rect];
-                [[UIImage imageNamed:@"bmw_256.png"] drawAtPoint:rect.origin];
+                //UIImage *toDraw = [UIImage imageNamed:@"bmw_256.png"];
+                //UIImage *toDraw2 = [[UIImage alloc] initWithCGImage:toDraw.CGImage scale:scaleFactorHeight orientation:toDraw.imageOrientation];
+                //[toDraw drawInRect:rect];
                 break;
             }
             case ELEM_TEXT:{
@@ -211,7 +219,7 @@
     }
     
     for (UIView *subView in control.subviews) {
-        [self renderControl:subView inContext:context AtPoint:point];
+        [self renderControl:subView inContext:context withParentPoint:selfAbsoluteOriginPoint];
     }
 }
 
