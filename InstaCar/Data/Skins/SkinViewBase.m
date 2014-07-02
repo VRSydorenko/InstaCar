@@ -197,6 +197,16 @@
                 rect.size.height *= scaleFactorHeight;
                 rect.size.width *= scaleFactorHeight;
                 
+                UIImage *image = [elemImg elemImage];
+                switch (elemImg.contentMode) {
+                    case UIViewContentModeScaleAspectFit:{
+                        break;
+                    }
+                    default:
+                        assert(false);
+                        break;
+                }
+                
                 [[elemImg elemImage] drawInRect:rect];
 //                [[UIImage imageNamed:@"bmw_256.png"] drawInRect:rect];
                 //UIImage *toDraw = [UIImage imageNamed:@"bmw_256.png"];
@@ -208,9 +218,26 @@
                 UIView<DrawElemTextProtocol> *elemText = (UIView<DrawElemTextProtocol> *)control;
                 
                 NSDictionary *attrs = @{NSFontAttributeName: [elemText elemFont], NSForegroundColorAttributeName: [elemBase elemColor]};
-                NSAttributedString *text = [[NSAttributedString alloc] initWithString:[elemText elemString] attributes:attrs];
+                NSString *text = [elemText elemString];
+                NSAttributedString *attrString = [[NSAttributedString alloc] initWithString:text attributes:attrs];
                 
-                [text drawAtPoint:point];
+                CGRect rect = [elemText elemRectInParent];
+                
+                const CGSize textSize = [text sizeWithAttributes: attrs];
+                
+                CGFloat textHRatio = MAX(1, textSize.height / rect.size.height);
+                CGFloat textWRatio = MAX(1, textSize.width / rect.size.width);
+                
+                rect.origin.x *= scaleFactorHeight;
+                rect.origin.y *= scaleFactorHeight;
+                rect.size.height *= scaleFactorHeight;
+                rect.size.width *= scaleFactorHeight;
+                
+                for (CGFloat fontSize = 40.0; ;){
+                    UIFont *currFont = [UIFont fontWithName:[elemText elemFont].fontName size:fontSize];
+                }
+                
+                [attrString drawAtPoint:rect.origin];
                 break;
             }
             default:
