@@ -233,7 +233,10 @@
                 rect.size.height *= scaleFactorHeight;
                 rect.size.width *= scaleFactorHeight;
                 
-                for (CGFloat fontSize = 40.0; ;){
+                CGFloat fontSize = 40.0;
+                CGFloat scalingTolerance = 5.0; // percent
+                
+                for (CGFloat fontDeltaStep = 10.0; ;fontSize += fontDeltaStep){
                     UIFont *currFont = [UIFont fontWithName:[elemText elemFont].fontName size:fontSize];
                 }
                 
