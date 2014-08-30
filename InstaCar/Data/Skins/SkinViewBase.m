@@ -167,7 +167,6 @@
         [self renderControl:view inContext:&ctx withParentPoint:CGPointMake(0, 0)]; // initial point is 0.0
     }
     
-    //[self.layer renderInContext:UIGraphicsGetCurrentContext()];
     UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     return image;
@@ -197,9 +196,12 @@
                 rect.size.height *= scaleFactorHeight;
                 rect.size.width *= scaleFactorHeight;
                 
-                UIImage *image = [elemImg elemImage];
+                // adjust the rect based on the content mode
+                UIImage *toDraw = [elemImg elemImage];
+                
                 switch (elemImg.contentMode) {
                     case UIViewContentModeScaleAspectFit:{
+                        toDraw = [Utils image:toDraw byScalingProportionallyToSize:rect.size];
                         break;
                     }
                     default:
@@ -207,11 +209,7 @@
                         break;
                 }
                 
-                [[elemImg elemImage] drawInRect:rect];
-//                [[UIImage imageNamed:@"bmw_256.png"] drawInRect:rect];
-                //UIImage *toDraw = [UIImage imageNamed:@"bmw_256.png"];
-                //UIImage *toDraw2 = [[UIImage alloc] initWithCGImage:toDraw.CGImage scale:scaleFactorHeight orientation:toDraw.imageOrientation];
-                //[toDraw drawInRect:rect];
+                [toDraw drawInRect:rect];
                 break;
             }
             case ELEM_TEXT:{
@@ -238,6 +236,7 @@
                 
                 for (CGFloat fontDeltaStep = 10.0; ;fontSize += fontDeltaStep){
                     UIFont *currFont = [UIFont fontWithName:[elemText elemFont].fontName size:fontSize];
+                    break; // TODO: calculate font size to fit the text
                 }
                 
                 [attrString drawAtPoint:rect.origin];

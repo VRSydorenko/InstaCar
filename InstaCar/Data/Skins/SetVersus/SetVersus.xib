@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="4514" systemVersion="13B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6206.8" systemVersion="14A329f" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <deployment defaultVersion="1792" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7026.1"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -13,11 +12,9 @@
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xs5-Ya-u5b">
                     <rect key="frame" x="0.0" y="260" width="320" height="60"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NhV-R1-nM2">
                             <rect key="frame" x="159" y="0.0" width="4" height="60"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="4" id="zWp-iW-ITf"/>
@@ -25,14 +22,12 @@
                         </view>
                         <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="anycarLogo" translatesAutoresizingMaskIntoConstraints="NO" id="BAC-hV-PXa">
                             <rect key="frame" x="20" y="10" width="40" height="40"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="40" id="5yM-ns-bHf"/>
                             </constraints>
                         </imageView>
                         <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="anycarLogo" translatesAutoresizingMaskIntoConstraints="NO" id="zwt-LL-gNa">
                             <rect key="frame" x="260" y="10" width="40" height="40"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="40" id="xEg-Tx-QIA"/>
                             </constraints>
@@ -59,6 +54,7 @@
                 <constraint firstAttribute="trailing" secondItem="Xs5-Ya-u5b" secondAttribute="trailing" id="XFK-Sa-wnB"/>
                 <constraint firstItem="Xs5-Ya-u5b" firstAttribute="top" secondItem="Tnr-oz-4iU" secondAttribute="top" constant="260" id="rv5-Sv-Liy"/>
             </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="constraintHeight" destination="gyI-Nm-vDq" id="DEB-Eu-4ul"/>
@@ -82,11 +78,9 @@
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LV1-vO-6eP">
                     <rect key="frame" x="0.0" y="260" width="320" height="60"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sna-Cm-jKC">
                             <rect key="frame" x="159" y="0.0" width="4" height="60"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="4" id="iwW-Ho-TDc"/>
@@ -94,28 +88,24 @@
                         </view>
                         <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="anycarLogo" translatesAutoresizingMaskIntoConstraints="NO" id="IGx-Rh-8RJ">
                             <rect key="frame" x="5" y="5" width="40" height="50"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="40" id="LmZ-ui-igi"/>
                             </constraints>
                         </imageView>
                         <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="anycarLogo" translatesAutoresizingMaskIntoConstraints="NO" id="lQw-rQ-rpJ">
                             <rect key="frame" x="272" y="5" width="40" height="50"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="40" id="GxP-rk-on0"/>
                             </constraints>
                         </imageView>
                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Auto 1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.20000000298023224" translatesAutoresizingMaskIntoConstraints="NO" id="bto-QY-Whh">
                             <rect key="frame" x="48" y="10" width="103" height="40"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="25"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Auto 2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.20000000298023224" translatesAutoresizingMaskIntoConstraints="NO" id="g33-S5-Nal">
                             <rect key="frame" x="166" y="10" width="103" height="40"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="25"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
@@ -150,6 +140,7 @@
                 <constraint firstItem="LV1-vO-6eP" firstAttribute="top" secondItem="MPA-Bd-Nlr" secondAttribute="top" constant="260" id="42O-6o-Chm"/>
                 <constraint firstItem="LV1-vO-6eP" firstAttribute="leading" secondItem="MPA-Bd-Nlr" secondAttribute="leading" id="cNR-hv-pz4"/>
             </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="constraintHeight" destination="OhV-Jx-mAP" id="joG-3t-mWt"/>
@@ -173,4 +164,12 @@
     <resources>
         <image name="anycarLogo" width="32" height="32"/>
     </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4">
+            <size key="portraitSize" width="320" height="568"/>
+            <size key="landscapeSize" width="568" height="320"/>
+        </simulatedScreenMetrics>
+    </simulatedMetricsContainer>
 </document>
