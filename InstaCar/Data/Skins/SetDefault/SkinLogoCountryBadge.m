@@ -11,7 +11,7 @@
 @interface SkinLogoCountryBadge()
 
 @property (nonatomic) IBOutlet NSLayoutConstraint *constraintTopMargin;
-@property (nonatomic) IBOutlet UIView *movingView;
+@property (nonatomic) IBOutlet SkinElementRect *movingView;
 
 @end
 

@@ -243,7 +243,7 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="320"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b0J-1D-8id">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b0J-1D-8id" customClass="SkinElementRect">
                     <rect key="frame" x="44" y="253" width="232" height="60"/>
                     <subviews>
                         <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="anycarLogo" translatesAutoresizingMaskIntoConstraints="NO" id="BiX-Je-pLe" customClass="SkinElementImage">
