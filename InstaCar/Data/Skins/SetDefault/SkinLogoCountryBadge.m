@@ -8,18 +8,9 @@
 
 #import "SkinLogoCountryBadge.h"
 
-@interface SkinLogoCountryBadge(){
-    CGFloat countryLabelHeightScaleFactor;
-    CGFloat initialSideMargin;
-}
+@interface SkinLogoCountryBadge()
 
 @property (nonatomic) IBOutlet NSLayoutConstraint *constraintTopMargin;
-@property (nonatomic) IBOutlet NSLayoutConstraint *constraintLeftMargin;
-@property (nonatomic) IBOutlet NSLayoutConstraint *constraintRightMargin;
-@property (nonatomic) IBOutlet NSLayoutConstraint *constraintMovingViewHeight;
-@property (nonatomic) IBOutlet NSLayoutConstraint *constraintLogoWidth;
-@property (nonatomic) IBOutlet NSLayoutConstraint *constraintSeparatorWidth;
-@property (nonatomic) IBOutlet NSLayoutConstraint *constraintCountryTextHeight;
 @property (nonatomic) IBOutlet UIView *movingView;
 
 @end
@@ -27,8 +18,6 @@
 @implementation SkinLogoCountryBadge
 
 -(void)initialise{
-    initialSideMargin = self.constraintLeftMargin.constant; // the same as right margin constraint
-    countryLabelHeightScaleFactor = self.constraintCountryTextHeight.constant / self.movingView.bounds.size.height;
     [self setMovingViewConstraint:self.constraintTopMargin andViewHeight:self.movingView.bounds.size.height];
     
     canEditFieldAuto1 = YES;

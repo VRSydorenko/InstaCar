@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "DrawingElementProtocolBase.h"
 
-@interface SkinElementRect : UIView <DrawElemBaseProtocol>
+@interface SkinElementRect : UIView <DrawElemRectProtocol>
 
 @end

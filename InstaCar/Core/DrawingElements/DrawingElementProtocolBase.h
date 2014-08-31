@@ -13,6 +13,7 @@ typedef enum {
     ELEM_IMAGE,
     ELEM_TEXT,
     ELEM_GRADIENT,
+    ELEM_RECT,
 } ElementType;
 
 @protocol DrawElemBaseProtocol <NSObject>
@@ -32,4 +33,9 @@ typedef enum {
 
 @protocol DrawElemGradientProtocol <DrawElemBaseProtocol>
 -(int)elemGradDirection;
+@end
+
+@protocol DrawElemRectProtocol <DrawElemBaseProtocol>
+-(UIColor*)borderColor;
+-(CGFloat)borderWidth;
 @end

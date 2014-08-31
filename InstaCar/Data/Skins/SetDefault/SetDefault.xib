@@ -267,7 +267,7 @@
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bsS-tN-V0h">
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bsS-tN-V0h" customClass="SkinElementRect">
                             <rect key="frame" x="90" y="0.0" width="2" height="60"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             <constraints>
@@ -303,12 +303,6 @@
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
-                <outlet property="constraintCountryTextHeight" destination="dCR-mC-fch" id="D8c-rC-Awt"/>
-                <outlet property="constraintLeftMargin" destination="cmt-tt-m17" id="V0g-Cu-7Xb"/>
-                <outlet property="constraintLogoWidth" destination="xWz-c1-UQW" id="M17-hS-XkI"/>
-                <outlet property="constraintMovingViewHeight" destination="JLy-hV-DXq" id="mAB-UX-SKq"/>
-                <outlet property="constraintRightMargin" destination="lp2-1L-3xc" id="96y-YS-0Xc"/>
-                <outlet property="constraintSeparatorWidth" destination="btc-lR-McL" id="MkW-Mc-adE"/>
                 <outlet property="constraintTopMargin" destination="qZN-fN-Lza" id="x9g-EQ-X0D"/>
                 <outlet property="imgEmblem" destination="BiX-Je-pLe" id="NxE-jT-YcW"/>
                 <outlet property="movingView" destination="b0J-1D-8id" id="rKd-80-9XU"/>

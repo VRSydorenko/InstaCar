@@ -191,8 +191,10 @@
         rectToDrawIn.size.width *= scaleFactorHeight;
         
         switch ([elemBase elemType]) {
+#pragma mark Draw GRADIENT
             case ELEM_GRADIENT:
                 break;
+#pragma mark Draw IMAGE
             case ELEM_IMAGE:{
                 UIView<DrawElemImageProtocol> *elemImg = (UIView<DrawElemImageProtocol> *)control;
                 
@@ -212,6 +214,7 @@
                 [toDraw drawInRect:rectToDrawIn];
                 break;
             }
+#pragma mark Draw TEXT
             case ELEM_TEXT:{
                 UIView<DrawElemTextProtocol> *elemText = (UIView<DrawElemTextProtocol> *)control;
                 
@@ -246,6 +249,24 @@
                 NSAttributedString *attrString = [[NSAttributedString alloc] initWithString:text attributes:savedStringAttrs];
                 [attrString drawAtPoint:rectToDrawIn.origin];
                 
+                break;
+            }
+#pragma mark Draw BASE
+            case ELEM_RECT:{
+                UIView<DrawElemRectProtocol> *elemRect = (UIView<DrawElemRectProtocol> *)control;
+                
+                CGFloat fillRed = 0.0, fillGreen = 0.0, fillBlue = 0.0, fillAlpha = 0.0;
+                [[elemRect elemColor] getRed:&fillRed green:&fillGreen blue:&fillBlue alpha:&fillAlpha];
+                
+                CGFloat strokeRed = 0.0, strokeGreen = 0.0, strokeBlue = 0.0, strokeAlpha = 0.0;
+                [[elemRect borderColor] getRed:&strokeRed green:&strokeGreen blue:&strokeBlue alpha:&strokeAlpha];
+    
+                CGContextSetRGBFillColor(*context, fillRed, fillGreen, fillBlue, fillAlpha);
+                CGContextSetRGBStrokeColor(*context, strokeRed, strokeGreen, strokeBlue, strokeAlpha);
+                CGContextSetLineWidth(*context, [elemRect borderWidth]);
+                
+                CGContextFillRect(*context, rectToDrawIn);
+                CGContextStrokeRect(*context, rectToDrawIn);
                 break;
             }
             default:

@@ -13,7 +13,7 @@
 // base
 
 -(UIColor*)elemColor{
-    return [UIColor whiteColor];
+    return [UIColor colorWithCGColor:self.layer.backgroundColor];
 }
 
 -(CGRect)elemRectInParent{
@@ -22,7 +22,15 @@
 
 -(ElementType)elemType;
 {
-    return ELEM_BASE;
+    return ELEM_RECT;
+}
+
+-(UIColor*)borderColor{
+    return [UIColor colorWithCGColor:self.layer.borderColor];
+}
+
+-(CGFloat)borderWidth{
+    return self.layer.borderWidth;
 }
 
 @end

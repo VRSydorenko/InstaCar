@@ -15,6 +15,7 @@
 #import "SkinElementLabel.h"
 #import "SkinElementImage.h"
 #import "SkinElementRect.h"
+#import "SkinElementRect.h"
 
 #define MOVINGVIEW_TIME 0.5
 
