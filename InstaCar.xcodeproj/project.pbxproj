@@ -100,6 +100,7 @@
 		7F882C291832ECC60083CFC9 /* SkinSetBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F882C281832ECC60083CFC9 /* SkinSetBase.m */; };
 		7F9656D91866F463000325B9 /* SkinVersusLogo.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F9656D81866F463000325B9 /* SkinVersusLogo.m */; };
 		7FB233B317D6773C003751B5 /* CellSelectedAuto.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FB233B217D6773C003751B5 /* CellSelectedAuto.m */; };
+		7FBDA8FB19B39AD0004C5A47 /* signs.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7FBDA8FA19B39AD0004C5A47 /* signs.xcassets */; };
 		7FC4137517C7E8450025DD2C /* Foursquare2.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FC4136C17C7E8450025DD2C /* Foursquare2.m */; };
 		7FC4137617C7E8450025DD2C /* FSConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FC4136E17C7E8450025DD2C /* FSConverter.m */; };
 		7FC4137717C7E8450025DD2C /* FSRequester.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FC4137017C7E8450025DD2C /* FSRequester.m */; };
@@ -309,6 +310,7 @@
 		7F9656D81866F463000325B9 /* SkinVersusLogo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SkinVersusLogo.m; path = SetVersus/SkinVersusLogo.m; sourceTree = "<group>"; };
 		7FB233B117D6773C003751B5 /* CellSelectedAuto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CellSelectedAuto.h; path = InstaCar/TableCells/CellSelectedAuto.h; sourceTree = "<group>"; };
 		7FB233B217D6773C003751B5 /* CellSelectedAuto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CellSelectedAuto.m; path = InstaCar/TableCells/CellSelectedAuto.m; sourceTree = "<group>"; };
+		7FBDA8FA19B39AD0004C5A47 /* signs.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = signs.xcassets; path = InstaCar/Data/signs.xcassets; sourceTree = "<group>"; };
 		7FC4136B17C7E8450025DD2C /* Foursquare2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Foursquare2.h; sourceTree = "<group>"; };
 		7FC4136C17C7E8450025DD2C /* Foursquare2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Foursquare2.m; sourceTree = "<group>"; };
 		7FC4136D17C7E8450025DD2C /* FSConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSConverter.h; sourceTree = "<group>"; };
@@ -808,6 +810,7 @@
 				7F7FF46E17CF8634000E0ABD /* Location.h */,
 				7F7FF46F17CF8634000E0ABD /* Location.m */,
 				7FFEBC5417DBA54F00B1DC9A /* auto_logos.xcassets */,
+				7FBDA8FA19B39AD0004C5A47 /* signs.xcassets */,
 			);
 			name = Data;
 			sourceTree = "<group>";
@@ -952,6 +955,7 @@
 				7F882C251832EBE50083CFC9 /* SetVersus.xib in Resources */,
 				7F002D21180B49C60076879F /* Settings.bundle in Resources */,
 				7F27AE081812F58E00168424 /* Settings_freeVersion.bundle in Resources */,
+				7FBDA8FB19B39AD0004C5A47 /* signs.xcassets in Resources */,
 				7FFEBC5517DBA54F00B1DC9A /* auto_logos.xcassets in Resources */,
 				7F2AD5CB17EDE9B40096EC8D /* SHKShareFileIcon@2x.png in Resources */,
 				7F2AD59B17EDE9B40096EC8D /* DETweetPaperClip@2x.png in Resources */,

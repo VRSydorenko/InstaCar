@@ -232,7 +232,7 @@
                 CGFloat textWRatio = MAX(1, textSize.width / textRect.size.width);
                 
                 NSDictionary *savedStringAttrs = attrs;
-                for (CGFloat fontSize = 40.0; ; fontSize += 2.0){
+                for (CGFloat fontSize = 1.0; ; fontSize += 2.0){
                     UIFont *currFont = [UIFont fontWithName:[elemText elemFont].fontName size:fontSize];
                     
                     ///--------- calc current iteration text size -----------
@@ -255,7 +255,7 @@
                 
                 break;
             }
-#pragma mark Draw BASE
+#pragma mark Draw RECT
             case ELEM_RECT:{
                 UIView<DrawElemRectProtocol> *elemRect = (UIView<DrawElemRectProtocol> *)control;
                 

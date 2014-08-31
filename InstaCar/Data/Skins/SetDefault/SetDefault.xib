@@ -189,15 +189,15 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EFi-98-3rq">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
                     <subviews>
-                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select place..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.40000000000000002" translatesAutoresizingMaskIntoConstraints="NO" id="Wgs-tY-bON" customClass="SkinElementLabel">
-                            <rect key="frame" x="5" y="0.0" width="310" height="40"/>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select place..." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.40000000000000002" translatesAutoresizingMaskIntoConstraints="NO" id="Wgs-tY-bON" customClass="SkinElementLabel">
+                            <rect key="frame" x="60" y="0.0" width="255" height="40"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="35"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k0F-5E-UhS" customClass="SkinElementLabel">
-                            <rect key="frame" x="5" y="40" width="310" height="20"/>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="..." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k0F-5E-UhS" customClass="SkinElementLabel">
+                            <rect key="frame" x="63" y="40" width="252" height="20"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="20" id="miJ-4e-g88"/>
                             </constraints>
@@ -205,20 +205,29 @@
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
                         </label>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sign_parking" translatesAutoresizingMaskIntoConstraints="NO" id="Kte-ut-yUy" customClass="SkinElementImage">
+                            <rect key="frame" x="5" y="5" width="50" height="50"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="50" id="X2S-m4-Qoi"/>
+                            </constraints>
+                        </imageView>
                     </subviews>
                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
+                        <constraint firstAttribute="bottom" secondItem="Kte-ut-yUy" secondAttribute="bottom" constant="5" id="2a0-yO-Snd"/>
                         <constraint firstItem="Wgs-tY-bON" firstAttribute="top" secondItem="EFi-98-3rq" secondAttribute="top" id="3Ib-jL-UH8"/>
                         <constraint firstItem="k0F-5E-UhS" firstAttribute="top" secondItem="Wgs-tY-bON" secondAttribute="bottom" id="4Kf-Hm-A7i"/>
                         <constraint firstAttribute="bottom" secondItem="k0F-5E-UhS" secondAttribute="bottom" id="592-3C-By4"/>
                         <constraint firstItem="Wgs-tY-bON" firstAttribute="top" secondItem="EFi-98-3rq" secondAttribute="top" id="65S-HS-B56"/>
                         <constraint firstItem="k0F-5E-UhS" firstAttribute="top" secondItem="Wgs-tY-bON" secondAttribute="bottom" id="9iN-EN-ZDb"/>
-                        <constraint firstItem="Wgs-tY-bON" firstAttribute="leading" secondItem="EFi-98-3rq" secondAttribute="leading" constant="5" id="U7A-Ay-v6E"/>
+                        <constraint firstItem="Kte-ut-yUy" firstAttribute="leading" secondItem="EFi-98-3rq" secondAttribute="leading" constant="5" id="Drg-nr-WR3"/>
+                        <constraint firstItem="k0F-5E-UhS" firstAttribute="leading" secondItem="Kte-ut-yUy" secondAttribute="trailing" constant="8" id="VHy-wa-xaT"/>
                         <constraint firstAttribute="height" constant="60" id="WCz-dC-MiQ"/>
+                        <constraint firstItem="Wgs-tY-bON" firstAttribute="leading" secondItem="Kte-ut-yUy" secondAttribute="trailing" constant="5" id="ZFa-fA-m3Y"/>
                         <constraint firstAttribute="trailing" secondItem="Wgs-tY-bON" secondAttribute="trailing" constant="5" id="eTU-tj-WgV"/>
+                        <constraint firstItem="Kte-ut-yUy" firstAttribute="top" secondItem="EFi-98-3rq" secondAttribute="top" constant="5" id="gvQ-Vo-Mpb"/>
                         <constraint firstAttribute="bottom" secondItem="k0F-5E-UhS" secondAttribute="bottom" id="lAc-ww-EAr"/>
                         <constraint firstAttribute="trailing" secondItem="k0F-5E-UhS" secondAttribute="trailing" constant="5" id="tzj-gK-Cxg"/>
-                        <constraint firstItem="k0F-5E-UhS" firstAttribute="leading" secondItem="EFi-98-3rq" secondAttribute="leading" constant="5" id="z0B-lO-gX4"/>
                     </constraints>
                 </view>
             </subviews>
@@ -313,6 +322,7 @@
     </objects>
     <resources>
         <image name="anycarLogo" width="32" height="32"/>
+        <image name="sign_parking" width="300" height="300"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
