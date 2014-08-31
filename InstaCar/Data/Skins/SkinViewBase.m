@@ -227,27 +227,29 @@
                 
                 CGRect textRect = [elemText elemRectInParent];
                 const CGSize textSize = [text sizeWithAttributes: attrs];
-                
-                CGFloat textHRatio = MAX(1, textSize.height / textRect.size.height);
-                CGFloat textWRatio = MAX(1, textSize.width / textRect.size.width);
+                CGFloat textHRatio = textSize.height / textRect.size.height;
+                CGFloat textWRatio = textSize.width / textRect.size.width;
                 
                 NSDictionary *savedStringAttrs = attrs;
                 for (CGFloat fontSize = 1.0; ; fontSize += 2.0){
                     UIFont *currFont = [UIFont fontWithName:[elemText elemFont].fontName size:fontSize];
-                    
-                    ///--------- calc current iteration text size -----------
                     NSDictionary *currAttrs = @{NSFontAttributeName: currFont, NSForegroundColorAttributeName: [elemBase elemColor]};
                     const CGSize currTextSize = [text sizeWithAttributes: currAttrs];
                     
-                    CGFloat currTextHRatio = MAX(1, currTextSize.height / rectToDrawIn.size.height);
-                    CGFloat currTextWRatio = MAX(1, currTextSize.width / rectToDrawIn.size.width);
+                    CGFloat currTextHRatio = currTextSize.height / rectToDrawIn.size.height;
+                    CGFloat currTextWRatio = currTextSize.width / rectToDrawIn.size.width;
                     
-                    if (currTextHRatio > textHRatio || currTextWRatio > textWRatio){
+                    if (currTextHRatio > textHRatio || currTextWRatio > textWRatio || // ratio
+                        currTextSize.width > rectToDrawIn.size.width || currTextSize.height > rectToDrawIn.size.height){ // size limit
+                        
+                        // calc vertical text alignment
+                        rectToDrawIn.origin.y += MAX(0, (rectToDrawIn.size.height - currTextSize.height) * 0.5);
+                        rectToDrawIn.size.height = currTextSize.height;
+                        
                         break;
                     }
                     
                     savedStringAttrs = currAttrs;
-                    ///-------------------------------------------------------
                 }
                 
                 NSAttributedString *attrString = [[NSAttributedString alloc] initWithString:text attributes:savedStringAttrs];
