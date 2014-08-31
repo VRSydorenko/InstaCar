@@ -12,6 +12,10 @@
 #import "MainNavController.h"
 #import "UIAlphaGradientView.h"
 
+#import "SkinElementLabel.h"
+#import "SkinElementImage.h"
+#import "SkinElementRect.h"
+
 #define MOVINGVIEW_TIME 0.5
 
 typedef enum {

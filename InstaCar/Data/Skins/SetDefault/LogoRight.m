@@ -11,21 +11,11 @@
 @interface LogoRight()
 
 @property (nonatomic) IBOutlet NSLayoutConstraint *topMargin;
-@property (nonatomic) IBOutlet NSLayoutConstraint *heightConstraint;
-@property (nonatomic) IBOutlet NSLayoutConstraint *widthLogoConstraint;
 @property (nonatomic) IBOutlet UIView *movingView;
 
 @end
 
 @implementation LogoRight
-
--(void)layoutSubviews{
-    self.heightConstraint.constant = self.bounds.size.height * heightScaleFactor;
-    CGFloat widthHeightRate = fieldAuto1 ? fieldAuto1.logoWidthHeightRate : 1.0;
-    self.widthLogoConstraint.constant = widthHeightRate * self.imgEmblem.bounds.size.height; // adjust place for logo
-    
-    [super layoutSubviews];
-}
 
 -(void)initialise{
     [self setupGradient:0.2 inDirection:GRADIENT_LEFT];

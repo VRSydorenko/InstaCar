@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="5056" systemVersion="13D65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6206.8" systemVersion="14A329f" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <deployment defaultVersion="1792" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7026.1"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -13,11 +12,9 @@
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QqS-cI-X27">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <subviews>
                         <imageView userInteractionEnabled="NO" contentMode="right" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="anycarLogo" translatesAutoresizingMaskIntoConstraints="NO" id="SWH-nj-s0u" customClass="SkinElementImage">
                             <rect key="frame" x="259" y="4" width="54" height="42"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="54" id="Oej-UT-i2Y"/>
@@ -25,7 +22,6 @@
                         </imageView>
                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.20000000000000007" translatesAutoresizingMaskIntoConstraints="NO" id="IEM-D4-Cc5" customClass="SkinElementLabel">
                             <rect key="frame" x="316" y="0.0" width="1" height="50"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="1" id="xqm-68-GDy"/>
                             </constraints>
@@ -52,10 +48,10 @@
                 <constraint firstItem="QqS-cI-X27" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="AUq-NL-nF0"/>
                 <constraint firstItem="QqS-cI-X27" firstAttribute="trailing" secondItem="1" secondAttribute="trailing" id="cE9-FT-StO"/>
             </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="autoTitleWidth" destination="xqm-68-GDy" id="JNF-JH-Bos"/>
-                <outlet property="heightConstraint" destination="Agd-0q-RnN" id="IK4-sH-fAm"/>
                 <outlet property="imgEmblem" destination="SWH-nj-s0u" id="c5I-CC-nUq"/>
                 <outlet property="movingView" destination="QqS-cI-X27" id="Jf2-aK-MzE"/>
                 <outlet property="textAuto" destination="IEM-D4-Cc5" id="Ncf-SJ-CDP"/>
@@ -69,11 +65,9 @@
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pmx-JJ-kVN">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="anycarLogo" translatesAutoresizingMaskIntoConstraints="NO" id="b04-g2-uAD">
+                        <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="anycarLogo" translatesAutoresizingMaskIntoConstraints="NO" id="b04-g2-uAD" customClass="SkinElementImage">
                             <rect key="frame" x="5" y="5" width="70" height="70"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="70" id="gsm-df-rgg"/>
                             </constraints>
@@ -94,13 +88,12 @@
                 <constraint firstItem="Pmx-JJ-kVN" firstAttribute="leading" secondItem="W7n-Me-jy0" secondAttribute="leading" id="mK4-Ib-E3x"/>
                 <constraint firstItem="Pmx-JJ-kVN" firstAttribute="top" secondItem="W7n-Me-jy0" secondAttribute="top" id="pDC-Za-dpR"/>
             </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
-                <outlet property="heightConstraint" destination="JQe-qm-rHD" id="rNu-6x-XmL"/>
                 <outlet property="imgEmblem" destination="b04-g2-uAD" id="ddo-Zp-9zm"/>
                 <outlet property="movingView" destination="Pmx-JJ-kVN" id="O9Q-7s-xwB"/>
                 <outlet property="topMargin" destination="pDC-Za-dpR" id="VkK-i9-o1O"/>
-                <outlet property="widthLogoConstraint" destination="gsm-df-rgg" id="4C6-a8-DqV"/>
             </connections>
         </view>
         <view tag="1" contentMode="scaleToFill" id="ZGU-o7-psB" customClass="LogoRight">
@@ -109,11 +102,9 @@
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iYf-x9-4Hy">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
                         <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="anycarLogo" translatesAutoresizingMaskIntoConstraints="NO" id="wgO-Wi-prF" customClass="SkinElementImage">
                             <rect key="frame" x="245" y="5" width="70" height="70"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="70" id="06W-fH-zn1"/>
                             </constraints>
@@ -134,13 +125,12 @@
                 <constraint firstItem="iYf-x9-4Hy" firstAttribute="top" secondItem="ZGU-o7-psB" secondAttribute="top" id="b0Z-3z-4ac"/>
                 <constraint firstItem="iYf-x9-4Hy" firstAttribute="leading" secondItem="ZGU-o7-psB" secondAttribute="leading" id="z9I-Tk-CUC"/>
             </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
-                <outlet property="heightConstraint" destination="mKH-u8-b8V" id="bIQ-xz-Xg6"/>
                 <outlet property="imgEmblem" destination="wgO-Wi-prF" id="D1X-Q1-YYU"/>
                 <outlet property="movingView" destination="iYf-x9-4Hy" id="Qom-Sm-zWr"/>
                 <outlet property="topMargin" destination="b0Z-3z-4ac" id="xsS-5X-A3y"/>
-                <outlet property="widthLogoConstraint" destination="06W-fH-zn1" id="JuN-EM-B7g"/>
             </connections>
         </view>
         <view tag="2" contentMode="scaleToFill" id="6Yb-YK-wAO" customClass="LogoNameLeft" propertyAccessControl="none">
@@ -149,19 +139,16 @@
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RsD-ea-ulE">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="anycarLogo" translatesAutoresizingMaskIntoConstraints="NO" id="oIa-gw-7N1">
+                        <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="anycarLogo" translatesAutoresizingMaskIntoConstraints="NO" id="oIa-gw-7N1" customClass="SkinElementImage">
                             <rect key="frame" x="3" y="4" width="54" height="42"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="54" id="tgI-Jn-gmP"/>
                             </constraints>
                         </imageView>
-                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.20000000000000007" translatesAutoresizingMaskIntoConstraints="NO" id="OoH-9J-VpT">
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.20000000000000007" translatesAutoresizingMaskIntoConstraints="NO" id="OoH-9J-VpT" customClass="SkinElementLabel">
                             <rect key="frame" x="60" y="0.0" width="260" height="50"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" name="AvenirNextCondensed-Regular" family="Avenir Next Condensed" pointSize="25"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
@@ -186,14 +173,13 @@
                 <constraint firstItem="RsD-ea-ulE" firstAttribute="leading" secondItem="6Yb-YK-wAO" secondAttribute="leading" id="b7D-1S-aCl"/>
                 <constraint firstItem="RsD-ea-ulE" firstAttribute="trailing" secondItem="6Yb-YK-wAO" secondAttribute="trailing" id="qvy-Uz-Tzg"/>
             </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
-                <outlet property="heightConstraint" destination="y6B-Sd-esx" id="jNU-Np-EUn"/>
                 <outlet property="imgEmblem" destination="oIa-gw-7N1" id="JBY-Xp-h3b"/>
                 <outlet property="movingView" destination="RsD-ea-ulE" id="80a-AZ-9aQ"/>
                 <outlet property="textAuto" destination="OoH-9J-VpT" id="u1L-8w-CW5"/>
-                <outlet property="topMargin" destination="4Mg-EF-iU7" id="Xdk-Xc-Nvt"/>
-                <outlet property="widthLogoConstraint" destination="tgI-Jn-gmP" id="K6d-7o-Ni6"/>
+                <outlet property="topMargin" destination="4Mg-EF-iU7" id="h48-lg-gb6"/>
             </connections>
         </view>
         <view tag="4" contentMode="scaleToFill" id="1te-Go-nfM" customClass="LocationSimple">
@@ -202,19 +188,16 @@
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EFi-98-3rq">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <subviews>
-                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select place..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.40000000000000002" translatesAutoresizingMaskIntoConstraints="NO" id="Wgs-tY-bON">
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select place..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.40000000000000002" translatesAutoresizingMaskIntoConstraints="NO" id="Wgs-tY-bON" customClass="SkinElementLabel">
                             <rect key="frame" x="5" y="0.0" width="310" height="40"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="35"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k0F-5E-UhS">
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k0F-5E-UhS" customClass="SkinElementLabel">
                             <rect key="frame" x="5" y="40" width="310" height="20"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="20" id="miJ-4e-g88"/>
                             </constraints>
@@ -245,6 +228,7 @@
                 <constraint firstItem="EFi-98-3rq" firstAttribute="leading" secondItem="1te-Go-nfM" secondAttribute="leading" id="4jb-9J-gZu"/>
                 <constraint firstItem="EFi-98-3rq" firstAttribute="top" secondItem="1te-Go-nfM" secondAttribute="top" id="iV1-Of-Aun"/>
             </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="constraintLocationHeight" destination="miJ-4e-g88" id="Jh3-B6-ZSh"/>
@@ -261,18 +245,15 @@
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b0J-1D-8id">
                     <rect key="frame" x="44" y="253" width="232" height="60"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="anycarLogo" translatesAutoresizingMaskIntoConstraints="NO" id="BiX-Je-pLe">
+                        <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="anycarLogo" translatesAutoresizingMaskIntoConstraints="NO" id="BiX-Je-pLe" customClass="SkinElementImage">
                             <rect key="frame" x="5" y="5" width="80" height="50"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="80" id="xWz-c1-UQW"/>
                             </constraints>
                         </imageView>
-                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.20000000000000007" translatesAutoresizingMaskIntoConstraints="NO" id="czd-NE-PVP">
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.20000000000000007" translatesAutoresizingMaskIntoConstraints="NO" id="czd-NE-PVP" customClass="SkinElementLabel">
                             <rect key="frame" x="100" y="39" width="132" height="21"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="21" id="dCR-mC-fch"/>
                             </constraints>
@@ -280,16 +261,14 @@
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.20000000000000007" translatesAutoresizingMaskIntoConstraints="NO" id="a8c-o0-Brj">
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.20000000000000007" translatesAutoresizingMaskIntoConstraints="NO" id="a8c-o0-Brj" customClass="SkinElementLabel">
                             <rect key="frame" x="100" y="0.0" width="124" height="39"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="30"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bsS-tN-V0h">
                             <rect key="frame" x="90" y="0.0" width="2" height="60"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="2" id="btc-lR-McL"/>
@@ -321,6 +300,7 @@
                 <constraint firstAttribute="trailing" secondItem="b0J-1D-8id" secondAttribute="trailing" constant="44" id="lp2-1L-3xc"/>
                 <constraint firstItem="b0J-1D-8id" firstAttribute="top" secondItem="Wou-uz-gBe" secondAttribute="top" constant="253" id="qZN-fN-Lza"/>
             </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="constraintCountryTextHeight" destination="dCR-mC-fch" id="D8c-rC-Awt"/>
@@ -340,4 +320,12 @@
     <resources>
         <image name="anycarLogo" width="32" height="32"/>
     </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4">
+            <size key="portraitSize" width="320" height="568"/>
+            <size key="landscapeSize" width="568" height="320"/>
+        </simulatedScreenMetrics>
+    </simulatedMetricsContainer>
 </document>

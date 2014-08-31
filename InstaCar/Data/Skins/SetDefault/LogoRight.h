@@ -7,7 +7,6 @@
 //
 
 #import "SkinViewBase.h"
-#import "SkinElementImage.h"
 
 @interface LogoRight : SkinViewBase
 

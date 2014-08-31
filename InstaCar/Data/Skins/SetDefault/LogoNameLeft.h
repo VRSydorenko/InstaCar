@@ -10,7 +10,7 @@
 
 @interface LogoNameLeft : SkinViewBase
 
-@property (nonatomic) IBOutlet UIImageView *imgEmblem;
-@property (nonatomic) IBOutlet UILabel *textAuto;
+@property (nonatomic) IBOutlet SkinElementImage *imgEmblem;
+@property (nonatomic) IBOutlet SkinElementLabel *textAuto;
 
 @end

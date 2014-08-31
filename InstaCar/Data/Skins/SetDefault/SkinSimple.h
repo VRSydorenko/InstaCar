@@ -7,8 +7,6 @@
 //
 
 #import "SkinViewBase.h"
-#import "SkinElementImage.h"
-#import "SkinElementLabel.h"
 
 @interface SkinSimple : SkinViewBase
 

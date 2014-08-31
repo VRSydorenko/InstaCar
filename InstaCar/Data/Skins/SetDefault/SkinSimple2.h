@@ -10,6 +10,6 @@
 
 @interface SkinSimple2 : SkinViewBase
 
-@property (nonatomic) IBOutlet UIImageView *imgEmblem;
+@property (nonatomic) IBOutlet SkinElementImage *imgEmblem;
 
 @end

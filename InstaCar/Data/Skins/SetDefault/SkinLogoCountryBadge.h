@@ -10,8 +10,8 @@
 
 @interface SkinLogoCountryBadge : SkinViewBase
 
-@property (nonatomic) IBOutlet UIImageView *imgEmblem;
-@property (nonatomic) IBOutlet UILabel *textAuto;
-@property (nonatomic) IBOutlet UILabel *textCountry;
+@property (nonatomic) IBOutlet SkinElementImage *imgEmblem;
+@property (nonatomic) IBOutlet SkinElementLabel *textAuto;
+@property (nonatomic) IBOutlet SkinElementLabel *textCountry;
 
 @end

@@ -26,35 +26,6 @@
 
 @implementation SkinLogoCountryBadge
 
--(void)layoutSubviews{
-    // moving view height
-    self.constraintMovingViewHeight.constant = self.bounds.size.height * heightScaleFactor;
-    
-    // left & right margins
-    CGFloat widthRate = self.bounds.size.width / 320.0; // screen width
-    self.constraintLeftMargin.constant = initialSideMargin * widthRate;
-    self.constraintRightMargin.constant = initialSideMargin * widthRate;
-    
-    // logo proportion
-    CGFloat widthHeightRate = fieldAuto1 ? fieldAuto1.logoWidthHeightRate : 1.0;
-    self.constraintLogoWidth.constant = widthHeightRate * self.imgEmblem.bounds.size.height; // adjust place for logo
-    
-    // separator view
-    self.constraintSeparatorWidth.constant = self.bounds.size.width > 320.0 ? 4.0 : 2.0;
-    
-    // text sizes
-    self.constraintCountryTextHeight.constant = self.movingView.bounds.size.height * countryLabelHeightScaleFactor;
-    
-    // text fonts
-    float newAutoFontSize = self.bounds.size.width > 320.0 ? 90.0 : 35.0;
-    self.textAuto.font = [UIFont fontWithName:self.textAuto.font.fontName size:newAutoFontSize];
-    
-    float newCountryFontSize = self.bounds.size.width > 320.0 ? 50.0 : 15.0;
-    self.textCountry.font = [UIFont fontWithName:self.textAuto.font.fontName size:newCountryFontSize];
-    
-    [super layoutSubviews];
-}
-
 -(void)initialise{
     initialSideMargin = self.constraintLeftMargin.constant; // the same as right margin constraint
     countryLabelHeightScaleFactor = self.constraintCountryTextHeight.constant / self.movingView.bounds.size.height;
