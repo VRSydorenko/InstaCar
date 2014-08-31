@@ -217,7 +217,6 @@
                 
                 NSDictionary *attrs = @{NSFontAttributeName: [elemText elemFont], NSForegroundColorAttributeName: [elemBase elemColor]};
                 NSString *text = [elemText elemString];
-                NSAttributedString *attrString = [[NSAttributedString alloc] initWithString:text attributes:attrs];
                 
                 CGRect textRect = [elemText elemRectInParent];
                 const CGSize textSize = [text sizeWithAttributes: attrs];
@@ -225,15 +224,28 @@
                 CGFloat textHRatio = MAX(1, textSize.height / textRect.size.height);
                 CGFloat textWRatio = MAX(1, textSize.width / textRect.size.width);
                 
-                CGFloat fontSize = 40.0;
-                CGFloat scalingTolerance = 5.0; // percent
-                
-                for (CGFloat fontDeltaStep = 10.0; ;fontSize += fontDeltaStep){
+                NSDictionary *savedStringAttrs = attrs;
+                for (CGFloat fontSize = 40.0; ; fontSize += 2.0){
                     UIFont *currFont = [UIFont fontWithName:[elemText elemFont].fontName size:fontSize];
-                    break; // TODO: calculate font size to fit the text
+                    
+                    ///--------- calc current iteration text size -----------
+                    NSDictionary *currAttrs = @{NSFontAttributeName: currFont, NSForegroundColorAttributeName: [elemBase elemColor]};
+                    const CGSize currTextSize = [text sizeWithAttributes: currAttrs];
+                    
+                    CGFloat currTextHRatio = MAX(1, currTextSize.height / rectToDrawIn.size.height);
+                    CGFloat currTextWRatio = MAX(1, currTextSize.width / rectToDrawIn.size.width);
+                    
+                    if (currTextHRatio > textHRatio || currTextWRatio > textWRatio){
+                        break;
+                    }
+                    
+                    savedStringAttrs = currAttrs;
+                    ///-------------------------------------------------------
                 }
                 
+                NSAttributedString *attrString = [[NSAttributedString alloc] initWithString:text attributes:savedStringAttrs];
                 [attrString drawAtPoint:rectToDrawIn.origin];
+                
                 break;
             }
             default:
