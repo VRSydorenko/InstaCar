@@ -192,8 +192,12 @@
         
         switch ([elemBase elemType]) {
 #pragma mark Draw GRADIENT
-            case ELEM_GRADIENT:
+            case ELEM_GRADIENT:{
+                UIView<DrawElemGradientProtocol> *elemGrad = (UIView<DrawElemGradientProtocol>*)control;
+                
+                [elemGrad drawGradientInContext:context inRect:rectToDrawIn];
                 break;
+            }
 #pragma mark Draw IMAGE
             case ELEM_IMAGE:{
                 UIView<DrawElemImageProtocol> *elemImg = (UIView<DrawElemImageProtocol> *)control;

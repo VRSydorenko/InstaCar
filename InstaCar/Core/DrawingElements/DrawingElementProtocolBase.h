@@ -32,7 +32,7 @@ typedef enum {
 @end
 
 @protocol DrawElemGradientProtocol <DrawElemBaseProtocol>
--(int)elemGradDirection;
+-(void) drawGradientInContext:(CGContextRef*)context inRect:(CGRect)rect;
 @end
 
 @protocol DrawElemRectProtocol <DrawElemBaseProtocol>

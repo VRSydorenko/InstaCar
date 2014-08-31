@@ -78,10 +78,11 @@
 
 - (void)drawRect:(CGRect)rect
 {
-    [self drawGradient:rect];
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    [self drawGradientInContext:&context inRect:rect];
 }
 
--(void) drawGradient:(CGRect)rect
+-(void) drawGradientInContext:(CGContextRef*)context inRect:(CGRect)rect
 {
     CGFloat maskColors[] =
     {
@@ -95,8 +96,8 @@
     // Create an image of a solid slab in the desired color
     CGRect frame = CGRectMake(0, 0, rect.size.width, rect.size.height);
     UIGraphicsBeginImageContextWithOptions(rect.size, NO, 1.0);
-    CGContextRef context = UIGraphicsGetCurrentContext();
-    CGContextSetFillColorWithColor(context, [self.color colorWithAlphaComponent:_alpha].CGColor);
+    CGContextRef imgContext = UIGraphicsGetCurrentContext();
+    CGContextSetFillColorWithColor(imgContext, [self.color colorWithAlphaComponent:_alpha].CGColor);
     CGContextFillRect( UIGraphicsGetCurrentContext(), frame);
     CGImageRef colorRef = UIGraphicsGetImageFromCurrentImageContext().CGImage;
     
@@ -104,7 +105,7 @@
     CGColorSpaceRef rgb = CGColorSpaceCreateDeviceRGB();
     CGGradientRef gradientRef = CGGradientCreateWithColorComponents(rgb, maskColors, NULL, sizeof(maskColors) / (sizeof(maskColors[0]) * 4));
     CGColorSpaceRelease(rgb);
-    CGContextDrawLinearGradient( context, gradientRef, startPoint, endPoint, kCGGradientDrawsBeforeStartLocation | kCGGradientDrawsAfterEndLocation);
+    CGContextDrawLinearGradient(imgContext, gradientRef, startPoint, endPoint, kCGGradientDrawsBeforeStartLocation | kCGGradientDrawsAfterEndLocation);
     CGImageRef maskRef = UIGraphicsGetImageFromCurrentImageContext().CGImage;
     UIGraphicsEndImageContext();
     
@@ -120,9 +121,7 @@
                                            false);
     
     // Draw the resulting mask.
-    context = UIGraphicsGetCurrentContext();
-    CGContextDrawImage(context, rect, CGImageCreateWithMask(colorRef, tmpMask));
-    UIGraphicsEndImageContext();
+    CGContextDrawImage(*context, rect, CGImageCreateWithMask(colorRef, tmpMask));
 }
 
 #pragma mark DrawElement protocol 
