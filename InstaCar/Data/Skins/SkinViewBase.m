@@ -173,35 +173,35 @@
 }
 
 -(void)renderControl:(UIView*)control inContext:(CGContextRef*)context withParentPoint:(CGPoint)point{
-    //CGFloat selfAbsolutOriginX = [control isKindOfClass:[SkinViewBase class]] ? 0.0 : self.frame.origin.x; // skins should be are at 0.0
     CGPoint selfAbsoluteOriginPoint = CGPointMake(control.frame.origin.x + point.x, control.frame.origin.y + point.y);
     
     if ([control conformsToProtocol:@protocol(DrawElemBaseProtocol)]){
         CGFloat scaleFactorHeight = DESIRED_SIDE_LENGTH/self.bounds.size.height;
         
         UIView<DrawElemBaseProtocol> *elemBase = (UIView<DrawElemBaseProtocol> *)control;
+        
+        // prepare the rect
+        CGRect rectToDrawIn = [elemBase elemRectInParent];
+        rectToDrawIn.origin.x = selfAbsoluteOriginPoint.x;
+        rectToDrawIn.origin.y = selfAbsoluteOriginPoint.y;
+        
+        rectToDrawIn.origin.x *= scaleFactorHeight;
+        rectToDrawIn.origin.y *= scaleFactorHeight;
+        rectToDrawIn.size.height *= scaleFactorHeight;
+        rectToDrawIn.size.width *= scaleFactorHeight;
+        
         switch ([elemBase elemType]) {
             case ELEM_GRADIENT:
                 break;
             case ELEM_IMAGE:{
                 UIView<DrawElemImageProtocol> *elemImg = (UIView<DrawElemImageProtocol> *)control;
                 
-                CGRect rect = [elemImg elemRectInParent];
-                
-                assert(rect.origin.x == selfAbsoluteOriginPoint.x);
-                assert(rect.origin.y == selfAbsoluteOriginPoint.y);
-                
-                rect.origin.x *= scaleFactorHeight;
-                rect.origin.y *= scaleFactorHeight;
-                rect.size.height *= scaleFactorHeight;
-                rect.size.width *= scaleFactorHeight;
-                
                 // adjust the rect based on the content mode
                 UIImage *toDraw = [elemImg elemImage];
                 
                 switch (elemImg.contentMode) {
                     case UIViewContentModeScaleAspectFit:{
-                        toDraw = [Utils image:toDraw byScalingProportionallyToSize:rect.size];
+                        toDraw = [Utils image:toDraw byScalingProportionallyToSize:rectToDrawIn.size];
                         break;
                     }
                     default:
@@ -209,7 +209,7 @@
                         break;
                 }
                 
-                [toDraw drawInRect:rect];
+                [toDraw drawInRect:rectToDrawIn];
                 break;
             }
             case ELEM_TEXT:{
@@ -219,17 +219,11 @@
                 NSString *text = [elemText elemString];
                 NSAttributedString *attrString = [[NSAttributedString alloc] initWithString:text attributes:attrs];
                 
-                CGRect rect = [elemText elemRectInParent];
-                
+                CGRect textRect = [elemText elemRectInParent];
                 const CGSize textSize = [text sizeWithAttributes: attrs];
                 
-                CGFloat textHRatio = MAX(1, textSize.height / rect.size.height);
-                CGFloat textWRatio = MAX(1, textSize.width / rect.size.width);
-                
-                rect.origin.x *= scaleFactorHeight;
-                rect.origin.y *= scaleFactorHeight;
-                rect.size.height *= scaleFactorHeight;
-                rect.size.width *= scaleFactorHeight;
+                CGFloat textHRatio = MAX(1, textSize.height / textRect.size.height);
+                CGFloat textWRatio = MAX(1, textSize.width / textRect.size.width);
                 
                 CGFloat fontSize = 40.0;
                 CGFloat scalingTolerance = 5.0; // percent
@@ -239,7 +233,7 @@
                     break; // TODO: calculate font size to fit the text
                 }
                 
-                [attrString drawAtPoint:rect.origin];
+                [attrString drawAtPoint:rectToDrawIn.origin];
                 break;
             }
             default:
