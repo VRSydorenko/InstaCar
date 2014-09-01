@@ -37,9 +37,9 @@
 
 -(UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
-    NSString *imageName = section == 0 ? @"anycarLogo.png" : @"Mask.png";
+    NSString *imageName = section == 0 ? @"logo_anycar.png" : @"Mask.png";
     UIImageView *headerView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:imageName]];
-    headerView.contentMode = UIViewContentModeCenter;
+    headerView.contentMode = section == 0 ? UIViewContentModeScaleAspectFit : UIViewContentModeCenter;
     headerView.backgroundColor = [UIColor lightGrayColor];
     return headerView;
 }

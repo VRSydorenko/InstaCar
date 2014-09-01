@@ -57,6 +57,61 @@
 		7F2AD5D717EDE9B40096EC8D /* SHKFormOptionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F2AD57117EDE9B40096EC8D /* SHKFormOptionController.m */; };
 		7F2AD5D917EDE9B40096EC8D /* SHKShareMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F2AD57617EDE9B40096EC8D /* SHKShareMenu.m */; };
 		7F2E97DC17DBDF9D003598EC /* CellVenue.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F2E97DB17DBDF9D003598EC /* CellVenue.m */; };
+		7F3424D819B50939009DACBB /* logo_acura_256.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F3424A619B50939009DACBB /* logo_acura_256.png */; };
+		7F3424D919B50939009DACBB /* logo_alfaromeo_256.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F3424A719B50939009DACBB /* logo_alfaromeo_256.png */; };
+		7F3424DA19B50939009DACBB /* logo_anycar.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F3424A819B50939009DACBB /* logo_anycar.png */; };
+		7F3424DB19B50939009DACBB /* logo_astonmartin_256.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F3424A919B50939009DACBB /* logo_astonmartin_256.png */; };
+		7F3424DC19B50939009DACBB /* logo_audi_256.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F3424AA19B50939009DACBB /* logo_audi_256.png */; };
+		7F3424DD19B50939009DACBB /* logo_bentley_256.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F3424AB19B50939009DACBB /* logo_bentley_256.png */; };
+		7F3424DE19B50939009DACBB /* logo_bmw_256.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F3424AC19B50939009DACBB /* logo_bmw_256.png */; };
+		7F3424DF19B50939009DACBB /* logo_bogdan_256.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F3424AD19B50939009DACBB /* logo_bogdan_256.png */; };
+		7F3424E019B50939009DACBB /* logo_bugatti_256.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F3424AE19B50939009DACBB /* logo_bugatti_256.png */; };
+		7F3424E119B50939009DACBB /* logo_buick_256.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F3424AF19B50939009DACBB /* logo_buick_256.png */; };
+		7F3424E219B50939009DACBB /* logo_cadillac_256.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F3424B019B50939009DACBB /* logo_cadillac_256.png */; };
+		7F3424E319B50939009DACBB /* logo_chevrolet_256.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F3424B119B50939009DACBB /* logo_chevrolet_256.png */; };
+		7F3424E419B50939009DACBB /* logo_citroen_256.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F3424B219B50939009DACBB /* logo_citroen_256.png */; };
+		7F3424E519B50939009DACBB /* logo_dacia_256.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F3424B319B50939009DACBB /* logo_dacia_256.png */; };
+		7F3424E619B50939009DACBB /* logo_daewoo_256.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F3424B419B50939009DACBB /* logo_daewoo_256.png */; };
+		7F3424E719B50939009DACBB /* logo_delorean_256.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F3424B519B50939009DACBB /* logo_delorean_256.png */; };
+		7F3424E819B50939009DACBB /* logo_dodge_256.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F3424B619B50939009DACBB /* logo_dodge_256.png */; };
+		7F3424E919B50939009DACBB /* logo_ferrari_256.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F3424B719B50939009DACBB /* logo_ferrari_256.png */; };
+		7F3424EA19B50939009DACBB /* logo_fiat_256.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F3424B819B50939009DACBB /* logo_fiat_256.png */; };
+		7F3424EB19B50939009DACBB /* logo_ford_256.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F3424B919B50939009DACBB /* logo_ford_256.png */; };
+		7F3424EC19B50939009DACBB /* logo_gmc_256.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F3424BA19B50939009DACBB /* logo_gmc_256.png */; };
+		7F3424ED19B50939009DACBB /* logo_honda_256.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F3424BB19B50939009DACBB /* logo_honda_256.png */; };
+		7F3424EE19B50939009DACBB /* logo_hummer_256.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F3424BC19B50939009DACBB /* logo_hummer_256.png */; };
+		7F3424EF19B50939009DACBB /* logo_hyundai_256.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F3424BD19B50939009DACBB /* logo_hyundai_256.png */; };
+		7F3424F019B50939009DACBB /* logo_infiniti_256.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F3424BE19B50939009DACBB /* logo_infiniti_256.png */; };
+		7F3424F119B50939009DACBB /* logo_isuzu_256.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F3424BF19B50939009DACBB /* logo_isuzu_256.png */; };
+		7F3424F219B50939009DACBB /* logo_iveco_256.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F3424C019B50939009DACBB /* logo_iveco_256.png */; };
+		7F3424F319B50939009DACBB /* logo_jeep_256.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F3424C119B50939009DACBB /* logo_jeep_256.png */; };
+		7F3424F419B50939009DACBB /* logo_kia_256.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F3424C219B50939009DACBB /* logo_kia_256.png */; };
+		7F3424F519B50939009DACBB /* logo_lancia_256.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F3424C319B50939009DACBB /* logo_lancia_256.png */; };
+		7F3424F619B50939009DACBB /* logo_landrover_256.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F3424C419B50939009DACBB /* logo_landrover_256.png */; };
+		7F3424F719B50939009DACBB /* logo_lincoln_256.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F3424C519B50939009DACBB /* logo_lincoln_256.png */; };
+		7F3424F819B50939009DACBB /* logo_lotus_256.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F3424C619B50939009DACBB /* logo_lotus_256.png */; };
+		7F3424F919B50939009DACBB /* logo_mazda_256.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F3424C719B50939009DACBB /* logo_mazda_256.png */; };
+		7F3424FA19B50939009DACBB /* logo_mclaren_256.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F3424C819B50939009DACBB /* logo_mclaren_256.png */; };
+		7F3424FB19B50939009DACBB /* logo_mercedes_256.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F3424C919B50939009DACBB /* logo_mercedes_256.png */; };
+		7F3424FC19B50939009DACBB /* logo_mercury_256.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F3424CA19B50939009DACBB /* logo_mercury_256.png */; };
+		7F3424FD19B50939009DACBB /* logo_mitsubishi_256.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F3424CB19B50939009DACBB /* logo_mitsubishi_256.png */; };
+		7F3424FE19B50939009DACBB /* logo_nissan_256.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F3424CC19B50939009DACBB /* logo_nissan_256.png */; };
+		7F3424FF19B50939009DACBB /* logo_opel_256.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F3424CD19B50939009DACBB /* logo_opel_256.png */; };
+		7F34250019B50939009DACBB /* logo_peugeot_256.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F3424CE19B50939009DACBB /* logo_peugeot_256.png */; };
+		7F34250119B50939009DACBB /* logo_renault_256.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F3424CF19B50939009DACBB /* logo_renault_256.png */; };
+		7F34250219B50939009DACBB /* logo_rover_256.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F3424D019B50939009DACBB /* logo_rover_256.png */; };
+		7F34250319B50939009DACBB /* logo_rr_256.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F3424D119B50939009DACBB /* logo_rr_256.png */; };
+		7F34250419B50939009DACBB /* logo_scania_256.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F3424D219B50939009DACBB /* logo_scania_256.png */; };
+		7F34250519B50939009DACBB /* logo_subaru_256.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F3424D319B50939009DACBB /* logo_subaru_256.png */; };
+		7F34250619B50939009DACBB /* logo_testla_256.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F3424D419B50939009DACBB /* logo_testla_256.png */; };
+		7F34250719B50939009DACBB /* logo_toyota_256.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F3424D519B50939009DACBB /* logo_toyota_256.png */; };
+		7F34250819B50939009DACBB /* logo_vw_256.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F3424D619B50939009DACBB /* logo_vw_256.png */; };
+		7F34250919B50939009DACBB /* logo_zaz_256.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F3424D719B50939009DACBB /* logo_zaz_256.png */; };
+		7F34250B19B50A71009DACBB /* db.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 7F34250A19B50A71009DACBB /* db.sqlite */; };
+		7F34250D19B5207F009DACBB /* logo_geely_256.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F34250C19B5207F009DACBB /* logo_geely_256.png */; };
+		7F34250F19B5215C009DACBB /* logo_jaguar_256.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F34250E19B5215C009DACBB /* logo_jaguar_256.png */; };
+		7F34251219B522E8009DACBB /* logo_kraz_256.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F34251019B522E8009DACBB /* logo_kraz_256.png */; };
+		7F34251319B522E8009DACBB /* logo_lada_256.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F34251119B522E8009DACBB /* logo_lada_256.png */; };
 		7F3648B3180F2A1900B95693 /* FirstTimeInfoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F3648B2180F2A1900B95693 /* FirstTimeInfoVC.m */; };
 		7F3871D317BE4B7900D8E39D /* main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F3871D217BE4B7900D8E39D /* main.storyboard */; };
 		7F3871D617BE4CA900D8E39D /* MainNavController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F3871D517BE4CA900D8E39D /* MainNavController.m */; };
@@ -109,10 +164,8 @@
 		7FC4137C17C7EFF70025DD2C /* LocationsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FC4137B17C7EFF70025DD2C /* LocationsVC.m */; };
 		7FCD262C17F5BFEC00BFDF4E /* SMPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FCD262B17F5BFEC00BFDF4E /* SMPageControl.m */; };
 		7FD356341805E704008EC167 /* CustomCarFormVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FD356331805E704008EC167 /* CustomCarFormVC.m */; };
-		7FD47D0E18FDC5E300A2CE7F /* db.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 7FD47D0D18FDC5E300A2CE7F /* db.sqlite */; };
 		7FEF908917D505E800C07A05 /* AutosVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FEF908817D505E800C07A05 /* AutosVC.m */; };
 		7FF3389317D4C0E700B046C4 /* SkinsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FF3389217D4C0E700B046C4 /* SkinsVC.m */; };
-		7FFEBC5517DBA54F00B1DC9A /* auto_logos.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7FFEBC5417DBA54F00B1DC9A /* auto_logos.xcassets */; };
 		8415F44819587F2500708437 /* SkinElementLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8415F44719587F2500708437 /* SkinElementLabel.m */; };
 		841C5EF4195483FF00AD025D /* SkinElementImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 841C5EF3195483FF00AD025D /* SkinElementImage.m */; };
 		84EC58E11954519A00E8C421 /* SkinElementRect.m in Sources */ = {isa = PBXBuildFile; fileRef = 84EC58E01954519A00E8C421 /* SkinElementRect.m */; };
@@ -227,6 +280,61 @@
 		7F2AD57617EDE9B40096EC8D /* SHKShareMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHKShareMenu.m; sourceTree = "<group>"; };
 		7F2E97DA17DBDF9D003598EC /* CellVenue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CellVenue.h; path = InstaCar/TableCells/CellVenue.h; sourceTree = "<group>"; };
 		7F2E97DB17DBDF9D003598EC /* CellVenue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CellVenue.m; path = InstaCar/TableCells/CellVenue.m; sourceTree = "<group>"; };
+		7F3424A619B50939009DACBB /* logo_acura_256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_acura_256.png; sourceTree = "<group>"; };
+		7F3424A719B50939009DACBB /* logo_alfaromeo_256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_alfaromeo_256.png; sourceTree = "<group>"; };
+		7F3424A819B50939009DACBB /* logo_anycar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_anycar.png; sourceTree = "<group>"; };
+		7F3424A919B50939009DACBB /* logo_astonmartin_256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_astonmartin_256.png; sourceTree = "<group>"; };
+		7F3424AA19B50939009DACBB /* logo_audi_256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_audi_256.png; sourceTree = "<group>"; };
+		7F3424AB19B50939009DACBB /* logo_bentley_256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_bentley_256.png; sourceTree = "<group>"; };
+		7F3424AC19B50939009DACBB /* logo_bmw_256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_bmw_256.png; sourceTree = "<group>"; };
+		7F3424AD19B50939009DACBB /* logo_bogdan_256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_bogdan_256.png; sourceTree = "<group>"; };
+		7F3424AE19B50939009DACBB /* logo_bugatti_256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_bugatti_256.png; sourceTree = "<group>"; };
+		7F3424AF19B50939009DACBB /* logo_buick_256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_buick_256.png; sourceTree = "<group>"; };
+		7F3424B019B50939009DACBB /* logo_cadillac_256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_cadillac_256.png; sourceTree = "<group>"; };
+		7F3424B119B50939009DACBB /* logo_chevrolet_256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_chevrolet_256.png; sourceTree = "<group>"; };
+		7F3424B219B50939009DACBB /* logo_citroen_256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_citroen_256.png; sourceTree = "<group>"; };
+		7F3424B319B50939009DACBB /* logo_dacia_256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_dacia_256.png; sourceTree = "<group>"; };
+		7F3424B419B50939009DACBB /* logo_daewoo_256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_daewoo_256.png; sourceTree = "<group>"; };
+		7F3424B519B50939009DACBB /* logo_delorean_256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_delorean_256.png; sourceTree = "<group>"; };
+		7F3424B619B50939009DACBB /* logo_dodge_256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_dodge_256.png; sourceTree = "<group>"; };
+		7F3424B719B50939009DACBB /* logo_ferrari_256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_ferrari_256.png; sourceTree = "<group>"; };
+		7F3424B819B50939009DACBB /* logo_fiat_256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_fiat_256.png; sourceTree = "<group>"; };
+		7F3424B919B50939009DACBB /* logo_ford_256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_ford_256.png; sourceTree = "<group>"; };
+		7F3424BA19B50939009DACBB /* logo_gmc_256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_gmc_256.png; sourceTree = "<group>"; };
+		7F3424BB19B50939009DACBB /* logo_honda_256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_honda_256.png; sourceTree = "<group>"; };
+		7F3424BC19B50939009DACBB /* logo_hummer_256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_hummer_256.png; sourceTree = "<group>"; };
+		7F3424BD19B50939009DACBB /* logo_hyundai_256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_hyundai_256.png; sourceTree = "<group>"; };
+		7F3424BE19B50939009DACBB /* logo_infiniti_256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_infiniti_256.png; sourceTree = "<group>"; };
+		7F3424BF19B50939009DACBB /* logo_isuzu_256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_isuzu_256.png; sourceTree = "<group>"; };
+		7F3424C019B50939009DACBB /* logo_iveco_256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_iveco_256.png; sourceTree = "<group>"; };
+		7F3424C119B50939009DACBB /* logo_jeep_256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_jeep_256.png; sourceTree = "<group>"; };
+		7F3424C219B50939009DACBB /* logo_kia_256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_kia_256.png; sourceTree = "<group>"; };
+		7F3424C319B50939009DACBB /* logo_lancia_256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_lancia_256.png; sourceTree = "<group>"; };
+		7F3424C419B50939009DACBB /* logo_landrover_256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_landrover_256.png; sourceTree = "<group>"; };
+		7F3424C519B50939009DACBB /* logo_lincoln_256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_lincoln_256.png; sourceTree = "<group>"; };
+		7F3424C619B50939009DACBB /* logo_lotus_256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_lotus_256.png; sourceTree = "<group>"; };
+		7F3424C719B50939009DACBB /* logo_mazda_256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_mazda_256.png; sourceTree = "<group>"; };
+		7F3424C819B50939009DACBB /* logo_mclaren_256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_mclaren_256.png; sourceTree = "<group>"; };
+		7F3424C919B50939009DACBB /* logo_mercedes_256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_mercedes_256.png; sourceTree = "<group>"; };
+		7F3424CA19B50939009DACBB /* logo_mercury_256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_mercury_256.png; sourceTree = "<group>"; };
+		7F3424CB19B50939009DACBB /* logo_mitsubishi_256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_mitsubishi_256.png; sourceTree = "<group>"; };
+		7F3424CC19B50939009DACBB /* logo_nissan_256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_nissan_256.png; sourceTree = "<group>"; };
+		7F3424CD19B50939009DACBB /* logo_opel_256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_opel_256.png; sourceTree = "<group>"; };
+		7F3424CE19B50939009DACBB /* logo_peugeot_256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_peugeot_256.png; sourceTree = "<group>"; };
+		7F3424CF19B50939009DACBB /* logo_renault_256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_renault_256.png; sourceTree = "<group>"; };
+		7F3424D019B50939009DACBB /* logo_rover_256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_rover_256.png; sourceTree = "<group>"; };
+		7F3424D119B50939009DACBB /* logo_rr_256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_rr_256.png; sourceTree = "<group>"; };
+		7F3424D219B50939009DACBB /* logo_scania_256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_scania_256.png; sourceTree = "<group>"; };
+		7F3424D319B50939009DACBB /* logo_subaru_256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_subaru_256.png; sourceTree = "<group>"; };
+		7F3424D419B50939009DACBB /* logo_testla_256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_testla_256.png; sourceTree = "<group>"; };
+		7F3424D519B50939009DACBB /* logo_toyota_256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_toyota_256.png; sourceTree = "<group>"; };
+		7F3424D619B50939009DACBB /* logo_vw_256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_vw_256.png; sourceTree = "<group>"; };
+		7F3424D719B50939009DACBB /* logo_zaz_256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_zaz_256.png; sourceTree = "<group>"; };
+		7F34250A19B50A71009DACBB /* db.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = db.sqlite; sourceTree = "<group>"; };
+		7F34250C19B5207F009DACBB /* logo_geely_256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_geely_256.png; sourceTree = "<group>"; };
+		7F34250E19B5215C009DACBB /* logo_jaguar_256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_jaguar_256.png; sourceTree = "<group>"; };
+		7F34251019B522E8009DACBB /* logo_kraz_256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_kraz_256.png; sourceTree = "<group>"; };
+		7F34251119B522E8009DACBB /* logo_lada_256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_lada_256.png; sourceTree = "<group>"; };
 		7F3648B1180F2A1900B95693 /* FirstTimeInfoVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FirstTimeInfoVC.h; path = InstaCar/FirstTimeInfoVC.h; sourceTree = "<group>"; };
 		7F3648B2180F2A1900B95693 /* FirstTimeInfoVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FirstTimeInfoVC.m; path = InstaCar/FirstTimeInfoVC.m; sourceTree = "<group>"; };
 		7F3871D217BE4B7900D8E39D /* main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = main.storyboard; sourceTree = "<group>"; };
@@ -327,12 +435,10 @@
 		7FCD262B17F5BFEC00BFDF4E /* SMPageControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMPageControl.m; sourceTree = "<group>"; };
 		7FD356321805E704008EC167 /* CustomCarFormVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomCarFormVC.h; sourceTree = "<group>"; };
 		7FD356331805E704008EC167 /* CustomCarFormVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomCarFormVC.m; sourceTree = "<group>"; };
-		7FD47D0D18FDC5E300A2CE7F /* db.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = db.sqlite; sourceTree = "<group>"; };
 		7FEF908717D505E800C07A05 /* AutosVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AutosVC.h; path = InstaCar/AutosVC.h; sourceTree = "<group>"; };
 		7FEF908817D505E800C07A05 /* AutosVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AutosVC.m; path = InstaCar/AutosVC.m; sourceTree = "<group>"; };
 		7FF3389117D4C0E700B046C4 /* SkinsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SkinsVC.h; path = InstaCar/SkinsVC.h; sourceTree = "<group>"; };
 		7FF3389217D4C0E700B046C4 /* SkinsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SkinsVC.m; path = InstaCar/SkinsVC.m; sourceTree = "<group>"; };
-		7FFEBC5417DBA54F00B1DC9A /* auto_logos.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = auto_logos.xcassets; path = InstaCar/Data/auto_logos.xcassets; sourceTree = "<group>"; };
 		8415F44619587F2500708437 /* SkinElementLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SkinElementLabel.h; path = InstaCar/Core/DrawingElements/SkinElementLabel.h; sourceTree = "<group>"; };
 		8415F44719587F2500708437 /* SkinElementLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SkinElementLabel.m; path = InstaCar/Core/DrawingElements/SkinElementLabel.m; sourceTree = "<group>"; };
 		841C5EF2195483FF00AD025D /* SkinElementImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SkinElementImage.h; path = InstaCar/Core/DrawingElements/SkinElementImage.h; sourceTree = "<group>"; };
@@ -685,6 +791,76 @@
 			path = UI;
 			sourceTree = "<group>";
 		};
+		7F3424A419B50939009DACBB /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				7F3424A519B50939009DACBB /* Logos */,
+			);
+			name = Images;
+			path = InstaCar/Data/Images;
+			sourceTree = "<group>";
+		};
+		7F3424A519B50939009DACBB /* Logos */ = {
+			isa = PBXGroup;
+			children = (
+				7F34251019B522E8009DACBB /* logo_kraz_256.png */,
+				7F34251119B522E8009DACBB /* logo_lada_256.png */,
+				7F34250E19B5215C009DACBB /* logo_jaguar_256.png */,
+				7F34250C19B5207F009DACBB /* logo_geely_256.png */,
+				7F3424A619B50939009DACBB /* logo_acura_256.png */,
+				7F3424A719B50939009DACBB /* logo_alfaromeo_256.png */,
+				7F3424A819B50939009DACBB /* logo_anycar.png */,
+				7F3424A919B50939009DACBB /* logo_astonmartin_256.png */,
+				7F3424AA19B50939009DACBB /* logo_audi_256.png */,
+				7F3424AB19B50939009DACBB /* logo_bentley_256.png */,
+				7F3424AC19B50939009DACBB /* logo_bmw_256.png */,
+				7F3424AD19B50939009DACBB /* logo_bogdan_256.png */,
+				7F3424AE19B50939009DACBB /* logo_bugatti_256.png */,
+				7F3424AF19B50939009DACBB /* logo_buick_256.png */,
+				7F3424B019B50939009DACBB /* logo_cadillac_256.png */,
+				7F3424B119B50939009DACBB /* logo_chevrolet_256.png */,
+				7F3424B219B50939009DACBB /* logo_citroen_256.png */,
+				7F3424B319B50939009DACBB /* logo_dacia_256.png */,
+				7F3424B419B50939009DACBB /* logo_daewoo_256.png */,
+				7F3424B519B50939009DACBB /* logo_delorean_256.png */,
+				7F3424B619B50939009DACBB /* logo_dodge_256.png */,
+				7F3424B719B50939009DACBB /* logo_ferrari_256.png */,
+				7F3424B819B50939009DACBB /* logo_fiat_256.png */,
+				7F3424B919B50939009DACBB /* logo_ford_256.png */,
+				7F3424BA19B50939009DACBB /* logo_gmc_256.png */,
+				7F3424BB19B50939009DACBB /* logo_honda_256.png */,
+				7F3424BC19B50939009DACBB /* logo_hummer_256.png */,
+				7F3424BD19B50939009DACBB /* logo_hyundai_256.png */,
+				7F3424BE19B50939009DACBB /* logo_infiniti_256.png */,
+				7F3424BF19B50939009DACBB /* logo_isuzu_256.png */,
+				7F3424C019B50939009DACBB /* logo_iveco_256.png */,
+				7F3424C119B50939009DACBB /* logo_jeep_256.png */,
+				7F3424C219B50939009DACBB /* logo_kia_256.png */,
+				7F3424C319B50939009DACBB /* logo_lancia_256.png */,
+				7F3424C419B50939009DACBB /* logo_landrover_256.png */,
+				7F3424C519B50939009DACBB /* logo_lincoln_256.png */,
+				7F3424C619B50939009DACBB /* logo_lotus_256.png */,
+				7F3424C719B50939009DACBB /* logo_mazda_256.png */,
+				7F3424C819B50939009DACBB /* logo_mclaren_256.png */,
+				7F3424C919B50939009DACBB /* logo_mercedes_256.png */,
+				7F3424CA19B50939009DACBB /* logo_mercury_256.png */,
+				7F3424CB19B50939009DACBB /* logo_mitsubishi_256.png */,
+				7F3424CC19B50939009DACBB /* logo_nissan_256.png */,
+				7F3424CD19B50939009DACBB /* logo_opel_256.png */,
+				7F3424CE19B50939009DACBB /* logo_peugeot_256.png */,
+				7F3424CF19B50939009DACBB /* logo_renault_256.png */,
+				7F3424D019B50939009DACBB /* logo_rover_256.png */,
+				7F3424D119B50939009DACBB /* logo_rr_256.png */,
+				7F3424D219B50939009DACBB /* logo_scania_256.png */,
+				7F3424D319B50939009DACBB /* logo_subaru_256.png */,
+				7F3424D419B50939009DACBB /* logo_testla_256.png */,
+				7F3424D519B50939009DACBB /* logo_toyota_256.png */,
+				7F3424D619B50939009DACBB /* logo_vw_256.png */,
+				7F3424D719B50939009DACBB /* logo_zaz_256.png */,
+			);
+			path = Logos;
+			sourceTree = "<group>";
+		};
 		7F3871DB17BE4F1000D8E39D /* 3rdParty */ = {
 			isa = PBXGroup;
 			children = (
@@ -799,7 +975,8 @@
 		7F5AC64117CBFFDD00C01658 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				7FD47D0D18FDC5E300A2CE7F /* db.sqlite */,
+				7F34250A19B50A71009DACBB /* db.sqlite */,
+				7F3424A419B50939009DACBB /* Images */,
 				7F4CB67D18097908008B5CA2 /* Skins */,
 				7F5AC64B17CC06CE00C01658 /* Auto.h */,
 				7F5AC64C17CC06CE00C01658 /* Auto.m */,
@@ -809,7 +986,6 @@
 				7F72A06417D7AED10075FC0B /* AutoSubmodel.m */,
 				7F7FF46E17CF8634000E0ABD /* Location.h */,
 				7F7FF46F17CF8634000E0ABD /* Location.m */,
-				7FFEBC5417DBA54F00B1DC9A /* auto_logos.xcassets */,
 				7FBDA8FA19B39AD0004C5A47 /* signs.xcassets */,
 			);
 			name = Data;
@@ -945,23 +1121,76 @@
 			buildActionMask = 2147483647;
 			files = (
 				7F27672A1791E80000A1C1A0 /* Images.xcassets in Resources */,
+				7F3424EB19B50939009DACBB /* logo_ford_256.png in Resources */,
+				7F34251319B522E8009DACBB /* logo_lada_256.png in Resources */,
+				7F3424FB19B50939009DACBB /* logo_mercedes_256.png in Resources */,
+				7F3424FC19B50939009DACBB /* logo_mercury_256.png in Resources */,
+				7F3424F819B50939009DACBB /* logo_lotus_256.png in Resources */,
+				7F3424F619B50939009DACBB /* logo_landrover_256.png in Resources */,
+				7F3424DF19B50939009DACBB /* logo_bogdan_256.png in Resources */,
+				7F34250019B50939009DACBB /* logo_peugeot_256.png in Resources */,
+				7F3424F719B50939009DACBB /* logo_lincoln_256.png in Resources */,
+				7F34250619B50939009DACBB /* logo_testla_256.png in Resources */,
 				7F2AD5CA17EDE9B40096EC8D /* SHKShareFileIcon.png in Resources */,
+				7F3424E519B50939009DACBB /* logo_dacia_256.png in Resources */,
 				7F2AD59A17EDE9B40096EC8D /* DETweetPaperClip.png in Resources */,
+				7F3424E019B50939009DACBB /* logo_bugatti_256.png in Resources */,
 				7F2AD59D17EDE9B40096EC8D /* DETweetURLAttachment@2x.png in Resources */,
 				7F4F684917F6FDF500F1017B /* ImageEditor.xib in Resources */,
+				7F34250919B50939009DACBB /* logo_zaz_256.png in Resources */,
 				7F2AD48117EDE9390096EC8D /* SHKCustomSharers.plist in Resources */,
+				7F3424F519B50939009DACBB /* logo_lancia_256.png in Resources */,
+				7F3424DE19B50939009DACBB /* logo_bmw_256.png in Resources */,
+				7F3424EF19B50939009DACBB /* logo_hyundai_256.png in Resources */,
+				7F3424DD19B50939009DACBB /* logo_bentley_256.png in Resources */,
 				7F2AD59917EDE9B40096EC8D /* SHKSharers.plist in Resources */,
-				7FD47D0E18FDC5E300A2CE7F /* db.sqlite in Resources */,
+				7F34250719B50939009DACBB /* logo_toyota_256.png in Resources */,
+				7F3424E819B50939009DACBB /* logo_dodge_256.png in Resources */,
+				7F3424F419B50939009DACBB /* logo_kia_256.png in Resources */,
+				7F3424DB19B50939009DACBB /* logo_astonmartin_256.png in Resources */,
+				7F3424FD19B50939009DACBB /* logo_mitsubishi_256.png in Resources */,
+				7F34250219B50939009DACBB /* logo_rover_256.png in Resources */,
+				7F3424F319B50939009DACBB /* logo_jeep_256.png in Resources */,
+				7F3424D919B50939009DACBB /* logo_alfaromeo_256.png in Resources */,
+				7F3424F019B50939009DACBB /* logo_infiniti_256.png in Resources */,
+				7F34250419B50939009DACBB /* logo_scania_256.png in Resources */,
+				7F3424DC19B50939009DACBB /* logo_audi_256.png in Resources */,
+				7F34250119B50939009DACBB /* logo_renault_256.png in Resources */,
+				7F34250D19B5207F009DACBB /* logo_geely_256.png in Resources */,
+				7F3424FA19B50939009DACBB /* logo_mclaren_256.png in Resources */,
+				7F3424E119B50939009DACBB /* logo_buick_256.png in Resources */,
 				7F882C251832EBE50083CFC9 /* SetVersus.xib in Resources */,
+				7F34250519B50939009DACBB /* logo_subaru_256.png in Resources */,
+				7F3424FF19B50939009DACBB /* logo_opel_256.png in Resources */,
 				7F002D21180B49C60076879F /* Settings.bundle in Resources */,
+				7F3424F219B50939009DACBB /* logo_iveco_256.png in Resources */,
+				7F3424FE19B50939009DACBB /* logo_nissan_256.png in Resources */,
+				7F3424F919B50939009DACBB /* logo_mazda_256.png in Resources */,
+				7F3424DA19B50939009DACBB /* logo_anycar.png in Resources */,
 				7F27AE081812F58E00168424 /* Settings_freeVersion.bundle in Resources */,
+				7F3424E919B50939009DACBB /* logo_ferrari_256.png in Resources */,
 				7FBDA8FB19B39AD0004C5A47 /* signs.xcassets in Resources */,
-				7FFEBC5517DBA54F00B1DC9A /* auto_logos.xcassets in Resources */,
 				7F2AD5CB17EDE9B40096EC8D /* SHKShareFileIcon@2x.png in Resources */,
 				7F2AD59B17EDE9B40096EC8D /* DETweetPaperClip@2x.png in Resources */,
+				7F3424E219B50939009DACBB /* logo_cadillac_256.png in Resources */,
+				7F34250B19B50A71009DACBB /* db.sqlite in Resources */,
+				7F3424E619B50939009DACBB /* logo_daewoo_256.png in Resources */,
+				7F3424D819B50939009DACBB /* logo_acura_256.png in Resources */,
+				7F3424E319B50939009DACBB /* logo_chevrolet_256.png in Resources */,
+				7F34251219B522E8009DACBB /* logo_kraz_256.png in Resources */,
 				7F27671C1791E80000A1C1A0 /* InfoPlist.strings in Resources */,
+				7F3424EA19B50939009DACBB /* logo_fiat_256.png in Resources */,
 				7F3871D317BE4B7900D8E39D /* main.storyboard in Resources */,
+				7F3424EE19B50939009DACBB /* logo_hummer_256.png in Resources */,
+				7F3424F119B50939009DACBB /* logo_isuzu_256.png in Resources */,
 				7F4CB69218097908008B5CA2 /* SetDefault.xib in Resources */,
+				7F34250F19B5215C009DACBB /* logo_jaguar_256.png in Resources */,
+				7F34250319B50939009DACBB /* logo_rr_256.png in Resources */,
+				7F3424ED19B50939009DACBB /* logo_honda_256.png in Resources */,
+				7F3424E419B50939009DACBB /* logo_citroen_256.png in Resources */,
+				7F34250819B50939009DACBB /* logo_vw_256.png in Resources */,
+				7F3424EC19B50939009DACBB /* logo_gmc_256.png in Resources */,
+				7F3424E719B50939009DACBB /* logo_delorean_256.png in Resources */,
 				7F2AD59C17EDE9B40096EC8D /* DETweetURLAttachment.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
