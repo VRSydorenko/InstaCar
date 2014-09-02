@@ -99,18 +99,18 @@ typedef enum {
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
-    return [DataManager isFullVersion] && section == 1 && currentContentType == CONTENT_MODELS ? 30.0 : 0;
+    return section == 1 && currentContentType == CONTENT_MODELS ? 30.0 : 0;
 }
 
 -(UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
-    if ([DataManager isFullVersion] && section == 1 && currentContentType == CONTENT_MODELS){ // user cars
+    if (section == 1 && currentContentType == CONTENT_MODELS){ // user cars
         UIToolbar *header = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, self.tableAutos.bounds.size.width, 30.0)];
         header.barTintColor = [UIColor blackColor];
         header.tintColor = [UIColor lightTextColor];
         
         UIBarButtonItem *fixSpace = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:self action:@selector(addCustomCarPressed)];
         fixSpace.width = 40.0;
-        NSString *barString = (userDefinedData ? userDefinedData.count : 0) == 0 ? @"Didn't find a car? Add it!" : @"Your custom cars";
+        NSString *barString = (userDefinedData ? userDefinedData.count : 0) == 0 ? @"Didn't find the model? Add it!" : @"Your custom cars";
         UIBarButtonItem *barText = [[UIBarButtonItem alloc] initWithTitle:barString style:UIBarButtonItemStylePlain target:nil action:nil];
         [barText setTitleTextAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:17.0f]} forState:UIControlStateNormal];
 
@@ -307,15 +307,19 @@ typedef enum {
 }
 
 -(void)addCustomCarPressed{
-    if (!customCarForm){
-        customCarForm = [[UIStoryboard storyboardWithName:@"main" bundle:nil] instantiateViewControllerWithIdentifier:@"customCarFormVC"];
-        customCarForm.customCarDelegate = self;
-    }
-    customCarForm.autoId = selectedAuto._id;
-    customCarForm.logoFilename = selectedAuto.logo;
-    customCarForm.autoName = selectedAuto.name;
+    if ([UserSettings isFullVersion]){ // full version - allow user to add a new car
+        if (!customCarForm){
+            customCarForm = [[UIStoryboard storyboardWithName:@"main" bundle:nil] instantiateViewControllerWithIdentifier:@"customCarFormVC"];
+            customCarForm.customCarDelegate = self;
+        }
+        customCarForm.autoId = selectedAuto._id;
+        customCarForm.logoFilename = selectedAuto.logo;
+        customCarForm.autoName = selectedAuto.name;
     
-    [self presentViewController:customCarForm animated:YES completion:nil];
+        [self presentViewController:customCarForm animated:YES completion:nil];
+    } else { // open info about Full version
+        [self.autoSelectorDelegate userWantsProVersionInfo];
+    }
 }
 
 -(Auto*)prepareResult{

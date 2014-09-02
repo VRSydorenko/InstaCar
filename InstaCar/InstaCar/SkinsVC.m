@@ -151,6 +151,10 @@
     [self.sideActionDelegate performSideAction:ACT_EMPTY withArgument:nil hidingSideController:YES];
 }
 
+-(void)userWantsProVersionInfo{
+    [self.sideActionDelegate performSideAction:ACT_OPEN_PROINFO withArgument:nil hidingSideController:YES];
+}
+
 #pragma mark DDMenuControllerDelegate
 
 -(void)menuControllerWillShowRootViewController{

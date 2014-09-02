@@ -27,6 +27,7 @@ typedef enum {
     ACT_OPEN_FB_PAGE = 5,
     ACT_PREPARE_FEEDBACK_MAIL = 6,
     ACT_OPEN_APPSTORE_TO_RATE = 7,
+    ACT_OPEN_PROINFO = 8,
 } SideAction; // side controller tells navCon what to do
 
 typedef enum {

@@ -14,6 +14,7 @@
 
 @protocol AutoSelectorDelegate <NSObject>
 -(void)newAutoSelected:(Auto*)newAuto;
+-(void)userWantsProVersionInfo; // when in free version user picks 'add custom model'
 @end
 
 @interface AutosVC : UIViewController <UITableViewDelegate,

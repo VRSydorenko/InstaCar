@@ -162,6 +162,10 @@
             }
             break;
         }
+        case ACT_OPEN_PROINFO:{
+            [self showAboutProVersionButtonPressed];
+            break;
+        }
         default:
             break;
     }
