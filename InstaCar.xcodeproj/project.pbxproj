@@ -71,7 +71,6 @@
 		7F3424E319B50939009DACBB /* logo_chevrolet_256.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F3424B119B50939009DACBB /* logo_chevrolet_256.png */; };
 		7F3424E419B50939009DACBB /* logo_citroen_256.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F3424B219B50939009DACBB /* logo_citroen_256.png */; };
 		7F3424E519B50939009DACBB /* logo_dacia_256.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F3424B319B50939009DACBB /* logo_dacia_256.png */; };
-		7F3424E619B50939009DACBB /* logo_daewoo_256.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F3424B419B50939009DACBB /* logo_daewoo_256.png */; };
 		7F3424E719B50939009DACBB /* logo_delorean_256.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F3424B519B50939009DACBB /* logo_delorean_256.png */; };
 		7F3424E819B50939009DACBB /* logo_dodge_256.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F3424B619B50939009DACBB /* logo_dodge_256.png */; };
 		7F3424E919B50939009DACBB /* logo_ferrari_256.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F3424B719B50939009DACBB /* logo_ferrari_256.png */; };
@@ -103,11 +102,9 @@
 		7F34250319B50939009DACBB /* logo_rr_256.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F3424D119B50939009DACBB /* logo_rr_256.png */; };
 		7F34250419B50939009DACBB /* logo_scania_256.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F3424D219B50939009DACBB /* logo_scania_256.png */; };
 		7F34250519B50939009DACBB /* logo_subaru_256.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F3424D319B50939009DACBB /* logo_subaru_256.png */; };
-		7F34250619B50939009DACBB /* logo_testla_256.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F3424D419B50939009DACBB /* logo_testla_256.png */; };
 		7F34250719B50939009DACBB /* logo_toyota_256.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F3424D519B50939009DACBB /* logo_toyota_256.png */; };
 		7F34250819B50939009DACBB /* logo_vw_256.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F3424D619B50939009DACBB /* logo_vw_256.png */; };
 		7F34250919B50939009DACBB /* logo_zaz_256.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F3424D719B50939009DACBB /* logo_zaz_256.png */; };
-		7F34250B19B50A71009DACBB /* db.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 7F34250A19B50A71009DACBB /* db.sqlite */; };
 		7F34250D19B5207F009DACBB /* logo_geely_256.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F34250C19B5207F009DACBB /* logo_geely_256.png */; };
 		7F34250F19B5215C009DACBB /* logo_jaguar_256.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F34250E19B5215C009DACBB /* logo_jaguar_256.png */; };
 		7F34251219B522E8009DACBB /* logo_kraz_256.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F34251019B522E8009DACBB /* logo_kraz_256.png */; };
@@ -154,6 +151,16 @@
 		7F882C261832EBE50083CFC9 /* SkinVersusName.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F882C231832EBE50083CFC9 /* SkinVersusName.m */; };
 		7F882C291832ECC60083CFC9 /* SkinSetBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F882C281832ECC60083CFC9 /* SkinSetBase.m */; };
 		7F9656D91866F463000325B9 /* SkinVersusLogo.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F9656D81866F463000325B9 /* SkinVersusLogo.m */; };
+		7FA361E319B6416F008B4095 /* logo_lambo_256.png in Resources */ = {isa = PBXBuildFile; fileRef = 7FA361DB19B6416F008B4095 /* logo_lambo_256.png */; };
+		7FA361E419B6416F008B4095 /* logo_mini_256.png in Resources */ = {isa = PBXBuildFile; fileRef = 7FA361DC19B6416F008B4095 /* logo_mini_256.png */; };
+		7FA361E519B6416F008B4095 /* logo_pontiac_256.png in Resources */ = {isa = PBXBuildFile; fileRef = 7FA361DD19B6416F008B4095 /* logo_pontiac_256.png */; };
+		7FA361E619B6416F008B4095 /* logo_porsche_256.png in Resources */ = {isa = PBXBuildFile; fileRef = 7FA361DE19B6416F008B4095 /* logo_porsche_256.png */; };
+		7FA361E719B6416F008B4095 /* logo_seat_256.png in Resources */ = {isa = PBXBuildFile; fileRef = 7FA361DF19B6416F008B4095 /* logo_seat_256.png */; };
+		7FA361E819B6416F008B4095 /* logo_tesla_256.png in Resources */ = {isa = PBXBuildFile; fileRef = 7FA361E019B6416F008B4095 /* logo_tesla_256.png */; };
+		7FA361E919B6416F008B4095 /* logo_vaz_256.png in Resources */ = {isa = PBXBuildFile; fileRef = 7FA361E119B6416F008B4095 /* logo_vaz_256.png */; };
+		7FA361EA19B6416F008B4095 /* logo_volvo_256.png in Resources */ = {isa = PBXBuildFile; fileRef = 7FA361E219B6416F008B4095 /* logo_volvo_256.png */; };
+		7FA361EC19B65020008B4095 /* logo_daewoo_256.png in Resources */ = {isa = PBXBuildFile; fileRef = 7FA361EB19B65020008B4095 /* logo_daewoo_256.png */; };
+		7FA361EE19B66D4C008B4095 /* db.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 7FA361ED19B66D4C008B4095 /* db.sqlite */; };
 		7FB233B317D6773C003751B5 /* CellSelectedAuto.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FB233B217D6773C003751B5 /* CellSelectedAuto.m */; };
 		7FBDA8FB19B39AD0004C5A47 /* signs.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7FBDA8FA19B39AD0004C5A47 /* signs.xcassets */; };
 		7FC4137517C7E8450025DD2C /* Foursquare2.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FC4136C17C7E8450025DD2C /* Foursquare2.m */; };
@@ -294,7 +301,6 @@
 		7F3424B119B50939009DACBB /* logo_chevrolet_256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_chevrolet_256.png; sourceTree = "<group>"; };
 		7F3424B219B50939009DACBB /* logo_citroen_256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_citroen_256.png; sourceTree = "<group>"; };
 		7F3424B319B50939009DACBB /* logo_dacia_256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_dacia_256.png; sourceTree = "<group>"; };
-		7F3424B419B50939009DACBB /* logo_daewoo_256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_daewoo_256.png; sourceTree = "<group>"; };
 		7F3424B519B50939009DACBB /* logo_delorean_256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_delorean_256.png; sourceTree = "<group>"; };
 		7F3424B619B50939009DACBB /* logo_dodge_256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_dodge_256.png; sourceTree = "<group>"; };
 		7F3424B719B50939009DACBB /* logo_ferrari_256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_ferrari_256.png; sourceTree = "<group>"; };
@@ -326,11 +332,9 @@
 		7F3424D119B50939009DACBB /* logo_rr_256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_rr_256.png; sourceTree = "<group>"; };
 		7F3424D219B50939009DACBB /* logo_scania_256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_scania_256.png; sourceTree = "<group>"; };
 		7F3424D319B50939009DACBB /* logo_subaru_256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_subaru_256.png; sourceTree = "<group>"; };
-		7F3424D419B50939009DACBB /* logo_testla_256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_testla_256.png; sourceTree = "<group>"; };
 		7F3424D519B50939009DACBB /* logo_toyota_256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_toyota_256.png; sourceTree = "<group>"; };
 		7F3424D619B50939009DACBB /* logo_vw_256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_vw_256.png; sourceTree = "<group>"; };
 		7F3424D719B50939009DACBB /* logo_zaz_256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_zaz_256.png; sourceTree = "<group>"; };
-		7F34250A19B50A71009DACBB /* db.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = db.sqlite; sourceTree = "<group>"; };
 		7F34250C19B5207F009DACBB /* logo_geely_256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_geely_256.png; sourceTree = "<group>"; };
 		7F34250E19B5215C009DACBB /* logo_jaguar_256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_jaguar_256.png; sourceTree = "<group>"; };
 		7F34251019B522E8009DACBB /* logo_kraz_256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_kraz_256.png; sourceTree = "<group>"; };
@@ -416,6 +420,16 @@
 		7F882C281832ECC60083CFC9 /* SkinSetBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SkinSetBase.m; sourceTree = "<group>"; };
 		7F9656D71866F463000325B9 /* SkinVersusLogo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SkinVersusLogo.h; path = SetVersus/SkinVersusLogo.h; sourceTree = "<group>"; };
 		7F9656D81866F463000325B9 /* SkinVersusLogo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SkinVersusLogo.m; path = SetVersus/SkinVersusLogo.m; sourceTree = "<group>"; };
+		7FA361DB19B6416F008B4095 /* logo_lambo_256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_lambo_256.png; sourceTree = "<group>"; };
+		7FA361DC19B6416F008B4095 /* logo_mini_256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_mini_256.png; sourceTree = "<group>"; };
+		7FA361DD19B6416F008B4095 /* logo_pontiac_256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_pontiac_256.png; sourceTree = "<group>"; };
+		7FA361DE19B6416F008B4095 /* logo_porsche_256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_porsche_256.png; sourceTree = "<group>"; };
+		7FA361DF19B6416F008B4095 /* logo_seat_256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_seat_256.png; sourceTree = "<group>"; };
+		7FA361E019B6416F008B4095 /* logo_tesla_256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_tesla_256.png; sourceTree = "<group>"; };
+		7FA361E119B6416F008B4095 /* logo_vaz_256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_vaz_256.png; sourceTree = "<group>"; };
+		7FA361E219B6416F008B4095 /* logo_volvo_256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_volvo_256.png; sourceTree = "<group>"; };
+		7FA361EB19B65020008B4095 /* logo_daewoo_256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_daewoo_256.png; sourceTree = "<group>"; };
+		7FA361ED19B66D4C008B4095 /* db.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; name = db.sqlite; path = ../../db.sqlite; sourceTree = "<group>"; };
 		7FB233B117D6773C003751B5 /* CellSelectedAuto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CellSelectedAuto.h; path = InstaCar/TableCells/CellSelectedAuto.h; sourceTree = "<group>"; };
 		7FB233B217D6773C003751B5 /* CellSelectedAuto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CellSelectedAuto.m; path = InstaCar/TableCells/CellSelectedAuto.m; sourceTree = "<group>"; };
 		7FBDA8FA19B39AD0004C5A47 /* signs.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = signs.xcassets; path = InstaCar/Data/signs.xcassets; sourceTree = "<group>"; };
@@ -803,6 +817,15 @@
 		7F3424A519B50939009DACBB /* Logos */ = {
 			isa = PBXGroup;
 			children = (
+				7FA361EB19B65020008B4095 /* logo_daewoo_256.png */,
+				7FA361DB19B6416F008B4095 /* logo_lambo_256.png */,
+				7FA361DC19B6416F008B4095 /* logo_mini_256.png */,
+				7FA361DD19B6416F008B4095 /* logo_pontiac_256.png */,
+				7FA361DE19B6416F008B4095 /* logo_porsche_256.png */,
+				7FA361DF19B6416F008B4095 /* logo_seat_256.png */,
+				7FA361E019B6416F008B4095 /* logo_tesla_256.png */,
+				7FA361E119B6416F008B4095 /* logo_vaz_256.png */,
+				7FA361E219B6416F008B4095 /* logo_volvo_256.png */,
 				7F34251019B522E8009DACBB /* logo_kraz_256.png */,
 				7F34251119B522E8009DACBB /* logo_lada_256.png */,
 				7F34250E19B5215C009DACBB /* logo_jaguar_256.png */,
@@ -821,7 +844,6 @@
 				7F3424B119B50939009DACBB /* logo_chevrolet_256.png */,
 				7F3424B219B50939009DACBB /* logo_citroen_256.png */,
 				7F3424B319B50939009DACBB /* logo_dacia_256.png */,
-				7F3424B419B50939009DACBB /* logo_daewoo_256.png */,
 				7F3424B519B50939009DACBB /* logo_delorean_256.png */,
 				7F3424B619B50939009DACBB /* logo_dodge_256.png */,
 				7F3424B719B50939009DACBB /* logo_ferrari_256.png */,
@@ -853,7 +875,6 @@
 				7F3424D119B50939009DACBB /* logo_rr_256.png */,
 				7F3424D219B50939009DACBB /* logo_scania_256.png */,
 				7F3424D319B50939009DACBB /* logo_subaru_256.png */,
-				7F3424D419B50939009DACBB /* logo_testla_256.png */,
 				7F3424D519B50939009DACBB /* logo_toyota_256.png */,
 				7F3424D619B50939009DACBB /* logo_vw_256.png */,
 				7F3424D719B50939009DACBB /* logo_zaz_256.png */,
@@ -975,7 +996,7 @@
 		7F5AC64117CBFFDD00C01658 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				7F34250A19B50A71009DACBB /* db.sqlite */,
+				7FA361ED19B66D4C008B4095 /* db.sqlite */,
 				7F3424A419B50939009DACBB /* Images */,
 				7F4CB67D18097908008B5CA2 /* Skins */,
 				7F5AC64B17CC06CE00C01658 /* Auto.h */,
@@ -1122,15 +1143,16 @@
 			files = (
 				7F27672A1791E80000A1C1A0 /* Images.xcassets in Resources */,
 				7F3424EB19B50939009DACBB /* logo_ford_256.png in Resources */,
+				7FA361E519B6416F008B4095 /* logo_pontiac_256.png in Resources */,
 				7F34251319B522E8009DACBB /* logo_lada_256.png in Resources */,
 				7F3424FB19B50939009DACBB /* logo_mercedes_256.png in Resources */,
 				7F3424FC19B50939009DACBB /* logo_mercury_256.png in Resources */,
 				7F3424F819B50939009DACBB /* logo_lotus_256.png in Resources */,
+				7FA361E919B6416F008B4095 /* logo_vaz_256.png in Resources */,
 				7F3424F619B50939009DACBB /* logo_landrover_256.png in Resources */,
 				7F3424DF19B50939009DACBB /* logo_bogdan_256.png in Resources */,
 				7F34250019B50939009DACBB /* logo_peugeot_256.png in Resources */,
 				7F3424F719B50939009DACBB /* logo_lincoln_256.png in Resources */,
-				7F34250619B50939009DACBB /* logo_testla_256.png in Resources */,
 				7F2AD5CA17EDE9B40096EC8D /* SHKShareFileIcon.png in Resources */,
 				7F3424E519B50939009DACBB /* logo_dacia_256.png in Resources */,
 				7F2AD59A17EDE9B40096EC8D /* DETweetPaperClip.png in Resources */,
@@ -1141,10 +1163,14 @@
 				7F2AD48117EDE9390096EC8D /* SHKCustomSharers.plist in Resources */,
 				7F3424F519B50939009DACBB /* logo_lancia_256.png in Resources */,
 				7F3424DE19B50939009DACBB /* logo_bmw_256.png in Resources */,
+				7FA361E419B6416F008B4095 /* logo_mini_256.png in Resources */,
 				7F3424EF19B50939009DACBB /* logo_hyundai_256.png in Resources */,
+				7FA361EE19B66D4C008B4095 /* db.sqlite in Resources */,
 				7F3424DD19B50939009DACBB /* logo_bentley_256.png in Resources */,
+				7FA361E319B6416F008B4095 /* logo_lambo_256.png in Resources */,
 				7F2AD59917EDE9B40096EC8D /* SHKSharers.plist in Resources */,
 				7F34250719B50939009DACBB /* logo_toyota_256.png in Resources */,
+				7FA361EC19B65020008B4095 /* logo_daewoo_256.png in Resources */,
 				7F3424E819B50939009DACBB /* logo_dodge_256.png in Resources */,
 				7F3424F419B50939009DACBB /* logo_kia_256.png in Resources */,
 				7F3424DB19B50939009DACBB /* logo_astonmartin_256.png in Resources */,
@@ -1155,6 +1181,7 @@
 				7F3424F019B50939009DACBB /* logo_infiniti_256.png in Resources */,
 				7F34250419B50939009DACBB /* logo_scania_256.png in Resources */,
 				7F3424DC19B50939009DACBB /* logo_audi_256.png in Resources */,
+				7FA361EA19B6416F008B4095 /* logo_volvo_256.png in Resources */,
 				7F34250119B50939009DACBB /* logo_renault_256.png in Resources */,
 				7F34250D19B5207F009DACBB /* logo_geely_256.png in Resources */,
 				7F3424FA19B50939009DACBB /* logo_mclaren_256.png in Resources */,
@@ -1167,14 +1194,13 @@
 				7F3424FE19B50939009DACBB /* logo_nissan_256.png in Resources */,
 				7F3424F919B50939009DACBB /* logo_mazda_256.png in Resources */,
 				7F3424DA19B50939009DACBB /* logo_anycar.png in Resources */,
+				7FA361E819B6416F008B4095 /* logo_tesla_256.png in Resources */,
 				7F27AE081812F58E00168424 /* Settings_freeVersion.bundle in Resources */,
 				7F3424E919B50939009DACBB /* logo_ferrari_256.png in Resources */,
 				7FBDA8FB19B39AD0004C5A47 /* signs.xcassets in Resources */,
 				7F2AD5CB17EDE9B40096EC8D /* SHKShareFileIcon@2x.png in Resources */,
 				7F2AD59B17EDE9B40096EC8D /* DETweetPaperClip@2x.png in Resources */,
 				7F3424E219B50939009DACBB /* logo_cadillac_256.png in Resources */,
-				7F34250B19B50A71009DACBB /* db.sqlite in Resources */,
-				7F3424E619B50939009DACBB /* logo_daewoo_256.png in Resources */,
 				7F3424D819B50939009DACBB /* logo_acura_256.png in Resources */,
 				7F3424E319B50939009DACBB /* logo_chevrolet_256.png in Resources */,
 				7F34251219B522E8009DACBB /* logo_kraz_256.png in Resources */,
@@ -1183,6 +1209,7 @@
 				7F3871D317BE4B7900D8E39D /* main.storyboard in Resources */,
 				7F3424EE19B50939009DACBB /* logo_hummer_256.png in Resources */,
 				7F3424F119B50939009DACBB /* logo_isuzu_256.png in Resources */,
+				7FA361E719B6416F008B4095 /* logo_seat_256.png in Resources */,
 				7F4CB69218097908008B5CA2 /* SetDefault.xib in Resources */,
 				7F34250F19B5215C009DACBB /* logo_jaguar_256.png in Resources */,
 				7F34250319B50939009DACBB /* logo_rr_256.png in Resources */,
@@ -1192,6 +1219,7 @@
 				7F3424EC19B50939009DACBB /* logo_gmc_256.png in Resources */,
 				7F3424E719B50939009DACBB /* logo_delorean_256.png in Resources */,
 				7F2AD59C17EDE9B40096EC8D /* DETweetURLAttachment.png in Resources */,
+				7FA361E619B6416F008B4095 /* logo_porsche_256.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

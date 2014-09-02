@@ -2212,7 +2212,7 @@ typedef enum {
 	[self addAutoModel:@"Trakker" ofAuto:autoId logo:logoId startYear:2004 endYear:0];
     
 #pragma mark |---- Lamborghini
-    logoId = [self addLogo:@"logo_lamborghini_256.png"];
+    logoId = [self addLogo:@"logo_lambo_256.png"];
     autoId = [self addAuto:@"Lamborghini" country:countryId logo:logoId independentId:LAMBORGHINI];
     [self addAutoModel:@"350GT" ofAuto:autoId logo:logoId startYear:1964 endYear:1966];
 	[self addAutoModel:@"400GT" ofAuto:autoId logo:logoId startYear:1966 endYear:1968];
