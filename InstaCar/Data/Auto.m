@@ -23,7 +23,7 @@
     return self;
 }
 
--(NSString*)selectedText{
+-(NSString*)selectedText{ // specific formatting
     NSString *autoName = self.logoAsName ? @"" : self.name;
     if (self.model){
         if (self.model.submodel){
@@ -31,6 +31,13 @@
         } else {
             return [NSString stringWithFormat:@"%@ %@", autoName, self.model.name];
         }
+    }
+    return self.name;
+}
+
+-(NSString*)selectedTextMarkModel{
+    if (self.model && self.model.isSelectable){
+        return [NSString stringWithFormat:@"%@ %@", self.name, self.model.name];
     }
     return self.name;
 }

@@ -10,4 +10,7 @@
 
 @interface SkinEmo_IHeartName : SkinViewBase
 
+@property (nonatomic) IBOutlet SkinElementImage *imgIHeart;
+@property (nonatomic) IBOutlet SkinElementLabel *labelAuto;
+
 @end
