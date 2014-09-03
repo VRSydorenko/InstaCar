@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6206.9" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="5PD-ZC-8Rm">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6206.9" systemVersion="14A329f" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="5PD-ZC-8Rm">
     <dependencies>
+        <deployment defaultVersion="1792" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7026.1"/>
-        <capability name="Constraints with attributes relative to the layout margin" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Main Nav Controller-->
@@ -217,7 +217,7 @@
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="black" translatesAutoresizingMaskIntoConstraints="NO" id="ajc-Bm-9BW">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="WxM-U8-BA2"/>
+                                    <constraint firstAttribute="height" constant="44" id="2H1-eK-CIx"/>
                                 </constraints>
                                 <items>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="utL-AR-urM"/>
@@ -235,7 +235,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EAl-cr-AVt">
                                 <rect key="frame" x="101" y="430" width="119" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="9Xr-iy-t7u"/>
+                                    <constraint firstAttribute="height" constant="30" id="ok7-GU-2aK"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Get full version">
@@ -249,7 +249,7 @@
                                 <rect key="frame" x="16" y="44" width="288" height="54"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="54" id="kiD-Ar-yZu"/>
+                                    <constraint firstAttribute="height" constant="54" id="YtN-qa-dPh"/>
                                 </constraints>
                                 <color key="textColor" red="0.098039217293262482" green="0.098039217293262482" blue="0.098039217293262482" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -259,7 +259,7 @@
                                 <rect key="frame" x="20" y="106" width="280" height="238"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="238" id="TJe-4B-lWL"/>
+                                    <constraint firstAttribute="height" constant="238" id="aqV-1j-VcO"/>
                                 </constraints>
                                 <string key="text"> - No ads
  - Add custom car models (with iCloud synchronization)
@@ -271,18 +271,18 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="WIW-hX-8ZL" secondAttribute="trailing" constant="4" id="1mW-Zo-sPe"/>
-                            <constraint firstItem="EAl-cr-AVt" firstAttribute="leading" secondItem="mG4-GI-kJa" secondAttribute="leading" constant="101" id="9OX-vw-YKs"/>
-                            <constraint firstItem="WIW-hX-8ZL" firstAttribute="top" secondItem="Fcd-vz-fPZ" secondAttribute="bottom" constant="8" id="ADN-AF-8fl"/>
-                            <constraint firstAttribute="trailing" secondItem="EAl-cr-AVt" secondAttribute="trailing" constant="100" id="AIq-ov-l9M"/>
-                            <constraint firstItem="Fcd-vz-fPZ" firstAttribute="leading" secondItem="mG4-GI-kJa" secondAttribute="leadingMargin" id="Bat-Fu-uFM"/>
-                            <constraint firstItem="Fcd-vz-fPZ" firstAttribute="trailing" secondItem="mG4-GI-kJa" secondAttribute="trailingMargin" id="GYR-zc-a0z"/>
-                            <constraint firstItem="Fcd-vz-fPZ" firstAttribute="top" secondItem="ajc-Bm-9BW" secondAttribute="bottom" id="KHf-fX-baf"/>
-                            <constraint firstItem="ajc-Bm-9BW" firstAttribute="top" secondItem="mG4-GI-kJa" secondAttribute="top" id="Tpc-AF-z5E"/>
-                            <constraint firstItem="ajc-Bm-9BW" firstAttribute="leading" secondItem="mG4-GI-kJa" secondAttribute="leading" id="aDt-Z2-7GK"/>
-                            <constraint firstAttribute="trailing" secondItem="ajc-Bm-9BW" secondAttribute="trailing" id="snk-W3-kbU"/>
-                            <constraint firstItem="WIW-hX-8ZL" firstAttribute="leading" secondItem="mG4-GI-kJa" secondAttribute="leadingMargin" constant="4" id="tFh-o5-r7N"/>
-                            <constraint firstItem="GdK-P0-4Em" firstAttribute="top" secondItem="EAl-cr-AVt" secondAttribute="bottom" constant="20" id="vAC-I1-65n"/>
+                            <constraint firstItem="EAl-cr-AVt" firstAttribute="leading" secondItem="mG4-GI-kJa" secondAttribute="leading" constant="101" id="44G-sU-ptB"/>
+                            <constraint firstItem="GdK-P0-4Em" firstAttribute="top" secondItem="EAl-cr-AVt" secondAttribute="bottom" constant="20" id="7Gb-FD-NzD"/>
+                            <constraint firstItem="ajc-Bm-9BW" firstAttribute="top" secondItem="mG4-GI-kJa" secondAttribute="top" id="Bah-RU-yuE"/>
+                            <constraint firstItem="Fcd-vz-fPZ" firstAttribute="top" secondItem="ajc-Bm-9BW" secondAttribute="bottom" id="BlQ-af-3Jv"/>
+                            <constraint firstItem="WIW-hX-8ZL" firstAttribute="top" secondItem="Fcd-vz-fPZ" secondAttribute="bottom" constant="8" id="EhC-jy-rrR"/>
+                            <constraint firstItem="Fcd-vz-fPZ" firstAttribute="leading" secondItem="mG4-GI-kJa" secondAttribute="leading" constant="16" id="Ted-gD-rFG"/>
+                            <constraint firstAttribute="trailing" secondItem="ajc-Bm-9BW" secondAttribute="trailing" id="ci1-zn-7p3"/>
+                            <constraint firstItem="WIW-hX-8ZL" firstAttribute="leading" secondItem="mG4-GI-kJa" secondAttribute="leading" constant="20" id="cqT-j5-IUM"/>
+                            <constraint firstAttribute="trailing" secondItem="EAl-cr-AVt" secondAttribute="trailing" constant="100" id="gyk-kl-c76"/>
+                            <constraint firstItem="ajc-Bm-9BW" firstAttribute="leading" secondItem="mG4-GI-kJa" secondAttribute="leading" id="n2F-Jp-19t"/>
+                            <constraint firstAttribute="trailing" secondItem="Fcd-vz-fPZ" secondAttribute="trailing" constant="16" id="rbi-eu-kuy"/>
+                            <constraint firstAttribute="trailing" secondItem="WIW-hX-8ZL" secondAttribute="trailing" constant="20" id="vAc-ob-pis"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -426,7 +426,7 @@
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="UwX-S6-Xxn"/>
-                                    <barButtonItem title="Back >" id="n7s-Ff-nGm">
+                                    <barButtonItem title="Back &gt;" id="n7s-Ff-nGm">
                                         <connections>
                                             <action selector="btnBackPressed" destination="JB3-kM-4cB" id="Cbj-h0-kIA"/>
                                         </connections>
