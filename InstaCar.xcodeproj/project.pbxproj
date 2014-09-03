@@ -160,7 +160,6 @@
 		7FA361E919B6416F008B4095 /* logo_vaz_256.png in Resources */ = {isa = PBXBuildFile; fileRef = 7FA361E119B6416F008B4095 /* logo_vaz_256.png */; };
 		7FA361EA19B6416F008B4095 /* logo_volvo_256.png in Resources */ = {isa = PBXBuildFile; fileRef = 7FA361E219B6416F008B4095 /* logo_volvo_256.png */; };
 		7FA361EC19B65020008B4095 /* logo_daewoo_256.png in Resources */ = {isa = PBXBuildFile; fileRef = 7FA361EB19B65020008B4095 /* logo_daewoo_256.png */; };
-		7FA361EE19B66D4C008B4095 /* db.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 7FA361ED19B66D4C008B4095 /* db.sqlite */; };
 		7FB233B317D6773C003751B5 /* CellSelectedAuto.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FB233B217D6773C003751B5 /* CellSelectedAuto.m */; };
 		7FBDA8FB19B39AD0004C5A47 /* signs.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7FBDA8FA19B39AD0004C5A47 /* signs.xcassets */; };
 		7FC4137517C7E8450025DD2C /* Foursquare2.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FC4136C17C7E8450025DD2C /* Foursquare2.m */; };
@@ -175,6 +174,7 @@
 		7FF3389317D4C0E700B046C4 /* SkinsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FF3389217D4C0E700B046C4 /* SkinsVC.m */; };
 		8415F44819587F2500708437 /* SkinElementLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8415F44719587F2500708437 /* SkinElementLabel.m */; };
 		841C5EF4195483FF00AD025D /* SkinElementImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 841C5EF3195483FF00AD025D /* SkinElementImage.m */; };
+		8453B3EB19B74BA600FDEF5E /* db.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 8453B3EA19B74BA600FDEF5E /* db.sqlite */; };
 		84EC58E11954519A00E8C421 /* SkinElementRect.m in Sources */ = {isa = PBXBuildFile; fileRef = 84EC58E01954519A00E8C421 /* SkinElementRect.m */; };
 /* End PBXBuildFile section */
 
@@ -429,7 +429,6 @@
 		7FA361E119B6416F008B4095 /* logo_vaz_256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_vaz_256.png; sourceTree = "<group>"; };
 		7FA361E219B6416F008B4095 /* logo_volvo_256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_volvo_256.png; sourceTree = "<group>"; };
 		7FA361EB19B65020008B4095 /* logo_daewoo_256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_daewoo_256.png; sourceTree = "<group>"; };
-		7FA361ED19B66D4C008B4095 /* db.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; name = db.sqlite; path = ../../db.sqlite; sourceTree = "<group>"; };
 		7FB233B117D6773C003751B5 /* CellSelectedAuto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CellSelectedAuto.h; path = InstaCar/TableCells/CellSelectedAuto.h; sourceTree = "<group>"; };
 		7FB233B217D6773C003751B5 /* CellSelectedAuto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CellSelectedAuto.m; path = InstaCar/TableCells/CellSelectedAuto.m; sourceTree = "<group>"; };
 		7FBDA8FA19B39AD0004C5A47 /* signs.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = signs.xcassets; path = InstaCar/Data/signs.xcassets; sourceTree = "<group>"; };
@@ -457,6 +456,7 @@
 		8415F44719587F2500708437 /* SkinElementLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SkinElementLabel.m; path = InstaCar/Core/DrawingElements/SkinElementLabel.m; sourceTree = "<group>"; };
 		841C5EF2195483FF00AD025D /* SkinElementImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SkinElementImage.h; path = InstaCar/Core/DrawingElements/SkinElementImage.h; sourceTree = "<group>"; };
 		841C5EF3195483FF00AD025D /* SkinElementImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SkinElementImage.m; path = InstaCar/Core/DrawingElements/SkinElementImage.m; sourceTree = "<group>"; };
+		8453B3EA19B74BA600FDEF5E /* db.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = db.sqlite; sourceTree = "<group>"; };
 		84EC58DE195450A200E8C421 /* DrawingElementProtocolBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DrawingElementProtocolBase.h; path = InstaCar/Core/DrawingElements/DrawingElementProtocolBase.h; sourceTree = "<group>"; };
 		84EC58DF1954519A00E8C421 /* SkinElementRect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SkinElementRect.h; path = InstaCar/Core/DrawingElements/SkinElementRect.h; sourceTree = "<group>"; };
 		84EC58E01954519A00E8C421 /* SkinElementRect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SkinElementRect.m; path = InstaCar/Core/DrawingElements/SkinElementRect.m; sourceTree = "<group>"; };
@@ -996,7 +996,7 @@
 		7F5AC64117CBFFDD00C01658 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				7FA361ED19B66D4C008B4095 /* db.sqlite */,
+				8453B3EA19B74BA600FDEF5E /* db.sqlite */,
 				7F3424A419B50939009DACBB /* Images */,
 				7F4CB67D18097908008B5CA2 /* Skins */,
 				7F5AC64B17CC06CE00C01658 /* Auto.h */,
@@ -1165,7 +1165,7 @@
 				7F3424DE19B50939009DACBB /* logo_bmw_256.png in Resources */,
 				7FA361E419B6416F008B4095 /* logo_mini_256.png in Resources */,
 				7F3424EF19B50939009DACBB /* logo_hyundai_256.png in Resources */,
-				7FA361EE19B66D4C008B4095 /* db.sqlite in Resources */,
+				8453B3EB19B74BA600FDEF5E /* db.sqlite in Resources */,
 				7F3424DD19B50939009DACBB /* logo_bentley_256.png in Resources */,
 				7FA361E319B6416F008B4095 /* logo_lambo_256.png in Resources */,
 				7F2AD59917EDE9B40096EC8D /* SHKSharers.plist in Resources */,

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6206.8" systemVersion="14A329f" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="5056" systemVersion="13D65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7026.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -21,15 +21,15 @@
                             </constraints>
                         </view>
                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_anycar.png" translatesAutoresizingMaskIntoConstraints="NO" id="BAC-hV-PXa">
-                            <rect key="frame" x="20" y="10" width="40" height="40"/>
+                            <rect key="frame" x="10" y="10" width="60" height="40"/>
                             <constraints>
-                                <constraint firstAttribute="width" constant="40" id="5yM-ns-bHf"/>
+                                <constraint firstAttribute="width" constant="60" id="5yM-ns-bHf"/>
                             </constraints>
                         </imageView>
                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_anycar.png" translatesAutoresizingMaskIntoConstraints="NO" id="zwt-LL-gNa">
-                            <rect key="frame" x="260" y="10" width="40" height="40"/>
+                            <rect key="frame" x="250" y="10" width="60" height="40"/>
                             <constraints>
-                                <constraint firstAttribute="width" constant="40" id="xEg-Tx-QIA"/>
+                                <constraint firstAttribute="width" constant="60" id="xEg-Tx-QIA"/>
                             </constraints>
                         </imageView>
                     </subviews>
@@ -41,10 +41,10 @@
                         <constraint firstItem="BAC-hV-PXa" firstAttribute="top" secondItem="Xs5-Ya-u5b" secondAttribute="top" constant="10" id="LVG-Rg-O5Q"/>
                         <constraint firstItem="NhV-R1-nM2" firstAttribute="leading" secondItem="Xs5-Ya-u5b" secondAttribute="leading" constant="159" id="OvS-W5-9Bj"/>
                         <constraint firstItem="zwt-LL-gNa" firstAttribute="top" secondItem="Xs5-Ya-u5b" secondAttribute="top" constant="10" id="Pcj-AX-m1p"/>
-                        <constraint firstAttribute="trailing" secondItem="zwt-LL-gNa" secondAttribute="trailing" constant="20" id="QJg-4U-VDQ"/>
+                        <constraint firstAttribute="trailing" secondItem="zwt-LL-gNa" secondAttribute="trailing" constant="10" id="QJg-4U-VDQ"/>
                         <constraint firstItem="NhV-R1-nM2" firstAttribute="top" secondItem="Xs5-Ya-u5b" secondAttribute="top" id="fhE-rk-Ga2"/>
                         <constraint firstAttribute="height" constant="60" id="gyI-Nm-vDq"/>
-                        <constraint firstItem="BAC-hV-PXa" firstAttribute="leading" secondItem="Xs5-Ya-u5b" secondAttribute="leading" constant="20" id="hKf-a4-YEh"/>
+                        <constraint firstItem="BAC-hV-PXa" firstAttribute="leading" secondItem="Xs5-Ya-u5b" secondAttribute="leading" constant="10" id="hKf-a4-YEh"/>
                     </constraints>
                 </view>
             </subviews>
@@ -54,7 +54,6 @@
                 <constraint firstAttribute="trailing" secondItem="Xs5-Ya-u5b" secondAttribute="trailing" id="XFK-Sa-wnB"/>
                 <constraint firstItem="Xs5-Ya-u5b" firstAttribute="top" secondItem="Tnr-oz-4iU" secondAttribute="top" constant="260" id="rv5-Sv-Liy"/>
             </constraints>
-            <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="constraintHeight" destination="gyI-Nm-vDq" id="DEB-Eu-4ul"/>
@@ -140,7 +139,6 @@
                 <constraint firstItem="LV1-vO-6eP" firstAttribute="top" secondItem="MPA-Bd-Nlr" secondAttribute="top" constant="260" id="42O-6o-Chm"/>
                 <constraint firstItem="LV1-vO-6eP" firstAttribute="leading" secondItem="MPA-Bd-Nlr" secondAttribute="leading" id="cNR-hv-pz4"/>
             </constraints>
-            <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="constraintHeight" destination="OhV-Jx-mAP" id="joG-3t-mWt"/>
@@ -164,12 +162,4 @@
     <resources>
         <image name="logo_anycar.png" width="64" height="64"/>
     </resources>
-    <simulatedMetricsContainer key="defaultSimulatedMetrics">
-        <simulatedStatusBarMetrics key="statusBar"/>
-        <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination" type="retina4">
-            <size key="portraitSize" width="320" height="568"/>
-            <size key="landscapeSize" width="568" height="320"/>
-        </simulatedScreenMetrics>
-    </simulatedMetricsContainer>
 </document>
