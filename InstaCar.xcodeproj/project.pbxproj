@@ -133,6 +133,7 @@
 		7F4CB69318097908008B5CA2 /* SkinSimple.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F4CB68918097908008B5CA2 /* SkinSimple.m */; };
 		7F4CB69418097908008B5CA2 /* SkinSimple2.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F4CB68B18097908008B5CA2 /* SkinSimple2.m */; };
 		7F4CB69518097908008B5CA2 /* SkinViewBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F4CB68D18097908008B5CA2 /* SkinViewBase.m */; };
+		7F4D530B19B79A760083E2CB /* iheart_256.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F4D530A19B79A760083E2CB /* iheart_256.png */; };
 		7F4ECC2D17C8062800BF1671 /* SideViewControllerBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F4ECC2C17C8062800BF1671 /* SideViewControllerBase.m */; };
 		7F4F684317F6F97600F1017B /* HFImageEditorFrameView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F4F683F17F6F97600F1017B /* HFImageEditorFrameView.m */; };
 		7F4F684417F6F97600F1017B /* HFImageEditorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F4F684217F6F97600F1017B /* HFImageEditorViewController.m */; };
@@ -397,6 +398,7 @@
 		7F4CB68B18097908008B5CA2 /* SkinSimple2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SkinSimple2.m; sourceTree = "<group>"; };
 		7F4CB68C18097908008B5CA2 /* SkinViewBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkinViewBase.h; sourceTree = "<group>"; };
 		7F4CB68D18097908008B5CA2 /* SkinViewBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SkinViewBase.m; sourceTree = "<group>"; };
+		7F4D530A19B79A760083E2CB /* iheart_256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iheart_256.png; sourceTree = "<group>"; };
 		7F4ECC2B17C8062800BF1671 /* SideViewControllerBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SideViewControllerBase.h; sourceTree = "<group>"; };
 		7F4ECC2C17C8062800BF1671 /* SideViewControllerBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SideViewControllerBase.m; sourceTree = "<group>"; };
 		7F4F683E17F6F97600F1017B /* HFImageEditorFrameView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFImageEditorFrameView.h; sourceTree = "<group>"; };
@@ -1016,6 +1018,15 @@
 			path = SetDefault;
 			sourceTree = "<group>";
 		};
+		7F4D530919B79A760083E2CB /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				7F4D530A19B79A760083E2CB /* iheart_256.png */,
+			);
+			name = Images;
+			path = SetEmotions/Images;
+			sourceTree = "<group>";
+		};
 		7F4F683D17F6F97600F1017B /* ImageEditor */ = {
 			isa = PBXGroup;
 			children = (
@@ -1102,6 +1113,7 @@
 		84D344CB19B74DCB00C7A02E /* SetEmotions */ = {
 			isa = PBXGroup;
 			children = (
+				7F4D530919B79A760083E2CB /* Images */,
 				84D344CC19B74E3B00C7A02E /* SetEmotions.h */,
 				84D344CD19B74E3B00C7A02E /* SetEmotions.m */,
 				84D344CF19B74F4900C7A02E /* SetEmotions.xib */,
@@ -1279,6 +1291,7 @@
 				7F34251219B522E8009DACBB /* logo_kraz_256.png in Resources */,
 				7F27671C1791E80000A1C1A0 /* InfoPlist.strings in Resources */,
 				7F3424EA19B50939009DACBB /* logo_fiat_256.png in Resources */,
+				7F4D530B19B79A760083E2CB /* iheart_256.png in Resources */,
 				7F3871D317BE4B7900D8E39D /* main.storyboard in Resources */,
 				7F3424EE19B50939009DACBB /* logo_hummer_256.png in Resources */,
 				7F3424F119B50939009DACBB /* logo_isuzu_256.png in Resources */,
