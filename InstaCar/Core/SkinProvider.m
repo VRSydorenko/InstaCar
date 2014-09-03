@@ -34,6 +34,10 @@
     
     SetDefault *setDefault = [[SetDefault alloc] init];
     [sets addObject:setDefault];
+    SetEmotions *setEmotions = [[SetEmotions alloc] init];
+    [sets addObject:setEmotions];
+    SetAwards *setAwards = [[SetAwards alloc] init];
+    [sets addObject:setAwards];
     SetVersus *setVersus = [[SetVersus alloc] init];
     [sets addObject:setVersus];
     

@@ -15,6 +15,7 @@
 #import "LogoNameLeft.h"
 #import "LocationSimple.h"
 #import "SkinLogoCountryBadge.h"
+#import "SkinBasic_OneAtFinish.h"
 
 @interface SetDefault : SkinSetBase
 

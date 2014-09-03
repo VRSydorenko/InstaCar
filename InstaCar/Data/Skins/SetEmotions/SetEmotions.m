@@ -1,19 +1,19 @@
 //
-//  SetVersus.m
+//  SetEmotions.m
 //  InstaCar
 //
 //  Created by VRS on 8/30/13.
 //  Copyright (c) 2013 Viktor Sydorenko. All rights reserved.
 //
 
-#import "SetVersus.h"
+#import "SetEmotions.h"
 
-@implementation SetVersus
+@implementation SetEmotions
 
 #pragma mark SkinSetProtocol
 
 -(void)loadSkins{
-    NSArray *bundle = [[NSBundle mainBundle] loadNibNamed:@"SetVersus" owner:self options:nil];
+    NSArray *bundle = [[NSBundle mainBundle] loadNibNamed:@"SetEmotions" owner:self options:nil];
     NSMutableArray *skinsArray = [[NSMutableArray alloc] initWithCapacity:bundle.count];
     DLog(@"SetVersus Bundle objects: %lu",(unsigned long)bundle.count);
     
@@ -25,12 +25,12 @@
     // init with data
     for (id object in bundle) {
         SkinViewBase *skin = nil;
-        if ([object isKindOfClass:[SkinVersusName class]]){
-            skin = (SkinVersusName*)object;
-        } else if ([object isKindOfClass:[SkinVersusLogo class]]){
-            skin = (SkinVersusLogo*)object;
-        } else if ([object isKindOfClass:[SkinVersus_TwoAtFinish class]]){
-            skin = (SkinVersus_TwoAtFinish*)object;
+        if ([object isKindOfClass:[SkinEmo_IHeartLogo class]]){
+            skin = (SkinEmo_IHeartLogo*)object;
+        } else if ([object isKindOfClass:[SkinEmo_IHeartName class]]){
+            skin = (SkinEmo_IHeartName*)object;
+        } else if ([object isKindOfClass:[SkinEmo_MyDream class]]){
+            skin = (SkinEmo_MyDream*)object;
         }
         
         NSAssert(skin, @"Undefined skin!");
@@ -45,11 +45,7 @@
 }
 
 -(NSString*)getTitle{
-    return @"Versus";
-}
-
--(BOOL)supportsSecondCar{
-    return YES;
+    return @"Emotions";
 }
 
 @end

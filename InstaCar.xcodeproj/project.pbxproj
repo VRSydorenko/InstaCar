@@ -175,6 +175,18 @@
 		8415F44819587F2500708437 /* SkinElementLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8415F44719587F2500708437 /* SkinElementLabel.m */; };
 		841C5EF4195483FF00AD025D /* SkinElementImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 841C5EF3195483FF00AD025D /* SkinElementImage.m */; };
 		8453B3EB19B74BA600FDEF5E /* db.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 8453B3EA19B74BA600FDEF5E /* db.sqlite */; };
+		8474A7B319B7526B009ADB4E /* SkinEmo_IHeartName.m in Sources */ = {isa = PBXBuildFile; fileRef = 8474A7B219B7526B009ADB4E /* SkinEmo_IHeartName.m */; };
+		8474A7B819B75577009ADB4E /* SetAwards.m in Sources */ = {isa = PBXBuildFile; fileRef = 8474A7B619B75577009ADB4E /* SetAwards.m */; };
+		8474A7B919B75577009ADB4E /* SetAwards.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8474A7B719B75577009ADB4E /* SetAwards.xib */; };
+		8474A7BC19B756E5009ADB4E /* SkinAwd_BestChoise.m in Sources */ = {isa = PBXBuildFile; fileRef = 8474A7BB19B756E5009ADB4E /* SkinAwd_BestChoise.m */; };
+		8474A7BF19B756F4009ADB4E /* SkinAwd_BestLuxury.m in Sources */ = {isa = PBXBuildFile; fileRef = 8474A7BE19B756F4009ADB4E /* SkinAwd_BestLuxury.m */; };
+		8474A7C219B75D0D009ADB4E /* SkinAwd_BestTravel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8474A7C119B75D0D009ADB4E /* SkinAwd_BestTravel.m */; };
+		8474A7C519B7601D009ADB4E /* SkinEmo_MyDream.m in Sources */ = {isa = PBXBuildFile; fileRef = 8474A7C319B7601D009ADB4E /* SkinEmo_MyDream.m */; };
+		8474A7C819B76155009ADB4E /* SkinBasic_OneAtFinish.m in Sources */ = {isa = PBXBuildFile; fileRef = 8474A7C719B76155009ADB4E /* SkinBasic_OneAtFinish.m */; };
+		8474A7CB19B76327009ADB4E /* SkinVersus_TwoAtFinish.m in Sources */ = {isa = PBXBuildFile; fileRef = 8474A7CA19B76327009ADB4E /* SkinVersus_TwoAtFinish.m */; };
+		84D344CE19B74E3B00C7A02E /* SetEmotions.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D344CD19B74E3B00C7A02E /* SetEmotions.m */; };
+		84D344D019B74F4900C7A02E /* SetEmotions.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84D344CF19B74F4900C7A02E /* SetEmotions.xib */; };
+		84D344D319B74FC000C7A02E /* SkinEmo_IHeartLogo.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D344D219B74FC000C7A02E /* SkinEmo_IHeartLogo.m */; };
 		84EC58E11954519A00E8C421 /* SkinElementRect.m in Sources */ = {isa = PBXBuildFile; fileRef = 84EC58E01954519A00E8C421 /* SkinElementRect.m */; };
 /* End PBXBuildFile section */
 
@@ -457,6 +469,28 @@
 		841C5EF2195483FF00AD025D /* SkinElementImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SkinElementImage.h; path = InstaCar/Core/DrawingElements/SkinElementImage.h; sourceTree = "<group>"; };
 		841C5EF3195483FF00AD025D /* SkinElementImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SkinElementImage.m; path = InstaCar/Core/DrawingElements/SkinElementImage.m; sourceTree = "<group>"; };
 		8453B3EA19B74BA600FDEF5E /* db.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = db.sqlite; sourceTree = "<group>"; };
+		8474A7B119B7526B009ADB4E /* SkinEmo_IHeartName.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SkinEmo_IHeartName.h; path = SetEmotions/SkinEmo_IHeartName.h; sourceTree = "<group>"; };
+		8474A7B219B7526B009ADB4E /* SkinEmo_IHeartName.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SkinEmo_IHeartName.m; path = SetEmotions/SkinEmo_IHeartName.m; sourceTree = "<group>"; };
+		8474A7B519B75577009ADB4E /* SetAwards.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetAwards.h; sourceTree = "<group>"; };
+		8474A7B619B75577009ADB4E /* SetAwards.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetAwards.m; sourceTree = "<group>"; };
+		8474A7B719B75577009ADB4E /* SetAwards.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SetAwards.xib; sourceTree = "<group>"; };
+		8474A7BA19B756E5009ADB4E /* SkinAwd_BestChoise.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkinAwd_BestChoise.h; sourceTree = "<group>"; };
+		8474A7BB19B756E5009ADB4E /* SkinAwd_BestChoise.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SkinAwd_BestChoise.m; sourceTree = "<group>"; };
+		8474A7BD19B756F4009ADB4E /* SkinAwd_BestLuxury.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkinAwd_BestLuxury.h; sourceTree = "<group>"; };
+		8474A7BE19B756F4009ADB4E /* SkinAwd_BestLuxury.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SkinAwd_BestLuxury.m; sourceTree = "<group>"; };
+		8474A7C019B75D0D009ADB4E /* SkinAwd_BestTravel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkinAwd_BestTravel.h; sourceTree = "<group>"; };
+		8474A7C119B75D0D009ADB4E /* SkinAwd_BestTravel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SkinAwd_BestTravel.m; sourceTree = "<group>"; };
+		8474A7C319B7601D009ADB4E /* SkinEmo_MyDream.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SkinEmo_MyDream.m; path = SetEmotions/SkinEmo_MyDream.m; sourceTree = "<group>"; };
+		8474A7C419B7601D009ADB4E /* SkinEmo_MyDream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SkinEmo_MyDream.h; path = SetEmotions/SkinEmo_MyDream.h; sourceTree = "<group>"; };
+		8474A7C619B76155009ADB4E /* SkinBasic_OneAtFinish.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkinBasic_OneAtFinish.h; sourceTree = "<group>"; };
+		8474A7C719B76155009ADB4E /* SkinBasic_OneAtFinish.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SkinBasic_OneAtFinish.m; sourceTree = "<group>"; };
+		8474A7C919B76327009ADB4E /* SkinVersus_TwoAtFinish.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SkinVersus_TwoAtFinish.h; path = SetVersus/SkinVersus_TwoAtFinish.h; sourceTree = "<group>"; };
+		8474A7CA19B76327009ADB4E /* SkinVersus_TwoAtFinish.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SkinVersus_TwoAtFinish.m; path = SetVersus/SkinVersus_TwoAtFinish.m; sourceTree = "<group>"; };
+		84D344CC19B74E3B00C7A02E /* SetEmotions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SetEmotions.h; path = SetEmotions/SetEmotions.h; sourceTree = "<group>"; };
+		84D344CD19B74E3B00C7A02E /* SetEmotions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SetEmotions.m; path = SetEmotions/SetEmotions.m; sourceTree = "<group>"; };
+		84D344CF19B74F4900C7A02E /* SetEmotions.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SetEmotions.xib; path = SetEmotions/SetEmotions.xib; sourceTree = "<group>"; };
+		84D344D119B74FC000C7A02E /* SkinEmo_IHeartLogo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SkinEmo_IHeartLogo.h; path = SetEmotions/SkinEmo_IHeartLogo.h; sourceTree = "<group>"; };
+		84D344D219B74FC000C7A02E /* SkinEmo_IHeartLogo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SkinEmo_IHeartLogo.m; path = SetEmotions/SkinEmo_IHeartLogo.m; sourceTree = "<group>"; };
 		84EC58DE195450A200E8C421 /* DrawingElementProtocolBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DrawingElementProtocolBase.h; path = InstaCar/Core/DrawingElements/DrawingElementProtocolBase.h; sourceTree = "<group>"; };
 		84EC58DF1954519A00E8C421 /* SkinElementRect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SkinElementRect.h; path = InstaCar/Core/DrawingElements/SkinElementRect.h; sourceTree = "<group>"; };
 		84EC58E01954519A00E8C421 /* SkinElementRect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SkinElementRect.m; path = InstaCar/Core/DrawingElements/SkinElementRect.m; sourceTree = "<group>"; };
@@ -949,7 +983,9 @@
 				7F882C281832ECC60083CFC9 /* SkinSetBase.m */,
 				7F4CB68C18097908008B5CA2 /* SkinViewBase.h */,
 				7F4CB68D18097908008B5CA2 /* SkinViewBase.m */,
+				8474A7B419B75577009ADB4E /* SetAwards */,
 				7F4CB67E18097908008B5CA2 /* SetDefault */,
+				84D344CB19B74DCB00C7A02E /* SetEmotions */,
 				7F882C161832EB420083CFC9 /* SetVersus */,
 			);
 			name = Skins;
@@ -974,6 +1010,8 @@
 				7F4CB68B18097908008B5CA2 /* SkinSimple2.m */,
 				7F4FE8901826FF0B00045ABD /* SkinLogoCountryBadge.h */,
 				7F4FE8911826FF0B00045ABD /* SkinLogoCountryBadge.m */,
+				8474A7C619B76155009ADB4E /* SkinBasic_OneAtFinish.h */,
+				8474A7C719B76155009ADB4E /* SkinBasic_OneAtFinish.m */,
 			);
 			path = SetDefault;
 			sourceTree = "<group>";
@@ -1022,6 +1060,8 @@
 				7F882C231832EBE50083CFC9 /* SkinVersusName.m */,
 				7F9656D71866F463000325B9 /* SkinVersusLogo.h */,
 				7F9656D81866F463000325B9 /* SkinVersusLogo.m */,
+				8474A7C919B76327009ADB4E /* SkinVersus_TwoAtFinish.h */,
+				8474A7CA19B76327009ADB4E /* SkinVersus_TwoAtFinish.m */,
 			);
 			name = SetVersus;
 			sourceTree = "<group>";
@@ -1041,6 +1081,38 @@
 				7FC4137417C7E8450025DD2C /* FSVenue.m */,
 			);
 			path = Foursquare;
+			sourceTree = "<group>";
+		};
+		8474A7B419B75577009ADB4E /* SetAwards */ = {
+			isa = PBXGroup;
+			children = (
+				8474A7B519B75577009ADB4E /* SetAwards.h */,
+				8474A7B619B75577009ADB4E /* SetAwards.m */,
+				8474A7B719B75577009ADB4E /* SetAwards.xib */,
+				8474A7BA19B756E5009ADB4E /* SkinAwd_BestChoise.h */,
+				8474A7BB19B756E5009ADB4E /* SkinAwd_BestChoise.m */,
+				8474A7BD19B756F4009ADB4E /* SkinAwd_BestLuxury.h */,
+				8474A7BE19B756F4009ADB4E /* SkinAwd_BestLuxury.m */,
+				8474A7C019B75D0D009ADB4E /* SkinAwd_BestTravel.h */,
+				8474A7C119B75D0D009ADB4E /* SkinAwd_BestTravel.m */,
+			);
+			path = SetAwards;
+			sourceTree = "<group>";
+		};
+		84D344CB19B74DCB00C7A02E /* SetEmotions */ = {
+			isa = PBXGroup;
+			children = (
+				84D344CC19B74E3B00C7A02E /* SetEmotions.h */,
+				84D344CD19B74E3B00C7A02E /* SetEmotions.m */,
+				84D344CF19B74F4900C7A02E /* SetEmotions.xib */,
+				84D344D119B74FC000C7A02E /* SkinEmo_IHeartLogo.h */,
+				84D344D219B74FC000C7A02E /* SkinEmo_IHeartLogo.m */,
+				8474A7B119B7526B009ADB4E /* SkinEmo_IHeartName.h */,
+				8474A7B219B7526B009ADB4E /* SkinEmo_IHeartName.m */,
+				8474A7C419B7601D009ADB4E /* SkinEmo_MyDream.h */,
+				8474A7C319B7601D009ADB4E /* SkinEmo_MyDream.m */,
+			);
+			name = SetEmotions;
 			sourceTree = "<group>";
 		};
 		84EC58DD1954506D00E8C421 /* DrawingElements */ = {
@@ -1158,6 +1230,7 @@
 				7F2AD59A17EDE9B40096EC8D /* DETweetPaperClip.png in Resources */,
 				7F3424E019B50939009DACBB /* logo_bugatti_256.png in Resources */,
 				7F2AD59D17EDE9B40096EC8D /* DETweetURLAttachment@2x.png in Resources */,
+				8474A7B919B75577009ADB4E /* SetAwards.xib in Resources */,
 				7F4F684917F6FDF500F1017B /* ImageEditor.xib in Resources */,
 				7F34250919B50939009DACBB /* logo_zaz_256.png in Resources */,
 				7F2AD48117EDE9390096EC8D /* SHKCustomSharers.plist in Resources */,
@@ -1215,6 +1288,7 @@
 				7F34250319B50939009DACBB /* logo_rr_256.png in Resources */,
 				7F3424ED19B50939009DACBB /* logo_honda_256.png in Resources */,
 				7F3424E419B50939009DACBB /* logo_citroen_256.png in Resources */,
+				84D344D019B74F4900C7A02E /* SetEmotions.xib in Resources */,
 				7F34250819B50939009DACBB /* logo_vw_256.png in Resources */,
 				7F3424EC19B50939009DACBB /* logo_gmc_256.png in Resources */,
 				7F3424E719B50939009DACBB /* logo_delorean_256.png in Resources */,
@@ -1238,8 +1312,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8474A7C819B76155009ADB4E /* SkinBasic_OneAtFinish.m in Sources */,
 				7F882C241832EBE50083CFC9 /* SetVersus.m in Sources */,
+				8474A7BF19B756F4009ADB4E /* SkinAwd_BestLuxury.m in Sources */,
 				7F3871D617BE4CA900D8E39D /* MainNavController.m in Sources */,
+				8474A7C219B75D0D009ADB4E /* SkinAwd_BestTravel.m in Sources */,
 				84EC58E11954519A00E8C421 /* SkinElementRect.m in Sources */,
 				7F3871DE17BE4F1000D8E39D /* DDMenuController.m in Sources */,
 				7F4CB68E18097908008B5CA2 /* LocationSimple.m in Sources */,
@@ -1250,12 +1327,14 @@
 				7F4CB69318097908008B5CA2 /* SkinSimple.m in Sources */,
 				8415F44819587F2500708437 /* SkinElementLabel.m in Sources */,
 				7F3871E117BE5A4F00D8E39D /* AppMenuTableVC.m in Sources */,
+				8474A7B319B7526B009ADB4E /* SkinEmo_IHeartName.m in Sources */,
 				7FF3389317D4C0E700B046C4 /* SkinsVC.m in Sources */,
 				7F4CB679180978CF008B5CA2 /* SkinProvider.m in Sources */,
 				7F7FF47017CF8634000E0ABD /* Location.m in Sources */,
 				7F419E2D17D6698000255E56 /* CellAuto.m in Sources */,
 				7F4F684317F6F97600F1017B /* HFImageEditorFrameView.m in Sources */,
 				7F4F684417F6F97600F1017B /* HFImageEditorViewController.m in Sources */,
+				8474A7C519B7601D009ADB4E /* SkinEmo_MyDream.m in Sources */,
 				7F2AD5A417EDE9B40096EC8D /* SHKPrint.m in Sources */,
 				7F544A3918085378001FFEC3 /* ALAssetsLibrary+CustomPhotoAlbum.m in Sources */,
 				7F2AD5D517EDE9B40096EC8D /* SHKFormFieldOptionPickerSettings.m in Sources */,
@@ -1280,8 +1359,10 @@
 				7F2AD5C417EDE9B40096EC8D /* SHKiOSTwitter.m in Sources */,
 				7F59AC5D17D3BA4700B87457 /* AutoModel.m in Sources */,
 				7FC4137917C7E8450025DD2C /* FSVenue.m in Sources */,
+				8474A7B819B75577009ADB4E /* SetAwards.m in Sources */,
 				7F2AD57B17EDE9B40096EC8D /* SHKSharer.m in Sources */,
 				7F4F684817F6FDF500F1017B /* ImageEditor.m in Sources */,
+				84D344D319B74FC000C7A02E /* SkinEmo_IHeartLogo.m in Sources */,
 				7F5AC64D17CC06CE00C01658 /* Auto.m in Sources */,
 				7F4CB67A180978CF008B5CA2 /* UserSettings.m in Sources */,
 				7F882C291832ECC60083CFC9 /* SkinSetBase.m in Sources */,
@@ -1312,7 +1393,9 @@
 				7F2AD5D917EDE9B40096EC8D /* SHKShareMenu.m in Sources */,
 				7F2AD5CF17EDE9B40096EC8D /* SHKFormFieldCell.m in Sources */,
 				7F2AD57E17EDE9B40096EC8D /* NSArray+JoinValues.m in Sources */,
+				84D344CE19B74E3B00C7A02E /* SetEmotions.m in Sources */,
 				7F2AD59317EDE9B40096EC8D /* SHKFile.m in Sources */,
+				8474A7CB19B76327009ADB4E /* SkinVersus_TwoAtFinish.m in Sources */,
 				7FC4137717C7E8450025DD2C /* FSRequester.m in Sources */,
 				7F2AD5D217EDE9B40096EC8D /* SHKFormFieldCellText.m in Sources */,
 				7F2AD59617EDE9B40096EC8D /* SHK.m in Sources */,
@@ -1322,6 +1405,7 @@
 				7F2AD5A117EDE9B40096EC8D /* SHKMail.m in Sources */,
 				7F2AD5D717EDE9B40096EC8D /* SHKFormOptionController.m in Sources */,
 				7F2AD5CD17EDE9B40096EC8D /* SHKActivityIndicator.m in Sources */,
+				8474A7BC19B756E5009ADB4E /* SkinAwd_BestChoise.m in Sources */,
 				7F2AD59717EDE9B40096EC8D /* SHKItem.m in Sources */,
 				7F2AD5D117EDE9B40096EC8D /* SHKFormFieldCellSwitch.m in Sources */,
 				7FC4137517C7E8450025DD2C /* Foursquare2.m in Sources */,

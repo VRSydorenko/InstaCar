@@ -81,7 +81,7 @@ typedef enum {
 }
 
 -(void)viewDidAppear:(BOOL)animated{
-    CGPoint convertedPreviewPoint = [self.imagePreview convertPoint:self.imagePreview.frame.origin toView:nil];
+    CGPoint convertedPreviewPoint = [self.imagePreview.superview convertPoint:self.imagePreview.frame.origin toView:nil];
     self.captureManager.imageTopCropMargin = convertedPreviewPoint.y;
     
     self.constraintButtonsCoverViewHeight.constant = [self calcPageControlHeight];

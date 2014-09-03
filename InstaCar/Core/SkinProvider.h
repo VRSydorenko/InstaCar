@@ -10,6 +10,8 @@
 #import "UserSettings.h"
 #import "SetDefault.h"
 #import "SetVersus.h"
+#import "SetEmotions.h"
+#import "SetAwards.h"
 #import "FSVenue.h"
 
 typedef NSObject<SkinSetProtocol> SkinSet;

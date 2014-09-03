@@ -1,5 +1,5 @@
 //
-//  SkinDefault.m
+//  SetDefault.m
 //  InstaCar
 //
 //  Created by VRS on 8/30/13.
@@ -37,6 +37,8 @@
             skin = (LocationSimple*)object;
         } else if ([object isKindOfClass:[SkinLogoCountryBadge class]]){
             skin = (SkinLogoCountryBadge*)object;
+        } else if ([object isKindOfClass:[SkinBasic_OneAtFinish class]]){
+            skin = (SkinBasic_OneAtFinish*)object;
         }
         
         NSAssert(skin, @"Undefined skin!");

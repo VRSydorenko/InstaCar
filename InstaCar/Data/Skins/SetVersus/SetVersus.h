@@ -1,5 +1,5 @@
 //
-//  SkinDefault.h
+//  SetVersus.h
 //  InstaCar
 //
 //  Created by VRS on 8/30/13.
@@ -11,6 +11,7 @@
 
 #import "SkinVersusName.h"
 #import "SkinVersusLogo.h"
+#import "SkinVersus_TwoAtFinish.h"
 
 @interface SetVersus : SkinSetBase
 @end
