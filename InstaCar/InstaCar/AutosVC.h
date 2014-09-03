@@ -10,7 +10,8 @@
 #import "DataManager.h"
 #import "CellAuto.h"
 #import "CustomCarFormVC.h"
-#include "iCloudHandler.h"
+#import "iCloudHandler.h"
+#import "SkinElementImage.h"
 
 @protocol AutoSelectorDelegate <NSObject>
 -(void)newAutoSelected:(Auto*)newAuto;

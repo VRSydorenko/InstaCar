@@ -137,7 +137,7 @@ typedef enum { // Do not change the numbers!
 -(void)restoreCustomAutosFromSnapshot:(NSDictionary*)snapshot{
     for (NSString *keyStr in snapshot.allKeys) {
         AutoModel *model = [snapshot valueForKey:keyStr];
-        [self addCustomAutoModel:model.name ofAuto:keyStr.intValue logo:model.logo startYear:model.startYear endYear:model.endYear];
+        [self addCustomAutoModel:model.name ofAuto:keyStr.intValue logo:model.logoName startYear:model.startYear endYear:model.endYear];
     }
 }
 
@@ -326,7 +326,7 @@ typedef enum { // Do not change the numbers!
             NSString *logoField = [[NSString alloc] initWithUTF8String:(const char *) sqlite3_column_text(statement, 1)];
             
             AutoSubmodel *submodel = [[AutoSubmodel alloc] initWithName:nameField];
-            submodel.logo = logoField;
+            submodel.logoName = logoField;
             submodel.startYear = sqlite3_column_int(statement, 2);
             submodel.endYear = sqlite3_column_int(statement, 3);
             
@@ -413,7 +413,7 @@ typedef enum { // Do not change the numbers!
             NSString *logoField = [[NSString alloc] initWithUTF8String:(const char *) sqlite3_column_text(statement, 2)];
             
             AutoModel *model = [[AutoModel alloc] initWithId:modelId andName:nameField];
-            model.logo = logoField;
+            model.logoName = logoField;
             model.startYear = sqlite3_column_int(statement, 3);
             model.endYear = sqlite3_column_int(statement, 4);
             model.isSelectable = sqlite3_column_int(statement, 5);

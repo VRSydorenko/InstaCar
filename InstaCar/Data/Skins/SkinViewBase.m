@@ -203,7 +203,7 @@
                 UIView<DrawElemImageProtocol> *elemImg = (UIView<DrawElemImageProtocol> *)control;
                 
                 // adjust the rect based on the content mode
-                UIImage *toDraw = [elemImg elemImage];
+                UIImage *toDraw = [elemImg elemImage256];
                 
                 switch (elemImg.contentMode) {
                     case UIViewContentModeScaleAspectFit:{

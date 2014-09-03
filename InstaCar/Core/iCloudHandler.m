@@ -40,7 +40,7 @@
                 [modelsString appendString:MODEL_SEPARATOR];
             }
             [modelsString appendFormat:@"%@%@", model.name, MODEL_PARTS_SEPARATOR];
-            [modelsString appendFormat:@"%@%@", model.logo, MODEL_PARTS_SEPARATOR];
+            [modelsString appendFormat:@"%@%@", model.logoName, MODEL_PARTS_SEPARATOR];
             [modelsString appendFormat:@"%d%@", model.startYear, MODEL_PARTS_SEPARATOR];
             [modelsString appendFormat:@"%d", model.endYear];
         }

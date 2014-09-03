@@ -70,7 +70,7 @@ typedef enum {
     customCarForm = nil;
     
     if (model){
-        if ([DataManager addCustomAutoModel:model.name ofAuto:autoId logo:model.logo startYear:model.startYear endYear:model.endYear]){
+        if ([DataManager addCustomAutoModel:model.name ofAuto:autoId logo:model.logoName startYear:model.startYear endYear:model.endYear]){
             [self updateTableSourceDataWithNewContentType:currentContentType];
             [self.tableAutos reloadData];
             [self scrollTableToBottom];
@@ -148,7 +148,7 @@ typedef enum {
         case CONTENT_AUTOS:{
             Auto *_auto = [data objectAtIndex:indexPath.row];
             cell.autoTitleLabel.text = _auto.name;
-            cell.autoLogo.image = [UIImage imageNamed:_auto.logo];
+            cell.autoLogo.image = _auto.logo128;
             cell.sublevelPickerDelegate = self;
             
             NSInteger modelsCount = [DataManager getModelsCountForAuto:_auto._id];
@@ -160,7 +160,7 @@ typedef enum {
                 AutoModel *model = [data objectAtIndex:indexPath.row];
                 cell.autoTitleLabel.text = model.name;
                 cell.autoYearsLabel.text = [Utils getAutoYearsString:model.startYear endYear:model.endYear];
-                cell.autoLogo.image = [UIImage imageNamed:model.logo];
+                cell.autoLogo.image = model.logo128;
                 cell.sublevelPickerDelegate = self;
                 
                 NSInteger submodelsCount = [DataManager getSubmodelsCountOfModel:model.modelId];
@@ -172,7 +172,7 @@ typedef enum {
                 AutoModel *model = [userDefinedData objectAtIndex:indexPath.row];
                 cell.autoTitleLabel.text = model.name;
                 cell.autoYearsLabel.text = [Utils getAutoYearsString:model.startYear endYear:model.endYear];
-                cell.autoLogo.image = [UIImage imageNamed:model.logo];
+                cell.autoLogo.image = model.logo128;
                 cell.autoModelsButton.hidden = YES;
             }
             break;
@@ -181,7 +181,7 @@ typedef enum {
             AutoSubmodel *submodel = [data objectAtIndex:indexPath.row];
             cell.autoTitleLabel.text = submodel.name;
             cell.autoYearsLabel.text = [Utils getAutoYearsString:submodel.startYear endYear:submodel.endYear];
-            cell.autoLogo.image = [UIImage imageNamed:submodel.logo];
+            cell.autoLogo.image = submodel.logo128;
             cell.autoModelsButton.hidden = YES;
             break;
         }
@@ -313,7 +313,7 @@ typedef enum {
             customCarForm.customCarDelegate = self;
         }
         customCarForm.autoId = selectedAuto._id;
-        customCarForm.logoFilename = selectedAuto.logo;
+        customCarForm.logoFilename = selectedAuto.logoName;
         customCarForm.autoName = selectedAuto.name;
     
         [self presentViewController:customCarForm animated:YES completion:nil];

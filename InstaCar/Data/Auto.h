@@ -13,7 +13,9 @@
 
 @property (readonly, nonatomic) int _id;
 @property (readonly, nonatomic) NSString *name;
-@property (readonly, nonatomic) NSString *logo;
+@property (readonly, nonatomic) NSString *logoName;
+@property (readonly, nonatomic) UIImage *logo128;
+@property (readonly, nonatomic) UIImage *logo256;
 @property (readonly, nonatomic) BOOL logoAsName;
 @property (readonly, nonatomic) NSString *country;
 @property (nonatomic) AutoModel *model;

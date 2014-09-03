@@ -28,7 +28,7 @@
                                                  name:UIKeyboardWillHideNotification
                                                object:nil];
     
-    self.imgLogo.image = [UIImage imageNamed:self.logoFilename];
+    self.imgLogo.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@_256.png", self.logoFilename]];
     self.barItemDone.enabled = NO;
     self.barItemText.title = [NSString stringWithFormat:@"New %@", self.autoName];
     
@@ -93,7 +93,7 @@
     }
     
     AutoModel *toAdd = [[AutoModel alloc] initWithId:-1 andName:[Utils trimWhitespaces:self.textModel.text]];
-    toAdd.logo = self.logoFilename;
+    toAdd.logoName = self.logoFilename;
     toAdd.startYear = startYear;
     toAdd.endYear = endYear;
     

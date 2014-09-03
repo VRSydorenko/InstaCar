@@ -31,7 +31,8 @@
 
 -(void)fieldAuto1DidUpdate{
     self.imgEmblem.contentMode = UIViewContentModeScaleAspectFit;
-    self.imgEmblem.image = [UIImage imageNamed:fieldAuto1.logo];
+    [self.imgEmblem setImageLogoName:fieldAuto1.logoName];
+    self.imgEmblem.image = fieldAuto1.logo128;
     self.constraintLogoWidth.constant = self.imgEmblem.bounds.size.height * fieldAuto1.logoWidthHeightRate;
 }
 @end

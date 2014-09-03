@@ -23,7 +23,9 @@ typedef enum {
 @end
 
 @protocol DrawElemImageProtocol <DrawElemBaseProtocol>
--(UIImage*)elemImage;
+-(void)setImageLogoName:(NSString*)logoName;
+-(UIImage*)elemImage128;
+-(UIImage*)elemImage256;
 @end
 
 @protocol DrawElemTextProtocol <DrawElemBaseProtocol>

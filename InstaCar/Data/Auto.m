@@ -15,7 +15,7 @@
     if (self){
         __id = _id;
         _name = name;
-        _logo = logo;
+        _logoName = logo;
         _country = country;
         _model = nil;
         _logoAsName = logoAsName;
@@ -42,16 +42,29 @@
     return self.name;
 }
 
+-(UIImage*)logo128{
+    NSString *logoFileName = [NSString stringWithFormat:@"%@_128.png", self.logoName];
+    return [UIImage imageNamed:logoFileName];
+}
+
+-(UIImage*)logo256{
+    NSString *logoFileName = [NSString stringWithFormat:@"%@_256.png", self.logoName];
+    return [UIImage imageNamed:logoFileName];
+}
+
 -(CGFloat)logoWidthHeightRate{
-    NSString *logoName = self.logo;
+    UIImage *logoImage = nil;
     if (self.model){
         if (self.model.submodel){
-            logoName = self.model.submodel.logo;
+            logoImage = self.model.submodel.logo128;
         } else {
-            logoName = self.model.logo;
+            logoImage = self.model.logo128;
         }
     }
-    UIImage *logoImage = [UIImage imageNamed:logoName];
+    
+    if (nil == logoImage){
+        logoImage = self.logo128;
+    }
     
     return MIN(logoImage.size.width / logoImage.size.height, 1.5);
 }

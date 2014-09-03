@@ -15,7 +15,7 @@
     if (self){
         self.modelId = modelId;
         self.name = name;
-        self.logo = @"";
+        self.logoName = @"";
         self.startYear = 0;
         self.endYear = 0;
         self.submodel = nil;

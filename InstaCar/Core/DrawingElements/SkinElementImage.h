@@ -9,6 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "DrawingElementProtocolBase.h"
 
-@interface SkinElementImage : UIImageView <DrawElemImageProtocol>
+@interface SkinElementImage : UIImageView <DrawElemImageProtocol>{
+@private
+    NSString *logoName;
+}
 
 @end

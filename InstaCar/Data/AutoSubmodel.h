@@ -11,7 +11,9 @@
 @interface AutoSubmodel : NSObject
 
 @property (nonatomic) NSString *name;
-@property (nonatomic) NSString *logo;
+@property (nonatomic) NSString *logoName;
+@property (readonly, nonatomic) UIImage *logo128;
+@property (readonly, nonatomic) UIImage *logo256;
 @property (nonatomic) int startYear;
 @property (nonatomic) int endYear;
 

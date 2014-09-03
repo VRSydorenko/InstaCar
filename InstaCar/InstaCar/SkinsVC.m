@@ -96,7 +96,7 @@
     
     if (_auto){
         cell.autoTitleLabel.text = _auto.name;
-        cell.autoLogo.image = [UIImage imageNamed:_auto.logo];
+        cell.autoLogo.image = _auto.logo128;
     } else {
         cell.autoTitleLabel.text = @"Select auto";
         cell.autoLogo.image = nil;

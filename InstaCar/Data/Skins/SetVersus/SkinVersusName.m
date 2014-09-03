@@ -10,10 +10,10 @@
 
 @interface SkinVersusName()
 
-@property (weak, nonatomic) IBOutlet UIImageView *imgEmblem1;
-@property (weak, nonatomic) IBOutlet UIImageView *imgEmblem2;
-@property (weak, nonatomic) IBOutlet UILabel *textAuto1;
-@property (weak, nonatomic) IBOutlet UILabel *textAuto2;
+@property (weak, nonatomic) IBOutlet SkinElementImage *imgEmblem1;
+@property (weak, nonatomic) IBOutlet SkinElementImage *imgEmblem2;
+@property (weak, nonatomic) IBOutlet SkinElementLabel *textAuto1;
+@property (weak, nonatomic) IBOutlet SkinElementLabel *textAuto2;
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *constraintTopMargin;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *constraintHeight;
@@ -44,13 +44,15 @@
 
 -(void)fieldAuto1DidUpdate{
     self.imgEmblem1.contentMode = UIViewContentModeScaleAspectFit;
-    self.imgEmblem1.image = [UIImage imageNamed:fieldAuto1.logo];
+    [self.imgEmblem1 setImageLogoName:fieldAuto1.logoName];
+    self.imgEmblem1.image = fieldAuto1.logo128;
     self.textAuto1.text = fieldAuto1.name;
 }
 
 -(void)fieldAuto2DidUpdate{
     self.imgEmblem2.contentMode = UIViewContentModeScaleAspectFit;
-    self.imgEmblem2.image = [UIImage imageNamed:fieldAuto2.logo];
+    [self.imgEmblem2 setImageLogoName:fieldAuto1.logoName];
+    self.imgEmblem2.image = fieldAuto2.logo128;
     self.textAuto2.text = fieldAuto2.name;
 }
 

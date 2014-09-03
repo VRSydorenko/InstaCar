@@ -14,7 +14,7 @@
     self = [super init];
     if (self){
         self.name = name;
-        self.logo = @"";
+        self.logoName = @"";
         self.startYear = 0;
         self.endYear = 0;
     }
