@@ -31,6 +31,7 @@ typedef enum {
 @protocol DrawElemTextProtocol <DrawElemBaseProtocol>
 -(UIFont*)elemFont;
 -(NSString*)elemString;
+-(NSTextAlignment)elemAlignment;
 @end
 
 @protocol DrawElemGradientProtocol <DrawElemBaseProtocol>

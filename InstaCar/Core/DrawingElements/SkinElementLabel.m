@@ -35,4 +35,8 @@
     return self.text;
 }
 
+-(NSTextAlignment)elemAlignment{
+    return self.textAlignment;
+}
+
 @end

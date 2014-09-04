@@ -246,6 +246,20 @@
                         rectToDrawIn.origin.y += MAX(0, (rectToDrawIn.size.height - currTextSize.height) * 0.5);
                         rectToDrawIn.size.height = currTextSize.height;
                         
+                        // calc horizontal text alignment
+                        switch (elemText.elemAlignment) {
+                            case NSTextAlignmentCenter:{
+                                rectToDrawIn.origin.x += MAX(0, (rectToDrawIn.size.width - currTextSize.width) * 0.5);
+                                break;
+                            }
+                            case NSTextAlignmentRight:{
+                                rectToDrawIn.origin.x += MAX(0, rectToDrawIn.size.width - currTextSize.width);
+                                break;
+                            }
+                            default: // = NSTextAlignmentLeft
+                                break;
+                        }
+                        
                         break;
                     }
                     
