@@ -48,7 +48,7 @@
 
 -(void)fieldAuto2DidUpdate{
     self.imgEmblem2.contentMode = UIViewContentModeScaleAspectFit;
-    [self.imgEmblem2 setImageLogoName:fieldAuto1.logoName];
+    [self.imgEmblem2 setImageLogoName:fieldAuto2.logoName];
     self.imgEmblem2.image = fieldAuto2.logo128;
 }
 
