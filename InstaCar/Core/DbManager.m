@@ -40,26 +40,67 @@ typedef enum { // Do not change the numbers!
     NSString *docsDir = [dirPaths objectAtIndex:0];
     
     // Build the path to the database file
-    NSString *dbName = [DataManager isFullVersion] ? DATABASE_NAME_PRO : DATABASE_NAME_FREE;
-    NSString* databasePath = [[NSString alloc] initWithString: [docsDir stringByAppendingPathComponent: dbName]];
+    NSString *lastDbName = [NSString stringWithFormat:@"%@%@", [DataManager isFullVersion] ? DB_NAME_PRO : DB_NAME_FREE, DB_NAME_LAST_VER];
+    NSString *currDbName = [NSString stringWithFormat:@"%@%@", [DataManager isFullVersion] ? DB_NAME_PRO : DB_NAME_FREE, DB_NAME_CURR_VER];
     
-    if ([Utils appVersionDiffers]){
-        NSDictionary *customAutosSnapshot = [self getCustomAutosSnapshot];
+    NSString* lastDbPath = [[NSString alloc] initWithString: [docsDir stringByAppendingPathComponent: lastDbName]];
+    NSString* currDbPath = [[NSString alloc] initWithString: [docsDir stringByAppendingPathComponent: currDbName]];
+    
+    NSDictionary *customAutosSnapshot = [[NSDictionary alloc] init];
+    BOOL oldDbExists = [[NSFileManager defaultManager] fileExistsAtPath:lastDbPath];
+    if ([Utils appVersionDiffers] && YES == oldDbExists){
+        // open last db
+        const char *lastDbPathUTF = [lastDbPath UTF8String];
+        if (sqlite3_open(lastDbPathUTF, &instacarDb) == SQLITE_OK){
+            DLog(@"Old database opened!");
+        } else {
+            DLog(@"Failed to open old database");
+            DLog(@"Info:%s", sqlite3_errmsg(instacarDb));
+        }
         
-        [self overwriteDbAtPath:databasePath];
+        // read custom cars
+        customAutosSnapshot = [self getCustomAutosSnapshot];
+        DLog(@"%d custom cars read from the old database", customAutosSnapshot.count);
         
-        [self restoreCustomAutosFromSnapshot:customAutosSnapshot];
-        
-        [UserSettings setStoredAppVersion];
+        // close last
+        if (sqlite3_close(instacarDb) == SQLITE_OK){
+            DLog(@"Old database closed!");
+        } else {
+            DLog(@"Failed to close old database");
+            DLog(@"Info:%s", sqlite3_errmsg(instacarDb));
+        }
+    }
+    
+    // copy new database from resources to user Documents
+    if (NO == [[NSFileManager defaultManager] fileExistsAtPath:currDbPath]){
+        [self overwriteDbAtPath:currDbPath];
     }
 
-    const char *dbpath = [databasePath UTF8String];
+    // finally open current db
+    const char *dbpath = [currDbPath UTF8String];
     if (sqlite3_open(dbpath, &instacarDb) == SQLITE_OK)
     {
-        DLog(@"Database opened!");
+        DLog(@"Current database opened!");
     } else {
-        DLog(@"Failed to open/create database");
+        DLog(@"Failed to open/create current database");
         DLog(@"Info:%s", sqlite3_errmsg(instacarDb));
+    }
+    
+    // insert custom cars in new
+    [self restoreCustomAutosFromSnapshot:customAutosSnapshot];
+    
+    // update app version
+    [UserSettings setStoredAppVersion];
+    
+    // delete the old database
+    if (YES == oldDbExists){
+        NSError *error = nil;
+        [[NSFileManager defaultManager] removeItemAtPath:lastDbPath error:&error];
+        if (error){
+            DLog(@"Error deleting old db file: %@", error.localizedDescription);
+        } else {
+            DLog(@"The old database deleted");
+        }
     }
 }
 
@@ -84,7 +125,7 @@ typedef enum { // Do not change the numbers!
     // Create the database if it doesn't exist in the file system
     if (!databaseAlreadyExists)
     {
-        NSString *databasePathFromApp = [[NSBundle mainBundle] pathForResource:DATABASE_NAME_RES ofType:@"sqlite"];
+        NSString *databasePathFromApp = [[NSBundle mainBundle] pathForResource:DB_NAME_RES ofType:@"sqlite"];
         [fileManager copyItemAtPath:databasePathFromApp toPath:databasePath error:nil];
         
         DLog(@"Database created");
@@ -136,8 +177,10 @@ typedef enum { // Do not change the numbers!
 
 -(void)restoreCustomAutosFromSnapshot:(NSDictionary*)snapshot{
     for (NSString *keyStr in snapshot.allKeys) {
-        AutoModel *model = [snapshot valueForKey:keyStr];
-        [self addCustomAutoModel:model.name ofAuto:keyStr.intValue logo:model.logoName startYear:model.startYear endYear:model.endYear];
+        NSArray *models = [snapshot valueForKey:keyStr];
+        for (AutoModel *model in models) {
+            [self addCustomAutoModel:model.name ofAuto:keyStr.intValue logo:model.logoName startYear:model.startYear endYear:model.endYear];
+        }
     }
 }
 
@@ -525,12 +568,12 @@ typedef enum { // Do not change the numbers!
 -(NSMutableDictionary*)getCustomAutosSnapshot{ // key: NSString auto id (uint); value: NSArray models
     NSArray *autosWithCustomModels = [self getAutoIdsWhereCustomModelsDefined];
     
-    NSMutableDictionary *customModels = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary *customModelsDict = [[NSMutableDictionary alloc] init];
     for (NSNumber *autoId in autosWithCustomModels) {
-        NSArray *customModels = [self getUserDefinedModelsOfAuto:autoId.unsignedIntValue];
-        [customModels setValue:customModels forKeyPath:autoId.stringValue];
+        NSArray *customModelsArray = [self getUserDefinedModelsOfAuto:autoId.unsignedIntValue];
+        [customModelsDict setValue:customModelsArray forKeyPath:autoId.stringValue];
     }
-    return  customModels;
+    return  customModelsDict;
 }
 
 @end

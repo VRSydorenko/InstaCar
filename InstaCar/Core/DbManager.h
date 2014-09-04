@@ -9,9 +9,11 @@
 #import <Foundation/Foundation.h>
 #import "Utils.h"
 
-#define DATABASE_NAME_FREE @"instacardb"
-#define DATABASE_NAME_PRO @"instacarprodb"
-#define DATABASE_NAME_RES @"db" // name of the attached db file 
+#define DB_NAME_RES @"db" // prefix of the attached db file
+#define DB_NAME_FREE @"instacardb"
+#define DB_NAME_PRO @"instacarprodb"
+#define DB_NAME_LAST_VER @"v1" // suffix of the db name used in last app version (previous version)
+#define DB_NAME_CURR_VER @"v1" // suffix of the new db name (current version)
 
 #define DBTYPE_TEXT @"text"
 #define DBTYPE_REAL @"real"
