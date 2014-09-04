@@ -250,8 +250,7 @@ typedef enum {
         
         picker.mailComposeDelegate = self;
         picker.Subject = @"What about new car?";
-        // TODO: change email address
-        picker.toRecipients = [NSArray arrayWithObject:@"viktor.sydorenko@gmail.com"];
+        picker.toRecipients = [NSArray arrayWithObject:@"theinstacarapp@facebook.com"];
         // format placeholders order: 1) auto title; 2) model name; 3) start year; 4) end year
         NSString *messageBodyFormat = @"Hi there,\n\nConsider adding the following car to the app cars list:\n\nAuto: %@\nModel: %@\nProduction years:\n    - start: %d\n    - end: %d\n\nThanks!";
         NSString *messageBody = [NSString stringWithFormat:messageBodyFormat, selectedAuto.name, addingModelBufferForEmail.name, addingModelBufferForEmail.startYear, addingModelBufferForEmail.endYear];
@@ -301,7 +300,7 @@ typedef enum {
 
 -(void)proceedWithAskingAboutAddingCarToDb{
     if ([MFMailComposeViewController canSendMail] && addingModelBufferForEmail){
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Question" message:@"Would you like us to add this car to the app cars database?" delegate:self cancelButtonTitle:@"No" otherButtonTitles:@"Yes", nil]; // TODO: rephrase
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Question" message:@"Would you like us to add this car to the application in the next release?" delegate:self cancelButtonTitle:@"No" otherButtonTitles:@"Yes", nil];
         [alert show];
     }
 }

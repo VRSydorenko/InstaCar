@@ -16,7 +16,7 @@
  */
 
 +(BOOL)isFullVersion{
-    return NO; // TODO: change before release
+    return NO;
 }
 
 +(NSString*) getStoredAppVersion{
@@ -64,7 +64,6 @@
 }
 
 +(BOOL)getSaveWhenSharing{
-    // TODO: rename Setting bundle
     NSObject *configuredValue = [[NSUserDefaults standardUserDefaults] objectForKey:PREF_SAVE_WHEN_SHARING];
     if (nil == configuredValue){
         return YES;

@@ -150,8 +150,7 @@
                 
                 picker.mailComposeDelegate = self;
                 picker.Subject = @"InstaCar feedback";
-                // TODO: change email address
-                picker.toRecipients = [NSArray arrayWithObject:@"viktor.sydorenko@gmail.com"];
+                picker.toRecipients = [NSArray arrayWithObject:@"theinstacarapp@facebook.com"];
                 NSString *messageBody = [object isKindOfClass:[NSString class]] ? (NSString*)object : @"";
                 [picker setMessageBody:messageBody isHTML:NO];
 
