@@ -203,7 +203,6 @@
 		7F4D53FB19B7C5E50083E2CB /* logo_volvo_128.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F4D53BF19B7C5E50083E2CB /* logo_volvo_128.png */; };
 		7F4D53FC19B7C5E50083E2CB /* logo_vw_128.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F4D53C019B7C5E50083E2CB /* logo_vw_128.png */; };
 		7F4D53FD19B7C5E50083E2CB /* logo_zaz_128.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F4D53C119B7C5E50083E2CB /* logo_zaz_128.png */; };
-		7F4D540119B7C8160083E2CB /* db.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 7F4D540019B7C8160083E2CB /* db.sqlite */; };
 		7F4ECC2D17C8062800BF1671 /* SideViewControllerBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F4ECC2C17C8062800BF1671 /* SideViewControllerBase.m */; };
 		7F4F684317F6F97600F1017B /* HFImageEditorFrameView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F4F683F17F6F97600F1017B /* HFImageEditorFrameView.m */; };
 		7F4F684417F6F97600F1017B /* HFImageEditorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F4F684217F6F97600F1017B /* HFImageEditorViewController.m */; };
@@ -236,6 +235,7 @@
 		7FF3389317D4C0E700B046C4 /* SkinsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FF3389217D4C0E700B046C4 /* SkinsVC.m */; };
 		8415F44819587F2500708437 /* SkinElementLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8415F44719587F2500708437 /* SkinElementLabel.m */; };
 		841C5EF4195483FF00AD025D /* SkinElementImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 841C5EF3195483FF00AD025D /* SkinElementImage.m */; };
+		842C765D19B8956B008E47A1 /* db.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 842C765C19B8956B008E47A1 /* db.sqlite */; };
 		8474A7B319B7526B009ADB4E /* SkinEmo_IHeartName.m in Sources */ = {isa = PBXBuildFile; fileRef = 8474A7B219B7526B009ADB4E /* SkinEmo_IHeartName.m */; };
 		8474A7B819B75577009ADB4E /* SetAwards.m in Sources */ = {isa = PBXBuildFile; fileRef = 8474A7B619B75577009ADB4E /* SetAwards.m */; };
 		8474A7B919B75577009ADB4E /* SetAwards.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8474A7B719B75577009ADB4E /* SetAwards.xib */; };
@@ -528,7 +528,6 @@
 		7F4D53BF19B7C5E50083E2CB /* logo_volvo_128.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_volvo_128.png; sourceTree = "<group>"; };
 		7F4D53C019B7C5E50083E2CB /* logo_vw_128.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_vw_128.png; sourceTree = "<group>"; };
 		7F4D53C119B7C5E50083E2CB /* logo_zaz_128.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_zaz_128.png; sourceTree = "<group>"; };
-		7F4D540019B7C8160083E2CB /* db.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = db.sqlite; sourceTree = "<group>"; };
 		7F4ECC2B17C8062800BF1671 /* SideViewControllerBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SideViewControllerBase.h; sourceTree = "<group>"; };
 		7F4ECC2C17C8062800BF1671 /* SideViewControllerBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SideViewControllerBase.m; sourceTree = "<group>"; };
 		7F4F683E17F6F97600F1017B /* HFImageEditorFrameView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFImageEditorFrameView.h; sourceTree = "<group>"; };
@@ -591,6 +590,7 @@
 		8415F44719587F2500708437 /* SkinElementLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SkinElementLabel.m; path = InstaCar/Core/DrawingElements/SkinElementLabel.m; sourceTree = "<group>"; };
 		841C5EF2195483FF00AD025D /* SkinElementImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SkinElementImage.h; path = InstaCar/Core/DrawingElements/SkinElementImage.h; sourceTree = "<group>"; };
 		841C5EF3195483FF00AD025D /* SkinElementImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SkinElementImage.m; path = InstaCar/Core/DrawingElements/SkinElementImage.m; sourceTree = "<group>"; };
+		842C765C19B8956B008E47A1 /* db.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = db.sqlite; sourceTree = "<group>"; };
 		8474A7B119B7526B009ADB4E /* SkinEmo_IHeartName.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SkinEmo_IHeartName.h; path = SetEmotions/SkinEmo_IHeartName.h; sourceTree = "<group>"; };
 		8474A7B219B7526B009ADB4E /* SkinEmo_IHeartName.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SkinEmo_IHeartName.m; path = SetEmotions/SkinEmo_IHeartName.m; sourceTree = "<group>"; };
 		8474A7B519B75577009ADB4E /* SetAwards.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetAwards.h; sourceTree = "<group>"; };
@@ -1241,7 +1241,7 @@
 		7F5AC64117CBFFDD00C01658 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				7F4D540019B7C8160083E2CB /* db.sqlite */,
+				842C765C19B8956B008E47A1 /* db.sqlite */,
 				7F3424A419B50939009DACBB /* Images */,
 				7F4CB67D18097908008B5CA2 /* Skins */,
 				7F5AC64B17CC06CE00C01658 /* Auto.h */,
@@ -1544,7 +1544,7 @@
 				7F4D53CD19B7C5E50083E2CB /* logo_citroen_128.png in Resources */,
 				7F4D538019B7BBFD0083E2CB /* logo_toyota_256.png in Resources */,
 				7F4D534B19B7BBFD0083E2CB /* logo_astonmartin_256.png in Resources */,
-				7F4D540119B7C8160083E2CB /* db.sqlite in Resources */,
+				842C765D19B8956B008E47A1 /* db.sqlite in Resources */,
 				7F3871D317BE4B7900D8E39D /* main.storyboard in Resources */,
 				7F4CB69218097908008B5CA2 /* SetDefault.xib in Resources */,
 				84D344D019B74F4900C7A02E /* SetEmotions.xib in Resources */,

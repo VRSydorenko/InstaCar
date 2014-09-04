@@ -21,4 +21,20 @@
     return self;
 }
 
+-(UIImage*)logo128{
+    if (nil == self.logoName || self.logoName.length == 0) {
+        return nil;
+    }
+    NSString *logoFileName = [NSString stringWithFormat:@"%@_128.png", self.logoName];
+    return [UIImage imageNamed:logoFileName];
+}
+
+-(UIImage*)logo256{
+    if (nil == self.logoName || self.logoName.length == 0) {
+        return nil;
+    }
+    NSString *logoFileName = [NSString stringWithFormat:@"%@_256.png", self.logoName];
+    return [UIImage imageNamed:logoFileName];
+}
+
 @end
