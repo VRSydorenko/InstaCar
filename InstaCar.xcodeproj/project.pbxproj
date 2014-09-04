@@ -222,6 +222,8 @@
 		7F882C291832ECC60083CFC9 /* SkinSetBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F882C281832ECC60083CFC9 /* SkinSetBase.m */; };
 		7F9656D91866F463000325B9 /* SkinVersusLogo.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F9656D81866F463000325B9 /* SkinVersusLogo.m */; };
 		7FB233B317D6773C003751B5 /* CellSelectedAuto.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FB233B217D6773C003751B5 /* CellSelectedAuto.m */; };
+		7FB5C47F19B8F65F001E63AC /* arrowLocation@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7FB5C47D19B8F65F001E63AC /* arrowLocation@2x.png */; };
+		7FB5C48019B8F65F001E63AC /* arrowSkins@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7FB5C47E19B8F65F001E63AC /* arrowSkins@2x.png */; };
 		7FBDA8FB19B39AD0004C5A47 /* signs.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7FBDA8FA19B39AD0004C5A47 /* signs.xcassets */; };
 		7FC4137517C7E8450025DD2C /* Foursquare2.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FC4136C17C7E8450025DD2C /* Foursquare2.m */; };
 		7FC4137617C7E8450025DD2C /* FSConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FC4136E17C7E8450025DD2C /* FSConverter.m */; };
@@ -565,6 +567,8 @@
 		7F9656D81866F463000325B9 /* SkinVersusLogo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SkinVersusLogo.m; path = SetVersus/SkinVersusLogo.m; sourceTree = "<group>"; };
 		7FB233B117D6773C003751B5 /* CellSelectedAuto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CellSelectedAuto.h; path = InstaCar/TableCells/CellSelectedAuto.h; sourceTree = "<group>"; };
 		7FB233B217D6773C003751B5 /* CellSelectedAuto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CellSelectedAuto.m; path = InstaCar/TableCells/CellSelectedAuto.m; sourceTree = "<group>"; };
+		7FB5C47D19B8F65F001E63AC /* arrowLocation@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrowLocation@2x.png"; sourceTree = "<group>"; };
+		7FB5C47E19B8F65F001E63AC /* arrowSkins@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrowSkins@2x.png"; sourceTree = "<group>"; };
 		7FBDA8FA19B39AD0004C5A47 /* signs.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = signs.xcassets; path = InstaCar/Data/signs.xcassets; sourceTree = "<group>"; };
 		7FC4136B17C7E8450025DD2C /* Foursquare2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Foursquare2.h; sourceTree = "<group>"; };
 		7FC4136C17C7E8450025DD2C /* Foursquare2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Foursquare2.m; sourceTree = "<group>"; };
@@ -670,6 +674,7 @@
 		7F2767171791E80000A1C1A0 /* InstaCar */ = {
 			isa = PBXGroup;
 			children = (
+				7FB5C47C19B8F65F001E63AC /* Images */,
 				7F419E1D17D6549C00255E56 /* TableCells */,
 				7F3871D217BE4B7900D8E39D /* main.storyboard */,
 				7F3871D417BE4CA900D8E39D /* MainNavController.h */,
@@ -1273,6 +1278,16 @@
 			name = SetVersus;
 			sourceTree = "<group>";
 		};
+		7FB5C47C19B8F65F001E63AC /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				7FB5C47D19B8F65F001E63AC /* arrowLocation@2x.png */,
+				7FB5C47E19B8F65F001E63AC /* arrowSkins@2x.png */,
+			);
+			name = Images;
+			path = InstaCar/Images;
+			sourceTree = "<group>";
+		};
 		7FC4136A17C7E8450025DD2C /* Foursquare */ = {
 			isa = PBXGroup;
 			children = (
@@ -1488,6 +1503,7 @@
 				7F4D53DA19B7C5E50083E2CB /* logo_infiniti_128.png in Resources */,
 				7F4D534E19B7BBFD0083E2CB /* logo_bmw_256.png in Resources */,
 				7F4D537019B7BBFD0083E2CB /* logo_mercedes_256.png in Resources */,
+				7FB5C47F19B8F65F001E63AC /* arrowLocation@2x.png in Resources */,
 				7F3424DA19B50939009DACBB /* logo_anycar.png in Resources */,
 				7F27AE081812F58E00168424 /* Settings_freeVersion.bundle in Resources */,
 				7F4D53E019B7C5E50083E2CB /* logo_kraz_128.png in Resources */,
@@ -1533,6 +1549,7 @@
 				7F4D537A19B7BBFD0083E2CB /* logo_rover_256.png in Resources */,
 				7F4D53F619B7C5E50083E2CB /* logo_seat_128.png in Resources */,
 				7F4D53FD19B7C5E50083E2CB /* logo_zaz_128.png in Resources */,
+				7FB5C48019B8F65F001E63AC /* arrowSkins@2x.png in Resources */,
 				7F4D535119B7BBFD0083E2CB /* logo_buick_256.png in Resources */,
 				7F4D537B19B7BBFD0083E2CB /* logo_rr_256.png in Resources */,
 				7F4D53FC19B7C5E50083E2CB /* logo_vw_128.png in Resources */,
