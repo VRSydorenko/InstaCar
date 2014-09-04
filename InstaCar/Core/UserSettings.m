@@ -16,7 +16,7 @@
  */
 
 +(BOOL)isFullVersion{
-    return YES;
+    return NO;
 }
 
 +(NSString*) getStoredAppVersion{

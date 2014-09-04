@@ -162,14 +162,21 @@ typedef enum {
     if (pageControl){
         return;
     }
+
+    CGFloat pageControlHeight = [UserSettings isFullVersion] ? 15.0 : 10.0;
+    CGRect screenRect = [[UIScreen mainScreen] applicationFrame];
+    if (screenRect.size.height > 480) // even higher on bigger screens
+    {
+        pageControlHeight += 10.0;
+    }
     
-    CGRect pageControlFrame = CGRectMake(0, 0, self.pageControlContainer.bounds.size.width, 10.0);
+    CGRect pageControlFrame = CGRectMake(0, 0, self.pageControlContainer.bounds.size.width, pageControlHeight);
     pageControl = [[SMPageControl alloc] initWithFrame:pageControlFrame];
     pageControl.autoresizingMask = UIViewAutoresizingFlexibleWidth;
     
     pageControl.userInteractionEnabled = NO;
-    pageControl.indicatorDiameter = 4.0f;
-    pageControl.indicatorMargin = 3.0f;
+    pageControl.indicatorDiameter = [UserSettings isFullVersion] ? 8.0 : 6.0f;
+    pageControl.indicatorMargin = [UserSettings isFullVersion] ? 6.0 : 5.0f;
     
     pageControl.backgroundColor = [UIColor clearColor];
     
