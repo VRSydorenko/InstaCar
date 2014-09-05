@@ -29,6 +29,6 @@
 }
 
 -(void)fieldAuto1DidUpdate{
-    self.labelAuto.text = fieldAuto1.selectedTextMarkModel;
+    self.labelAuto.text = fieldAuto1.name;
 }
 @end
