@@ -83,8 +83,10 @@
     CellSkinSet *cell = [tableView dequeueReusableCellWithIdentifier:@"cellSkin" forIndexPath:indexPath];
     
     SkinSet *set = (SkinSet*)[sets objectAtIndex:indexPath.row];
+    bool setSelected = [[set getTitle] isEqualToString:[[DataManager getSelectedSkinSet] getTitle]];
     
     cell.skinTitleLabel.text = [set getTitle];
+    cell.accessoryType = setSelected ? UITableViewCellAccessoryCheckmark : UITableViewCellAccessoryNone;
     
     return cell;
 }
