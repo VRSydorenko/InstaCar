@@ -1,8 +1,8 @@
 #import "HFImageEditorViewController.h"
 #import <QuartzCore/QuartzCore.h>
 
-static const CGFloat kMaxUIImageSize = 1024;
-static const CGFloat kPreviewImageSize = 320;
+static const CGFloat kMaxUIImageSize = 3072;
+static const CGFloat kPreviewImageSize = 1024;
 static const CGFloat kDefaultCropWidth = 320;
 static const CGFloat kDefaultCropHeight = 320;
 static const NSTimeInterval kAnimationIntervalReset = 0.25;
@@ -25,7 +25,6 @@ static const NSTimeInterval kAnimationIntervalTransform = 0.2;
 @property(nonatomic,assign) CGFloat scale;
 
 @end
-
 
 
 @implementation HFImageEditorViewController
@@ -93,7 +92,7 @@ static const NSTimeInterval kAnimationIntervalTransform = 0.2;
             } else { // landscape
                 size = CGSizeMake(kPreviewImageSize,kPreviewImageSize*aspect);
             }
-            _previewImage = [self scaledImage:self.sourceImage  toSize:size withQuality:kCGInterpolationLow];
+            _previewImage = [self scaledImage:self.sourceImage  toSize:size withQuality:kCGInterpolationHigh];
         } else {
             _previewImage = _sourceImage;
         }
