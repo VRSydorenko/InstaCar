@@ -244,7 +244,10 @@
                                     <constraint firstAttribute="height" constant="238" id="aqV-1j-VcO"/>
                                 </constraints>
                                 <string key="text"> - No ads
- - Add custom car models (with iCloud synchronization)
+
+ - Add custom car models
+   (supports iCloud synchronization)
+
  - Turn off app logo overlay</string>
                                 <color key="textColor" red="0.0" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
