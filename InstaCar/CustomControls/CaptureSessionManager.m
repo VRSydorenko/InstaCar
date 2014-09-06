@@ -70,20 +70,14 @@
 	DLog(@"about to request a capture from: %@", [self stillImageOutput]);
 	[self.stillImageOutput captureStillImageAsynchronouslyFromConnection:videoConnection
         completionHandler:^(CMSampleBufferRef imageSampleBuffer, NSError *error) {
-            /*CFDictionaryRef exifAttachments = CMGetAttachment(imageSampleBuffer, kCGImagePropertyExifDictionary, NULL);
-            if (exifAttachments) {
-                DLog(@"attachements: %@", exifAttachments);
-            } else {
-                DLog(@"no attachments");
-            }*/
-                               
             CVPixelBufferRef pixelBuffer = CMSampleBufferGetImageBuffer(imageSampleBuffer);
             CIImage *ciImage = [CIImage imageWithCVPixelBuffer:pixelBuffer];
 
+            CGSize screenSize = [UIScreen mainScreen].bounds.size;
+            
             // calculating rect for cropping
             CGFloat currentMinSideLength = MIN(ciImage.extent.size.width, ciImage.extent.size.height);
-            CGRect screenRect = [UIScreen mainScreen].bounds;
-            CGFloat topOffset = self.imageTopCropMargin * currentMinSideLength/MIN(screenRect.size.width, screenRect.size.height); // 'top' is 'right' here
+            CGFloat topOffset = self.imageTopCropMargin * currentMinSideLength/MIN(screenSize.width, screenSize.height); // 'top' is 'right' here
             CGRect subImageRect = CGRectMake(topOffset, 0, currentMinSideLength, currentMinSideLength);
             
             ciImage = [ciImage imageByCroppingToRect:subImageRect];
