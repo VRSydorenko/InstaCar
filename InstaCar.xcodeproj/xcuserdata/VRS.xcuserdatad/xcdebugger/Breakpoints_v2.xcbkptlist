@@ -68,12 +68,74 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "InstaCar/CustomControls/CaptureSessionManager.m"
-            timestampString = "431711767.032635"
+            timestampString = "431723168.30812"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "106"
-            endingLineNumber = "106"
-            landmarkName = "-switchInputs"
+            startingLineNumber = "118"
+            endingLineNumber = "118"
+            landmarkName = "-initCameras"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "InstaCar/CustomControls/CaptureSessionManager.m"
+            timestampString = "431723168.30812"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "97"
+            endingLineNumber = "97"
+            landmarkName = "-captureStillImage"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__42-[CaptureSessionManager captureStillImage]_block_invoke"
+                  moduleName = "InstaCar"
+                  urlString = "file:///Volumes/DATA/VRS/Documents/Projects/InstaCar/InstaCar/CustomControls/CaptureSessionManager.m"
+                  timestampString = "431721205.430407"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "96"
+                  endingLineNumber = "96"
+                  offsetFromSymbolStart = "1046">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__42-[CaptureSessionManager captureStillImage]_block_invoke"
+                  moduleName = "InstaCar"
+                  urlString = "file:///Volumes/DATA/VRS/Documents/Projects/InstaCar/InstaCar/CustomControls/CaptureSessionManager.m"
+                  timestampString = "431721205.430642"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "96"
+                  endingLineNumber = "96"
+                  offsetFromSymbolStart = "1058">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "InstaCar/MainVC.m"
+            timestampString = "431720068.461528"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "85"
+            endingLineNumber = "85"
+            landmarkName = "-viewDidAppear:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

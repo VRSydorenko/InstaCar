@@ -77,7 +77,8 @@
             
             // calculating rect for cropping
             CGFloat currentMinSideLength = MIN(ciImage.extent.size.width, ciImage.extent.size.height);
-            CGFloat topOffset = self.imageTopCropMargin * currentMinSideLength/MIN(screenSize.width, screenSize.height); // 'top' is 'right' here
+            CGFloat workaround = 8.5; // TODO: to get rid of this awful workaround
+            CGFloat topOffset = (workaround + self.imageTopCropMargin) * currentMinSideLength/MIN(screenSize.width, screenSize.height); // 'top' is 'right' here
             CGRect subImageRect = CGRectMake(topOffset, 0, currentMinSideLength, currentMinSideLength);
             
             ciImage = [ciImage imageByCroppingToRect:subImageRect];
