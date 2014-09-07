@@ -15,6 +15,7 @@
 #pragma mark Initialization
 
 -(void)setupGradient:(CGFloat)alpha inDirection:(GradientDirection)direction{
+    return; // CURRENTLY DISABLED AT ALL
     if (!gradient){
         gradient = [[UIAlphaGradientView alloc] initWithFrame:self.frame];
         gradient.color = [UIColor blackColor];
@@ -193,6 +194,7 @@
         switch ([elemBase elemType]) {
 #pragma mark Draw GRADIENT
             case ELEM_GRADIENT:{
+                break; // CURRENTLY DISABLED AT ALL
                 UIView<DrawElemGradientProtocol> *elemGrad = (UIView<DrawElemGradientProtocol>*)control;
                 
                 [elemGrad drawGradientInContext:context inRect:rectToDrawIn];
