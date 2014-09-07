@@ -31,6 +31,16 @@
             skin = (SkinAwd_BestLuxury*)object;
         } else if ([object isKindOfClass:[SkinAwd_BestTravel class]]){
             skin = (SkinAwd_BestTravel*)object;
+        } else if ([object isKindOfClass:[SkinAwd_Eco class]]){
+            skin = (SkinAwd_Eco*)object;
+        } else if ([object isKindOfClass:[SkinAwd_Medal1st class]]){
+            skin = (SkinAwd_Medal1st*)object;
+        } else if ([object isKindOfClass:[SkinAwd_Medal2nd class]]){
+            skin = (SkinAwd_Medal2nd*)object;
+        } else if ([object isKindOfClass:[SkinAwd_Placeholder1 class]]){
+            skin = (SkinAwd_Placeholder1*)object;
+        } else if ([object isKindOfClass:[SkinAwd_Placeholder2 class]]){
+            skin = (SkinAwd_Placeholder2*)object;
         }
         
         NSAssert(skin, @"Undefined skin!");

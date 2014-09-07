@@ -39,6 +39,20 @@
             skin = (SkinLogoCountryBadge*)object;
         } else if ([object isKindOfClass:[SkinBasic_OneAtFinish class]]){
             skin = (SkinBasic_OneAtFinish*)object;
+        } else if ([object isKindOfClass:[SkinBasic_Info1 class]]){
+            skin = (SkinBasic_Info1*)object;
+        } else if ([object isKindOfClass:[SkinBasic_Info2 class]]){
+            skin = (SkinBasic_Info2*)object;
+        } else if ([object isKindOfClass:[SkinBasic_Info3 class]]){
+            skin = (SkinBasic_Info3*)object;
+        } else if ([object isKindOfClass:[SkinBasic_MadeIn class]]){
+            skin = (SkinBasic_MadeIn*)object;
+        } else if ([object isKindOfClass:[SkinBasic_BestIn class]]){
+            skin = (SkinBasic_BestIn*)object;
+        } else if ([object isKindOfClass:[SkinBasic_Green1 class]]){
+            skin = (SkinBasic_Green1*)object;
+        } else if ([object isKindOfClass:[SkinBasic_Green2 class]]){
+            skin = (SkinBasic_Green2*)object;
         }
         
         NSAssert(skin, @"Undefined skin!");

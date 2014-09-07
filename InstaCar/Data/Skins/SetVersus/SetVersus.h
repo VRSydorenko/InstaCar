@@ -12,6 +12,8 @@
 #import "SkinVersusName.h"
 #import "SkinVersusLogo.h"
 #import "SkinVersus_TwoAtFinish.h"
+#import "SkinVersus_DriftTime.h"
+#import "SkinVersus_RaceTime.h"
 
 @interface SetVersus : SkinSetBase
 @end

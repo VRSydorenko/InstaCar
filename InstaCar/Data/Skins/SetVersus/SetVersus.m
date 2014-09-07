@@ -31,6 +31,10 @@
             skin = (SkinVersusLogo*)object;
         } else if ([object isKindOfClass:[SkinVersus_TwoAtFinish class]]){
             skin = (SkinVersus_TwoAtFinish*)object;
+        } else if ([object isKindOfClass:[SkinVersus_DriftTime class]]){
+            skin = (SkinVersus_DriftTime*)object;
+        } else if ([object isKindOfClass:[SkinVersus_RaceTime class]]){
+            skin = (SkinVersus_RaceTime*)object;
         }
         
         NSAssert(skin, @"Undefined skin!");
