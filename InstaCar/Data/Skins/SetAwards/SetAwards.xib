@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6206.9" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6206.9" systemVersion="14A343f" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7026.1"/>
     </dependencies>
@@ -98,24 +98,82 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="320"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="M5U-NK-McF">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="90"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M5U-NK-McF">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
                     <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ps0-od-NYz">
-                            <rect key="frame" x="10" y="0.0" width="90" height="90"/>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qCw-dk-gZ9" customClass="SkinElementRect">
+                            <rect key="frame" x="0.0" y="22" width="320" height="55"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.10000000000000007" translatesAutoresizingMaskIntoConstraints="NO" id="BVe-Uw-3Dc" customClass="SkinElementLabel">
+                                    <rect key="frame" x="107" y="0.0" width="213" height="36"/>
+                                    <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="33"/>
+                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.20000000000000007" translatesAutoresizingMaskIntoConstraints="NO" id="h9I-Xd-jeB" customClass="SkinElementLabel">
+                                    <rect key="frame" x="107" y="37" width="213" height="18"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="18" id="Jq3-33-gAy"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="Copperplate-Light" family="Copperplate" pointSize="21"/>
+                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstItem="BVe-Uw-3Dc" firstAttribute="leading" secondItem="qCw-dk-gZ9" secondAttribute="leading" constant="107" id="Mfh-uZ-OxH"/>
+                                <constraint firstAttribute="trailing" secondItem="h9I-Xd-jeB" secondAttribute="trailing" id="O6A-Rm-fnR"/>
+                                <constraint firstItem="BVe-Uw-3Dc" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="qCw-dk-gZ9" secondAttribute="leading" constant="107" id="Pc0-us-jrp"/>
+                                <constraint firstAttribute="bottom" secondItem="h9I-Xd-jeB" secondAttribute="bottom" id="Rnl-iM-V2f"/>
+                                <constraint firstItem="BVe-Uw-3Dc" firstAttribute="top" secondItem="qCw-dk-gZ9" secondAttribute="top" id="SnJ-1L-AJc"/>
+                                <constraint firstAttribute="trailing" secondItem="BVe-Uw-3Dc" secondAttribute="trailing" id="d19-7o-eUG"/>
+                                <constraint firstItem="h9I-Xd-jeB" firstAttribute="leading" secondItem="qCw-dk-gZ9" secondAttribute="leading" constant="107" id="eE5-e2-6BI"/>
+                                <constraint firstAttribute="trailing" secondItem="BVe-Uw-3Dc" secondAttribute="trailing" id="grq-EA-moI"/>
+                                <constraint firstItem="BVe-Uw-3Dc" firstAttribute="top" secondItem="qCw-dk-gZ9" secondAttribute="top" id="mHZ-TX-se8"/>
+                                <constraint firstItem="h9I-Xd-jeB" firstAttribute="top" secondItem="BVe-Uw-3Dc" secondAttribute="bottom" constant="1" id="qvJ-zt-p3g"/>
+                            </constraints>
+                        </view>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bestChoise1.png" translatesAutoresizingMaskIntoConstraints="NO" id="ps0-od-NYz" customClass="SkinElementImage">
+                            <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="100" id="nHz-nO-TYY"/>
+                            </constraints>
                         </imageView>
                     </subviews>
                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="qCw-dk-gZ9" firstAttribute="top" secondItem="M5U-NK-McF" secondAttribute="top" constant="22" id="5MA-pc-Me6"/>
+                        <constraint firstItem="ps0-od-NYz" firstAttribute="top" secondItem="M5U-NK-McF" secondAttribute="top" id="Ag0-yp-vf2"/>
+                        <constraint firstAttribute="bottom" secondItem="ps0-od-NYz" secondAttribute="bottom" id="EUG-Db-HNw"/>
+                        <constraint firstAttribute="trailing" secondItem="qCw-dk-gZ9" secondAttribute="trailing" id="I7w-mp-tIm"/>
+                        <constraint firstItem="ps0-od-NYz" firstAttribute="leading" secondItem="M5U-NK-McF" secondAttribute="leading" id="M6P-Zf-Ztr"/>
+                        <constraint firstItem="qCw-dk-gZ9" firstAttribute="leading" secondItem="M5U-NK-McF" secondAttribute="leading" id="k4G-fQ-En9"/>
+                        <constraint firstAttribute="height" constant="100" id="o7f-TV-kzE"/>
+                        <constraint firstAttribute="bottom" secondItem="qCw-dk-gZ9" secondAttribute="bottom" constant="23" id="qGT-h8-x4l"/>
+                    </constraints>
                 </view>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="M5U-NK-McF" firstAttribute="leading" secondItem="dfG-La-40D" secondAttribute="leading" id="4aM-iL-6hV"/>
+                <constraint firstItem="M5U-NK-McF" firstAttribute="top" secondItem="dfG-La-40D" secondAttribute="top" id="GkN-Ua-ywc"/>
+                <constraint firstAttribute="trailing" secondItem="M5U-NK-McF" secondAttribute="trailing" id="ZDv-se-yEb"/>
+            </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="labelAuto" destination="BVe-Uw-3Dc" id="gC9-e2-6bL"/>
+                <outlet property="labelModel" destination="h9I-Xd-jeB" id="wuS-Oa-fuf"/>
+                <outlet property="movingView" destination="M5U-NK-McF" id="dXY-Un-4lo"/>
+                <outlet property="topMargin" destination="GkN-Ua-ywc" id="Hkj-iI-b57"/>
+            </connections>
             <point key="canvasLocation" x="605" y="613"/>
         </view>
     </objects>
     <resources>
         <image name="bestChoice2.png" width="480" height="480"/>
+        <image name="bestChoise1.png" width="2201" height="2178"/>
         <image name="bestChoise3.png" width="210" height="267"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

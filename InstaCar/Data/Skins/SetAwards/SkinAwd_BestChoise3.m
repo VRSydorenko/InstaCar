@@ -18,7 +18,6 @@
 @implementation SkinAwd_BestChoise3
 
 -(void)initialise{
-    [self.imgEmblem.layer setMinificationFilter:kCAFilterTrilinear];
     self.movingView.backgroundColor = [UIColor clearColor];
     
     [self setMovingViewConstraint:self.topMargin andViewHeight:self.movingView.bounds.size.height];
@@ -27,9 +26,8 @@
 }
 
 -(void)fieldAuto1DidUpdate{
-    self.imgEmblem.contentMode = UIViewContentModeScaleAspectFit;
-    [self.imgEmblem setImageLogoName:fieldAuto1.logoName];
-    self.imgEmblem.image = fieldAuto1.logo128;
+    self.labelAuto.text = fieldAuto1.name;
+    self.labelModel.text = fieldAuto1.selectedTextModelSubmodel;
 }
 
 @end

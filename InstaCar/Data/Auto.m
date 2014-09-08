@@ -42,6 +42,26 @@
     return self.name;
 }
 
+-(NSString*)selectedTextModel{
+    if (self.model){
+        return self.model.name;
+    }
+    return @"";
+}
+
+-(NSString*)selectedTextModelSubmodel{
+    if (self.model){
+        NSString *modelName = self.model.isSelectable ? self.model.name : @"";
+        NSString *submodelName = self.model.submodel
+        ?
+        [NSString stringWithFormat:@"%@%@", modelName.length > 0 ? @" " : @"", self.model.submodel.name]
+        :
+        @"";
+        return [NSString stringWithFormat:@"%@%@", modelName, submodelName];
+    }
+    return @"";
+}
+
 -(UIImage*)logo128{
     NSString *logoFileName = [NSString stringWithFormat:@"%@_128.png", self.logoName];
     return [UIImage imageNamed:logoFileName];

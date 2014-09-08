@@ -10,6 +10,8 @@
 
 @interface SkinAwd_BestChoise3 : SkinViewBase
 
-@property (nonatomic) IBOutlet SkinElementImage *imgEmblem;
+@property (nonatomic) IBOutlet SkinElementLabel *labelAuto;
+@property (nonatomic) IBOutlet SkinElementLabel *labelModel;
+
 
 @end
