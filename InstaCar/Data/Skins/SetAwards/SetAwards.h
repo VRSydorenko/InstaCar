@@ -10,6 +10,8 @@
 #import "SkinSetBase.h"
 
 #import "SkinAwd_BestChoise.h"
+#import "SkinAwd_BestChoise2.h"
+#import "SkinAwd_BestChoise3.h"
 #import "SkinAwd_BestLuxury.h"
 #import "SkinAwd_BestTravel.h"
 #import "SkinAwd_Eco.h"

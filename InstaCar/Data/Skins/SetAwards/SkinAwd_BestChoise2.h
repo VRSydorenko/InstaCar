@@ -1,5 +1,5 @@
 //
-//  SkinAwd_BestChoise.h
+//  SkinAwd_BestChoise2.h
 //  InstaCar
 //
 //  Created by VRS on 03/09/14.
@@ -8,5 +8,5 @@
 
 #import "SkinViewBase.h"
 
-@interface SkinAwd_BestChoise : SkinViewBase
+@interface SkinAwd_BestChoise2 : SkinViewBase
 @end

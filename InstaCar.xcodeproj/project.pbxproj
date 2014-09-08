@@ -261,6 +261,11 @@
 		8474A7C519B7601D009ADB4E /* SkinEmo_MyDream.m in Sources */ = {isa = PBXBuildFile; fileRef = 8474A7C319B7601D009ADB4E /* SkinEmo_MyDream.m */; };
 		8474A7C819B76155009ADB4E /* SkinBasic_OneAtFinish.m in Sources */ = {isa = PBXBuildFile; fileRef = 8474A7C719B76155009ADB4E /* SkinBasic_OneAtFinish.m */; };
 		8474A7CB19B76327009ADB4E /* SkinVersus_TwoAtFinish.m in Sources */ = {isa = PBXBuildFile; fileRef = 8474A7CA19B76327009ADB4E /* SkinVersus_TwoAtFinish.m */; };
+		848A9BF719BDF37900D59D60 /* SkinAwd_BestChoise2.m in Sources */ = {isa = PBXBuildFile; fileRef = 848A9BF419BDF37900D59D60 /* SkinAwd_BestChoise2.m */; };
+		848A9BF819BDF37900D59D60 /* SkinAwd_BestChoise3.m in Sources */ = {isa = PBXBuildFile; fileRef = 848A9BF619BDF37900D59D60 /* SkinAwd_BestChoise3.m */; };
+		848A9BFD19BDF59700D59D60 /* bestChoice2.png in Resources */ = {isa = PBXBuildFile; fileRef = 848A9BFA19BDF59700D59D60 /* bestChoice2.png */; };
+		848A9BFE19BDF59700D59D60 /* bestChoise1.png in Resources */ = {isa = PBXBuildFile; fileRef = 848A9BFB19BDF59700D59D60 /* bestChoise1.png */; };
+		848A9BFF19BDF59700D59D60 /* bestChoise3.png in Resources */ = {isa = PBXBuildFile; fileRef = 848A9BFC19BDF59700D59D60 /* bestChoise3.png */; };
 		84D344CE19B74E3B00C7A02E /* SetEmotions.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D344CD19B74E3B00C7A02E /* SetEmotions.m */; };
 		84D344D019B74F4900C7A02E /* SetEmotions.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84D344CF19B74F4900C7A02E /* SetEmotions.xib */; };
 		84D344D319B74FC000C7A02E /* SkinEmo_IHeartLogo.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D344D219B74FC000C7A02E /* SkinEmo_IHeartLogo.m */; };
@@ -654,6 +659,13 @@
 		8474A7C719B76155009ADB4E /* SkinBasic_OneAtFinish.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SkinBasic_OneAtFinish.m; sourceTree = "<group>"; };
 		8474A7C919B76327009ADB4E /* SkinVersus_TwoAtFinish.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SkinVersus_TwoAtFinish.h; path = SetVersus/SkinVersus_TwoAtFinish.h; sourceTree = "<group>"; };
 		8474A7CA19B76327009ADB4E /* SkinVersus_TwoAtFinish.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SkinVersus_TwoAtFinish.m; path = SetVersus/SkinVersus_TwoAtFinish.m; sourceTree = "<group>"; };
+		848A9BF319BDF37900D59D60 /* SkinAwd_BestChoise2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkinAwd_BestChoise2.h; sourceTree = "<group>"; };
+		848A9BF419BDF37900D59D60 /* SkinAwd_BestChoise2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SkinAwd_BestChoise2.m; sourceTree = "<group>"; };
+		848A9BF519BDF37900D59D60 /* SkinAwd_BestChoise3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkinAwd_BestChoise3.h; sourceTree = "<group>"; };
+		848A9BF619BDF37900D59D60 /* SkinAwd_BestChoise3.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SkinAwd_BestChoise3.m; sourceTree = "<group>"; };
+		848A9BFA19BDF59700D59D60 /* bestChoice2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bestChoice2.png; sourceTree = "<group>"; };
+		848A9BFB19BDF59700D59D60 /* bestChoise1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bestChoise1.png; sourceTree = "<group>"; };
+		848A9BFC19BDF59700D59D60 /* bestChoise3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bestChoise3.png; sourceTree = "<group>"; };
 		84D344CC19B74E3B00C7A02E /* SetEmotions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SetEmotions.h; path = SetEmotions/SetEmotions.h; sourceTree = "<group>"; };
 		84D344CD19B74E3B00C7A02E /* SetEmotions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SetEmotions.m; path = SetEmotions/SetEmotions.m; sourceTree = "<group>"; };
 		84D344CF19B74F4900C7A02E /* SetEmotions.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SetEmotions.xib; path = SetEmotions/SetEmotions.xib; sourceTree = "<group>"; };
@@ -1368,6 +1380,11 @@
 		8474A7B419B75577009ADB4E /* SetAwards */ = {
 			isa = PBXGroup;
 			children = (
+				848A9BF919BDF59700D59D60 /* Images */,
+				848A9BF319BDF37900D59D60 /* SkinAwd_BestChoise2.h */,
+				848A9BF419BDF37900D59D60 /* SkinAwd_BestChoise2.m */,
+				848A9BF519BDF37900D59D60 /* SkinAwd_BestChoise3.h */,
+				848A9BF619BDF37900D59D60 /* SkinAwd_BestChoise3.m */,
 				7F8436CE19BCFEDD00B69865 /* SkinAwd_Eco.h */,
 				7F8436CF19BCFEDD00B69865 /* SkinAwd_Eco.m */,
 				7F8436D019BCFEDD00B69865 /* SkinAwd_Medal1st.h */,
@@ -1389,6 +1406,16 @@
 				8474A7C119B75D0D009ADB4E /* SkinAwd_BestTravel.m */,
 			);
 			path = SetAwards;
+			sourceTree = "<group>";
+		};
+		848A9BF919BDF59700D59D60 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				848A9BFA19BDF59700D59D60 /* bestChoice2.png */,
+				848A9BFB19BDF59700D59D60 /* bestChoise1.png */,
+				848A9BFC19BDF59700D59D60 /* bestChoise3.png */,
+			);
+			path = Images;
 			sourceTree = "<group>";
 		};
 		84D344CB19B74DCB00C7A02E /* SetEmotions */ = {
@@ -1543,6 +1570,7 @@
 				7F4D535719B7BBFD0083E2CB /* logo_delorean_256.png in Resources */,
 				7F4D536019B7BBFD0083E2CB /* logo_hyundai_256.png in Resources */,
 				7F4D53C219B7C5E50083E2CB /* logo_acura_128.png in Resources */,
+				848A9BFD19BDF59700D59D60 /* bestChoice2.png in Resources */,
 				7F4D53E819B7C5E50083E2CB /* logo_mclaren_128.png in Resources */,
 				7F2AD59917EDE9B40096EC8D /* SHKSharers.plist in Resources */,
 				7F4D537619B7BBFD0083E2CB /* logo_peugeot_256.png in Resources */,
@@ -1607,6 +1635,7 @@
 				7F4D53ED19B7C5E50083E2CB /* logo_nissan_128.png in Resources */,
 				7F4D536419B7BBFD0083E2CB /* logo_jaguar_256.png in Resources */,
 				7F2AD59B17EDE9B40096EC8D /* DETweetPaperClip@2x.png in Resources */,
+				848A9BFE19BDF59700D59D60 /* bestChoise1.png in Resources */,
 				7F4D536B19B7BBFD0083E2CB /* logo_landrover_256.png in Resources */,
 				7F4D53F719B7C5E50083E2CB /* logo_subaru_128.png in Resources */,
 				7F27671C1791E80000A1C1A0 /* InfoPlist.strings in Resources */,
@@ -1643,6 +1672,7 @@
 				7F4D53D519B7C5E50083E2CB /* logo_geely_128.png in Resources */,
 				7F2AD59C17EDE9B40096EC8D /* DETweetURLAttachment.png in Resources */,
 				7F4D536F19B7BBFD0083E2CB /* logo_mclaren_256.png in Resources */,
+				848A9BFF19BDF59700D59D60 /* bestChoise3.png in Resources */,
 				7F4D53C419B7C5E50083E2CB /* logo_astonmartin_128.png in Resources */,
 				7F4D537219B7BBFD0083E2CB /* logo_mini_256.png in Resources */,
 				7F4D537E19B7BBFD0083E2CB /* logo_subaru_256.png in Resources */,
@@ -1722,6 +1752,7 @@
 				7F2AD5A517EDE9B40096EC8D /* SHKPhotoAlbum.m in Sources */,
 				7F4CB677180978CF008B5CA2 /* CustomSHKConfigurator.m in Sources */,
 				7F3871D917BE4D4C00D8E39D /* MainVC.m in Sources */,
+				848A9BF819BDF37900D59D60 /* SkinAwd_BestChoise3.m in Sources */,
 				7F2AD5C417EDE9B40096EC8D /* SHKiOSTwitter.m in Sources */,
 				7F59AC5D17D3BA4700B87457 /* AutoModel.m in Sources */,
 				7FC4137917C7E8450025DD2C /* FSVenue.m in Sources */,
@@ -1743,6 +1774,7 @@
 				7FC4137817C7E8450025DD2C /* FSTargetCallback.m in Sources */,
 				7F5C46671811E87900DF94B1 /* ProInfoVC.m in Sources */,
 				7F4CB69118097908008B5CA2 /* SetDefault.m in Sources */,
+				848A9BF719BDF37900D59D60 /* SkinAwd_BestChoise2.m in Sources */,
 				7F72A06517D7AED10075FC0B /* AutoSubmodel.m in Sources */,
 				7F1767AC17C76F0F00724BD6 /* CaptureSessionManager.m in Sources */,
 				7F3A170117F627A200584614 /* UIAlphaGradientView.m in Sources */,

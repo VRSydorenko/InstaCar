@@ -27,6 +27,10 @@
         SkinViewBase *skin = nil;
         if ([object isKindOfClass:[SkinAwd_BestChoise class]]){
             skin = (SkinAwd_BestChoise*)object;
+        } else if ([object isKindOfClass:[SkinAwd_BestChoise2 class]]){
+            skin = (SkinAwd_BestChoise2*)object;
+        } else if ([object isKindOfClass:[SkinAwd_BestChoise3 class]]){
+            skin = (SkinAwd_BestChoise3*)object;
         } else if ([object isKindOfClass:[SkinAwd_BestLuxury class]]){
             skin = (SkinAwd_BestLuxury*)object;
         } else if ([object isKindOfClass:[SkinAwd_BestTravel class]]){

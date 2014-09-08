@@ -1,5 +1,5 @@
 //
-//  SkinAwd_BestChoise.h
+//  SkinAwd_BestChoise3.h
 //  InstaCar
 //
 //  Created by VRS on 03/09/14.
@@ -8,5 +8,8 @@
 
 #import "SkinViewBase.h"
 
-@interface SkinAwd_BestChoise : SkinViewBase
+@interface SkinAwd_BestChoise3 : SkinViewBase
+
+@property (nonatomic) IBOutlet SkinElementImage *imgEmblem;
+
 @end
