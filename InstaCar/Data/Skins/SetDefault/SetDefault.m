@@ -53,6 +53,10 @@
             skin = (SkinBasic_Green1*)object;
         } else if ([object isKindOfClass:[SkinBasic_Green2 class]]){
             skin = (SkinBasic_Green2*)object;
+        } else if ([object isKindOfClass:[SkinBasic_Travel1 class]]){
+            skin = (SkinBasic_Travel1*)object;
+        } else if ([object isKindOfClass:[SkinBasic_Travel2 class]]){
+            skin = (SkinBasic_Travel2*)object;
         }
         
         NSAssert(skin, @"Undefined skin!");

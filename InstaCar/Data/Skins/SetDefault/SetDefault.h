@@ -23,6 +23,8 @@
 #import "SkinBasic_BestIn.h"
 #import "SkinBasic_Green1.h"
 #import "SkinBasic_Green2.h"
+#import "SkinBasic_Travel1.h"
+#import "SkinBasic_Travel2.h"
 
 @interface SetDefault : SkinSetBase
 

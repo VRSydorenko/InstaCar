@@ -261,6 +261,11 @@
 		8474A7C519B7601D009ADB4E /* SkinEmo_MyDream.m in Sources */ = {isa = PBXBuildFile; fileRef = 8474A7C319B7601D009ADB4E /* SkinEmo_MyDream.m */; };
 		8474A7C819B76155009ADB4E /* SkinBasic_OneAtFinish.m in Sources */ = {isa = PBXBuildFile; fileRef = 8474A7C719B76155009ADB4E /* SkinBasic_OneAtFinish.m */; };
 		8474A7CB19B76327009ADB4E /* SkinVersus_TwoAtFinish.m in Sources */ = {isa = PBXBuildFile; fileRef = 8474A7CA19B76327009ADB4E /* SkinVersus_TwoAtFinish.m */; };
+		8478A5FB19BF5D68004CCEFE /* SkinBasic_Travel1.m in Sources */ = {isa = PBXBuildFile; fileRef = 8478A5FA19BF5D68004CCEFE /* SkinBasic_Travel1.m */; };
+		8478A5FE19BF5DF7004CCEFE /* SkinBasic_Travel2.m in Sources */ = {isa = PBXBuildFile; fileRef = 8478A5FD19BF5DF7004CCEFE /* SkinBasic_Travel2.m */; };
+		8478A60219BF5EA2004CCEFE /* travel1.png in Resources */ = {isa = PBXBuildFile; fileRef = 8478A60019BF5EA2004CCEFE /* travel1.png */; };
+		8478A60319BF5EA2004CCEFE /* travel2.png in Resources */ = {isa = PBXBuildFile; fileRef = 8478A60119BF5EA2004CCEFE /* travel2.png */; };
+		8478A60619BF6500004CCEFE /* RegencyScriptFLF.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8478A60519BF6500004CCEFE /* RegencyScriptFLF.ttf */; };
 		848A9BF719BDF37900D59D60 /* SkinAwd_BestChoise2.m in Sources */ = {isa = PBXBuildFile; fileRef = 848A9BF419BDF37900D59D60 /* SkinAwd_BestChoise2.m */; };
 		848A9BF819BDF37900D59D60 /* SkinAwd_BestChoise3.m in Sources */ = {isa = PBXBuildFile; fileRef = 848A9BF619BDF37900D59D60 /* SkinAwd_BestChoise3.m */; };
 		848A9BFD19BDF59700D59D60 /* bestChoice2.png in Resources */ = {isa = PBXBuildFile; fileRef = 848A9BFA19BDF59700D59D60 /* bestChoice2.png */; };
@@ -659,6 +664,13 @@
 		8474A7C719B76155009ADB4E /* SkinBasic_OneAtFinish.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SkinBasic_OneAtFinish.m; sourceTree = "<group>"; };
 		8474A7C919B76327009ADB4E /* SkinVersus_TwoAtFinish.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SkinVersus_TwoAtFinish.h; path = SetVersus/SkinVersus_TwoAtFinish.h; sourceTree = "<group>"; };
 		8474A7CA19B76327009ADB4E /* SkinVersus_TwoAtFinish.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SkinVersus_TwoAtFinish.m; path = SetVersus/SkinVersus_TwoAtFinish.m; sourceTree = "<group>"; };
+		8478A5F919BF5D68004CCEFE /* SkinBasic_Travel1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkinBasic_Travel1.h; sourceTree = "<group>"; };
+		8478A5FA19BF5D68004CCEFE /* SkinBasic_Travel1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SkinBasic_Travel1.m; sourceTree = "<group>"; };
+		8478A5FC19BF5DF7004CCEFE /* SkinBasic_Travel2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkinBasic_Travel2.h; sourceTree = "<group>"; };
+		8478A5FD19BF5DF7004CCEFE /* SkinBasic_Travel2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SkinBasic_Travel2.m; sourceTree = "<group>"; };
+		8478A60019BF5EA2004CCEFE /* travel1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = travel1.png; sourceTree = "<group>"; };
+		8478A60119BF5EA2004CCEFE /* travel2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = travel2.png; sourceTree = "<group>"; };
+		8478A60519BF6500004CCEFE /* RegencyScriptFLF.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = RegencyScriptFLF.ttf; sourceTree = "<group>"; };
 		848A9BF319BDF37900D59D60 /* SkinAwd_BestChoise2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkinAwd_BestChoise2.h; sourceTree = "<group>"; };
 		848A9BF419BDF37900D59D60 /* SkinAwd_BestChoise2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SkinAwd_BestChoise2.m; sourceTree = "<group>"; };
 		848A9BF519BDF37900D59D60 /* SkinAwd_BestChoise3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkinAwd_BestChoise3.h; sourceTree = "<group>"; };
@@ -1078,6 +1090,7 @@
 		7F4CB66A180977E9008B5CA2 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				8478A60419BF6500004CCEFE /* Fonts */,
 				84EC58DD1954506D00E8C421 /* DrawingElements */,
 				7F00E86318142EE7004F435A /* DbManager.h */,
 				7F00E86418142EE7004F435A /* DbManager.m */,
@@ -1118,6 +1131,11 @@
 		7F4CB67E18097908008B5CA2 /* SetDefault */ = {
 			isa = PBXGroup;
 			children = (
+				8478A5FF19BF5EA2004CCEFE /* Images */,
+				8478A5FC19BF5DF7004CCEFE /* SkinBasic_Travel2.h */,
+				8478A5FD19BF5DF7004CCEFE /* SkinBasic_Travel2.m */,
+				8478A5F919BF5D68004CCEFE /* SkinBasic_Travel1.h */,
+				8478A5FA19BF5D68004CCEFE /* SkinBasic_Travel1.m */,
 				7F7EA7C619BD10FB00BAB9FB /* SkinBasic_Green2.h */,
 				7F7EA7C719BD10FB00BAB9FB /* SkinBasic_Green2.m */,
 				7F7EA7C319BD095900BAB9FB /* SkinBasic_Green1.h */,
@@ -1408,6 +1426,24 @@
 			path = SetAwards;
 			sourceTree = "<group>";
 		};
+		8478A5FF19BF5EA2004CCEFE /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				8478A60019BF5EA2004CCEFE /* travel1.png */,
+				8478A60119BF5EA2004CCEFE /* travel2.png */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		8478A60419BF6500004CCEFE /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				8478A60519BF6500004CCEFE /* RegencyScriptFLF.ttf */,
+			);
+			name = Fonts;
+			path = InstaCar/Core/Fonts;
+			sourceTree = "<group>";
+		};
 		848A9BF919BDF59700D59D60 /* Images */ = {
 			isa = PBXGroup;
 			children = (
@@ -1591,6 +1627,7 @@
 				7F4D537D19B7BBFD0083E2CB /* logo_seat_256.png in Resources */,
 				7F4D534919B7BBFD0083E2CB /* logo_acura_256.png in Resources */,
 				7F4D53D219B7C5E50083E2CB /* logo_ferrari_128.png in Resources */,
+				8478A60319BF5EA2004CCEFE /* travel2.png in Resources */,
 				7F882C251832EBE50083CFC9 /* SetVersus.xib in Resources */,
 				7F4D536519B7BBFD0083E2CB /* logo_jeep_256.png in Resources */,
 				7F4D53D419B7C5E50083E2CB /* logo_ford_128.png in Resources */,
@@ -1634,6 +1671,7 @@
 				7F4D536919B7BBFD0083E2CB /* logo_lambo_256.png in Resources */,
 				7F4D53ED19B7C5E50083E2CB /* logo_nissan_128.png in Resources */,
 				7F4D536419B7BBFD0083E2CB /* logo_jaguar_256.png in Resources */,
+				8478A60219BF5EA2004CCEFE /* travel1.png in Resources */,
 				7F2AD59B17EDE9B40096EC8D /* DETweetPaperClip@2x.png in Resources */,
 				848A9BFE19BDF59700D59D60 /* bestChoise1.png in Resources */,
 				7F4D536B19B7BBFD0083E2CB /* logo_landrover_256.png in Resources */,
@@ -1659,6 +1697,7 @@
 				7F4D534A19B7BBFD0083E2CB /* logo_alfaromeo_256.png in Resources */,
 				7F4D53CD19B7C5E50083E2CB /* logo_citroen_128.png in Resources */,
 				7F4D538019B7BBFD0083E2CB /* logo_toyota_256.png in Resources */,
+				8478A60619BF6500004CCEFE /* RegencyScriptFLF.ttf in Resources */,
 				7F4D534B19B7BBFD0083E2CB /* logo_astonmartin_256.png in Resources */,
 				842C765D19B8956B008E47A1 /* db.sqlite in Resources */,
 				7F3871D317BE4B7900D8E39D /* main.storyboard in Resources */,
@@ -1754,6 +1793,7 @@
 				7F3871D917BE4D4C00D8E39D /* MainVC.m in Sources */,
 				848A9BF819BDF37900D59D60 /* SkinAwd_BestChoise3.m in Sources */,
 				7F2AD5C417EDE9B40096EC8D /* SHKiOSTwitter.m in Sources */,
+				8478A5FE19BF5DF7004CCEFE /* SkinBasic_Travel2.m in Sources */,
 				7F59AC5D17D3BA4700B87457 /* AutoModel.m in Sources */,
 				7FC4137917C7E8450025DD2C /* FSVenue.m in Sources */,
 				8474A7B819B75577009ADB4E /* SetAwards.m in Sources */,
@@ -1803,6 +1843,7 @@
 				7F2AD5B917EDE9B40096EC8D /* SHKInstagram.m in Sources */,
 				7FC4137617C7E8450025DD2C /* FSConverter.m in Sources */,
 				841C5EF4195483FF00AD025D /* SkinElementImage.m in Sources */,
+				8478A5FB19BF5D68004CCEFE /* SkinBasic_Travel1.m in Sources */,
 				7F2AD5A117EDE9B40096EC8D /* SHKMail.m in Sources */,
 				7F2AD5D717EDE9B40096EC8D /* SHKFormOptionController.m in Sources */,
 				7F2AD5CD17EDE9B40096EC8D /* SHKActivityIndicator.m in Sources */,
