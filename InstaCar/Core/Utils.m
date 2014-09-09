@@ -89,11 +89,15 @@
     BOOL secondAutoSupported = [DataManager getSelectedSkinSet].supportsSecondCar;
     Auto *auto2 = secondAutoSupported ? [DataManager getSelectedAuto2] : nil;
     if (!auto1 && !auto2){
-        return @"";
+        return @"Share your #instacar with #instacarapp";
     }
 
-    NSString *andCar2 = auto2 ? [NSString stringWithFormat:@" and #%@", auto2.name] : @"";
-    return [NSString stringWithFormat:@"Great #instacar #%@%@ from the #instacarapp", [DataManager getSelectedAuto1].name, andCar2];
+    NSString *car1String = auto1 ? [NSString stringWithFormat:@"#%@", auto1.name] : @"";
+    NSString *car2String = auto2 ? [NSString stringWithFormat:@"#%@", auto2.name] : @"";
+    NSString *andCarsString = auto1 && auto2 ? @" and " : @"";
+    NSString *carsString = [NSString stringWithFormat:@"%@%@%@", car1String, andCarsString, car2String];
+    
+    return [NSString stringWithFormat:@"Great #instacar %@ from the #instacarapp", carsString];
 }
 
 +(NSString*)getAutoYearsString:(int)startYear endYear:(int)endYear{
