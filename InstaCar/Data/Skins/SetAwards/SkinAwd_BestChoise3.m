@@ -8,10 +8,13 @@
 
 #import "SkinAwd_BestChoise3.h"
 
-@interface SkinAwd_BestChoise3()
+@interface SkinAwd_BestChoise3(){
+    CGFloat modelLabelInitialHeight;
+}
 
 @property (nonatomic) IBOutlet NSLayoutConstraint *topMargin;
 @property (nonatomic) IBOutlet UIView *movingView;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *modelLabelHeight;
 
 @end
 
@@ -22,12 +25,14 @@
     
     [self setMovingViewConstraint:self.topMargin andViewHeight:self.movingView.bounds.size.height];
     
+    modelLabelInitialHeight = self.modelLabelHeight.constant;
     canEditFieldAuto1 = YES;
 }
 
 -(void)fieldAuto1DidUpdate{
     self.labelAuto.text = fieldAuto1.name;
     self.labelModel.text = fieldAuto1.selectedTextModelSubmodel;
+    self.modelLabelHeight.constant = self.labelModel.text.length == 0 ? 0.0 : modelLabelInitialHeight;
 }
 
 @end
