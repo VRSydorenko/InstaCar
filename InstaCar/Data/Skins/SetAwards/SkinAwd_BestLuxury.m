@@ -8,5 +8,22 @@
 
 #import "SkinAwd_BestLuxury.h"
 
+@interface SkinAwd_BestLuxury()
+
+@property (nonatomic) IBOutlet NSLayoutConstraint *topMargin;
+@property (nonatomic) IBOutlet UIView *movingView;
+
+@end
+
 @implementation SkinAwd_BestLuxury
+
+-(void)initialise{
+    self.movingView.backgroundColor = [UIColor clearColor];
+    
+    [self setMovingViewConstraint:self.topMargin andViewHeight:self.movingView.bounds.size.height];
+}
+
+-(void)fieldAuto1DidUpdate{
+}
+
 @end
