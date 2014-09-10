@@ -337,26 +337,55 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z0o-nw-9JV">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
+                    <rect key="frame" x="0.0" y="220" width="320" height="100"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Ready to travel!" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="1tx-IU-6yp">
-                            <rect key="frame" x="8" y="8" width="204" height="70"/>
-                            <fontDescription key="fontDescription" name="RegencyScriptFLF" family="RegencyScriptFLF" pointSize="44"/>
-                            <color key="textColor" red="0.040608489961720458" green="0.37314652423469385" blue="0.076832910958137948" alpha="1" colorSpace="calibratedRGB"/>
-                            <nil key="highlightedColor"/>
-                        </label>
+                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Z82-ec-W82" customClass="SkinElementRect">
+                            <rect key="frame" x="0.0" y="29" width="320" height="48"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Ready to travel!" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="1tx-IU-6yp" customClass="SkinElementLabel">
+                                    <rect key="frame" x="8" y="-6" width="204" height="54"/>
+                                    <fontDescription key="fontDescription" name="RegencyScriptFLF" family="RegencyScriptFLF" pointSize="44"/>
+                                    <color key="textColor" red="0.040608489961720458" green="0.37314652423469385" blue="0.076832910958137948" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EtM-cs-sRD" customClass="SkinElementRect">
+                            <rect key="frame" x="194" y="75" width="113" height="17"/>
+                            <color key="backgroundColor" red="0.040608489960000001" green="0.3731465242" blue="0.07683291096" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="17" id="LgQ-Sp-DyV"/>
+                                <constraint firstAttribute="width" constant="113" id="cTS-1G-qjk"/>
+                            </constraints>
+                        </view>
                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="travel1.png" translatesAutoresizingMaskIntoConstraints="NO" id="GLG-kM-7EJ" customClass="SkinElementImage">
                             <rect key="frame" x="220" y="0.0" width="100" height="100"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="100" id="krf-gm-c7v"/>
                             </constraints>
                         </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="right" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="select car..." textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.40000000000000002" translatesAutoresizingMaskIntoConstraints="NO" id="XvD-ED-aAf" customClass="SkinElementLabel">
+                            <rect key="frame" x="62" y="75" width="168" height="17"/>
+                            <color key="backgroundColor" red="0.040608489960000001" green="0.3731465242" blue="0.07683291096" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="17" id="Apq-NN-OZT"/>
+                                <constraint firstAttribute="width" constant="168" id="dHE-fd-nmY"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="Avenir-MediumOblique" family="Avenir" pointSize="13"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
                     </subviews>
                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
+                        <constraint firstAttribute="bottom" secondItem="XvD-ED-aAf" secondAttribute="bottom" constant="8" id="41D-aE-DhH"/>
+                        <constraint firstAttribute="trailing" secondItem="XvD-ED-aAf" secondAttribute="trailing" constant="90" id="4Kx-GY-IKD"/>
                         <constraint firstItem="GLG-kM-7EJ" firstAttribute="leading" secondItem="Z0o-nw-9JV" secondAttribute="leading" constant="220" id="6Ut-yq-nSb"/>
                         <constraint firstAttribute="bottom" secondItem="GLG-kM-7EJ" secondAttribute="bottom" id="Fer-V9-YG0"/>
+                        <constraint firstAttribute="bottom" secondItem="EtM-cs-sRD" secondAttribute="bottom" constant="8" id="P4T-Tc-Qqc"/>
                         <constraint firstItem="GLG-kM-7EJ" firstAttribute="top" secondItem="Z0o-nw-9JV" secondAttribute="top" id="fxB-Wp-Rdi"/>
+                        <constraint firstAttribute="trailing" secondItem="EtM-cs-sRD" secondAttribute="trailing" constant="13" id="tKs-7X-mNv"/>
                         <constraint firstAttribute="height" constant="100" id="xSE-Zu-hx8"/>
                     </constraints>
                 </view>
@@ -364,12 +393,19 @@
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="Z0o-nw-9JV" firstAttribute="leading" secondItem="kx2-Mu-8yb" secondAttribute="leading" id="42j-Nu-7qQ"/>
-                <constraint firstItem="Z0o-nw-9JV" firstAttribute="top" secondItem="kx2-Mu-8yb" secondAttribute="top" id="HgV-ya-W2b"/>
+                <constraint firstItem="Z0o-nw-9JV" firstAttribute="top" secondItem="kx2-Mu-8yb" secondAttribute="top" constant="220" id="HgV-ya-W2b"/>
                 <constraint firstAttribute="trailing" secondItem="Z0o-nw-9JV" secondAttribute="trailing" id="X8K-YM-EZy"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="121" y="585"/>
+            <connections>
+                <outlet property="constraintLabelWithMyCarWidth" destination="dHE-fd-nmY" id="dZj-wg-x40"/>
+                <outlet property="labelWithMyCar" destination="XvD-ED-aAf" id="ntG-Fm-n0H"/>
+                <outlet property="movingView" destination="Z0o-nw-9JV" id="dCd-9M-m5g"/>
+                <outlet property="topMargin" destination="HgV-ya-W2b" id="N39-yJ-qQY"/>
+                <outlet property="viewLabelBackground" destination="EtM-cs-sRD" id="F5b-4y-4pG"/>
+            </connections>
+            <point key="canvasLocation" x="-44" y="600"/>
         </view>
     </objects>
     <resources>

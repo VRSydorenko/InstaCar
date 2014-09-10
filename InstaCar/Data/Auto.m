@@ -23,7 +23,15 @@
     return self;
 }
 
--(NSString*)selectedText{ // specific formatting
+-(NSString*)selectedTextFull{ // specific formatting
+    NSString *modelName = (self.model && self.model.isSelectable) ? [NSString stringWithFormat:@" %@", self.model.name] : @"";
+    NSString *submodelName = (self.model && self.model.submodel) ? [NSString stringWithFormat:@" %@", self.model.submodel.name] : @"";
+    
+    return [NSString stringWithFormat:@"%@%@%@", self.name, modelName, submodelName];
+}
+  
+    
+-(NSString*)selectedTextShort{ // specific formatting
     NSString *autoName = self.logoAsName ? @"" : self.name;
     if (self.model){
         if (self.model.submodel){

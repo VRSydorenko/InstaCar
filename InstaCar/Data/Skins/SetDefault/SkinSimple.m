@@ -31,7 +31,7 @@
     self.imgEmblem.contentMode = UIViewContentModeScaleAspectFit;
     [self.imgEmblem setImageLogoName:fieldAuto1.logoName];
     self.imgEmblem.image = fieldAuto1.logo128;
-    self.textAuto.text = fieldAuto1.selectedText;
+    self.textAuto.text = fieldAuto1.selectedTextShort;
     
     [self adjustAutoLabelSizeAccordingToText];
 }
