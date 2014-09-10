@@ -26,20 +26,14 @@
     [self setMovingViewConstraint:self.topMargin andViewHeight:self.movingView.bounds.size.height];
 
     self.movingView.backgroundColor = [UIColor clearColor];
-    self.labelWithMyCar.hidden = YES;
-    self.viewLabelBackground.hidden = YES;
     
     canEditFieldAuto1 = YES;
     isContentOnTop = NO;
 }
 
 -(void)fieldAuto1DidUpdate{
-    self.labelWithMyCar.hidden = fieldAuto1 == nil;
-    self.viewLabelBackground.hidden = fieldAuto1 == nil;
-    
     if (fieldAuto1){
-        self.labelWithMyCar.text = [NSString stringWithFormat:@"with my %@", fieldAuto1.selectedTextFull];
-        [self.labelWithMyCar sizeToFit];
+        self.labelWithMyCar.text = fieldAuto1.selectedTextFull;
         [self adjustAutoLabelSizeAccordingToText];
     }
 }

@@ -224,6 +224,14 @@
             case ELEM_TEXT:{
                 UIView<DrawElemTextProtocol> *elemText = (UIView<DrawElemTextProtocol> *)control;
                 
+                // fill label background if any
+                if (![[elemText backgroundColor] isEqual:[UIColor clearColor]]){
+                    CGFloat fillRed = 0.0, fillGreen = 0.0, fillBlue = 0.0, fillAlpha = 0.0;
+                    [[elemText backgroundColor] getRed:&fillRed green:&fillGreen blue:&fillBlue alpha:&fillAlpha];
+                    CGContextSetRGBFillColor(*context, fillRed, fillGreen, fillBlue, fillAlpha);
+                    CGContextFillRect(*context, rectToDrawIn);
+                }
+                
                 NSDictionary *attrs = @{NSFontAttributeName: [elemText elemFont], NSForegroundColorAttributeName: [elemBase elemColor]};
                 NSString *text = [elemText elemString];
                 
@@ -266,14 +274,6 @@
                     }
                     
                     savedStringAttrs = currAttrs;
-                }
-                
-                // fill label background if any
-                if (![[elemText backgroundColor] isEqual:[UIColor clearColor]]){
-                    CGFloat fillRed = 0.0, fillGreen = 0.0, fillBlue = 0.0, fillAlpha = 0.0;
-                    [[elemText backgroundColor] getRed:&fillRed green:&fillGreen blue:&fillBlue alpha:&fillAlpha];
-                    CGContextSetRGBFillColor(*context, fillRed, fillGreen, fillBlue, fillAlpha);
-                    CGContextFillRect(*context, rectToDrawIn);
                 }
                 
                 // draw the text

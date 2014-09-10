@@ -9,4 +9,7 @@
 #import "SkinViewBase.h"
 
 @interface SkinBasic_Travel2 : SkinViewBase
+
+@property (weak, nonatomic) IBOutlet SkinElementLabel *labelAuto;
+
 @end
