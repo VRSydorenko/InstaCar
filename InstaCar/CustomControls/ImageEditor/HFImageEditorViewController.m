@@ -242,7 +242,7 @@ static const NSTimeInterval kAnimationIntervalTransform = 0.2;
             } else { // landscape
                 size = CGSizeMake(kMaxUIImageSize,kMaxUIImageSize*aspect);
             }
-            hiresCGImage = [self newScaledImage:self.sourceImage.CGImage withOrientation:self.sourceImage.imageOrientation toSize:size withQuality:kCGInterpolationDefault];
+            hiresCGImage = [self newScaledImage:self.sourceImage.CGImage withOrientation:self.sourceImage.imageOrientation toSize:size withQuality:kCGInterpolationHigh];
             
             dispatch_async(dispatch_get_main_queue(), ^{
                 self.imageView.image = [UIImage imageWithCGImage:hiresCGImage scale:1.0 orientation:UIImageOrientationUp];
