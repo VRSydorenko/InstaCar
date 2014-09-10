@@ -252,6 +252,7 @@
 		8415F44819587F2500708437 /* SkinElementLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8415F44719587F2500708437 /* SkinElementLabel.m */; };
 		841C5EF4195483FF00AD025D /* SkinElementImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 841C5EF3195483FF00AD025D /* SkinElementImage.m */; };
 		84205D5F19C06DCF00CAD98E /* eco100.png in Resources */ = {isa = PBXBuildFile; fileRef = 84205D5E19C06DCF00CAD98E /* eco100.png */; };
+		84205D6119C0708E00CAD98E /* medal1st.png in Resources */ = {isa = PBXBuildFile; fileRef = 84205D6019C0708E00CAD98E /* medal1st.png */; };
 		842C765D19B8956B008E47A1 /* db.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 842C765C19B8956B008E47A1 /* db.sqlite */; };
 		8474A7B319B7526B009ADB4E /* SkinEmo_IHeartName.m in Sources */ = {isa = PBXBuildFile; fileRef = 8474A7B219B7526B009ADB4E /* SkinEmo_IHeartName.m */; };
 		8474A7B819B75577009ADB4E /* SetAwards.m in Sources */ = {isa = PBXBuildFile; fileRef = 8474A7B619B75577009ADB4E /* SetAwards.m */; };
@@ -648,6 +649,7 @@
 		841C5EF2195483FF00AD025D /* SkinElementImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SkinElementImage.h; path = InstaCar/Core/DrawingElements/SkinElementImage.h; sourceTree = "<group>"; };
 		841C5EF3195483FF00AD025D /* SkinElementImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SkinElementImage.m; path = InstaCar/Core/DrawingElements/SkinElementImage.m; sourceTree = "<group>"; };
 		84205D5E19C06DCF00CAD98E /* eco100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = eco100.png; sourceTree = "<group>"; };
+		84205D6019C0708E00CAD98E /* medal1st.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = medal1st.png; sourceTree = "<group>"; };
 		842C765C19B8956B008E47A1 /* db.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = db.sqlite; sourceTree = "<group>"; };
 		8474A7B119B7526B009ADB4E /* SkinEmo_IHeartName.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SkinEmo_IHeartName.h; path = SetEmotions/SkinEmo_IHeartName.h; sourceTree = "<group>"; };
 		8474A7B219B7526B009ADB4E /* SkinEmo_IHeartName.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SkinEmo_IHeartName.m; path = SetEmotions/SkinEmo_IHeartName.m; sourceTree = "<group>"; };
@@ -1405,8 +1407,6 @@
 				848A9BF419BDF37900D59D60 /* SkinAwd_BestChoise2.m */,
 				848A9BF519BDF37900D59D60 /* SkinAwd_BestChoise3.h */,
 				848A9BF619BDF37900D59D60 /* SkinAwd_BestChoise3.m */,
-				7F8436D019BCFEDD00B69865 /* SkinAwd_Medal1st.h */,
-				7F8436D119BCFEDD00B69865 /* SkinAwd_Medal1st.m */,
 				7F8436D219BCFEDD00B69865 /* SkinAwd_Medal2nd.h */,
 				7F8436D319BCFEDD00B69865 /* SkinAwd_Medal2nd.m */,
 				7F8436D419BCFEDD00B69865 /* SkinAwd_Placeholder1.h */,
@@ -1416,6 +1416,8 @@
 				8474A7B519B75577009ADB4E /* SetAwards.h */,
 				8474A7B619B75577009ADB4E /* SetAwards.m */,
 				8474A7B719B75577009ADB4E /* SetAwards.xib */,
+				7F8436D019BCFEDD00B69865 /* SkinAwd_Medal1st.h */,
+				7F8436D119BCFEDD00B69865 /* SkinAwd_Medal1st.m */,
 				7F8436CE19BCFEDD00B69865 /* SkinAwd_Eco.h */,
 				7F8436CF19BCFEDD00B69865 /* SkinAwd_Eco.m */,
 				8474A7BA19B756E5009ADB4E /* SkinAwd_BestChoise.h */,
@@ -1449,6 +1451,7 @@
 		848A9BF919BDF59700D59D60 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				84205D6019C0708E00CAD98E /* medal1st.png */,
 				84205D5E19C06DCF00CAD98E /* eco100.png */,
 				848A9BFA19BDF59700D59D60 /* bestChoice2.png */,
 				848A9BFB19BDF59700D59D60 /* bestChoise1.png */,
@@ -1662,6 +1665,7 @@
 				7F4D537319B7BBFD0083E2CB /* logo_mitsubishi_256.png in Resources */,
 				7F4D535B19B7BBFD0083E2CB /* logo_ford_256.png in Resources */,
 				7F4D536119B7BBFD0083E2CB /* logo_infiniti_256.png in Resources */,
+				84205D6119C0708E00CAD98E /* medal1st.png in Resources */,
 				7F4D537819B7BBFD0083E2CB /* logo_porsche_256.png in Resources */,
 				7F4D53F119B7C5E50083E2CB /* logo_porsche_128.png in Resources */,
 				7F4D53E919B7C5E50083E2CB /* logo_mercedes_128.png in Resources */,

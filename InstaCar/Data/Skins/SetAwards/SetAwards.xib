@@ -208,12 +208,102 @@
             </connections>
             <point key="canvasLocation" x="979" y="613"/>
         </view>
+        <view tag="6" contentMode="scaleToFill" id="6T6-u0-Rns" customClass="SkinAwd_Medal1st">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="320"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uca-KL-P2u">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kA6-g5-yI7" customClass="SkinElementRect">
+                            <rect key="frame" x="0.0" y="12" width="320" height="41"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select auto..." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="QFx-WX-jPq" customClass="SkinElementLabel">
+                                    <rect key="frame" x="67" y="8" width="245" height="33"/>
+                                    <fontDescription key="fontDescription" name="OriyaSangamMN-Bold" family="Oriya Sangam MN" pointSize="27"/>
+                                    <color key="textColor" red="0.98431378602981567" green="0.82745105028152466" blue="0.17647059261798859" alpha="1" colorSpace="deviceRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" red="0.78039222955703735" green="0.11764706671237946" blue="0.1098039299249649" alpha="0.75" colorSpace="deviceRGB"/>
+                            <constraints>
+                                <constraint firstItem="QFx-WX-jPq" firstAttribute="leading" secondItem="kA6-g5-yI7" secondAttribute="leading" constant="67" id="beS-Gy-hbi"/>
+                                <constraint firstItem="QFx-WX-jPq" firstAttribute="top" secondItem="kA6-g5-yI7" secondAttribute="top" constant="8" id="hAR-SZ-bVE"/>
+                                <constraint firstAttribute="trailing" secondItem="QFx-WX-jPq" secondAttribute="trailing" constant="8" id="hXU-lp-wQ7"/>
+                                <constraint firstAttribute="bottom" secondItem="QFx-WX-jPq" secondAttribute="bottom" id="vA4-hh-9Gr"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5MD-Ml-awb" customClass="SkinElementRect">
+                            <rect key="frame" x="36" y="53" width="284" height="14"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="7Au-A0-s7r" customClass="SkinElementLabel">
+                                    <rect key="frame" x="21" y="1" width="255" height="13"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="255" id="zja-er-Mqp"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" red="0.97647064924240112" green="0.80392163991928101" blue="0.13333334028720856" alpha="0.75" colorSpace="deviceRGB"/>
+                            <constraints>
+                                <constraint firstItem="7Au-A0-s7r" firstAttribute="top" secondItem="5MD-Ml-awb" secondAttribute="top" constant="1" id="XQy-4T-5gO"/>
+                                <constraint firstItem="7Au-A0-s7r" firstAttribute="top" secondItem="5MD-Ml-awb" secondAttribute="top" constant="1" id="bwd-Pe-lqu"/>
+                                <constraint firstAttribute="height" constant="14" id="dnT-2j-zBH"/>
+                                <constraint firstAttribute="trailing" secondItem="7Au-A0-s7r" secondAttribute="trailing" constant="8" id="kDA-64-4ie"/>
+                                <constraint firstAttribute="bottom" secondItem="7Au-A0-s7r" secondAttribute="bottom" id="vLy-Kl-ffK"/>
+                            </constraints>
+                        </view>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="medal1st.png" translatesAutoresizingMaskIntoConstraints="NO" id="Ou4-KP-nWg" customClass="SkinElementImage">
+                            <rect key="frame" x="0.0" y="0.0" width="65" height="100"/>
+                            <constraints>
+                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="65" id="HFa-ZN-wQa"/>
+                                <constraint firstAttribute="height" constant="100" id="VpE-U4-JR0"/>
+                                <constraint firstAttribute="width" constant="65" id="ykc-uq-1QG"/>
+                            </constraints>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="Ou4-KP-nWg" firstAttribute="leading" secondItem="uca-KL-P2u" secondAttribute="leading" id="0I1-PV-ysd"/>
+                        <constraint firstAttribute="bottom" secondItem="Ou4-KP-nWg" secondAttribute="bottom" id="0mL-Wa-gg7"/>
+                        <constraint firstAttribute="trailing" secondItem="5MD-Ml-awb" secondAttribute="trailing" id="HCf-rc-BcE"/>
+                        <constraint firstAttribute="trailing" secondItem="Ou4-KP-nWg" secondAttribute="trailing" constant="255" id="HtD-E3-eD1"/>
+                        <constraint firstItem="Ou4-KP-nWg" firstAttribute="top" secondItem="uca-KL-P2u" secondAttribute="top" id="JRd-gU-GQv"/>
+                        <constraint firstAttribute="height" constant="100" id="JYO-6S-BzB"/>
+                        <constraint firstItem="5MD-Ml-awb" firstAttribute="top" secondItem="kA6-g5-yI7" secondAttribute="bottom" id="Uiu-o5-vJH"/>
+                        <constraint firstItem="kA6-g5-yI7" firstAttribute="leading" secondItem="uca-KL-P2u" secondAttribute="leading" id="UxN-qj-Bvj"/>
+                        <constraint firstAttribute="trailing" secondItem="kA6-g5-yI7" secondAttribute="trailing" id="YkC-b7-wPb"/>
+                        <constraint firstItem="5MD-Ml-awb" firstAttribute="top" secondItem="kA6-g5-yI7" secondAttribute="bottom" id="juE-84-cx3"/>
+                        <constraint firstItem="kA6-g5-yI7" firstAttribute="top" secondItem="uca-KL-P2u" secondAttribute="top" constant="12" id="ncb-5Y-pHX"/>
+                        <constraint firstItem="Ou4-KP-nWg" firstAttribute="top" secondItem="uca-KL-P2u" secondAttribute="top" id="olc-Za-qh4"/>
+                        <constraint firstItem="5MD-Ml-awb" firstAttribute="leading" secondItem="uca-KL-P2u" secondAttribute="leading" constant="36" id="quF-bK-COt"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="uca-KL-P2u" firstAttribute="top" secondItem="6T6-u0-Rns" secondAttribute="top" id="ePw-Py-28s"/>
+                <constraint firstAttribute="trailing" secondItem="uca-KL-P2u" secondAttribute="trailing" id="l3r-rk-MLS"/>
+                <constraint firstItem="uca-KL-P2u" firstAttribute="leading" secondItem="6T6-u0-Rns" secondAttribute="leading" id="zwS-XM-NaK"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="labelAuto" destination="QFx-WX-jPq" id="l76-Vk-d3Y"/>
+                <outlet property="labelMadeIn" destination="7Au-A0-s7r" id="OX8-AK-aoK"/>
+                <outlet property="movingView" destination="uca-KL-P2u" id="W7l-tY-qk5"/>
+                <outlet property="topMargin" destination="ePw-Py-28s" id="g6P-UB-Jeq"/>
+            </connections>
+            <point key="canvasLocation" x="218" y="998"/>
+        </view>
     </objects>
     <resources>
         <image name="bestChoice2.png" width="480" height="480"/>
         <image name="bestChoise1.png" width="2201" height="2178"/>
         <image name="bestChoise3.png" width="210" height="267"/>
         <image name="eco100.png" width="697" height="700"/>
+        <image name="medal1st.png" width="360" height="578"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

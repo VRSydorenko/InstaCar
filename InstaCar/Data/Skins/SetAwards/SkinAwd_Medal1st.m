@@ -18,19 +18,25 @@
 @implementation SkinAwd_Medal1st
 
 -(void)initialise{
-    [self setupGradient:0.2 inDirection:GRADIENT_RIGHT];
-    [self.imgEmblem.layer setMinificationFilter:kCAFilterTrilinear];
     self.movingView.backgroundColor = [UIColor clearColor];
     
     [self setMovingViewConstraint:self.topMargin andViewHeight:self.movingView.bounds.size.height];
-
+    
     canEditFieldAuto1 = YES;
 }
 
 -(void)fieldAuto1DidUpdate{
-    self.imgEmblem.contentMode = UIViewContentModeScaleAspectFit;
-    [self.imgEmblem setImageLogoName:fieldAuto1.logoName];
-    self.imgEmblem.image = fieldAuto1.logo128;
+    self.labelAuto.text = fieldAuto1.selectedTextFull;
+    
+    NSString *autoYears = @"";
+    if (fieldAuto1.model){
+        autoYears = [Utils getAutoYearsString:fieldAuto1.model.startYear endYear:fieldAuto1.model.endYear];
+        if (autoYears.length > 0){
+            autoYears = [NSString stringWithFormat:@", %@", autoYears];
+        }
+    }
+    self.labelMadeIn.text = [NSString stringWithFormat:@"Made in %@%@", fieldAuto1.country, autoYears];
+
 }
 
 @end

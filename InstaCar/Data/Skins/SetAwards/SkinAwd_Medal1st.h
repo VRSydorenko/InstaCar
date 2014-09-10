@@ -9,7 +9,6 @@
 #import "SkinViewBase.h"
 
 @interface SkinAwd_Medal1st : SkinViewBase
-
-@property (nonatomic) IBOutlet SkinElementImage *imgEmblem;
-
+@property (weak, nonatomic) IBOutlet SkinElementLabel *labelAuto;
+@property (weak, nonatomic) IBOutlet SkinElementLabel *labelMadeIn;
 @end
