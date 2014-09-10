@@ -30,6 +30,7 @@
     self.viewLabelBackground.hidden = YES;
     
     canEditFieldAuto1 = YES;
+    isContentOnTop = NO;
 }
 
 -(void)fieldAuto1DidUpdate{
