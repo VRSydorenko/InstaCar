@@ -9,4 +9,7 @@
 #import "SkinViewBase.h"
 
 @interface SkinEmo_MyDream : SkinViewBase
+
+@property (nonatomic) IBOutlet SkinElementLabel *labelAuto;
+
 @end

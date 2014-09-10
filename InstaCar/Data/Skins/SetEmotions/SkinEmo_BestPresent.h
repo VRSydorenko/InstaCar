@@ -1,5 +1,5 @@
 //
-//  SkinEmo_IHeartLogo.h
+//  SkinEmo_BestPresent.h
 //  InstaCar
 //
 //  Created by VRS on 03/09/14.
@@ -8,8 +8,8 @@
 
 #import "SkinViewBase.h"
 
-@interface SkinEmo_IHeartLogo : SkinViewBase
+@interface SkinEmo_BestPresent : SkinViewBase
 
-@property (nonatomic) IBOutlet SkinElementImage *imgEmblem;
+@property (nonatomic) IBOutlet SkinElementLabel *labelAuto;
 
 @end

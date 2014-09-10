@@ -253,6 +253,8 @@
 		841C5EF4195483FF00AD025D /* SkinElementImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 841C5EF3195483FF00AD025D /* SkinElementImage.m */; };
 		84205D5F19C06DCF00CAD98E /* eco100.png in Resources */ = {isa = PBXBuildFile; fileRef = 84205D5E19C06DCF00CAD98E /* eco100.png */; };
 		84205D6119C0708E00CAD98E /* medal1st.png in Resources */ = {isa = PBXBuildFile; fileRef = 84205D6019C0708E00CAD98E /* medal1st.png */; };
+		84205D6419C07F8C00CAD98E /* SkinEmo_BestPresent.m in Sources */ = {isa = PBXBuildFile; fileRef = 84205D6319C07F8C00CAD98E /* SkinEmo_BestPresent.m */; };
+		84205D6619C07FB000CAD98E /* carGift.png in Resources */ = {isa = PBXBuildFile; fileRef = 84205D6519C07FB000CAD98E /* carGift.png */; };
 		842C765D19B8956B008E47A1 /* db.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 842C765C19B8956B008E47A1 /* db.sqlite */; };
 		8474A7B319B7526B009ADB4E /* SkinEmo_IHeartName.m in Sources */ = {isa = PBXBuildFile; fileRef = 8474A7B219B7526B009ADB4E /* SkinEmo_IHeartName.m */; };
 		8474A7B819B75577009ADB4E /* SetAwards.m in Sources */ = {isa = PBXBuildFile; fileRef = 8474A7B619B75577009ADB4E /* SetAwards.m */; };
@@ -650,6 +652,9 @@
 		841C5EF3195483FF00AD025D /* SkinElementImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SkinElementImage.m; path = InstaCar/Core/DrawingElements/SkinElementImage.m; sourceTree = "<group>"; };
 		84205D5E19C06DCF00CAD98E /* eco100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = eco100.png; sourceTree = "<group>"; };
 		84205D6019C0708E00CAD98E /* medal1st.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = medal1st.png; sourceTree = "<group>"; };
+		84205D6219C07F8C00CAD98E /* SkinEmo_BestPresent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SkinEmo_BestPresent.h; path = SetEmotions/SkinEmo_BestPresent.h; sourceTree = "<group>"; };
+		84205D6319C07F8C00CAD98E /* SkinEmo_BestPresent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SkinEmo_BestPresent.m; path = SetEmotions/SkinEmo_BestPresent.m; sourceTree = "<group>"; };
+		84205D6519C07FB000CAD98E /* carGift.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = carGift.png; sourceTree = "<group>"; };
 		842C765C19B8956B008E47A1 /* db.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = db.sqlite; sourceTree = "<group>"; };
 		8474A7B119B7526B009ADB4E /* SkinEmo_IHeartName.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SkinEmo_IHeartName.h; path = SetEmotions/SkinEmo_IHeartName.h; sourceTree = "<group>"; };
 		8474A7B219B7526B009ADB4E /* SkinEmo_IHeartName.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SkinEmo_IHeartName.m; path = SetEmotions/SkinEmo_IHeartName.m; sourceTree = "<group>"; };
@@ -1178,6 +1183,7 @@
 		7F4D530919B79A760083E2CB /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				84205D6519C07FB000CAD98E /* carGift.png */,
 				7F4D530A19B79A760083E2CB /* iheart_256.png */,
 			);
 			name = Images;
@@ -1403,10 +1409,10 @@
 			isa = PBXGroup;
 			children = (
 				848A9BF919BDF59700D59D60 /* Images */,
-				848A9BF319BDF37900D59D60 /* SkinAwd_BestChoise2.h */,
-				848A9BF419BDF37900D59D60 /* SkinAwd_BestChoise2.m */,
-				848A9BF519BDF37900D59D60 /* SkinAwd_BestChoise3.h */,
-				848A9BF619BDF37900D59D60 /* SkinAwd_BestChoise3.m */,
+				8474A7BD19B756F4009ADB4E /* SkinAwd_BestLuxury.h */,
+				8474A7BE19B756F4009ADB4E /* SkinAwd_BestLuxury.m */,
+				8474A7C019B75D0D009ADB4E /* SkinAwd_BestTravel.h */,
+				8474A7C119B75D0D009ADB4E /* SkinAwd_BestTravel.m */,
 				7F8436D219BCFEDD00B69865 /* SkinAwd_Medal2nd.h */,
 				7F8436D319BCFEDD00B69865 /* SkinAwd_Medal2nd.m */,
 				7F8436D419BCFEDD00B69865 /* SkinAwd_Placeholder1.h */,
@@ -1422,10 +1428,10 @@
 				7F8436CF19BCFEDD00B69865 /* SkinAwd_Eco.m */,
 				8474A7BA19B756E5009ADB4E /* SkinAwd_BestChoise.h */,
 				8474A7BB19B756E5009ADB4E /* SkinAwd_BestChoise.m */,
-				8474A7BD19B756F4009ADB4E /* SkinAwd_BestLuxury.h */,
-				8474A7BE19B756F4009ADB4E /* SkinAwd_BestLuxury.m */,
-				8474A7C019B75D0D009ADB4E /* SkinAwd_BestTravel.h */,
-				8474A7C119B75D0D009ADB4E /* SkinAwd_BestTravel.m */,
+				848A9BF319BDF37900D59D60 /* SkinAwd_BestChoise2.h */,
+				848A9BF419BDF37900D59D60 /* SkinAwd_BestChoise2.m */,
+				848A9BF519BDF37900D59D60 /* SkinAwd_BestChoise3.h */,
+				848A9BF619BDF37900D59D60 /* SkinAwd_BestChoise3.m */,
 			);
 			path = SetAwards;
 			sourceTree = "<group>";
@@ -1464,6 +1470,10 @@
 			isa = PBXGroup;
 			children = (
 				7F4D530919B79A760083E2CB /* Images */,
+				84205D6219C07F8C00CAD98E /* SkinEmo_BestPresent.h */,
+				84205D6319C07F8C00CAD98E /* SkinEmo_BestPresent.m */,
+				8474A7C419B7601D009ADB4E /* SkinEmo_MyDream.h */,
+				8474A7C319B7601D009ADB4E /* SkinEmo_MyDream.m */,
 				84D344CC19B74E3B00C7A02E /* SetEmotions.h */,
 				84D344CD19B74E3B00C7A02E /* SetEmotions.m */,
 				84D344CF19B74F4900C7A02E /* SetEmotions.xib */,
@@ -1471,8 +1481,6 @@
 				84D344D219B74FC000C7A02E /* SkinEmo_IHeartLogo.m */,
 				8474A7B119B7526B009ADB4E /* SkinEmo_IHeartName.h */,
 				8474A7B219B7526B009ADB4E /* SkinEmo_IHeartName.m */,
-				8474A7C419B7601D009ADB4E /* SkinEmo_MyDream.h */,
-				8474A7C319B7601D009ADB4E /* SkinEmo_MyDream.m */,
 			);
 			name = SetEmotions;
 			sourceTree = "<group>";
@@ -1615,6 +1623,7 @@
 				7F4D53C219B7C5E50083E2CB /* logo_acura_128.png in Resources */,
 				848A9BFD19BDF59700D59D60 /* bestChoice2.png in Resources */,
 				7F4D53E819B7C5E50083E2CB /* logo_mclaren_128.png in Resources */,
+				84205D6619C07FB000CAD98E /* carGift.png in Resources */,
 				7F2AD59917EDE9B40096EC8D /* SHKSharers.plist in Resources */,
 				7F4D537619B7BBFD0083E2CB /* logo_peugeot_256.png in Resources */,
 				7F4D536A19B7BBFD0083E2CB /* logo_lancia_256.png in Resources */,
@@ -1749,6 +1758,7 @@
 				8474A7C819B76155009ADB4E /* SkinBasic_OneAtFinish.m in Sources */,
 				7F882C241832EBE50083CFC9 /* SetVersus.m in Sources */,
 				8474A7BF19B756F4009ADB4E /* SkinAwd_BestLuxury.m in Sources */,
+				84205D6419C07F8C00CAD98E /* SkinEmo_BestPresent.m in Sources */,
 				7F8436E519BD015C00B69865 /* SkinBasic_Info3.m in Sources */,
 				7FC945CB19BD06A300F14999 /* SkinVersus_RaceTime.m in Sources */,
 				7F3871D617BE4CA900D8E39D /* MainNavController.m in Sources */,

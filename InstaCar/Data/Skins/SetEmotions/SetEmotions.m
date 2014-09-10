@@ -31,6 +31,8 @@
             skin = (SkinEmo_IHeartName*)object;
         } else if ([object isKindOfClass:[SkinEmo_MyDream class]]){
             skin = (SkinEmo_MyDream*)object;
+        } else if ([object isKindOfClass:[SkinEmo_BestPresent class]]){
+            skin = (SkinEmo_BestPresent*)object;
         }
         
         NSAssert(skin, @"Undefined skin!");

@@ -12,6 +12,7 @@
 #import "SkinEmo_IHeartLogo.h"
 #import "SkinEmo_IHeartName.h"
 #import "SkinEmo_MyDream.h"
+#import "SkinEmo_BestPresent.h"
 
 @interface SetEmotions : SkinSetBase
 @end
