@@ -25,7 +25,6 @@
     [self setMovingViewConstraint:self.topMargin andViewHeight:self.movingView.bounds.size.height];
 
     canEditFieldAuto1 = YES;
-    self.labelCountry.transform = CGAffineTransformMakeRotation(degreesToRadians(-30));
     isContentOnTop = NO;
 }
 
