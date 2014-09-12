@@ -29,7 +29,7 @@
     self.imgEmblem.contentMode = UIViewContentModeScaleAspectFit;
     [self.imgEmblem setImageLogoName:fieldAuto1.logoName];
     self.imgEmblem.image = fieldAuto1.logo128;
-    self.textAuto.text = fieldAuto1.selectedTextShort;
+    self.textAuto.text = fieldAuto1.selectedTextModelSubmodel.length > 0 ? fieldAuto1.selectedTextModelSubmodel : fieldAuto1.name;
     
     NSString *autoYears = fieldAuto1.selectedTextYears;
     if (autoYears.length > 0){

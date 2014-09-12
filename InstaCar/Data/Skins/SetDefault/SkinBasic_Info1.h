@@ -10,6 +10,11 @@
 
 @interface SkinBasic_Info1 : SkinViewBase
 
-@property (nonatomic) IBOutlet SkinElementImage *imgEmblem;
+@property (nonatomic) IBOutlet SkinElementLabel *labelAuto;
+@property (nonatomic) IBOutlet SkinElementLabel *labelModel; // used to show Country, not renamed
+@property (nonatomic) IBOutlet SkinElementLabel *labelYears;
+
+@property (nonatomic) IBOutlet NSLayoutConstraint *labelModelHeight;
+@property (nonatomic) IBOutlet NSLayoutConstraint *labelYearsHeight;
 
 @end

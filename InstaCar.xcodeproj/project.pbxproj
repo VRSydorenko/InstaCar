@@ -250,6 +250,7 @@
 		7FEF908917D505E800C07A05 /* AutosVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FEF908817D505E800C07A05 /* AutosVC.m */; };
 		7FF3389317D4C0E700B046C4 /* SkinsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FF3389217D4C0E700B046C4 /* SkinsVC.m */; };
 		8415F44819587F2500708437 /* SkinElementLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8415F44719587F2500708437 /* SkinElementLabel.m */; };
+		8416962819C3329000F65B76 /* veteranTypewriter.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8416962719C3329000F65B76 /* veteranTypewriter.ttf */; };
 		841C5EF4195483FF00AD025D /* SkinElementImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 841C5EF3195483FF00AD025D /* SkinElementImage.m */; };
 		84205D5F19C06DCF00CAD98E /* eco100.png in Resources */ = {isa = PBXBuildFile; fileRef = 84205D5E19C06DCF00CAD98E /* eco100.png */; };
 		84205D6119C0708E00CAD98E /* medal1st.png in Resources */ = {isa = PBXBuildFile; fileRef = 84205D6019C0708E00CAD98E /* medal1st.png */; };
@@ -650,6 +651,7 @@
 		7FF3389217D4C0E700B046C4 /* SkinsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SkinsVC.m; path = InstaCar/SkinsVC.m; sourceTree = "<group>"; };
 		8415F44619587F2500708437 /* SkinElementLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SkinElementLabel.h; path = InstaCar/Core/DrawingElements/SkinElementLabel.h; sourceTree = "<group>"; };
 		8415F44719587F2500708437 /* SkinElementLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SkinElementLabel.m; path = InstaCar/Core/DrawingElements/SkinElementLabel.m; sourceTree = "<group>"; };
+		8416962719C3329000F65B76 /* veteranTypewriter.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = veteranTypewriter.ttf; sourceTree = "<group>"; };
 		841C5EF2195483FF00AD025D /* SkinElementImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SkinElementImage.h; path = InstaCar/Core/DrawingElements/SkinElementImage.h; sourceTree = "<group>"; };
 		841C5EF3195483FF00AD025D /* SkinElementImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SkinElementImage.m; path = InstaCar/Core/DrawingElements/SkinElementImage.m; sourceTree = "<group>"; };
 		84205D5E19C06DCF00CAD98E /* eco100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = eco100.png; sourceTree = "<group>"; };
@@ -1153,8 +1155,6 @@
 				7F8436EA19BD04D600B69865 /* SkinBasic_MadeIn.m */,
 				7F8436E619BD04CE00B69865 /* SkinBasic_BestIn.h */,
 				7F8436E719BD04CE00B69865 /* SkinBasic_BestIn.m */,
-				7F8436DD19BD010F00B69865 /* SkinBasic_Info1.h */,
-				7F8436DE19BD010F00B69865 /* SkinBasic_Info1.m */,
 				7F8436E019BD015C00B69865 /* SkinBasic_Info2.h */,
 				7F8436E119BD015C00B69865 /* SkinBasic_Info2.m */,
 				7F8436E219BD015C00B69865 /* SkinBasic_Info3.h */,
@@ -1162,6 +1162,8 @@
 				7F4CB68518097908008B5CA2 /* SetDefault.h */,
 				7F4CB68618097908008B5CA2 /* SetDefault.m */,
 				7F4CB68718097908008B5CA2 /* SetDefault.xib */,
+				7F8436DD19BD010F00B69865 /* SkinBasic_Info1.h */,
+				7F8436DE19BD010F00B69865 /* SkinBasic_Info1.m */,
 				8478A5F919BF5D68004CCEFE /* SkinBasic_Travel1.h */,
 				8478A5FA19BF5D68004CCEFE /* SkinBasic_Travel1.m */,
 				8478A5FC19BF5DF7004CCEFE /* SkinBasic_Travel2.h */,
@@ -1452,6 +1454,7 @@
 		8478A60419BF6500004CCEFE /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				8416962719C3329000F65B76 /* veteranTypewriter.ttf */,
 				84205D6719C08D5800CAD98E /* SCRIPTIN.ttf */,
 				8478A60519BF6500004CCEFE /* RegencyScriptFLF.ttf */,
 			);
@@ -1738,6 +1741,7 @@
 				7F4D536F19B7BBFD0083E2CB /* logo_mclaren_256.png in Resources */,
 				848A9BFF19BDF59700D59D60 /* bestChoise3.png in Resources */,
 				7F4D53C419B7C5E50083E2CB /* logo_astonmartin_128.png in Resources */,
+				8416962819C3329000F65B76 /* veteranTypewriter.ttf in Resources */,
 				7F4D537219B7BBFD0083E2CB /* logo_mini_256.png in Resources */,
 				7F4D537E19B7BBFD0083E2CB /* logo_subaru_256.png in Resources */,
 				7F4D537C19B7BBFD0083E2CB /* logo_scania_256.png in Resources */,

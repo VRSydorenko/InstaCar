@@ -51,8 +51,15 @@
 }
 
 -(NSString*)selectedTextModel{
-    if (self.model){
+    if (self.model && self.model.isSelectable){
         return self.model.name;
+    }
+    return @"";
+}
+
+-(NSString*)selectedTextSubmodel{
+    if (self.model && self.model.submodel){
+        return self.model.submodel.name;
     }
     return @"";
 }

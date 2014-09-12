@@ -25,6 +25,7 @@
 @property (readonly, nonatomic) NSString* selectedTextFull;
 @property (readonly, nonatomic) NSString* selectedTextMarkModel;
 @property (readonly, nonatomic) NSString* selectedTextModel;
+@property (readonly, nonatomic) NSString* selectedTextSubmodel;
 @property (readonly, nonatomic) NSString* selectedTextModelSubmodel;
 @property (readonly, nonatomic) NSString* selectedTextYears;
 

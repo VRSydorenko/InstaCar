@@ -57,6 +57,7 @@
 	<array>
 		<string>RegencyScriptFLF.ttf</string>
 		<string>SCRIPTIN.ttf</string>
+		<string>veteranTypewriter.ttf</string>
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<true/>

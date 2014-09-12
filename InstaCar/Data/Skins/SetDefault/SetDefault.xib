@@ -1,13 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6206.9" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6245" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment defaultVersion="1792" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7026.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
     </dependencies>
     <customFonts key="customFonts">
         <mutableArray key="RegencyScriptFLF.ttf">
             <string>RegencyScriptFLF</string>
             <string>RegencyScriptFLF</string>
+        </mutableArray>
+        <mutableArray key="veteranTypewriter.ttf">
+            <string>VeteranTypewriter</string>
+            <string>VeteranTypewriter</string>
+            <string>VeteranTypewriter</string>
         </mutableArray>
     </customFonts>
     <objects>
@@ -493,6 +498,75 @@
             </connections>
             <point key="canvasLocation" x="-596" y="529"/>
         </view>
+        <view tag="9" contentMode="scaleToFill" id="L4l-rx-7F0" customClass="SkinBasic_Info1">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="320"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uro-Uk-hU5">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select auto..." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.25000000000000006" translatesAutoresizingMaskIntoConstraints="NO" id="i4s-TF-Uh6" customClass="SkinElementLabel">
+                            <rect key="frame" x="8" y="8" width="304" height="21"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="21" id="z62-6L-ks9"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="VeteranTypewriter" family="Veteran Typewriter" pointSize="25"/>
+                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.25000000000000006" translatesAutoresizingMaskIntoConstraints="NO" id="B95-Dz-7Z0" customClass="SkinElementLabel">
+                            <rect key="frame" x="8" y="29" width="304" height="21"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="21" id="Gop-vR-5er"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="VeteranTypewriter" family="Veteran Typewriter" pointSize="25"/>
+                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.25000000000000006" translatesAutoresizingMaskIntoConstraints="NO" id="Cn2-ZF-Pgi" customClass="SkinElementLabel">
+                            <rect key="frame" x="8" y="51" width="304" height="21"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="21" id="Jah-y5-kPc"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="VeteranTypewriter" family="Veteran Typewriter" pointSize="25"/>
+                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="i4s-TF-Uh6" firstAttribute="leading" secondItem="uro-Uk-hU5" secondAttribute="leading" constant="8" id="96M-rt-p6z"/>
+                        <constraint firstItem="B95-Dz-7Z0" firstAttribute="top" secondItem="i4s-TF-Uh6" secondAttribute="bottom" id="CqA-yO-4qQ"/>
+                        <constraint firstAttribute="trailing" secondItem="i4s-TF-Uh6" secondAttribute="trailing" constant="8" id="DSD-h7-w3l"/>
+                        <constraint firstItem="B95-Dz-7Z0" firstAttribute="leading" secondItem="uro-Uk-hU5" secondAttribute="leading" constant="8" id="F2s-Ai-V7k"/>
+                        <constraint firstAttribute="bottom" secondItem="Cn2-ZF-Pgi" secondAttribute="bottom" constant="8" id="HRT-Q7-jrD"/>
+                        <constraint firstAttribute="trailing" secondItem="Cn2-ZF-Pgi" secondAttribute="trailing" constant="8" id="Iaf-rV-Oq0"/>
+                        <constraint firstItem="Cn2-ZF-Pgi" firstAttribute="top" secondItem="B95-Dz-7Z0" secondAttribute="bottom" constant="1" id="UjB-Uy-OBb"/>
+                        <constraint firstAttribute="height" constant="80" id="mBs-gL-q3A"/>
+                        <constraint firstAttribute="trailing" secondItem="B95-Dz-7Z0" secondAttribute="trailing" constant="8" id="qdg-VT-SVK"/>
+                        <constraint firstItem="Cn2-ZF-Pgi" firstAttribute="leading" secondItem="uro-Uk-hU5" secondAttribute="leading" constant="8" id="zG0-d3-UhR"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="uro-Uk-hU5" secondAttribute="trailing" id="3Ef-lt-VPf"/>
+                <constraint firstItem="uro-Uk-hU5" firstAttribute="top" secondItem="L4l-rx-7F0" secondAttribute="top" id="AVQ-uw-m1B"/>
+                <constraint firstItem="uro-Uk-hU5" firstAttribute="leading" secondItem="L4l-rx-7F0" secondAttribute="leading" id="I4Q-hg-06M"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="labelAuto" destination="i4s-TF-Uh6" id="H0p-RS-Gz3"/>
+                <outlet property="labelModel" destination="B95-Dz-7Z0" id="Dby-dz-bgx"/>
+                <outlet property="labelModelHeight" destination="Gop-vR-5er" id="RvD-NQ-1Ga"/>
+                <outlet property="labelYears" destination="Cn2-ZF-Pgi" id="9bL-df-jO1"/>
+                <outlet property="labelYearsHeight" destination="Jah-y5-kPc" id="MvJ-d4-xSU"/>
+                <outlet property="movingView" destination="uro-Uk-hU5" id="TVS-uL-vCA"/>
+                <outlet property="topMargin" destination="AVQ-uw-m1B" id="JH0-3M-DZv"/>
+            </connections>
+            <point key="canvasLocation" x="520" y="479"/>
+        </view>
     </objects>
     <resources>
         <image name="logo_anycar.png" width="64" height="64"/>
@@ -503,9 +577,6 @@
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination" type="retina4">
-            <size key="portraitSize" width="320" height="568"/>
-            <size key="landscapeSize" width="568" height="320"/>
-        </simulatedScreenMetrics>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
 </document>
