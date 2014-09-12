@@ -259,6 +259,7 @@
 		84205D6819C08D5800CAD98E /* SCRIPTIN.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 84205D6719C08D5800CAD98E /* SCRIPTIN.ttf */; };
 		84205D6A19C08F4C00CAD98E /* luxury.png in Resources */ = {isa = PBXBuildFile; fileRef = 84205D6919C08F4C00CAD98E /* luxury.png */; };
 		842C765D19B8956B008E47A1 /* db.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 842C765C19B8956B008E47A1 /* db.sqlite */; };
+		845187F219C342B800B28370 /* JennaSue.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 845187F119C342B800B28370 /* JennaSue.ttf */; };
 		8474A7B319B7526B009ADB4E /* SkinEmo_IHeartName.m in Sources */ = {isa = PBXBuildFile; fileRef = 8474A7B219B7526B009ADB4E /* SkinEmo_IHeartName.m */; };
 		8474A7B819B75577009ADB4E /* SetAwards.m in Sources */ = {isa = PBXBuildFile; fileRef = 8474A7B619B75577009ADB4E /* SetAwards.m */; };
 		8474A7B919B75577009ADB4E /* SetAwards.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8474A7B719B75577009ADB4E /* SetAwards.xib */; };
@@ -662,6 +663,7 @@
 		84205D6719C08D5800CAD98E /* SCRIPTIN.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SCRIPTIN.ttf; sourceTree = "<group>"; };
 		84205D6919C08F4C00CAD98E /* luxury.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = luxury.png; sourceTree = "<group>"; };
 		842C765C19B8956B008E47A1 /* db.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = db.sqlite; sourceTree = "<group>"; };
+		845187F119C342B800B28370 /* JennaSue.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = JennaSue.ttf; sourceTree = "<group>"; };
 		8474A7B119B7526B009ADB4E /* SkinEmo_IHeartName.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SkinEmo_IHeartName.h; path = SetEmotions/SkinEmo_IHeartName.h; sourceTree = "<group>"; };
 		8474A7B219B7526B009ADB4E /* SkinEmo_IHeartName.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SkinEmo_IHeartName.m; path = SetEmotions/SkinEmo_IHeartName.m; sourceTree = "<group>"; };
 		8474A7B519B75577009ADB4E /* SetAwards.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetAwards.h; sourceTree = "<group>"; };
@@ -1153,15 +1155,17 @@
 				7F7EA7C419BD095900BAB9FB /* SkinBasic_Green1.m */,
 				7F8436E919BD04D600B69865 /* SkinBasic_MadeIn.h */,
 				7F8436EA19BD04D600B69865 /* SkinBasic_MadeIn.m */,
-				7F8436E619BD04CE00B69865 /* SkinBasic_BestIn.h */,
-				7F8436E719BD04CE00B69865 /* SkinBasic_BestIn.m */,
 				7F8436E019BD015C00B69865 /* SkinBasic_Info2.h */,
 				7F8436E119BD015C00B69865 /* SkinBasic_Info2.m */,
 				7F8436E219BD015C00B69865 /* SkinBasic_Info3.h */,
 				7F8436E319BD015C00B69865 /* SkinBasic_Info3.m */,
+				8474A7C619B76155009ADB4E /* SkinBasic_OneAtFinish.h */,
+				8474A7C719B76155009ADB4E /* SkinBasic_OneAtFinish.m */,
 				7F4CB68518097908008B5CA2 /* SetDefault.h */,
 				7F4CB68618097908008B5CA2 /* SetDefault.m */,
 				7F4CB68718097908008B5CA2 /* SetDefault.xib */,
+				7F8436E619BD04CE00B69865 /* SkinBasic_BestIn.h */,
+				7F8436E719BD04CE00B69865 /* SkinBasic_BestIn.m */,
 				7F8436DD19BD010F00B69865 /* SkinBasic_Info1.h */,
 				7F8436DE19BD010F00B69865 /* SkinBasic_Info1.m */,
 				8478A5F919BF5D68004CCEFE /* SkinBasic_Travel1.h */,
@@ -1180,8 +1184,6 @@
 				7F4CB68B18097908008B5CA2 /* SkinSimple2.m */,
 				7F4FE8901826FF0B00045ABD /* SkinLogoCountryBadge.h */,
 				7F4FE8911826FF0B00045ABD /* SkinLogoCountryBadge.m */,
-				8474A7C619B76155009ADB4E /* SkinBasic_OneAtFinish.h */,
-				8474A7C719B76155009ADB4E /* SkinBasic_OneAtFinish.m */,
 			);
 			path = SetDefault;
 			sourceTree = "<group>";
@@ -1454,6 +1456,7 @@
 		8478A60419BF6500004CCEFE /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				845187F119C342B800B28370 /* JennaSue.ttf */,
 				8416962719C3329000F65B76 /* veteranTypewriter.ttf */,
 				84205D6719C08D5800CAD98E /* SCRIPTIN.ttf */,
 				8478A60519BF6500004CCEFE /* RegencyScriptFLF.ttf */,
@@ -1597,6 +1600,7 @@
 				7F27672A1791E80000A1C1A0 /* Images.xcassets in Resources */,
 				7F4D53F019B7C5E50083E2CB /* logo_pontiac_128.png in Resources */,
 				7F4D535619B7BBFD0083E2CB /* logo_daewoo_256.png in Resources */,
+				845187F219C342B800B28370 /* JennaSue.ttf in Resources */,
 				7F4D53E519B7C5E50083E2CB /* logo_lincoln_128.png in Resources */,
 				7F4D53F919B7C5E50083E2CB /* logo_toyota_128.png in Resources */,
 				84205D5F19C06DCF00CAD98E /* eco100.png in Resources */,

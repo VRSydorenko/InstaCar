@@ -18,19 +18,22 @@
 @implementation SkinBasic_BestIn
 
 -(void)initialise{
-    [self setupGradient:0.2 inDirection:GRADIENT_RIGHT];
-    [self.imgEmblem.layer setMinificationFilter:kCAFilterTrilinear];
     self.movingView.backgroundColor = [UIColor clearColor];
     
     [self setMovingViewConstraint:self.topMargin andViewHeight:self.movingView.bounds.size.height];
-
-    canEditFieldAuto1 = YES;
+    
+    canEditFieldLocation = YES;
 }
 
--(void)fieldAuto1DidUpdate{
-    self.imgEmblem.contentMode = UIViewContentModeScaleAspectFit;
-    [self.imgEmblem setImageLogoName:fieldAuto1.logoName];
-    self.imgEmblem.image = fieldAuto1.logo128;
+-(void)fieldLocationDidUpdate{
+    self.labelLocation.text = fieldLocation.name;
+    [self adjustWidthSizeAccordingToText];
+}
+
+-(void)adjustWidthSizeAccordingToText{
+    CGSize textSize = [self.labelLocation.text sizeWithAttributes:[NSDictionary dictionaryWithObject:self.labelLocation.font forKey:NSFontAttributeName]];
+    self.constraintLocWidth.constant = MIN(5.0+textSize.width, self.bounds.size.width);
+    self.constraintLocBkgWidth.constant = self.constraintLocWidth.constant + 25.0 /*exclamation mark label width*/;
 }
 
 @end

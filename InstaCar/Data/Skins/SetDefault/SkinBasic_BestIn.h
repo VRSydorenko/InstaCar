@@ -10,6 +10,9 @@
 
 @interface SkinBasic_BestIn : SkinViewBase
 
-@property (nonatomic) IBOutlet SkinElementImage *imgEmblem;
+@property (nonatomic) IBOutlet SkinElementLabel *labelLocation;
+
+@property (nonatomic) IBOutlet NSLayoutConstraint *constraintLocWidth;
+@property (nonatomic) IBOutlet NSLayoutConstraint *constraintLocBkgWidth;
 
 @end
