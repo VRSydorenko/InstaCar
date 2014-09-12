@@ -22,6 +22,8 @@
 @property (nonatomic) BOOL isSelectable;
 @property (nonatomic) BOOL isUserDefined;
 
+@property (nonatomic, readonly) NSString* selectedTextYears;
+
 -(id)initWithId:(int)modelId andName:(NSString*)name;
 
 @end

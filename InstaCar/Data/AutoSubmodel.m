@@ -37,4 +37,8 @@
     return [UIImage imageNamed:logoFileName];
 }
 
+-(NSString*)selectedTextYears{
+    return [Utils getAutoYearsString:self.startYear endYear:self.endYear];
+}
+
 @end

@@ -159,7 +159,7 @@ typedef enum {
             if (indexPath.section == 0){ // built-in model
                 AutoModel *model = [data objectAtIndex:indexPath.row];
                 cell.autoTitleLabel.text = model.name;
-                cell.autoYearsLabel.text = [Utils getAutoYearsString:model.startYear endYear:model.endYear];
+                cell.autoYearsLabel.text = model.selectedTextYears;
                 cell.autoLogo.image = model.logo128;
                 cell.sublevelPickerDelegate = self;
                 
@@ -171,7 +171,7 @@ typedef enum {
             } else { // user defined model
                 AutoModel *model = [userDefinedData objectAtIndex:indexPath.row];
                 cell.autoTitleLabel.text = model.name;
-                cell.autoYearsLabel.text = [Utils getAutoYearsString:model.startYear endYear:model.endYear];
+                cell.autoYearsLabel.text = model.selectedTextYears;
                 cell.autoLogo.image = model.logo128;
                 cell.autoModelsButton.hidden = YES;
             }
@@ -180,7 +180,7 @@ typedef enum {
         case CONTENT_SUBMODELS:{
             AutoSubmodel *submodel = [data objectAtIndex:indexPath.row];
             cell.autoTitleLabel.text = submodel.name;
-            cell.autoYearsLabel.text = [Utils getAutoYearsString:submodel.startYear endYear:submodel.endYear];
+            cell.autoYearsLabel.text = submodel.selectedTextYears;
             cell.autoLogo.image = submodel.logo128;
             cell.autoModelsButton.hidden = YES;
             break;

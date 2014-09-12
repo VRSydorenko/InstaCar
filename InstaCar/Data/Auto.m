@@ -70,6 +70,23 @@
     return @"";
 }
 
+-(NSString*)selectedTextYears{
+    int startYear = 0;
+    int endYear = 0;
+    
+    if (self.model){
+        if (self.model.submodel){
+            startYear = self.model.submodel.startYear;
+            endYear = self.model.submodel.endYear;
+        } else {
+            startYear = self.model.startYear;
+            endYear = self.model.endYear;
+        }
+    }
+    
+    return [Utils getAutoYearsString:startYear endYear:endYear];
+}
+
 -(UIImage*)logo128{
     NSString *logoFileName = [NSString stringWithFormat:@"%@_128.png", self.logoName];
     return [UIImage imageNamed:logoFileName];

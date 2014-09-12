@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Utils.h"
 
 @interface AutoSubmodel : NSObject
 
@@ -16,6 +17,8 @@
 @property (readonly, nonatomic) UIImage *logo256;
 @property (nonatomic) int startYear;
 @property (nonatomic) int endYear;
+
+@property (nonatomic, readonly) NSString* selectedTextYears;
 
 -(id)initWithName:(NSString*)name;
 

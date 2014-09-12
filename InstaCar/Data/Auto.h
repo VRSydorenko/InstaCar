@@ -19,11 +19,14 @@
 @property (readonly, nonatomic) BOOL logoAsName;
 @property (readonly, nonatomic) NSString *country;
 @property (nonatomic) AutoModel *model;
+
+// strings
 @property (readonly, nonatomic) NSString* selectedTextShort;
 @property (readonly, nonatomic) NSString* selectedTextFull;
 @property (readonly, nonatomic) NSString* selectedTextMarkModel;
 @property (readonly, nonatomic) NSString* selectedTextModel;
 @property (readonly, nonatomic) NSString* selectedTextModelSubmodel;
+@property (readonly, nonatomic) NSString* selectedTextYears;
 
 @property (readonly, nonatomic) CGFloat logoWidthHeightRate;
 

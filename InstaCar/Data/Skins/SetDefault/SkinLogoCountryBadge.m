@@ -31,12 +31,9 @@
     self.imgEmblem.image = fieldAuto1.logo128;
     self.textAuto.text = fieldAuto1.selectedTextShort;
     
-    NSString *autoYears = @"";
-    if (fieldAuto1.model){
-        autoYears = [Utils getAutoYearsString:fieldAuto1.model.startYear endYear:fieldAuto1.model.endYear];
-        if (autoYears.length > 0){
-            autoYears = [NSString stringWithFormat:@", %@", autoYears];
-        }
+    NSString *autoYears = fieldAuto1.selectedTextYears;
+    if (autoYears.length > 0){
+        autoYears = [NSString stringWithFormat:@", %@", autoYears];
     }
     self.textCountry.text = [NSString stringWithFormat:@"%@%@", fieldAuto1.country, autoYears];
 }

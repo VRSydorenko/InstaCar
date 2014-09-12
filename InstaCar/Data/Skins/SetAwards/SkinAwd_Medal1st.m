@@ -28,13 +28,11 @@
 -(void)fieldAuto1DidUpdate{
     self.labelAuto.text = fieldAuto1.selectedTextFull;
     
-    NSString *autoYears = @"";
-    if (fieldAuto1.model){
-        autoYears = [Utils getAutoYearsString:fieldAuto1.model.startYear endYear:fieldAuto1.model.endYear];
-        if (autoYears.length > 0){
-            autoYears = [NSString stringWithFormat:@", %@", autoYears];
-        }
+    NSString *autoYears = fieldAuto1.selectedTextYears;;
+    if (autoYears.length > 0){
+        autoYears = [NSString stringWithFormat:@", %@", autoYears];
     }
+    
     self.labelMadeIn.text = [NSString stringWithFormat:@"Made in %@%@", fieldAuto1.country, autoYears];
 
 }
