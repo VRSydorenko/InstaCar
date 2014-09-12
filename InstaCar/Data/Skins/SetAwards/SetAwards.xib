@@ -1,13 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6245" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6245" systemVersion="14A343f" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
+        <deployment defaultVersion="1792" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <mutableArray key="SCRIPTIN.ttf">
-            <string>Scriptina</string>
-        </mutableArray>
-    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -58,25 +54,14 @@
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="luxury.png" translatesAutoresizingMaskIntoConstraints="NO" id="xXd-z8-e7H" customClass="SkinElementImage">
                             <rect key="frame" x="0.0" y="0.0" width="320" height="86"/>
                         </imageView>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The most luxury car!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ZCo-kJ-pUW" customClass="SkinElementLabel">
-                            <rect key="frame" x="0.0" y="0.0" width="320" height="86"/>
-                            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.40000000000000002" colorSpace="calibratedRGB"/>
-                            <fontDescription key="fontDescription" name="Scriptina" family="Scriptina" pointSize="30"/>
-                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                            <nil key="highlightedColor"/>
-                        </label>
                     </subviews>
                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstAttribute="trailing" secondItem="ZCo-kJ-pUW" secondAttribute="trailing" id="1Pa-1P-Qfy"/>
                         <constraint firstAttribute="height" constant="86" id="CLb-ku-eH9"/>
                         <constraint firstItem="xXd-z8-e7H" firstAttribute="top" secondItem="Fhh-06-hOU" secondAttribute="top" id="FEm-6M-gek"/>
                         <constraint firstAttribute="trailing" secondItem="xXd-z8-e7H" secondAttribute="trailing" id="I6N-0b-Gym"/>
                         <constraint firstAttribute="bottom" secondItem="xXd-z8-e7H" secondAttribute="bottom" id="a9G-fI-jRD"/>
                         <constraint firstItem="xXd-z8-e7H" firstAttribute="leading" secondItem="Fhh-06-hOU" secondAttribute="leading" id="bmp-ho-f2W"/>
-                        <constraint firstItem="ZCo-kJ-pUW" firstAttribute="top" secondItem="Fhh-06-hOU" secondAttribute="top" id="bwc-yB-nq0"/>
-                        <constraint firstAttribute="bottom" secondItem="ZCo-kJ-pUW" secondAttribute="bottom" id="enb-88-jln"/>
-                        <constraint firstItem="ZCo-kJ-pUW" firstAttribute="leading" secondItem="Fhh-06-hOU" secondAttribute="leading" id="u5Y-1T-Urz"/>
                     </constraints>
                 </view>
             </subviews>
@@ -341,12 +326,12 @@
         </view>
     </objects>
     <resources>
-        <image name="bestChoice2.png" width="480" height="480"/>
-        <image name="bestChoise1.png" width="2201" height="2178"/>
-        <image name="bestChoise3.png" width="210" height="267"/>
-        <image name="eco100.png" width="697" height="700"/>
-        <image name="luxury.png" width="1440" height="1018"/>
-        <image name="medal1st.png" width="360" height="578"/>
+        <image name="bestChoice2.png" width="256" height="256"/>
+        <image name="bestChoise1.png" width="256" height="256"/>
+        <image name="bestChoise3.png" width="210" height="242"/>
+        <image name="eco100.png" width="255" height="256"/>
+        <image name="luxury.png" width="612" height="170"/>
+        <image name="medal1st.png" width="199" height="320"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

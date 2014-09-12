@@ -23,7 +23,4 @@
     [self setMovingViewConstraint:self.topMargin andViewHeight:self.movingView.bounds.size.height];
 }
 
--(void)fieldAuto1DidUpdate{
-}
-
 @end

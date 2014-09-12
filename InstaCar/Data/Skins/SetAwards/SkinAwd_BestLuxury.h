@@ -9,7 +9,4 @@
 #import "SkinViewBase.h"
 
 @interface SkinAwd_BestLuxury : SkinViewBase
-
-@property (nonatomic) IBOutlet SkinElementImage *imgEmblem;
-
 @end

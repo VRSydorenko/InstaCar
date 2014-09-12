@@ -1419,8 +1419,6 @@
 			isa = PBXGroup;
 			children = (
 				848A9BF919BDF59700D59D60 /* Images */,
-				8474A7BD19B756F4009ADB4E /* SkinAwd_BestLuxury.h */,
-				8474A7BE19B756F4009ADB4E /* SkinAwd_BestLuxury.m */,
 				8474A7C019B75D0D009ADB4E /* SkinAwd_BestTravel.h */,
 				8474A7C119B75D0D009ADB4E /* SkinAwd_BestTravel.m */,
 				7F8436D219BCFEDD00B69865 /* SkinAwd_Medal2nd.h */,
@@ -1432,6 +1430,8 @@
 				8474A7B519B75577009ADB4E /* SetAwards.h */,
 				8474A7B619B75577009ADB4E /* SetAwards.m */,
 				8474A7B719B75577009ADB4E /* SetAwards.xib */,
+				8474A7BD19B756F4009ADB4E /* SkinAwd_BestLuxury.h */,
+				8474A7BE19B756F4009ADB4E /* SkinAwd_BestLuxury.m */,
 				7F8436D019BCFEDD00B69865 /* SkinAwd_Medal1st.h */,
 				7F8436D119BCFEDD00B69865 /* SkinAwd_Medal1st.m */,
 				7F8436CE19BCFEDD00B69865 /* SkinAwd_Eco.h */,
