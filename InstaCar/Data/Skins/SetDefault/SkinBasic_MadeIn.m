@@ -8,6 +8,8 @@
 
 #import "SkinBasic_MadeIn.h"
 
+#define degreesToRadians(x) (M_PI * (x) / 180.0)
+
 @interface SkinBasic_MadeIn()
 
 @property (nonatomic) IBOutlet NSLayoutConstraint *topMargin;
@@ -18,19 +20,17 @@
 @implementation SkinBasic_MadeIn
 
 -(void)initialise{
-    [self setupGradient:0.2 inDirection:GRADIENT_RIGHT];
-    [self.imgEmblem.layer setMinificationFilter:kCAFilterTrilinear];
     self.movingView.backgroundColor = [UIColor clearColor];
     
     [self setMovingViewConstraint:self.topMargin andViewHeight:self.movingView.bounds.size.height];
 
     canEditFieldAuto1 = YES;
+    self.labelCountry.transform = CGAffineTransformMakeRotation(degreesToRadians(-30));
+    isContentOnTop = NO;
 }
 
 -(void)fieldAuto1DidUpdate{
-    self.imgEmblem.contentMode = UIViewContentModeScaleAspectFit;
-    [self.imgEmblem setImageLogoName:fieldAuto1.logoName];
-    self.imgEmblem.image = fieldAuto1.logo128;
+    self.labelCountry.text = fieldAuto1.country.uppercaseString;
 }
 
 @end

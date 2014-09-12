@@ -32,7 +32,7 @@
 
 -(void)adjustWidthSizeAccordingToText{
     CGSize textSize = [self.labelLocation.text sizeWithAttributes:[NSDictionary dictionaryWithObject:self.labelLocation.font forKey:NSFontAttributeName]];
-    self.constraintLocWidth.constant = MIN(5.0+textSize.width, self.bounds.size.width);
+    self.constraintLocWidth.constant = MIN(5.0+textSize.width, self.bounds.size.width * 0.9 /*max 90% of the wcreen width*/);
     self.constraintLocBkgWidth.constant = self.constraintLocWidth.constant + 25.0 /*exclamation mark label width*/;
 }
 

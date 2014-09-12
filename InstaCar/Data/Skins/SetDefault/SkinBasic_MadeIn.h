@@ -10,6 +10,6 @@
 
 @interface SkinBasic_MadeIn : SkinViewBase
 
-@property (nonatomic) IBOutlet SkinElementImage *imgEmblem;
+@property (nonatomic) IBOutlet SkinElementLabel *labelCountry;
 
 @end

@@ -658,9 +658,60 @@
             </connections>
             <point key="canvasLocation" x="520" y="-85"/>
         </view>
+        <view tag="11" contentMode="scaleToFill" id="JKa-eP-7nv" customClass="SkinBasic_MadeIn">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="320"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Pn-p8-a7K">
+                    <rect key="frame" x="0.0" y="200" width="320" height="120"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="madeIn.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="2lN-DH-74U" customClass="SkinElementImage">
+                            <rect key="frame" x="180" y="0.0" width="140" height="120"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="140" id="3NX-o1-BwE"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GERMANY" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.30000000000000004" translatesAutoresizingMaskIntoConstraints="NO" id="06n-dX-hGR" customClass="SkinElementLabel">
+                            <rect key="frame" x="188" y="42" width="124" height="36"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="124" id="vOi-6V-7JU"/>
+                                <constraint firstAttribute="height" constant="36" id="wYU-bQ-g75"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
+                            <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="2lN-DH-74U" firstAttribute="top" secondItem="8Pn-p8-a7K" secondAttribute="top" id="8ym-9T-xNy"/>
+                        <constraint firstItem="2lN-DH-74U" firstAttribute="leading" secondItem="8Pn-p8-a7K" secondAttribute="leading" constant="180" id="Cft-iD-D8z"/>
+                        <constraint firstAttribute="trailing" secondItem="06n-dX-hGR" secondAttribute="trailing" constant="8" id="JLV-3N-QrG"/>
+                        <constraint firstAttribute="bottom" secondItem="06n-dX-hGR" secondAttribute="bottom" constant="42" id="Jw2-3Z-M8E"/>
+                        <constraint firstAttribute="bottom" secondItem="2lN-DH-74U" secondAttribute="bottom" id="kUG-8w-ssS"/>
+                        <constraint firstAttribute="height" constant="120" id="mLa-Q0-wVr"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="8Pn-p8-a7K" secondAttribute="trailing" id="04I-6j-XqC"/>
+                <constraint firstItem="8Pn-p8-a7K" firstAttribute="leading" secondItem="JKa-eP-7nv" secondAttribute="leading" id="411-Qg-3Ya"/>
+                <constraint firstItem="8Pn-p8-a7K" firstAttribute="top" secondItem="JKa-eP-7nv" secondAttribute="top" constant="200" id="YiS-bG-cFs"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="labelCountry" destination="06n-dX-hGR" id="uKx-5a-xQN"/>
+                <outlet property="movingView" destination="8Pn-p8-a7K" id="1wn-jY-6Pl"/>
+                <outlet property="topMargin" destination="YiS-bG-cFs" id="9aB-ze-JTv"/>
+            </connections>
+            <point key="canvasLocation" x="-237" y="415"/>
+        </view>
     </objects>
     <resources>
         <image name="logo_anycar.png" width="64" height="64"/>
+        <image name="madeIn.jpg" width="1367" height="1100"/>
         <image name="sign_parking" width="300" height="300"/>
         <image name="travel1.png" width="542" height="500"/>
         <image name="travel2.png" width="2018" height="1374"/>
