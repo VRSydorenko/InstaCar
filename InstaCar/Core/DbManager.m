@@ -60,7 +60,7 @@ typedef enum { // Do not change the numbers!
         
         // read custom cars
         customAutosSnapshot = [self getCustomAutosSnapshot];
-        DLog(@"%d custom cars read from the old database", customAutosSnapshot.count);
+        DLog(@"%lu custom cars read from the old database", (unsigned long)customAutosSnapshot.count);
         
         // close last
         if (sqlite3_close(instacarDb) == SQLITE_OK){

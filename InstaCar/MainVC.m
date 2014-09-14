@@ -163,7 +163,7 @@ typedef enum {
         return;
     }
 
-    CGFloat pageControlHeight = [UserSettings isFullVersion] ? 15.0 : 10.0;
+    CGFloat pageControlHeight = ![UserSettings isIPhone4] ? 15.0 : 10.0;
     CGRect screenRect = [[UIScreen mainScreen] applicationFrame];
     if (screenRect.size.height > 480) // even higher on bigger screens
     {
@@ -175,8 +175,8 @@ typedef enum {
     pageControl.autoresizingMask = UIViewAutoresizingFlexibleWidth;
     
     pageControl.userInteractionEnabled = NO;
-    pageControl.indicatorDiameter = [UserSettings isFullVersion] ? 8.0 : 6.0f;
-    pageControl.indicatorMargin = [UserSettings isFullVersion] ? 6.0 : 5.0f;
+    pageControl.indicatorDiameter = ![UserSettings isIPhone4] ? 8.0 : 6.0f;
+    pageControl.indicatorMargin = ![UserSettings isIPhone4] ? 6.0 : 5.0f;
     
     pageControl.backgroundColor = [UIColor clearColor];
     
@@ -358,6 +358,7 @@ typedef enum {
 }
 
 - (IBAction)btnMiddleRightPressed {
+    [self popSkinSettingsUp];
     if (buttonsInInitialState){
         [self doCamSettingsPressed];
     } else {
@@ -571,6 +572,32 @@ typedef enum {
     UIGraphicsEndImageContext();
     
     return newImage;
+}
+
+-(void)popSkinSettingsUp{
+    CGFloat topBottomMargin = 0.0;
+    CGFloat sideMargin = 10.0;
+    CGFloat y = self.scrollSkins.frame.origin.y + self.scrollSkins.bounds.size.height + 10.0/*page control height*/ + topBottomMargin;
+    CGFloat width = [UIScreen mainScreen].bounds.size.width - 2 * sideMargin;
+    CGFloat height = 50.0;
+    
+    CGRect frame = CGRectMake(sideMargin, y, width, height);
+    
+    UIView *customView = [[UIView alloc] initWithFrame:frame];
+    
+    //Set the customView properties
+    customView.alpha = 0.0;
+    customView.layer.cornerRadius = 5;
+    customView.layer.borderWidth = 1.5f;
+    customView.layer.masksToBounds = YES;
+    
+    //Add the customView to the current view
+    [self.view addSubview:customView];
+    
+    //Display the customView with animation
+    [UIView animateWithDuration:0.4 animations:^{
+        [customView setAlpha:1.0];
+    } completion:^(BOOL finished) {}];
 }
 
 @end

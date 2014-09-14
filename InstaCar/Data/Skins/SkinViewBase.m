@@ -99,6 +99,8 @@
     canEditFieldText1 = NO;
     canEditFieldText2 = NO;
     
+    _commandFlags.canCmdInvertColors = NO;
+    
     self.userInteractionEnabled = YES;
     gradient = nil;
     gradientInitialized = NO;
@@ -310,7 +312,6 @@
     }
 }
 
-
 -(BOOL)isSkinContentAtTheTop{
     return isContentOnTop;
 }
@@ -354,6 +355,18 @@
      ];
     isContentOnTop = NO;
 }
+
+-(CommandFlags)getSkinCommands{
+    return _commandFlags;
+}
+
+#pragma mark Skin commands descendant overrides
+
+-(void)onCmdInvertColors{
+    // overriden in descendants
+}
+
+#pragma mark Descendant overrides
 
 -(void)fieldLocationDidUpdate{
     // overriden in descendants

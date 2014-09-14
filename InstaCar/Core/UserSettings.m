@@ -16,7 +16,11 @@
  */
 
 +(BOOL)isFullVersion{
-    return YES;
+    return NO;
+}
+
++(BOOL)isIPhone4{
+    return [UIScreen mainScreen].bounds.size.height == 480;
 }
 
 +(NSString*) getStoredAppVersion{

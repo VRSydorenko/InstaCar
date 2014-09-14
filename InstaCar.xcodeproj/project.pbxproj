@@ -730,6 +730,7 @@
 			isa = PBXGroup;
 			children = (
 				7F3871DB17BE4F1000D8E39D /* 3rdParty */,
+				7F3FBD8A19C49FD4004A8BAB /* Model */,
 				7F4CB66A180977E9008B5CA2 /* Core */,
 				7F5AC64117CBFFDD00C01658 /* Data */,
 				7F2767171791E80000A1C1A0 /* InstaCar */,
@@ -1089,6 +1090,13 @@
 			);
 			name = 3rdParty;
 			path = InstaCar/CustomControls;
+			sourceTree = "<group>";
+		};
+		7F3FBD8A19C49FD4004A8BAB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 		7F419E1D17D6549C00255E56 /* TableCells */ = {

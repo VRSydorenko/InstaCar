@@ -26,14 +26,24 @@ typedef enum {
     fTEXT1,
     fTEXT2,
 } SkinField;
+
+typedef struct {
+    unsigned int canCmdInvertColors:1;
+} CommandFlags;
+
+@protocol SkinCmdInvertColorsProtocol <NSObject>
+-(void)onCmdInvertColors;
+@end
     
-@interface SkinViewBase : UIView {
+@interface SkinViewBase : UIView <SkinCmdInvertColorsProtocol> {
 @protected
     BOOL canEditFieldLocation;
     BOOL canEditFieldAuto1;
     BOOL canEditFieldAuto2;
     BOOL canEditFieldText1;
     BOOL canEditFieldText2;
+    
+    CommandFlags _commandFlags;
     
     Location *fieldLocation;
     Auto *fieldAuto1;
@@ -64,8 +74,13 @@ typedef enum {
 -(UIImage*)getSkinImage;
 -(UIImage*)getSkinImageWithBlur:(CGFloat)blurStrength;
 
+-(CommandFlags)getSkinCommands;
+
 -(void)moveContentUp;
 -(void)moveContentDown;
+
+#pragma mark SkinCommand protocols
+-(void)onCmdInvertColors;
 
 -(void)fieldLocationDidUpdate;
 -(void)fieldAuto1DidUpdate;
