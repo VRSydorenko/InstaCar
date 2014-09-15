@@ -22,9 +22,11 @@
         UIButton *btn = [[UIButton alloc] initWithFrame:frame];
         [btn addTarget:self action:@selector(onCommandButtonPressed:) forControlEvents:UIControlEventTouchDown];
         btn.backgroundColor = [UIColor lightGrayColor];
-        btn.titleLabel.textColor = [UIColor blueColor];
+        
         btn.titleLabel.textAlignment = NSTextAlignmentCenter;
-        btn.titleLabel.text = @"Invert";
+        [btn setTitle:@"Invert colors" forState:UIControlStateNormal];
+        [btn setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
+        [btn setTitleShadowColor:[UIColor blackColor] forState:UIControlStateNormal];
         
         [self addSubview:btn];
         
