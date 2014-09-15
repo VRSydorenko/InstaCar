@@ -25,6 +25,7 @@
     [self setMovingViewConstraint:self.topMargin andViewHeight:self.movingView.bounds.size.height];
 
     canEditFieldAuto1 = YES;
+    _commandFlags.canCmdInvertColors = YES;
 }
 
 -(void)fieldAuto1DidUpdate{
@@ -32,6 +33,10 @@
     [self.imgEmblem setImageLogoName:fieldAuto1.logoName];
     self.imgEmblem.image = fieldAuto1.logo128;
     self.textAuto.text = fieldAuto1.selectedTextShort;
+}
+
+-(void)onCmdInvertColors{
+    DLog(@"Invert colors call!");
 }
 
 @end

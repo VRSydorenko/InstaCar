@@ -25,6 +25,8 @@
 
     canEditFieldAuto1 = YES;
     self.textAuto.adjustsFontSizeToFitWidth = YES;
+    
+    _commandFlags.canCmdInvertColors = YES;
 }
 
 -(void)fieldAuto1DidUpdate{
@@ -34,6 +36,10 @@
     self.textAuto.text = fieldAuto1.selectedTextShort;
     
     [self adjustAutoLabelSizeAccordingToText];
+}
+
+-(void)onCmdInvertColors{
+    DLog(@"Invert colors call!");
 }
 
 -(void)adjustAutoLabelSizeAccordingToText{

@@ -20,12 +20,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "InstaCar/MainVC.m"
-            timestampString = "432142961.866801"
+            timestampString = "432487592.979331"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "283"
-            endingLineNumber = "283"
-            landmarkName = "-swipeDown"
+            startingLineNumber = "627"
+            endingLineNumber = "627"
+            landmarkName = "-updateSkinCommandsPopover"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -36,12 +36,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "InstaCar/MainVC.m"
-            timestampString = "432142962.98656"
+            timestampString = "432487642.237926"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "275"
-            endingLineNumber = "275"
-            landmarkName = "-swipeUp"
+            startingLineNumber = "273"
+            endingLineNumber = "273"
+            landmarkName = "-scrollViewDidScroll:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

@@ -13,6 +13,7 @@
 #import "ImageEditor.h"
 #import "SHKSharer.h"
 #import "DataManager.h"
+#import "SkinCommandsPopoverView.h"
 
 #define SWITCH_TIME 1.0
 
@@ -36,6 +37,10 @@ typedef enum {
     ImageEditor *imageEditor;
     __weak UIImage *selectedImage;
     ADBannerView *bannerView;
+    
+    CGFloat pageControlHeight;
+    
+    SkinCommandsPopoverView *cmdPopoverView;
 }
 
 @end
@@ -70,6 +75,8 @@ typedef enum {
     [self initSkins];
     
     [self initGestures];
+    
+    [self initSkinCommandPopoverView];
     
     // iAd will be initialised when the view appeared or when first launch info screen has gone
     
@@ -134,7 +141,7 @@ typedef enum {
 
 -(void)initSkins{
     SkinSet *skinSet = [DataManager getSelectedSkinSet];
-    activeSkin = [skinSet getSkinAtIndex:0];
+    [self setActiveSkin:0];
 
 	self.scrollSkins.indicatorStyle = UIScrollViewIndicatorStyleWhite;
     
@@ -163,7 +170,7 @@ typedef enum {
         return;
     }
 
-    CGFloat pageControlHeight = ![UserSettings isIPhone4] ? 15.0 : 10.0;
+    pageControlHeight = ![UserSettings isIPhone4] ? 15.0 : 10.0;
     CGRect screenRect = [[UIScreen mainScreen] applicationFrame];
     if (screenRect.size.height > 480) // even higher on bigger screens
     {
@@ -191,6 +198,40 @@ typedef enum {
         
         [self.iAdView addSubview:bannerView];
     }
+}
+
+-(void) initSkinCommandPopoverView{
+    if (cmdPopoverView){
+        return;
+    }
+    
+    [self calcPopCommandsViewHeight];
+    
+    CGFloat topBottomMargin = 0.0;
+    CGFloat sideMargin = 10.0;
+    CGFloat y = self.scrollSkins.frame.origin.y + self.scrollSkins.bounds.size.height + pageControlHeight + topBottomMargin;
+    CGFloat width = [UIScreen mainScreen].bounds.size.width - 2 * sideMargin;
+    CGFloat height = [self calcPopCommandsViewHeight];
+    
+    CGRect frame = CGRectMake(sideMargin, y, width, height);
+    
+    cmdPopoverView = [[SkinCommandsPopoverView alloc] initWithFrame:frame];
+    cmdPopoverView.backgroundColor = [UIColor whiteColor]; // TOOD: move to the view initialisation
+    cmdPopoverView.hasCloseButton = [UserSettings isIPhone4];
+    
+    //Set the customView properties
+    cmdPopoverView.alpha = 0.0;
+    cmdPopoverView.layer.cornerRadius = 5;
+    cmdPopoverView.layer.borderWidth = 1.5f;
+    cmdPopoverView.layer.masksToBounds = YES;
+    
+    //Add the customView to the current view
+    [self.view addSubview:cmdPopoverView];
+    
+    //Display the customView with animation
+    [UIView animateWithDuration:0.4 animations:^{
+        [cmdPopoverView setAlpha:1.0];
+    } completion:^(BOOL finished) {}];
 }
 
 #pragma Banner view delegate
@@ -233,7 +274,7 @@ typedef enum {
     int page = floor((sender.contentOffset.x - pageWidth / 2) / pageWidth) + 1;
     pageControl.currentPage = page;
     
-    activeSkin = [[DataManager getSelectedSkinSet] getSkinAtIndex:page];
+    [self setActiveSkin:page];
 }
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)sender{
@@ -358,7 +399,6 @@ typedef enum {
 }
 
 - (IBAction)btnMiddleRightPressed {
-    [self popSkinSettingsUp];
     if (buttonsInInitialState){
         [self doCamSettingsPressed];
     } else {
@@ -543,6 +583,10 @@ typedef enum {
     return self.view.bounds.size.height - self.constraintViewAdContainerHeight.constant - self.btnLocation.bounds.size.height - 1.0 - self.pageControlContainer.frame.origin.y;
 }
 
+-(CGFloat)calcPopCommandsViewHeight{
+    return [UserSettings isIPhone4] ? 47.0 : 70.0;
+}
+
 -(void) imageCaptured{
     self.imagePreview.image = self.captureManager.stillImage;
     self.captureManager.stillImage = nil;
@@ -574,30 +618,18 @@ typedef enum {
     return newImage;
 }
 
--(void)popSkinSettingsUp{
-    CGFloat topBottomMargin = 0.0;
-    CGFloat sideMargin = 10.0;
-    CGFloat y = self.scrollSkins.frame.origin.y + self.scrollSkins.bounds.size.height + 10.0/*page control height*/ + topBottomMargin;
-    CGFloat width = [UIScreen mainScreen].bounds.size.width - 2 * sideMargin;
-    CGFloat height = 50.0;
+-(void)updateSkinCommandsPopover{
+    if (!cmdPopoverView){
+        DLog(@"Skin command popover is not initialized");
+        return;
+    }
     
-    CGRect frame = CGRectMake(sideMargin, y, width, height);
-    
-    UIView *customView = [[UIView alloc] initWithFrame:frame];
-    
-    //Set the customView properties
-    customView.alpha = 0.0;
-    customView.layer.cornerRadius = 5;
-    customView.layer.borderWidth = 1.5f;
-    customView.layer.masksToBounds = YES;
-    
-    //Add the customView to the current view
-    [self.view addSubview:customView];
-    
-    //Display the customView with animation
-    [UIView animateWithDuration:0.4 animations:^{
-        [customView setAlpha:1.0];
-    } completion:^(BOOL finished) {}];
+    cmdPopoverView.delegatingSkin = activeSkin;
+}
+
+-(void)setActiveSkin:(int)index{
+    activeSkin = [[DataManager getSelectedSkinSet] getSkinAtIndex:index];
+    [self updateSkinCommandsPopover];
 }
 
 @end
