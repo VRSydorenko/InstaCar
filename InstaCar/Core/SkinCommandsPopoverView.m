@@ -36,6 +36,11 @@
         [btn setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
         [btn setTitleShadowColor:[UIColor blackColor] forState:UIControlStateNormal];
         
+        // images
+        btn.imageView.contentMode = UIViewContentModeCenter;
+        [btn setImage:[UIImage imageNamed:@"imgCmdInvertNormal.png"] forState:UIControlStateNormal];
+        [btn setImage:[UIImage imageNamed:@"imgCmdInvertActive.png"] forState:UIControlStateHighlighted];
+        
         [self addSubview:btn];
         
         frame.origin.x += cmdWidth;
@@ -50,6 +55,12 @@
         [btn setTitle:@"Edit text" forState:UIControlStateNormal];
         [btn setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
         [btn setTitleShadowColor:[UIColor blackColor] forState:UIControlStateNormal];
+        
+        // images
+        btn.imageView.contentMode = UIViewContentModeCenter;
+        [btn setImage:[UIImage imageNamed:@"imgCmdEditNormal.png"] forState:UIControlStateNormal];
+        [btn setImage:[UIImage imageNamed:@"imgCmdEditDisabled.png"] forState:UIControlStateDisabled];
+        [btn setImage:[UIImage imageNamed:@"imgCmdEditActive.png"] forState:UIControlStateHighlighted];
         
         [self addSubview:btn];
         
