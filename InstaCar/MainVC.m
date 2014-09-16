@@ -260,7 +260,7 @@ typedef enum {
         self.constraintButtonsCoverViewHeight.constant = [self calcPageControlHeight];
         
         CGRect popoverFrame = cmdPopoverView.frame;
-        popoverFrame.size.height += [UserSettings isIPhone4] && NO == [UserSettings isFullVersion] ? 9.0 : 0.0;
+        popoverFrame.size.height += [UserSettings isIPhone4] ? 9.0 : -15.0;
         
         [UIView animateWithDuration:0.25
                          animations:^(void){
@@ -269,9 +269,7 @@ typedef enum {
                          }
                          completion:^(BOOL success){
                              isShowingAd = YES;
-                             if ([UserSettings isIPhone4] && NO == [UserSettings isFullVersion]){
-                                 [cmdPopoverView rebuildView];
-                             }
+                             [cmdPopoverView rebuildView];
                          }
          ];
     }
@@ -292,9 +290,7 @@ typedef enum {
                          }
                          completion:^(BOOL success){
                              isShowingAd = NO;
-                             if ([UserSettings isIPhone4] && NO == [UserSettings isFullVersion]){
-                                 [cmdPopoverView rebuildView];
-                             }
+                             [cmdPopoverView rebuildView];
                          }
          ];
     }
@@ -711,7 +707,7 @@ typedef enum {
     [animationDurationValue getValue:&animationDuration];
     
     CGRect popoverFrame = initialPopoverFrame;
-    popoverFrame.size.height += [UserSettings isIPhone4] && isShowingAd ? 9.0 : 0.0;
+    popoverFrame.size.height += [UserSettings isIPhone4] && isShowingAd ? 9.0 : -15.0;
     
     [UIView beginAnimations:nil context:NULL];
     [UIView setAnimationDuration:animationDuration];
