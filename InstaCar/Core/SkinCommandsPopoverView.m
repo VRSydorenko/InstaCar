@@ -125,6 +125,8 @@
         stringEditor.clearButtonMode = UITextFieldViewModeWhileEditing;
         stringEditor.backgroundColor = [UIColor clearColor];
         
+        stringEditor.autocorrectionType = UITextAutocorrectionTypeNo;
+        
         if (NO == [self.delegatingSkin getAllowsEmptyContentText]){
             [stringEditor addTarget:self action:@selector(onTextChanged:) forControlEvents:UIControlEventEditingChanged];
         }

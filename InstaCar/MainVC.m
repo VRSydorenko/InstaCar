@@ -41,7 +41,8 @@ typedef enum {
     CGFloat pageControlHeight;
     
     SkinCommandsPopoverView *cmdPopoverView;
-    CGRect savedCmdPopoverFrame;
+    CGRect initialPopoverFrame;
+    BOOL isShowingAd;
 }
 
 @end
@@ -67,6 +68,7 @@ typedef enum {
     isChangingPage = NO;
     selectedImage = nil;
     imageInProcessing = NO;
+    isShowingAd = NO;
     self.activityShareInProgress.hidden = YES;
     
     [self initCaptureManager];
@@ -230,7 +232,7 @@ typedef enum {
     CGRect frame = CGRectMake(sideMargin, y, width, height);
     
     cmdPopoverView = [[SkinCommandsPopoverView alloc] initWithFrame:frame];
-    savedCmdPopoverFrame = frame;
+    initialPopoverFrame = frame;
     cmdPopoverView.backgroundColor = [UIColor whiteColor]; // TOOD: move to the view initialisation
     cmdPopoverView.hasCloseButton = [UserSettings isIPhone4];
     
@@ -256,9 +258,20 @@ typedef enum {
     if (NO == [DataManager isFullVersion] && self.constraintViewAdContainerHeight.constant == 0){
         self.constraintViewAdContainerHeight.constant = 50.0;
         self.constraintButtonsCoverViewHeight.constant = [self calcPageControlHeight];
+        
+        CGRect popoverFrame = cmdPopoverView.frame;
+        popoverFrame.size.height += [UserSettings isIPhone4] && NO == [UserSettings isFullVersion] ? 9.0 : 0.0;
+        
         [UIView animateWithDuration:0.25
                          animations:^(void){
+                             cmdPopoverView.frame = popoverFrame;
                              [self.view layoutIfNeeded];
+                         }
+                         completion:^(BOOL success){
+                             isShowingAd = YES;
+                             if ([UserSettings isIPhone4] && NO == [UserSettings isFullVersion]){
+                                 [cmdPopoverView rebuildView];
+                             }
                          }
          ];
     }
@@ -269,9 +282,19 @@ typedef enum {
         self.constraintViewAdContainerHeight.constant = 0.0;
         self.constraintButtonsCoverViewHeight.constant = [self calcPageControlHeight];
         
+        CGRect popoverFrame = cmdPopoverView.frame;
+        popoverFrame.size.height = [self calcPopCommandsViewHeight];
+        
         [UIView animateWithDuration:0.25
                          animations:^(void){
+                             cmdPopoverView.frame = popoverFrame;
                              [self.view layoutIfNeeded];
+                         }
+                         completion:^(BOOL success){
+                             isShowingAd = NO;
+                             if ([UserSettings isIPhone4] && NO == [UserSettings isFullVersion]){
+                                 [cmdPopoverView rebuildView];
+                             }
                          }
          ];
     }
@@ -687,11 +710,13 @@ typedef enum {
     NSTimeInterval animationDuration;
     [animationDurationValue getValue:&animationDuration];
     
+    CGRect popoverFrame = initialPopoverFrame;
+    popoverFrame.size.height += [UserSettings isIPhone4] && isShowingAd ? 9.0 : 0.0;
+    
     [UIView beginAnimations:nil context:NULL];
     [UIView setAnimationDuration:animationDuration];
     
-
-    cmdPopoverView.frame = savedCmdPopoverFrame;
+    cmdPopoverView.frame = popoverFrame;
     
     [UIView commitAnimations];
 }

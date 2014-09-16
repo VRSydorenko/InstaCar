@@ -26,4 +26,6 @@
 @property (nonatomic) SkinViewBase *delegatingSkin;
 @property BOOL hasCloseButton;
 
+-(void)rebuildView;
+
 @end
