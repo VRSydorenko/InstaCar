@@ -372,6 +372,9 @@
 -(NSString*)getSkinContentText{
     return @"";
 }
+-(BOOL)getAllowsEmptyContentText{
+    return YES;
+}
 
 #pragma mark Descendant overrides
 

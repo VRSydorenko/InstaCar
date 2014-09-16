@@ -28,7 +28,7 @@
     
     if (skinCommands.canCmdInvertColors){
         UIButton *btn = [[UIButton alloc] initWithFrame:frame];
-        [btn addTarget:self action:@selector(onCommandInvertPressed:) forControlEvents:UIControlEventTouchDown];
+        [btn addTarget:self action:@selector(onCommandInvertPressed:) forControlEvents:UIControlEventTouchUpInside];
         btn.backgroundColor = [UIColor lightGrayColor];
         
         btn.titleLabel.textAlignment = NSTextAlignmentCenter;
@@ -43,7 +43,7 @@
     
     if (skinCommands.canCmdEditText){
         UIButton *btn = [[UIButton alloc] initWithFrame:frame];
-        [btn addTarget:self action:@selector(onCommandEditTextPressed:) forControlEvents:UIControlEventTouchDown];
+        [btn addTarget:self action:@selector(onCommandEditTextPressed:) forControlEvents:UIControlEventTouchUpInside];
         btn.backgroundColor = [UIColor lightGrayColor];
         
         btn.titleLabel.textAlignment = NSTextAlignmentCenter;
@@ -95,22 +95,28 @@
     if (!btnCancelStringEdit){
         CGRect cancelBtnFrame = CGRectMake([self getCancelButtonX], SIDE_PADDING, [self getCancelConfirmButtonsWidth], [self getOneCommandHeight]);
         btnCancelStringEdit = [[UIButton alloc] initWithFrame:cancelBtnFrame];
-        [btnCancelStringEdit addTarget:self action:@selector(onCancelEditButtonPressed:) forControlEvents:UIControlEventTouchDown];
+        [btnCancelStringEdit addTarget:self action:@selector(onCancelEditButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
         btnCancelStringEdit.backgroundColor = [UIColor lightGrayColor];
-    
-        btnCancelStringEdit.titleLabel.textAlignment = NSTextAlignmentCenter;
-        [btnCancelStringEdit setTitle:@"Cancel" forState:UIControlStateNormal];
-        [btnCancelStringEdit setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
-        [btnCancelStringEdit setTitleShadowColor:[UIColor blackColor] forState:UIControlStateNormal];
-
+        
+        // images
+        btnCancelStringEdit.imageView.contentMode = UIViewContentModeCenter;
+        [btnCancelStringEdit setImage:[UIImage imageNamed:@"imgCmdCancelNormal.png"] forState:UIControlStateNormal];
+        [btnCancelStringEdit setImage:[UIImage imageNamed:@"imgCmdCancelActive.png"] forState:UIControlStateHighlighted];
+        
+        // ready
         [self addSubview:btnCancelStringEdit];
     }
+    
     // text edit
     if (!stringEditor){
         CGRect editorFrame = CGRectMake([self getStringEditorX], SIDE_PADDING, [self getStringEditorWidth], [self getOneCommandHeight]);
         stringEditor = [[UITextField alloc] initWithFrame:editorFrame];
         stringEditor.clearButtonMode = UITextFieldViewModeWhileEditing;
-        stringEditor.backgroundColor = [UIColor grayColor];
+        stringEditor.backgroundColor = [UIColor clearColor];
+        
+        if (NO == [self.delegatingSkin getAllowsEmptyContentText]){
+            [stringEditor addTarget:self action:@selector(onTextChanged:) forControlEvents:UIControlEventEditingChanged];
+        }
         
         [self addSubview:stringEditor];
     }
@@ -119,14 +125,16 @@
     if (!btnConfirmStringEdit){
         CGRect confirmBtnFrame = CGRectMake([self getConfirmButtonX], SIDE_PADDING, [self getCancelConfirmButtonsWidth], [self getOneCommandHeight]);
         btnConfirmStringEdit = [[UIButton alloc] initWithFrame:confirmBtnFrame];
-        [btnConfirmStringEdit addTarget:self action:@selector(onConfirmEditButtonPressed:) forControlEvents:UIControlEventTouchDown];
+        [btnConfirmStringEdit addTarget:self action:@selector(onConfirmEditButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
         btnConfirmStringEdit.backgroundColor = [UIColor lightGrayColor];
         
-        btnConfirmStringEdit.titleLabel.textAlignment = NSTextAlignmentCenter;
-        [btnConfirmStringEdit setTitle:@"OK" forState:UIControlStateNormal];
-        [btnConfirmStringEdit setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
-        [btnConfirmStringEdit setTitleShadowColor:[UIColor blackColor] forState:UIControlStateNormal];
+        // images
+        btnConfirmStringEdit.imageView.contentMode = UIViewContentModeCenter;
+        [btnConfirmStringEdit setImage:[UIImage imageNamed:@"imgCmdOkNormal.png"] forState:UIControlStateNormal];
+        [btnConfirmStringEdit setImage:[UIImage imageNamed:@"imgCmdOkDisabled.png"] forState:UIControlStateDisabled];
+        [btnConfirmStringEdit setImage:[UIImage imageNamed:@"imgCmdOkActive.png"] forState:UIControlStateHighlighted];
         
+        // ready
         [self addSubview:btnConfirmStringEdit];
     }
 }
@@ -178,6 +186,7 @@
     [self switchStringEditView:YES];
     
     stringEditor.text = [self.delegatingSkin getSkinContentText];
+    [stringEditor becomeFirstResponder];
 }
 
 -(IBAction)onCancelEditButtonPressed:(id)sender{
@@ -189,6 +198,10 @@
 -(IBAction)onConfirmEditButtonPressed:(id)sender{
     [self.delegatingSkin onCmdEditText:stringEditor.text];
     [self onCancelEditButtonPressed:btnCancelStringEdit];
+}
+
+- (IBAction)onTextChanged:(id)sender {
+    btnConfirmStringEdit.enabled = stringEditor.text.length > 0;
 }
 
 #pragma mark -

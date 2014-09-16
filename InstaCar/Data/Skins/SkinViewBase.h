@@ -38,6 +38,7 @@ typedef struct {
 -(void)onCmdEditText:(NSString*)newText;
 // data getters
 -(NSString*)getSkinContentText;
+-(BOOL)getAllowsEmptyContentText;
 @end
     
 @interface SkinViewBase : UIView <SkinCommandProtocol> {
