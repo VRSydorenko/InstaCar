@@ -41,6 +41,7 @@ typedef enum {
     CGFloat pageControlHeight;
     
     SkinCommandsPopoverView *cmdPopoverView;
+    CGRect savedCmdPopoverFrame;
 }
 
 @end
@@ -76,8 +77,6 @@ typedef enum {
     
     [self initGestures];
     
-    [self initSkinCommandPopoverView];
-    
     // iAd will be initialised when the view appeared or when first launch info screen has gone
     
     // banner view container is initially hidden and will remain so if app is running as full version
@@ -85,6 +84,21 @@ typedef enum {
     
     self.scrollSkins.delegate = self;
     [self.view bringSubviewToFront:self.scrollSkins];
+    
+    // this will create skin command view and bring it to front
+    // it should be over the scroll view so this call it here
+    [self initSkinCommandPopoverView];
+    
+    // Keyboard listener
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(keyboardWillShow:)
+                                                 name:UIKeyboardWillShowNotification
+                                               object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(keyboardWillHide:)
+                                                 name:UIKeyboardWillHideNotification
+                                               object:nil];
+
 }
 
 -(void)viewDidAppear:(BOOL)animated{
@@ -216,6 +230,7 @@ typedef enum {
     CGRect frame = CGRectMake(sideMargin, y, width, height);
     
     cmdPopoverView = [[SkinCommandsPopoverView alloc] initWithFrame:frame];
+    savedCmdPopoverFrame = frame;
     cmdPopoverView.backgroundColor = [UIColor whiteColor]; // TOOD: move to the view initialisation
     cmdPopoverView.hasCloseButton = [UserSettings isIPhone4];
     
@@ -227,6 +242,7 @@ typedef enum {
     
     //Add the customView to the current view
     [self.view addSubview:cmdPopoverView];
+    [self.view bringSubviewToFront:cmdPopoverView];
     
     //Display the customView with animation
     [UIView animateWithDuration:0.4 animations:^{
@@ -630,6 +646,54 @@ typedef enum {
 -(void)setActiveSkin:(int)index{
     activeSkin = [[DataManager getSelectedSkinSet] getSkinAtIndex:index];
     [self updateSkinCommandsPopover];
+}
+
+- (void)keyboardWillShow:(NSNotification *)notification {
+    if (nil == cmdPopoverView){
+        // this view reacts on keyboard only in case of user text editing
+        return;
+    }
+    
+    NSValue *aValue = [notification.userInfo objectForKey:UIKeyboardFrameEndUserInfoKey];
+    
+    CGRect keyboardRect = [aValue CGRectValue];
+    keyboardRect = [self.view convertRect:keyboardRect fromView:nil];
+    
+    CGFloat keyboardTop = keyboardRect.origin.y;
+    
+    CGFloat x = cmdPopoverView.frame.origin.x;
+    CGFloat y = keyboardTop - cmdPopoverView.bounds.size.height;
+    CGRect newToolbarFrame = CGRectMake(x, y, cmdPopoverView.bounds.size.width, cmdPopoverView.bounds.size.height);
+    
+    NSValue *animationDurationValue = [notification.userInfo objectForKey:UIKeyboardAnimationDurationUserInfoKey];
+    NSTimeInterval animationDuration;
+    [animationDurationValue getValue:&animationDuration];
+    
+    [UIView beginAnimations:nil context:NULL];
+    [UIView setAnimationDuration:animationDuration];
+    
+    cmdPopoverView.frame = newToolbarFrame;
+    
+    [UIView commitAnimations];
+}
+
+- (void)keyboardWillHide:(NSNotification *)notification {
+    if (nil == cmdPopoverView){
+        // this view reacts on keyboard only in case of user text editing
+        return;
+    }
+    
+    NSValue *animationDurationValue = [notification.userInfo objectForKey:UIKeyboardAnimationDurationUserInfoKey];
+    NSTimeInterval animationDuration;
+    [animationDurationValue getValue:&animationDuration];
+    
+    [UIView beginAnimations:nil context:NULL];
+    [UIView setAnimationDuration:animationDuration];
+    
+
+    cmdPopoverView.frame = savedCmdPopoverFrame;
+    
+    [UIView commitAnimations];
 }
 
 @end

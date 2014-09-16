@@ -29,13 +29,18 @@ typedef enum {
 
 typedef struct {
     unsigned int canCmdInvertColors:1;
+    unsigned int canCmdEditText:1;
 } CommandFlags;
 
-@protocol SkinCmdInvertColorsProtocol <NSObject>
+@protocol SkinCommandProtocol <NSObject>
+// commands
 -(void)onCmdInvertColors;
+-(void)onCmdEditText:(NSString*)newText;
+// data getters
+-(NSString*)getSkinContentText;
 @end
     
-@interface SkinViewBase : UIView <SkinCmdInvertColorsProtocol> {
+@interface SkinViewBase : UIView <SkinCommandProtocol> {
 @protected
     BOOL canEditFieldLocation;
     BOOL canEditFieldAuto1;
@@ -81,6 +86,7 @@ typedef struct {
 
 #pragma mark SkinCommand protocols
 -(void)onCmdInvertColors;
+-(void)onCmdEditText:(NSString *)newText;
 
 -(void)fieldLocationDidUpdate;
 -(void)fieldAuto1DidUpdate;

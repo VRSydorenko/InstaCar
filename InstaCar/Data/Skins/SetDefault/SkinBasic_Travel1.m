@@ -8,7 +8,9 @@
 
 #import "SkinBasic_Travel1.h"
 
-@interface SkinBasic_Travel1()
+@interface SkinBasic_Travel1(){
+    NSString *prefix;
+}
 
 @property (nonatomic) IBOutlet NSLayoutConstraint *topMargin;
 @property (nonatomic) IBOutlet UIView *movingView;
@@ -28,14 +30,27 @@
     self.movingView.backgroundColor = [UIColor clearColor];
     
     canEditFieldAuto1 = YES;
+    prefix = @"With my";
+    _commandFlags.canCmdEditText = YES;
+    
     isContentOnTop = NO;
+    
+    [self fieldAuto1DidUpdate]; // initial skin text
 }
 
 -(void)fieldAuto1DidUpdate{
-    if (fieldAuto1){
-        self.labelWithMyCar.text = fieldAuto1.selectedTextFull;
-        [self adjustAutoLabelSizeAccordingToText];
-    }
+    NSString *car = fieldAuto1 ? fieldAuto1.selectedTextFull : @"[select car...]";
+    NSString *pref = prefix.length > 0 ? [NSString stringWithFormat:@"%@ ", prefix] : @"";
+    self.labelWithMyCar.text = [NSString stringWithFormat:@"%@%@", pref, car];
+    [self adjustAutoLabelSizeAccordingToText];
+}
+
+-(NSString*)getSkinContentText{
+    return prefix;
+}
+-(void)onCmdEditText:(NSString *)newText{
+    prefix = newText;
+    [self fieldAuto1DidUpdate];
 }
 
 -(void)adjustAutoLabelSizeAccordingToText{

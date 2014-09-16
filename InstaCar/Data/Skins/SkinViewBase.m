@@ -100,6 +100,7 @@
     canEditFieldText2 = NO;
     
     _commandFlags.canCmdInvertColors = NO;
+    _commandFlags.canCmdEditText = NO;
     
     self.userInteractionEnabled = YES;
     gradient = nil;
@@ -364,6 +365,12 @@
 
 -(void)onCmdInvertColors{
     // overriden in descendants
+}
+-(void)onCmdEditText:(NSString *)newText{
+    // overriden in descendants
+}
+-(NSString*)getSkinContentText{
+    return @"";
 }
 
 #pragma mark Descendant overrides
