@@ -28,42 +28,33 @@
     
     if (skinCommands.canCmdInvertColors){
         UIButton *btn = [[UIButton alloc] initWithFrame:frame];
+        [self setCmdButtonCommonValues:&btn];
+        
         [btn addTarget:self action:@selector(onCommandInvertPressed:) forControlEvents:UIControlEventTouchUpInside];
-        btn.backgroundColor = [UIColor lightGrayColor];
-        
-        btn.titleLabel.textAlignment = NSTextAlignmentCenter;
+
+        // title
         [btn setTitle:@"Invert colors" forState:UIControlStateNormal];
-        [btn setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
-        [btn setTitleShadowColor:[UIColor blackColor] forState:UIControlStateNormal];
-        
         // images
-        btn.imageView.contentMode = UIViewContentModeCenter;
         [btn setImage:[UIImage imageNamed:@"imgCmdInvertNormal.png"] forState:UIControlStateNormal];
         [btn setImage:[UIImage imageNamed:@"imgCmdInvertActive.png"] forState:UIControlStateHighlighted];
         
         [self addSubview:btn];
-        
         frame.origin.x += cmdWidth;
     }
     
     if (skinCommands.canCmdEditText){
         UIButton *btn = [[UIButton alloc] initWithFrame:frame];
+        [self setCmdButtonCommonValues:&btn];
         [btn addTarget:self action:@selector(onCommandEditTextPressed:) forControlEvents:UIControlEventTouchUpInside];
-        btn.backgroundColor = [UIColor lightGrayColor];
         
-        btn.titleLabel.textAlignment = NSTextAlignmentCenter;
         [btn setTitle:@"Edit text" forState:UIControlStateNormal];
-        [btn setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
-        [btn setTitleShadowColor:[UIColor blackColor] forState:UIControlStateNormal];
         
         // images
-        btn.imageView.contentMode = UIViewContentModeCenter;
         [btn setImage:[UIImage imageNamed:@"imgCmdEditNormal.png"] forState:UIControlStateNormal];
         [btn setImage:[UIImage imageNamed:@"imgCmdEditDisabled.png"] forState:UIControlStateDisabled];
         [btn setImage:[UIImage imageNamed:@"imgCmdEditActive.png"] forState:UIControlStateHighlighted];
         
         [self addSubview:btn];
-        
         frame.origin.x += cmdWidth;
     }
     
@@ -231,6 +222,18 @@
     _delegatingSkin = delegatingSkin;
     
     [self rebuildView];
+}
+
+-(void)setCmdButtonCommonValues:(UIButton**)button{
+    UIButton *btn = *button;
+    btn.titleLabel.textAlignment = NSTextAlignmentCenter;
+    [btn setTitleColor:[UIColor colorWithRed:1 green:1 blue:150/255 alpha:1.0] forState:UIControlStateNormal];
+    [btn setTitleShadowColor:[UIColor blackColor] forState:UIControlStateNormal];
+    
+    btn.imageView.contentMode = UIViewContentModeCenter;
+    btn.backgroundColor = [UIColor lightGrayColor];
+    
+    [btn centerButtonAndImageWithSpacing:3.0];
 }
 
 @end

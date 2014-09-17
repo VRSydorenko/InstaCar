@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #include "UIView+MyExtentions.h"
+#include "UIButton+MyExtensions.h"
 #import "SkinViewBase.h"
 
 #define SIDE_PADDING 5.0

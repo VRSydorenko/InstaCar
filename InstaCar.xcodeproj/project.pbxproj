@@ -271,6 +271,8 @@
 		84205D6619C07FB000CAD98E /* carGift.png in Resources */ = {isa = PBXBuildFile; fileRef = 84205D6519C07FB000CAD98E /* carGift.png */; };
 		84205D6819C08D5800CAD98E /* SCRIPTIN.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 84205D6719C08D5800CAD98E /* SCRIPTIN.ttf */; };
 		84205D6A19C08F4C00CAD98E /* luxury.png in Resources */ = {isa = PBXBuildFile; fileRef = 84205D6919C08F4C00CAD98E /* luxury.png */; };
+		84213FB619C9B2570083C5BD /* UIView+MyExtentions.m in Sources */ = {isa = PBXBuildFile; fileRef = 84213FB519C9B2570083C5BD /* UIView+MyExtentions.m */; };
+		84213FB919C9B2760083C5BD /* UIButton+MyExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 84213FB819C9B2760083C5BD /* UIButton+MyExtensions.m */; };
 		842C765D19B8956B008E47A1 /* db.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 842C765C19B8956B008E47A1 /* db.sqlite */; };
 		845187F219C342B800B28370 /* JennaSue.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 845187F119C342B800B28370 /* JennaSue.ttf */; };
 		8474A7B319B7526B009ADB4E /* SkinEmo_IHeartName.m in Sources */ = {isa = PBXBuildFile; fileRef = 8474A7B219B7526B009ADB4E /* SkinEmo_IHeartName.m */; };
@@ -292,7 +294,6 @@
 		848A9BFD19BDF59700D59D60 /* bestChoice2.png in Resources */ = {isa = PBXBuildFile; fileRef = 848A9BFA19BDF59700D59D60 /* bestChoice2.png */; };
 		848A9BFE19BDF59700D59D60 /* bestChoise1.png in Resources */ = {isa = PBXBuildFile; fileRef = 848A9BFB19BDF59700D59D60 /* bestChoise1.png */; };
 		848A9BFF19BDF59700D59D60 /* bestChoise3.png in Resources */ = {isa = PBXBuildFile; fileRef = 848A9BFC19BDF59700D59D60 /* bestChoise3.png */; };
-		84907CBD19C8491E00099324 /* UIView+MyExtentions.m in Sources */ = {isa = PBXBuildFile; fileRef = 84907CBC19C8491E00099324 /* UIView+MyExtentions.m */; };
 		84D344CE19B74E3B00C7A02E /* SetEmotions.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D344CD19B74E3B00C7A02E /* SetEmotions.m */; };
 		84D344D019B74F4900C7A02E /* SetEmotions.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84D344CF19B74F4900C7A02E /* SetEmotions.xib */; };
 		84D344D319B74FC000C7A02E /* SkinEmo_IHeartLogo.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D344D219B74FC000C7A02E /* SkinEmo_IHeartLogo.m */; };
@@ -690,6 +691,10 @@
 		84205D6519C07FB000CAD98E /* carGift.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = carGift.png; sourceTree = "<group>"; };
 		84205D6719C08D5800CAD98E /* SCRIPTIN.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SCRIPTIN.ttf; sourceTree = "<group>"; };
 		84205D6919C08F4C00CAD98E /* luxury.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = luxury.png; sourceTree = "<group>"; };
+		84213FB419C9B2570083C5BD /* UIView+MyExtentions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+MyExtentions.h"; sourceTree = "<group>"; };
+		84213FB519C9B2570083C5BD /* UIView+MyExtentions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+MyExtentions.m"; sourceTree = "<group>"; };
+		84213FB719C9B2760083C5BD /* UIButton+MyExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+MyExtensions.h"; sourceTree = "<group>"; };
+		84213FB819C9B2760083C5BD /* UIButton+MyExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+MyExtensions.m"; sourceTree = "<group>"; };
 		842C765C19B8956B008E47A1 /* db.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = db.sqlite; sourceTree = "<group>"; };
 		845187F119C342B800B28370 /* JennaSue.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = JennaSue.ttf; sourceTree = "<group>"; };
 		8474A7B119B7526B009ADB4E /* SkinEmo_IHeartName.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SkinEmo_IHeartName.h; path = SetEmotions/SkinEmo_IHeartName.h; sourceTree = "<group>"; };
@@ -723,8 +728,6 @@
 		848A9BFA19BDF59700D59D60 /* bestChoice2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bestChoice2.png; sourceTree = "<group>"; };
 		848A9BFB19BDF59700D59D60 /* bestChoise1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bestChoise1.png; sourceTree = "<group>"; };
 		848A9BFC19BDF59700D59D60 /* bestChoise3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bestChoise3.png; sourceTree = "<group>"; };
-		84907CBB19C8491E00099324 /* UIView+MyExtentions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIView+MyExtentions.h"; path = "InstaCar/Core/UIView+MyExtentions.h"; sourceTree = "<group>"; };
-		84907CBC19C8491E00099324 /* UIView+MyExtentions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIView+MyExtentions.m"; path = "InstaCar/Core/UIView+MyExtentions.m"; sourceTree = "<group>"; };
 		84D344CC19B74E3B00C7A02E /* SetEmotions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SetEmotions.h; path = SetEmotions/SetEmotions.h; sourceTree = "<group>"; };
 		84D344CD19B74E3B00C7A02E /* SetEmotions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SetEmotions.m; path = SetEmotions/SetEmotions.m; sourceTree = "<group>"; };
 		84D344CF19B74F4900C7A02E /* SetEmotions.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SetEmotions.xib; path = SetEmotions/SetEmotions.xib; sourceTree = "<group>"; };
@@ -1145,6 +1148,7 @@
 		7F4CB66A180977E9008B5CA2 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				84213FB319C9B2570083C5BD /* Extensions */,
 				841988BC19C87B4000C73A19 /* Images */,
 				8478A60419BF6500004CCEFE /* Fonts */,
 				84EC58DD1954506D00E8C421 /* DrawingElements */,
@@ -1164,8 +1168,6 @@
 				7F4CB66C180978CF008B5CA2 /* CustomSHKConfigurator.m */,
 				7F4CB667180977DF008B5CA2 /* iCloudHandler.h */,
 				7F4CB668180977DF008B5CA2 /* iCloudHandler.m */,
-				84907CBB19C8491E00099324 /* UIView+MyExtentions.h */,
-				84907CBC19C8491E00099324 /* UIView+MyExtentions.m */,
 				841988C819C87B4000C73A19 /* SkinCommandsPopoverView.h */,
 				841988C919C87B4000C73A19 /* SkinCommandsPopoverView.m */,
 			);
@@ -1473,6 +1475,18 @@
 			);
 			name = Images;
 			path = InstaCar/Core/Images;
+			sourceTree = "<group>";
+		};
+		84213FB319C9B2570083C5BD /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				84213FB419C9B2570083C5BD /* UIView+MyExtentions.h */,
+				84213FB519C9B2570083C5BD /* UIView+MyExtentions.m */,
+				84213FB719C9B2760083C5BD /* UIButton+MyExtensions.h */,
+				84213FB819C9B2760083C5BD /* UIButton+MyExtensions.m */,
+			);
+			name = Extensions;
+			path = InstaCar/Core/Extensions;
 			sourceTree = "<group>";
 		};
 		8474A7B419B75577009ADB4E /* SetAwards */ = {
@@ -1900,7 +1914,7 @@
 				7F4ECC2D17C8062800BF1671 /* SideViewControllerBase.m in Sources */,
 				7F2AD5A517EDE9B40096EC8D /* SHKPhotoAlbum.m in Sources */,
 				7F4CB677180978CF008B5CA2 /* CustomSHKConfigurator.m in Sources */,
-				84907CBD19C8491E00099324 /* UIView+MyExtentions.m in Sources */,
+				84213FB619C9B2570083C5BD /* UIView+MyExtentions.m in Sources */,
 				7F3871D917BE4D4C00D8E39D /* MainVC.m in Sources */,
 				848A9BF819BDF37900D59D60 /* SkinAwd_BestChoise3.m in Sources */,
 				7F2AD5C417EDE9B40096EC8D /* SHKiOSTwitter.m in Sources */,
@@ -1931,6 +1945,7 @@
 				7F3A170117F627A200584614 /* UIAlphaGradientView.m in Sources */,
 				7FB233B317D6773C003751B5 /* CellSelectedAuto.m in Sources */,
 				7F4FE8921826FF0B00045ABD /* SkinLogoCountryBadge.m in Sources */,
+				84213FB919C9B2760083C5BD /* UIButton+MyExtensions.m in Sources */,
 				7F2AD5A617EDE9B40096EC8D /* SHKTextMessage.m in Sources */,
 				7F2AD5D617EDE9B40096EC8D /* SHKFormFieldSettings.m in Sources */,
 				7FEF908917D505E800C07A05 /* AutosVC.m in Sources */,
