@@ -12,6 +12,7 @@
 
 #define SIDE_PADDING 5.0
 #define BTNS_EDITOR_MARGIN 2.0
+#define HEIGHT_ON_TOP 40.0
 
 @interface SkinCommandsPopoverView : UIView{
 @private
@@ -24,7 +25,9 @@
 }
 
 @property (nonatomic) SkinViewBase *delegatingSkin;
-@property BOOL hasCloseButton;
+@property (nonatomic) BOOL hasCloseButton;
+@property (nonatomic) BOOL isInEditMode;
+@property (nonatomic) CGFloat heightOnTop;
 
 -(void)rebuildView;
 

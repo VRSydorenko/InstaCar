@@ -72,6 +72,14 @@
     }
 }
 
+-(BOOL)isInEditMode{
+    return stringEditMode;
+}
+
+-(CGFloat)heightOnTop{
+    return HEIGHT_ON_TOP;
+}
+
 -(void)reset{
     [self.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
     
@@ -87,6 +95,7 @@
     if (stringEditMode == editMode){
         return;
     }
+    stringEditMode = editMode;
     
     if (editMode){
         [self createStringEditorControls];
@@ -97,8 +106,6 @@
     btnCancelStringEdit.hidden = !editMode;
     btnConfirmStringEdit.hidden = !editMode;
     stringEditor.hidden = !editMode;
-    
-    stringEditMode = editMode;
 }
 
 -(void)createStringEditorControls{
@@ -166,7 +173,7 @@
 }
 
 -(CGFloat)getOneCommandHeight{
-    return self.bounds.size.height - 2 * SIDE_PADDING;
+    return (stringEditMode ? HEIGHT_ON_TOP : self.bounds.size.height) - 2 * SIDE_PADDING;
 }
 
 -(CGFloat)getStringEditorX{

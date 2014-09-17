@@ -221,13 +221,11 @@ typedef enum {
         return;
     }
     
-    [self calcPopCommandsViewHeight];
-    
     CGFloat topBottomMargin = 0.0;
     CGFloat sideMargin = 10.0;
     CGFloat y = self.scrollSkins.frame.origin.y + self.scrollSkins.bounds.size.height + pageControlHeight + topBottomMargin;
     CGFloat width = [UIScreen mainScreen].bounds.size.width - 2 * sideMargin;
-    CGFloat height = [self calcPopCommandsViewHeight];
+    CGFloat height = [self getPopCommandsViewHeight];
     
     CGRect frame = CGRectMake(sideMargin, y, width, height);
     
@@ -256,11 +254,13 @@ typedef enum {
 
 -(void)bannerViewDidLoadAd:(ADBannerView *)banner{
     if (NO == [DataManager isFullVersion] && self.constraintViewAdContainerHeight.constant == 0){
+        isShowingAd = YES;
+        
         self.constraintViewAdContainerHeight.constant = 50.0;
         self.constraintButtonsCoverViewHeight.constant = [self calcPageControlHeight];
         
         CGRect popoverFrame = cmdPopoverView.frame;
-        popoverFrame.size.height += [UserSettings isIPhone4] ? 9.0 : -15.0;
+        popoverFrame.size.height = [self getPopCommandsViewHeight];
         
         [UIView animateWithDuration:0.25
                          animations:^(void){
@@ -268,7 +268,6 @@ typedef enum {
                              [self.view layoutIfNeeded];
                          }
                          completion:^(BOOL success){
-                             isShowingAd = YES;
                              [cmdPopoverView rebuildView];
                          }
          ];
@@ -277,11 +276,13 @@ typedef enum {
 
 -(void) bannerView:(ADBannerView *)banner didFailToReceiveAdWithError:(NSError *)error{
     if (NO == [DataManager isFullVersion] && self.constraintViewAdContainerHeight.constant == 50.0){
+        isShowingAd = NO;
+        
         self.constraintViewAdContainerHeight.constant = 0.0;
         self.constraintButtonsCoverViewHeight.constant = [self calcPageControlHeight];
         
         CGRect popoverFrame = cmdPopoverView.frame;
-        popoverFrame.size.height = [self calcPopCommandsViewHeight];
+        popoverFrame.size.height = [self getPopCommandsViewHeight];
         
         [UIView animateWithDuration:0.25
                          animations:^(void){
@@ -289,7 +290,6 @@ typedef enum {
                              [self.view layoutIfNeeded];
                          }
                          completion:^(BOOL success){
-                             isShowingAd = NO;
                              [cmdPopoverView rebuildView];
                          }
          ];
@@ -618,8 +618,16 @@ typedef enum {
     return self.view.bounds.size.height - self.constraintViewAdContainerHeight.constant - self.btnLocation.bounds.size.height - 1.0 - self.pageControlContainer.frame.origin.y;
 }
 
--(CGFloat)calcPopCommandsViewHeight{
-    return [UserSettings isIPhone4] ? 47.0 : 70.0;
+-(CGFloat)getPopCommandsViewHeight{
+    if (nil != cmdPopoverView && [cmdPopoverView isInEditMode]){
+        return [cmdPopoverView heightOnTop];
+    }
+    
+    if (!isShowingAd){
+        return [UserSettings isIPhone4] ? 47.0 : 70.0;
+    } else {
+        return [UserSettings isIPhone4] ? 56.0 /*+9*/: 55.0/*-15*/;
+    }
 }
 
 -(void) imageCaptured{
@@ -654,6 +662,13 @@ typedef enum {
 }
 
 -(void)updateSkinCommandsPopover{
+    if (cmdPopoverView.isInEditMode){ // TODO: reimplement this workaround
+        [cmdPopoverView removeFromSuperview];
+        cmdPopoverView = nil;
+        
+        [self initSkinCommandPopoverView];
+    }
+    
     if (!cmdPopoverView){
         DLog(@"Skin command popover is not initialized");
         return;
@@ -680,20 +695,18 @@ typedef enum {
     
     CGFloat keyboardTop = keyboardRect.origin.y;
     
-    CGFloat x = cmdPopoverView.frame.origin.x;
-    CGFloat y = keyboardTop - cmdPopoverView.bounds.size.height;
-    CGRect newToolbarFrame = CGRectMake(x, y, cmdPopoverView.bounds.size.width, cmdPopoverView.bounds.size.height);
+    CGFloat height = [self getPopCommandsViewHeight];
+    CGRect popoverFrame = CGRectMake(cmdPopoverView.frame.origin.x, keyboardTop - height, cmdPopoverView.bounds.size.width, height);
     
     NSValue *animationDurationValue = [notification.userInfo objectForKey:UIKeyboardAnimationDurationUserInfoKey];
     NSTimeInterval animationDuration;
     [animationDurationValue getValue:&animationDuration];
     
-    [UIView beginAnimations:nil context:NULL];
-    [UIView setAnimationDuration:animationDuration];
-    
-    cmdPopoverView.frame = newToolbarFrame;
-    
-    [UIView commitAnimations];
+    [UIView animateWithDuration:animationDuration
+                     animations:^{
+                         cmdPopoverView.frame = popoverFrame;
+                     }
+     ];
 }
 
 - (void)keyboardWillHide:(NSNotification *)notification {
@@ -707,14 +720,16 @@ typedef enum {
     [animationDurationValue getValue:&animationDuration];
     
     CGRect popoverFrame = initialPopoverFrame;
-    popoverFrame.size.height += [UserSettings isIPhone4] && isShowingAd ? 9.0 : -15.0;
+    popoverFrame.size.height = [self getPopCommandsViewHeight];
     
-    [UIView beginAnimations:nil context:NULL];
-    [UIView setAnimationDuration:animationDuration];
-    
-    cmdPopoverView.frame = popoverFrame;
-    
-    [UIView commitAnimations];
+    [UIView animateWithDuration:animationDuration
+                    animations:^{
+                        cmdPopoverView.frame = popoverFrame;
+                    }
+                    completion:^(BOOL finished){
+                        [cmdPopoverView rebuildView];
+                    }
+    ];
 }
 
 @end
