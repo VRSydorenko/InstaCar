@@ -30,14 +30,17 @@ typedef enum {
 typedef struct {
     unsigned int canCmdInvertColors:1;
     unsigned int canCmdEditText:1;
+    unsigned int canCmdEditPrefix:1;
 } CommandFlags;
 
 @protocol SkinCommandProtocol <NSObject>
 // commands
 -(void)onCmdInvertColors;
 -(void)onCmdEditText:(NSString*)newText;
+-(void)onCmdEditPrefix:(NSString*)newPrefix;
 // data getters
 -(NSString*)getSkinContentText;
+-(NSString*)getSkinPrefixText;
 -(BOOL)getAllowsEmptyContentText;
 @end
     

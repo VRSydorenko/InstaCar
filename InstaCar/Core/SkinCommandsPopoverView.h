@@ -23,6 +23,7 @@
     UITextField *stringEditor;
     UIButton *btnCancelStringEdit;
     UIButton *btnConfirmStringEdit;
+    BOOL currentlyEditingPrefix; // YES: prefix; NO: content
 }
 
 @property (nonatomic) SkinViewBase *delegatingSkin;

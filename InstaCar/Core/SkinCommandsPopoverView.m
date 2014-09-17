@@ -58,6 +58,22 @@
         frame.origin.x += cmdWidth;
     }
     
+    if (skinCommands.canCmdEditPrefix){
+        UIButton *btn = [[UIButton alloc] initWithFrame:frame];
+        [self setCmdButtonCommonValues:&btn];
+        [btn addTarget:self action:@selector(onCommandEditPrefixPressed:) forControlEvents:UIControlEventTouchUpInside];
+        
+        [btn setTitle:@"Edit prefix" forState:UIControlStateNormal];
+        
+        // images // TODO: icons for prefix
+        [btn setImage:[UIImage imageNamed:@"imgCmdEditNormal.png"] forState:UIControlStateNormal];
+        [btn setImage:[UIImage imageNamed:@"imgCmdEditDisabled.png"] forState:UIControlStateDisabled];
+        [btn setImage:[UIImage imageNamed:@"imgCmdEditActive.png"] forState:UIControlStateHighlighted];
+        
+        [self addSubview:btn];
+        frame.origin.x += cmdWidth;
+    }
+    
     if (self.hasCloseButton){
         // TODO: create close button
     }
@@ -160,6 +176,9 @@
     if (skinCommands.canCmdEditText){
         actCmds++;
     }
+    if (skinCommands.canCmdEditPrefix){
+        actCmds++;
+    }
     return (self.bounds.size.width - 2 * SIDE_PADDING) / actCmds;
 }
 
@@ -197,6 +216,14 @@
     [self switchStringEditView:YES];
     
     stringEditor.text = [self.delegatingSkin getSkinContentText];
+    currentlyEditingPrefix = NO;
+    [stringEditor becomeFirstResponder];
+}
+-(IBAction)onCommandEditPrefixPressed:(UIButton*)sender{
+    [self switchStringEditView:YES];
+    
+    stringEditor.text = [self.delegatingSkin getSkinPrefixText];
+    currentlyEditingPrefix = YES;
     [stringEditor becomeFirstResponder];
 }
 
@@ -207,7 +234,11 @@
 }
 
 -(IBAction)onConfirmEditButtonPressed:(id)sender{
-    [self.delegatingSkin onCmdEditText:stringEditor.text];
+    if (currentlyEditingPrefix){
+        [self.delegatingSkin onCmdEditPrefix:stringEditor.text];
+    } else {
+        [self.delegatingSkin onCmdEditText:stringEditor.text];
+    }
     [self onCancelEditButtonPressed:btnCancelStringEdit];
 }
 

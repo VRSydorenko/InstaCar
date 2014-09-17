@@ -101,6 +101,7 @@
     
     _commandFlags.canCmdInvertColors = NO;
     _commandFlags.canCmdEditText = NO;
+    _commandFlags.canCmdEditPrefix = NO;
     
     self.userInteractionEnabled = YES;
     gradient = nil;
@@ -369,7 +370,13 @@
 -(void)onCmdEditText:(NSString *)newText{
     // overriden in descendants
 }
+-(void)onCmdEditPrefix:(NSString *)newPrefix{
+    // overriden in descendants
+}
 -(NSString*)getSkinContentText{
+    return @"";
+}
+-(NSString*)getSkinPrefixText{
     return @"";
 }
 -(BOOL)getAllowsEmptyContentText{

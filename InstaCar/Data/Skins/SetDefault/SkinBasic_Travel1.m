@@ -31,7 +31,7 @@
     
     canEditFieldAuto1 = YES;
     prefix = @"With my";
-    _commandFlags.canCmdEditText = YES;
+    _commandFlags.canCmdEditPrefix = YES;
     
     isContentOnTop = NO;
     
@@ -45,11 +45,11 @@
     [self adjustAutoLabelSizeAccordingToText];
 }
 
--(NSString*)getSkinContentText{
+-(NSString*)getSkinPrefixText{
     return prefix;
 }
--(void)onCmdEditText:(NSString *)newText{
-    prefix = newText;
+-(void)onCmdEditPrefix:(NSString *)newPrefix{
+    prefix = newPrefix;
     [self fieldAuto1DidUpdate];
 }
 
