@@ -26,52 +26,67 @@
     
     CGRect frame = CGRectMake(SIDE_PADDING, SIDE_PADDING, cmdWidth, cmdHeight);
     
-    if (skinCommands.canCmdInvertColors){
+    if (0 == [self getNumberOfActiveCommands]){ // no commands available for current skin
         UIButton *btn = [[UIButton alloc] initWithFrame:frame];
+        btn.enabled = NO;
         [self setCmdButtonCommonValues:&btn];
         
-        [btn addTarget:self action:@selector(onCommandInvertPressed:) forControlEvents:UIControlEventTouchUpInside];
-
         // title
-        [btn setTitle:@"Invert colors" forState:UIControlStateNormal];
+        [btn setTitle:@"No actions" forState:UIControlStateNormal];
+        [btn setTitle:@"No actions" forState:UIControlStateDisabled];
         // images
-        [btn setImage:[UIImage imageNamed:@"imgCmdInvertNormal.png"] forState:UIControlStateNormal];
-        [btn setImage:[UIImage imageNamed:@"imgCmdInvertActive.png"] forState:UIControlStateHighlighted];
+        [btn setImage:[UIImage imageNamed:@"imgCmdNoActionsDisabled.png"] forState:UIControlStateNormal];
+        [btn setImage:[UIImage imageNamed:@"imgCmdNoActionsDisabled.png"] forState:UIControlStateDisabled];
         
         [self addSubview:btn];
-        frame.origin.x += cmdWidth;
-    }
-    
-    if (skinCommands.canCmdEditText){
-        UIButton *btn = [[UIButton alloc] initWithFrame:frame];
-        [self setCmdButtonCommonValues:&btn];
-        [btn addTarget:self action:@selector(onCommandEditTextPressed:) forControlEvents:UIControlEventTouchUpInside];
+    } else {
+        if (skinCommands.canCmdInvertColors){
+            UIButton *btn = [[UIButton alloc] initWithFrame:frame];
+            [self setCmdButtonCommonValues:&btn];
+            
+            [btn addTarget:self action:@selector(onCommandInvertPressed:) forControlEvents:UIControlEventTouchUpInside];
+            
+            // title
+            [btn setTitle:@"Invert colors" forState:UIControlStateNormal];
+            // images
+            [btn setImage:[UIImage imageNamed:@"imgCmdInvertNormal.png"] forState:UIControlStateNormal];
+            [btn setImage:[UIImage imageNamed:@"imgCmdInvertActive.png"] forState:UIControlStateHighlighted];
+            
+            [self addSubview:btn];
+            frame.origin.x += cmdWidth;
+        }
         
-        [btn setTitle:@"Edit text" forState:UIControlStateNormal];
+        if (skinCommands.canCmdEditText){
+            UIButton *btn = [[UIButton alloc] initWithFrame:frame];
+            [self setCmdButtonCommonValues:&btn];
+            [btn addTarget:self action:@selector(onCommandEditTextPressed:) forControlEvents:UIControlEventTouchUpInside];
+            
+            [btn setTitle:@"Edit text" forState:UIControlStateNormal];
+            
+            // images
+            [btn setImage:[UIImage imageNamed:@"imgCmdEditNormal.png"] forState:UIControlStateNormal];
+            [btn setImage:[UIImage imageNamed:@"imgCmdEditDisabled.png"] forState:UIControlStateDisabled];
+            [btn setImage:[UIImage imageNamed:@"imgCmdEditActive.png"] forState:UIControlStateHighlighted];
+            
+            [self addSubview:btn];
+            frame.origin.x += cmdWidth;
+        }
         
-        // images
-        [btn setImage:[UIImage imageNamed:@"imgCmdEditNormal.png"] forState:UIControlStateNormal];
-        [btn setImage:[UIImage imageNamed:@"imgCmdEditDisabled.png"] forState:UIControlStateDisabled];
-        [btn setImage:[UIImage imageNamed:@"imgCmdEditActive.png"] forState:UIControlStateHighlighted];
-        
-        [self addSubview:btn];
-        frame.origin.x += cmdWidth;
-    }
-    
-    if (skinCommands.canCmdEditPrefix){
-        UIButton *btn = [[UIButton alloc] initWithFrame:frame];
-        [self setCmdButtonCommonValues:&btn];
-        [btn addTarget:self action:@selector(onCommandEditPrefixPressed:) forControlEvents:UIControlEventTouchUpInside];
-        
-        [btn setTitle:@"Edit prefix" forState:UIControlStateNormal];
-        
-        // images // TODO: icons for prefix
-        [btn setImage:[UIImage imageNamed:@"imgCmdEditNormal.png"] forState:UIControlStateNormal];
-        [btn setImage:[UIImage imageNamed:@"imgCmdEditDisabled.png"] forState:UIControlStateDisabled];
-        [btn setImage:[UIImage imageNamed:@"imgCmdEditActive.png"] forState:UIControlStateHighlighted];
-        
-        [self addSubview:btn];
-        frame.origin.x += cmdWidth;
+        if (skinCommands.canCmdEditPrefix){
+            UIButton *btn = [[UIButton alloc] initWithFrame:frame];
+            [self setCmdButtonCommonValues:&btn];
+            [btn addTarget:self action:@selector(onCommandEditPrefixPressed:) forControlEvents:UIControlEventTouchUpInside];
+            
+            [btn setTitle:@"Edit prefix" forState:UIControlStateNormal];
+            
+            // images // TODO: icons for prefix
+            [btn setImage:[UIImage imageNamed:@"imgCmdEditNormal.png"] forState:UIControlStateNormal];
+            [btn setImage:[UIImage imageNamed:@"imgCmdEditDisabled.png"] forState:UIControlStateDisabled];
+            [btn setImage:[UIImage imageNamed:@"imgCmdEditActive.png"] forState:UIControlStateHighlighted];
+            
+            [self addSubview:btn];
+            frame.origin.x += cmdWidth;
+        }
     }
     
     if (self.hasCloseButton){
@@ -169,17 +184,7 @@
 #pragma mark Control dimentions
 
 -(CGFloat)getOneCommandWidth{
-    int actCmds = 0;
-    if (skinCommands.canCmdInvertColors){
-        actCmds++;
-    }
-    if (skinCommands.canCmdEditText){
-        actCmds++;
-    }
-    if (skinCommands.canCmdEditPrefix){
-        actCmds++;
-    }
-    return (self.bounds.size.width - 2 * SIDE_PADDING) / actCmds;
+    return (self.bounds.size.width - 2 * SIDE_PADDING) / MAX(1 /*No Actions*/, [self getNumberOfActiveCommands]);
 }
 
 -(CGFloat)getOneCommandHeight{
@@ -259,12 +264,28 @@
     UIButton *btn = *button;
     btn.titleLabel.textAlignment = NSTextAlignmentCenter;
     [btn setTitleColor:[UIColor colorWithRed:1 green:1 blue:150/255 alpha:1.0] forState:UIControlStateNormal];
+    [btn setTitleColor:[UIColor colorWithRed:1 green:1 blue:150/255 alpha:1.0] forState:UIControlStateDisabled]; // TODO: dark the color
     [btn setTitleShadowColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [btn setTitleShadowColor:[UIColor blackColor] forState:UIControlStateDisabled]; // TODO: dark the color
     
     btn.imageView.contentMode = UIViewContentModeCenter;
     btn.backgroundColor = [UIColor lightGrayColor];
     
     [btn centerButtonAndImageWithSpacing:3.0];
+}
+
+-(int)getNumberOfActiveCommands{
+    int actCmds = 0;
+    if (skinCommands.canCmdInvertColors){
+        actCmds++;
+    }
+    if (skinCommands.canCmdEditText){
+        actCmds++;
+    }
+    if (skinCommands.canCmdEditPrefix){
+        actCmds++;
+    }
+    return actCmds;
 }
 
 @end

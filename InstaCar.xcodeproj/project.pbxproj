@@ -297,6 +297,7 @@
 		84D344CE19B74E3B00C7A02E /* SetEmotions.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D344CD19B74E3B00C7A02E /* SetEmotions.m */; };
 		84D344D019B74F4900C7A02E /* SetEmotions.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84D344CF19B74F4900C7A02E /* SetEmotions.xib */; };
 		84D344D319B74FC000C7A02E /* SkinEmo_IHeartLogo.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D344D219B74FC000C7A02E /* SkinEmo_IHeartLogo.m */; };
+		84EB677219C9C9D700AFB962 /* imgCmdNoActionsDisabled@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84EB677119C9C9D700AFB962 /* imgCmdNoActionsDisabled@2x.png */; };
 		84EC58E11954519A00E8C421 /* SkinElementRect.m in Sources */ = {isa = PBXBuildFile; fileRef = 84EC58E01954519A00E8C421 /* SkinElementRect.m */; };
 /* End PBXBuildFile section */
 
@@ -733,6 +734,7 @@
 		84D344CF19B74F4900C7A02E /* SetEmotions.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SetEmotions.xib; path = SetEmotions/SetEmotions.xib; sourceTree = "<group>"; };
 		84D344D119B74FC000C7A02E /* SkinEmo_IHeartLogo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SkinEmo_IHeartLogo.h; path = SetEmotions/SkinEmo_IHeartLogo.h; sourceTree = "<group>"; };
 		84D344D219B74FC000C7A02E /* SkinEmo_IHeartLogo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SkinEmo_IHeartLogo.m; path = SetEmotions/SkinEmo_IHeartLogo.m; sourceTree = "<group>"; };
+		84EB677119C9C9D700AFB962 /* imgCmdNoActionsDisabled@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "imgCmdNoActionsDisabled@2x.png"; sourceTree = "<group>"; };
 		84EC58DE195450A200E8C421 /* DrawingElementProtocolBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DrawingElementProtocolBase.h; path = InstaCar/Core/DrawingElements/DrawingElementProtocolBase.h; sourceTree = "<group>"; };
 		84EC58DF1954519A00E8C421 /* SkinElementRect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SkinElementRect.h; path = InstaCar/Core/DrawingElements/SkinElementRect.h; sourceTree = "<group>"; };
 		84EC58E01954519A00E8C421 /* SkinElementRect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SkinElementRect.m; path = InstaCar/Core/DrawingElements/SkinElementRect.m; sourceTree = "<group>"; };
@@ -1461,6 +1463,7 @@
 		841988BC19C87B4000C73A19 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				84EB677119C9C9D700AFB962 /* imgCmdNoActionsDisabled@2x.png */,
 				841988BD19C87B4000C73A19 /* imgBadgePro.png */,
 				841988BE19C87B4000C73A19 /* imgCmdCancelActive@2x.png */,
 				841988BF19C87B4000C73A19 /* imgCmdCancelNormal@2x.png */,
@@ -1680,6 +1683,7 @@
 				845187F219C342B800B28370 /* JennaSue.ttf in Resources */,
 				7F4D53E519B7C5E50083E2CB /* logo_lincoln_128.png in Resources */,
 				7F4D53F919B7C5E50083E2CB /* logo_toyota_128.png in Resources */,
+				84EB677219C9C9D700AFB962 /* imgCmdNoActionsDisabled@2x.png in Resources */,
 				84205D5F19C06DCF00CAD98E /* eco100.png in Resources */,
 				7F4D536319B7BBFD0083E2CB /* logo_iveco_256.png in Resources */,
 				7F4D535219B7BBFD0083E2CB /* logo_cadillac_256.png in Resources */,
