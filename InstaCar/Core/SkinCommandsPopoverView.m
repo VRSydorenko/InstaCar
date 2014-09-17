@@ -268,7 +268,8 @@
     [btn setTitleShadowColor:[UIColor blackColor] forState:UIControlStateNormal];
     [btn setTitleShadowColor:[UIColor blackColor] forState:UIControlStateDisabled]; // TODO: dark the color
     
-    btn.imageView.contentMode = UIViewContentModeCenter;
+    btn.imageView.contentMode = UIViewContentModeScaleAspectFit;
+    [btn setImageEdgeInsets:UIEdgeInsetsMake(-5, -5, -5, -5)];
     btn.backgroundColor = [UIColor lightGrayColor];
     
     [btn centerButtonAndImageWithSpacing:3.0];

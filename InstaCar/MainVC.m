@@ -90,6 +90,7 @@ typedef enum {
     // this will create skin command view and bring it to front
     // it should be over the scroll view so this call it here
     [self initSkinCommandPopoverView];
+    [self setActiveSkin:0]; // moved from initSkins
     
     // Keyboard listener
     [[NSNotificationCenter defaultCenter] addObserver:self
@@ -157,7 +158,7 @@ typedef enum {
 
 -(void)initSkins{
     SkinSet *skinSet = [DataManager getSelectedSkinSet];
-    [self setActiveSkin:0];
+    // [self setActiveSkin:0]; // moved to initCmdPopupView
 
 	self.scrollSkins.indicatorStyle = UIScrollViewIndicatorStyleWhite;
     
