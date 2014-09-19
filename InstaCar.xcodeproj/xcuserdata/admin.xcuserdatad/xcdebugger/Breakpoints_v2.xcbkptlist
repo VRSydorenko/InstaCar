@@ -20,28 +20,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "InstaCar/MainVC.m"
-            timestampString = "432656532.239239"
+            timestampString = "432824365.489902"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "652"
-            endingLineNumber = "652"
+            startingLineNumber = "660"
+            endingLineNumber = "660"
             landmarkName = "-drawSkin:inImageTaken:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "InstaCar/MainVC.m"
-            timestampString = "432656532.239239"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "291"
-            endingLineNumber = "291"
-            landmarkName = "-bannerView:didFailToReceiveAdWithError:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -148,11 +132,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "InstaCar/MainVC.m"
-            timestampString = "432656532.239239"
+            timestampString = "432824365.489902"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "734"
-            endingLineNumber = "734"
+            startingLineNumber = "742"
+            endingLineNumber = "742"
             landmarkName = "-keyboardWillHide:"
             landmarkType = "5">
          </BreakpointContent>

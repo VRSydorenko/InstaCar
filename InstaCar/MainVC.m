@@ -265,11 +265,15 @@ typedef enum {
         
         [UIView animateWithDuration:0.25
                          animations:^(void){
-                             cmdPopoverView.frame = popoverFrame;
+                             if (!cmdPopoverView.isInEditMode){
+                                 cmdPopoverView.frame = popoverFrame;
+                             }
                              [self.view layoutIfNeeded];
                          }
                          completion:^(BOOL success){
-                             [cmdPopoverView rebuildView];
+                             if (!cmdPopoverView.isInEditMode){
+                                 [cmdPopoverView rebuildView];
+                             }
                          }
          ];
     }
@@ -287,11 +291,15 @@ typedef enum {
         
         [UIView animateWithDuration:0.25
                          animations:^(void){
-                             cmdPopoverView.frame = popoverFrame;
+                             if (!cmdPopoverView.isInEditMode){
+                                 cmdPopoverView.frame = popoverFrame;
+                             }
                              [self.view layoutIfNeeded];
                          }
                          completion:^(BOOL success){
-                             [cmdPopoverView rebuildView];
+                             if (!cmdPopoverView.isInEditMode){
+                                 [cmdPopoverView rebuildView];
+                             }
                          }
          ];
     }
