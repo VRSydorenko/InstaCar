@@ -11,5 +11,6 @@
 @interface SkinEmo_IHeartLogo : SkinViewBase
 
 @property (nonatomic) IBOutlet SkinElementImage *imgEmblem;
+@property (weak, nonatomic) IBOutlet SkinElementImage *imgIHeart;
 
 @end

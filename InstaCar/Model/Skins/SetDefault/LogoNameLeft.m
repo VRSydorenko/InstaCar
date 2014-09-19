@@ -19,6 +19,7 @@
 @implementation LogoNameLeft
 
 -(void)initialise{
+    self.movingView.backgroundColor = [UIColor clearColor];
     [self setupGradient:0.4 inDirection:GRADIENT_RIGHT];
     [self.imgEmblem.layer setMinificationFilter:kCAFilterTrilinear];
     
@@ -36,7 +37,7 @@
 }
 
 -(void)onCmdInvertColors{
-    DLog(@"Invert colors call!");
+    self.textAuto.textColor = [Utils invertColor:self.textAuto.textColor];
 }
 
 @end

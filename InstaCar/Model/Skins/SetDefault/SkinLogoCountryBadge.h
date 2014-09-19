@@ -13,5 +13,6 @@
 @property (nonatomic) IBOutlet SkinElementImage *imgEmblem;
 @property (nonatomic) IBOutlet SkinElementLabel *textAuto;
 @property (nonatomic) IBOutlet SkinElementLabel *textCountry;
+@property (weak, nonatomic) IBOutlet SkinElementRect *rectSeparator;
 
 @end

@@ -27,6 +27,7 @@
     self.movingView.backgroundColor = [UIColor clearColor];
     
     canEditFieldLocation = YES;
+    _commandFlags.canCmdInvertColors = YES;
 }
 
 -(void)moveContentUp{
@@ -44,6 +45,11 @@
     
     self.textLocation.text = [fieldLocation getLocationString];
     self.constraintLocationHeight.constant = self.textLocation.text.length > 0 ? 20.0 : 0.0;
+}
+
+-(void)onCmdInvertColors{
+    self.textPlace.textColor = [Utils invertColor:self.textPlace.textColor];
+    self.textLocation.textColor = [Utils invertColor:self.textLocation.textColor];
 }
 
 @end

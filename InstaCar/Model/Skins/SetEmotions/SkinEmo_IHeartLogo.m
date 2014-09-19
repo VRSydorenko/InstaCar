@@ -8,7 +8,11 @@
 
 #import "SkinEmo_IHeartLogo.h"
 
-@interface SkinEmo_IHeartLogo()
+@interface SkinEmo_IHeartLogo(){
+    NSString *iheartImgOrig;
+    NSString *iheartImgInv;
+    BOOL isInitState;
+}
 
 @property (nonatomic) IBOutlet NSLayoutConstraint *constraintTopMargin;
 @property (nonatomic) IBOutlet NSLayoutConstraint *constraintLogoWidth;
@@ -19,12 +23,17 @@
 @implementation SkinEmo_IHeartLogo
 
 -(void)initialise{
+    iheartImgOrig = @"iheart_256.png";
+    iheartImgInv = @"iheartInv_256.png";
+    
     //[self setupGradient:0.2 inDirection:GRADIENT_UP];
     [self setMovingViewConstraint:self.constraintTopMargin andViewHeight:self.movingView.bounds.size.height];
     
     self.movingView.backgroundColor = [UIColor clearColor];
     
     canEditFieldAuto1 = YES;
+    _commandFlags.canCmdInvertColors = YES;
+    isInitState = YES;
     isContentOnTop = NO;
     movingViewTopBottomMargin = 10.0;
 }
@@ -34,5 +43,10 @@
     [self.imgEmblem setImageLogoName:fieldAuto1.logoName];
     self.imgEmblem.image = fieldAuto1.logo128;
     self.constraintLogoWidth.constant = self.imgEmblem.bounds.size.height * fieldAuto1.logoWidthHeightRate;
+}
+
+-(void)onCmdInvertColors{
+    [self.imgIHeart setInvertedImage:[UIImage imageNamed:isInitState ? iheartImgInv : iheartImgOrig]];
+    isInitState = !isInitState;
 }
 @end

@@ -24,9 +24,6 @@
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *constraintLogo2TopMargin;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *constraintLogo2BottomMargin;
 
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *constraintVSSeparatorWidth;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *constraintVSSeparatorLeftMargin;
-
 @end
 
 
@@ -38,6 +35,7 @@
     canEditFieldAuto1 = YES;
     canEditFieldAuto2 = YES;
     isContentOnTop = NO;
+    _commandFlags.canCmdInvertColors = YES;
 }
 
 -(void)fieldAuto1DidUpdate{
@@ -53,8 +51,6 @@
 }
 
 -(void)layoutSubviews{
-    CGFloat boundsWidth = self.bounds.size.width;
-    
     // moving view height
     self.constraintHeight.constant = self.bounds.size.height * heightScaleFactor;
     
@@ -72,13 +68,11 @@
     widthHeightRate = fieldAuto2 ? fieldAuto2.logoWidthHeightRate : 1.0;
     self.constraintwidthLogo2.constant = widthHeightRate * self.imgEmblem2.bounds.size.height; // adjust place for logo 2
     
-    // separator view
-    self.constraintVSSeparatorWidth.constant = boundsWidth > 320.0 ? 4.0 : 2.0;
-    
-    // separator position
-    self.constraintVSSeparatorLeftMargin.constant = 0.5 * (boundsWidth - self.constraintVSSeparatorWidth.constant);
-    
     [super layoutSubviews];
+}
+
+-(void)onCmdInvertColors{
+    self.movingView.backgroundColor = [Utils invertColor:self.movingView.backgroundColor];
 }
 
 @end

@@ -19,6 +19,7 @@
 @implementation SkinSimple
 
 -(void)initialise{
+    self.movingView.backgroundColor = [UIColor clearColor];
     [self setupGradient:0.4 inDirection:GRADIENT_LEFT];
     [self.imgEmblem.layer setMinificationFilter:kCAFilterTrilinear];
     [self setMovingViewConstraint:self.topMargin andViewHeight:self.movingView.bounds.size.height];
@@ -39,7 +40,7 @@
 }
 
 -(void)onCmdInvertColors{
-    DLog(@"Invert colors call!");
+    self.textAuto.textColor = [Utils invertColor:self.textAuto.textColor];
 }
 
 -(void)adjustAutoLabelSizeAccordingToText{

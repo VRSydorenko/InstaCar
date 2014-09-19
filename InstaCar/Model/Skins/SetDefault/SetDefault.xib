@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6245" systemVersion="14A343f" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6245" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
     </dependencies>
@@ -29,28 +29,28 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QqS-cI-X27">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
                     <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_anycar.png" translatesAutoresizingMaskIntoConstraints="NO" id="SWH-nj-s0u" customClass="SkinElementImage">
-                            <rect key="frame" x="259" y="4" width="54" height="42"/>
-                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select car..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.20000000000000007" translatesAutoresizingMaskIntoConstraints="NO" id="IEM-D4-Cc5" customClass="SkinElementLabel">
+                            <rect key="frame" x="206" y="0.0" width="111" height="50"/>
                             <constraints>
-                                <constraint firstAttribute="width" constant="54" id="Oej-UT-i2Y"/>
-                            </constraints>
-                        </imageView>
-                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.20000000000000007" translatesAutoresizingMaskIntoConstraints="NO" id="IEM-D4-Cc5" customClass="SkinElementLabel">
-                            <rect key="frame" x="316" y="0.0" width="1" height="50"/>
-                            <constraints>
-                                <constraint firstAttribute="width" constant="1" id="xqm-68-GDy"/>
+                                <constraint firstAttribute="width" constant="111" id="xqm-68-GDy"/>
                             </constraints>
                             <fontDescription key="fontDescription" name="AvenirNextCondensed-Regular" family="Avenir Next Condensed" pointSize="25"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
                         </label>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_anycar.png" translatesAutoresizingMaskIntoConstraints="NO" id="SWH-nj-s0u" customClass="SkinElementImage">
+                            <rect key="frame" x="152" y="4" width="54" height="42"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="54" id="Oej-UT-i2Y"/>
+                            </constraints>
+                        </imageView>
                     </subviews>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstItem="IEM-D4-Cc5" firstAttribute="top" secondItem="QqS-cI-X27" secondAttribute="top" id="8s2-A0-TRU"/>
                         <constraint firstAttribute="height" constant="50" id="Agd-0q-RnN"/>
-                        <constraint firstItem="IEM-D4-Cc5" firstAttribute="left" secondItem="SWH-nj-s0u" secondAttribute="right" constant="3" id="OE9-hq-Do8"/>
+                        <constraint firstItem="IEM-D4-Cc5" firstAttribute="left" secondItem="SWH-nj-s0u" secondAttribute="right" id="OE9-hq-Do8"/>
                         <constraint firstItem="SWH-nj-s0u" firstAttribute="top" secondItem="QqS-cI-X27" secondAttribute="top" constant="4" id="QeF-Yn-QKW"/>
                         <constraint firstItem="IEM-D4-Cc5" firstAttribute="bottom" secondItem="QqS-cI-X27" secondAttribute="bottom" id="XHd-zk-jwt"/>
                         <constraint firstItem="IEM-D4-Cc5" firstAttribute="trailing" secondItem="QqS-cI-X27" secondAttribute="trailing" constant="-3" id="hVC-zv-vni"/>
@@ -163,14 +163,14 @@
                                 <constraint firstAttribute="width" constant="54" id="tgI-Jn-gmP"/>
                             </constraints>
                         </imageView>
-                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.20000000000000007" translatesAutoresizingMaskIntoConstraints="NO" id="OoH-9J-VpT" customClass="SkinElementLabel">
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select car..." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.20000000000000007" translatesAutoresizingMaskIntoConstraints="NO" id="OoH-9J-VpT" customClass="SkinElementLabel">
                             <rect key="frame" x="60" y="0.0" width="260" height="50"/>
                             <fontDescription key="fontDescription" name="AvenirNextCondensed-Regular" family="Avenir Next Condensed" pointSize="25"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstItem="oIa-gw-7N1" firstAttribute="leading" secondItem="RsD-ea-ulE" secondAttribute="leading" constant="3" id="2fU-gZ-53c"/>
                         <constraint firstItem="OoH-9J-VpT" firstAttribute="leading" secondItem="oIa-gw-7N1" secondAttribute="trailing" constant="3" id="2sB-7v-Nw2"/>
@@ -286,7 +286,7 @@
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.20000000000000007" translatesAutoresizingMaskIntoConstraints="NO" id="a8c-o0-Brj" customClass="SkinElementLabel">
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select car..." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.20000000000000007" translatesAutoresizingMaskIntoConstraints="NO" id="a8c-o0-Brj" customClass="SkinElementLabel">
                             <rect key="frame" x="100" y="0.0" width="124" height="39"/>
                             <fontDescription key="fontDescription" type="system" pointSize="30"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -331,6 +331,7 @@
                 <outlet property="constraintTopMargin" destination="qZN-fN-Lza" id="x9g-EQ-X0D"/>
                 <outlet property="imgEmblem" destination="BiX-Je-pLe" id="NxE-jT-YcW"/>
                 <outlet property="movingView" destination="b0J-1D-8id" id="rKd-80-9XU"/>
+                <outlet property="rectSeparator" destination="bsS-tN-V0h" id="XxF-Xx-o1y"/>
                 <outlet property="textAuto" destination="a8c-o0-Brj" id="HeA-ND-MQ2"/>
                 <outlet property="textCountry" destination="czd-NE-PVP" id="U0a-we-fCy"/>
             </connections>
@@ -651,6 +652,10 @@
             <connections>
                 <outlet property="constraintLocBkgWidth" destination="D70-xF-A4m" id="sqv-mX-vLO"/>
                 <outlet property="constraintLocWidth" destination="O8o-SA-2XL" id="n9k-AP-XS8"/>
+                <outlet property="imageBgBottom" destination="Tf9-Ct-1Nq" id="wzd-yV-Tyd"/>
+                <outlet property="imageBgTop" destination="dNq-Za-m5Y" id="Fp3-68-sgq"/>
+                <outlet property="labelBestIn" destination="M1j-fJ-0Cd" id="EQB-NS-njZ"/>
+                <outlet property="labelExclamationMark" destination="Y4I-BX-tl9" id="m1T-o1-GCU"/>
                 <outlet property="labelLocation" destination="xGV-hZ-yJb" id="cg0-3y-Tce"/>
                 <outlet property="movingView" destination="3aj-tU-BEJ" id="VZk-oM-rOr"/>
                 <outlet property="topMargin" destination="Ycn-g3-0Rd" id="4Gs-DJ-Yoa"/>

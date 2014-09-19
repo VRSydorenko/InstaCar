@@ -25,6 +25,7 @@
     [self setMovingViewConstraint:self.topMargin andViewHeight:self.movingView.bounds.size.height];
 
     canEditFieldAuto1 = YES;
+    _commandFlags.canCmdInvertColors = YES;
     initialLabelsHeight = self.labelModelHeight.constant;
 }
 
@@ -37,5 +38,12 @@
     self.labelYears.text = [NSString stringWithFormat:@"Production: %@", fieldAuto1.selectedTextYears];
     self.labelYearsHeight.constant = fieldAuto1.selectedTextYears.length > 0 ? initialLabelsHeight : 0;
 }
+
+-(void)onCmdInvertColors{
+    self.labelAuto.textColor = [Utils invertColor:self.labelAuto.textColor];
+    self.labelModel.textColor = [Utils invertColor:self.labelModel.textColor];
+    self.labelYears.textColor = [Utils invertColor:self.labelYears.textColor];
+}
+
 
 @end

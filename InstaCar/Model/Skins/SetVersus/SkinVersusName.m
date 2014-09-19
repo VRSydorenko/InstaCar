@@ -14,6 +14,7 @@
 @property (weak, nonatomic) IBOutlet SkinElementImage *imgEmblem2;
 @property (weak, nonatomic) IBOutlet SkinElementLabel *textAuto1;
 @property (weak, nonatomic) IBOutlet SkinElementLabel *textAuto2;
+@property (weak, nonatomic) IBOutlet SkinElementRect *rectSeparator;
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *constraintTopMargin;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *constraintHeight;
@@ -40,6 +41,8 @@
     canEditFieldAuto1 = YES;
     canEditFieldAuto2 = YES;
     isContentOnTop = NO;
+    
+    _commandFlags.canCmdInvertColors = YES;
 }
 
 -(void)fieldAuto1DidUpdate{
@@ -89,6 +92,13 @@
     self.textAuto2.font = [UIFont fontWithName:self.textAuto2.font.fontName size:newAutoFontSize];
     
     [super layoutSubviews];
+}
+
+-(void)onCmdInvertColors{
+    self.textAuto1.textColor = [Utils invertColor:self.textAuto1.textColor];
+    self.textAuto2.textColor = [Utils invertColor:self.textAuto2.textColor];
+    self.movingView.backgroundColor = [Utils invertColor:self.movingView.backgroundColor];
+    self.rectSeparator.backgroundColor = [Utils invertColor:self.rectSeparator.backgroundColor];
 }
 
 @end

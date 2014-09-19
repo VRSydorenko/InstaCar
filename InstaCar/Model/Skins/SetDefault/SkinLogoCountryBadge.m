@@ -21,6 +21,7 @@
     [self setMovingViewConstraint:self.constraintTopMargin andViewHeight:self.movingView.bounds.size.height];
     
     canEditFieldAuto1 = YES;
+    _commandFlags.canCmdInvertColors = YES;
     isContentOnTop = NO;
     movingViewTopBottomMargin = 10.0;
 }
@@ -36,6 +37,13 @@
         autoYears = [NSString stringWithFormat:@", %@", autoYears];
     }
     self.textCountry.text = [NSString stringWithFormat:@"%@%@", fieldAuto1.country, autoYears];
+}
+
+-(void)onCmdInvertColors{
+    self.textAuto.textColor = [Utils invertColor:self.textAuto.textColor];
+    self.textCountry.textColor = [Utils invertColor:self.textCountry.textColor];
+    self.movingView.backgroundColor = [Utils invertColor:self.movingView.backgroundColor];
+    self.rectSeparator.backgroundColor = [Utils invertColor:self.rectSeparator.backgroundColor];
 }
 
 @end

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6206.9" systemVersion="14A343f" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6245" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7026.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -144,6 +144,7 @@
                 <outlet property="imgEmblem1" destination="IGx-Rh-8RJ" id="VHJ-xx-kmY"/>
                 <outlet property="imgEmblem2" destination="lQw-rQ-rpJ" id="P0i-NF-w44"/>
                 <outlet property="movingView" destination="LV1-vO-6eP" id="qA7-Zz-y4t"/>
+                <outlet property="rectSeparator" destination="Sna-Cm-jKC" id="PCr-Gs-rqv"/>
                 <outlet property="textAuto1" destination="bto-QY-Whh" id="wYF-ve-OeH"/>
                 <outlet property="textAuto2" destination="g33-S5-Nal" id="4pW-nu-dcR"/>
             </connections>
@@ -162,9 +163,6 @@
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination" type="retina4">
-            <size key="portraitSize" width="320" height="568"/>
-            <size key="landscapeSize" width="568" height="320"/>
-        </simulatedScreenMetrics>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
 </document>

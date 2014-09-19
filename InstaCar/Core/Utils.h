@@ -22,4 +22,6 @@
 +(void)openAppInAppStore:(BOOL)proVersion;
 +(void)openAppPageOnFacebook;
 
++(UIColor*)invertColor:(UIColor*)color;
+
 @end

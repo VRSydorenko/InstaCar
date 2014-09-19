@@ -8,7 +8,11 @@
 
 #import "SkinEmo_IHeartName.h"
 
-@interface SkinEmo_IHeartName()
+@interface SkinEmo_IHeartName(){
+    NSString *iheartImgOrig;
+    NSString *iheartImgInv;
+    BOOL isInitState;
+}
 
 @property (nonatomic) IBOutlet NSLayoutConstraint *constraintTopMargin;
 @property (nonatomic) IBOutlet UIView *movingView;
@@ -18,17 +22,28 @@
 @implementation SkinEmo_IHeartName
 
 -(void)initialise{
+    iheartImgOrig = @"iheart_256.png";
+    iheartImgInv = @"iheartInv_256.png";
+    
     //[self setupGradient:0.2 inDirection:GRADIENT_UP];
     [self setMovingViewConstraint:self.constraintTopMargin andViewHeight:self.movingView.bounds.size.height];
     
     self.movingView.backgroundColor = [UIColor clearColor];
     
     canEditFieldAuto1 = YES;
+    _commandFlags.canCmdInvertColors = YES;
+    isInitState = YES;
     isContentOnTop = NO;
     movingViewTopBottomMargin = 10.0;
 }
 
 -(void)fieldAuto1DidUpdate{
     self.labelAuto.text = fieldAuto1.name;
+}
+
+-(void)onCmdInvertColors{
+    self.labelAuto.textColor = [Utils invertColor:self.labelAuto.textColor];
+    [self.imageIHeart setInvertedImage:[UIImage imageNamed:isInitState ? iheartImgInv : iheartImgOrig]];
+    isInitState = !isInitState;
 }
 @end

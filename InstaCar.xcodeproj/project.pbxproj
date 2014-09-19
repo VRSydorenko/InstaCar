@@ -1410,14 +1410,14 @@
 		8440C83C19CC627E009D0C19 /* Skins */ = {
 			isa = PBXGroup;
 			children = (
-				8440C83D19CC627E009D0C19 /* SetAwards */,
-				8440C85C19CC627E009D0C19 /* SetDefault */,
-				8440C88419CC627E009D0C19 /* SetEmotions */,
-				8440C89319CC627E009D0C19 /* SetVersus */,
 				8440C8A119CC627E009D0C19 /* SkinSetBase.h */,
 				8440C8A219CC627E009D0C19 /* SkinSetBase.m */,
 				8440C8A319CC627E009D0C19 /* SkinViewBase.h */,
 				8440C8A419CC627E009D0C19 /* SkinViewBase.m */,
+				8440C83D19CC627E009D0C19 /* SetAwards */,
+				8440C85C19CC627E009D0C19 /* SetDefault */,
+				8440C88419CC627E009D0C19 /* SetEmotions */,
+				8440C89319CC627E009D0C19 /* SetVersus */,
 			);
 			name = Skins;
 			path = InstaCar/Model/Skins;
