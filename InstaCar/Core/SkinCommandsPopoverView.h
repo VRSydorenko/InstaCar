@@ -11,7 +11,7 @@
 #include "UIButton+MyExtensions.h"
 #import "SkinViewBase.h"
 
-#define SIDE_PADDING 5.0
+#define SIDE_PADDING 2.0
 #define BTNS_EDITOR_MARGIN 2.0
 #define HEIGHT_ON_TOP 40.0
 

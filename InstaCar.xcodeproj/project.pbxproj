@@ -84,15 +84,9 @@
 		8415F44819587F2500708437 /* SkinElementLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8415F44719587F2500708437 /* SkinElementLabel.m */; };
 		8416962819C3329000F65B76 /* veteranTypewriter.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8416962719C3329000F65B76 /* veteranTypewriter.ttf */; };
 		841988CA19C87B4000C73A19 /* imgBadgePro.png in Resources */ = {isa = PBXBuildFile; fileRef = 841988BD19C87B4000C73A19 /* imgBadgePro.png */; };
-		841988CB19C87B4000C73A19 /* imgCmdCancelActive@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 841988BE19C87B4000C73A19 /* imgCmdCancelActive@2x.png */; };
 		841988CC19C87B4000C73A19 /* imgCmdCancelNormal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 841988BF19C87B4000C73A19 /* imgCmdCancelNormal@2x.png */; };
-		841988CD19C87B4000C73A19 /* imgCmdEditActive@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 841988C019C87B4000C73A19 /* imgCmdEditActive@2x.png */; };
-		841988CE19C87B4000C73A19 /* imgCmdEditDisabled@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 841988C119C87B4000C73A19 /* imgCmdEditDisabled@2x.png */; };
 		841988CF19C87B4000C73A19 /* imgCmdEditNormal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 841988C219C87B4000C73A19 /* imgCmdEditNormal@2x.png */; };
-		841988D019C87B4000C73A19 /* imgCmdInvertActive@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 841988C319C87B4000C73A19 /* imgCmdInvertActive@2x.png */; };
 		841988D119C87B4000C73A19 /* imgCmdInvertNormal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 841988C419C87B4000C73A19 /* imgCmdInvertNormal@2x.png */; };
-		841988D219C87B4000C73A19 /* imgCmdOkActive@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 841988C519C87B4000C73A19 /* imgCmdOkActive@2x.png */; };
-		841988D319C87B4000C73A19 /* imgCmdOkDisabled@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 841988C619C87B4000C73A19 /* imgCmdOkDisabled@2x.png */; };
 		841988D419C87B4000C73A19 /* imgCmdOkNormal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 841988C719C87B4000C73A19 /* imgCmdOkNormal@2x.png */; };
 		841988D519C87B4000C73A19 /* SkinCommandsPopoverView.m in Sources */ = {isa = PBXBuildFile; fileRef = 841988C919C87B4000C73A19 /* SkinCommandsPopoverView.m */; };
 		841C5EF4195483FF00AD025D /* SkinElementImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 841C5EF3195483FF00AD025D /* SkinElementImage.m */; };
@@ -460,15 +454,9 @@
 		8415F44719587F2500708437 /* SkinElementLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SkinElementLabel.m; path = InstaCar/Core/DrawingElements/SkinElementLabel.m; sourceTree = "<group>"; };
 		8416962719C3329000F65B76 /* veteranTypewriter.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = veteranTypewriter.ttf; sourceTree = "<group>"; };
 		841988BD19C87B4000C73A19 /* imgBadgePro.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = imgBadgePro.png; sourceTree = "<group>"; };
-		841988BE19C87B4000C73A19 /* imgCmdCancelActive@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "imgCmdCancelActive@2x.png"; sourceTree = "<group>"; };
 		841988BF19C87B4000C73A19 /* imgCmdCancelNormal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "imgCmdCancelNormal@2x.png"; sourceTree = "<group>"; };
-		841988C019C87B4000C73A19 /* imgCmdEditActive@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "imgCmdEditActive@2x.png"; sourceTree = "<group>"; };
-		841988C119C87B4000C73A19 /* imgCmdEditDisabled@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "imgCmdEditDisabled@2x.png"; sourceTree = "<group>"; };
 		841988C219C87B4000C73A19 /* imgCmdEditNormal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "imgCmdEditNormal@2x.png"; sourceTree = "<group>"; };
-		841988C319C87B4000C73A19 /* imgCmdInvertActive@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "imgCmdInvertActive@2x.png"; sourceTree = "<group>"; };
 		841988C419C87B4000C73A19 /* imgCmdInvertNormal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "imgCmdInvertNormal@2x.png"; sourceTree = "<group>"; };
-		841988C519C87B4000C73A19 /* imgCmdOkActive@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "imgCmdOkActive@2x.png"; sourceTree = "<group>"; };
-		841988C619C87B4000C73A19 /* imgCmdOkDisabled@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "imgCmdOkDisabled@2x.png"; sourceTree = "<group>"; };
 		841988C719C87B4000C73A19 /* imgCmdOkNormal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "imgCmdOkNormal@2x.png"; sourceTree = "<group>"; };
 		841988C819C87B4000C73A19 /* SkinCommandsPopoverView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SkinCommandsPopoverView.h; path = InstaCar/Core/SkinCommandsPopoverView.h; sourceTree = "<group>"; };
 		841988C919C87B4000C73A19 /* SkinCommandsPopoverView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SkinCommandsPopoverView.m; path = InstaCar/Core/SkinCommandsPopoverView.m; sourceTree = "<group>"; };
@@ -1227,15 +1215,9 @@
 			children = (
 				84EB677119C9C9D700AFB962 /* imgCmdNoActionsDisabled@2x.png */,
 				841988BD19C87B4000C73A19 /* imgBadgePro.png */,
-				841988BE19C87B4000C73A19 /* imgCmdCancelActive@2x.png */,
 				841988BF19C87B4000C73A19 /* imgCmdCancelNormal@2x.png */,
-				841988C019C87B4000C73A19 /* imgCmdEditActive@2x.png */,
-				841988C119C87B4000C73A19 /* imgCmdEditDisabled@2x.png */,
 				841988C219C87B4000C73A19 /* imgCmdEditNormal@2x.png */,
-				841988C319C87B4000C73A19 /* imgCmdInvertActive@2x.png */,
 				841988C419C87B4000C73A19 /* imgCmdInvertNormal@2x.png */,
-				841988C519C87B4000C73A19 /* imgCmdOkActive@2x.png */,
-				841988C619C87B4000C73A19 /* imgCmdOkDisabled@2x.png */,
 				841988C719C87B4000C73A19 /* imgCmdOkNormal@2x.png */,
 			);
 			name = Images;
@@ -1693,7 +1675,6 @@
 				8440C8EA19CC627E009D0C19 /* logo_bogdan_256.png in Resources */,
 				8440C8F619CC627E009D0C19 /* logo_ford_256.png in Resources */,
 				8440C8F819CC627E009D0C19 /* logo_gmc_256.png in Resources */,
-				841988D019C87B4000C73A19 /* imgCmdInvertActive@2x.png in Resources */,
 				7F2AD5CA17EDE9B40096EC8D /* SHKShareFileIcon.png in Resources */,
 				7F2AD59A17EDE9B40096EC8D /* DETweetPaperClip.png in Resources */,
 				8440C8C619CC627E009D0C19 /* logo_kraz_128.png in Resources */,
@@ -1723,7 +1704,6 @@
 				841988D119C87B4000C73A19 /* imgCmdInvertNormal@2x.png in Resources */,
 				8440C8B519CC627E009D0C19 /* logo_daewoo_128.png in Resources */,
 				8440C8CF19CC627E009D0C19 /* logo_mercedes_128.png in Resources */,
-				841988CE19C87B4000C73A19 /* imgCmdEditDisabled@2x.png in Resources */,
 				8440C96E19CC638B009D0C19 /* InstaCar.entitlements in Resources */,
 				7F002D21180B49C60076879F /* Settings.bundle in Resources */,
 				8440C90F19CC627E009D0C19 /* logo_nissan_256.png in Resources */,
@@ -1762,7 +1742,6 @@
 				8440C90119CC627E009D0C19 /* logo_kia_256.png in Resources */,
 				8440C91319CC627E009D0C19 /* logo_porsche_256.png in Resources */,
 				8440C8D519CC627E009D0C19 /* logo_peugeot_128.png in Resources */,
-				841988CD19C87B4000C73A19 /* imgCmdEditActive@2x.png in Resources */,
 				8440C92019CC627E009D0C19 /* logo_anycar.png in Resources */,
 				8440C90919CC627E009D0C19 /* logo_mazda_256.png in Resources */,
 				8440C91919CC627E009D0C19 /* logo_subaru_256.png in Resources */,
@@ -1790,7 +1769,6 @@
 				8440C8D019CC627E009D0C19 /* logo_mercury_128.png in Resources */,
 				7F27671C1791E80000A1C1A0 /* InfoPlist.strings in Resources */,
 				8440C8B219CC627E009D0C19 /* logo_chevrolet_128.png in Resources */,
-				841988CB19C87B4000C73A19 /* imgCmdCancelActive@2x.png in Resources */,
 				8440C91519CC627E009D0C19 /* logo_rover_256.png in Resources */,
 				8440C92219CC627E009D0C19 /* signs.xcassets in Resources */,
 				8440C90A19CC627E009D0C19 /* logo_mclaren_256.png in Resources */,
@@ -1837,7 +1815,6 @@
 				8440C8BA19CC627E009D0C19 /* logo_ford_128.png in Resources */,
 				8440C8CC19CC627E009D0C19 /* logo_lotus_128.png in Resources */,
 				8440C8DE19CC627E009D0C19 /* logo_tesla_128.png in Resources */,
-				841988D319C87B4000C73A19 /* imgCmdOkDisabled@2x.png in Resources */,
 				7F2AD59C17EDE9B40096EC8D /* DETweetURLAttachment.png in Resources */,
 				8440C8B619CC627E009D0C19 /* logo_delorean_128.png in Resources */,
 				8440C8F519CC627E009D0C19 /* logo_fiat_256.png in Resources */,
@@ -1847,7 +1824,6 @@
 				8440C91119CC627E009D0C19 /* logo_peugeot_256.png in Resources */,
 				8440C8FC19CC627E009D0C19 /* logo_infiniti_256.png in Resources */,
 				8416962819C3329000F65B76 /* veteranTypewriter.ttf in Resources */,
-				841988D219C87B4000C73A19 /* imgCmdOkActive@2x.png in Resources */,
 				8440C8B419CC627E009D0C19 /* logo_dacia_128.png in Resources */,
 				8440C91F19CC627E009D0C19 /* logo_zaz_256.png in Resources */,
 			);

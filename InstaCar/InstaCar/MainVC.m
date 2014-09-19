@@ -237,7 +237,7 @@ typedef enum {
     
     //Set the customView properties
     cmdPopoverView.alpha = 0.0;
-    cmdPopoverView.layer.cornerRadius = 5;
+    cmdPopoverView.layer.cornerRadius = 3;
     cmdPopoverView.layer.borderWidth = 1.5f;
     cmdPopoverView.layer.masksToBounds = YES;
     
@@ -268,6 +268,12 @@ typedef enum {
                              if (!cmdPopoverView.isInEditMode){
                                  cmdPopoverView.frame = popoverFrame;
                              }
+                             
+                             if ([UserSettings isIPhone4]){
+                                 [self setButtonsBottomInset:-26.0];
+                                 self.constraintWhiteActBottomMargin.constant -= 13.0;
+                             }
+                             
                              [self.view layoutIfNeeded];
                          }
                          completion:^(BOOL success){
@@ -294,6 +300,12 @@ typedef enum {
                              if (!cmdPopoverView.isInEditMode){
                                  cmdPopoverView.frame = popoverFrame;
                              }
+                             
+                             if ([UserSettings isIPhone4]){
+                                 [self setButtonsBottomInset:0.0];
+                                 self.constraintWhiteActBottomMargin.constant += 13.0;
+                             }
+                             
                              [self.view layoutIfNeeded];
                          }
                          completion:^(BOOL success){
@@ -635,7 +647,7 @@ typedef enum {
     if (!isShowingAd){
         return [UserSettings isIPhone4] ? 47.0 : 70.0;
     } else {
-        return [UserSettings isIPhone4] ? 56.0 /*+9*/: 55.0/*-15*/;
+        return [UserSettings isIPhone4] ? 28.0 /*+9*/: 55.0/*-15*/;
     }
 }
 
@@ -739,6 +751,17 @@ typedef enum {
                         [cmdPopoverView rebuildView];
                     }
     ];
+}
+
+-(void)setButtonsBottomInset:(CGFloat)btnBottomInset{
+    [self.btnLocation setImageEdgeInsets:UIEdgeInsetsMake(0, 0, btnBottomInset, 0)];
+    [self.btnMiddleLeft setImageEdgeInsets:UIEdgeInsetsMake(0, 0, btnBottomInset, 0)];
+    [self.btnMiddle setImageEdgeInsets:UIEdgeInsetsMake(0, 0, btnBottomInset, 0)];
+    [self.btnMiddleRight setImageEdgeInsets:UIEdgeInsetsMake(0, 0, btnBottomInset, 0)];
+    [self.btnRightSide setImageEdgeInsets:UIEdgeInsetsMake(0, 0, btnBottomInset, 0)];
+    
+    [self.btnMiddleLeft setTitleEdgeInsets:UIEdgeInsetsMake(0, 0, btnBottomInset, 0)];
+    [self.btnMiddleRight setTitleEdgeInsets:UIEdgeInsetsMake(0, 0, btnBottomInset, 0)];
 }
 
 @end

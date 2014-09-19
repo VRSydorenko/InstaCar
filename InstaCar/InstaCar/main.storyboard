@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="5PD-ZC-8Rm">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="14A361c" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="5PD-ZC-8Rm">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
     </dependencies>
@@ -191,6 +191,7 @@
                         <outlet property="constraintMidBtnLeftWidth" destination="Oa0-2L-vEc" id="qEH-BF-oL4"/>
                         <outlet property="constraintMidBtnRigthWidth" destination="XH9-Ag-cCp" id="kTx-C9-LyM"/>
                         <outlet property="constraintViewAdContainerHeight" destination="5A5-i0-xsc" id="Muu-Lw-coz"/>
+                        <outlet property="constraintWhiteActBottomMargin" destination="Kcw-bB-4r4" id="akR-J5-4OR"/>
                         <outlet property="iAdView" destination="sCG-cl-3fd" id="cCJ-wu-aKf"/>
                         <outlet property="imagePreview" destination="4Xz-0E-p37" id="HPP-8Z-05v"/>
                         <outlet property="pageControlContainer" destination="kdr-lZ-7HS" id="aJP-B5-pVF"/>
@@ -428,7 +429,7 @@
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="UwX-S6-Xxn"/>
-                                    <barButtonItem title="Back >" id="n7s-Ff-nGm">
+                                    <barButtonItem title="Back &gt;" id="n7s-Ff-nGm">
                                         <connections>
                                             <action selector="btnBackPressed" destination="JB3-kM-4cB" id="Cbj-h0-kIA"/>
                                         </connections>

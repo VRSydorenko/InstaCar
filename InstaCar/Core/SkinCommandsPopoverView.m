@@ -52,7 +52,6 @@
             [btn setTitle:@"Invert colors" forState:UIControlStateNormal];
             // images
             [btn setImage:[UIImage imageNamed:@"imgCmdInvertNormal.png"] forState:UIControlStateNormal];
-            [btn setImage:[UIImage imageNamed:@"imgCmdInvertActive.png"] forState:UIControlStateHighlighted];
             
             [self addSubview:btn];
             frame.origin.x += cmdWidth;
@@ -67,8 +66,6 @@
             
             // images
             [btn setImage:[UIImage imageNamed:@"imgCmdEditNormal.png"] forState:UIControlStateNormal];
-            [btn setImage:[UIImage imageNamed:@"imgCmdEditDisabled.png"] forState:UIControlStateDisabled];
-            [btn setImage:[UIImage imageNamed:@"imgCmdEditActive.png"] forState:UIControlStateHighlighted];
             
             [self addSubview:btn];
             frame.origin.x += cmdWidth;
@@ -83,8 +80,6 @@
             
             // images // TODO: icons for prefix
             [btn setImage:[UIImage imageNamed:@"imgCmdEditNormal.png"] forState:UIControlStateNormal];
-            [btn setImage:[UIImage imageNamed:@"imgCmdEditDisabled.png"] forState:UIControlStateDisabled];
-            [btn setImage:[UIImage imageNamed:@"imgCmdEditActive.png"] forState:UIControlStateHighlighted];
             
             [self addSubview:btn];
             frame.origin.x += cmdWidth;
