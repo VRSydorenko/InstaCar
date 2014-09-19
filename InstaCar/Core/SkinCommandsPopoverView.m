@@ -80,7 +80,7 @@
             
             // images // TODO: icons for prefix
             [btn setImage:[UIImage imageNamed:@"imgCmdEditNormal.png"] forState:UIControlStateNormal];
-            
+        
             [self addSubview:btn];
             frame.origin.x += cmdWidth;
         }
