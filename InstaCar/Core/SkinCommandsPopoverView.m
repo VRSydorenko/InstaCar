@@ -30,13 +30,15 @@
         UIButton *btn = [[UIButton alloc] initWithFrame:frame];
         btn.enabled = NO;
         [self setCmdButtonCommonValues:&btn];
+        // colors
+        [btn setTitleColor:[UIColor darkGrayColor] forState:UIControlStateDisabled];
+        [btn setTitleShadowColor:[UIColor whiteColor] forState:UIControlStateDisabled]; // TODO: dark the color
         
         // title
         [btn setTitle:@"No actions" forState:UIControlStateNormal];
-        [btn setTitle:@"No actions" forState:UIControlStateDisabled];
+        
         // images
         [btn setImage:[UIImage imageNamed:@"imgCmdNoActionsDisabled.png"] forState:UIControlStateNormal];
-        [btn setImage:[UIImage imageNamed:@"imgCmdNoActionsDisabled.png"] forState:UIControlStateDisabled];
         
         [self addSubview:btn];
     } else {
