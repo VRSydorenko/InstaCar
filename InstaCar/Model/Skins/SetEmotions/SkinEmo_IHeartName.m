@@ -42,7 +42,7 @@
 }
 
 -(void)onCmdInvertColors{
-    self.labelAuto.textColor = [Utils invertColor:self.labelAuto.textColor];
+    [self.labelAuto invertColors];
     [self.imageIHeart setInvertedImage:[UIImage imageNamed:isInitState ? iheartImgInv : iheartImgOrig]];
     isInitState = !isInitState;
 }

@@ -79,6 +79,7 @@
 		7FC4137817C7E8450025DD2C /* FSTargetCallback.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FC4137217C7E8450025DD2C /* FSTargetCallback.m */; };
 		7FC4137917C7E8450025DD2C /* FSVenue.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FC4137417C7E8450025DD2C /* FSVenue.m */; };
 		7FCD262C17F5BFEC00BFDF4E /* SMPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FCD262B17F5BFEC00BFDF4E /* SMPageControl.m */; };
+		7FCDF63C19CE3E7B006C70A0 /* iheart_256.png in Resources */ = {isa = PBXBuildFile; fileRef = 7FCDF63B19CE3E7B006C70A0 /* iheart_256.png */; };
 		7FEF908917D505E800C07A05 /* AutosVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FEF908817D505E800C07A05 /* AutosVC.m */; };
 		7FF3389317D4C0E700B046C4 /* SkinsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FF3389217D4C0E700B046C4 /* SkinsVC.m */; };
 		8415F44819587F2500708437 /* SkinElementLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8415F44719587F2500708437 /* SkinElementLabel.m */; };
@@ -260,7 +261,7 @@
 		8440C94819CC627E009D0C19 /* SkinSimple.m in Sources */ = {isa = PBXBuildFile; fileRef = 8440C88119CC627E009D0C19 /* SkinSimple.m */; };
 		8440C94919CC627E009D0C19 /* SkinSimple2.m in Sources */ = {isa = PBXBuildFile; fileRef = 8440C88319CC627E009D0C19 /* SkinSimple2.m */; };
 		8440C94A19CC627E009D0C19 /* carGift.png in Resources */ = {isa = PBXBuildFile; fileRef = 8440C88619CC627E009D0C19 /* carGift.png */; };
-		8440C94B19CC627E009D0C19 /* iheart_256.png in Resources */ = {isa = PBXBuildFile; fileRef = 8440C88719CC627E009D0C19 /* iheart_256.png */; };
+		8440C94B19CC627E009D0C19 /* iheartInv_256.png in Resources */ = {isa = PBXBuildFile; fileRef = 8440C88719CC627E009D0C19 /* iheartInv_256.png */; };
 		8440C94C19CC627E009D0C19 /* SetEmotions.m in Sources */ = {isa = PBXBuildFile; fileRef = 8440C88919CC627E009D0C19 /* SetEmotions.m */; };
 		8440C94D19CC627E009D0C19 /* SetEmotions.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8440C88A19CC627E009D0C19 /* SetEmotions.xib */; };
 		8440C94E19CC627E009D0C19 /* SkinEmo_BestPresent.m in Sources */ = {isa = PBXBuildFile; fileRef = 8440C88C19CC627E009D0C19 /* SkinEmo_BestPresent.m */; };
@@ -445,6 +446,7 @@
 		7FC4137417C7E8450025DD2C /* FSVenue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSVenue.m; sourceTree = "<group>"; };
 		7FCD262A17F5BFEC00BFDF4E /* SMPageControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMPageControl.h; sourceTree = "<group>"; };
 		7FCD262B17F5BFEC00BFDF4E /* SMPageControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMPageControl.m; sourceTree = "<group>"; };
+		7FCDF63B19CE3E7B006C70A0 /* iheart_256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iheart_256.png; sourceTree = "<group>"; };
 		7FEF908717D505E800C07A05 /* AutosVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AutosVC.h; path = InstaCar/AutosVC.h; sourceTree = "<group>"; };
 		7FEF908817D505E800C07A05 /* AutosVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AutosVC.m; path = InstaCar/AutosVC.m; sourceTree = "<group>"; };
 		7FF3389117D4C0E700B046C4 /* SkinsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SkinsVC.h; path = InstaCar/SkinsVC.h; sourceTree = "<group>"; };
@@ -665,7 +667,7 @@
 		8440C88219CC627E009D0C19 /* SkinSimple2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkinSimple2.h; sourceTree = "<group>"; };
 		8440C88319CC627E009D0C19 /* SkinSimple2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SkinSimple2.m; sourceTree = "<group>"; };
 		8440C88619CC627E009D0C19 /* carGift.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = carGift.png; sourceTree = "<group>"; };
-		8440C88719CC627E009D0C19 /* iheart_256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iheart_256.png; sourceTree = "<group>"; };
+		8440C88719CC627E009D0C19 /* iheartInv_256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iheartInv_256.png; sourceTree = "<group>"; };
 		8440C88819CC627E009D0C19 /* SetEmotions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetEmotions.h; sourceTree = "<group>"; };
 		8440C88919CC627E009D0C19 /* SetEmotions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetEmotions.m; sourceTree = "<group>"; };
 		8440C88A19CC627E009D0C19 /* SetEmotions.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SetEmotions.xib; sourceTree = "<group>"; };
@@ -1523,8 +1525,9 @@
 		8440C88519CC627E009D0C19 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				7FCDF63B19CE3E7B006C70A0 /* iheart_256.png */,
 				8440C88619CC627E009D0C19 /* carGift.png */,
-				8440C88719CC627E009D0C19 /* iheart_256.png */,
+				8440C88719CC627E009D0C19 /* iheartInv_256.png */,
 			);
 			path = Images;
 			sourceTree = "<group>";
@@ -1684,7 +1687,7 @@
 				7F4F684917F6FDF500F1017B /* ImageEditor.xib in Resources */,
 				8440C8AC19CC627E009D0C19 /* logo_bentley_128.png in Resources */,
 				7F2AD48117EDE9390096EC8D /* SHKCustomSharers.plist in Resources */,
-				8440C94B19CC627E009D0C19 /* iheart_256.png in Resources */,
+				8440C94B19CC627E009D0C19 /* iheartInv_256.png in Resources */,
 				8440C8FE19CC627E009D0C19 /* logo_iveco_256.png in Resources */,
 				7F2AD59917EDE9B40096EC8D /* SHKSharers.plist in Resources */,
 				8440C91A19CC627E009D0C19 /* logo_tesla_256.png in Resources */,
@@ -1747,6 +1750,7 @@
 				8440C92819CC627E009D0C19 /* medal1st.png in Resources */,
 				8440C90519CC627E009D0C19 /* logo_lancia_256.png in Resources */,
 				8440C90019CC627E009D0C19 /* logo_jeep_256.png in Resources */,
+				7FCDF63C19CE3E7B006C70A0 /* iheart_256.png in Resources */,
 				8440C8FA19CC627E009D0C19 /* logo_hummer_256.png in Resources */,
 				8440C90E19CC627E009D0C19 /* logo_mitsubishi_256.png in Resources */,
 				8440C8DF19CC627E009D0C19 /* logo_toyota_128.png in Resources */,

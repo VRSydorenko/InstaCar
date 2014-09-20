@@ -40,7 +40,7 @@
 }
 
 -(void)onCmdInvertColors{
-    self.labelAuto.textColor = [Utils invertColor:self.labelAuto.textColor];
+    [self.labelAuto invertColors];
     [self.imageBestPresent setInvertedImage:[UIImage imageNamed:isInitState ? imgBestPresInv : imgBestPresOrig]];
     isInitState = !isInitState;
 }

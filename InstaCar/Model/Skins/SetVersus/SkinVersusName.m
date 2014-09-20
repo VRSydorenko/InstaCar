@@ -95,8 +95,8 @@
 }
 
 -(void)onCmdInvertColors{
-    self.textAuto1.textColor = [Utils invertColor:self.textAuto1.textColor];
-    self.textAuto2.textColor = [Utils invertColor:self.textAuto2.textColor];
+    [self.textAuto1 invertColors];
+    [self.textAuto2 invertColors];
     self.movingView.backgroundColor = [Utils invertColor:self.movingView.backgroundColor];
     self.rectSeparator.backgroundColor = [Utils invertColor:self.rectSeparator.backgroundColor];
 }

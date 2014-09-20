@@ -40,7 +40,7 @@
 }
 
 -(void)onCmdInvertColors{
-    self.textAuto.textColor = [Utils invertColor:self.textAuto.textColor];
+    [self.textAuto invertColors];
 }
 
 -(void)adjustAutoLabelSizeAccordingToText{

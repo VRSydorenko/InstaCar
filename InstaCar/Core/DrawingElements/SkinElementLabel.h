@@ -11,4 +11,6 @@
 
 @interface SkinElementLabel : UILabel <DrawElemTextProtocol>
 
+-(void)invertColors;
+
 @end

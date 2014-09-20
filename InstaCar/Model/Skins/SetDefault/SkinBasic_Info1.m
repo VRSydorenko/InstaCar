@@ -40,8 +40,8 @@
 }
 
 -(void)onCmdInvertColors{
-    self.labelAuto.textColor = [Utils invertColor:self.labelAuto.textColor];
-    self.labelModel.textColor = [Utils invertColor:self.labelModel.textColor];
+    [self.labelAuto invertColors];
+    [self.labelModel invertColors];
     self.labelYears.textColor = [Utils invertColor:self.labelYears.textColor];
 }
 

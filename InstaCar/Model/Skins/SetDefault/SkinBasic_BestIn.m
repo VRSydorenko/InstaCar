@@ -53,9 +53,9 @@
 }
 
 -(void)onCmdInvertColors{
-    self.labelBestIn.textColor = [Utils invertColor:self.labelBestIn.textColor];
-    self.labelLocation.textColor = [Utils invertColor:self.labelLocation.textColor];
-    self.labelExclamationMark.textColor = [Utils invertColor:self.labelExclamationMark.textColor];
+    [self.labelBestIn invertColors];
+    [self.labelLocation invertColors];
+    [self.labelExclamationMark invertColors];
     
     [self.imageBgTop setInvertedImage:[UIImage imageNamed:origInvState ? imgTopInv : imgTopOrig]];
     [self.imageBgBottom setInvertedImage:[UIImage imageNamed:origInvState ? imgBotInv : imgBotOrig]];

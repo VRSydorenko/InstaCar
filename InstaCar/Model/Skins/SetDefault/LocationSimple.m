@@ -48,8 +48,8 @@
 }
 
 -(void)onCmdInvertColors{
-    self.textPlace.textColor = [Utils invertColor:self.textPlace.textColor];
-    self.textLocation.textColor = [Utils invertColor:self.textLocation.textColor];
+    [self.textPlace invertColors];
+    [self.textLocation invertColors];
 }
 
 @end
