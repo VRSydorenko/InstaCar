@@ -108,6 +108,9 @@
 }
 
 - (IBAction)btnRefreshPressed:(id)sender {
+    if (![self promptLocationAccess]){
+        return;
+    }
     // hide refresh button
     NSMutableArray *toolBarButtons = [self.toolBar.items mutableCopy];
     [toolBarButtons removeObject:self.btnRefresh];
@@ -118,6 +121,24 @@
 }
 
 #pragma marj private methods
+
+// return: true if should proceed, otherwise false
+-(bool)promptLocationAccess{
+    if([CLLocationManager locationServicesEnabled]){
+        if([CLLocationManager authorizationStatus] == kCLAuthorizationStatusDenied){
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"App Permission Denied"
+                                                            message:@"To enable, please go to Settings and turn on Location Service for InstaCar."
+                                                           delegate:nil
+                                                  cancelButtonTitle:@"OK"
+                                                  otherButtonTitles:nil];
+            [alert show];
+            return false;
+        }
+    } else {
+        return false;
+    }
+    return true;
+}
 
 -(void)restoreRefreshButtonIfHidden{
     NSMutableArray *toolBarButtons = [self.toolBar.items mutableCopy];

@@ -110,7 +110,7 @@
                                            [[VenueProvider getInstance] setVenues:[converter convertToObjects:venues]];
                                            [self.locationUpdateReceiverDelegate locationDidUpdate];
                                        } else {
-                                           [self.locationManager startUpdatingLocation];
+                                           //[self.locationManager startUpdatingLocation];
                                        }
                                    }
      ];
