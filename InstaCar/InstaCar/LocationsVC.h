@@ -12,6 +12,7 @@
 
 @interface LocationsVC : SideViewControllerBase <UITableViewDelegate,
                                                  UITableViewDataSource,
+                                                 UIAlertViewDelegate,
                                                  LocationUpdateReceiverDelegate>
 
 @property (nonatomic) IBOutlet UITableView *tableVenues;

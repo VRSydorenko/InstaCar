@@ -120,6 +120,13 @@
     [((AppDelegate*)[UIApplication sharedApplication].delegate).locationManager startUpdatingLocation];
 }
 
+#pragma mark Alert delegate
+
+-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+    // currently only the location error message is shown at this view
+    [self btnBackPressed];
+}
+
 #pragma marj private methods
 
 // return: true if should proceed, otherwise false
@@ -128,7 +135,7 @@
         if([CLLocationManager authorizationStatus] == kCLAuthorizationStatusDenied){
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Location Access Denied"
                                                             message:@"To enable, please go to Settings and turn on Location Service for InstaCar."
-                                                           delegate:nil
+                                                           delegate:self
                                                   cancelButtonTitle:@"OK"
                                                   otherButtonTitles:nil];
             [alert show];
