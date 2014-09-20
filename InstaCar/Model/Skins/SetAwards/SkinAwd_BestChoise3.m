@@ -27,6 +27,7 @@
     
     modelLabelInitialHeight = self.modelLabelHeight.constant;
     canEditFieldAuto1 = YES;
+    isContentOnTop = NO;
 }
 
 -(void)fieldAuto1DidUpdate{

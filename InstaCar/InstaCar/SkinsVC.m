@@ -100,7 +100,7 @@
         cell.autoTitleLabel.text = _auto.name;
         cell.autoLogo.image = _auto.logo128;
     } else {
-        cell.autoTitleLabel.text = @"Select auto";
+        cell.autoTitleLabel.text = @"Select car...";
         cell.autoLogo.image = nil;
     }
     

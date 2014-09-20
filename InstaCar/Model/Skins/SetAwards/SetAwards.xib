@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6245" systemVersion="14A343f" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6245" systemVersion="14A361c" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment defaultVersion="1792" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
@@ -127,7 +127,7 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M5U-NK-McF">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
+                    <rect key="frame" x="0.0" y="220" width="320" height="100"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qCw-dk-gZ9" customClass="SkinElementRect">
                             <rect key="frame" x="0.0" y="22" width="320" height="55"/>
@@ -185,7 +185,7 @@
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="M5U-NK-McF" firstAttribute="leading" secondItem="dfG-La-40D" secondAttribute="leading" id="4aM-iL-6hV"/>
-                <constraint firstItem="M5U-NK-McF" firstAttribute="top" secondItem="dfG-La-40D" secondAttribute="top" id="GkN-Ua-ywc"/>
+                <constraint firstItem="M5U-NK-McF" firstAttribute="top" secondItem="dfG-La-40D" secondAttribute="top" constant="220" id="GkN-Ua-ywc"/>
                 <constraint firstAttribute="trailing" secondItem="M5U-NK-McF" secondAttribute="trailing" id="ZDv-se-yEb"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
