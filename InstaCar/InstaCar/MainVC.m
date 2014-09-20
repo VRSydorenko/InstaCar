@@ -25,7 +25,6 @@ typedef enum {
 @interface MainVC (){
     MainNavController *navCon;
     BOOL buttonsInInitialState;
-    BOOL isChangingPage;
     BOOL imageInProcessing;
     
     SkinViewBase *activeSkin;
@@ -65,7 +64,6 @@ typedef enum {
     
     assetsLibrary = [[ALAssetsLibrary alloc] init];
     buttonsInInitialState = YES;
-    isChangingPage = NO;
     selectedImage = nil;
     imageInProcessing = NO;
     isShowingAd = NO;
@@ -321,20 +319,14 @@ typedef enum {
 
 - (void)scrollViewDidScroll:(UIScrollView *)sender
 {
-    if (isChangingPage){
-        return;
-    }
-    
 	// Switch page at 50% across
     CGFloat pageWidth = sender.frame.size.width;
     int page = floor((sender.contentOffset.x - pageWidth / 2) / pageWidth) + 1;
-    pageControl.currentPage = page;
     
-    [self setActiveSkin:page];
-}
-
-- (void)scrollViewDidEndDecelerating:(UIScrollView *)sender{
-    isChangingPage = NO;
+    if (pageControl.currentPage != page){
+        pageControl.currentPage = page;
+        [self setActiveSkin:page];
+    }
 }
 
 #pragma mark SelectedDataChangeActionProtocol
@@ -349,6 +341,7 @@ typedef enum {
         [DataManager setSelectedSkinSet:newValue];
         
         [self initSkins];
+        [self setActiveSkin:0]; // TODO: set index saved before
         
         // if any car is currently selected - apply it to newly selected skinset
         [self applyCurrentlySelectedCarsToNewlySelectedSkin];
