@@ -20,7 +20,8 @@
 }
 
 +(BOOL)isIPhone4{
-    return [UIScreen mainScreen].bounds.size.height == 480;
+    return [UIScreen mainScreen].bounds.size.height == 480
+        || UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad; // Workaround: iPad is like iPhone4 // TODO: refactor/rewrite logic
 }
 
 +(NSString*) getStoredAppVersion{

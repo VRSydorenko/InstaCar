@@ -126,7 +126,7 @@
 -(bool)promptLocationAccess{
     if([CLLocationManager locationServicesEnabled]){
         if([CLLocationManager authorizationStatus] == kCLAuthorizationStatusDenied){
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"App Permission Denied"
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Location Access Denied"
                                                             message:@"To enable, please go to Settings and turn on Location Service for InstaCar."
                                                            delegate:nil
                                                   cancelButtonTitle:@"OK"

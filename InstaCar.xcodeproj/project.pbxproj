@@ -282,7 +282,6 @@
 		8440C96619CC62AE009D0C19 /* VenueProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 8440C96219CC62AE009D0C19 /* VenueProvider.m */; };
 		8440C96D19CC638B009D0C19 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8440C96819CC638B009D0C19 /* AppDelegate.m */; };
 		8440C96E19CC638B009D0C19 /* InstaCar.entitlements in Resources */ = {isa = PBXBuildFile; fileRef = 8440C96A19CC638B009D0C19 /* InstaCar.entitlements */; };
-		8440C96F19CC638B009D0C19 /* logoOverlay@2x.psd in Resources */ = {isa = PBXBuildFile; fileRef = 8440C96B19CC638B009D0C19 /* logoOverlay@2x.psd */; };
 		8440C97019CC638B009D0C19 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8440C96C19CC638B009D0C19 /* main.m */; };
 		8440C97E19CC640B009D0C19 /* AppMenuTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8440C97219CC640B009D0C19 /* AppMenuTableVC.m */; };
 		8440C97F19CC640B009D0C19 /* CustomCarFormVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8440C97419CC640B009D0C19 /* CustomCarFormVC.m */; };
@@ -1793,7 +1792,6 @@
 				8478A60619BF6500004CCEFE /* RegencyScriptFLF.ttf in Resources */,
 				8440C8C819CC627E009D0C19 /* logo_lambo_128.png in Resources */,
 				8440C8AD19CC627E009D0C19 /* logo_bmw_128.png in Resources */,
-				8440C96F19CC638B009D0C19 /* logoOverlay@2x.psd in Resources */,
 				8440C8E019CC627E009D0C19 /* logo_vaz_128.png in Resources */,
 				8440C90619CC627E009D0C19 /* logo_landrover_256.png in Resources */,
 				84205D6819C08D5800CAD98E /* SCRIPTIN.ttf in Resources */,

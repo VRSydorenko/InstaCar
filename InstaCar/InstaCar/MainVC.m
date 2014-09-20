@@ -341,7 +341,7 @@ typedef enum {
         [DataManager setSelectedSkinSet:newValue];
         
         [self initSkins];
-        [self setActiveSkin:0]; // TODO: set index saved before
+        [self setActiveSkin:pageControl.currentPage]; // TODO: set the index saved before
         
         // if any car is currently selected - apply it to newly selected skinset
         [self applyCurrentlySelectedCarsToNewlySelectedSkin];

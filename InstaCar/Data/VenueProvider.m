@@ -118,8 +118,10 @@
                 if (iconsToSave.count > 0){
                     // save icons on the main thread
                     dispatch_async(dispatch_get_main_queue(), ^{
-                        for (NSString *keyPath in iconsToSave.allKeys) {
-                            [DataManager addIcon:[iconsToSave objectForKey:keyPath] forPath:keyPath];
+                        @synchronized(self){
+                            for (NSString *keyPath in iconsToSave.allKeys) {
+                                [DataManager addIcon:[iconsToSave objectForKey:keyPath] forPath:keyPath];
+                            }
                         }
                     });
                 }
