@@ -175,7 +175,7 @@
 - (void)mailComposeController:(MFMailComposeViewController*)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError*)error{
     [controller dismissViewControllerAnimated:YES completion:^(void){
         if (result == MFMailComposeResultSent){
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Info" message:@"Thank you so much for your feedback!" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Info" message:@"Thank you for the feedback!" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
             [alert show];
         }
     }];
