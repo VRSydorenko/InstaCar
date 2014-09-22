@@ -33,6 +33,8 @@ typedef enum {
 -(UIFont*)elemFont;
 -(NSString*)elemString;
 -(NSTextAlignment)elemAlignment;
+-(UIColor*)elemShadowColor;
+-(CGSize)elemShadowOffset;
 @end
 
 @protocol DrawElemGradientProtocol <DrawElemBaseProtocol>

@@ -39,6 +39,14 @@
     return self.textAlignment;
 }
 
+-(UIColor*)elemShadowColor{
+    return self.shadowColor;
+}
+
+-(CGSize)elemShadowOffset{
+    return self.shadowOffset;
+}
+
 -(void)invertColors{
     self.textColor = [Utils invertColor:self.textColor];
     self.shadowColor = [Utils invertColor:self.shadowColor];

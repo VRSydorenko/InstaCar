@@ -236,18 +236,27 @@
                     CGContextFillRect(*context, rectToDrawIn);
                 }
                 
-                NSDictionary *attrs = @{NSFontAttributeName: [elemText elemFont], NSForegroundColorAttributeName: [elemBase elemColor]};
+                // shadow
+                NSShadow *shadow = [[NSShadow alloc] init];
+                [shadow setShadowColor: elemText.elemShadowColor];
+                CGSize shadowOffset = CGSizeMake(elemText.elemShadowOffset.width * scaleFactorHeight, elemText.elemShadowOffset.height * scaleFactorHeight);
+                [shadow setShadowOffset: shadowOffset];
+                
+                // content & look
+                NSMutableDictionary *attrs = [@{NSFontAttributeName:[elemText elemFont],
+                                               NSForegroundColorAttributeName:[elemBase elemColor],
+                                               NSShadowAttributeName:shadow} mutableCopy];
                 NSString *text = [elemText elemString];
                 
+                // size calculations
                 CGRect textRect = [elemText elemRectInParent];
                 const CGSize textSize = [text sizeWithAttributes: attrs];
                 CGFloat textHRatio = textSize.height / textRect.size.height;
                 CGFloat textWRatio = textSize.width / textRect.size.width;
                 
-                NSDictionary *savedStringAttrs = attrs;
                 for (CGFloat fontSize = 1.0; ; fontSize += 2.0){
                     UIFont *currFont = [UIFont fontWithName:[elemText elemFont].fontName size:fontSize];
-                    NSDictionary *currAttrs = @{NSFontAttributeName: currFont, NSForegroundColorAttributeName: [elemBase elemColor]};
+                    NSDictionary *currAttrs = @{NSFontAttributeName: currFont};
                     const CGSize currTextSize = [text sizeWithAttributes: currAttrs];
                     
                     CGFloat currTextHRatio = currTextSize.height / rectToDrawIn.size.height;
@@ -277,11 +286,11 @@
                         break;
                     }
                     
-                    savedStringAttrs = currAttrs;
+                    [attrs setValue:currFont forKey:NSFontAttributeName];
                 }
                 
                 // draw the text
-                NSAttributedString *attrString = [[NSAttributedString alloc] initWithString:text attributes:savedStringAttrs];
+                NSAttributedString *attrString = [[NSAttributedString alloc] initWithString:text attributes:attrs];
                 [attrString drawAtPoint:rectToDrawIn.origin];
                 
                 break;
