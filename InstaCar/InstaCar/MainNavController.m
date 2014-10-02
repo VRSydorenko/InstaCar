@@ -78,10 +78,7 @@
 }
 
 -(void)showAboutProVersionButtonPressed{
-    ProInfoVC *infoVC = [[UIStoryboard storyboardWithName:@"main" bundle:nil] instantiateViewControllerWithIdentifier:@"proInfoVC"];
-    
-    infoVC.delegate = self;
-    [self presentViewController:infoVC animated:YES completion:nil];
+    [Utils showAboutProVersionOnBehalfOf:self];
 }
 
 -(void)showLeft{

@@ -88,10 +88,6 @@ typedef struct {
 -(void)moveContentUp;
 -(void)moveContentDown;
 
-#pragma mark SkinCommand protocols
--(void)onCmdInvertColors;
--(void)onCmdEditText:(NSString *)newText;
-
 -(void)fieldLocationDidUpdate;
 -(void)fieldAuto1DidUpdate;
 -(void)fieldAuto2DidUpdate;

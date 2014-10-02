@@ -49,7 +49,7 @@
             [btn addTarget:self action:@selector(onCommandInvertPressed:) forControlEvents:UIControlEventTouchUpInside];
             
             // title
-            [btn setTitle:@"Invert colors" forState:UIControlStateNormal];
+            [btn setTitle:@"Invert" forState:UIControlStateNormal];
             // images
             [btn setImage:[UIImage imageNamed:@"imgCmdInvertNormal.png"] forState:UIControlStateNormal];
             
@@ -62,11 +62,15 @@
             [self setCmdButtonCommonValues:&btn];
             [btn addTarget:self action:@selector(onCommandEditTextPressed:) forControlEvents:UIControlEventTouchUpInside];
             
-            [btn setTitle:@"Edit text" forState:UIControlStateNormal];
+            [btn setTitle:@"Text" forState:UIControlStateNormal];
             
             // images
-            [btn setImage:[UIImage imageNamed:@"imgCmdEditNormal.png"] forState:UIControlStateNormal];
-            
+            if ([UserSettings isFullVersion]){
+                [btn setImage:[UIImage imageNamed:@"imgCmdEditNormal.png"] forState:UIControlStateNormal];
+            } else {
+                [btn setImage:[UIImage imageNamed:@"imgBadgePro.png"] forState:UIControlStateNormal];
+            }
+        
             [self addSubview:btn];
             frame.origin.x += cmdWidth;
         }
@@ -76,18 +80,18 @@
             [self setCmdButtonCommonValues:&btn];
             [btn addTarget:self action:@selector(onCommandEditPrefixPressed:) forControlEvents:UIControlEventTouchUpInside];
             
-            [btn setTitle:@"Edit prefix" forState:UIControlStateNormal];
+            [btn setTitle:@"Prefix" forState:UIControlStateNormal];
             
             // images // TODO: icons for prefix
-            [btn setImage:[UIImage imageNamed:@"imgCmdEditNormal.png"] forState:UIControlStateNormal];
-        
+            if ([UserSettings isFullVersion]){
+                [btn setImage:[UIImage imageNamed:@"imgCmdEditNormal.png"] forState:UIControlStateNormal];
+            } else {
+                [btn setImage:[UIImage imageNamed:@"imgBadgePro.png"] forState:UIControlStateNormal];
+            }
+            
             [self addSubview:btn];
             frame.origin.x += cmdWidth;
         }
-    }
-    
-    if (self.hasCloseButton){
-        // TODO: create close button
     }
 }
 
@@ -215,6 +219,11 @@
 }
 
 -(IBAction)onCommandEditTextPressed:(UIButton*)sender{
+    if (NO == [UserSettings isFullVersion]){
+        [Utils showAboutProVersionOnBehalfOf:self.ownerVC];
+        return;
+    }
+    
     [self switchStringEditView:YES];
     
     stringEditor.text = [self.delegatingSkin getSkinContentText];
@@ -222,6 +231,11 @@
     [stringEditor becomeFirstResponder];
 }
 -(IBAction)onCommandEditPrefixPressed:(UIButton*)sender{
+    if (NO == [UserSettings isFullVersion]){
+        [Utils showAboutProVersionOnBehalfOf:self.ownerVC];
+        return;
+    }
+    
     [self switchStringEditView:YES];
     
     stringEditor.text = [self.delegatingSkin getSkinPrefixText];
@@ -259,6 +273,7 @@
 
 -(void)setCmdButtonCommonValues:(UIButton**)button{
     UIButton *btn = *button;
+    
     btn.titleLabel.textAlignment = NSTextAlignmentCenter;
     [btn setTitleColor:[UIColor colorWithRed:1 green:1 blue:150/255 alpha:1.0] forState:UIControlStateNormal];
     [btn setTitleColor:[UIColor colorWithRed:1 green:1 blue:150/255 alpha:1.0] forState:UIControlStateDisabled]; // TODO: dark the color

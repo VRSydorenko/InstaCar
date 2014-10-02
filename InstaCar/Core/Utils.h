@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "UserSettings.h"
+#import "ProInfoVC.h"
 
 @interface Utils : NSObject
 
@@ -23,5 +24,7 @@
 +(void)openAppPageOnFacebook;
 
 +(UIColor*)invertColor:(UIColor*)color;
+
++(void)showAboutProVersionOnBehalfOf:(UIViewController<ProInfoViewControllerDelegate>*)delegateVC;
 
 @end

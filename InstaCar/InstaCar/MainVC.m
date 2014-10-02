@@ -230,8 +230,8 @@ typedef enum {
     
     cmdPopoverView = [[SkinCommandsPopoverView alloc] initWithFrame:frame];
     initialPopoverFrame = frame;
+    cmdPopoverView.ownerVC = (UIViewController<ProInfoViewControllerDelegate>*)self.navigationController; // TODO: refactor this workaround
     cmdPopoverView.backgroundColor = [UIColor whiteColor]; // TOOD: move to the view initialisation
-    cmdPopoverView.hasCloseButton = [UserSettings isIPhone4];
     
     //Set the customView properties
     cmdPopoverView.alpha = 0.0;

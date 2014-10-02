@@ -164,7 +164,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "InstaCar/Core/SkinCommandsPopoverView.m"
-            timestampString = "432831881.506179"
+            timestampString = "433949905.04204"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "108"
@@ -186,6 +186,22 @@
             startingLineNumber = "293"
             endingLineNumber = "293"
             landmarkName = "-renderControl:inContext:withParentPoint:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "InstaCar/InstaCar/MainVC.m"
+            timestampString = "433951070.368787"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "233"
+            endingLineNumber = "233"
+            landmarkName = "-initSkinCommandPopoverView"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

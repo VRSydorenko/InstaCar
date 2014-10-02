@@ -143,4 +143,13 @@
     return [UIColor colorWithRed:1-r green:1-g blue:1-b alpha:a];
 }
 
++(void)showAboutProVersionOnBehalfOf:(UIViewController<ProInfoViewControllerDelegate>*)delegateVC{
+    assert(delegateVC);
+    
+    ProInfoVC *infoVC = [[UIStoryboard storyboardWithName:@"main" bundle:nil] instantiateViewControllerWithIdentifier:@"proInfoVC"];
+    
+    infoVC.delegate = delegateVC;
+    [delegateVC presentViewController:infoVC animated:YES completion:nil];
+}
+
 @end

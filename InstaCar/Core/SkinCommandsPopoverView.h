@@ -26,8 +26,8 @@
     BOOL currentlyEditingPrefix; // YES: prefix; NO: content
 }
 
+@property (nonatomic) UIViewController<ProInfoViewControllerDelegate> *ownerVC;
 @property (nonatomic) SkinViewBase *delegatingSkin;
-@property (nonatomic) BOOL hasCloseButton;
 @property (nonatomic) BOOL isInEditMode;
 @property (nonatomic) CGFloat heightOnTop;
 
