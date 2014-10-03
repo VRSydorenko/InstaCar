@@ -67,7 +67,6 @@
 		7F4F684417F6F97600F1017B /* HFImageEditorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F4F684217F6F97600F1017B /* HFImageEditorViewController.m */; };
 		7F4F684817F6FDF500F1017B /* ImageEditor.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F4F684617F6FDF500F1017B /* ImageEditor.m */; };
 		7F4F684917F6FDF500F1017B /* ImageEditor.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F4F684717F6FDF500F1017B /* ImageEditor.xib */; };
-		7F4FDC0719DF6A1600D5B57C /* appIcon.psd in Resources */ = {isa = PBXBuildFile; fileRef = 7F4FDC0619DF6A1600D5B57C /* appIcon.psd */; };
 		7F544A3918085378001FFEC3 /* ALAssetsLibrary+CustomPhotoAlbum.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F544A3818085378001FFEC3 /* ALAssetsLibrary+CustomPhotoAlbum.m */; };
 		7F59AC5F17D3C1F400B87457 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F59AC5E17D3C1F400B87457 /* libsqlite3.0.dylib */; };
 		7F5C46671811E87900DF94B1 /* ProInfoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F5C46661811E87900DF94B1 /* ProInfoVC.m */; };
@@ -1755,7 +1754,6 @@
 				8440C90019CC627E009D0C19 /* logo_jeep_256.png in Resources */,
 				7FCDF63C19CE3E7B006C70A0 /* iheart_256.png in Resources */,
 				8440C8FA19CC627E009D0C19 /* logo_hummer_256.png in Resources */,
-				7F4FDC0719DF6A1600D5B57C /* appIcon.psd in Resources */,
 				8440C90E19CC627E009D0C19 /* logo_mitsubishi_256.png in Resources */,
 				8440C8DF19CC627E009D0C19 /* logo_toyota_128.png in Resources */,
 				8440C8C719CC627E009D0C19 /* logo_lada_128.png in Resources */,
