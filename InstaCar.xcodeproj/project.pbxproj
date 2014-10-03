@@ -425,6 +425,7 @@
 		7F4F684517F6FDF500F1017B /* ImageEditor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageEditor.h; sourceTree = "<group>"; };
 		7F4F684617F6FDF500F1017B /* ImageEditor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageEditor.m; sourceTree = "<group>"; };
 		7F4F684717F6FDF500F1017B /* ImageEditor.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImageEditor.xib; sourceTree = "<group>"; };
+		7F4FDC0419DF688300D5B57C /* appIcon.psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = appIcon.psd; sourceTree = "<group>"; };
 		7F544A3718085377001FFEC3 /* ALAssetsLibrary+CustomPhotoAlbum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ALAssetsLibrary+CustomPhotoAlbum.h"; sourceTree = "<group>"; };
 		7F544A3818085378001FFEC3 /* ALAssetsLibrary+CustomPhotoAlbum.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ALAssetsLibrary+CustomPhotoAlbum.m"; sourceTree = "<group>"; };
 		7F59AC5E17D3C1F400B87457 /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
@@ -824,6 +825,7 @@
 				8440C96819CC638B009D0C19 /* AppDelegate.m */,
 				8440C96919CC638B009D0C19 /* InstaCar-Prefix.pch */,
 				8440C96A19CC638B009D0C19 /* InstaCar.entitlements */,
+				7F4FDC0419DF688300D5B57C /* appIcon.psd */,
 				8440C96B19CC638B009D0C19 /* logoOverlay@2x.psd */,
 				8440C96C19CC638B009D0C19 /* main.m */,
 				7F2AD48017EDE9390096EC8D /* SHKCustomSharers.plist */,
