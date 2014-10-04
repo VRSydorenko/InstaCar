@@ -42,7 +42,7 @@
 
 -(void)adjustAutoLabelSizeAccordingToText{
     CGSize textSize = [self.labelAuto.text sizeWithAttributes:[NSDictionary dictionaryWithObject:self.labelAuto.font forKey:NSFontAttributeName]];
-    self.constraintLabelAutoWidth.constant = MIN(5.0+textSize.width, self.bounds.size.width * 0.8 /* label takes max 80% of the screen width*/);
+    self.constraintLabelAutoWidth.constant = MIN(5.0+textSize.width, self.bounds.size.width - self.labelAuto.frame.origin.x);
 }
 
 @end
