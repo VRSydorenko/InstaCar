@@ -57,24 +57,6 @@
             frame.origin.x += cmdWidth;
         }
         
-        if (skinCommands.canCmdEditText){
-            UIButton *btn = [[UIButton alloc] initWithFrame:frame];
-            [self setCmdButtonCommonValues:&btn];
-            [btn addTarget:self action:@selector(onCommandEditTextPressed:) forControlEvents:UIControlEventTouchUpInside];
-            
-            [btn setTitle:@"Text" forState:UIControlStateNormal];
-            
-            // images
-            if ([UserSettings isFullVersion]){
-                [btn setImage:[UIImage imageNamed:@"imgCmdEditNormal.png"] forState:UIControlStateNormal];
-            } else {
-                [btn setImage:[UIImage imageNamed:@"imgBadgePro.png"] forState:UIControlStateNormal];
-            }
-        
-            [self addSubview:btn];
-            frame.origin.x += cmdWidth;
-        }
-        
         if (skinCommands.canCmdEditPrefix){
             UIButton *btn = [[UIButton alloc] initWithFrame:frame];
             [self setCmdButtonCommonValues:&btn];
@@ -83,6 +65,24 @@
             [btn setTitle:@"Prefix" forState:UIControlStateNormal];
             
             // images // TODO: icons for prefix
+            if ([UserSettings isFullVersion]){
+                [btn setImage:[UIImage imageNamed:@"imgCmdEditNormal.png"] forState:UIControlStateNormal];
+            } else {
+                [btn setImage:[UIImage imageNamed:@"imgBadgePro.png"] forState:UIControlStateNormal];
+            }
+            
+            [self addSubview:btn];
+            frame.origin.x += cmdWidth;
+        }
+        
+        if (skinCommands.canCmdEditText){
+            UIButton *btn = [[UIButton alloc] initWithFrame:frame];
+            [self setCmdButtonCommonValues:&btn];
+            [btn addTarget:self action:@selector(onCommandEditTextPressed:) forControlEvents:UIControlEventTouchUpInside];
+            
+            [btn setTitle:@"Text" forState:UIControlStateNormal];
+            
+            // images
             if ([UserSettings isFullVersion]){
                 [btn setImage:[UIImage imageNamed:@"imgCmdEditNormal.png"] forState:UIControlStateNormal];
             } else {
