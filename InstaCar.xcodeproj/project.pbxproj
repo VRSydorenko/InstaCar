@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		7F002D21180B49C60076879F /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 7F002D20180B49C60076879F /* Settings.bundle */; };
+		7F15FC7219E0406E0068F9A0 /* DueDate.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7F15FC7119E0406E0068F9A0 /* DueDate.ttf */; };
 		7F1767AC17C76F0F00724BD6 /* CaptureSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F1767AB17C76F0F00724BD6 /* CaptureSessionManager.m */; };
 		7F27671C1791E80000A1C1A0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7F27671A1791E80000A1C1A0 /* InfoPlist.strings */; };
 		7F27672A1791E80000A1C1A0 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7F2767291791E80000A1C1A0 /* Images.xcassets */; };
@@ -309,6 +310,7 @@
 
 /* Begin PBXFileReference section */
 		7F002D20180B49C60076879F /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Settings.bundle; path = InstaCar/Settings.bundle; sourceTree = "<group>"; };
+		7F15FC7119E0406E0068F9A0 /* DueDate.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = DueDate.ttf; sourceTree = "<group>"; };
 		7F1767AA17C76F0F00724BD6 /* CaptureSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CaptureSessionManager.h; sourceTree = "<group>"; };
 		7F1767AB17C76F0F00724BD6 /* CaptureSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CaptureSessionManager.m; sourceTree = "<group>"; };
 		7F27670E1791E80000A1C1A0 /* InstaCar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstaCar.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1557,6 +1559,7 @@
 		8478A60419BF6500004CCEFE /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				7F15FC7119E0406E0068F9A0 /* DueDate.ttf */,
 				845187F119C342B800B28370 /* JennaSue.ttf */,
 				8416962719C3329000F65B76 /* veteranTypewriter.ttf */,
 				84205D6719C08D5800CAD98E /* SCRIPTIN.ttf */,
@@ -1798,6 +1801,7 @@
 				8478A60619BF6500004CCEFE /* RegencyScriptFLF.ttf in Resources */,
 				8440C8C819CC627E009D0C19 /* logo_lambo_128.png in Resources */,
 				8440C8AD19CC627E009D0C19 /* logo_bmw_128.png in Resources */,
+				7F15FC7219E0406E0068F9A0 /* DueDate.ttf in Resources */,
 				8440C8E019CC627E009D0C19 /* logo_vaz_128.png in Resources */,
 				8440C90619CC627E009D0C19 /* logo_landrover_256.png in Resources */,
 				84205D6819C08D5800CAD98E /* SCRIPTIN.ttf in Resources */,

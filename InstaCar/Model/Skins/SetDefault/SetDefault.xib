@@ -5,6 +5,9 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
     </dependencies>
     <customFonts key="customFonts">
+        <mutableArray key="DueDate.ttf">
+            <string>DueDate</string>
+        </mutableArray>
         <mutableArray key="JennaSue.ttf">
             <string>JennaSue</string>
             <string>JennaSue</string>
@@ -670,8 +673,8 @@
                                 <constraint firstAttribute="width" constant="98" id="vOi-6V-7JU"/>
                                 <constraint firstAttribute="height" constant="36" id="wYU-bQ-g75"/>
                             </constraints>
-                            <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
-                            <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <fontDescription key="fontDescription" name="DueDate" family="Due Date" pointSize="22"/>
+                            <color key="textColor" red="0.90823412698412698" green="0.1646239810708085" blue="0.19091179442110232" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
@@ -704,7 +707,7 @@
     </objects>
     <resources>
         <image name="logo_anycar.png" width="64" height="64"/>
-        <image name="madeIn.png" width="346" height="346"/>
+        <image name="madeIn.png" width="328" height="328"/>
         <image name="sign_parking" width="300" height="300"/>
         <image name="travel1.png" width="278" height="256"/>
         <image name="travel2.png" width="376" height="256"/>

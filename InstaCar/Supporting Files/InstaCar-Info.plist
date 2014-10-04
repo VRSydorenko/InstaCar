@@ -57,6 +57,7 @@
 	</array>
 	<key>UIAppFonts</key>
 	<array>
+		<string>DueDate.ttf</string>
 		<string>RegencyScriptFLF.ttf</string>
 		<string>SCRIPTIN.ttf</string>
 		<string>veteranTypewriter.ttf</string>
