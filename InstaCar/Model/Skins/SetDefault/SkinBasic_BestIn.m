@@ -8,14 +8,7 @@
 
 #import "SkinBasic_BestIn.h"
 
-@interface SkinBasic_BestIn(){
-    NSString *imgTopOrig;
-    NSString *imgTopInv;
-    NSString *imgBotOrig;
-    NSString *imgBotInv;
-    
-    BOOL origInvState;
-}
+@interface SkinBasic_BestIn()
 
 @property (nonatomic) IBOutlet NSLayoutConstraint *topMargin;
 @property (nonatomic) IBOutlet UIView *movingView;
@@ -30,36 +23,17 @@
     [self setMovingViewConstraint:self.topMargin andViewHeight:self.movingView.bounds.size.height];
     
     canEditFieldLocation = YES;
-    origInvState = YES;
     _commandFlags.canCmdInvertColors = YES;
-    
-    imgTopOrig = @"madeIn.png";
-    imgTopInv = @"madeIn.png";
-    imgBotOrig = @"madeIn.png";
-    imgBotInv = @"madeIn.png";
-    
-    [self adjustWidthSizeAccordingToText];
 }
 
 -(void)fieldLocationDidUpdate{
     self.labelLocation.text = fieldLocation.name;
-    [self adjustWidthSizeAccordingToText];
-}
-
--(void)adjustWidthSizeAccordingToText{
-    CGSize textSize = [self.labelLocation.text sizeWithAttributes:[NSDictionary dictionaryWithObject:self.labelLocation.font forKey:NSFontAttributeName]];
-    self.constraintLocWidth.constant = MIN(5.0+textSize.width, self.bounds.size.width * 0.9 /*max 90% of the screen width*/);
-    self.constraintLocBkgWidth.constant = self.constraintLocWidth.constant + 25.0 /*exclamation mark label width*/;
 }
 
 -(void)onCmdInvertColors{
     [self.labelBestIn invertColors];
     [self.labelLocation invertColors];
     [self.labelExclamationMark invertColors];
-    
-    [self.imageBgTop setInvertedImage:[UIImage imageNamed:origInvState ? imgTopInv : imgTopOrig]];
-    [self.imageBgBottom setInvertedImage:[UIImage imageNamed:origInvState ? imgBotInv : imgBotOrig]];
-    origInvState = !origInvState;
 }
 
 @end

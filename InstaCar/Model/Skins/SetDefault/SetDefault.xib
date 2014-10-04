@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6245" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6245" systemVersion="14A379a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
+        <deployment defaultVersion="1792" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -591,22 +592,6 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3aj-tU-BEJ">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
                     <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dNq-Za-m5Y" customClass="SkinElementImage">
-                            <rect key="frame" x="110" y="0.0" width="210" height="59"/>
-                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="59" id="7ns-mD-ttL"/>
-                                <constraint firstAttribute="width" constant="210" id="Wtw-Rx-l7Q"/>
-                            </constraints>
-                        </imageView>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Tf9-Ct-1Nq" customClass="SkinElementImage">
-                            <rect key="frame" x="16" y="44" width="304" height="56"/>
-                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                            <constraints>
-                                <constraint firstAttribute="width" constant="304" id="D70-xF-A4m"/>
-                                <constraint firstAttribute="height" constant="56" id="O28-Ek-wWl"/>
-                            </constraints>
-                        </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y4I-BX-tl9" customClass="SkinElementLabel">
                             <rect key="frame" x="298" y="0.0" width="22" height="100"/>
                             <constraints>
@@ -638,7 +623,6 @@
                     </subviews>
                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstAttribute="trailing" secondItem="dNq-Za-m5Y" secondAttribute="trailing" id="2fb-0h-aQI"/>
                         <constraint firstItem="Y4I-BX-tl9" firstAttribute="leading" secondItem="xGV-hZ-yJb" secondAttribute="trailing" constant="-3" id="4Ze-uG-GdZ"/>
                         <constraint firstItem="Y4I-BX-tl9" firstAttribute="top" secondItem="3aj-tU-BEJ" secondAttribute="top" id="6jy-Mx-qxE"/>
                         <constraint firstAttribute="bottom" secondItem="Y4I-BX-tl9" secondAttribute="bottom" id="7cy-Ly-rzj"/>
@@ -646,10 +630,7 @@
                         <constraint firstItem="M1j-fJ-0Cd" firstAttribute="top" secondItem="3aj-tU-BEJ" secondAttribute="top" id="LQM-wR-rfs"/>
                         <constraint firstAttribute="trailing" secondItem="Y4I-BX-tl9" secondAttribute="trailing" id="Q1N-qg-roV"/>
                         <constraint firstAttribute="height" constant="100" id="XU1-v9-Pv3"/>
-                        <constraint firstAttribute="trailing" secondItem="Tf9-Ct-1Nq" secondAttribute="trailing" id="e2p-V3-wK7"/>
-                        <constraint firstAttribute="bottom" secondItem="Tf9-Ct-1Nq" secondAttribute="bottom" id="iND-oc-1Bk"/>
                         <constraint firstAttribute="trailing" secondItem="M1j-fJ-0Cd" secondAttribute="trailing" id="q6Z-2p-gFC"/>
-                        <constraint firstItem="dNq-Za-m5Y" firstAttribute="top" secondItem="3aj-tU-BEJ" secondAttribute="top" id="soJ-8S-B6L"/>
                     </constraints>
                 </view>
             </subviews>
@@ -662,10 +643,6 @@
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
-                <outlet property="constraintLocBkgWidth" destination="D70-xF-A4m" id="sqv-mX-vLO"/>
-                <outlet property="constraintLocWidth" destination="O8o-SA-2XL" id="n9k-AP-XS8"/>
-                <outlet property="imageBgBottom" destination="Tf9-Ct-1Nq" id="wzd-yV-Tyd"/>
-                <outlet property="imageBgTop" destination="dNq-Za-m5Y" id="Fp3-68-sgq"/>
                 <outlet property="labelBestIn" destination="M1j-fJ-0Cd" id="EQB-NS-njZ"/>
                 <outlet property="labelExclamationMark" destination="Y4I-BX-tl9" id="m1T-o1-GCU"/>
                 <outlet property="labelLocation" destination="xGV-hZ-yJb" id="cg0-3y-Tce"/>
@@ -688,9 +665,9 @@
                             </constraints>
                         </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GERMANY" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.30000000000000004" translatesAutoresizingMaskIntoConstraints="NO" id="06n-dX-hGR" customClass="SkinElementLabel">
-                            <rect key="frame" x="197" y="42" width="106" height="36"/>
+                            <rect key="frame" x="201" y="42" width="98" height="36"/>
                             <constraints>
-                                <constraint firstAttribute="width" constant="106" id="vOi-6V-7JU"/>
+                                <constraint firstAttribute="width" constant="98" id="vOi-6V-7JU"/>
                                 <constraint firstAttribute="height" constant="36" id="wYU-bQ-g75"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
@@ -702,7 +679,7 @@
                     <constraints>
                         <constraint firstItem="2lN-DH-74U" firstAttribute="top" secondItem="8Pn-p8-a7K" secondAttribute="top" id="8ym-9T-xNy"/>
                         <constraint firstItem="2lN-DH-74U" firstAttribute="leading" secondItem="8Pn-p8-a7K" secondAttribute="leading" constant="180" id="Cft-iD-D8z"/>
-                        <constraint firstAttribute="trailing" secondItem="06n-dX-hGR" secondAttribute="trailing" constant="17" id="JLV-3N-QrG"/>
+                        <constraint firstAttribute="trailing" secondItem="06n-dX-hGR" secondAttribute="trailing" constant="21" id="JLV-3N-QrG"/>
                         <constraint firstAttribute="bottom" secondItem="06n-dX-hGR" secondAttribute="bottom" constant="42" id="Jw2-3Z-M8E"/>
                         <constraint firstAttribute="bottom" secondItem="2lN-DH-74U" secondAttribute="bottom" id="kUG-8w-ssS"/>
                         <constraint firstAttribute="height" constant="120" id="mLa-Q0-wVr"/>
