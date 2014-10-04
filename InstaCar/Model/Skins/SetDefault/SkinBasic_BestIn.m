@@ -24,6 +24,8 @@
     
     canEditFieldLocation = YES;
     _commandFlags.canCmdInvertColors = YES;
+    _commandFlags.canCmdEditPrefix = YES;
+    _commandFlags.canCmdEditText = YES;
 }
 
 -(void)fieldLocationDidUpdate{
@@ -34,6 +36,21 @@
     [self.labelBestIn invertColors];
     [self.labelLocation invertColors];
     [self.labelExclamationMark invertColors];
+}
+
+-(void)onCmdEditPrefix:(NSString *)newPrefix{
+    self.labelBestIn.text = newPrefix;
+}
+
+-(void)onCmdEditText:(NSString *)newText{
+    self.labelLocation.text = newText;
+}
+
+-(NSString*)getSkinPrefixText{
+    return self.labelBestIn.text;
+}
+-(NSString*)getSkinContentText{
+    return self.labelLocation.text;
 }
 
 @end

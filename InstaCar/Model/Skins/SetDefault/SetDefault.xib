@@ -603,17 +603,17 @@
                             <fontDescription key="fontDescription" name="JennaSue" family="Jenna Sue" pointSize="67"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="the BEST in" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M1j-fJ-0Cd" customClass="SkinElementLabel">
-                            <rect key="frame" x="119" y="0.0" width="201" height="52"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="the BEST in" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.40000000000000002" translatesAutoresizingMaskIntoConstraints="NO" id="M1j-fJ-0Cd" customClass="SkinElementLabel">
+                            <rect key="frame" x="8" y="0.0" width="293" height="52"/>
                             <constraints>
-                                <constraint firstAttribute="width" constant="201" id="3xQ-5E-5y6"/>
+                                <constraint firstAttribute="width" constant="293" id="3xQ-5E-5y6"/>
                                 <constraint firstAttribute="height" constant="52" id="iEw-Uc-F7A"/>
                             </constraints>
                             <fontDescription key="fontDescription" name="JennaSue" family="Jenna Sue" pointSize="47"/>
                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="the city" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xGV-hZ-yJb" customClass="SkinElementLabel">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="the city" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.40000000000000002" translatesAutoresizingMaskIntoConstraints="NO" id="xGV-hZ-yJb" customClass="SkinElementLabel">
                             <rect key="frame" x="8" y="29" width="293" height="71"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="293" id="O8o-SA-2XL"/>
@@ -633,7 +633,7 @@
                         <constraint firstItem="M1j-fJ-0Cd" firstAttribute="top" secondItem="3aj-tU-BEJ" secondAttribute="top" id="LQM-wR-rfs"/>
                         <constraint firstAttribute="trailing" secondItem="Y4I-BX-tl9" secondAttribute="trailing" id="Q1N-qg-roV"/>
                         <constraint firstAttribute="height" constant="100" id="XU1-v9-Pv3"/>
-                        <constraint firstAttribute="trailing" secondItem="M1j-fJ-0Cd" secondAttribute="trailing" id="q6Z-2p-gFC"/>
+                        <constraint firstAttribute="trailing" secondItem="M1j-fJ-0Cd" secondAttribute="trailing" constant="19" id="q6Z-2p-gFC"/>
                     </constraints>
                 </view>
             </subviews>
