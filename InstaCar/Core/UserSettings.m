@@ -13,10 +13,11 @@
 /* to be changed before release:
  * isFullVersion method return value
  * Setting bundle name
+ * App Icon asset catalog name
  */
 
 +(BOOL)isFullVersion{
-    return NO;
+    return YES;
 }
 
 +(BOOL)isIPhone4{

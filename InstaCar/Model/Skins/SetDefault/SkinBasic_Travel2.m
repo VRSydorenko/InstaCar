@@ -25,11 +25,19 @@
 
     isContentOnTop = NO;
     canEditFieldAuto1 = YES;
+    _commandFlags.canCmdEditText = YES;
 }
 
 -(void)fieldAuto1DidUpdate{
     self.labelAuto.text = fieldAuto1.selectedTextFull;
     [self adjustAutoLabelSizeAccordingToText];
+}
+-(void)onCmdEditText:(NSString *)newText{
+    self.labelAuto.text = newText;
+    [self adjustAutoLabelSizeAccordingToText];
+}
+-(NSString*)getSkinContentText{
+    return self.labelAuto.text;
 }
 
 -(void)adjustAutoLabelSizeAccordingToText{
