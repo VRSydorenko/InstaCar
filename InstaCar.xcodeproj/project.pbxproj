@@ -309,6 +309,9 @@
 
 /* Begin PBXFileReference section */
 		7F002D20180B49C60076879F /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Settings.bundle; path = InstaCar/Settings.bundle; sourceTree = "<group>"; };
+		7F02DCA519E17C5E0042750C /* appIcon.psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = appIcon.psd; sourceTree = "<group>"; };
+		7F02DCA619E17C5E0042750C /* imgBadgePro.psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = imgBadgePro.psd; sourceTree = "<group>"; };
+		7F02DCA719E17C5E0042750C /* logoOverlay@2x.psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = "logoOverlay@2x.psd"; sourceTree = "<group>"; };
 		7F15FC7119E0406E0068F9A0 /* DueDate.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = DueDate.ttf; sourceTree = "<group>"; };
 		7F1767AA17C76F0F00724BD6 /* CaptureSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CaptureSessionManager.h; sourceTree = "<group>"; };
 		7F1767AB17C76F0F00724BD6 /* CaptureSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CaptureSessionManager.m; sourceTree = "<group>"; };
@@ -448,8 +451,6 @@
 		7FCD262A17F5BFEC00BFDF4E /* SMPageControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMPageControl.h; sourceTree = "<group>"; };
 		7FCD262B17F5BFEC00BFDF4E /* SMPageControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMPageControl.m; sourceTree = "<group>"; };
 		7FCDF63B19CE3E7B006C70A0 /* iheart_256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iheart_256.png; sourceTree = "<group>"; };
-		7FEB937D19E1643F00E3FEC7 /* appIcon.psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = appIcon.psd; sourceTree = "<group>"; };
-		7FEB937F19E1778800E3FEC7 /* imgBadgePro.psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = imgBadgePro.psd; sourceTree = "<group>"; };
 		7FEF908717D505E800C07A05 /* AutosVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AutosVC.h; path = InstaCar/AutosVC.h; sourceTree = "<group>"; };
 		7FEF908817D505E800C07A05 /* AutosVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AutosVC.m; path = InstaCar/AutosVC.m; sourceTree = "<group>"; };
 		7FF3389117D4C0E700B046C4 /* SkinsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SkinsVC.h; path = InstaCar/SkinsVC.h; sourceTree = "<group>"; };
@@ -710,7 +711,6 @@
 		8440C96819CC638B009D0C19 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = "Supporting Files/AppDelegate.m"; sourceTree = "<group>"; };
 		8440C96919CC638B009D0C19 /* InstaCar-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "InstaCar-Prefix.pch"; path = "Supporting Files/InstaCar-Prefix.pch"; sourceTree = "<group>"; };
 		8440C96A19CC638B009D0C19 /* InstaCar.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = InstaCar.entitlements; path = "Supporting Files/InstaCar.entitlements"; sourceTree = "<group>"; };
-		8440C96B19CC638B009D0C19 /* logoOverlay@2x.psd */ = {isa = PBXFileReference; lastKnownFileType = file; name = "logoOverlay@2x.psd"; path = "Supporting Files/logoOverlay@2x.psd"; sourceTree = "<group>"; };
 		8440C96C19CC638B009D0C19 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = "Supporting Files/main.m"; sourceTree = "<group>"; };
 		8440C97119CC640B009D0C19 /* AppMenuTableVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppMenuTableVC.h; path = InstaCar/AppMenuTableVC.h; sourceTree = "<group>"; };
 		8440C97219CC640B009D0C19 /* AppMenuTableVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppMenuTableVC.m; path = InstaCar/AppMenuTableVC.m; sourceTree = "<group>"; };
@@ -753,6 +753,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7F02DCA419E17C5E0042750C /* PSD */ = {
+			isa = PBXGroup;
+			children = (
+				7F02DCA519E17C5E0042750C /* appIcon.psd */,
+				7F02DCA619E17C5E0042750C /* imgBadgePro.psd */,
+				7F02DCA719E17C5E0042750C /* logoOverlay@2x.psd */,
+			);
+			name = PSD;
+			path = "Supporting Files/PSD";
+			sourceTree = "<group>";
+		};
 		7F2767051791E7FF00A1C1A0 = {
 			isa = PBXGroup;
 			children = (
@@ -821,14 +832,12 @@
 		7F2767181791E80000A1C1A0 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				7FEB937F19E1778800E3FEC7 /* imgBadgePro.psd */,
-				7FEB937D19E1643F00E3FEC7 /* appIcon.psd */,
+				7F02DCA419E17C5E0042750C /* PSD */,
 				8440C98519CC6475009D0C19 /* InstaCar-Info.plist */,
 				8440C96719CC638B009D0C19 /* AppDelegate.h */,
 				8440C96819CC638B009D0C19 /* AppDelegate.m */,
 				8440C96919CC638B009D0C19 /* InstaCar-Prefix.pch */,
 				8440C96A19CC638B009D0C19 /* InstaCar.entitlements */,
-				8440C96B19CC638B009D0C19 /* logoOverlay@2x.psd */,
 				8440C96C19CC638B009D0C19 /* main.m */,
 				7F2AD48017EDE9390096EC8D /* SHKCustomSharers.plist */,
 				7F27671A1791E80000A1C1A0 /* InfoPlist.strings */,
