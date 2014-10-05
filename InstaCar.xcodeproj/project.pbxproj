@@ -85,7 +85,6 @@
 		7FF3389317D4C0E700B046C4 /* SkinsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FF3389217D4C0E700B046C4 /* SkinsVC.m */; };
 		8415F44819587F2500708437 /* SkinElementLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8415F44719587F2500708437 /* SkinElementLabel.m */; };
 		8416962819C3329000F65B76 /* veteranTypewriter.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8416962719C3329000F65B76 /* veteranTypewriter.ttf */; };
-		841988CA19C87B4000C73A19 /* imgBadgePro.png in Resources */ = {isa = PBXBuildFile; fileRef = 841988BD19C87B4000C73A19 /* imgBadgePro.png */; };
 		841988CC19C87B4000C73A19 /* imgCmdCancelNormal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 841988BF19C87B4000C73A19 /* imgCmdCancelNormal@2x.png */; };
 		841988CF19C87B4000C73A19 /* imgCmdEditNormal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 841988C219C87B4000C73A19 /* imgCmdEditNormal@2x.png */; };
 		841988D119C87B4000C73A19 /* imgCmdInvertNormal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 841988C419C87B4000C73A19 /* imgCmdInvertNormal@2x.png */; };
@@ -450,6 +449,7 @@
 		7FCD262B17F5BFEC00BFDF4E /* SMPageControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMPageControl.m; sourceTree = "<group>"; };
 		7FCDF63B19CE3E7B006C70A0 /* iheart_256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iheart_256.png; sourceTree = "<group>"; };
 		7FEB937D19E1643F00E3FEC7 /* appIcon.psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = appIcon.psd; sourceTree = "<group>"; };
+		7FEB937F19E1778800E3FEC7 /* imgBadgePro.psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = imgBadgePro.psd; sourceTree = "<group>"; };
 		7FEF908717D505E800C07A05 /* AutosVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AutosVC.h; path = InstaCar/AutosVC.h; sourceTree = "<group>"; };
 		7FEF908817D505E800C07A05 /* AutosVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AutosVC.m; path = InstaCar/AutosVC.m; sourceTree = "<group>"; };
 		7FF3389117D4C0E700B046C4 /* SkinsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SkinsVC.h; path = InstaCar/SkinsVC.h; sourceTree = "<group>"; };
@@ -457,7 +457,6 @@
 		8415F44619587F2500708437 /* SkinElementLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SkinElementLabel.h; path = InstaCar/Core/DrawingElements/SkinElementLabel.h; sourceTree = "<group>"; };
 		8415F44719587F2500708437 /* SkinElementLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SkinElementLabel.m; path = InstaCar/Core/DrawingElements/SkinElementLabel.m; sourceTree = "<group>"; };
 		8416962719C3329000F65B76 /* veteranTypewriter.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = veteranTypewriter.ttf; sourceTree = "<group>"; };
-		841988BD19C87B4000C73A19 /* imgBadgePro.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = imgBadgePro.png; sourceTree = "<group>"; };
 		841988BF19C87B4000C73A19 /* imgCmdCancelNormal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "imgCmdCancelNormal@2x.png"; sourceTree = "<group>"; };
 		841988C219C87B4000C73A19 /* imgCmdEditNormal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "imgCmdEditNormal@2x.png"; sourceTree = "<group>"; };
 		841988C419C87B4000C73A19 /* imgCmdInvertNormal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "imgCmdInvertNormal@2x.png"; sourceTree = "<group>"; };
@@ -822,6 +821,7 @@
 		7F2767181791E80000A1C1A0 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				7FEB937F19E1778800E3FEC7 /* imgBadgePro.psd */,
 				7FEB937D19E1643F00E3FEC7 /* appIcon.psd */,
 				8440C98519CC6475009D0C19 /* InstaCar-Info.plist */,
 				8440C96719CC638B009D0C19 /* AppDelegate.h */,
@@ -1219,7 +1219,6 @@
 			isa = PBXGroup;
 			children = (
 				84EB677119C9C9D700AFB962 /* imgCmdNoActionsDisabled@2x.png */,
-				841988BD19C87B4000C73A19 /* imgBadgePro.png */,
 				841988BF19C87B4000C73A19 /* imgCmdCancelNormal@2x.png */,
 				841988C219C87B4000C73A19 /* imgCmdEditNormal@2x.png */,
 				841988C419C87B4000C73A19 /* imgCmdInvertNormal@2x.png */,
@@ -1697,7 +1696,6 @@
 				7F2AD59917EDE9B40096EC8D /* SHKSharers.plist in Resources */,
 				8440C91A19CC627E009D0C19 /* logo_tesla_256.png in Resources */,
 				8440C8FF19CC627E009D0C19 /* logo_jaguar_256.png in Resources */,
-				841988CA19C87B4000C73A19 /* imgBadgePro.png in Resources */,
 				8440C8E719CC627E009D0C19 /* logo_audi_256.png in Resources */,
 				8440C8BB19CC627E009D0C19 /* logo_geely_128.png in Resources */,
 				8440C8B319CC627E009D0C19 /* logo_citroen_128.png in Resources */,
@@ -2091,7 +2089,7 @@
 		7F2767411791E80000A1C1A0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIconFree;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = "InstaCar/Supporting Files/InstaCar.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -2114,7 +2112,7 @@
 		7F2767421791E80000A1C1A0 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIconFree;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = "InstaCar/Supporting Files/InstaCar.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";

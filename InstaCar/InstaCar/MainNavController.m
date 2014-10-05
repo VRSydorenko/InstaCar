@@ -220,8 +220,7 @@
 
 -(void)initRightBarButton{
     if (NO == [DataManager isFullVersion]){
-        UIBarButtonItem *button = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"nav_about_pro_icon.png"] style:UIBarButtonItemStyleBordered target:self action:@selector(showAboutProVersionButtonPressed)];
-        button.TintColor = [UIColor whiteColor];
+        UIBarButtonItem *button = [[UIBarButtonItem alloc] initWithImage:[[UIImage imageNamed:@"imgBadgePro.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] style:UIBarButtonItemStyleBordered target:self action:@selector(showAboutProVersionButtonPressed)];
         UIViewController *topController = [self.viewControllers objectAtIndex:0];
         topController.navigationItem.rightBarButtonItem = button;
     }
