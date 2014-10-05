@@ -427,7 +427,6 @@
 		7F4F684517F6FDF500F1017B /* ImageEditor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageEditor.h; sourceTree = "<group>"; };
 		7F4F684617F6FDF500F1017B /* ImageEditor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageEditor.m; sourceTree = "<group>"; };
 		7F4F684717F6FDF500F1017B /* ImageEditor.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImageEditor.xib; sourceTree = "<group>"; };
-		7F4FDC0619DF6A1600D5B57C /* appIcon.psd */ = {isa = PBXFileReference; lastKnownFileType = file; name = appIcon.psd; path = "Supporting Files/appIcon.psd"; sourceTree = "<group>"; };
 		7F544A3718085377001FFEC3 /* ALAssetsLibrary+CustomPhotoAlbum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ALAssetsLibrary+CustomPhotoAlbum.h"; sourceTree = "<group>"; };
 		7F544A3818085378001FFEC3 /* ALAssetsLibrary+CustomPhotoAlbum.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ALAssetsLibrary+CustomPhotoAlbum.m"; sourceTree = "<group>"; };
 		7F59AC5E17D3C1F400B87457 /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
@@ -450,6 +449,7 @@
 		7FCD262A17F5BFEC00BFDF4E /* SMPageControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMPageControl.h; sourceTree = "<group>"; };
 		7FCD262B17F5BFEC00BFDF4E /* SMPageControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMPageControl.m; sourceTree = "<group>"; };
 		7FCDF63B19CE3E7B006C70A0 /* iheart_256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iheart_256.png; sourceTree = "<group>"; };
+		7FEB937D19E1643F00E3FEC7 /* appIcon.psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = appIcon.psd; sourceTree = "<group>"; };
 		7FEF908717D505E800C07A05 /* AutosVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AutosVC.h; path = InstaCar/AutosVC.h; sourceTree = "<group>"; };
 		7FEF908817D505E800C07A05 /* AutosVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AutosVC.m; path = InstaCar/AutosVC.m; sourceTree = "<group>"; };
 		7FF3389117D4C0E700B046C4 /* SkinsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SkinsVC.h; path = InstaCar/SkinsVC.h; sourceTree = "<group>"; };
@@ -822,12 +822,12 @@
 		7F2767181791E80000A1C1A0 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				7FEB937D19E1643F00E3FEC7 /* appIcon.psd */,
 				8440C98519CC6475009D0C19 /* InstaCar-Info.plist */,
 				8440C96719CC638B009D0C19 /* AppDelegate.h */,
 				8440C96819CC638B009D0C19 /* AppDelegate.m */,
 				8440C96919CC638B009D0C19 /* InstaCar-Prefix.pch */,
 				8440C96A19CC638B009D0C19 /* InstaCar.entitlements */,
-				7F4FDC0619DF6A1600D5B57C /* appIcon.psd */,
 				8440C96B19CC638B009D0C19 /* logoOverlay@2x.psd */,
 				8440C96C19CC638B009D0C19 /* main.m */,
 				7F2AD48017EDE9390096EC8D /* SHKCustomSharers.plist */,
@@ -2091,7 +2091,7 @@
 		7F2767411791E80000A1C1A0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIconFree;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = "InstaCar/Supporting Files/InstaCar.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -2114,7 +2114,7 @@
 		7F2767421791E80000A1C1A0 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIconFree;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = "InstaCar/Supporting Files/InstaCar.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
