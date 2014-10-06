@@ -41,8 +41,8 @@
             skin = (SkinAwd_Medal1st*)object;
         } else if ([object isKindOfClass:[SkinAwd_Medal2nd class]]){
             skin = (SkinAwd_Medal2nd*)object;
-        } else if ([object isKindOfClass:[SkinAwd_Placeholder1 class]]){
-            skin = (SkinAwd_Placeholder1*)object;
+        } else if ([object isKindOfClass:[SkinAwd_Ribbon class]]){
+            skin = (SkinAwd_Ribbon*)object;
         } else if ([object isKindOfClass:[SkinAwd_Placeholder2 class]]){
             skin = (SkinAwd_Placeholder2*)object;
         }

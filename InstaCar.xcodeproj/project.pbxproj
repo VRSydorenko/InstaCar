@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		7F002D21180B49C60076879F /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 7F002D20180B49C60076879F /* Settings.bundle */; };
+		7F03782919E325B100198CE8 /* ribbon.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F03782819E325B100198CE8 /* ribbon.png */; };
 		7F15FC7219E0406E0068F9A0 /* DueDate.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7F15FC7119E0406E0068F9A0 /* DueDate.ttf */; };
 		7F1767AC17C76F0F00724BD6 /* CaptureSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F1767AB17C76F0F00724BD6 /* CaptureSessionManager.m */; };
 		7F27671C1791E80000A1C1A0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7F27671A1791E80000A1C1A0 /* InfoPlist.strings */; };
@@ -237,7 +238,7 @@
 		8440C93019CC627E009D0C19 /* SkinAwd_Eco.m in Sources */ = {isa = PBXBuildFile; fileRef = 8440C85319CC627E009D0C19 /* SkinAwd_Eco.m */; };
 		8440C93119CC627E009D0C19 /* SkinAwd_Medal1st.m in Sources */ = {isa = PBXBuildFile; fileRef = 8440C85519CC627E009D0C19 /* SkinAwd_Medal1st.m */; };
 		8440C93219CC627E009D0C19 /* SkinAwd_Medal2nd.m in Sources */ = {isa = PBXBuildFile; fileRef = 8440C85719CC627E009D0C19 /* SkinAwd_Medal2nd.m */; };
-		8440C93319CC627E009D0C19 /* SkinAwd_Placeholder1.m in Sources */ = {isa = PBXBuildFile; fileRef = 8440C85919CC627E009D0C19 /* SkinAwd_Placeholder1.m */; };
+		8440C93319CC627E009D0C19 /* SkinAwd_Ribbon.m in Sources */ = {isa = PBXBuildFile; fileRef = 8440C85919CC627E009D0C19 /* SkinAwd_Ribbon.m */; };
 		8440C93419CC627E009D0C19 /* SkinAwd_Placeholder2.m in Sources */ = {isa = PBXBuildFile; fileRef = 8440C85B19CC627E009D0C19 /* SkinAwd_Placeholder2.m */; };
 		8440C93519CC627E009D0C19 /* madeIn.png in Resources */ = {isa = PBXBuildFile; fileRef = 8440C85E19CC627E009D0C19 /* madeIn.png */; };
 		8440C93619CC627E009D0C19 /* travel1.png in Resources */ = {isa = PBXBuildFile; fileRef = 8440C85F19CC627E009D0C19 /* travel1.png */; };
@@ -312,6 +313,7 @@
 		7F02DCA519E17C5E0042750C /* appIcon.psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = appIcon.psd; sourceTree = "<group>"; };
 		7F02DCA619E17C5E0042750C /* imgBadgePro.psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = imgBadgePro.psd; sourceTree = "<group>"; };
 		7F02DCA719E17C5E0042750C /* logoOverlay@2x.psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = "logoOverlay@2x.psd"; sourceTree = "<group>"; };
+		7F03782819E325B100198CE8 /* ribbon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ribbon.png; sourceTree = "<group>"; };
 		7F15FC7119E0406E0068F9A0 /* DueDate.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = DueDate.ttf; sourceTree = "<group>"; };
 		7F1767AA17C76F0F00724BD6 /* CaptureSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CaptureSessionManager.h; sourceTree = "<group>"; };
 		7F1767AB17C76F0F00724BD6 /* CaptureSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CaptureSessionManager.m; sourceTree = "<group>"; };
@@ -627,8 +629,8 @@
 		8440C85519CC627E009D0C19 /* SkinAwd_Medal1st.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SkinAwd_Medal1st.m; sourceTree = "<group>"; };
 		8440C85619CC627E009D0C19 /* SkinAwd_Medal2nd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkinAwd_Medal2nd.h; sourceTree = "<group>"; };
 		8440C85719CC627E009D0C19 /* SkinAwd_Medal2nd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SkinAwd_Medal2nd.m; sourceTree = "<group>"; };
-		8440C85819CC627E009D0C19 /* SkinAwd_Placeholder1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkinAwd_Placeholder1.h; sourceTree = "<group>"; };
-		8440C85919CC627E009D0C19 /* SkinAwd_Placeholder1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SkinAwd_Placeholder1.m; sourceTree = "<group>"; };
+		8440C85819CC627E009D0C19 /* SkinAwd_Ribbon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkinAwd_Ribbon.h; sourceTree = "<group>"; };
+		8440C85919CC627E009D0C19 /* SkinAwd_Ribbon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SkinAwd_Ribbon.m; sourceTree = "<group>"; };
 		8440C85A19CC627E009D0C19 /* SkinAwd_Placeholder2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkinAwd_Placeholder2.h; sourceTree = "<group>"; };
 		8440C85B19CC627E009D0C19 /* SkinAwd_Placeholder2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SkinAwd_Placeholder2.m; sourceTree = "<group>"; };
 		8440C85E19CC627E009D0C19 /* madeIn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = madeIn.png; sourceTree = "<group>"; };
@@ -1441,8 +1443,8 @@
 				8440C85519CC627E009D0C19 /* SkinAwd_Medal1st.m */,
 				8440C85619CC627E009D0C19 /* SkinAwd_Medal2nd.h */,
 				8440C85719CC627E009D0C19 /* SkinAwd_Medal2nd.m */,
-				8440C85819CC627E009D0C19 /* SkinAwd_Placeholder1.h */,
-				8440C85919CC627E009D0C19 /* SkinAwd_Placeholder1.m */,
+				8440C85819CC627E009D0C19 /* SkinAwd_Ribbon.h */,
+				8440C85919CC627E009D0C19 /* SkinAwd_Ribbon.m */,
 				8440C85A19CC627E009D0C19 /* SkinAwd_Placeholder2.h */,
 				8440C85B19CC627E009D0C19 /* SkinAwd_Placeholder2.m */,
 			);
@@ -1452,6 +1454,7 @@
 		8440C83E19CC627E009D0C19 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				7F03782819E325B100198CE8 /* ribbon.png */,
 				8440C83F19CC627E009D0C19 /* bestChoice2.png */,
 				8440C84019CC627E009D0C19 /* bestChoise1.png */,
 				8440C84119CC627E009D0C19 /* bestChoise3.png */,
@@ -1771,6 +1774,7 @@
 				8440C91E19CC627E009D0C19 /* logo_vw_256.png in Resources */,
 				8440C8D419CC627E009D0C19 /* logo_opel_128.png in Resources */,
 				8440C8C219CC627E009D0C19 /* logo_iveco_128.png in Resources */,
+				7F03782919E325B100198CE8 /* ribbon.png in Resources */,
 				8440C8C419CC627E009D0C19 /* logo_jeep_128.png in Resources */,
 				8440C8EC19CC627E009D0C19 /* logo_buick_256.png in Resources */,
 				7F2AD59B17EDE9B40096EC8D /* DETweetPaperClip@2x.png in Resources */,
@@ -1974,7 +1978,7 @@
 				7F2AD5CD17EDE9B40096EC8D /* SHKActivityIndicator.m in Sources */,
 				7F2AD59717EDE9B40096EC8D /* SHKItem.m in Sources */,
 				7F2AD5D117EDE9B40096EC8D /* SHKFormFieldCellSwitch.m in Sources */,
-				8440C93319CC627E009D0C19 /* SkinAwd_Placeholder1.m in Sources */,
+				8440C93319CC627E009D0C19 /* SkinAwd_Ribbon.m in Sources */,
 				8440C96619CC62AE009D0C19 /* VenueProvider.m in Sources */,
 				8440C92C19CC627E009D0C19 /* SkinAwd_BestChoise2.m in Sources */,
 				7FC4137517C7E8450025DD2C /* Foursquare2.m in Sources */,

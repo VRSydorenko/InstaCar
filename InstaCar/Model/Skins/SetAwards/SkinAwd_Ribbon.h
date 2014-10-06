@@ -1,5 +1,5 @@
 //
-//  SkinAwd_Placeholder1.h
+//  SkinAwd_Ribbon.h
 //  InstaCar
 //
 //  Created by VRS on 9/7/13.
@@ -8,8 +8,8 @@
 
 #import "SkinViewBase.h"
 
-@interface SkinAwd_Placeholder1 : SkinViewBase
+@interface SkinAwd_Ribbon : SkinViewBase
 
-@property (nonatomic) IBOutlet SkinElementImage *imgEmblem;
+@property (nonatomic) IBOutlet SkinElementLabel *labelText;
 
 @end

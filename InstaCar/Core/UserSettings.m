@@ -17,7 +17,7 @@
  */
 
 +(BOOL)isFullVersion{
-    return NO;
+    return YES;
 }
 
 +(BOOL)isIPhone4{

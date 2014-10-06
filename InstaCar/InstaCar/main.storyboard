@@ -228,7 +228,7 @@
                                     <action selector="btnGetProPressed:" destination="w6E-99-KFO" eventType="touchUpInside" id="zuA-TW-TX2"/>
                                 </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Install full version and enjoy the following benefits" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Fcd-vz-fPZ">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Install full version and enjoy the following benefits" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fcd-vz-fPZ">
                                 <rect key="frame" x="16" y="44" width="288" height="54"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
