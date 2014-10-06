@@ -11,6 +11,6 @@
 @interface SkinEmo_BestPresent : SkinViewBase
 
 @property (nonatomic) IBOutlet SkinElementLabel *labelAuto;
-@property (weak, nonatomic) IBOutlet SkinElementImage *imageBestPresent;
+@property (nonatomic) IBOutlet SkinElementLabel *labelText;
 
 @end
