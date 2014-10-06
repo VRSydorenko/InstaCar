@@ -10,6 +10,8 @@
 		7F002D21180B49C60076879F /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 7F002D20180B49C60076879F /* Settings.bundle */; };
 		7F03782919E325B100198CE8 /* ribbon.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F03782819E325B100198CE8 /* ribbon.png */; };
 		7F03782B19E3309000198CE8 /* gift.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F03782A19E3309000198CE8 /* gift.png */; };
+		7F03782E19E3385B00198CE8 /* SkinVersus_Finish.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F03782D19E3385B00198CE8 /* SkinVersus_Finish.m */; };
+		7F03783119E3397600198CE8 /* racingFlags.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F03783019E3397600198CE8 /* racingFlags.png */; };
 		7F15FC7219E0406E0068F9A0 /* DueDate.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7F15FC7119E0406E0068F9A0 /* DueDate.ttf */; };
 		7F1767AC17C76F0F00724BD6 /* CaptureSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F1767AB17C76F0F00724BD6 /* CaptureSessionManager.m */; };
 		7F27671C1791E80000A1C1A0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7F27671A1791E80000A1C1A0 /* InfoPlist.strings */; };
@@ -315,6 +317,9 @@
 		7F02DCA719E17C5E0042750C /* logoOverlay@2x.psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = "logoOverlay@2x.psd"; sourceTree = "<group>"; };
 		7F03782819E325B100198CE8 /* ribbon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ribbon.png; sourceTree = "<group>"; };
 		7F03782A19E3309000198CE8 /* gift.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gift.png; sourceTree = "<group>"; };
+		7F03782C19E3385B00198CE8 /* SkinVersus_Finish.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkinVersus_Finish.h; sourceTree = "<group>"; };
+		7F03782D19E3385B00198CE8 /* SkinVersus_Finish.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SkinVersus_Finish.m; sourceTree = "<group>"; };
+		7F03783019E3397600198CE8 /* racingFlags.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = racingFlags.png; sourceTree = "<group>"; };
 		7F15FC7119E0406E0068F9A0 /* DueDate.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = DueDate.ttf; sourceTree = "<group>"; };
 		7F1767AA17C76F0F00724BD6 /* CaptureSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CaptureSessionManager.h; sourceTree = "<group>"; };
 		7F1767AB17C76F0F00724BD6 /* CaptureSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CaptureSessionManager.m; sourceTree = "<group>"; };
@@ -764,6 +769,14 @@
 			);
 			name = PSD;
 			path = "Supporting Files/PSD";
+			sourceTree = "<group>";
+		};
+		7F03782F19E3397600198CE8 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				7F03783019E3397600198CE8 /* racingFlags.png */,
+			);
+			path = Images;
 			sourceTree = "<group>";
 		};
 		7F2767051791E7FF00A1C1A0 = {
@@ -1550,9 +1563,12 @@
 		8440C89319CC627E009D0C19 /* SetVersus */ = {
 			isa = PBXGroup;
 			children = (
+				7F03782F19E3397600198CE8 /* Images */,
 				8440C89419CC627E009D0C19 /* SetVersus.h */,
 				8440C89519CC627E009D0C19 /* SetVersus.m */,
 				8440C89619CC627E009D0C19 /* SetVersus.xib */,
+				7F03782C19E3385B00198CE8 /* SkinVersus_Finish.h */,
+				7F03782D19E3385B00198CE8 /* SkinVersus_Finish.m */,
 				8440C89719CC627E009D0C19 /* SkinVersus_DriftTime.h */,
 				8440C89819CC627E009D0C19 /* SkinVersus_DriftTime.m */,
 				8440C89919CC627E009D0C19 /* SkinVersus_RaceTime.h */,
@@ -1761,6 +1777,7 @@
 				8440C91319CC627E009D0C19 /* logo_porsche_256.png in Resources */,
 				8440C8D519CC627E009D0C19 /* logo_peugeot_128.png in Resources */,
 				8440C92019CC627E009D0C19 /* logo_anycar.png in Resources */,
+				7F03783119E3397600198CE8 /* racingFlags.png in Resources */,
 				8440C90919CC627E009D0C19 /* logo_mazda_256.png in Resources */,
 				8440C91919CC627E009D0C19 /* logo_subaru_256.png in Resources */,
 				8440C92819CC627E009D0C19 /* medal1st.png in Resources */,
@@ -1906,6 +1923,7 @@
 				8440C94E19CC627E009D0C19 /* SkinEmo_BestPresent.m in Sources */,
 				8440C94C19CC627E009D0C19 /* SetEmotions.m in Sources */,
 				7F2AD5A517EDE9B40096EC8D /* SHKPhotoAlbum.m in Sources */,
+				7F03782E19E3385B00198CE8 /* SkinVersus_Finish.m in Sources */,
 				8440C95A19CC627E009D0C19 /* SkinViewBase.m in Sources */,
 				8440C96519CC62AE009D0C19 /* SkinProvider.m in Sources */,
 				8440C92B19CC627E009D0C19 /* SkinAwd_BestChoise.m in Sources */,

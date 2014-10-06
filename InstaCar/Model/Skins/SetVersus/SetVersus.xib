@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6245" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6245" systemVersion="14A379a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment defaultVersion="1792" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
@@ -159,11 +159,66 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="569" y="480"/>
+            <point key="canvasLocation" x="916" y="682"/>
+        </view>
+        <view tag="3" contentMode="scaleToFill" id="g7Z-iL-VYB" customClass="SkinVersus_Finish">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="320"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YBt-bg-sAa">
+                    <rect key="frame" x="0.0" y="240" width="320" height="80"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="racingFlags.png" translatesAutoresizingMaskIntoConstraints="NO" id="NzM-fB-nMh" customClass="SkinElementImage">
+                            <rect key="frame" x="96" y="1" width="129" height="79"/>
+                        </imageView>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_anycar.png" translatesAutoresizingMaskIntoConstraints="NO" id="vRq-Fb-GCj" customClass="SkinElementImage">
+                            <rect key="frame" x="233" y="20" width="87" height="60"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="60" id="EbX-YE-0PV"/>
+                                <constraint firstAttribute="width" constant="87" id="c5Q-Ec-YMN"/>
+                            </constraints>
+                        </imageView>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_anycar.png" translatesAutoresizingMaskIntoConstraints="NO" id="k8C-eB-gvG" customClass="SkinElementImage">
+                            <rect key="frame" x="0.0" y="20" width="87" height="60"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="60" id="UeV-eV-vx2"/>
+                                <constraint firstAttribute="width" constant="87" id="mPR-h6-a1e"/>
+                            </constraints>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="NzM-fB-nMh" firstAttribute="top" secondItem="YBt-bg-sAa" secondAttribute="top" constant="1" id="9e4-C5-n5F"/>
+                        <constraint firstItem="NzM-fB-nMh" firstAttribute="leading" secondItem="k8C-eB-gvG" secondAttribute="trailing" constant="9" id="CDk-GZ-tNO"/>
+                        <constraint firstItem="vRq-Fb-GCj" firstAttribute="leading" secondItem="NzM-fB-nMh" secondAttribute="trailing" constant="8" id="FMy-6C-Cbu"/>
+                        <constraint firstItem="k8C-eB-gvG" firstAttribute="leading" secondItem="YBt-bg-sAa" secondAttribute="leading" id="Ilb-KW-inW"/>
+                        <constraint firstAttribute="trailing" secondItem="vRq-Fb-GCj" secondAttribute="trailing" id="MKJ-UV-2zZ"/>
+                        <constraint firstAttribute="bottom" secondItem="NzM-fB-nMh" secondAttribute="bottom" id="WP2-dN-PI0"/>
+                        <constraint firstAttribute="height" constant="80" id="YzE-nO-3XL"/>
+                        <constraint firstAttribute="bottom" secondItem="vRq-Fb-GCj" secondAttribute="bottom" id="dUm-f5-PWL"/>
+                        <constraint firstAttribute="bottom" secondItem="k8C-eB-gvG" secondAttribute="bottom" id="lpT-Bq-FGy"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="YBt-bg-sAa" firstAttribute="leading" secondItem="g7Z-iL-VYB" secondAttribute="leading" id="68i-kw-TiR"/>
+                <constraint firstItem="YBt-bg-sAa" firstAttribute="top" secondItem="g7Z-iL-VYB" secondAttribute="top" constant="240" id="HKR-qI-63Q"/>
+                <constraint firstAttribute="trailing" secondItem="YBt-bg-sAa" secondAttribute="trailing" id="fKY-0i-15d"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="constraintTopMargin" destination="HKR-qI-63Q" id="CT1-Nq-zWg"/>
+                <outlet property="imgEmblem1" destination="k8C-eB-gvG" id="gWi-Ul-dJ5"/>
+                <outlet property="imgEmblem2" destination="vRq-Fb-GCj" id="c5I-NV-v5H"/>
+                <outlet property="movingView" destination="YBt-bg-sAa" id="Lge-8W-Qzq"/>
+            </connections>
+            <point key="canvasLocation" x="818" y="555"/>
         </view>
     </objects>
     <resources>
         <image name="logo_anycar.png" width="64" height="64"/>
+        <image name="racingFlags.png" width="287" height="177"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
