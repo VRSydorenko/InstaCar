@@ -15,7 +15,7 @@
 #import "LogoNameLeft.h"
 #import "LocationSimple.h"
 #import "SkinLogoCountryBadge.h"
-#import "SkinBasic_OneAtFinish.h"
+#import "SkinBasic_LogoNameRect.h"
 #import "SkinBasic_Info1.h"
 #import "SkinBasic_Info2.h"
 #import "SkinBasic_Info3.h"

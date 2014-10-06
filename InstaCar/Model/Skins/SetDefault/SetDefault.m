@@ -37,8 +37,8 @@
             skin = (LocationSimple*)object;
         } else if ([object isKindOfClass:[SkinLogoCountryBadge class]]){
             skin = (SkinLogoCountryBadge*)object;
-        } else if ([object isKindOfClass:[SkinBasic_OneAtFinish class]]){
-            skin = (SkinBasic_OneAtFinish*)object;
+        } else if ([object isKindOfClass:[SkinBasic_LogoNameRect class]]){
+            skin = (SkinBasic_LogoNameRect*)object;
         } else if ([object isKindOfClass:[SkinBasic_Info1 class]]){
             skin = (SkinBasic_Info1*)object;
         } else if ([object isKindOfClass:[SkinBasic_Info2 class]]){

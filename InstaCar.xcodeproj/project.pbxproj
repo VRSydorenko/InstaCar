@@ -258,7 +258,7 @@
 		8440C94119CC627E009D0C19 /* SkinBasic_Info2.m in Sources */ = {isa = PBXBuildFile; fileRef = 8440C87319CC627E009D0C19 /* SkinBasic_Info2.m */; };
 		8440C94219CC627E009D0C19 /* SkinBasic_Info3.m in Sources */ = {isa = PBXBuildFile; fileRef = 8440C87519CC627E009D0C19 /* SkinBasic_Info3.m */; };
 		8440C94319CC627E009D0C19 /* SkinBasic_MadeIn.m in Sources */ = {isa = PBXBuildFile; fileRef = 8440C87719CC627E009D0C19 /* SkinBasic_MadeIn.m */; };
-		8440C94419CC627E009D0C19 /* SkinBasic_OneAtFinish.m in Sources */ = {isa = PBXBuildFile; fileRef = 8440C87919CC627E009D0C19 /* SkinBasic_OneAtFinish.m */; };
+		8440C94419CC627E009D0C19 /* SkinBasic_LogoNameRect.m in Sources */ = {isa = PBXBuildFile; fileRef = 8440C87919CC627E009D0C19 /* SkinBasic_LogoNameRect.m */; };
 		8440C94519CC627E009D0C19 /* SkinBasic_Travel1.m in Sources */ = {isa = PBXBuildFile; fileRef = 8440C87B19CC627E009D0C19 /* SkinBasic_Travel1.m */; };
 		8440C94619CC627E009D0C19 /* SkinBasic_Travel2.m in Sources */ = {isa = PBXBuildFile; fileRef = 8440C87D19CC627E009D0C19 /* SkinBasic_Travel2.m */; };
 		8440C94719CC627E009D0C19 /* SkinLogoCountryBadge.m in Sources */ = {isa = PBXBuildFile; fileRef = 8440C87F19CC627E009D0C19 /* SkinLogoCountryBadge.m */; };
@@ -665,8 +665,8 @@
 		8440C87519CC627E009D0C19 /* SkinBasic_Info3.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SkinBasic_Info3.m; sourceTree = "<group>"; };
 		8440C87619CC627E009D0C19 /* SkinBasic_MadeIn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkinBasic_MadeIn.h; sourceTree = "<group>"; };
 		8440C87719CC627E009D0C19 /* SkinBasic_MadeIn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SkinBasic_MadeIn.m; sourceTree = "<group>"; };
-		8440C87819CC627E009D0C19 /* SkinBasic_OneAtFinish.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkinBasic_OneAtFinish.h; sourceTree = "<group>"; };
-		8440C87919CC627E009D0C19 /* SkinBasic_OneAtFinish.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SkinBasic_OneAtFinish.m; sourceTree = "<group>"; };
+		8440C87819CC627E009D0C19 /* SkinBasic_LogoNameRect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkinBasic_LogoNameRect.h; sourceTree = "<group>"; };
+		8440C87919CC627E009D0C19 /* SkinBasic_LogoNameRect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SkinBasic_LogoNameRect.m; sourceTree = "<group>"; };
 		8440C87A19CC627E009D0C19 /* SkinBasic_Travel1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkinBasic_Travel1.h; sourceTree = "<group>"; };
 		8440C87B19CC627E009D0C19 /* SkinBasic_Travel1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SkinBasic_Travel1.m; sourceTree = "<group>"; };
 		8440C87C19CC627E009D0C19 /* SkinBasic_Travel2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkinBasic_Travel2.h; sourceTree = "<group>"; };
@@ -1505,8 +1505,8 @@
 				8440C87519CC627E009D0C19 /* SkinBasic_Info3.m */,
 				8440C87619CC627E009D0C19 /* SkinBasic_MadeIn.h */,
 				8440C87719CC627E009D0C19 /* SkinBasic_MadeIn.m */,
-				8440C87819CC627E009D0C19 /* SkinBasic_OneAtFinish.h */,
-				8440C87919CC627E009D0C19 /* SkinBasic_OneAtFinish.m */,
+				8440C87819CC627E009D0C19 /* SkinBasic_LogoNameRect.h */,
+				8440C87919CC627E009D0C19 /* SkinBasic_LogoNameRect.m */,
 				8440C87A19CC627E009D0C19 /* SkinBasic_Travel1.h */,
 				8440C87B19CC627E009D0C19 /* SkinBasic_Travel1.m */,
 				8440C87C19CC627E009D0C19 /* SkinBasic_Travel2.h */,
@@ -1906,7 +1906,7 @@
 				7F2AD5D517EDE9B40096EC8D /* SHKFormFieldOptionPickerSettings.m in Sources */,
 				7F419E2717D65EBB00255E56 /* CellSkinSet.m in Sources */,
 				7F2AD57717EDE9B40096EC8D /* DefaultSHKConfigurator.m in Sources */,
-				8440C94419CC627E009D0C19 /* SkinBasic_OneAtFinish.m in Sources */,
+				8440C94419CC627E009D0C19 /* SkinBasic_LogoNameRect.m in Sources */,
 				7F2AD57817EDE9B40096EC8D /* SHKConfiguration.m in Sources */,
 				8440C94019CC627E009D0C19 /* SkinBasic_Info1.m in Sources */,
 				7FCD262C17F5BFEC00BFDF4E /* SMPageControl.m in Sources */,
