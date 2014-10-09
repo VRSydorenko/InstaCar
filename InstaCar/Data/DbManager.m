@@ -18,23 +18,34 @@ typedef enum { // Do not change the numbers!
 
 @implementation DbManager{
     sqlite3 *instacarDb;
+    BOOL firstLaunch;
+    BOOL isOpened;
 }
 
 -(id) init{
     self = [super init];
     if (self){
-        [self initDatabase];
+        firstLaunch = NO;
+        isOpened = NO;
+        [self open];
     }
     return self;
 }
 
+-(void) open{
+    [self initDatabase];
+}
 -(void) close{
     sqlite3_close(instacarDb);
+    isOpened = NO;
 }
 
 #pragma mark Initialization
 
 -(void) initDatabase{
+    if (isOpened)
+        return;
+    
     // Get the documents directory
     NSArray* dirPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *docsDir = [dirPaths objectAtIndex:0];
@@ -48,60 +59,67 @@ typedef enum { // Do not change the numbers!
     
     NSDictionary *customAutosSnapshot = [[NSDictionary alloc] init];
     BOOL oldDbExists = [[NSFileManager defaultManager] fileExistsAtPath:lastDbPath];
-    if ([Utils appVersionDiffers] && YES == oldDbExists){
-        // open last db
-        const char *lastDbPathUTF = [lastDbPath UTF8String];
-        if (sqlite3_open(lastDbPathUTF, &instacarDb) == SQLITE_OK){
-            DLog(@"Old database opened!");
-        } else {
-            DLog(@"Failed to open old database");
-            DLog(@"Info:%s", sqlite3_errmsg(instacarDb));
+    if (firstLaunch){ // tha app is opening at first launch, not being loaded from the background
+        if ([Utils appVersionDiffers] && YES == oldDbExists){
+            // open last db
+            const char *lastDbPathUTF = [lastDbPath UTF8String];
+            if (sqlite3_open(lastDbPathUTF, &instacarDb) == SQLITE_OK){
+                DLog(@"Old database opened!");
+            } else {
+                DLog(@"Failed to open old database");
+                DLog(@"Info:%s", sqlite3_errmsg(instacarDb));
+            }
+        
+            // read custom cars
+            customAutosSnapshot = [self getCustomAutosSnapshot];
+            DLog(@"%lu custom cars read from the old database", (unsigned long)customAutosSnapshot.count);
+            
+            // close last
+            if (sqlite3_close(instacarDb) == SQLITE_OK){
+                DLog(@"Old database closed!");
+            } else {
+                DLog(@"Failed to close old database");
+                DLog(@"Info:%s", sqlite3_errmsg(instacarDb));
+            }
         }
-        
-        // read custom cars
-        customAutosSnapshot = [self getCustomAutosSnapshot];
-        DLog(@"%lu custom cars read from the old database", (unsigned long)customAutosSnapshot.count);
-        
-        // close last
-        if (sqlite3_close(instacarDb) == SQLITE_OK){
-            DLog(@"Old database closed!");
-        } else {
-            DLog(@"Failed to close old database");
-            DLog(@"Info:%s", sqlite3_errmsg(instacarDb));
+    
+        // copy new database from resources to user Documents
+        if (NO == [[NSFileManager defaultManager] fileExistsAtPath:currDbPath]){
+            [self overwriteDbAtPath:currDbPath];
         }
     }
     
-    // copy new database from resources to user Documents
-    if (NO == [[NSFileManager defaultManager] fileExistsAtPath:currDbPath]){
-        [self overwriteDbAtPath:currDbPath];
-    }
-
     // finally open current db
     const char *dbpath = [currDbPath UTF8String];
     if (sqlite3_open(dbpath, &instacarDb) == SQLITE_OK)
     {
         DLog(@"Current database opened!");
+        isOpened = YES;
     } else {
         DLog(@"Failed to open/create current database");
         DLog(@"Info:%s", sqlite3_errmsg(instacarDb));
     }
     
-    // insert custom cars in new
-    [self restoreCustomAutosFromSnapshot:customAutosSnapshot];
+    if (firstLaunch){
+        // insert custom cars in new
+        [self restoreCustomAutosFromSnapshot:customAutosSnapshot];
     
-    // update app version
-    [UserSettings setStoredAppVersion];
+        // update app version
+        [UserSettings setStoredAppVersion];
     
-    // delete the old database
-    if (YES == oldDbExists){
-        NSError *error = nil;
-        [[NSFileManager defaultManager] removeItemAtPath:lastDbPath error:&error];
-        if (error){
-            DLog(@"Error deleting old db file: %@", error.localizedDescription);
-        } else {
-            DLog(@"The old database deleted");
+        // delete the old database
+        if (YES == oldDbExists){
+            NSError *error = nil;
+            [[NSFileManager defaultManager] removeItemAtPath:lastDbPath error:&error];
+            if (error){
+                DLog(@"Error deleting old db file: %@", error.localizedDescription);
+            } else {
+                DLog(@"The old database deleted");
+            }
         }
     }
+    
+    firstLaunch = NO;
 }
 
 -(void)overwriteDbAtPath:(NSString*)databasePath{

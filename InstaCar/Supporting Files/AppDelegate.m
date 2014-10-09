@@ -168,6 +168,8 @@
 {
     // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later. 
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+    
+    [self.dbManager close];
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application
@@ -177,6 +179,7 @@
 
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
+    [self.dbManager open];
     // if user has activated using iCloud in the app settings then sync the store
     if ([DataManager getUseICloud] == YES){
         [[NSUbiquitousKeyValueStore defaultStore] synchronize];

@@ -62,6 +62,7 @@
 @interface DbManager : NSObject
 
 -(id) init;
+-(void) open;
 -(void) close;
 
 #pragma mark Custom methods
