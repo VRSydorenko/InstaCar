@@ -25,7 +25,7 @@ typedef enum { // Do not change the numbers!
 -(id) init{
     self = [super init];
     if (self){
-        firstLaunch = YES;
+        firstLaunch = NO;
         isOpened = NO;
         [self open];
     }
