@@ -56,19 +56,20 @@
     FSVenue *venue = [self.nearbyVenues objectAtIndex:indexPath.row];
     
     cell.textVenueName.text =  venue.name;
-    cell.imgVenueIcon.image = [UIImage imageNamed:@"PinWhite.png"];;
+    cell.imgVenueIcon.image = [UIImage imageNamed:@"PinWhite.png"];
     
     if ([venue isKindOfClass:[FSGlobalVenue class]]){
         cell.imgVenueIcon.image = [UIImage imageNamed:@"Pin.png"];
     } else if (venue.iconURL && venue.iconURL.length > 0){
         UIImage *icon = [DataManager getIconForPath:venue.iconURL];
-        if (!icon){
-            NSURL *url = [NSURL URLWithString:venue.iconURL];
-            NSData *data = [NSData dataWithContentsOfURL:url];
-            icon = [UIImage imageWithData:data];
-            [DataManager addIcon:icon forPath:venue.iconURL];
+        if (icon){
+            //icon = [UIImage imageNamed:@"target.png"];
+            //NSURL *url = [NSURL URLWithString:venue.iconURL];
+            //NSData *data = [NSData dataWithContentsOfURL:url];
+            //icon = [UIImage imageWithData:data];
+            //[DataManager addIcon:icon forPath:venue.iconURL];
+            cell.imgVenueIcon.image = icon;
         }
-        cell.imgVenueIcon.image = icon;
     }
     
     return cell;

@@ -152,7 +152,8 @@ typedef enum { // Do not change the numbers!
             DLog(@"Added model: %@", name);
         } else {
             DLog(@"Failed to add model %@", name);
-            DLog(@"Info:%s", sqlite3_errmsg(instacarDb));
+            NSString *str = [NSString stringWithUTF8String:sqlite3_errmsg(instacarDb)];
+            DLog(@"Info:%s", [str UTF8String]);
         }
     } else {
         DLog(@"Error:%s", sqlite3_errmsg(instacarDb));

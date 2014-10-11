@@ -99,7 +99,7 @@
     NSMutableArray *iconPathsToLoad = [[NSMutableArray alloc] init];
     for (FSVenue *v in venues) {
         UIImage *icon = [DataManager getIconForPath:v.iconURL];
-        if (!icon && v.iconURL){
+        if (!icon && [v.iconURL length] > 0){
             [iconPathsToLoad addObject:v.iconURL];
         }
     }
