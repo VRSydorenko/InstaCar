@@ -26,7 +26,7 @@
 +(NSArray*)getSubmodelsOfModel:(NSUInteger)modelId; // type: AutoSubModel
 +(NSArray*)getSkinSets; // type: SkinSet
 +(UIImage*)getIconForPath:(NSString*)path;
-+(void)addIcon:(UIImage*)icon forPath:(NSString*)path;
++(void)addIcons:(NSDictionary*)icons;
 +(int)getIdOfAutoWithIndependentId:(NSUInteger)intId;
 +(int)getIndependentIdOfAutoWithDbId:(NSUInteger)dbId;
 

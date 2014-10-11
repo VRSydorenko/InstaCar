@@ -62,7 +62,6 @@
 @interface DbManager : NSObject
 
 -(id) init;
--(void) close;
 
 #pragma mark Custom methods
 
@@ -80,6 +79,6 @@
 -(int)getIdOfAutoWithIndependentId:(NSUInteger)indId;
 -(int)getIndependentIdOfAutoWithDbId:(NSUInteger)dbId;
 
--(void)addIcon:(UIImage*)icon forPath:(NSString*)iconPath;
+-(void)addIcons:(NSDictionary*)icons;
 
 @end

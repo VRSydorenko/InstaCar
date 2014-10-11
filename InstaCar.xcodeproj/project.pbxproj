@@ -87,6 +87,14 @@
 		7FCDF63C19CE3E7B006C70A0 /* iheart_256.png in Resources */ = {isa = PBXBuildFile; fileRef = 7FCDF63B19CE3E7B006C70A0 /* iheart_256.png */; };
 		7FEF908917D505E800C07A05 /* AutosVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FEF908817D505E800C07A05 /* AutosVC.m */; };
 		7FF3389317D4C0E700B046C4 /* SkinsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FF3389217D4C0E700B046C4 /* SkinsVC.m */; };
+		7FF4091919E9953F000B5CAD /* FMDatabase+InMemoryOnDiskIO.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FF4090319E9953F000B5CAD /* FMDatabase+InMemoryOnDiskIO.m */; };
+		7FF4091A19E9953F000B5CAD /* FMDatabase+FTS3.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FF4090619E9953F000B5CAD /* FMDatabase+FTS3.m */; };
+		7FF4091B19E9953F000B5CAD /* FMTokenizers.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FF4090819E9953F000B5CAD /* FMTokenizers.m */; };
+		7FF4091C19E9953F000B5CAD /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FF4090C19E9953F000B5CAD /* FMDatabase.m */; };
+		7FF4091D19E9953F000B5CAD /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FF4090E19E9953F000B5CAD /* FMDatabaseAdditions.m */; };
+		7FF4091E19E9953F000B5CAD /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FF4091019E9953F000B5CAD /* FMDatabasePool.m */; };
+		7FF4091F19E9953F000B5CAD /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FF4091219E9953F000B5CAD /* FMDatabaseQueue.m */; };
+		7FF4092019E9953F000B5CAD /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FF4091519E9953F000B5CAD /* FMResultSet.m */; };
 		8415F44819587F2500708437 /* SkinElementLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8415F44719587F2500708437 /* SkinElementLabel.m */; };
 		8416962819C3329000F65B76 /* veteranTypewriter.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8416962719C3329000F65B76 /* veteranTypewriter.ttf */; };
 		841988CC19C87B4000C73A19 /* imgCmdCancelNormal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 841988BF19C87B4000C73A19 /* imgCmdCancelNormal@2x.png */; };
@@ -463,6 +471,24 @@
 		7FEF908817D505E800C07A05 /* AutosVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AutosVC.m; path = InstaCar/AutosVC.m; sourceTree = "<group>"; };
 		7FF3389117D4C0E700B046C4 /* SkinsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SkinsVC.h; path = InstaCar/SkinsVC.h; sourceTree = "<group>"; };
 		7FF3389217D4C0E700B046C4 /* SkinsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SkinsVC.m; path = InstaCar/SkinsVC.m; sourceTree = "<group>"; };
+		7FF4090219E9953F000B5CAD /* FMDatabase+InMemoryOnDiskIO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FMDatabase+InMemoryOnDiskIO.h"; sourceTree = "<group>"; };
+		7FF4090319E9953F000B5CAD /* FMDatabase+InMemoryOnDiskIO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "FMDatabase+InMemoryOnDiskIO.m"; sourceTree = "<group>"; };
+		7FF4090519E9953F000B5CAD /* FMDatabase+FTS3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FMDatabase+FTS3.h"; sourceTree = "<group>"; };
+		7FF4090619E9953F000B5CAD /* FMDatabase+FTS3.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "FMDatabase+FTS3.m"; sourceTree = "<group>"; };
+		7FF4090719E9953F000B5CAD /* FMTokenizers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMTokenizers.h; sourceTree = "<group>"; };
+		7FF4090819E9953F000B5CAD /* FMTokenizers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMTokenizers.m; sourceTree = "<group>"; };
+		7FF4090919E9953F000B5CAD /* fts3_tokenizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fts3_tokenizer.h; sourceTree = "<group>"; };
+		7FF4090B19E9953F000B5CAD /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
+		7FF4090C19E9953F000B5CAD /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabase.m; sourceTree = "<group>"; };
+		7FF4090D19E9953F000B5CAD /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseAdditions.h; sourceTree = "<group>"; };
+		7FF4090E19E9953F000B5CAD /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseAdditions.m; sourceTree = "<group>"; };
+		7FF4090F19E9953F000B5CAD /* FMDatabasePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabasePool.h; sourceTree = "<group>"; };
+		7FF4091019E9953F000B5CAD /* FMDatabasePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabasePool.m; sourceTree = "<group>"; };
+		7FF4091119E9953F000B5CAD /* FMDatabaseQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseQueue.h; sourceTree = "<group>"; };
+		7FF4091219E9953F000B5CAD /* FMDatabaseQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseQueue.m; sourceTree = "<group>"; };
+		7FF4091319E9953F000B5CAD /* FMDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDB.h; sourceTree = "<group>"; };
+		7FF4091419E9953F000B5CAD /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
+		7FF4091519E9953F000B5CAD /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
 		8415F44619587F2500708437 /* SkinElementLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SkinElementLabel.h; path = InstaCar/Core/DrawingElements/SkinElementLabel.h; sourceTree = "<group>"; };
 		8415F44719587F2500708437 /* SkinElementLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SkinElementLabel.m; path = InstaCar/Core/DrawingElements/SkinElementLabel.m; sourceTree = "<group>"; };
 		8416962719C3329000F65B76 /* veteranTypewriter.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = veteranTypewriter.ttf; sourceTree = "<group>"; };
@@ -1109,6 +1135,7 @@
 		7F3871DB17BE4F1000D8E39D /* 3rdParty */ = {
 			isa = PBXGroup;
 			children = (
+				7FF4090019E9953F000B5CAD /* FMDB */,
 				7F4F683D17F6F97600F1017B /* ImageEditor */,
 				7F2AD48217EDE9B40096EC8D /* ShareKit */,
 				7FC4136A17C7E8450025DD2C /* Foursquare */,
@@ -1237,6 +1264,55 @@
 				7FC4137417C7E8450025DD2C /* FSVenue.m */,
 			);
 			path = Foursquare;
+			sourceTree = "<group>";
+		};
+		7FF4090019E9953F000B5CAD /* FMDB */ = {
+			isa = PBXGroup;
+			children = (
+				7FF4090119E9953F000B5CAD /* extra */,
+				7FF4090A19E9953F000B5CAD /* fmdb */,
+			);
+			path = FMDB;
+			sourceTree = "<group>";
+		};
+		7FF4090119E9953F000B5CAD /* extra */ = {
+			isa = PBXGroup;
+			children = (
+				7FF4090219E9953F000B5CAD /* FMDatabase+InMemoryOnDiskIO.h */,
+				7FF4090319E9953F000B5CAD /* FMDatabase+InMemoryOnDiskIO.m */,
+				7FF4090419E9953F000B5CAD /* fts3 */,
+			);
+			path = extra;
+			sourceTree = "<group>";
+		};
+		7FF4090419E9953F000B5CAD /* fts3 */ = {
+			isa = PBXGroup;
+			children = (
+				7FF4090519E9953F000B5CAD /* FMDatabase+FTS3.h */,
+				7FF4090619E9953F000B5CAD /* FMDatabase+FTS3.m */,
+				7FF4090719E9953F000B5CAD /* FMTokenizers.h */,
+				7FF4090819E9953F000B5CAD /* FMTokenizers.m */,
+				7FF4090919E9953F000B5CAD /* fts3_tokenizer.h */,
+			);
+			path = fts3;
+			sourceTree = "<group>";
+		};
+		7FF4090A19E9953F000B5CAD /* fmdb */ = {
+			isa = PBXGroup;
+			children = (
+				7FF4090B19E9953F000B5CAD /* FMDatabase.h */,
+				7FF4090C19E9953F000B5CAD /* FMDatabase.m */,
+				7FF4090D19E9953F000B5CAD /* FMDatabaseAdditions.h */,
+				7FF4090E19E9953F000B5CAD /* FMDatabaseAdditions.m */,
+				7FF4090F19E9953F000B5CAD /* FMDatabasePool.h */,
+				7FF4091019E9953F000B5CAD /* FMDatabasePool.m */,
+				7FF4091119E9953F000B5CAD /* FMDatabaseQueue.h */,
+				7FF4091219E9953F000B5CAD /* FMDatabaseQueue.m */,
+				7FF4091319E9953F000B5CAD /* FMDB.h */,
+				7FF4091419E9953F000B5CAD /* FMResultSet.h */,
+				7FF4091519E9953F000B5CAD /* FMResultSet.m */,
+			);
+			path = fmdb;
 			sourceTree = "<group>";
 		};
 		841988BC19C87B4000C73A19 /* Images */ = {
@@ -1905,9 +1981,11 @@
 				7F544A3918085378001FFEC3 /* ALAssetsLibrary+CustomPhotoAlbum.m in Sources */,
 				7F2AD5D517EDE9B40096EC8D /* SHKFormFieldOptionPickerSettings.m in Sources */,
 				7F419E2717D65EBB00255E56 /* CellSkinSet.m in Sources */,
+				7FF4091A19E9953F000B5CAD /* FMDatabase+FTS3.m in Sources */,
 				7F2AD57717EDE9B40096EC8D /* DefaultSHKConfigurator.m in Sources */,
 				8440C94419CC627E009D0C19 /* SkinBasic_LogoNameRect.m in Sources */,
 				7F2AD57817EDE9B40096EC8D /* SHKConfiguration.m in Sources */,
+				7FF4091D19E9953F000B5CAD /* FMDatabaseAdditions.m in Sources */,
 				8440C94019CC627E009D0C19 /* SkinBasic_Info1.m in Sources */,
 				7FCD262C17F5BFEC00BFDF4E /* SMPageControl.m in Sources */,
 				7F2AD57C17EDE9B40096EC8D /* SHKSharerDelegate.m in Sources */,
@@ -1930,6 +2008,7 @@
 				7F4CB677180978CF008B5CA2 /* CustomSHKConfigurator.m in Sources */,
 				84213FB619C9B2570083C5BD /* UIView+MyExtentions.m in Sources */,
 				7F2AD5C417EDE9B40096EC8D /* SHKiOSTwitter.m in Sources */,
+				7FF4091C19E9953F000B5CAD /* FMDatabase.m in Sources */,
 				7FC4137917C7E8450025DD2C /* FSVenue.m in Sources */,
 				7F2AD57B17EDE9B40096EC8D /* SHKSharer.m in Sources */,
 				7F4F684817F6FDF500F1017B /* ImageEditor.m in Sources */,
@@ -1937,6 +2016,7 @@
 				7F4CB67A180978CF008B5CA2 /* UserSettings.m in Sources */,
 				7F2AD59517EDE9B40096EC8D /* SHKXMLResponseParser.m in Sources */,
 				8440C8A719CC627E009D0C19 /* AutoSubmodel.m in Sources */,
+				7FF4091F19E9953F000B5CAD /* FMDatabaseQueue.m in Sources */,
 				8440C96D19CC638B009D0C19 /* AppDelegate.m in Sources */,
 				7F2AD5A017EDE9B40096EC8D /* SHKCopy.m in Sources */,
 				8440C94919CC627E009D0C19 /* SkinSimple2.m in Sources */,
@@ -1944,6 +2024,7 @@
 				8440C95619CC627E009D0C19 /* SkinVersus_TwoAtFinish.m in Sources */,
 				8440C94319CC627E009D0C19 /* SkinBasic_MadeIn.m in Sources */,
 				8440C98019CC640B009D0C19 /* LocationsVC.m in Sources */,
+				7FF4091E19E9953F000B5CAD /* FMDatabasePool.m in Sources */,
 				7FC4137817C7E8450025DD2C /* FSTargetCallback.m in Sources */,
 				7F5C46671811E87900DF94B1 /* ProInfoVC.m in Sources */,
 				7F1767AC17C76F0F00724BD6 /* CaptureSessionManager.m in Sources */,
@@ -1952,6 +2033,7 @@
 				8440C95219CC627E009D0C19 /* SetVersus.m in Sources */,
 				84213FB919C9B2760083C5BD /* UIButton+MyExtensions.m in Sources */,
 				8440C93D19CC627E009D0C19 /* SkinBasic_BestIn.m in Sources */,
+				7FF4091B19E9953F000B5CAD /* FMTokenizers.m in Sources */,
 				7F2AD5A617EDE9B40096EC8D /* SHKTextMessage.m in Sources */,
 				7F2AD5D617EDE9B40096EC8D /* SHKFormFieldSettings.m in Sources */,
 				7FEF908917D505E800C07A05 /* AutosVC.m in Sources */,
@@ -1976,9 +2058,11 @@
 				8440C94219CC627E009D0C19 /* SkinBasic_Info3.m in Sources */,
 				8440C92919CC627E009D0C19 /* SetAwards.m in Sources */,
 				7FC4137717C7E8450025DD2C /* FSRequester.m in Sources */,
+				7FF4092019E9953F000B5CAD /* FMResultSet.m in Sources */,
 				8440C93F19CC627E009D0C19 /* SkinBasic_Green2.m in Sources */,
 				7F2AD5D217EDE9B40096EC8D /* SHKFormFieldCellText.m in Sources */,
 				8440C94F19CC627E009D0C19 /* SkinEmo_IHeartLogo.m in Sources */,
+				7FF4091919E9953F000B5CAD /* FMDatabase+InMemoryOnDiskIO.m in Sources */,
 				7F2AD59617EDE9B40096EC8D /* SHK.m in Sources */,
 				8440C94819CC627E009D0C19 /* SkinSimple.m in Sources */,
 				7F2AD5B917EDE9B40096EC8D /* SHKInstagram.m in Sources */,

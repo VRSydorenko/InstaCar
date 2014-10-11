@@ -70,8 +70,8 @@
 +(UIImage*)getIconForPath:(NSString*)path{
     return [[self dbManager] getIconForPath:path];
 }
-+(void)addIcon:(UIImage*)icon forPath:(NSString*)path{
-    [[self dbManager] addIcon:icon forPath:path];
++(void)addIcons:(NSDictionary*)icons{
+    [[self dbManager] addIcons:icons];
 }
 
 +(int)getIdOfAutoWithIndependentId:(NSUInteger)intId{
