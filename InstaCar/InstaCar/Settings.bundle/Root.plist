@@ -15,16 +15,6 @@
 			<false/>
 		</dict>
 		<dict>
-			<key>Type</key>
-			<string>PSToggleSwitchSpecifier</string>
-			<key>Title</key>
-			<string>Use iCloud</string>
-			<key>Key</key>
-			<string>preference_use_icloud</string>
-			<key>DefaultValue</key>
-			<false/>
-		</dict>
-		<dict>
 			<key>DefaultValue</key>
 			<true/>
 			<key>Key</key>

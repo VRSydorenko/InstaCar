@@ -126,7 +126,7 @@ typedef enum {
 }
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return 2;
+    return 1 /*2*/; // The section where it is possible to add a new car is disabled for now. Woll work in the future.
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{

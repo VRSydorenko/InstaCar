@@ -61,6 +61,8 @@
 }
 
 +(BOOL)getUseICloud{
+    return NO; // Currently disabled. Will work in the future.
+    
     NSObject *configuredValue = [[NSUserDefaults standardUserDefaults] objectForKey:PREF_USE_ICLOUD];
     if (nil == configuredValue){
         return YES;
