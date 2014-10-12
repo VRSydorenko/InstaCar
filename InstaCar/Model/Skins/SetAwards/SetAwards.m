@@ -33,8 +33,8 @@
             skin = (SkinAwd_BestChoise3*)object;
         } else if ([object isKindOfClass:[SkinAwd_BestLuxury class]]){
             skin = (SkinAwd_BestLuxury*)object;
-        } else if ([object isKindOfClass:[SkinAwd_BestTravel class]]){
-            skin = (SkinAwd_BestTravel*)object;
+        } else if ([object isKindOfClass:[SkinAwd_Raiting class]]){
+            skin = (SkinAwd_Raiting*)object;
         } else if ([object isKindOfClass:[SkinAwd_Eco class]]){
             skin = (SkinAwd_Eco*)object;
         } else if ([object isKindOfClass:[SkinAwd_Medal1st class]]){

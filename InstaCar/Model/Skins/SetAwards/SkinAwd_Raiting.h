@@ -1,5 +1,5 @@
 //
-//  SkinAwd_BestTravel.h
+//  SkinAwd_Raiting.h
 //  InstaCar
 //
 //  Created by VRS on 03/09/14.
@@ -8,6 +8,6 @@
 
 #import "SkinViewBase.h"
 
-@interface SkinAwd_BestTravel : SkinViewBase
+@interface SkinAwd_Raiting : SkinViewBase
 
 @end

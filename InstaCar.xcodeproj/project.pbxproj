@@ -245,7 +245,7 @@
 		8440C92C19CC627E009D0C19 /* SkinAwd_BestChoise2.m in Sources */ = {isa = PBXBuildFile; fileRef = 8440C84B19CC627E009D0C19 /* SkinAwd_BestChoise2.m */; };
 		8440C92D19CC627E009D0C19 /* SkinAwd_BestChoise3.m in Sources */ = {isa = PBXBuildFile; fileRef = 8440C84D19CC627E009D0C19 /* SkinAwd_BestChoise3.m */; };
 		8440C92E19CC627E009D0C19 /* SkinAwd_BestLuxury.m in Sources */ = {isa = PBXBuildFile; fileRef = 8440C84F19CC627E009D0C19 /* SkinAwd_BestLuxury.m */; };
-		8440C92F19CC627E009D0C19 /* SkinAwd_BestTravel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8440C85119CC627E009D0C19 /* SkinAwd_BestTravel.m */; };
+		8440C92F19CC627E009D0C19 /* SkinAwd_Raiting.m in Sources */ = {isa = PBXBuildFile; fileRef = 8440C85119CC627E009D0C19 /* SkinAwd_Raiting.m */; };
 		8440C93019CC627E009D0C19 /* SkinAwd_Eco.m in Sources */ = {isa = PBXBuildFile; fileRef = 8440C85319CC627E009D0C19 /* SkinAwd_Eco.m */; };
 		8440C93119CC627E009D0C19 /* SkinAwd_Medal1st.m in Sources */ = {isa = PBXBuildFile; fileRef = 8440C85519CC627E009D0C19 /* SkinAwd_Medal1st.m */; };
 		8440C93219CC627E009D0C19 /* SkinAwd_Medal2nd.m in Sources */ = {isa = PBXBuildFile; fileRef = 8440C85719CC627E009D0C19 /* SkinAwd_Medal2nd.m */; };
@@ -653,8 +653,8 @@
 		8440C84D19CC627E009D0C19 /* SkinAwd_BestChoise3.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SkinAwd_BestChoise3.m; sourceTree = "<group>"; };
 		8440C84E19CC627E009D0C19 /* SkinAwd_BestLuxury.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkinAwd_BestLuxury.h; sourceTree = "<group>"; };
 		8440C84F19CC627E009D0C19 /* SkinAwd_BestLuxury.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SkinAwd_BestLuxury.m; sourceTree = "<group>"; };
-		8440C85019CC627E009D0C19 /* SkinAwd_BestTravel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkinAwd_BestTravel.h; sourceTree = "<group>"; };
-		8440C85119CC627E009D0C19 /* SkinAwd_BestTravel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SkinAwd_BestTravel.m; sourceTree = "<group>"; };
+		8440C85019CC627E009D0C19 /* SkinAwd_Raiting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkinAwd_Raiting.h; sourceTree = "<group>"; };
+		8440C85119CC627E009D0C19 /* SkinAwd_Raiting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SkinAwd_Raiting.m; sourceTree = "<group>"; };
 		8440C85219CC627E009D0C19 /* SkinAwd_Eco.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkinAwd_Eco.h; sourceTree = "<group>"; };
 		8440C85319CC627E009D0C19 /* SkinAwd_Eco.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SkinAwd_Eco.m; sourceTree = "<group>"; };
 		8440C85419CC627E009D0C19 /* SkinAwd_Medal1st.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkinAwd_Medal1st.h; sourceTree = "<group>"; };
@@ -1524,8 +1524,8 @@
 				8440C84D19CC627E009D0C19 /* SkinAwd_BestChoise3.m */,
 				8440C84E19CC627E009D0C19 /* SkinAwd_BestLuxury.h */,
 				8440C84F19CC627E009D0C19 /* SkinAwd_BestLuxury.m */,
-				8440C85019CC627E009D0C19 /* SkinAwd_BestTravel.h */,
-				8440C85119CC627E009D0C19 /* SkinAwd_BestTravel.m */,
+				8440C85019CC627E009D0C19 /* SkinAwd_Raiting.h */,
+				8440C85119CC627E009D0C19 /* SkinAwd_Raiting.m */,
 				8440C85219CC627E009D0C19 /* SkinAwd_Eco.h */,
 				8440C85319CC627E009D0C19 /* SkinAwd_Eco.m */,
 				8440C85419CC627E009D0C19 /* SkinAwd_Medal1st.h */,
@@ -1969,7 +1969,7 @@
 				841988D519C87B4000C73A19 /* SkinCommandsPopoverView.m in Sources */,
 				8440C96419CC62AE009D0C19 /* DbManager.m in Sources */,
 				7FF3389317D4C0E700B046C4 /* SkinsVC.m in Sources */,
-				8440C92F19CC627E009D0C19 /* SkinAwd_BestTravel.m in Sources */,
+				8440C92F19CC627E009D0C19 /* SkinAwd_Raiting.m in Sources */,
 				8440C95919CC627E009D0C19 /* SkinSetBase.m in Sources */,
 				8440C93B19CC627E009D0C19 /* SetDefault.m in Sources */,
 				7F419E2D17D6698000255E56 /* CellAuto.m in Sources */,

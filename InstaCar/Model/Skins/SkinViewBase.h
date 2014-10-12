@@ -31,6 +31,7 @@ typedef struct {
     unsigned int canCmdInvertColors:1;
     unsigned int canCmdEditText:1;
     unsigned int canCmdEditPrefix:1;
+    unsigned int canCmdEditRaiting:1;
 } CommandFlags;
 
 @protocol SkinCommandProtocol <NSObject>
@@ -38,9 +39,11 @@ typedef struct {
 -(void)onCmdInvertColors;
 -(void)onCmdEditText:(NSString*)newText;
 -(void)onCmdEditPrefix:(NSString*)newPrefix;
+-(void)onCmdEditRaiting:(int)newRaiting;
 // data getters
 -(NSString*)getSkinContentText;
 -(NSString*)getSkinPrefixText;
+-(int)getSkinRaiting;
 -(BOOL)getAllowsEmptyContentText;
 @end
     

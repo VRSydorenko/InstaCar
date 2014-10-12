@@ -92,11 +92,23 @@
             [self addSubview:btn];
             frame.origin.x += cmdWidth;
         }
+        
+        if (skinCommands.canCmdEditRaiting){
+            UIButton *btn = [[UIButton alloc] initWithFrame:frame];
+            [self setCmdButtonCommonValues:&btn];
+            [btn addTarget:self action:@selector(onCommandEditRaitingPressed:) forControlEvents:UIControlEventTouchUpInside];
+            
+            [btn setTitle:@"Rate" forState:UIControlStateNormal];
+            [btn setImage:[UIImage imageNamed:@"imgCmdEditNormal.png"] forState:UIControlStateNormal];
+            
+            [self addSubview:btn];
+            frame.origin.x += cmdWidth;
+        }
     }
 }
 
 -(BOOL)isInEditMode{
-    return stringEditMode;
+    return isEditMode;
 }
 
 -(CGFloat)heightOnTop{
@@ -106,32 +118,42 @@
 -(void)reset{
     [self.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
     
-    stringEditMode = NO;
+    isEditMode = NO;
     
     // TODO: not reset these fields
     btnCancelStringEdit = nil;
     btnConfirmStringEdit = nil;
     stringEditor = nil;
+    star1 = nil;
+    star2 = nil;
+    star3 = nil;
+    star4 = nil;
+    star5 = nil;
 }
 
--(void)switchStringEditView:(BOOL)editMode{
-    if (stringEditMode == editMode){
+-(void)switchStringEditView:(BOOL)editMode raitingSubMode:(BOOL)raitingSubMode{
+    if (isEditMode == editMode){
         return;
     }
-    stringEditMode = editMode;
+    isEditMode = editMode;
     
     if (editMode){
-        [self createStringEditorControls];
+        [self createStringEditorControls:raitingSubMode];
     }
     
     [self.subviews makeObjectsPerformSelector:@selector(setHiddenWithNumber:) withObject:[NSNumber numberWithBool:editMode]];
     
     btnCancelStringEdit.hidden = !editMode;
     btnConfirmStringEdit.hidden = !editMode;
-    stringEditor.hidden = !editMode;
+    stringEditor.hidden = !editMode && raitingSubMode;
+    star1.hidden = !editMode && !raitingSubMode;
+    star2.hidden = !editMode && !raitingSubMode;
+    star3.hidden = !editMode && !raitingSubMode;
+    star4.hidden = !editMode && !raitingSubMode;
+    star5.hidden = !editMode && !raitingSubMode;
 }
 
--(void)createStringEditorControls{
+-(void)createStringEditorControls:(BOOL)raitingView{
     // cancel button
     if (!btnCancelStringEdit){
         CGRect cancelBtnFrame = CGRectMake([self getCancelButtonX], SIDE_PADDING, [self getCancelConfirmButtonsWidth], [self getOneCommandHeight]);
@@ -148,20 +170,59 @@
         [self addSubview:btnCancelStringEdit];
     }
     
-    // text edit
-    if (!stringEditor){
-        CGRect editorFrame = CGRectMake([self getStringEditorX], SIDE_PADDING, [self getStringEditorWidth], [self getOneCommandHeight]);
-        stringEditor = [[UITextField alloc] initWithFrame:editorFrame];
-        stringEditor.clearButtonMode = UITextFieldViewModeWhileEditing;
-        stringEditor.backgroundColor = [UIColor clearColor];
-        
-        stringEditor.autocorrectionType = UITextAutocorrectionTypeNo;
-        
-        if (NO == [self.delegatingSkin getAllowsEmptyContentText]){
-            [stringEditor addTarget:self action:@selector(onTextChanged:) forControlEvents:UIControlEventEditingChanged];
+    // text edit or raiting stars
+    if (raitingView){
+        if (!star1){ // enough to check one button
+            CGFloat oneStarWidth = [self getStringEditorWidth] / 5;
+            
+            CGRect starFrame = CGRectMake([self getStringEditorX], SIDE_PADDING, oneStarWidth, [self getOneCommandHeight]);
+            star1 = [[UIButton alloc] initWithFrame:starFrame];
+            [star1 addTarget:self action:@selector(onStarClick:) forControlEvents:UIControlEventTouchUpInside];
+            star1.tag = 1;
+            
+            starFrame.origin.x += oneStarWidth;
+            star2 = [[UIButton alloc] initWithFrame:starFrame];
+            [star2 addTarget:self action:@selector(onStarClick:) forControlEvents:UIControlEventTouchUpInside];
+            star2.tag = 2;
+            
+            starFrame.origin.x += oneStarWidth;
+            star3 = [[UIButton alloc] initWithFrame:starFrame];
+            [star3 addTarget:self action:@selector(onStarClick:) forControlEvents:UIControlEventTouchUpInside];
+            star3.tag = 3;
+            
+            starFrame.origin.x += oneStarWidth;
+            star4 = [[UIButton alloc] initWithFrame:starFrame];
+            [star4 addTarget:self action:@selector(onStarClick:) forControlEvents:UIControlEventTouchUpInside];
+            star4.tag = 4;
+            
+            starFrame.origin.x += oneStarWidth;
+            star5 = [[UIButton alloc] initWithFrame:starFrame];
+            [star5 addTarget:self action:@selector(onStarClick:) forControlEvents:UIControlEventTouchUpInside];
+            star5.tag = 5;
+            
+            [self addSubview:star1];
+            [self addSubview:star2];
+            [self addSubview:star3];
+            [self addSubview:star4];
+            [self addSubview:star5];
         }
         
-        [self addSubview:stringEditor];
+        [self updateStarsAccordingToRaiting:raiting];
+    } else {
+        if (!stringEditor){
+            CGRect editorFrame = CGRectMake([self getStringEditorX], SIDE_PADDING, [self getStringEditorWidth], [self getOneCommandHeight]);
+            stringEditor = [[UITextField alloc] initWithFrame:editorFrame];
+            stringEditor.clearButtonMode = UITextFieldViewModeWhileEditing;
+            stringEditor.backgroundColor = [UIColor clearColor];
+        
+            stringEditor.autocorrectionType = UITextAutocorrectionTypeNo;
+            
+            if (NO == [self.delegatingSkin getAllowsEmptyContentText]){
+                [stringEditor addTarget:self action:@selector(onTextChanged:) forControlEvents:UIControlEventEditingChanged];
+            }
+        
+            [self addSubview:stringEditor];
+        }
     }
     
     // confirm button
@@ -189,7 +250,7 @@
 }
 
 -(CGFloat)getOneCommandHeight{
-    return (stringEditMode ? HEIGHT_ON_TOP : self.bounds.size.height) - 2 * SIDE_PADDING;
+    return (isEditMode ? HEIGHT_ON_TOP : self.bounds.size.height) - 2 * SIDE_PADDING;
 }
 
 -(CGFloat)getStringEditorX{
@@ -224,10 +285,11 @@
         return;
     }
     
-    [self switchStringEditView:YES];
+    [self switchStringEditView:YES raitingSubMode:NO];
     
     stringEditor.text = [self.delegatingSkin getSkinContentText];
     currentlyEditingPrefix = NO;
+    currentlyEditRaiting = NO;
     [stringEditor becomeFirstResponder];
 }
 -(IBAction)onCommandEditPrefixPressed:(UIButton*)sender{
@@ -236,21 +298,29 @@
         return;
     }
     
-    [self switchStringEditView:YES];
+    [self switchStringEditView:YES raitingSubMode:NO];
     
     stringEditor.text = [self.delegatingSkin getSkinPrefixText];
     currentlyEditingPrefix = YES;
+    currentlyEditRaiting = NO;
     [stringEditor becomeFirstResponder];
+}
+-(IBAction)onCommandEditRaitingPressed:(id)sender{
+    raiting = [self.delegatingSkin getSkinRaiting];
+    currentlyEditRaiting = YES;
+    [self switchStringEditView:YES raitingSubMode:YES];
 }
 
 -(IBAction)onCancelEditButtonPressed:(id)sender{
-    [self switchStringEditView:NO];
+    [self switchStringEditView:NO raitingSubMode:NO];
     stringEditor.text = @"";
     [stringEditor resignFirstResponder];
 }
 
 -(IBAction)onConfirmEditButtonPressed:(id)sender{
-    if (currentlyEditingPrefix){
+    if (currentlyEditRaiting){
+        [self.delegatingSkin onCmdEditRaiting:raiting];
+    } else if (currentlyEditingPrefix){
         [self.delegatingSkin onCmdEditPrefix:stringEditor.text];
     } else {
         [self.delegatingSkin onCmdEditText:stringEditor.text];
@@ -262,7 +332,25 @@
     btnConfirmStringEdit.enabled = stringEditor.text.length > 0;
 }
 
+-(IBAction)onStarClick:(id)sender{
+    UIButton *starBtn = (UIButton*)sender;
+    if (!starBtn)
+        return;
+    
+    raiting = starBtn.tag;
+
+    [self updateStarsAccordingToRaiting:raiting];
+}
+
 #pragma mark -
+
+-(void)updateStarsAccordingToRaiting:(int)rate{
+    star1.backgroundColor = rate >= star1.tag ? [UIColor orangeColor] : [UIColor grayColor];
+    star2.backgroundColor = rate >= star2.tag ? [UIColor orangeColor] : [UIColor grayColor];
+    star3.backgroundColor = rate >= star3.tag ? [UIColor orangeColor] : [UIColor grayColor];
+    star4.backgroundColor = rate >= star4.tag ? [UIColor orangeColor] : [UIColor grayColor];
+    star5.backgroundColor = rate >= star5.tag ? [UIColor orangeColor] : [UIColor grayColor];
+}
 
 -(void)setDelegatingSkin:(SkinViewBase *)delegatingSkin{
     skinCommands = [delegatingSkin getSkinCommands];
@@ -296,6 +384,9 @@
         actCmds++;
     }
     if (skinCommands.canCmdEditPrefix){
+        actCmds++;
+    }
+    if (skinCommands.canCmdEditRaiting){
         actCmds++;
     }
     return actCmds;

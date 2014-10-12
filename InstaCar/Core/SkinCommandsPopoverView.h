@@ -19,11 +19,14 @@
 @private
     CommandFlags skinCommands;
     
-    BOOL stringEditMode;
+    BOOL isEditMode;
     UITextField *stringEditor;
+    UIButton *star1, *star2, *star3, *star4, *star5;
     UIButton *btnCancelStringEdit;
     UIButton *btnConfirmStringEdit;
     BOOL currentlyEditingPrefix; // YES: prefix; NO: content
+    BOOL currentlyEditRaiting;
+    int raiting;
 }
 
 @property (nonatomic) UIViewController<ProInfoViewControllerDelegate> *ownerVC;

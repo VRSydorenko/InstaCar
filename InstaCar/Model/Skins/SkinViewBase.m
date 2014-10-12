@@ -382,11 +382,16 @@
 -(void)onCmdEditPrefix:(NSString *)newPrefix{
     // overriden in descendants
 }
+-(void)onCmdEditRaiting:(int)newRaiting{
+}
 -(NSString*)getSkinContentText{
     return @"";
 }
 -(NSString*)getSkinPrefixText{
     return @"";
+}
+-(int)getSkinRaiting{
+    return 5;
 }
 -(BOOL)getAllowsEmptyContentText{
     return YES;
