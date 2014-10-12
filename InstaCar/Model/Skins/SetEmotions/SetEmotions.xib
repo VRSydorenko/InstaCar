@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6245" systemVersion="14A379a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6245" systemVersion="14A388a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
+        <deployment defaultVersion="1792" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
     </dependencies>
     <objects>
@@ -104,7 +105,7 @@
             </connections>
             <point key="canvasLocation" x="526" y="154"/>
         </view>
-        <view tag="3" contentMode="scaleToFill" id="f6d-t5-WRQ" customClass="SkinEmo_BestPresent">
+        <view tag="2" contentMode="scaleToFill" id="f6d-t5-WRQ" customClass="SkinEmo_BestPresent">
             <rect key="frame" x="0.0" y="0.0" width="320" height="320"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
@@ -161,54 +162,6 @@
                 <outlet property="movingView" destination="JNo-3Z-3aH" id="8wc-mo-qF5"/>
             </connections>
             <point key="canvasLocation" x="912" y="154"/>
-        </view>
-        <view tag="2" contentMode="scaleToFill" id="Wr8-A6-uw4" customClass="SkinEmo_MyDream">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="320"/>
-            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="txg-u5-qo4">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="72"/>
-                    <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iheart_256.png" translatesAutoresizingMaskIntoConstraints="NO" id="FSd-ta-MNr" customClass="SkinElementImage">
-                            <rect key="frame" x="0.0" y="0.0" width="116" height="72"/>
-                            <constraints>
-                                <constraint firstAttribute="width" constant="116" id="PNr-vT-nnx"/>
-                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="116" id="SFt-sV-TFu"/>
-                            </constraints>
-                        </imageView>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.20000000298023224" translatesAutoresizingMaskIntoConstraints="NO" id="8i0-Jf-hwL" customClass="SkinElementLabel">
-                            <rect key="frame" x="124" y="8" width="184" height="56"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="80"/>
-                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                    </subviews>
-                    <color key="backgroundColor" red="0.098039217289999994" green="0.098039217289999994" blue="0.098039217289999994" alpha="0.20000000000000001" colorSpace="calibratedRGB"/>
-                    <constraints>
-                        <constraint firstItem="8i0-Jf-hwL" firstAttribute="leading" secondItem="FSd-ta-MNr" secondAttribute="trailing" constant="8" id="6kb-h9-K3m"/>
-                        <constraint firstAttribute="bottom" secondItem="8i0-Jf-hwL" secondAttribute="bottom" constant="8" id="7Bg-4n-i1j"/>
-                        <constraint firstItem="FSd-ta-MNr" firstAttribute="leading" secondItem="txg-u5-qo4" secondAttribute="leading" id="Ccr-8N-dl8"/>
-                        <constraint firstAttribute="bottom" secondItem="FSd-ta-MNr" secondAttribute="bottom" id="Eb0-jt-D4M"/>
-                        <constraint firstItem="8i0-Jf-hwL" firstAttribute="top" secondItem="txg-u5-qo4" secondAttribute="top" constant="8" id="Gvm-0y-KUg"/>
-                        <constraint firstItem="FSd-ta-MNr" firstAttribute="top" secondItem="txg-u5-qo4" secondAttribute="top" id="bTc-Oa-qyZ"/>
-                        <constraint firstAttribute="trailing" secondItem="8i0-Jf-hwL" secondAttribute="trailing" constant="12" id="dII-2s-2Qw"/>
-                        <constraint firstAttribute="height" constant="72" id="m8O-ZX-ikv"/>
-                    </constraints>
-                </view>
-            </subviews>
-            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-            <constraints>
-                <constraint firstItem="txg-u5-qo4" firstAttribute="leading" secondItem="Wr8-A6-uw4" secondAttribute="leading" id="lly-h3-cLD"/>
-                <constraint firstAttribute="trailing" secondItem="txg-u5-qo4" secondAttribute="trailing" id="mg7-Xb-Twd"/>
-                <constraint firstItem="txg-u5-qo4" firstAttribute="top" secondItem="Wr8-A6-uw4" secondAttribute="top" id="uVf-JS-HdT"/>
-            </constraints>
-            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <connections>
-                <outlet property="constraintTopMargin" destination="uVf-JS-HdT" id="D0H-K9-KEQ"/>
-                <outlet property="labelAuto" destination="8i0-Jf-hwL" id="v5o-JV-2YX"/>
-                <outlet property="movingView" destination="txg-u5-qo4" id="9SQ-gI-aFE"/>
-            </connections>
-            <point key="canvasLocation" x="140" y="554"/>
         </view>
     </objects>
     <resources>
