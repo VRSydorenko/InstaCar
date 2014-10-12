@@ -89,8 +89,8 @@
                             <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
                         </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No.1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Way-R1-mrd" customClass="SkinElementLabel">
-                            <rect key="frame" x="30" y="15" width="261" height="30"/>
-                            <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                            <rect key="frame" x="63" y="15" width="196" height="23"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
@@ -99,11 +99,11 @@
                     <constraints>
                         <constraint firstAttribute="bottom" secondItem="nbY-I4-Pwe" secondAttribute="bottom" id="5vg-Y1-baP"/>
                         <constraint firstAttribute="trailing" secondItem="nbY-I4-Pwe" secondAttribute="trailing" id="HE8-Yw-GZy"/>
-                        <constraint firstAttribute="trailing" secondItem="Way-R1-mrd" secondAttribute="trailing" constant="29" id="HiX-SU-8R6"/>
-                        <constraint firstItem="Way-R1-mrd" firstAttribute="leading" secondItem="ohf-G3-RhV" secondAttribute="leading" constant="30" id="NLs-id-zGC"/>
+                        <constraint firstAttribute="trailing" secondItem="Way-R1-mrd" secondAttribute="trailing" constant="61" id="HiX-SU-8R6"/>
+                        <constraint firstItem="Way-R1-mrd" firstAttribute="leading" secondItem="ohf-G3-RhV" secondAttribute="leading" constant="63" id="NLs-id-zGC"/>
                         <constraint firstItem="nbY-I4-Pwe" firstAttribute="top" secondItem="ohf-G3-RhV" secondAttribute="top" id="Nbp-PL-qZU"/>
                         <constraint firstAttribute="height" constant="60" id="Z27-Ct-t6q"/>
-                        <constraint firstAttribute="bottom" secondItem="Way-R1-mrd" secondAttribute="bottom" constant="15" id="dt5-nH-MjE"/>
+                        <constraint firstAttribute="bottom" secondItem="Way-R1-mrd" secondAttribute="bottom" constant="22" id="dt5-nH-MjE"/>
                         <constraint firstItem="nbY-I4-Pwe" firstAttribute="leading" secondItem="ohf-G3-RhV" secondAttribute="leading" id="e6t-eF-mYX"/>
                         <constraint firstItem="Way-R1-mrd" firstAttribute="top" secondItem="ohf-G3-RhV" secondAttribute="top" constant="15" id="kXw-9D-i60"/>
                     </constraints>
@@ -472,7 +472,7 @@
         <image name="eco100.png" width="255" height="256"/>
         <image name="luxury.png" width="612" height="170"/>
         <image name="medal1st.png" width="199" height="320"/>
-        <image name="ribbon.png" width="612" height="111"/>
+        <image name="ribbon.png" width="512" height="92"/>
         <image name="star_full.png" width="256" height="256"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

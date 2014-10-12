@@ -24,6 +24,12 @@
     
     _commandFlags.canCmdEditText = YES;
     isContentOnTop = NO;
+    
+    canEditFieldAuto1 = YES;
+}
+
+-(void)fieldAuto1DidUpdate{
+    self.labelText.text = fieldAuto1.selectedTextMarkModel;
 }
 
 -(NSString*)getSkinContentText{
