@@ -26,7 +26,6 @@
     iheartImgOrig = @"iheart_256.png";
     iheartImgInv = @"iheartInv_256.png";
     
-    //[self setupGradient:0.2 inDirection:GRADIENT_UP];
     [self setMovingViewConstraint:self.constraintTopMargin andViewHeight:self.movingView.bounds.size.height];
     
     self.movingView.backgroundColor = [UIColor clearColor];

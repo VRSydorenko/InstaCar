@@ -103,6 +103,8 @@ typedef enum {
 }
 
 -(void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    
     CGPoint convertedPreviewPoint = [self.imagePreview.superview convertPoint:self.imagePreview.frame.origin toView:nil];
     self.captureManager.imageTopCropMargin = convertedPreviewPoint.y;
     

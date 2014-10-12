@@ -18,7 +18,6 @@
 @implementation LogoRight
 
 -(void)initialise{
-    [self setupGradient:0.2 inDirection:GRADIENT_LEFT];
     [self.imgEmblem.layer setMinificationFilter:kCAFilterTrilinear];
     self.movingView.backgroundColor = [UIColor clearColor];
     

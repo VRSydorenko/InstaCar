@@ -10,7 +10,6 @@
 #import "Location.h"
 #import "Auto.h"
 #import "MainNavController.h"
-#import "UIAlphaGradientView.h"
 
 #import "SkinElementLabel.h"
 #import "SkinElementImage.h"
@@ -71,13 +70,11 @@ typedef struct {
 @private
     NSLayoutConstraint *movingViewTopMarginConstraint;
     unsigned short movingViewHeight;
-    UIAlphaGradientView *gradient;
     BOOL gradientInitialized;
 }
 
 -(void)baseInit;
 -(void)initialise;
--(void)setupGradient:(CGFloat)alpha inDirection:(GradientDirection)direction;
 -(void)setMovingViewConstraint:(NSLayoutConstraint*)topMargin andViewHeight:(unsigned short)height;
 -(BOOL)canEditField:(SkinField)field;
 -(void)updateField:(SkinField)field withValue:(NSObject*)value;

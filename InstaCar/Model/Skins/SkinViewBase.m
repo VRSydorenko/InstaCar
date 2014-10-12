@@ -12,28 +12,6 @@
 
 @implementation SkinViewBase
 
-#pragma mark Initialization
-
--(void)setupGradient:(CGFloat)alpha inDirection:(GradientDirection)direction{
-    return; // CURRENTLY DISABLED AT ALL
-    if (!gradient){
-        gradient = [[UIAlphaGradientView alloc] initWithFrame:self.frame];
-        gradient.color = [UIColor blackColor];
-        gradient.autoresizingMask = UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleWidth;
-    }
-    
-    gradient.direction = direction;
-    gradient.alpha = alpha;
-    
-    if (!gradientInitialized){
-        [self addSubview:gradient];
-        [self sendSubviewToBack:gradient];
-        gradientInitialized = YES;
-    }
-}
-
-#pragma mark -
-
 -(BOOL) canEditField:(SkinField)field{
     switch (field) {
         case fLOCATION:
@@ -104,7 +82,6 @@
     _commandFlags.canCmdEditPrefix = NO;
     
     self.userInteractionEnabled = YES;
-    gradient = nil;
     gradientInitialized = NO;
     isContentOnTop = YES;
     movingViewTopBottomMargin = 0.0;

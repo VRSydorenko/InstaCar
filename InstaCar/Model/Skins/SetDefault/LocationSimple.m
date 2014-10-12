@@ -21,7 +21,6 @@
 @implementation LocationSimple
 
 -(void)initialise{
-    [self setupGradient:0.3 inDirection:GRADIENT_UP];
     placeLabelHeightScaleFactor = self.constraintLocationHeight.constant / self.movingView.bounds.size.height;
     [self setMovingViewConstraint:self.topMargin andViewHeight:self.movingView.bounds.size.height];
     self.movingView.backgroundColor = [UIColor clearColor];
@@ -32,12 +31,10 @@
 
 -(void)moveContentUp{
     [super moveContentUp];
-    [self setupGradient:0.3 inDirection:GRADIENT_UP];
 }
 
 -(void)moveContentDown{
     [super moveContentDown];
-    [self setupGradient:0.3 inDirection:GRADIENT_DOWN];
 }
 
 -(void)fieldLocationDidUpdate{

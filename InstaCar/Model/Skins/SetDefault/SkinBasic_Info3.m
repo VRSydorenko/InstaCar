@@ -18,7 +18,6 @@
 @implementation SkinBasic_Info3
 
 -(void)initialise{
-    [self setupGradient:0.2 inDirection:GRADIENT_RIGHT];
     [self.imgEmblem.layer setMinificationFilter:kCAFilterTrilinear];
     self.movingView.backgroundColor = [UIColor clearColor];
     

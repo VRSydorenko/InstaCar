@@ -20,7 +20,6 @@
 
 -(void)initialise{
     self.movingView.backgroundColor = [UIColor clearColor];
-    [self setupGradient:0.4 inDirection:GRADIENT_RIGHT];
     [self.imgEmblem.layer setMinificationFilter:kCAFilterTrilinear];
     
     [self setMovingViewConstraint:self.topMargin andViewHeight:self.movingView.bounds.size.height];

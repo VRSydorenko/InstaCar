@@ -60,7 +60,6 @@
 		7F2E97DC17DBDF9D003598EC /* CellVenue.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F2E97DB17DBDF9D003598EC /* CellVenue.m */; };
 		7F3648B3180F2A1900B95693 /* FirstTimeInfoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F3648B2180F2A1900B95693 /* FirstTimeInfoVC.m */; };
 		7F3871DE17BE4F1000D8E39D /* DDMenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F3871DD17BE4F1000D8E39D /* DDMenuController.m */; };
-		7F3A170117F627A200584614 /* UIAlphaGradientView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F3A170017F627A200584614 /* UIAlphaGradientView.m */; };
 		7F419E2717D65EBB00255E56 /* CellSkinSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F419E2617D65EBB00255E56 /* CellSkinSet.m */; };
 		7F419E2D17D6698000255E56 /* CellAuto.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F419E2C17D6698000255E56 /* CellAuto.m */; };
 		7F4CB669180977DF008B5CA2 /* iCloudHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F4CB668180977DF008B5CA2 /* iCloudHandler.m */; };
@@ -424,8 +423,6 @@
 		7F3648B2180F2A1900B95693 /* FirstTimeInfoVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FirstTimeInfoVC.m; path = InstaCar/FirstTimeInfoVC.m; sourceTree = "<group>"; };
 		7F3871DC17BE4F1000D8E39D /* DDMenuController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDMenuController.h; sourceTree = "<group>"; };
 		7F3871DD17BE4F1000D8E39D /* DDMenuController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDMenuController.m; sourceTree = "<group>"; };
-		7F3A16FF17F627A200584614 /* UIAlphaGradientView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIAlphaGradientView.h; sourceTree = "<group>"; };
-		7F3A170017F627A200584614 /* UIAlphaGradientView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIAlphaGradientView.m; sourceTree = "<group>"; };
 		7F419E2517D65EBB00255E56 /* CellSkinSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CellSkinSet.h; path = InstaCar/TableCells/CellSkinSet.h; sourceTree = "<group>"; };
 		7F419E2617D65EBB00255E56 /* CellSkinSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CellSkinSet.m; path = InstaCar/TableCells/CellSkinSet.m; sourceTree = "<group>"; };
 		7F419E2B17D6698000255E56 /* CellAuto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CellAuto.h; path = InstaCar/TableCells/CellAuto.h; sourceTree = "<group>"; };
@@ -1149,8 +1146,6 @@
 				7F1767AB17C76F0F00724BD6 /* CaptureSessionManager.m */,
 				7F3871DC17BE4F1000D8E39D /* DDMenuController.h */,
 				7F3871DD17BE4F1000D8E39D /* DDMenuController.m */,
-				7F3A16FF17F627A200584614 /* UIAlphaGradientView.h */,
-				7F3A170017F627A200584614 /* UIAlphaGradientView.m */,
 				7FCD262A17F5BFEC00BFDF4E /* SMPageControl.h */,
 				7FCD262B17F5BFEC00BFDF4E /* SMPageControl.m */,
 			);
@@ -2036,7 +2031,6 @@
 				7FC4137817C7E8450025DD2C /* FSTargetCallback.m in Sources */,
 				7F5C46671811E87900DF94B1 /* ProInfoVC.m in Sources */,
 				7F1767AC17C76F0F00724BD6 /* CaptureSessionManager.m in Sources */,
-				7F3A170117F627A200584614 /* UIAlphaGradientView.m in Sources */,
 				7FB233B317D6773C003751B5 /* CellSelectedAuto.m in Sources */,
 				8440C95219CC627E009D0C19 /* SetVersus.m in Sources */,
 				84213FB919C9B2760083C5BD /* UIButton+MyExtensions.m in Sources */,
