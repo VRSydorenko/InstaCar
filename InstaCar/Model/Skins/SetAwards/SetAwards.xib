@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6245" systemVersion="14A388a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
+        <deployment defaultVersion="1792" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
     </dependencies>
     <objects>
@@ -364,8 +365,103 @@
         <view tag="7" contentMode="scaleToFill" id="LsI-hS-it6" customClass="SkinAwd_Raiting">
             <rect key="frame" x="0.0" y="0.0" width="320" height="320"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Wn-GP-Q3S">
+                    <rect key="frame" x="0.0" y="232" width="320" height="88"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xgE-lA-Ssn" customClass="SkinElementRect">
+                            <rect key="frame" x="0.0" y="26" width="320" height="52"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select car..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.40000000000000002" translatesAutoresizingMaskIntoConstraints="NO" id="lsH-PF-M1F" customClass="SkinElementLabel">
+                                    <rect key="frame" x="8" y="18" width="304" height="31"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <size key="shadowOffset" width="1" height="1"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstItem="lsH-PF-M1F" firstAttribute="top" secondItem="xgE-lA-Ssn" secondAttribute="top" constant="18" id="Esz-mk-Lcn"/>
+                                <constraint firstItem="lsH-PF-M1F" firstAttribute="leading" secondItem="xgE-lA-Ssn" secondAttribute="leading" constant="8" id="RBm-RQ-tyL"/>
+                                <constraint firstAttribute="bottom" secondItem="lsH-PF-M1F" secondAttribute="bottom" constant="3" id="cBk-3e-lXe"/>
+                                <constraint firstAttribute="trailing" secondItem="lsH-PF-M1F" secondAttribute="trailing" constant="8" id="cPQ-CD-XhO"/>
+                            </constraints>
+                        </view>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star_full.png" translatesAutoresizingMaskIntoConstraints="NO" id="AaI-ae-LfB" customClass="SkinElementImage">
+                            <rect key="frame" x="140" y="5" width="40" height="40"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="40" id="LgL-Em-vsR"/>
+                            </constraints>
+                        </imageView>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star_full.png" translatesAutoresizingMaskIntoConstraints="NO" id="lQk-8J-Z8O" customClass="SkinElementImage">
+                            <rect key="frame" x="178" y="5" width="40" height="40"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="40" id="wCy-re-Zcn"/>
+                            </constraints>
+                        </imageView>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star_full.png" translatesAutoresizingMaskIntoConstraints="NO" id="Bs0-Ke-09k" customClass="SkinElementImage">
+                            <rect key="frame" x="102" y="5" width="40" height="40"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="40" id="yBM-G9-AU7"/>
+                            </constraints>
+                        </imageView>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star_full.png" translatesAutoresizingMaskIntoConstraints="NO" id="wK3-2G-1sx" customClass="SkinElementImage">
+                            <rect key="frame" x="64" y="5" width="40" height="40"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="40" id="sDQ-sM-Cyf"/>
+                            </constraints>
+                        </imageView>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star_full.png" translatesAutoresizingMaskIntoConstraints="NO" id="TPX-0f-eRi" customClass="SkinElementImage">
+                            <rect key="frame" x="216" y="5" width="40" height="40"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="40" id="Y9e-Kb-XIJ"/>
+                            </constraints>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="AaI-ae-LfB" secondAttribute="trailing" constant="140" id="5rD-Sb-wIa"/>
+                        <constraint firstItem="TPX-0f-eRi" firstAttribute="top" secondItem="8Wn-GP-Q3S" secondAttribute="top" constant="5" id="6Pn-jy-syS"/>
+                        <constraint firstItem="AaI-ae-LfB" firstAttribute="top" secondItem="8Wn-GP-Q3S" secondAttribute="top" constant="5" id="6zj-TC-uCd"/>
+                        <constraint firstItem="lQk-8J-Z8O" firstAttribute="leading" secondItem="8Wn-GP-Q3S" secondAttribute="leading" constant="178" id="HaF-cC-OmX"/>
+                        <constraint firstItem="Bs0-Ke-09k" firstAttribute="leading" secondItem="8Wn-GP-Q3S" secondAttribute="leading" constant="102" id="Hoa-OU-AWH"/>
+                        <constraint firstItem="wK3-2G-1sx" firstAttribute="leading" secondItem="8Wn-GP-Q3S" secondAttribute="leading" constant="64" id="MTD-XL-Aeq"/>
+                        <constraint firstItem="Bs0-Ke-09k" firstAttribute="top" secondItem="8Wn-GP-Q3S" secondAttribute="top" constant="5" id="PL1-LO-J5z"/>
+                        <constraint firstItem="lQk-8J-Z8O" firstAttribute="top" secondItem="8Wn-GP-Q3S" secondAttribute="top" constant="5" id="Qg5-sf-5Tq"/>
+                        <constraint firstAttribute="trailing" secondItem="TPX-0f-eRi" secondAttribute="trailing" constant="64" id="Ree-yI-qvK"/>
+                        <constraint firstItem="xgE-lA-Ssn" firstAttribute="top" secondItem="8Wn-GP-Q3S" secondAttribute="top" constant="26" id="RhI-nC-8u4"/>
+                        <constraint firstAttribute="bottom" secondItem="xgE-lA-Ssn" secondAttribute="bottom" constant="10" id="adY-6m-L6I"/>
+                        <constraint firstItem="AaI-ae-LfB" firstAttribute="leading" secondItem="8Wn-GP-Q3S" secondAttribute="leading" constant="140" id="eFZ-ma-9fG"/>
+                        <constraint firstAttribute="trailing" secondItem="wK3-2G-1sx" secondAttribute="trailing" constant="216" id="jLH-19-HsF"/>
+                        <constraint firstItem="TPX-0f-eRi" firstAttribute="leading" secondItem="8Wn-GP-Q3S" secondAttribute="leading" constant="216" id="jvl-y5-Cq6"/>
+                        <constraint firstItem="xgE-lA-Ssn" firstAttribute="leading" secondItem="8Wn-GP-Q3S" secondAttribute="leading" id="jxh-Xc-V62"/>
+                        <constraint firstAttribute="trailing" secondItem="Bs0-Ke-09k" secondAttribute="trailing" constant="178" id="m48-U3-YB6"/>
+                        <constraint firstAttribute="trailing" secondItem="lQk-8J-Z8O" secondAttribute="trailing" constant="102" id="pgg-0P-tUG"/>
+                        <constraint firstAttribute="trailing" secondItem="xgE-lA-Ssn" secondAttribute="trailing" id="r9N-2d-X8F"/>
+                        <constraint firstItem="wK3-2G-1sx" firstAttribute="top" secondItem="8Wn-GP-Q3S" secondAttribute="top" constant="5" id="ucc-Le-uxj"/>
+                        <constraint firstAttribute="height" constant="88" id="xXD-mE-aLJ"/>
+                    </constraints>
+                </view>
+            </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="8Wn-GP-Q3S" firstAttribute="leading" secondItem="LsI-hS-it6" secondAttribute="leading" id="edj-E5-1Fl"/>
+                <constraint firstAttribute="trailing" secondItem="8Wn-GP-Q3S" secondAttribute="trailing" id="gNY-cv-u75"/>
+                <constraint firstItem="8Wn-GP-Q3S" firstAttribute="top" secondItem="LsI-hS-it6" secondAttribute="top" constant="232" id="qpO-Lo-wQW"/>
+            </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="imgStar1" destination="wK3-2G-1sx" id="4H8-zA-rIO"/>
+                <outlet property="imgStar2" destination="Bs0-Ke-09k" id="Efy-7N-QSJ"/>
+                <outlet property="imgStar3" destination="AaI-ae-LfB" id="G3t-jb-O9o"/>
+                <outlet property="imgStar4" destination="lQk-8J-Z8O" id="GCr-F1-fUV"/>
+                <outlet property="imgStar5" destination="TPX-0f-eRi" id="YSU-gt-6oF"/>
+                <outlet property="labelText" destination="lsH-PF-M1F" id="WcZ-BN-n6c"/>
+                <outlet property="movingView" destination="8Wn-GP-Q3S" id="sSX-pE-DzI"/>
+                <outlet property="topMargin" destination="qpO-Lo-wQW" id="cdy-JO-QAg"/>
+            </connections>
             <point key="canvasLocation" x="979" y="989"/>
         </view>
     </objects>
@@ -377,6 +473,7 @@
         <image name="luxury.png" width="612" height="170"/>
         <image name="medal1st.png" width="199" height="320"/>
         <image name="ribbon.png" width="612" height="111"/>
+        <image name="star_full.png" width="256" height="256"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

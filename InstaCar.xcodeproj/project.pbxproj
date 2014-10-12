@@ -75,6 +75,8 @@
 		7F544A3918085378001FFEC3 /* ALAssetsLibrary+CustomPhotoAlbum.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F544A3818085378001FFEC3 /* ALAssetsLibrary+CustomPhotoAlbum.m */; };
 		7F59AC5F17D3C1F400B87457 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F59AC5E17D3C1F400B87457 /* libsqlite3.0.dylib */; };
 		7F5C46671811E87900DF94B1 /* ProInfoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F5C46661811E87900DF94B1 /* ProInfoVC.m */; };
+		7FA49E3019EAFF670032CEAB /* star_full.png in Resources */ = {isa = PBXBuildFile; fileRef = 7FA49E2F19EAFF670032CEAB /* star_full.png */; };
+		7FA49E3219EB03950032CEAB /* star_dark.png in Resources */ = {isa = PBXBuildFile; fileRef = 7FA49E3119EB03950032CEAB /* star_dark.png */; };
 		7FB233B317D6773C003751B5 /* CellSelectedAuto.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FB233B217D6773C003751B5 /* CellSelectedAuto.m */; };
 		7FB5C47F19B8F65F001E63AC /* arrowLocation@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7FB5C47D19B8F65F001E63AC /* arrowLocation@2x.png */; };
 		7FB5C48019B8F65F001E63AC /* arrowSkins@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7FB5C47E19B8F65F001E63AC /* arrowSkins@2x.png */; };
@@ -450,6 +452,8 @@
 		7F59AC5E17D3C1F400B87457 /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
 		7F5C46651811E87900DF94B1 /* ProInfoVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProInfoVC.h; path = InstaCar/ProInfoVC.h; sourceTree = "<group>"; };
 		7F5C46661811E87900DF94B1 /* ProInfoVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProInfoVC.m; path = InstaCar/ProInfoVC.m; sourceTree = "<group>"; };
+		7FA49E2F19EAFF670032CEAB /* star_full.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star_full.png; sourceTree = "<group>"; };
+		7FA49E3119EB03950032CEAB /* star_dark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star_dark.png; sourceTree = "<group>"; };
 		7FB233B117D6773C003751B5 /* CellSelectedAuto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CellSelectedAuto.h; path = InstaCar/TableCells/CellSelectedAuto.h; sourceTree = "<group>"; };
 		7FB233B217D6773C003751B5 /* CellSelectedAuto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CellSelectedAuto.m; path = InstaCar/TableCells/CellSelectedAuto.m; sourceTree = "<group>"; };
 		7FB5C47D19B8F65F001E63AC /* arrowLocation@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrowLocation@2x.png"; sourceTree = "<group>"; };
@@ -1543,6 +1547,8 @@
 		8440C83E19CC627E009D0C19 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				7FA49E3119EB03950032CEAB /* star_dark.png */,
+				7FA49E2F19EAFF670032CEAB /* star_full.png */,
 				7F03782819E325B100198CE8 /* ribbon.png */,
 				8440C83F19CC627E009D0C19 /* bestChoice2.png */,
 				8440C84019CC627E009D0C19 /* bestChoise1.png */,
@@ -1883,6 +1889,7 @@
 				8440C8B219CC627E009D0C19 /* logo_chevrolet_128.png in Resources */,
 				8440C91519CC627E009D0C19 /* logo_rover_256.png in Resources */,
 				8440C92219CC627E009D0C19 /* signs.xcassets in Resources */,
+				7FA49E3219EB03950032CEAB /* star_dark.png in Resources */,
 				8440C90A19CC627E009D0C19 /* logo_mclaren_256.png in Resources */,
 				8440C91C19CC627E009D0C19 /* logo_vaz_256.png in Resources */,
 				8440C8C319CC627E009D0C19 /* logo_jaguar_128.png in Resources */,
@@ -1898,6 +1905,7 @@
 				8440C8AA19CC627E009D0C19 /* logo_astonmartin_128.png in Resources */,
 				8440C90219CC627E009D0C19 /* logo_kraz_256.png in Resources */,
 				8440C8E919CC627E009D0C19 /* logo_bmw_256.png in Resources */,
+				7FA49E3019EAFF670032CEAB /* star_full.png in Resources */,
 				8440C92719CC627E009D0C19 /* luxury.png in Resources */,
 				8440C8B719CC627E009D0C19 /* logo_dodge_128.png in Resources */,
 				8440C90B19CC627E009D0C19 /* logo_mercedes_256.png in Resources */,

@@ -117,6 +117,7 @@
 
 -(void)reset{
     [self.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
+    self.backgroundColor = [UIColor lightGrayColor];
     
     isEditMode = NO;
     
@@ -146,11 +147,11 @@
     btnCancelStringEdit.hidden = !editMode;
     btnConfirmStringEdit.hidden = !editMode;
     stringEditor.hidden = !editMode && raitingSubMode;
-    star1.hidden = !editMode && !raitingSubMode;
-    star2.hidden = !editMode && !raitingSubMode;
-    star3.hidden = !editMode && !raitingSubMode;
-    star4.hidden = !editMode && !raitingSubMode;
-    star5.hidden = !editMode && !raitingSubMode;
+    star1.hidden = !raitingSubMode;
+    star2.hidden = !raitingSubMode;
+    star3.hidden = !raitingSubMode;
+    star4.hidden = !raitingSubMode;
+    star5.hidden = !raitingSubMode;
 }
 
 -(void)createStringEditorControls:(BOOL)raitingView{
@@ -177,26 +178,31 @@
             
             CGRect starFrame = CGRectMake([self getStringEditorX], SIDE_PADDING, oneStarWidth, [self getOneCommandHeight]);
             star1 = [[UIButton alloc] initWithFrame:starFrame];
+            star1.imageView.contentMode = UIViewContentModeScaleAspectFit;
             [star1 addTarget:self action:@selector(onStarClick:) forControlEvents:UIControlEventTouchUpInside];
             star1.tag = 1;
             
             starFrame.origin.x += oneStarWidth;
             star2 = [[UIButton alloc] initWithFrame:starFrame];
+            star2.imageView.contentMode = UIViewContentModeScaleAspectFit;
             [star2 addTarget:self action:@selector(onStarClick:) forControlEvents:UIControlEventTouchUpInside];
             star2.tag = 2;
             
             starFrame.origin.x += oneStarWidth;
             star3 = [[UIButton alloc] initWithFrame:starFrame];
+            star3.imageView.contentMode = UIViewContentModeScaleAspectFit;
             [star3 addTarget:self action:@selector(onStarClick:) forControlEvents:UIControlEventTouchUpInside];
             star3.tag = 3;
             
             starFrame.origin.x += oneStarWidth;
             star4 = [[UIButton alloc] initWithFrame:starFrame];
+            star4.imageView.contentMode = UIViewContentModeScaleAspectFit;
             [star4 addTarget:self action:@selector(onStarClick:) forControlEvents:UIControlEventTouchUpInside];
             star4.tag = 4;
             
             starFrame.origin.x += oneStarWidth;
             star5 = [[UIButton alloc] initWithFrame:starFrame];
+            star5.imageView.contentMode = UIViewContentModeScaleAspectFit;
             [star5 addTarget:self action:@selector(onStarClick:) forControlEvents:UIControlEventTouchUpInside];
             star5.tag = 5;
             
@@ -213,7 +219,7 @@
             CGRect editorFrame = CGRectMake([self getStringEditorX], SIDE_PADDING, [self getStringEditorWidth], [self getOneCommandHeight]);
             stringEditor = [[UITextField alloc] initWithFrame:editorFrame];
             stringEditor.clearButtonMode = UITextFieldViewModeWhileEditing;
-            stringEditor.backgroundColor = [UIColor clearColor];
+            stringEditor.backgroundColor = [UIColor whiteColor];
         
             stringEditor.autocorrectionType = UITextAutocorrectionTypeNo;
             
@@ -250,7 +256,7 @@
 }
 
 -(CGFloat)getOneCommandHeight{
-    return (isEditMode ? HEIGHT_ON_TOP : self.bounds.size.height) - 2 * SIDE_PADDING;
+    return (isEditMode && !currentlyEditRaiting ? HEIGHT_ON_TOP : self.bounds.size.height) - 2 * SIDE_PADDING;
 }
 
 -(CGFloat)getStringEditorX{
@@ -345,11 +351,20 @@
 #pragma mark -
 
 -(void)updateStarsAccordingToRaiting:(int)rate{
-    star1.backgroundColor = rate >= star1.tag ? [UIColor orangeColor] : [UIColor grayColor];
-    star2.backgroundColor = rate >= star2.tag ? [UIColor orangeColor] : [UIColor grayColor];
-    star3.backgroundColor = rate >= star3.tag ? [UIColor orangeColor] : [UIColor grayColor];
-    star4.backgroundColor = rate >= star4.tag ? [UIColor orangeColor] : [UIColor grayColor];
-    star5.backgroundColor = rate >= star5.tag ? [UIColor orangeColor] : [UIColor grayColor];
+    UIImage *starFull = [UIImage imageNamed:@"star_full.png"];
+    UIImage *starDark = [UIImage imageNamed:@"star_dark.png"];
+    
+    [star1 setImage:rate >= star1.tag ? starFull : starDark forState:UIControlStateNormal];
+    [star2 setImage:rate >= star2.tag ? starFull : starDark forState:UIControlStateNormal];
+    [star3 setImage:rate >= star3.tag ? starFull : starDark forState:UIControlStateNormal];
+    [star4 setImage:rate >= star4.tag ? starFull : starDark forState:UIControlStateNormal];
+    [star5 setImage:rate >= star5.tag ? starFull : starDark forState:UIControlStateNormal];
+    
+    [star1 setImage:rate >= star1.tag ? starFull : starDark forState:UIControlStateHighlighted];
+    [star2 setImage:rate >= star2.tag ? starFull : starDark forState:UIControlStateHighlighted];
+    [star3 setImage:rate >= star3.tag ? starFull : starDark forState:UIControlStateHighlighted];
+    [star4 setImage:rate >= star4.tag ? starFull : starDark forState:UIControlStateHighlighted];
+    [star5 setImage:rate >= star5.tag ? starFull : starDark forState:UIControlStateHighlighted];
 }
 
 -(void)setDelegatingSkin:(SkinViewBase *)delegatingSkin{
