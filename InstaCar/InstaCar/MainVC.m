@@ -345,6 +345,8 @@ typedef enum {
         
         // if any car is currently selected - apply it to newly selected skinset
         [self applyCurrentlySelectedCarsToNewlySelectedSkin];
+        // if location is selected - apply it to skins in the set
+        [self applyCurrentlySelectedLocationToNewlySelectedSkin];
     } else { // other fields are skin relevant so pass the update to selected skin set
         [[DataManager getSelectedSkinSet] updateData:newValue ofType:dataType];
     }
@@ -609,6 +611,13 @@ typedef enum {
         if (selectedAuto2 != nil){
             [[DataManager getSelectedSkinSet] updateData:selectedAuto2 ofType:AUTO2];
         }
+    }
+}
+
+-(void)applyCurrentlySelectedLocationToNewlySelectedSkin{
+    FSVenue *selectedVenue = [DataManager getSelectedVenue];
+    if (nil != selectedVenue){
+        [[DataManager getSelectedSkinSet] updateData:selectedVenue ofType:LOCATION];
     }
 }
 
