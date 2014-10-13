@@ -163,12 +163,17 @@ typedef enum {
 	self.scrollSkins.indicatorStyle = UIScrollViewIndicatorStyleWhite;
     
     const unsigned short pageCount = [skinSet getSkinsCount];
-    const int skinWidth = 320;
+    const int skinWidth = [UIScreen mainScreen].bounds.size.width;
     
     // add skin views to the scroll area
     for (unsigned short i = 0; i < pageCount; i++) {
         SkinViewBase *skinToAdd = [skinSet getSkinAtIndex:i];
 		
+        CGRect curFrame = skinToAdd.frame;
+        curFrame.size.width = skinWidth;
+        curFrame.size.height = skinWidth;
+        skinToAdd.frame = curFrame;
+        
 		CGRect skinRect = skinToAdd.frame;
         skinRect.origin.x = i * skinWidth;
         skinRect.origin.y = 0;

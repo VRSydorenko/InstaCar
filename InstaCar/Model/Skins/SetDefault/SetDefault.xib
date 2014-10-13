@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6245" systemVersion="14A388a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <deployment defaultVersion="1792" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -60,7 +59,7 @@
                         <constraint firstItem="IEM-D4-Cc5" firstAttribute="left" secondItem="SWH-nj-s0u" secondAttribute="right" id="OE9-hq-Do8"/>
                         <constraint firstItem="SWH-nj-s0u" firstAttribute="top" secondItem="QqS-cI-X27" secondAttribute="top" constant="4" id="QeF-Yn-QKW"/>
                         <constraint firstItem="IEM-D4-Cc5" firstAttribute="bottom" secondItem="QqS-cI-X27" secondAttribute="bottom" id="XHd-zk-jwt"/>
-                        <constraint firstItem="IEM-D4-Cc5" firstAttribute="trailing" secondItem="QqS-cI-X27" secondAttribute="trailing" constant="-3" id="hVC-zv-vni"/>
+                        <constraint firstAttribute="trailing" secondItem="IEM-D4-Cc5" secondAttribute="trailing" constant="3" id="d7S-uc-2D7"/>
                         <constraint firstAttribute="bottom" secondItem="SWH-nj-s0u" secondAttribute="bottom" constant="4" id="wfx-xt-zM7"/>
                     </constraints>
                 </view>
@@ -500,10 +499,10 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z0o-nw-9JV">
                     <rect key="frame" x="0.0" y="220" width="320" height="100"/>
                     <subviews>
-                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Z82-ec-W82" customClass="SkinElementRect">
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z82-ec-W82" customClass="SkinElementRect">
                             <rect key="frame" x="0.0" y="29" width="301" height="48"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Ready to travel!" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="1tx-IU-6yp" customClass="SkinElementLabel">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ready to travel!" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="1tx-IU-6yp" customClass="SkinElementLabel">
                                     <rect key="frame" x="8" y="-6" width="204" height="54"/>
                                     <fontDescription key="fontDescription" name="RegencyScriptFLF" family="RegencyScriptFLF" pointSize="44"/>
                                     <color key="textColor" red="0.040608489961720458" green="0.37314652423469385" blue="0.076832910958137948" alpha="1" colorSpace="calibratedRGB"/>
@@ -511,6 +510,12 @@
                                 </label>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="1tx-IU-6yp" secondAttribute="trailing" constant="89" id="FXT-V2-A3m"/>
+                                <constraint firstItem="1tx-IU-6yp" firstAttribute="top" secondItem="Z82-ec-W82" secondAttribute="top" constant="-6" id="Rdu-Md-uFQ"/>
+                                <constraint firstAttribute="bottom" secondItem="1tx-IU-6yp" secondAttribute="bottom" id="cz3-gN-NyW"/>
+                                <constraint firstItem="1tx-IU-6yp" firstAttribute="leading" secondItem="Z82-ec-W82" secondAttribute="leading" constant="8" id="r4t-4Z-dv1"/>
+                            </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EtM-cs-sRD" customClass="SkinElementRect">
                             <rect key="frame" x="228" y="76" width="79" height="17"/>
@@ -540,13 +545,17 @@
                     </subviews>
                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
+                        <constraint firstItem="Z82-ec-W82" firstAttribute="leading" secondItem="Z0o-nw-9JV" secondAttribute="leading" id="00k-bV-6aJ"/>
                         <constraint firstAttribute="bottom" secondItem="XvD-ED-aAf" secondAttribute="bottom" constant="7" id="41D-aE-DhH"/>
-                        <constraint firstItem="GLG-kM-7EJ" firstAttribute="leading" secondItem="Z0o-nw-9JV" secondAttribute="leading" constant="217" id="6Ut-yq-nSb"/>
                         <constraint firstAttribute="bottom" secondItem="GLG-kM-7EJ" secondAttribute="bottom" id="Fer-V9-YG0"/>
                         <constraint firstAttribute="bottom" secondItem="EtM-cs-sRD" secondAttribute="bottom" constant="7" id="P4T-Tc-Qqc"/>
+                        <constraint firstItem="Z82-ec-W82" firstAttribute="top" secondItem="Z0o-nw-9JV" secondAttribute="top" constant="29" id="VfK-VS-iTY"/>
+                        <constraint firstAttribute="bottom" secondItem="Z82-ec-W82" secondAttribute="bottom" constant="23" id="Wj9-8u-T9Q"/>
                         <constraint firstItem="GLG-kM-7EJ" firstAttribute="top" secondItem="Z0o-nw-9JV" secondAttribute="top" id="fxB-Wp-Rdi"/>
                         <constraint firstItem="EtM-cs-sRD" firstAttribute="leading" secondItem="XvD-ED-aAf" secondAttribute="trailing" id="tHT-vr-cel"/>
                         <constraint firstAttribute="trailing" secondItem="EtM-cs-sRD" secondAttribute="trailing" constant="13" id="tKs-7X-mNv"/>
+                        <constraint firstAttribute="trailing" secondItem="Z82-ec-W82" secondAttribute="trailing" constant="19" id="tX9-hz-wv0"/>
+                        <constraint firstAttribute="trailing" secondItem="GLG-kM-7EJ" secondAttribute="trailing" constant="3" id="uYk-xH-KP7"/>
                         <constraint firstAttribute="height" constant="100" id="xSE-Zu-hx8"/>
                     </constraints>
                 </view>
@@ -815,11 +824,11 @@
                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstItem="2lN-DH-74U" firstAttribute="top" secondItem="8Pn-p8-a7K" secondAttribute="top" id="8ym-9T-xNy"/>
-                        <constraint firstItem="2lN-DH-74U" firstAttribute="leading" secondItem="8Pn-p8-a7K" secondAttribute="leading" constant="180" id="Cft-iD-D8z"/>
                         <constraint firstAttribute="trailing" secondItem="06n-dX-hGR" secondAttribute="trailing" constant="21" id="JLV-3N-QrG"/>
                         <constraint firstAttribute="bottom" secondItem="06n-dX-hGR" secondAttribute="bottom" constant="42" id="Jw2-3Z-M8E"/>
                         <constraint firstAttribute="bottom" secondItem="2lN-DH-74U" secondAttribute="bottom" id="kUG-8w-ssS"/>
                         <constraint firstAttribute="height" constant="120" id="mLa-Q0-wVr"/>
+                        <constraint firstAttribute="trailing" secondItem="2lN-DH-74U" secondAttribute="trailing" id="yl6-gw-kml"/>
                     </constraints>
                 </view>
             </subviews>
