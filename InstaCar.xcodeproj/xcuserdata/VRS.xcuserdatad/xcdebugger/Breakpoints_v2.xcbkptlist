@@ -194,11 +194,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "InstaCar/InstaCar/MainVC.m"
-            timestampString = "435013281.963906"
+            timestampString = "435016685.696395"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "231"
-            endingLineNumber = "231"
+            startingLineNumber = "233"
+            endingLineNumber = "233"
             landmarkName = "-initSkinCommandPopoverView"
             landmarkType = "5">
          </BreakpointContent>

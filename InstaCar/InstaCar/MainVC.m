@@ -119,6 +119,8 @@ typedef enum {
     } else {
         [self initIAd];
     }
+    
+    [self selectedData:SKIN_SET changedTo:[DataManager getSelectedSkinSet]];
 }
 
 #pragma mark Initialization

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6245" systemVersion="14A388a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
+        <deployment defaultVersion="1792" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -48,27 +49,28 @@
                             <rect key="frame" x="152" y="4" width="54" height="42"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             <constraints>
+                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="54" id="BoL-lt-GF1"/>
                                 <constraint firstAttribute="width" constant="54" id="Oej-UT-i2Y"/>
                             </constraints>
                         </imageView>
                     </subviews>
                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstItem="IEM-D4-Cc5" firstAttribute="top" secondItem="QqS-cI-X27" secondAttribute="top" id="8s2-A0-TRU"/>
-                        <constraint firstAttribute="height" constant="50" id="Agd-0q-RnN"/>
-                        <constraint firstItem="IEM-D4-Cc5" firstAttribute="left" secondItem="SWH-nj-s0u" secondAttribute="right" id="OE9-hq-Do8"/>
-                        <constraint firstItem="SWH-nj-s0u" firstAttribute="top" secondItem="QqS-cI-X27" secondAttribute="top" constant="4" id="QeF-Yn-QKW"/>
-                        <constraint firstItem="IEM-D4-Cc5" firstAttribute="bottom" secondItem="QqS-cI-X27" secondAttribute="bottom" id="XHd-zk-jwt"/>
-                        <constraint firstAttribute="trailing" secondItem="IEM-D4-Cc5" secondAttribute="trailing" constant="3" id="d7S-uc-2D7"/>
-                        <constraint firstAttribute="bottom" secondItem="SWH-nj-s0u" secondAttribute="bottom" constant="4" id="wfx-xt-zM7"/>
+                        <constraint firstAttribute="bottom" secondItem="SWH-nj-s0u" secondAttribute="bottom" constant="4" id="HR0-og-YWg"/>
+                        <constraint firstItem="SWH-nj-s0u" firstAttribute="top" secondItem="QqS-cI-X27" secondAttribute="top" constant="4" id="W8g-RL-Ops"/>
+                        <constraint firstAttribute="height" constant="50" id="Y3t-Nf-u34"/>
+                        <constraint firstItem="IEM-D4-Cc5" firstAttribute="top" secondItem="QqS-cI-X27" secondAttribute="top" id="nQu-Xb-4co"/>
+                        <constraint firstItem="IEM-D4-Cc5" firstAttribute="leading" secondItem="SWH-nj-s0u" secondAttribute="trailing" id="nRE-BW-alZ"/>
+                        <constraint firstAttribute="trailing" secondItem="IEM-D4-Cc5" secondAttribute="trailing" constant="3" id="oEU-3a-2zX"/>
+                        <constraint firstAttribute="bottom" secondItem="IEM-D4-Cc5" secondAttribute="bottom" id="w7n-JB-gAh"/>
                     </constraints>
                 </view>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="QqS-cI-X27" firstAttribute="top" secondItem="1" secondAttribute="top" id="3Yj-m2-g2h"/>
-                <constraint firstItem="QqS-cI-X27" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="AUq-NL-nF0"/>
-                <constraint firstItem="QqS-cI-X27" firstAttribute="trailing" secondItem="1" secondAttribute="trailing" id="cE9-FT-StO"/>
+                <constraint firstItem="QqS-cI-X27" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="o8e-Dc-6HK"/>
+                <constraint firstAttribute="trailing" secondItem="QqS-cI-X27" secondAttribute="trailing" id="tYu-fJ-MjD"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
