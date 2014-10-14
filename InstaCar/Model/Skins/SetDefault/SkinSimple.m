@@ -27,6 +27,7 @@
     self.textAuto.adjustsFontSizeToFitWidth = YES;
     
     _commandFlags.canCmdInvertColors = YES;
+    _commandFlags.canCmdEditText = YES;
 }
 
 -(void)fieldAuto1DidUpdate{
@@ -45,6 +46,14 @@
 -(void)adjustAutoLabelSizeAccordingToText{
     CGSize textSize = [self.textAuto.text sizeWithAttributes:[NSDictionary dictionaryWithObject:self.textAuto.font forKey:NSFontAttributeName]];
     self.autoTitleWidth.constant = MIN(textSize.width, self.textAuto.frame.origin.x + self.textAuto.bounds.size.width - self.imgEmblem.bounds.size.width);
+}
+
+-(NSString*)getSkinContentText{
+    return self.textAuto.text;
+}
+-(void)onCmdEditText:(NSString *)newText{
+    self.textAuto.text = newText;
+    [self adjustAutoLabelSizeAccordingToText];
 }
 
 @end

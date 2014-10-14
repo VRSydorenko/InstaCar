@@ -27,12 +27,21 @@
     
     modelLabelInitialHeight = self.modelLabelHeight.constant;
     canEditFieldAuto1 = YES;
+    _commandFlags.canCmdEditText = YES;
 }
 
 -(void)fieldAuto1DidUpdate{
     self.labelAuto.text = fieldAuto1.name;
     self.labelModel.text = fieldAuto1.selectedTextModelSubmodel;
     self.modelLabelHeight.constant = self.labelModel.text.length == 0 ? 0.0 : modelLabelInitialHeight;
+}
+
+-(NSString*)getSkinContentText{
+    return self.labelAuto.text;
+}
+-(void)onCmdEditText:(NSString *)newText{
+    self.labelAuto.text = newText;
+    self.modelLabelHeight.constant = 0;
 }
 
 @end

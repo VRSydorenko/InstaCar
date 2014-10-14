@@ -23,18 +23,27 @@
     [self setMovingViewConstraint:self.topMargin andViewHeight:self.movingView.bounds.size.height andMovingViewTopBottomMargin:0];
     
     canEditFieldAuto1 = YES;
+    _commandFlags.canCmdEditText = YES;
 }
 
 -(void)fieldAuto1DidUpdate{
     self.labelAuto.text = fieldAuto1.selectedTextFull;
     
-    NSString *autoYears = fieldAuto1.selectedTextYears;;
+    NSString *autoYears = fieldAuto1.selectedTextYears;
     if (autoYears.length > 0){
         autoYears = [NSString stringWithFormat:@", %@", autoYears];
     }
     
     self.labelMadeIn.text = [NSString stringWithFormat:@"Made in %@%@", fieldAuto1.country, autoYears];
 
+}
+
+-(NSString*)getSkinContentText{
+    return self.labelAuto.text;
+}
+-(void)onCmdEditText:(NSString *)newText{
+    self.labelAuto.text = newText;
+    self.labelMadeIn.text = @"";
 }
 
 @end

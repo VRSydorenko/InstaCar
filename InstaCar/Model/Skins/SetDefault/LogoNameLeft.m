@@ -25,6 +25,7 @@
     [self setMovingViewConstraint:self.topMargin andViewHeight:self.movingView.bounds.size.height andMovingViewTopBottomMargin:0];
 
     canEditFieldAuto1 = YES;
+    _commandFlags.canCmdEditText = YES;
     _commandFlags.canCmdInvertColors = YES;
 }
 
@@ -37,6 +38,13 @@
 
 -(void)onCmdInvertColors{
     [self.textAuto invertColors];
+}
+
+-(NSString*)getSkinContentText{
+    return self.textAuto.text;
+}
+-(void)onCmdEditText:(NSString *)newText{
+    self.textAuto.text = newText;
 }
 
 @end
