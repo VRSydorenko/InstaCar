@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6245" systemVersion="14A388a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
+        <deployment defaultVersion="1792" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
     </dependencies>
     <objects>
@@ -14,47 +15,42 @@
                     <rect key="frame" x="0.0" y="260" width="320" height="60"/>
                     <subviews>
                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_anycar.png" translatesAutoresizingMaskIntoConstraints="NO" id="BAC-hV-PXa" customClass="SkinElementImage">
-                            <rect key="frame" x="10" y="10" width="60" height="40"/>
+                            <rect key="frame" x="5" y="3" width="60" height="54"/>
                             <constraints>
-                                <constraint firstAttribute="width" constant="60" id="5yM-ns-bHf"/>
+                                <constraint firstAttribute="width" constant="60" id="x5w-sO-S7g"/>
                             </constraints>
                         </imageView>
                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_anycar.png" translatesAutoresizingMaskIntoConstraints="NO" id="zwt-LL-gNa" customClass="SkinElementImage">
-                            <rect key="frame" x="250" y="10" width="60" height="40"/>
+                            <rect key="frame" x="255" y="3" width="60" height="54"/>
                             <constraints>
-                                <constraint firstAttribute="width" constant="60" id="xEg-Tx-QIA"/>
+                                <constraint firstAttribute="width" constant="60" id="DAP-lG-dAl"/>
                             </constraints>
                         </imageView>
                     </subviews>
                     <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.20000000000000001" colorSpace="calibratedRGB"/>
                     <constraints>
-                        <constraint firstAttribute="bottom" secondItem="zwt-LL-gNa" secondAttribute="bottom" constant="10" id="0cc-Mm-RZC"/>
-                        <constraint firstAttribute="bottom" secondItem="BAC-hV-PXa" secondAttribute="bottom" constant="10" id="Kta-gw-ZVj"/>
-                        <constraint firstItem="BAC-hV-PXa" firstAttribute="top" secondItem="Xs5-Ya-u5b" secondAttribute="top" constant="10" id="LVG-Rg-O5Q"/>
-                        <constraint firstItem="zwt-LL-gNa" firstAttribute="top" secondItem="Xs5-Ya-u5b" secondAttribute="top" constant="10" id="Pcj-AX-m1p"/>
-                        <constraint firstAttribute="trailing" secondItem="zwt-LL-gNa" secondAttribute="trailing" constant="10" id="QJg-4U-VDQ"/>
-                        <constraint firstAttribute="height" constant="60" id="gyI-Nm-vDq"/>
-                        <constraint firstItem="BAC-hV-PXa" firstAttribute="leading" secondItem="Xs5-Ya-u5b" secondAttribute="leading" constant="10" id="hKf-a4-YEh"/>
+                        <constraint firstItem="zwt-LL-gNa" firstAttribute="top" secondItem="Xs5-Ya-u5b" secondAttribute="top" constant="3" id="0WP-sh-gxY"/>
+                        <constraint firstAttribute="trailing" secondItem="zwt-LL-gNa" secondAttribute="trailing" constant="5" id="Icr-gO-fKD"/>
+                        <constraint firstAttribute="bottom" secondItem="zwt-LL-gNa" secondAttribute="bottom" constant="3" id="Jqi-XH-alq"/>
+                        <constraint firstItem="BAC-hV-PXa" firstAttribute="top" secondItem="Xs5-Ya-u5b" secondAttribute="top" constant="3" id="UBp-GG-hnv"/>
+                        <constraint firstItem="BAC-hV-PXa" firstAttribute="leading" secondItem="Xs5-Ya-u5b" secondAttribute="leading" constant="5" id="UF2-dZ-2qe"/>
+                        <constraint firstAttribute="bottom" secondItem="BAC-hV-PXa" secondAttribute="bottom" constant="3" id="lOP-of-6Gv"/>
+                        <constraint firstAttribute="height" constant="60" id="vdw-RR-ohI"/>
                     </constraints>
                 </view>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="Xs5-Ya-u5b" firstAttribute="leading" secondItem="Tnr-oz-4iU" secondAttribute="leading" id="LwA-N8-LlD"/>
-                <constraint firstAttribute="trailing" secondItem="Xs5-Ya-u5b" secondAttribute="trailing" id="XFK-Sa-wnB"/>
-                <constraint firstItem="Xs5-Ya-u5b" firstAttribute="top" secondItem="Tnr-oz-4iU" secondAttribute="top" constant="260" id="rv5-Sv-Liy"/>
+                <constraint firstItem="Xs5-Ya-u5b" firstAttribute="leading" secondItem="Tnr-oz-4iU" secondAttribute="leading" id="UhR-1I-nkg"/>
+                <constraint firstAttribute="trailing" secondItem="Xs5-Ya-u5b" secondAttribute="trailing" id="Z0P-bL-NzD"/>
+                <constraint firstItem="Xs5-Ya-u5b" firstAttribute="top" secondItem="Tnr-oz-4iU" secondAttribute="top" constant="260" id="iQZ-1U-xkD"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
-                <outlet property="constraintHeight" destination="gyI-Nm-vDq" id="DEB-Eu-4ul"/>
-                <outlet property="constraintLogo1BottomMargin" destination="Kta-gw-ZVj" id="jSa-9R-4Ap"/>
-                <outlet property="constraintLogo1TopMargin" destination="LVG-Rg-O5Q" id="KoU-Tz-8yt"/>
-                <outlet property="constraintLogo2BottomMargin" destination="0cc-Mm-RZC" id="vAz-bY-bRZ"/>
-                <outlet property="constraintLogo2TopMargin" destination="Pcj-AX-m1p" id="m17-ZJ-iM0"/>
-                <outlet property="constraintTopMargin" destination="rv5-Sv-Liy" id="2Qx-xU-yE7"/>
-                <outlet property="constraintWidthLogo1" destination="5yM-ns-bHf" id="D9Y-dz-waC"/>
-                <outlet property="constraintwidthLogo2" destination="xEg-Tx-QIA" id="Rxm-VO-0cY"/>
+                <outlet property="constraintTopMargin" destination="iQZ-1U-xkD" id="GfR-zI-4ad"/>
+                <outlet property="constraintWidthLogo1" destination="x5w-sO-S7g" id="SFz-3a-TF5"/>
+                <outlet property="constraintwidthLogo2" destination="DAP-lG-dAl" id="NN2-WC-Xk5"/>
                 <outlet property="imgEmblem1" destination="BAC-hV-PXa" id="OB8-Zy-gHv"/>
                 <outlet property="imgEmblem2" destination="zwt-LL-gNa" id="NWO-JU-hzh"/>
                 <outlet property="movingView" destination="Xs5-Ya-u5b" id="e2i-8x-WxC"/>
