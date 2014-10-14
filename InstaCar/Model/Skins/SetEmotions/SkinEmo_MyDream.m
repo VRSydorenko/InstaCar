@@ -18,7 +18,7 @@
 @implementation SkinEmo_MyDream
 
 -(void)initialise{
-    [self setMovingViewConstraint:self.constraintTopMargin andViewHeight:self.movingView.bounds.size.height];
+    [self setMovingViewConstraint:self.constraintTopMargin andViewHeight:self.movingView.bounds.size.height andMovingViewTopBottomMargin:0];
     
     self.movingView.backgroundColor = [UIColor clearColor];
     

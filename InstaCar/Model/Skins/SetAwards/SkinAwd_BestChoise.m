@@ -20,9 +20,7 @@
 -(void)initialise{
     self.movingView.backgroundColor = [UIColor clearColor];
     
-    [self setMovingViewConstraint:self.topMargin andViewHeight:self.movingView.bounds.size.height];
-    
-    isContentOnTop = NO;
+    [self setMovingViewConstraint:self.topMargin andViewHeight:self.movingView.bounds.size.height andMovingViewTopBottomMargin:0];
 }
 
 @end

@@ -91,8 +91,15 @@
     // overriden by descendants
 }
 
--(void)setMovingViewConstraint:(NSLayoutConstraint*)topMargin andViewHeight:(unsigned short)height{
+-(void)setMovingViewConstraint:(NSLayoutConstraint*)topMargin
+                 andViewHeight:(unsigned short)height
+  andMovingViewTopBottomMargin:(CGFloat)margin{
     movingViewTopMarginConstraint = topMargin;
+    if (movingViewTopMarginConstraint.constant > 50){ // if it is not on the top in designer then move bottom. TODO: Rewrite this awkward workaround. 50 here means "not 0" but also not too much to be considered as "on the bottom". 
+        movingViewTopMarginConstraint.constant = [UIScreen mainScreen].bounds.size.width - height - margin;
+        isContentOnTop = NO;
+    }
+    movingViewTopBottomMargin = margin;
     movingViewHeight = height;
     heightScaleFactor = height / self.bounds.size.height;
 }

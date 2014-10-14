@@ -75,7 +75,9 @@ typedef struct {
 
 -(void)baseInit;
 -(void)initialise;
--(void)setMovingViewConstraint:(NSLayoutConstraint*)topMargin andViewHeight:(unsigned short)height;
+-(void)setMovingViewConstraint:(NSLayoutConstraint*)topMargin
+                 andViewHeight:(unsigned short)height
+  andMovingViewTopBottomMargin:(CGFloat)margin;
 -(BOOL)canEditField:(SkinField)field;
 -(void)updateField:(SkinField)field withValue:(NSObject*)value;
 -(BOOL)isSkinContentAtTheTop;

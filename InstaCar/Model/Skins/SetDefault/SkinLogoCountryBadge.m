@@ -18,12 +18,10 @@
 @implementation SkinLogoCountryBadge
 
 -(void)initialise{
-    [self setMovingViewConstraint:self.constraintTopMargin andViewHeight:self.movingView.bounds.size.height];
+    [self setMovingViewConstraint:self.constraintTopMargin andViewHeight:self.movingView.bounds.size.height andMovingViewTopBottomMargin:10.0];
     
     canEditFieldAuto1 = YES;
     _commandFlags.canCmdInvertColors = YES;
-    isContentOnTop = NO;
-    movingViewTopBottomMargin = 10.0;
 }
 
 -(void)fieldAuto1DidUpdate{

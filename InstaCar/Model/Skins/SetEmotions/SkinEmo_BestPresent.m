@@ -18,14 +18,13 @@
 @implementation SkinEmo_BestPresent
 
 -(void)initialise{
-    [self setMovingViewConstraint:self.constraintTopMargin andViewHeight:self.movingView.bounds.size.height];
+    [self setMovingViewConstraint:self.constraintTopMargin andViewHeight:self.movingView.bounds.size.height andMovingViewTopBottomMargin:0];
     
     self.movingView.backgroundColor = [UIColor clearColor];
     
     canEditFieldAuto1 = YES;
     _commandFlags.canCmdInvertColors = YES;
     _commandFlags.canCmdEditText = YES;
-    isContentOnTop = NO;
 }
 
 -(void)fieldAuto1DidUpdate{

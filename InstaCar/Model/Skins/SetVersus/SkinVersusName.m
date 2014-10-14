@@ -36,11 +36,10 @@
 @implementation SkinVersusName
 
 -(void)initialise{
-    [self setMovingViewConstraint:self.constraintTopMargin andViewHeight:self.movingView.bounds.size.height];
+    [self setMovingViewConstraint:self.constraintTopMargin andViewHeight:self.movingView.bounds.size.height andMovingViewTopBottomMargin:0];
     
     canEditFieldAuto1 = YES;
     canEditFieldAuto2 = YES;
-    isContentOnTop = NO;
     
     _commandFlags.canCmdInvertColors = YES;
 }

@@ -25,11 +25,9 @@
     self.constraintLabelLeft.constant = labelMargin;
     self.constraintLabelRight.constant = labelMargin;
     
-    [self setMovingViewConstraint:self.topMargin andViewHeight:self.movingView.bounds.size.height];
+    [self setMovingViewConstraint:self.topMargin andViewHeight:self.movingView.bounds.size.height andMovingViewTopBottomMargin:0];
     
     _commandFlags.canCmdEditText = YES;
-    isContentOnTop = NO;
-    
     canEditFieldAuto1 = YES;
 }
 

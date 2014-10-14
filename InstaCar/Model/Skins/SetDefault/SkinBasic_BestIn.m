@@ -20,7 +20,7 @@
 -(void)initialise{
     self.movingView.backgroundColor = [UIColor clearColor];
     
-    [self setMovingViewConstraint:self.topMargin andViewHeight:self.movingView.bounds.size.height];
+    [self setMovingViewConstraint:self.topMargin andViewHeight:self.movingView.bounds.size.height andMovingViewTopBottomMargin:0];
     
     canEditFieldLocation = YES;
     _commandFlags.canCmdInvertColors = YES;

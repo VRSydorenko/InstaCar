@@ -26,15 +26,13 @@
     iheartImgOrig = @"iheart_256.png";
     iheartImgInv = @"iheartInv_256.png";
     
-    [self setMovingViewConstraint:self.constraintTopMargin andViewHeight:self.movingView.bounds.size.height];
+    [self setMovingViewConstraint:self.constraintTopMargin andViewHeight:self.movingView.bounds.size.height andMovingViewTopBottomMargin:10.0];
     
     self.movingView.backgroundColor = [UIColor clearColor];
     
     canEditFieldAuto1 = YES;
     _commandFlags.canCmdInvertColors = YES;
     isInitState = YES;
-    isContentOnTop = NO;
-    movingViewTopBottomMargin = 10.0;
 }
 
 -(void)fieldAuto1DidUpdate{

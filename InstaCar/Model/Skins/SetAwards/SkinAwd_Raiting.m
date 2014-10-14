@@ -22,10 +22,9 @@
 -(void)initialise{
     self.movingView.backgroundColor = [UIColor clearColor];
     
-    [self setMovingViewConstraint:self.topMargin andViewHeight:self.movingView.bounds.size.height];
+    [self setMovingViewConstraint:self.topMargin andViewHeight:self.movingView.bounds.size.height andMovingViewTopBottomMargin:0];
     
     canEditFieldAuto1 = YES;
-    isContentOnTop = NO;
     
     _commandFlags.canCmdEditRaiting = YES;
     _commandFlags.canCmdEditText = YES;

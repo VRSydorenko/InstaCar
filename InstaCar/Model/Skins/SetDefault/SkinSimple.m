@@ -21,7 +21,7 @@
 -(void)initialise{
     self.movingView.backgroundColor = [UIColor clearColor];
     [self.imgEmblem.layer setMinificationFilter:kCAFilterTrilinear];
-    [self setMovingViewConstraint:self.topMargin andViewHeight:self.movingView.bounds.size.height];
+    [self setMovingViewConstraint:self.topMargin andViewHeight:self.movingView.bounds.size.height andMovingViewTopBottomMargin:0];
 
     canEditFieldAuto1 = YES;
     self.textAuto.adjustsFontSizeToFitWidth = YES;
