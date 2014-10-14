@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="14A388a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="5PD-ZC-8Rm">
     <dependencies>
+        <deployment defaultVersion="1792" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
     </dependencies>
     <scenes>
@@ -229,14 +230,14 @@
                                     <action selector="btnGetProPressed:" destination="w6E-99-KFO" eventType="touchUpInside" id="zuA-TW-TX2"/>
                                 </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Install full version and enjoy the following benefits" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fcd-vz-fPZ">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Install the full version and enjoy the following benefits" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fcd-vz-fPZ">
                                 <rect key="frame" x="16" y="44" width="288" height="54"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="54" id="YtN-qa-dPh"/>
                                 </constraints>
                                 <color key="textColor" red="0.098039217293262482" green="0.098039217293262482" blue="0.098039217293262482" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="black" translatesAutoresizingMaskIntoConstraints="NO" id="ajc-Bm-9BW">
@@ -257,17 +258,56 @@
                                     </barButtonItem>
                                 </items>
                             </toolbar>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WIW-hX-8ZL">
-                                <rect key="frame" x="20" y="106" width="280" height="238"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WIW-hX-8ZL">
+                                <rect key="frame" x="0.0" y="128" width="320" height="238"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="238" id="aqV-1j-VcO"/>
                                 </constraints>
-                                <string key="text"> - No ads!
+                                <attributedString key="attributedText">
+                                    <fragment>
+                                        <string key="content"> - No ads!
+</string>
+                                        <attributes>
+                                            <color key="NSColor" red="0.0" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                            <font key="NSFont" size="17" name="HelveticaNeue-Bold"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content=".">
+                                        <attributes>
+                                            <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <font key="NSFont" size="17" name="HelveticaNeue-Bold"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content">
  - Unlock skin text editing commands!
+</string>
+                                        <attributes>
+                                            <color key="NSColor" red="0.0" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                            <font key="NSFont" size="17" name="HelveticaNeue-Bold"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content=".">
+                                        <attributes>
+                                            <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <font key="NSFont" size="17" name="HelveticaNeue-Bold"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content">
  - Turn off app logo overlay!</string>
-                                <color key="textColor" red="0.0" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                        <attributes>
+                                            <color key="NSColor" red="0.0" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                            <font key="NSFont" size="17" name="HelveticaNeue-Bold"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
@@ -277,14 +317,14 @@
                             <constraint firstItem="GdK-P0-4Em" firstAttribute="top" secondItem="EAl-cr-AVt" secondAttribute="bottom" constant="20" id="7Gb-FD-NzD"/>
                             <constraint firstItem="ajc-Bm-9BW" firstAttribute="top" secondItem="mG4-GI-kJa" secondAttribute="top" id="Bah-RU-yuE"/>
                             <constraint firstItem="Fcd-vz-fPZ" firstAttribute="top" secondItem="ajc-Bm-9BW" secondAttribute="bottom" id="BlQ-af-3Jv"/>
-                            <constraint firstItem="WIW-hX-8ZL" firstAttribute="top" secondItem="Fcd-vz-fPZ" secondAttribute="bottom" constant="8" id="EhC-jy-rrR"/>
+                            <constraint firstItem="WIW-hX-8ZL" firstAttribute="top" secondItem="Fcd-vz-fPZ" secondAttribute="bottom" constant="30" id="EhC-jy-rrR"/>
                             <constraint firstItem="Fcd-vz-fPZ" firstAttribute="leading" secondItem="mG4-GI-kJa" secondAttribute="leading" constant="16" id="Ted-gD-rFG"/>
                             <constraint firstAttribute="trailing" secondItem="ajc-Bm-9BW" secondAttribute="trailing" id="ci1-zn-7p3"/>
-                            <constraint firstItem="WIW-hX-8ZL" firstAttribute="leading" secondItem="mG4-GI-kJa" secondAttribute="leading" constant="20" id="cqT-j5-IUM"/>
+                            <constraint firstItem="WIW-hX-8ZL" firstAttribute="leading" secondItem="mG4-GI-kJa" secondAttribute="leading" id="cqT-j5-IUM"/>
                             <constraint firstAttribute="trailing" secondItem="EAl-cr-AVt" secondAttribute="trailing" constant="100" id="gyk-kl-c76"/>
                             <constraint firstItem="ajc-Bm-9BW" firstAttribute="leading" secondItem="mG4-GI-kJa" secondAttribute="leading" id="n2F-Jp-19t"/>
                             <constraint firstAttribute="trailing" secondItem="Fcd-vz-fPZ" secondAttribute="trailing" constant="16" id="rbi-eu-kuy"/>
-                            <constraint firstAttribute="trailing" secondItem="WIW-hX-8ZL" secondAttribute="trailing" constant="20" id="vAc-ob-pis"/>
+                            <constraint firstAttribute="trailing" secondItem="WIW-hX-8ZL" secondAttribute="trailing" id="vAc-ob-pis"/>
                         </constraints>
                     </view>
                 </viewController>
