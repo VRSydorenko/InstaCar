@@ -190,6 +190,8 @@
                         <outlet property="constraintButtonsCoverViewHeight" destination="bTL-mi-pXB" id="LPa-bA-WJj"/>
                         <outlet property="constraintMidBtnLeftWidth" destination="Oa0-2L-vEc" id="qEH-BF-oL4"/>
                         <outlet property="constraintMidBtnRigthWidth" destination="XH9-Ag-cCp" id="kTx-C9-LyM"/>
+                        <outlet property="constraintPreviewImageHeight" destination="xj8-d5-pdd" id="hTB-JJ-bi0"/>
+                        <outlet property="constraintScrollHeight" destination="SZf-cJ-LcP" id="g8F-d1-njG"/>
                         <outlet property="constraintViewAdContainerHeight" destination="5A5-i0-xsc" id="Muu-Lw-coz"/>
                         <outlet property="constraintWhiteActBottomMargin" destination="Kcw-bB-4r4" id="akR-J5-4OR"/>
                         <outlet property="iAdView" destination="sCG-cl-3fd" id="cCJ-wu-aKf"/>

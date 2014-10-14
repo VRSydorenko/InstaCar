@@ -40,6 +40,9 @@
 @property (nonatomic) IBOutlet NSLayoutConstraint *constraintButtonsCoverViewHeight;
 @property (nonatomic) IBOutlet NSLayoutConstraint *constraintViewAdContainerHeight;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *constraintWhiteActBottomMargin;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *constraintPreviewImageHeight;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *constraintScrollHeight;
+
 
 @property (nonatomic) IBOutlet UIImageView *imagePreview;
 @property (nonatomic) IBOutlet UIScrollView *scrollSkins;

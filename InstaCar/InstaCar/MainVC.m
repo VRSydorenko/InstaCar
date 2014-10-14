@@ -84,11 +84,9 @@ typedef enum {
     
     self.scrollSkins.delegate = self;
     [self.view bringSubviewToFront:self.scrollSkins];
-    
-    // this will create skin command view and bring it to front
-    // it should be over the scroll view so this call it here
-    [self initSkinCommandPopoverView];
-    [self setActiveSkin:0]; // moved from initSkins
+
+    self.constraintPreviewImageHeight.constant = [UIScreen mainScreen].bounds.size.width;
+    self.constraintScrollHeight.constant = [UIScreen mainScreen].bounds.size.width;
     
     // Keyboard listener
     [[NSNotificationCenter defaultCenter] addObserver:self
@@ -109,6 +107,9 @@ typedef enum {
     self.captureManager.imageTopCropMargin = convertedPreviewPoint.y;
     
     self.constraintButtonsCoverViewHeight.constant = [self calcPageControlHeight];
+    
+    [self initSkinCommandPopoverView];
+    [self setActiveSkin:0]; // goes after creating the command view
     
     if (NO == [DataManager getHasLaunchedBefore]){
         FirstTimeInfoVC *infoVC = [[UIStoryboard storyboardWithName:@"main" bundle:nil] instantiateViewControllerWithIdentifier:@"firstTimeInfoVC"];
@@ -229,7 +230,7 @@ typedef enum {
     
     CGFloat topBottomMargin = 0.0;
     CGFloat sideMargin = 10.0;
-    CGFloat y = self.scrollSkins.frame.origin.y + self.scrollSkins.bounds.size.height + pageControlHeight + topBottomMargin;
+    CGFloat y = self.pageControlContainer.frame.origin.y + pageControlHeight + topBottomMargin;
     CGFloat width = [UIScreen mainScreen].bounds.size.width - 2 * sideMargin;
     CGFloat height = [self getPopCommandsViewHeight];
     
