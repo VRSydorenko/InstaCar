@@ -24,7 +24,7 @@
                     </subviews>
                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstItem="SmF-9H-0kJ" firstAttribute="leading" secondItem="xNK-Qe-bB8" secondAttribute="leading" constant="210" id="8sb-jZ-yzs"/>
+                        <constraint firstAttribute="trailing" secondItem="SmF-9H-0kJ" secondAttribute="trailing" id="ElF-Mv-4Wd"/>
                         <constraint firstItem="SmF-9H-0kJ" firstAttribute="top" secondItem="xNK-Qe-bB8" secondAttribute="top" id="KvU-co-OnL"/>
                         <constraint firstAttribute="height" constant="110" id="xh7-4U-cKQ"/>
                     </constraints>
