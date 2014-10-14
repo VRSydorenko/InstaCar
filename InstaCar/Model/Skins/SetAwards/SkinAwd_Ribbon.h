@@ -11,5 +11,7 @@
 @interface SkinAwd_Ribbon : SkinViewBase
 
 @property (nonatomic) IBOutlet SkinElementLabel *labelText;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *constraintLabelLeft;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *constraintLabelRight;
 
 @end

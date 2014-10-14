@@ -20,6 +20,11 @@
 -(void)initialise{
     self.movingView.backgroundColor = [UIColor clearColor];
     
+    CGFloat labelWidth = [UIScreen mainScreen].bounds.size.width / 1.68;
+    CGFloat labelMargin = ([UIScreen mainScreen].bounds.size.width - labelWidth) / 2;
+    self.constraintLabelLeft.constant = labelMargin;
+    self.constraintLabelRight.constant = labelMargin;
+    
     [self setMovingViewConstraint:self.topMargin andViewHeight:self.movingView.bounds.size.height];
     
     _commandFlags.canCmdEditText = YES;

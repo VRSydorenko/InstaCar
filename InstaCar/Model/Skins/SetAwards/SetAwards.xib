@@ -85,7 +85,7 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ohf-G3-RhV">
                     <rect key="frame" x="0.0" y="260" width="320" height="60"/>
                     <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ribbon.png" translatesAutoresizingMaskIntoConstraints="NO" id="nbY-I4-Pwe" customClass="SkinElementImage">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ribbon.png" translatesAutoresizingMaskIntoConstraints="NO" id="nbY-I4-Pwe" customClass="SkinElementImage">
                             <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
                         </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No.1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Way-R1-mrd" customClass="SkinElementLabel">
@@ -117,6 +117,8 @@
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
+                <outlet property="constraintLabelLeft" destination="NLs-id-zGC" id="KuJ-sC-7sf"/>
+                <outlet property="constraintLabelRight" destination="HiX-SU-8R6" id="0bB-QM-iQT"/>
                 <outlet property="labelText" destination="Way-R1-mrd" id="D1z-Zc-m9N"/>
                 <outlet property="movingView" destination="ohf-G3-RhV" id="wPM-ds-grc"/>
                 <outlet property="topMargin" destination="QPq-hK-HJd" id="fxl-3I-Rzp"/>
