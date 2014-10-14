@@ -17,17 +17,8 @@
 @property (weak, nonatomic) IBOutlet SkinElementRect *rectSeparator;
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *constraintTopMargin;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *constraintHeight;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *constraintWidthLogo1;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *constraintwidthLogo2;
 @property (weak, nonatomic) IBOutlet UIView *movingView;
 
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *constraintLogo1TopMargin;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *constraintLogo1BottomMargin;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *constraintLogo2TopMargin;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *constraintLogo2BottomMargin;
-
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *constraintVSSeparatorWidth;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *constraintVSSeparatorLeftMargin;
 
 @end
@@ -37,6 +28,8 @@
 
 -(void)initialise{
     [self setMovingViewConstraint:self.constraintTopMargin andViewHeight:self.movingView.bounds.size.height andMovingViewTopBottomMargin:0];
+    
+    self.constraintVSSeparatorLeftMargin.constant = 0.5 * ([UIScreen mainScreen].bounds.size.width - 2);
     
     canEditFieldAuto1 = YES;
     canEditFieldAuto2 = YES;
@@ -56,41 +49,6 @@
     [self.imgEmblem2 setImageLogoName:fieldAuto2.logoName];
     self.imgEmblem2.image = fieldAuto2.logo128;
     self.textAuto2.text = fieldAuto2.name;
-}
-
--(void)layoutSubviews{
-    CGFloat boundsWidth = self.bounds.size.width;
-    
-    // moving view height
-    self.constraintHeight.constant = self.bounds.size.height * heightScaleFactor;
-    
-    // logo top & bottom margins
-    CGFloat logosTopBottomMargin = 5.0;//self.movingView.bounds.size.height / 7.0;
-    self.constraintLogo1TopMargin.constant = logosTopBottomMargin;
-    self.constraintLogo1BottomMargin.constant = logosTopBottomMargin;
-    self.constraintLogo2TopMargin.constant = logosTopBottomMargin;
-    self.constraintLogo2BottomMargin.constant = logosTopBottomMargin;
-    
-    // logo proportion
-    CGFloat widthHeightRate = fieldAuto1 ? fieldAuto1.logoWidthHeightRate : 1.0;
-    self.constraintWidthLogo1.constant = widthHeightRate * self.imgEmblem1.bounds.size.height; // adjust place for logo 1
-    
-    widthHeightRate = fieldAuto2 ? fieldAuto2.logoWidthHeightRate : 1.0;
-    self.constraintwidthLogo2.constant = widthHeightRate * self.imgEmblem2.bounds.size.height; // adjust place for logo 2
-    
-    // separator view
-    self.constraintVSSeparatorWidth.constant = boundsWidth > 320.0 ? 4.0 : 2.0;
-    
-    // separator position
-    self.constraintVSSeparatorLeftMargin.constant = 0.5 * (boundsWidth - self.constraintVSSeparatorWidth.constant);
-    
-    // text fonts
-    float newAutoFontSize = boundsWidth > 320.0 ? 70.0 : 25.0;
-    
-    self.textAuto1.font = [UIFont fontWithName:self.textAuto1.font.fontName size:newAutoFontSize];
-    self.textAuto2.font = [UIFont fontWithName:self.textAuto2.font.fontName size:newAutoFontSize];
-    
-    [super layoutSubviews];
 }
 
 -(void)onCmdInvertColors{

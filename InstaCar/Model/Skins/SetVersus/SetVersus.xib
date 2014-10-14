@@ -71,17 +71,17 @@
                             <rect key="frame" x="159" y="0.0" width="4" height="60"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             <constraints>
-                                <constraint firstAttribute="width" constant="4" id="iwW-Ho-TDc"/>
+                                <constraint firstAttribute="width" constant="4" id="Wzb-HK-r2f"/>
                             </constraints>
                         </view>
                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_anycar.png" translatesAutoresizingMaskIntoConstraints="NO" id="IGx-Rh-8RJ" customClass="SkinElementImage">
-                            <rect key="frame" x="5" y="5" width="40" height="50"/>
+                            <rect key="frame" x="3" y="3" width="40" height="54"/>
                             <constraints>
-                                <constraint firstAttribute="width" constant="40" id="LmZ-ui-igi"/>
+                                <constraint firstAttribute="width" constant="40" id="8Xw-pJ-gdE"/>
                             </constraints>
                         </imageView>
                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select car..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.20000000298023224" translatesAutoresizingMaskIntoConstraints="NO" id="g33-S5-Nal" customClass="SkinElementLabel">
-                            <rect key="frame" x="166" y="10" width="103" height="40"/>
+                            <rect key="frame" x="166" y="10" width="108" height="40"/>
                             <fontDescription key="fontDescription" type="system" pointSize="20"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
@@ -89,13 +89,13 @@
                             <size key="shadowOffset" width="1" height="1"/>
                         </label>
                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_anycar.png" translatesAutoresizingMaskIntoConstraints="NO" id="lQw-rQ-rpJ" customClass="SkinElementImage">
-                            <rect key="frame" x="272" y="5" width="40" height="50"/>
+                            <rect key="frame" x="277" y="3" width="40" height="54"/>
                             <constraints>
-                                <constraint firstAttribute="width" constant="40" id="GxP-rk-on0"/>
+                                <constraint firstAttribute="width" constant="40" id="Dcc-S3-D8N"/>
                             </constraints>
                         </imageView>
                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select car..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.20000000298023224" translatesAutoresizingMaskIntoConstraints="NO" id="bto-QY-Whh" customClass="SkinElementLabel">
-                            <rect key="frame" x="48" y="10" width="103" height="40"/>
+                            <rect key="frame" x="46" y="10" width="110" height="40"/>
                             <fontDescription key="fontDescription" type="system" pointSize="20"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
@@ -105,46 +105,38 @@
                     </subviews>
                     <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.20000000000000001" colorSpace="calibratedRGB"/>
                     <constraints>
-                        <constraint firstAttribute="bottom" secondItem="g33-S5-Nal" secondAttribute="bottom" constant="10" id="334-qb-3za"/>
-                        <constraint firstItem="Sna-Cm-jKC" firstAttribute="top" secondItem="LV1-vO-6eP" secondAttribute="top" id="H2u-4m-QYz"/>
-                        <constraint firstAttribute="bottom" secondItem="bto-QY-Whh" secondAttribute="bottom" constant="10" id="KV6-nq-t7m"/>
-                        <constraint firstAttribute="height" constant="60" id="OhV-Jx-mAP"/>
-                        <constraint firstAttribute="bottom" secondItem="IGx-Rh-8RJ" secondAttribute="bottom" constant="5" id="Pb1-Xd-T6S"/>
-                        <constraint firstAttribute="bottom" secondItem="Sna-Cm-jKC" secondAttribute="bottom" id="SBP-5A-LpN"/>
-                        <constraint firstItem="bto-QY-Whh" firstAttribute="top" secondItem="LV1-vO-6eP" secondAttribute="top" constant="10" id="SZz-ev-jVb"/>
-                        <constraint firstItem="lQw-rQ-rpJ" firstAttribute="leading" secondItem="g33-S5-Nal" secondAttribute="trailing" constant="3" id="VLj-rV-Quf"/>
-                        <constraint firstAttribute="trailing" secondItem="lQw-rQ-rpJ" secondAttribute="trailing" constant="8" id="Xiq-M9-7Ji"/>
-                        <constraint firstAttribute="bottom" secondItem="lQw-rQ-rpJ" secondAttribute="bottom" constant="5" id="acg-W4-wcB"/>
-                        <constraint firstItem="bto-QY-Whh" firstAttribute="leading" secondItem="IGx-Rh-8RJ" secondAttribute="trailing" constant="3" id="bwD-FO-LN7"/>
-                        <constraint firstItem="IGx-Rh-8RJ" firstAttribute="top" secondItem="LV1-vO-6eP" secondAttribute="top" constant="5" id="eTV-cl-fHg"/>
-                        <constraint firstItem="Sna-Cm-jKC" firstAttribute="leading" secondItem="bto-QY-Whh" secondAttribute="trailing" constant="8" id="fG6-7C-7hc"/>
-                        <constraint firstItem="Sna-Cm-jKC" firstAttribute="leading" secondItem="LV1-vO-6eP" secondAttribute="leading" constant="159" id="jvS-tj-iho"/>
-                        <constraint firstItem="g33-S5-Nal" firstAttribute="leading" secondItem="Sna-Cm-jKC" secondAttribute="trailing" constant="3" id="rL5-mj-6wP"/>
-                        <constraint firstItem="lQw-rQ-rpJ" firstAttribute="top" secondItem="LV1-vO-6eP" secondAttribute="top" constant="5" id="rLs-T9-0hM"/>
-                        <constraint firstItem="IGx-Rh-8RJ" firstAttribute="leading" secondItem="LV1-vO-6eP" secondAttribute="leading" constant="5" id="tsZ-Ih-y3Z"/>
-                        <constraint firstItem="g33-S5-Nal" firstAttribute="top" secondItem="LV1-vO-6eP" secondAttribute="top" constant="10" id="ywk-jL-lfp"/>
+                        <constraint firstItem="IGx-Rh-8RJ" firstAttribute="leading" secondItem="LV1-vO-6eP" secondAttribute="leading" constant="3" id="19f-hM-TPq"/>
+                        <constraint firstAttribute="bottom" secondItem="g33-S5-Nal" secondAttribute="bottom" constant="10" id="2HE-aH-or8"/>
+                        <constraint firstItem="g33-S5-Nal" firstAttribute="leading" secondItem="Sna-Cm-jKC" secondAttribute="trailing" constant="3" id="41L-s0-gms"/>
+                        <constraint firstAttribute="bottom" secondItem="IGx-Rh-8RJ" secondAttribute="bottom" constant="3" id="4Kr-xI-TIq"/>
+                        <constraint firstAttribute="bottom" secondItem="Sna-Cm-jKC" secondAttribute="bottom" id="5ga-pP-MhF"/>
+                        <constraint firstItem="Sna-Cm-jKC" firstAttribute="top" secondItem="LV1-vO-6eP" secondAttribute="top" id="GKh-yg-BmY"/>
+                        <constraint firstItem="Sna-Cm-jKC" firstAttribute="leading" secondItem="LV1-vO-6eP" secondAttribute="leading" constant="159" id="IdC-3J-YwA"/>
+                        <constraint firstItem="lQw-rQ-rpJ" firstAttribute="top" secondItem="LV1-vO-6eP" secondAttribute="top" constant="3" id="Jiu-qm-K82"/>
+                        <constraint firstItem="IGx-Rh-8RJ" firstAttribute="top" secondItem="LV1-vO-6eP" secondAttribute="top" constant="3" id="Pa8-sA-fDq"/>
+                        <constraint firstItem="g33-S5-Nal" firstAttribute="top" secondItem="LV1-vO-6eP" secondAttribute="top" constant="10" id="Tda-6h-Vuf"/>
+                        <constraint firstItem="bto-QY-Whh" firstAttribute="leading" secondItem="IGx-Rh-8RJ" secondAttribute="trailing" constant="3" id="USQ-io-YkI"/>
+                        <constraint firstAttribute="trailing" secondItem="lQw-rQ-rpJ" secondAttribute="trailing" constant="3" id="UfW-af-dSU"/>
+                        <constraint firstItem="lQw-rQ-rpJ" firstAttribute="leading" secondItem="g33-S5-Nal" secondAttribute="trailing" constant="3" id="Vye-zb-OwW"/>
+                        <constraint firstAttribute="bottom" secondItem="lQw-rQ-rpJ" secondAttribute="bottom" constant="3" id="YMT-NI-w1u"/>
+                        <constraint firstAttribute="height" constant="60" id="dlg-iu-cCb"/>
+                        <constraint firstItem="Sna-Cm-jKC" firstAttribute="leading" secondItem="bto-QY-Whh" secondAttribute="trailing" constant="3" id="kdH-d4-Yoo"/>
+                        <constraint firstItem="bto-QY-Whh" firstAttribute="top" secondItem="LV1-vO-6eP" secondAttribute="top" constant="10" id="uOo-xC-Rfj"/>
+                        <constraint firstAttribute="bottom" secondItem="bto-QY-Whh" secondAttribute="bottom" constant="10" id="y8Z-sN-Sfs"/>
                     </constraints>
                 </view>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="LV1-vO-6eP" secondAttribute="trailing" id="2uQ-qZ-Emc"/>
-                <constraint firstItem="LV1-vO-6eP" firstAttribute="top" secondItem="MPA-Bd-Nlr" secondAttribute="top" constant="260" id="42O-6o-Chm"/>
-                <constraint firstItem="LV1-vO-6eP" firstAttribute="leading" secondItem="MPA-Bd-Nlr" secondAttribute="leading" id="cNR-hv-pz4"/>
+                <constraint firstItem="LV1-vO-6eP" firstAttribute="leading" secondItem="MPA-Bd-Nlr" secondAttribute="leading" id="4Uv-iv-1wX"/>
+                <constraint firstAttribute="trailing" secondItem="LV1-vO-6eP" secondAttribute="trailing" id="Ca9-59-UoY"/>
+                <constraint firstItem="LV1-vO-6eP" firstAttribute="top" secondItem="MPA-Bd-Nlr" secondAttribute="top" constant="260" id="yIH-1T-WLE"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
-                <outlet property="constraintHeight" destination="OhV-Jx-mAP" id="joG-3t-mWt"/>
-                <outlet property="constraintLogo1BottomMargin" destination="Pb1-Xd-T6S" id="hIV-Uw-uja"/>
-                <outlet property="constraintLogo1TopMargin" destination="eTV-cl-fHg" id="cuZ-yi-ldK"/>
-                <outlet property="constraintLogo2BottomMargin" destination="acg-W4-wcB" id="iZK-z1-QuD"/>
-                <outlet property="constraintLogo2TopMargin" destination="rLs-T9-0hM" id="ikS-sb-vRD"/>
-                <outlet property="constraintTopMargin" destination="42O-6o-Chm" id="ZBQ-9U-5H3"/>
-                <outlet property="constraintVSSeparatorLeftMargin" destination="jvS-tj-iho" id="x0g-Ip-JQA"/>
-                <outlet property="constraintVSSeparatorWidth" destination="iwW-Ho-TDc" id="2rn-h3-eLg"/>
-                <outlet property="constraintWidthLogo1" destination="LmZ-ui-igi" id="o8T-TZ-poC"/>
-                <outlet property="constraintwidthLogo2" destination="GxP-rk-on0" id="gq2-Bm-20Q"/>
+                <outlet property="constraintTopMargin" destination="yIH-1T-WLE" id="8lI-U8-hzM"/>
+                <outlet property="constraintVSSeparatorLeftMargin" destination="IdC-3J-YwA" id="v5C-cg-KhO"/>
                 <outlet property="imgEmblem1" destination="IGx-Rh-8RJ" id="VHJ-xx-kmY"/>
                 <outlet property="imgEmblem2" destination="lQw-rQ-rpJ" id="P0i-NF-w44"/>
                 <outlet property="movingView" destination="LV1-vO-6eP" id="qA7-Zz-y4t"/>
