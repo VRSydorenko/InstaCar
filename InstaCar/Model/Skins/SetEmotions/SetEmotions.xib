@@ -122,7 +122,6 @@
                             <rect key="frame" x="8" y="71" width="230" height="29"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="29" id="bJ6-MW-sE7"/>
-                                <constraint firstAttribute="width" constant="230" id="nBy-JZ-UXm"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="19"/>
                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -149,6 +148,7 @@
                         <constraint firstAttribute="trailing" secondItem="lcA-ig-SXQ" secondAttribute="trailing" constant="8" id="ZNw-fB-m1s"/>
                         <constraint firstAttribute="height" constant="100" id="alu-V6-UaZ"/>
                         <constraint firstItem="lcA-ig-SXQ" firstAttribute="top" secondItem="JNo-3Z-3aH" secondAttribute="top" id="jrd-gv-3op"/>
+                        <constraint firstAttribute="trailing" secondItem="WXh-pv-G0O" secondAttribute="trailing" constant="82" id="kiT-nE-1Yb"/>
                         <constraint firstAttribute="bottom" secondItem="WXh-pv-G0O" secondAttribute="bottom" id="lY7-tJ-5Qx"/>
                         <constraint firstItem="brN-8X-aDZ" firstAttribute="top" secondItem="JNo-3Z-3aH" secondAttribute="top" constant="38" id="vc8-UC-wAr"/>
                     </constraints>
