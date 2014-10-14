@@ -112,8 +112,11 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JNo-3Z-3aH">
                     <rect key="frame" x="0.0" y="220" width="320" height="100"/>
                     <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="gift.png" translatesAutoresizingMaskIntoConstraints="NO" id="lcA-ig-SXQ" customClass="SkinElementImage">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gift.png" translatesAutoresizingMaskIntoConstraints="NO" id="lcA-ig-SXQ" customClass="SkinElementImage">
                             <rect key="frame" x="212" y="0.0" width="100" height="100"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="100" id="Ps4-A9-OcP"/>
+                            </constraints>
                         </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select car..." textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.40000000000000002" translatesAutoresizingMaskIntoConstraints="NO" id="WXh-pv-G0O" customClass="SkinElementLabel">
                             <rect key="frame" x="8" y="71" width="230" height="29"/>
@@ -141,8 +144,11 @@
                         <constraint firstAttribute="bottom" secondItem="brN-8X-aDZ" secondAttribute="bottom" constant="22" id="6Uc-5O-ERC"/>
                         <constraint firstAttribute="trailing" secondItem="brN-8X-aDZ" secondAttribute="trailing" constant="97" id="8Cv-8v-M3g"/>
                         <constraint firstItem="brN-8X-aDZ" firstAttribute="leading" secondItem="JNo-3Z-3aH" secondAttribute="leading" constant="8" id="R21-z1-oF0"/>
+                        <constraint firstAttribute="bottom" secondItem="lcA-ig-SXQ" secondAttribute="bottom" id="Tkk-JK-sM9"/>
                         <constraint firstItem="WXh-pv-G0O" firstAttribute="leading" secondItem="JNo-3Z-3aH" secondAttribute="leading" constant="8" id="VgY-36-Wf9"/>
+                        <constraint firstAttribute="trailing" secondItem="lcA-ig-SXQ" secondAttribute="trailing" constant="8" id="ZNw-fB-m1s"/>
                         <constraint firstAttribute="height" constant="100" id="alu-V6-UaZ"/>
+                        <constraint firstItem="lcA-ig-SXQ" firstAttribute="top" secondItem="JNo-3Z-3aH" secondAttribute="top" id="jrd-gv-3op"/>
                         <constraint firstAttribute="bottom" secondItem="WXh-pv-G0O" secondAttribute="bottom" id="lY7-tJ-5Qx"/>
                         <constraint firstItem="brN-8X-aDZ" firstAttribute="top" secondItem="JNo-3Z-3aH" secondAttribute="top" constant="38" id="vc8-UC-wAr"/>
                     </constraints>
