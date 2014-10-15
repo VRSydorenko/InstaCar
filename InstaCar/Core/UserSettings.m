@@ -11,6 +11,7 @@
 @implementation UserSettings
 
 /* to be changed before release:
+ * bundle identifier
  * isFullVersion method return value
  * Setting bundle name
  * App Icon asset catalog name

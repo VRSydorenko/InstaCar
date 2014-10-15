@@ -26,11 +26,11 @@
     self.dbManager = [[DbManager alloc] init];
     
     // iCloud
-    [[NSNotificationCenter defaultCenter] addObserver:self
+    /*[[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(storeDidChange:)
                                                  name:NSUbiquitousKeyValueStoreDidChangeExternallyNotification
                                                object:[NSUbiquitousKeyValueStore defaultStore]];
-    [[NSUbiquitousKeyValueStore defaultStore] synchronize];
+    [[NSUbiquitousKeyValueStore defaultStore] synchronize];*/
     
     // Location manager
     self.locationManager = [[CLLocationManager alloc]init];
