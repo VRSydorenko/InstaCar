@@ -411,11 +411,12 @@ typedef enum {
             }
             completion:^(BOOL finished){
                 if (buttonsInInitialState){
-                    self.constraintMidBtnLeftWidth.constant = 96.0;
+                    CGFloat longWidth = 0.5 * ([UIScreen mainScreen].bounds.size.width - 2 * 64);
+                    self.constraintMidBtnLeftWidth.constant = longWidth; //96.0;
                     [self.btnMiddleLeft setTitle:@"New photo" forState:UIControlStateNormal];
                     [self.btnMiddleLeft setImage:nil forState:UIControlStateNormal];
                     
-                    self.constraintMidBtnRigthWidth.constant = 96.0;
+                    self.constraintMidBtnRigthWidth.constant = longWidth; // 96.0;
                     [self.btnMiddleRight setTitle:@"Share" forState:UIControlStateNormal];
                     [self.btnMiddleRight setImage:nil forState:UIControlStateNormal];
                 } else {
