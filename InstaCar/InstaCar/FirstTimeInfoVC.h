@@ -16,8 +16,8 @@
 
 @interface FirstTimeInfoVC : UIViewController
 
-@property (nonatomic) id<FirstTimeVCDelegate> delegate;
-@property (weak, nonatomic) IBOutlet UIView *infoView;
+@property id<FirstTimeVCDelegate> delegate;
+@property (nonatomic) IBOutlet UIView *infoView;
 
 - (IBAction)didTap:(id)sender;
 

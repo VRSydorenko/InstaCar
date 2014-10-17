@@ -70,7 +70,7 @@ typedef enum {
     customCarForm = nil;
     
     if (model){
-        if ([DataManager addCustomAutoModel:model.name ofAuto:autoId logo:model.logo startYear:model.startYear endYear:model.endYear]){
+        if ([DataManager addCustomAutoModel:model.name ofAuto:autoId logo:model.logoName startYear:model.startYear endYear:model.endYear]){
             [self updateTableSourceDataWithNewContentType:currentContentType];
             [self.tableAutos reloadData];
             [self scrollTableToBottom];
@@ -99,18 +99,18 @@ typedef enum {
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
-    return [DataManager isFullVersion] && section == 1 && currentContentType == CONTENT_MODELS ? 30.0 : 0;
+    return section == 1 && currentContentType == CONTENT_MODELS ? 30.0 : 0;
 }
 
 -(UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
-    if ([DataManager isFullVersion] && section == 1 && currentContentType == CONTENT_MODELS){ // user cars
+    if (section == 1 && currentContentType == CONTENT_MODELS){ // user cars
         UIToolbar *header = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, self.tableAutos.bounds.size.width, 30.0)];
         header.barTintColor = [UIColor blackColor];
         header.tintColor = [UIColor lightTextColor];
         
         UIBarButtonItem *fixSpace = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:self action:@selector(addCustomCarPressed)];
         fixSpace.width = 40.0;
-        NSString *barString = (userDefinedData ? userDefinedData.count : 0) == 0 ? @"Didn't find a car? Add it!" : @"Your custom cars";
+        NSString *barString = (userDefinedData ? userDefinedData.count : 0) == 0 ? @"Didn't find the model? Add it!" : @"Your custom cars";
         UIBarButtonItem *barText = [[UIBarButtonItem alloc] initWithTitle:barString style:UIBarButtonItemStylePlain target:nil action:nil];
         [barText setTitleTextAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:17.0f]} forState:UIControlStateNormal];
 
@@ -126,7 +126,7 @@ typedef enum {
 }
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return 2;
+    return 1 /*2*/; // The section where it is possible to add a new car is disabled for now. Woll work in the future.
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
@@ -148,7 +148,7 @@ typedef enum {
         case CONTENT_AUTOS:{
             Auto *_auto = [data objectAtIndex:indexPath.row];
             cell.autoTitleLabel.text = _auto.name;
-            cell.autoLogo.image = [UIImage imageNamed:_auto.logo];
+            cell.autoLogo.image = _auto.logo128;
             cell.sublevelPickerDelegate = self;
             
             NSInteger modelsCount = [DataManager getModelsCountForAuto:_auto._id];
@@ -159,8 +159,8 @@ typedef enum {
             if (indexPath.section == 0){ // built-in model
                 AutoModel *model = [data objectAtIndex:indexPath.row];
                 cell.autoTitleLabel.text = model.name;
-                cell.autoYearsLabel.text = [Utils getAutoYearsString:model.startYear endYear:model.endYear];
-                cell.autoLogo.image = [UIImage imageNamed:model.logo];
+                cell.autoYearsLabel.text = model.selectedTextYears;
+                cell.autoLogo.image = model.logo128;
                 cell.sublevelPickerDelegate = self;
                 
                 NSInteger submodelsCount = [DataManager getSubmodelsCountOfModel:model.modelId];
@@ -171,8 +171,8 @@ typedef enum {
             } else { // user defined model
                 AutoModel *model = [userDefinedData objectAtIndex:indexPath.row];
                 cell.autoTitleLabel.text = model.name;
-                cell.autoYearsLabel.text = [Utils getAutoYearsString:model.startYear endYear:model.endYear];
-                cell.autoLogo.image = [UIImage imageNamed:model.logo];
+                cell.autoYearsLabel.text = model.selectedTextYears;
+                cell.autoLogo.image = model.logo128;
                 cell.autoModelsButton.hidden = YES;
             }
             break;
@@ -180,8 +180,8 @@ typedef enum {
         case CONTENT_SUBMODELS:{
             AutoSubmodel *submodel = [data objectAtIndex:indexPath.row];
             cell.autoTitleLabel.text = submodel.name;
-            cell.autoYearsLabel.text = [Utils getAutoYearsString:submodel.startYear endYear:submodel.endYear];
-            cell.autoLogo.image = [UIImage imageNamed:submodel.logo];
+            cell.autoYearsLabel.text = submodel.selectedTextYears;
+            cell.autoLogo.image = submodel.logo128;
             cell.autoModelsButton.hidden = YES;
             break;
         }
@@ -250,8 +250,7 @@ typedef enum {
         
         picker.mailComposeDelegate = self;
         picker.Subject = @"What about new car?";
-        // TODO: change email address
-        picker.toRecipients = [NSArray arrayWithObject:@"viktor.sydorenko@gmail.com"];
+        picker.toRecipients = [NSArray arrayWithObject:@"theinstacarapp@facebook.com"];
         // format placeholders order: 1) auto title; 2) model name; 3) start year; 4) end year
         NSString *messageBodyFormat = @"Hi there,\n\nConsider adding the following car to the app cars list:\n\nAuto: %@\nModel: %@\nProduction years:\n    - start: %d\n    - end: %d\n\nThanks!";
         NSString *messageBody = [NSString stringWithFormat:messageBodyFormat, selectedAuto.name, addingModelBufferForEmail.name, addingModelBufferForEmail.startYear, addingModelBufferForEmail.endYear];
@@ -301,21 +300,25 @@ typedef enum {
 
 -(void)proceedWithAskingAboutAddingCarToDb{
     if ([MFMailComposeViewController canSendMail] && addingModelBufferForEmail){
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Question" message:@"Would you like us to add this car to the app cars database?" delegate:self cancelButtonTitle:@"No" otherButtonTitles:@"Yes", nil]; // TODO: rephrase
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Question" message:@"Would you like us to add this car to the application in the next release?" delegate:self cancelButtonTitle:@"No" otherButtonTitles:@"Yes", nil];
         [alert show];
     }
 }
 
 -(void)addCustomCarPressed{
-    if (!customCarForm){
-        customCarForm = [[UIStoryboard storyboardWithName:@"main" bundle:nil] instantiateViewControllerWithIdentifier:@"customCarFormVC"];
-        customCarForm.customCarDelegate = self;
-    }
-    customCarForm.autoId = selectedAuto._id;
-    customCarForm.logoFilename = selectedAuto.logo;
-    customCarForm.autoName = selectedAuto.name;
+    if ([UserSettings isFullVersion]){ // full version - allow user to add a new car
+        if (!customCarForm){
+            customCarForm = [[UIStoryboard storyboardWithName:@"main" bundle:nil] instantiateViewControllerWithIdentifier:@"customCarFormVC"];
+            customCarForm.customCarDelegate = self;
+        }
+        customCarForm.autoId = selectedAuto._id;
+        customCarForm.logoFilename = selectedAuto.logoName;
+        customCarForm.autoName = selectedAuto.name;
     
-    [self presentViewController:customCarForm animated:YES completion:nil];
+        [self presentViewController:customCarForm animated:YES completion:nil];
+    } else { // open info about Full version
+        [self.autoSelectorDelegate userWantsProVersionInfo];
+    }
 }
 
 -(Auto*)prepareResult{

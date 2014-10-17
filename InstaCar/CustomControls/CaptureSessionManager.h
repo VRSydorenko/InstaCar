@@ -3,13 +3,17 @@
 #define kImageCapturedSuccessfully @"imageCapturedSuccessfully"
 
 @interface CaptureSessionManager : NSObject {
+    AVCaptureDevice *frontCamera;
+    AVCaptureDevice *backCamera;
+    
     bool activeInputFront;
+    bool captureInProgress;
 }
 
 @property (retain) AVCaptureVideoPreviewLayer *previewLayer;
 @property (retain) AVCaptureSession *captureSession;
 @property (retain) AVCaptureStillImageOutput *stillImageOutput;
-@property (nonatomic, retain) UIImage *stillImage;
+@property (retain) UIImage *stillImage;
 
 @property int imageTopCropMargin; // status bar * navigation item height
 

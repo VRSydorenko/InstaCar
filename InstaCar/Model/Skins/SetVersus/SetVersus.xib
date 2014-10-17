@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6245" systemVersion="14A388a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment defaultVersion="1792" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view tag="1" contentMode="scaleToFill" id="Tnr-oz-4iU" customClass="SkinVersusLogo">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="320"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xs5-Ya-u5b" customClass="SkinElementRect">
+                    <rect key="frame" x="0.0" y="260" width="320" height="60"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_anycar.png" translatesAutoresizingMaskIntoConstraints="NO" id="BAC-hV-PXa" customClass="SkinElementImage">
+                            <rect key="frame" x="5" y="3" width="60" height="54"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="60" id="x5w-sO-S7g"/>
+                            </constraints>
+                        </imageView>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_anycar.png" translatesAutoresizingMaskIntoConstraints="NO" id="zwt-LL-gNa" customClass="SkinElementImage">
+                            <rect key="frame" x="255" y="3" width="60" height="54"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="60" id="DAP-lG-dAl"/>
+                            </constraints>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.20000000000000001" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstItem="zwt-LL-gNa" firstAttribute="top" secondItem="Xs5-Ya-u5b" secondAttribute="top" constant="3" id="0WP-sh-gxY"/>
+                        <constraint firstAttribute="trailing" secondItem="zwt-LL-gNa" secondAttribute="trailing" constant="5" id="Icr-gO-fKD"/>
+                        <constraint firstAttribute="bottom" secondItem="zwt-LL-gNa" secondAttribute="bottom" constant="3" id="Jqi-XH-alq"/>
+                        <constraint firstItem="BAC-hV-PXa" firstAttribute="top" secondItem="Xs5-Ya-u5b" secondAttribute="top" constant="3" id="UBp-GG-hnv"/>
+                        <constraint firstItem="BAC-hV-PXa" firstAttribute="leading" secondItem="Xs5-Ya-u5b" secondAttribute="leading" constant="5" id="UF2-dZ-2qe"/>
+                        <constraint firstAttribute="bottom" secondItem="BAC-hV-PXa" secondAttribute="bottom" constant="3" id="lOP-of-6Gv"/>
+                        <constraint firstAttribute="height" constant="60" id="vdw-RR-ohI"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="Xs5-Ya-u5b" firstAttribute="leading" secondItem="Tnr-oz-4iU" secondAttribute="leading" id="UhR-1I-nkg"/>
+                <constraint firstAttribute="trailing" secondItem="Xs5-Ya-u5b" secondAttribute="trailing" id="Z0P-bL-NzD"/>
+                <constraint firstItem="Xs5-Ya-u5b" firstAttribute="top" secondItem="Tnr-oz-4iU" secondAttribute="top" constant="260" id="iQZ-1U-xkD"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="constraintTopMargin" destination="iQZ-1U-xkD" id="GfR-zI-4ad"/>
+                <outlet property="constraintWidthLogo1" destination="x5w-sO-S7g" id="SFz-3a-TF5"/>
+                <outlet property="constraintwidthLogo2" destination="DAP-lG-dAl" id="NN2-WC-Xk5"/>
+                <outlet property="imgEmblem1" destination="BAC-hV-PXa" id="OB8-Zy-gHv"/>
+                <outlet property="imgEmblem2" destination="zwt-LL-gNa" id="NWO-JU-hzh"/>
+                <outlet property="movingView" destination="Xs5-Ya-u5b" id="e2i-8x-WxC"/>
+            </connections>
+        </view>
+        <view contentMode="scaleToFill" id="MPA-Bd-Nlr" customClass="SkinVersusName">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="320"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LV1-vO-6eP" customClass="SkinElementRect">
+                    <rect key="frame" x="0.0" y="260" width="320" height="60"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sna-Cm-jKC" customClass="SkinElementRect">
+                            <rect key="frame" x="159" y="0.0" width="4" height="60"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="4" id="Wzb-HK-r2f"/>
+                            </constraints>
+                        </view>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_anycar.png" translatesAutoresizingMaskIntoConstraints="NO" id="IGx-Rh-8RJ" customClass="SkinElementImage">
+                            <rect key="frame" x="3" y="3" width="40" height="54"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="40" id="8Xw-pJ-gdE"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select car..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.20000000298023224" translatesAutoresizingMaskIntoConstraints="NO" id="g33-S5-Nal" customClass="SkinElementLabel">
+                            <rect key="frame" x="166" y="10" width="108" height="40"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                            <color key="shadowColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <size key="shadowOffset" width="1" height="1"/>
+                        </label>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_anycar.png" translatesAutoresizingMaskIntoConstraints="NO" id="lQw-rQ-rpJ" customClass="SkinElementImage">
+                            <rect key="frame" x="277" y="3" width="40" height="54"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="40" id="Dcc-S3-D8N"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select car..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.20000000298023224" translatesAutoresizingMaskIntoConstraints="NO" id="bto-QY-Whh" customClass="SkinElementLabel">
+                            <rect key="frame" x="46" y="10" width="110" height="40"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                            <color key="shadowColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <size key="shadowOffset" width="1" height="1"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.20000000000000001" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstItem="IGx-Rh-8RJ" firstAttribute="leading" secondItem="LV1-vO-6eP" secondAttribute="leading" constant="3" id="19f-hM-TPq"/>
+                        <constraint firstAttribute="bottom" secondItem="g33-S5-Nal" secondAttribute="bottom" constant="10" id="2HE-aH-or8"/>
+                        <constraint firstItem="g33-S5-Nal" firstAttribute="leading" secondItem="Sna-Cm-jKC" secondAttribute="trailing" constant="3" id="41L-s0-gms"/>
+                        <constraint firstAttribute="bottom" secondItem="IGx-Rh-8RJ" secondAttribute="bottom" constant="3" id="4Kr-xI-TIq"/>
+                        <constraint firstAttribute="bottom" secondItem="Sna-Cm-jKC" secondAttribute="bottom" id="5ga-pP-MhF"/>
+                        <constraint firstItem="Sna-Cm-jKC" firstAttribute="top" secondItem="LV1-vO-6eP" secondAttribute="top" id="GKh-yg-BmY"/>
+                        <constraint firstItem="Sna-Cm-jKC" firstAttribute="leading" secondItem="LV1-vO-6eP" secondAttribute="leading" constant="159" id="IdC-3J-YwA"/>
+                        <constraint firstItem="lQw-rQ-rpJ" firstAttribute="top" secondItem="LV1-vO-6eP" secondAttribute="top" constant="3" id="Jiu-qm-K82"/>
+                        <constraint firstItem="IGx-Rh-8RJ" firstAttribute="top" secondItem="LV1-vO-6eP" secondAttribute="top" constant="3" id="Pa8-sA-fDq"/>
+                        <constraint firstItem="g33-S5-Nal" firstAttribute="top" secondItem="LV1-vO-6eP" secondAttribute="top" constant="10" id="Tda-6h-Vuf"/>
+                        <constraint firstItem="bto-QY-Whh" firstAttribute="leading" secondItem="IGx-Rh-8RJ" secondAttribute="trailing" constant="3" id="USQ-io-YkI"/>
+                        <constraint firstAttribute="trailing" secondItem="lQw-rQ-rpJ" secondAttribute="trailing" constant="3" id="UfW-af-dSU"/>
+                        <constraint firstItem="lQw-rQ-rpJ" firstAttribute="leading" secondItem="g33-S5-Nal" secondAttribute="trailing" constant="3" id="Vye-zb-OwW"/>
+                        <constraint firstAttribute="bottom" secondItem="lQw-rQ-rpJ" secondAttribute="bottom" constant="3" id="YMT-NI-w1u"/>
+                        <constraint firstAttribute="height" constant="60" id="dlg-iu-cCb"/>
+                        <constraint firstItem="Sna-Cm-jKC" firstAttribute="leading" secondItem="bto-QY-Whh" secondAttribute="trailing" constant="3" id="kdH-d4-Yoo"/>
+                        <constraint firstItem="bto-QY-Whh" firstAttribute="top" secondItem="LV1-vO-6eP" secondAttribute="top" constant="10" id="uOo-xC-Rfj"/>
+                        <constraint firstAttribute="bottom" secondItem="bto-QY-Whh" secondAttribute="bottom" constant="10" id="y8Z-sN-Sfs"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="LV1-vO-6eP" firstAttribute="leading" secondItem="MPA-Bd-Nlr" secondAttribute="leading" id="4Uv-iv-1wX"/>
+                <constraint firstAttribute="trailing" secondItem="LV1-vO-6eP" secondAttribute="trailing" id="Ca9-59-UoY"/>
+                <constraint firstItem="LV1-vO-6eP" firstAttribute="top" secondItem="MPA-Bd-Nlr" secondAttribute="top" constant="260" id="yIH-1T-WLE"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="constraintTopMargin" destination="yIH-1T-WLE" id="8lI-U8-hzM"/>
+                <outlet property="constraintVSSeparatorLeftMargin" destination="IdC-3J-YwA" id="v5C-cg-KhO"/>
+                <outlet property="imgEmblem1" destination="IGx-Rh-8RJ" id="VHJ-xx-kmY"/>
+                <outlet property="imgEmblem2" destination="lQw-rQ-rpJ" id="P0i-NF-w44"/>
+                <outlet property="movingView" destination="LV1-vO-6eP" id="qA7-Zz-y4t"/>
+                <outlet property="rectSeparator" destination="Sna-Cm-jKC" id="PCr-Gs-rqv"/>
+                <outlet property="textAuto1" destination="bto-QY-Whh" id="wYF-ve-OeH"/>
+                <outlet property="textAuto2" destination="g33-S5-Nal" id="4pW-nu-dcR"/>
+            </connections>
+        </view>
+        <view tag="2" contentMode="scaleToFill" id="g7Z-iL-VYB" customClass="SkinVersus_Finish">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="320"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YBt-bg-sAa">
+                    <rect key="frame" x="0.0" y="240" width="320" height="80"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="racingFlags.png" translatesAutoresizingMaskIntoConstraints="NO" id="NzM-fB-nMh" customClass="SkinElementImage">
+                            <rect key="frame" x="96" y="1" width="129" height="79"/>
+                        </imageView>
+                        <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_anycar.png" translatesAutoresizingMaskIntoConstraints="NO" id="vRq-Fb-GCj" customClass="SkinElementImage">
+                            <rect key="frame" x="233" y="20" width="87" height="60"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="60" id="EbX-YE-0PV"/>
+                                <constraint firstAttribute="width" constant="87" id="c5Q-Ec-YMN"/>
+                            </constraints>
+                        </imageView>
+                        <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_anycar.png" translatesAutoresizingMaskIntoConstraints="NO" id="k8C-eB-gvG" customClass="SkinElementImage">
+                            <rect key="frame" x="0.0" y="20" width="87" height="60"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="60" id="UeV-eV-vx2"/>
+                                <constraint firstAttribute="width" constant="87" id="mPR-h6-a1e"/>
+                            </constraints>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="NzM-fB-nMh" firstAttribute="top" secondItem="YBt-bg-sAa" secondAttribute="top" constant="1" id="9e4-C5-n5F"/>
+                        <constraint firstItem="NzM-fB-nMh" firstAttribute="leading" secondItem="k8C-eB-gvG" secondAttribute="trailing" constant="9" id="CDk-GZ-tNO"/>
+                        <constraint firstItem="vRq-Fb-GCj" firstAttribute="leading" secondItem="NzM-fB-nMh" secondAttribute="trailing" constant="8" id="FMy-6C-Cbu"/>
+                        <constraint firstItem="k8C-eB-gvG" firstAttribute="leading" secondItem="YBt-bg-sAa" secondAttribute="leading" id="Ilb-KW-inW"/>
+                        <constraint firstAttribute="trailing" secondItem="vRq-Fb-GCj" secondAttribute="trailing" id="MKJ-UV-2zZ"/>
+                        <constraint firstAttribute="bottom" secondItem="NzM-fB-nMh" secondAttribute="bottom" id="WP2-dN-PI0"/>
+                        <constraint firstAttribute="height" constant="80" id="YzE-nO-3XL"/>
+                        <constraint firstAttribute="bottom" secondItem="vRq-Fb-GCj" secondAttribute="bottom" id="dUm-f5-PWL"/>
+                        <constraint firstAttribute="bottom" secondItem="k8C-eB-gvG" secondAttribute="bottom" id="lpT-Bq-FGy"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="YBt-bg-sAa" firstAttribute="leading" secondItem="g7Z-iL-VYB" secondAttribute="leading" id="68i-kw-TiR"/>
+                <constraint firstItem="YBt-bg-sAa" firstAttribute="top" secondItem="g7Z-iL-VYB" secondAttribute="top" constant="240" id="HKR-qI-63Q"/>
+                <constraint firstAttribute="trailing" secondItem="YBt-bg-sAa" secondAttribute="trailing" id="fKY-0i-15d"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="constraintTopMargin" destination="HKR-qI-63Q" id="CT1-Nq-zWg"/>
+                <outlet property="imgEmblem1" destination="k8C-eB-gvG" id="gWi-Ul-dJ5"/>
+                <outlet property="imgEmblem2" destination="vRq-Fb-GCj" id="c5I-NV-v5H"/>
+                <outlet property="movingView" destination="YBt-bg-sAa" id="Lge-8W-Qzq"/>
+            </connections>
+            <point key="canvasLocation" x="818" y="555"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="logo_anycar.png" width="64" height="64"/>
+        <image name="racingFlags.png" width="287" height="177"/>
+    </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>

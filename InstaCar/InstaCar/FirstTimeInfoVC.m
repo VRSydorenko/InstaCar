@@ -9,7 +9,6 @@
 #import "FirstTimeInfoVC.h"
 
 @interface FirstTimeInfoVC ()
-
 @end
 
 @implementation FirstTimeInfoVC

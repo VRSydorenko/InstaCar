@@ -10,10 +10,12 @@
 #import "DataManager.h"
 #import "CellAuto.h"
 #import "CustomCarFormVC.h"
-#include "iCloudHandler.h"
+#import "iCloudHandler.h"
+#import "SkinElementImage.h"
 
 @protocol AutoSelectorDelegate <NSObject>
 -(void)newAutoSelected:(Auto*)newAuto;
+-(void)userWantsProVersionInfo; // when in free version user picks 'add custom model'
 @end
 
 @interface AutosVC : UIViewController <UITableViewDelegate,
@@ -24,7 +26,7 @@
                                        CustomCarFormDelegate,
                                        iCloudHandlerDelegate>
 
-@property (weak, nonatomic) IBOutlet UITableView *tableAutos;
+@property (nonatomic) IBOutlet UITableView *tableAutos;
 @property id<AutoSelectorDelegate> autoSelectorDelegate;
 
 - (IBAction)btnBackPressed;

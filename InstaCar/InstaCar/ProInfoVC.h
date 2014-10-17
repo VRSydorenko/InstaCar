@@ -16,7 +16,7 @@
 
 @interface ProInfoVC : UIViewController
 
-@property (nonatomic) id<ProInfoViewControllerDelegate> delegate;
+@property UIViewController<ProInfoViewControllerDelegate> *delegate;
 
 - (IBAction)btnClosePressed:(id)sender;
 - (IBAction)btnGetProPressed:(id)sender;

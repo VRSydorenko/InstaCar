@@ -11,12 +11,19 @@
 @implementation UserSettings
 
 /* to be changed before release:
+ * bundle identifier
  * isFullVersion method return value
  * Setting bundle name
+ * App Icon asset catalog name
  */
 
 +(BOOL)isFullVersion{
-    return NO; // TODO: change before release
+    return YES;
+}
+
++(BOOL)isIPhone4{
+    return [UIScreen mainScreen].bounds.size.height == 480
+        || UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad; // Workaround: iPad is like iPhone4 // TODO: refactor/rewrite logic
 }
 
 +(NSString*) getStoredAppVersion{
@@ -55,6 +62,8 @@
 }
 
 +(BOOL)getUseICloud{
+    return NO; // Currently disabled. Will work in the future.
+    
     NSObject *configuredValue = [[NSUserDefaults standardUserDefaults] objectForKey:PREF_USE_ICLOUD];
     if (nil == configuredValue){
         return YES;
@@ -64,7 +73,6 @@
 }
 
 +(BOOL)getSaveWhenSharing{
-    // TODO: rename Setting bundle
     NSObject *configuredValue = [[NSUserDefaults standardUserDefaults] objectForKey:PREF_SAVE_WHEN_SHARING];
     if (nil == configuredValue){
         return YES;

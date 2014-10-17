@@ -165,7 +165,7 @@ typedef enum {
 #pragma mark === China ===
     countryId = [self addCountry:@"China"];
 #pragma mark |---- Geely
-    logoId = [self addLogo:@"geely_256.png"];
+    logoId = [self addLogo:@"logo_geely"];
     autoId = [self addAuto:@"Geely" country:countryId logo:logoId independentId:CITROEN];
     
     [self addAutoModel:@"BL" ofAuto:autoId logo:logoId startYear:2003 endYear:0];
@@ -189,7 +189,7 @@ typedef enum {
 #pragma mark === France ===
     countryId = [self addCountry:@"France"];
 #pragma mark |---- Citroёn
-    logoId = [self addLogo:@"citroen_256.png"]; // TODO: add second Citroen logo
+    logoId = [self addLogo:@"logo_citroen"]; // TODO: add second Citroen logo
     autoId = [self addAuto:@"CITROËN" country:countryId logo:logoId independentId:CITROEN];
     modelId = [self addAutoModel:@"Pre war" ofAuto:autoId logo:logoId startYear:1919 endYear:1941 isSelectable:NO];
     {
@@ -363,7 +363,7 @@ typedef enum {
     }
     
 #pragma mark |---- Bugatti
-    logoId = [self addLogo:@"bugatti_256.png"];
+    logoId = [self addLogo:@"logo_bugatti"];
     autoId = [self addAuto:@"Bugatti" country:countryId logo:logoId independentId:BUGATTI];
     
     [self addAutoModel:@"16C Galibier" ofAuto:autoId logo:logoId startYear:2009 endYear:-1];
@@ -424,7 +424,7 @@ typedef enum {
     }
     
 #pragma mark |---- Peugeot
-    logoId = [self addLogo:@"peugeot_256.png"];
+    logoId = [self addLogo:@"logo_peugeot"];
     autoId = [self addAuto:@"Peugeot" country:countryId logo:logoId independentId:PEUGEOT];
     modelId = [self addAutoModel:@"1" ofAuto:autoId logo:logoId startYear:0 endYear:0 isSelectable:NO];
 	{
@@ -627,7 +627,7 @@ typedef enum {
 	[self addAutoModel:@"Vivacity" ofAuto:autoId logo:logoId startYear:1998 endYear:0];
     
 #pragma mark |---- Renault
-    logoId = [self addLogo:@"renault_256.png"];
+    logoId = [self addLogo:@"logo_renault"];
     autoId = [self addAuto:@"Renault" country:countryId logo:logoId independentId:RENAULT];
     
     [self addAutoModel:@"Avantime" ofAuto:autoId logo:logoId startYear:2001 endYear:2003];
@@ -887,7 +887,7 @@ typedef enum {
 #pragma mark === Germany ===
     countryId = [self addCountry:@"Germany"];
 #pragma mark |---- Audi
-    logoId = [self addLogo:@"audi_256.png"];
+    logoId = [self addLogo:@"logo_audi"];
     autoId = [self addAuto:@"Audi" country:countryId logo:logoId independentId:AUDI];
     [self addAutoModel:@"50" ofAuto:autoId logo:logoId startYear:1974 endYear:1978];
     modelId = [self addAutoModel:@"80" ofAuto:autoId logo:logoId startYear:1966 endYear:1996];
@@ -1030,7 +1030,7 @@ typedef enum {
     [self addAutoModel:@"TT RS" ofAuto:autoId logo:logoId startYear:2009 endYear:0];
     [self addAutoModel:@"V8" ofAuto:autoId logo:logoId startYear:1988 endYear:1993];
 #pragma mark |---- BMW
-    logoId = [self addLogo:@"bmw_256.png"];
+    logoId = [self addLogo:@"logo_bmw"];
     autoId = [self addAuto:@"BMW" country:countryId logo:logoId independentId:BMW];
     modelId = [self addAutoModel:@"Retro" ofAuto:autoId logo:logoId startYear:0 endYear:0 isSelectable:NO];
     {
@@ -1183,7 +1183,7 @@ typedef enum {
         [self addAutoSubmodel:@"Z8" ofModel:modelId logo:logoId startYear:0 endYear:0];
     }
 #pragma mark |---- Mercedes
-    logoId = [self addLogo:@"mercedes_256.png"];
+    logoId = [self addLogo:@"logo_mercedes"];
     autoId = [self addAuto:@"Mercedes-Benz" country:countryId logo:logoId independentId:MERCEDES];
     modelId = [self addAutoModel:@"1920s" ofAuto:autoId logo:logoId startYear:0 endYear:0 isSelectable:NO];
     {
@@ -1405,7 +1405,7 @@ typedef enum {
         [self addAutoSubmodel:@"F 125" ofModel:modelId logo:logoId startYear:2011 endYear:-1];
     }
 #pragma mark |---- Opel
-    logoId = [self addLogo:@"opel_256.png"];
+    logoId = [self addLogo:@"logo_opel"];
     autoId = [self addAuto:@"Opel" country:countryId logo:logoId independentId:OPEL];
     
 	modelId = [self addAutoModel:@"Retro cars" ofAuto:autoId logo:logoId startYear:0 endYear:0 isSelectable:NO];
@@ -1506,7 +1506,7 @@ typedef enum {
 	[self addAutoModel:@"Zafira" ofAuto:autoId logo:logoId startYear:1999 endYear:0];
     
 #pragma mark |---- Volkswagen
-    logoId = [self addLogo:@"vw_256.png"];
+    logoId = [self addLogo:@"logo_vw"];
     autoId = [self addAuto:@"Volkswagen" country:countryId logo:logoId independentId:VOLKSWAGEN];
 	
 	[self addAutoModel:@"Type 181" ofAuto:autoId logo:logoId startYear:1968 endYear:1983];
@@ -1657,7 +1657,7 @@ typedef enum {
 	[self addAutoModel:@"Worker" ofAuto:autoId logo:logoId startYear:0000 endYear:0];
     
 #pragma mark |---- Porsche
-    logoId = [self addLogo:@"porsche_256.png"];
+    logoId = [self addLogo:@"logo_porsche"];
     autoId = [self addAuto:@"Porsche" country:countryId logo:logoId independentId:AUDI];
     
     [self addAutoModel:@"Boxster" ofAuto:autoId logo:logoId startYear:1996 endYear:0];
@@ -1751,7 +1751,7 @@ typedef enum {
 #pragma mark === Italy ===
     countryId = [self addCountry:@"Italy"];
 #pragma mark |---- Alfa Romeo
-    logoId = [self addLogo:@"alfaromeo_256.png"];
+    logoId = [self addLogo:@"logo_alfaromeo"];
     autoId = [self addAuto:@"Alfa Romeo" country:countryId logo:logoId independentId:ALFA_ROMEO];
     modelId = [self addAutoModel:@"1910s" ofAuto:autoId logo:logoId startYear:0 endYear:0 isSelectable:NO];
     {
@@ -1885,7 +1885,7 @@ typedef enum {
     }
 
 #pragma mark |---- Ferrari
-    logoId = [self addLogo:@"ferrari_256.png"];
+    logoId = [self addLogo:@"logo_ferrari"];
     autoId = [self addAuto:@"Ferrari" country:countryId logo:logoId independentId:DELOREAN];
     
     [self addAutoModel:@"125" ofAuto:autoId logo:logoId startYear:1947 endYear:-1];
@@ -2042,7 +2042,7 @@ typedef enum {
 	}
     
 #pragma mark |---- Fiat
-    logoId = [self addLogo:@"fiat_256.png"];
+    logoId = [self addLogo:@"logo_fiat"];
     autoId = [self addAuto:@"Fiat" country:countryId logo:logoId independentId:FIAT];
     modelId = [self addAutoModel:@"124 Sport Spider" ofAuto:autoId logo:logoId startYear:0 endYear:0 isSelectable:NO];
 	{
@@ -2203,7 +2203,7 @@ typedef enum {
 	[self addAutoModel:@"Zero" ofAuto:autoId logo:logoId startYear:1912 endYear:1915];
     
 #pragma mark |---- Iveco
-    logoId = [self addLogo:@"iveco_256.png"];
+    logoId = [self addLogo:@"logo_iveco"];
     autoId = [self addAuto:@"Iveco" country:countryId logoAsName:logoId independentId:IVECO];
     
     [self addAutoModel:@"Daily" ofAuto:autoId logo:logoId startYear:1978 endYear:0];
@@ -2212,7 +2212,7 @@ typedef enum {
 	[self addAutoModel:@"Trakker" ofAuto:autoId logo:logoId startYear:2004 endYear:0];
     
 #pragma mark |---- Lamborghini
-    logoId = [self addLogo:@"lamborghini_256.png"];
+    logoId = [self addLogo:@"logo_lambo"];
     autoId = [self addAuto:@"Lamborghini" country:countryId logo:logoId independentId:LAMBORGHINI];
     [self addAutoModel:@"350GT" ofAuto:autoId logo:logoId startYear:1964 endYear:1966];
 	[self addAutoModel:@"400GT" ofAuto:autoId logo:logoId startYear:1966 endYear:1968];
@@ -2237,7 +2237,7 @@ typedef enum {
 	
 	[self addAutoModel:@"Veneno" ofAuto:autoId logo:logoId startYear:2013 endYear:2013];
 #pragma mark |---- Lancia
-    logoId = [self addLogo:@"lancia_256.png"];
+    logoId = [self addLogo:@"logo_lancia"];
     autoId = [self addAuto:@"Lancia" country:countryId logo:logoId independentId:LANCIA];
     
     [self addAutoModel:@"037" ofAuto:autoId logo:logoId startYear:0000 endYear:0];
@@ -2402,7 +2402,7 @@ typedef enum {
 #pragma mark === Ireland ===
     countryId = [self addCountry:@"Ireland"];
 #pragma mark |---- DeLorean
-    logoId = [self addLogo:@"delorean_256.png"];
+    logoId = [self addLogo:@"logo_delorean"];
     autoId = [self addAuto:@"DeLorean" country:countryId logo:logoId independentId:DELOREAN];
     
     [self addAutoModel:@"DMC-12" ofAuto:autoId logo:logoId startYear:1981 endYear:1983];
@@ -2414,7 +2414,7 @@ typedef enum {
 #pragma mark === Japan ===
     countryId = [self addCountry:@"Japan"];
 #pragma mark |---- Acura
-    logoId = [self addLogo:@"acura_256.png"];
+    logoId = [self addLogo:@"logo_acura"];
     autoId = [self addAuto:@"Acura" country:countryId logo:logoId independentId:ACURA];
     [self addAutoModel:@"NSX" ofAuto:autoId logo:logoId startYear:2015 endYear:0];
 	[self addAutoModel:@"ARX-01" ofAuto:autoId logo:logoId startYear:2007 endYear:0];
@@ -2436,7 +2436,7 @@ typedef enum {
 	[self addAutoModel:@"Vigor" ofAuto:autoId logo:logoId startYear:1981 endYear:1995];
 	[self addAutoModel:@"ZDX" ofAuto:autoId logo:logoId startYear:2009 endYear:0];
 #pragma mark |---- Nissan
-    logoId = [self addLogo:@"nissan_256.png"];
+    logoId = [self addLogo:@"logo_nissan"];
     autoId = [self addAuto:@"Nissan" country:countryId logo:logoId independentId:NISSAN];
     [self addAutoModel:@"100NX" ofAuto:autoId logo:logoId startYear:1991 endYear:1996];
 	[self addAutoModel:@"180SX" ofAuto:autoId logo:logoId startYear:1989 endYear:1998];
@@ -2608,7 +2608,7 @@ typedef enum {
 		[self addAutoSubmodel:@"592 Bus" ofModel:modelId logo:logoId startYear:1958 endYear:1959];
 	}
 #pragma mark |---- Toyota
-    logoId = [self addLogo:@"toyota_256.png"];
+    logoId = [self addLogo:@"logo_toyota"];
     autoId = [self addAuto:@"TOYOTA" country:countryId logo:logoId independentId:TOYOTA];
     modelId = [self addAutoModel:@"Old cars" ofAuto:autoId logo:logoId startYear:0 endYear:0 isSelectable:NO];
     {
@@ -3014,7 +3014,7 @@ typedef enum {
     }
     
 #pragma mark |---- Subaru
-    logoId = [self addLogo:@"subaru_256.png"];
+    logoId = [self addLogo:@"logo_subaru"];
     autoId = [self addAuto:@"Subaru" country:countryId logo:logoId independentId:SUBARU];
     [self addAutoModel:@"1000" ofAuto:autoId logo:logoId startYear:1966 endYear:1969];
 	[self addAutoModel:@"1500" ofAuto:autoId logo:logoId startYear:1954 endYear:-1];
@@ -3095,7 +3095,7 @@ typedef enum {
 	[self addAutoModel:@"Vortex" ofAuto:autoId logo:logoId startYear:1985 endYear:1991];
 	[self addAutoModel:@"XT" ofAuto:autoId logo:logoId startYear:1985 endYear:1991];
 #pragma mark |---- Infiniti
-    logoId = [self addLogo:@"infiniti_256.png"];
+    logoId = [self addLogo:@"logo_infiniti"];
     autoId = [self addAuto:@"Infiniti" country:countryId logo:logoId independentId:INFINITI];
     
     modelId = [self addAutoModel:@"G" ofAuto:autoId logo:logoId startYear:1990 endYear:0];
@@ -3161,7 +3161,7 @@ typedef enum {
     }
     
 #pragma mark |---- Mazda
-    logoId = [self addLogo:@"mazda_256.png"];
+    logoId = [self addLogo:@"logo_mazda"];
     autoId = [self addAuto:@"Mazda" country:countryId logo:logoId independentId:MAZDA];
     
     modelId = [self addAutoModel:@"Concept cars" ofAuto:autoId logo:logoId startYear:0 endYear:0 isSelectable:NO];
@@ -3277,7 +3277,7 @@ typedef enum {
     [self addAutoModel:@"Verisa" ofAuto:autoId logo:logoId startYear:2004 endYear:0];
     
 #pragma mark |---- Mitsubishi
-    logoId = [self addLogo:@"mitsubishi_256.png"];
+    logoId = [self addLogo:@"logo_mitsubishi"];
     autoId = [self addAuto:@"Mitsubishi" country:countryId logo:logoId independentId:MITSUBISHI];
     
     [self addAutoModel:@"3000GT" ofAuto:autoId logo:logoId startYear:1990 endYear:2001];
@@ -3494,7 +3494,7 @@ typedef enum {
 		[self addAutoSubmodel:@"Concept-ZT" ofModel:modelId logo:logoId startYear:2007 endYear:-1];
 	}
 #pragma mark |---- Honda
-    logoId = [self addLogo:@"honda_256.png"];
+    logoId = [self addLogo:@"logo_honda"];
     autoId = [self addAuto:@"Honda" country:countryId logo:logoId independentId:HONDA];
     
     modelId = [self addAutoModel:@"Accord" ofAuto:autoId logo:logoId startYear:0 endYear:0 isSelectable:NO];
@@ -3683,7 +3683,7 @@ typedef enum {
 	}
     
 #pragma mark |---- Isuzu
-    logoId = [self addLogo:@"isuzu_256.png"];
+    logoId = [self addLogo:@"logo_isuzu"];
     autoId = [self addAuto:@"Isuzu" country:countryId logo:logoId independentId:ISUZU];
     
     modelId = [self addAutoModel:@"Erga" ofAuto:autoId logo:logoId startYear:2000 endYear:0];
@@ -3788,7 +3788,7 @@ typedef enum {
 #pragma mark === Romania ===
     countryId = [self addCountry:@"Romania"];
 #pragma mark |---- Dacia
-    logoId = [self addLogo:@"dacia_256.png"];
+    logoId = [self addLogo:@"logo_dacia"];
     autoId = [self addAuto:@"Dacia" country:countryId logo:logoId independentId:DACIA];
     
     [self addAutoModel:@"Logan" ofAuto:autoId logo:logoId startYear:2004 endYear:0];
@@ -3846,7 +3846,7 @@ typedef enum {
 #pragma mark === Russia ===
 countryId = [self addCountry:@"Russia"];
 #pragma mark |---- Lada
-    logoId = [self addLogo:@"lada_256.png"];
+    logoId = [self addLogo:@"logo_lada"];
     autoId = [self addAuto:@"Lada" country:countryId logo:logoId independentId:LADA];
     [self addAutoModel:@"110" ofAuto:autoId logo:logoId startYear:1995 endYear:2010];
 	[self addAutoModel:@"111" ofAuto:autoId logo:logoId startYear:1998 endYear:0];
@@ -3878,7 +3878,7 @@ countryId = [self addCountry:@"Russia"];
 	[self addAutoModel:@"XRAY" ofAuto:autoId logo:logoId startYear:2012 endYear:-1];
     
 #pragma mark |---- VAZ
-    logoId = [self addLogo:@"vaz_256.png"];
+    logoId = [self addLogo:@"logo_vaz"];
     autoId = [self addAuto:@"VAZ" country:countryId logo:logoId independentId:VAZ];
     [self addAutoModel:@"1111" ofAuto:autoId logo:logoId startYear:1987 endYear:2008];
 	[self addAutoModel:@"2101" ofAuto:autoId logo:logoId startYear:1970 endYear:1988];
@@ -3913,7 +3913,7 @@ countryId = [self addCountry:@"Russia"];
 #pragma mark === Sweden ===
     countryId = [self addCountry:@"Sweden"];
 #pragma mark |---- Scania
-    logoId = [self addLogo:@"scania_256.png"];
+    logoId = [self addLogo:@"logo_scania"];
     autoId = [self addAuto:@"Scania" country:countryId logo:logoId independentId:SCANIA];
     
     modelId = [self addAutoModel:@"Bus" ofAuto:autoId logo:logoId startYear:0 endYear:0];
@@ -3943,7 +3943,7 @@ countryId = [self addCountry:@"Russia"];
     }
     
 #pragma mark |---- Volvo
-    logoId = [self addLogo:@"volvo_256.png"];
+    logoId = [self addLogo:@"logo_volvo"];
     autoId = [self addAuto:@"Volvo" country:countryId logo:logoId independentId:VOLVO];
     [self addAutoModel:@"240/260" ofAuto:autoId logo:logoId startYear:1974 endYear:1993];
 	[self addAutoModel:@"66" ofAuto:autoId logo:logoId startYear:1975 endYear:1980];
@@ -4010,7 +4010,7 @@ countryId = [self addCountry:@"Russia"];
 #pragma mark === South Korea ===
     countryId = [self addCountry:@"South Korea"];
 #pragma mark |---- Daewoo
-    logoId = [self addLogo:@"daewoo_256.png"];
+    logoId = [self addLogo:@"logo_daewoo"];
     autoId = [self addAuto:@"Daewoo" country:countryId logo:logoId independentId:DAEWOO];
     
     modelId = [self addAutoModel:@"1.5i" ofAuto:autoId logo:logoId startYear:0 endYear:0 isSelectable:NO];
@@ -4111,7 +4111,7 @@ countryId = [self addCountry:@"Russia"];
 		[self addAutoSubmodel:@"Pointer" ofModel:modelId logo:logoId startYear:1995 endYear:0];
 	}
 #pragma mark |---- Hyundai
-    logoId = [self addLogo:@"hyundai_256.png"];
+    logoId = [self addLogo:@"logo_hyundai"];
     autoId = [self addAuto:@"Hyundai" country:countryId logo:logoId independentId:HYUNDAI];
     
     modelId = [self addAutoModel:@"Aero" ofAuto:autoId logo:logoId startYear:0 endYear:0 isSelectable:NO];
@@ -4217,7 +4217,7 @@ countryId = [self addCountry:@"Russia"];
 	[self addAutoModel:@"XG" ofAuto:autoId logo:logoId startYear:1986 endYear:0];
     
 #pragma mark |---- Kia
-    logoId = [self addLogo:@"kia_256.png"];
+    logoId = [self addLogo:@"logo_kia"];
     autoId = [self addAuto:@"Kia" country:countryId logoAsName:logoId independentId:KIA];
     
     [self addAutoModel:@"Amanti" ofAuto:autoId logo:logoId startYear:2002 endYear:2010];
@@ -4284,7 +4284,7 @@ countryId = [self addCountry:@"Russia"];
 #pragma mark === Spain ===
     countryId = [self addCountry:@"Spain"];
 #pragma mark |---- SEAT
-    logoId = [self addLogo:@"seat_256.png"];
+    logoId = [self addLogo:@"logo_seat"];
     autoId = [self addAuto:@"SEAT" country:countryId logo:logoId independentId:SEAT];
     
     [self addAutoModel:@"Alhambra" ofAuto:autoId logo:logoId startYear:1996 endYear:0];
@@ -4346,7 +4346,7 @@ countryId = [self addCountry:@"Russia"];
 #pragma mark === USA ===
     countryId = [self addCountry:@"USA"];
 #pragma mark |---- Ford
-    logoId = [self addLogo:@"ford_256.png"];
+    logoId = [self addLogo:@"logo_ford"];
     autoId = [self addAuto:@"Ford" country:countryId logo:logoId independentId:FORD];
     modelId = [self addAutoModel:@"Old cars" ofAuto:autoId logo:logoId startYear:0 endYear:0 isSelectable:NO];
     {
@@ -4889,7 +4889,7 @@ countryId = [self addCountry:@"Russia"];
 		[self addAutoSubmodel:@"Zig" ofModel:modelId logo:logoId startYear:1990 endYear:-1];
     }
 #pragma mark |---- GMC
-    logoId = [self addLogo:@"gmc_256.png"];
+    logoId = [self addLogo:@"logo_gmc"];
     autoId = [self addAuto:@"GMC" country:countryId logoAsName:logoId independentId:GMC];
     
     [self addAutoModel:@"Acadia" ofAuto:autoId logo:logoId startYear:2006 endYear:0];
@@ -4925,7 +4925,7 @@ countryId = [self addCountry:@"Russia"];
 	[self addAutoModel:@"Yukon XL" ofAuto:autoId logo:logoId startYear:1933 endYear:0];
 	[self addAutoModel:@"Tahoe" ofAuto:autoId logo:logoId startYear:1995 endYear:0];
 #pragma mark |---- Hummer
-    logoId = [self addLogo:@"hummer_256.png"];
+    logoId = [self addLogo:@"logo_hummer"];
     autoId = [self addAuto:@"HUMMER" country:countryId logoAsName:logoId independentId:HUMMER];
     
     [self addAutoModel:@"H1" ofAuto:autoId logo:logoId startYear:1992 endYear:2006];
@@ -4934,7 +4934,7 @@ countryId = [self addCountry:@"Russia"];
 	[self addAutoModel:@"HX" ofAuto:autoId logo:logoId startYear:2008 endYear:-1];
     
 #pragma mark |---- Buick
-    logoId = [self addLogo:@"buick_256.png"];
+    logoId = [self addLogo:@"logo_buick"];
     autoId = [self addAuto:@"Buick" country:countryId logo:logoId independentId:BUICK];
     
     [self addAutoModel:@"Allure" ofAuto:autoId logo:logoId startYear:2005 endYear:0];
@@ -4997,7 +4997,7 @@ countryId = [self addCountry:@"Russia"];
 	[self addAutoModel:@"Wildcat" ofAuto:autoId logo:logoId startYear:1963 endYear:1970];
 	[self addAutoModel:@"Y-Job" ofAuto:autoId logo:logoId startYear:1938 endYear:-1];
 #pragma mark |---- Mercury
-    logoId = [self addLogo:@"mercury_256.png"];
+    logoId = [self addLogo:@"logo_mercury"];
     autoId = [self addAuto:@"Mercury" country:countryId logo:logoId independentId:MERCURY];
     
     [self addAutoModel:@"M-Series" ofAuto:autoId logo:logoId startYear:1946 endYear:1968];
@@ -5088,7 +5088,7 @@ countryId = [self addCountry:@"Russia"];
 		[self addAutoSubmodel:@"Meta One" ofModel:modelId logo:logoId startYear:2005 endYear:-1];
 	}
 #pragma mark |---- Jeep
-    logoId = [self addLogo:@"jeep_256.png"];
+    logoId = [self addLogo:@"logo_jeep"];
     autoId = [self addAuto:@"Jeep" country:countryId logoAsName:logoId independentId:JEEP];
 
     modelId = [self addAutoModel:@"Cherokee" ofAuto:autoId logo:logoId startYear:1974 endYear:0];
@@ -5118,7 +5118,7 @@ countryId = [self addCountry:@"Russia"];
 	[self addAutoModel:@"Wrangler" ofAuto:autoId logo:logoId startYear:1986 endYear:0];
 	
 #pragma mark |---- Chevrolet
-    logoId = [self addLogo:@"chevrolet_256.png"];
+    logoId = [self addLogo:@"logo_chevrolet"];
     autoId = [self addAuto:@"Chevrolet" country:countryId logo:logoId independentId:CHEVROLET];
     [self addAutoModel:@"Camaro" ofAuto:autoId logo:logoId startYear:1967 endYear:2002];
 	[self addAutoModel:@"Camaro" ofAuto:autoId logo:logoId startYear:2010 endYear:0];
@@ -5478,7 +5478,7 @@ countryId = [self addCountry:@"Russia"];
 	}
 
 #pragma mark |---- Dodge
-    logoId = [self addLogo:@"dodge_256.png"];
+    logoId = [self addLogo:@"logo_dodge"];
     autoId = [self addAuto:@"Dodge" country:countryId logo:logoId independentId:FORD];
     
     [self addAutoModel:@"Cashuat" ofAuto:autoId logo:logoId startYear:1985 endYear:1985];
@@ -5747,7 +5747,7 @@ countryId = [self addCountry:@"Russia"];
 		[self addAutoSubmodel:@"ZEO" ofModel:modelId logo:logoId startYear:2008 endYear:-1];
 	}
 #pragma mark |---- Pontiac
-    logoId = [self addLogo:@"pontiac_256.png"];
+    logoId = [self addLogo:@"logo_pontiac"];
     autoId = [self addAuto:@"Pontiac" country:countryId logo:logoId independentId:PONTIAC];
     
     [self addAutoModel:@"Grand Prix" ofAuto:autoId logo:logoId startYear:1962 endYear:2008];
@@ -5870,7 +5870,7 @@ countryId = [self addCountry:@"Russia"];
 	}
 
 #pragma mark |---- Lincoln
-    logoId = [self addLogo:@"lincoln_256.png"];
+    logoId = [self addLogo:@"logo_lincoln"];
     autoId = [self addAuto:@"Lincoln" country:countryId logo:logoId independentId:LINCOLN];
     
     [self addAutoModel:@"Aviator" ofAuto:autoId logo:logoId startYear:2002 endYear:2005];
@@ -5927,7 +5927,7 @@ countryId = [self addCountry:@"Russia"];
 	}
     
 #pragma mark |---- Tesla
-    logoId = [self addLogo:@"tesla_256.png"];
+    logoId = [self addLogo:@"logo_tesla"];
     autoId = [self addAuto:@"Tesla" country:countryId logo:logoId independentId:TESLA];
     
     [self addAutoModel:@"Roadster" ofAuto:autoId logo:logoId startYear:2008 endYear:2012];
@@ -5940,7 +5940,7 @@ countryId = [self addCountry:@"Russia"];
 #pragma mark === UK ===
     countryId = [self addCountry:@"UK"];
 #pragma mark |---- Bentley
-    logoId = [self addLogo:@"bentley_256.png"];
+    logoId = [self addLogo:@"logo_bentley"];
     autoId = [self addAuto:@"Bentley" country:countryId logo:logoId independentId:BENTLEY];
     
     [self addAutoModel:@"Speed 8" ofAuto:autoId logo:logoId startYear:2001 endYear:-1];
@@ -5992,7 +5992,7 @@ countryId = [self addCountry:@"Russia"];
 	[self addAutoModel:@"Turbo S" ofAuto:autoId logo:logoId startYear:1995 endYear:-1];
     
 #pragma mark |---- Rolls Royce
-    logoId = [self addLogo:@"rr_256.png"];
+    logoId = [self addLogo:@"logo_rr"];
     autoId = [self addAuto:@"Rolls Royce" country:countryId logo:logoId independentId:ROLLSROYCE];
     
     modelId = [self addAutoModel:@"RR Limited" ofAuto:autoId logo:logoId startYear:0 endYear:0 isSelectable:NO];
@@ -6034,7 +6034,7 @@ countryId = [self addCountry:@"Russia"];
     [self addAutoModel:@"Wraith" ofAuto:autoId logo:logoId startYear:2013 endYear:0];
 
 #pragma mark |---- Aston Martin
-    logoId = [self addLogo:@"astonmartin_256.png"];
+    logoId = [self addLogo:@"logo_astonmartin"];
     autoId = [self addAuto:@"Aston Martin" country:countryId logo:logoId independentId:ASTONMARTIN];
     
     [self addAutoModel:@"2-Litre Sports	" ofAuto:autoId logo:logoId startYear:1948 endYear:1950];
@@ -6112,7 +6112,7 @@ countryId = [self addCountry:@"Russia"];
     [self addAutoModel:@"Volante" ofAuto:autoId logo:logoId startYear:1996 endYear:0];
     
 #pragma mark |---- Cadillac
-    logoId = [self addLogo:@"cadillac_256.png"];
+    logoId = [self addLogo:@"logo_cadillac"];
     autoId = [self addAuto:@"Cadillac" country:countryId logo:logoId independentId:CADILLAC];
     
     modelId = [self addAutoModel:@"Fleetwood" ofAuto:autoId logo:logoId startYear:1984 endYear:1999];
@@ -6169,7 +6169,7 @@ countryId = [self addCountry:@"Russia"];
 	[self addAutoModel:@"XTS" ofAuto:autoId logo:logoId startYear:2012 endYear:0];
 
 #pragma mark |---- Jaguar
-    logoId = [self addLogo:@"jaguar_256.png"];
+    logoId = [self addLogo:@"logo_jaguar"];
     autoId = [self addAuto:@"Jaguar" country:countryId logo:logoId independentId:JAGUAR];
     [self addAutoModel:@"B99" ofAuto:autoId logo:logoId startYear:2011 endYear:-1];
 	[self addAutoModel:@"420" ofAuto:autoId logo:logoId startYear:1966 endYear:1968];
@@ -6254,7 +6254,7 @@ countryId = [self addCountry:@"Russia"];
 		[self addAutoSubmodel:@"XKSS" ofModel:modelId logo:logoId startYear:1957 endYear:1957];
 	}
 #pragma mark |---- MINI
-    logoId = [self addLogo:@"mini_256.png"];
+    logoId = [self addLogo:@"logo_mini"];
     autoId = [self addAuto:@"MINI" country:countryId logo:logoId independentId:MINI]; // 1959-2000
     
 	[self addAutoModel:@"1275GT" ofAuto:autoId logo:logoId startYear:1969 endYear:1980];
@@ -6276,7 +6276,7 @@ countryId = [self addCountry:@"Russia"];
 		[self addAutoSubmodel:@"Hatch" ofModel:modelId logo:logoId startYear:2010 endYear:0];
 	}
 #pragma mark |---- Land Rover
-    logoId = [self addLogo:@"landrover_256.png"];
+    logoId = [self addLogo:@"logo_landrover"];
     autoId = [self addAuto:@"Land Rover" country:countryId logo:logoId independentId:LAND_ROVER];
     
     [self addAutoModel:@"101 Forward Control" ofAuto:autoId logo:logoId startYear:1972 endYear:1978];
@@ -6314,7 +6314,7 @@ countryId = [self addCountry:@"Russia"];
 	}
     
 #pragma mark |---- Lotus
-    logoId = [self addLogo:@"lotus_256.png"];
+    logoId = [self addLogo:@"logo_lotus"];
     autoId = [self addAuto:@"Lotus" country:countryId logo:logoId independentId:LOTUS];
     
     [self addAutoModel:@"Elise" ofAuto:autoId logo:logoId startYear:1996 endYear:0];
@@ -6468,7 +6468,7 @@ countryId = [self addCountry:@"Russia"];
 	}
     
 #pragma mark |---- McLaren
-    logoId = [self addLogo:@"mclaren_256.png"];
+    logoId = [self addLogo:@"logo_mclaren"];
     autoId = [self addAuto:@"McLaren" country:countryId logo:logoId independentId:MCLAREN];
     
     [self addAutoModel:@"M6GT" ofAuto:autoId logo:logoId startYear:0 endYear:0];
@@ -6489,7 +6489,7 @@ countryId = [self addCountry:@"Russia"];
 	[self addAutoModel:@"X-1" ofAuto:autoId logo:logoId startYear:2012 endYear:-1];
     
 #pragma mark |---- Rover
-    logoId = [self addLogo:@"rover_256.png"];
+    logoId = [self addLogo:@"logo_rover"];
     autoId = [self addAuto:@"Rover" country:countryId logo:logoId independentId:ROVER];
     
     [self addAutoModel:@"BRM" ofAuto:autoId logo:logoId startYear:1963 endYear:-1];
@@ -6553,7 +6553,7 @@ countryId = [self addCountry:@"Russia"];
 #pragma mark === Ukraine ===
     countryId = [self addCountry:@"Ukraine"];
 #pragma mark |---- Bogdan
-    logoId = [self addLogo:@"bogdan_256.png"];
+    logoId = [self addLogo:@"logo_bogdan"];
     autoId = [self addAuto:@"Bogdan" country:countryId logo:logoId independentId:BOGDAN];
     
     [self addAutoModel:@"Bus" ofAuto:autoId logo:logoId startYear:0 endYear:0];
@@ -6563,7 +6563,7 @@ countryId = [self addCountry:@"Russia"];
 	[self addAutoModel:@"A1445" ofAuto:autoId logo:logoId startYear:0 endYear:0];
 	[self addAutoModel:@"T601" ofAuto:autoId logo:logoId startYear:0 endYear:0];
 #pragma mark |---- KrAZ
-    logoId = [self addLogo:@"kraz_256.png"];
+    logoId = [self addLogo:@"logo_kraz"];
     autoId = [self addAuto:@"KRAZ" country:countryId logo:logoId independentId:KRAZ];
     
     modelId = [self addAutoModel:@"Civil Vehicles" ofAuto:autoId logo:logoId startYear:0 endYear:0 isSelectable:NO];
@@ -6616,7 +6616,7 @@ countryId = [self addCountry:@"Russia"];
 	}
     
 #pragma mark |---- ZAZ
-    logoId = [self addLogo:@"zaz_256.png"];
+    logoId = [self addLogo:@"logo_zaz"];
     autoId = [self addAuto:@"ZAZ" country:countryId logo:logoId independentId:ZAZ];
     
     [self addAutoModel:@"Dana" ofAuto:autoId logo:logoId startYear:1987 endYear:2007];

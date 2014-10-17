@@ -26,18 +26,56 @@
 }
 
 +(UIImage*)image:(UIImage*)sourceImage byScalingProportionallyToSize:(CGSize)targetSize{
-    CGFloat widthFactor = targetSize.width / sourceImage.size.width;
-    CGFloat heightFactor = targetSize.height / sourceImage.size.height;
-    CGFloat scaleFactor = MAX(widthFactor, heightFactor);
+    UIImage *newImage = nil;
     
-    CGFloat scaledWidth  = sourceImage.size.width * scaleFactor;
-    CGFloat scaledHeight = sourceImage.size.height * scaleFactor;
+    CGSize imageSize = sourceImage.size;
+    CGFloat width = imageSize.width;
+    CGFloat height = imageSize.height;
     
-    CGRect rect = CGRectMake(0.0, 0.0, scaledWidth, scaledHeight);
-    UIGraphicsBeginImageContext(rect.size);
-    [sourceImage drawInRect:rect];
-    UIImage* newImage = UIGraphicsGetImageFromCurrentImageContext();
+    CGFloat targetWidth = targetSize.width;
+    CGFloat targetHeight = targetSize.height;
+    
+    CGFloat scaleFactor = 0.0;
+    CGFloat scaledWidth = targetWidth;
+    CGFloat scaledHeight = targetHeight;
+    
+    CGPoint thumbnailPoint = CGPointMake(0.0,0.0);
+    
+    if (CGSizeEqualToSize(imageSize, targetSize) == NO) {
+        CGFloat widthFactor = targetWidth / width;
+        CGFloat heightFactor = targetHeight / height;
+        
+        if (widthFactor < heightFactor){
+            scaleFactor = widthFactor;
+        } else {
+            scaleFactor = heightFactor;
+        }
+        
+        scaledWidth  = width * scaleFactor;
+        scaledHeight = height * scaleFactor;
+        
+        // center the image
+        if (widthFactor < heightFactor) {
+            thumbnailPoint.y = (targetHeight - scaledHeight) * 0.5;
+        } else if (widthFactor > heightFactor) {
+            thumbnailPoint.x = (targetWidth - scaledWidth) * 0.5;
+        }
+    }
+    
+    // this is actually the interesting part:
+    UIGraphicsBeginImageContext(targetSize);
+    
+    CGRect thumbnailRect = CGRectZero;
+    thumbnailRect.origin = thumbnailPoint;
+    thumbnailRect.size.width  = scaledWidth;
+    thumbnailRect.size.height = scaledHeight;
+    
+    [sourceImage drawInRect:thumbnailRect];
+    
+    newImage = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
+    
+    if(newImage == nil) NSLog(@"could not scale image");
     
     return newImage;
 }
@@ -51,11 +89,15 @@
     BOOL secondAutoSupported = [DataManager getSelectedSkinSet].supportsSecondCar;
     Auto *auto2 = secondAutoSupported ? [DataManager getSelectedAuto2] : nil;
     if (!auto1 && !auto2){
-        return @"";
+        return @"Share your #instacar with #instacarapp";
     }
 
-    NSString *andCar2 = auto2 ? [NSString stringWithFormat:@" and #%@", auto2.name] : @"";
-    return [NSString stringWithFormat:@"Great #instacar #%@%@ from the #instacarapp", [DataManager getSelectedAuto1].name, andCar2];
+    NSString *car1String = auto1 ? [NSString stringWithFormat:@"#%@", auto1.name] : @"";
+    NSString *car2String = auto2 ? [NSString stringWithFormat:@"#%@", auto2.name] : @"";
+    NSString *andCarsString = auto1 && auto2 ? @" and " : @"";
+    NSString *carsString = [NSString stringWithFormat:@"%@%@%@", car1String, andCarsString, car2String];
+    
+    return [NSString stringWithFormat:@"Great #instacar %@ from the #instacarapp", carsString];
 }
 
 +(NSString*)getAutoYearsString:(int)startYear endYear:(int)endYear{
@@ -93,6 +135,21 @@
         facebookPageUrl = [NSURL URLWithString:@"http://www.facebook.com/InstacarApp"];
     }
     [[UIApplication sharedApplication] openURL:facebookPageUrl];
+}
+
++(UIColor*)invertColor:(UIColor*)color{
+    CGFloat r, g, b, a;
+    [color getRed:&r green:&g blue:&b alpha:&a];
+    return [UIColor colorWithRed:1-r green:1-g blue:1-b alpha:a];
+}
+
++(void)showAboutProVersionOnBehalfOf:(UIViewController<ProInfoViewControllerDelegate>*)delegateVC{
+    assert(delegateVC);
+    
+    ProInfoVC *infoVC = [[UIStoryboard storyboardWithName:@"main" bundle:nil] instantiateViewControllerWithIdentifier:@"proInfoVC"];
+    
+    infoVC.delegate = delegateVC;
+    [delegateVC presentViewController:infoVC animated:YES completion:nil];
 }
 
 @end

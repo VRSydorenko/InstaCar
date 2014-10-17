@@ -10,8 +10,8 @@
 
 @interface CellSelectedAuto : UITableViewCell
 
-@property (nonatomic, weak) IBOutlet UILabel *autoTitleLabel;
-@property (nonatomic, weak) IBOutlet UIImageView *autoLogo;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *constraintMainTextWidth;
+@property (nonatomic) IBOutlet UILabel *autoTitleLabel;
+@property (nonatomic) IBOutlet UIImageView *autoLogo;
+@property (nonatomic) IBOutlet NSLayoutConstraint *constraintMainTextWidth;
 
 @end

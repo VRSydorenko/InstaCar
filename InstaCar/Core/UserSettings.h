@@ -18,6 +18,7 @@
 @interface UserSettings : NSObject
 
 +(BOOL)isFullVersion;
++(BOOL)isIPhone4;
 
 +(NSString*) getStoredAppVersion;
 +(void) setStoredAppVersion;

@@ -86,11 +86,6 @@
     
 }
 
-- (void)viewDidUnload {
-    [super viewDidUnload];
-    _tap = nil;
-}
-
 #pragma mark - GestureRecognizers
 
 - (void)tap:(UITapGestureRecognizer*)gesture {

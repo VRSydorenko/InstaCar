@@ -1,8 +1,8 @@
 #import "HFImageEditorViewController.h"
 #import <QuartzCore/QuartzCore.h>
 
-static const CGFloat kMaxUIImageSize = 1024;
-static const CGFloat kPreviewImageSize = 320;
+static const CGFloat kMaxUIImageSize = 3072;
+static const CGFloat kPreviewImageSize = 3072;
 static const CGFloat kDefaultCropWidth = 320;
 static const CGFloat kDefaultCropHeight = 320;
 static const NSTimeInterval kAnimationIntervalReset = 0.25;
@@ -25,7 +25,6 @@ static const NSTimeInterval kAnimationIntervalTransform = 0.2;
 @property(nonatomic,assign) CGFloat scale;
 
 @end
-
 
 
 @implementation HFImageEditorViewController
@@ -93,7 +92,7 @@ static const NSTimeInterval kAnimationIntervalTransform = 0.2;
             } else { // landscape
                 size = CGSizeMake(kPreviewImageSize,kPreviewImageSize*aspect);
             }
-            _previewImage = [self scaledImage:self.sourceImage  toSize:size withQuality:kCGInterpolationLow];
+            _previewImage = [self scaledImage:self.sourceImage  toSize:size withQuality:kCGInterpolationHigh];
         } else {
             _previewImage = _sourceImage;
         }
@@ -221,15 +220,6 @@ static const NSTimeInterval kAnimationIntervalTransform = 0.2;
     [self.frameView addGestureRecognizer:self.tapRecognizer];
 }
 
-
-- (void)viewDidUnload
-{
-    [super viewDidUnload];
-    
-    [self setFrameView:nil];
-    [self setImageView:nil];
-}
-
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
@@ -252,7 +242,7 @@ static const NSTimeInterval kAnimationIntervalTransform = 0.2;
             } else { // landscape
                 size = CGSizeMake(kMaxUIImageSize,kMaxUIImageSize*aspect);
             }
-            hiresCGImage = [self newScaledImage:self.sourceImage.CGImage withOrientation:self.sourceImage.imageOrientation toSize:size withQuality:kCGInterpolationDefault];
+            hiresCGImage = [self newScaledImage:self.sourceImage.CGImage withOrientation:self.sourceImage.imageOrientation toSize:size withQuality:kCGInterpolationHigh];
             
             dispatch_async(dispatch_get_main_queue(), ^{
                 self.imageView.image = [UIImage imageWithCGImage:hiresCGImage scale:1.0 orientation:UIImageOrientationUp];
@@ -565,7 +555,7 @@ static const NSTimeInterval kAnimationIntervalTransform = 0.2;
                                   toSize:sourceSize
                              withQuality:kCGInterpolationNone];
     
-    CGSize outputSize = CGSizeMake(918.0, 918.0);
+    CGSize outputSize = CGSizeMake(DESIRED_SIDE_LENGTH, DESIRED_SIDE_LENGTH);
     
     CGContextRef context = CGBitmapContextCreate(NULL,
                                                  outputSize.width,

@@ -33,18 +33,13 @@
     self.tableSelectedData.dataSource = self;
 }
 
--(void)dealloc{
-    sets = nil;
-    autosVC = nil;
-}
-
 #pragma mark Table methods
 
 -(UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
-    NSString *imageName = section == 0 ? @"anycarLogo.png" : @"Mask.png";
+    NSString *imageName = section == 0 ? @"logo_anycar.png" : @"Mask.png";
     UIImageView *headerView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:imageName]];
-    headerView.contentMode = UIViewContentModeCenter;
+    headerView.contentMode = section == 0 ? UIViewContentModeScaleAspectFit : UIViewContentModeCenter;
     headerView.backgroundColor = [UIColor lightGrayColor];
     return headerView;
 }
@@ -88,8 +83,10 @@
     CellSkinSet *cell = [tableView dequeueReusableCellWithIdentifier:@"cellSkin" forIndexPath:indexPath];
     
     SkinSet *set = (SkinSet*)[sets objectAtIndex:indexPath.row];
+    bool setSelected = [[set getTitle] isEqualToString:[[DataManager getSelectedSkinSet] getTitle]];
     
     cell.skinTitleLabel.text = [set getTitle];
+    cell.accessoryType = setSelected ? UITableViewCellAccessoryCheckmark : UITableViewCellAccessoryNone;
     
     return cell;
 }
@@ -101,9 +98,9 @@
     
     if (_auto){
         cell.autoTitleLabel.text = _auto.name;
-        cell.autoLogo.image = [UIImage imageNamed:_auto.logo];
+        cell.autoLogo.image = _auto.logo128;
     } else {
-        cell.autoTitleLabel.text = @"Select auto";
+        cell.autoTitleLabel.text = @"Select car...";
         cell.autoLogo.image = nil;
     }
     
@@ -154,6 +151,10 @@
     }
     
     [self.sideActionDelegate performSideAction:ACT_EMPTY withArgument:nil hidingSideController:YES];
+}
+
+-(void)userWantsProVersionInfo{
+    [self.sideActionDelegate performSideAction:ACT_OPEN_PROINFO withArgument:nil hidingSideController:YES];
 }
 
 #pragma mark DDMenuControllerDelegate

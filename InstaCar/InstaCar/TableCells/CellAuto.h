@@ -14,12 +14,12 @@
 
 @interface CellAuto : UITableViewCell
 
-@property (nonatomic, weak) IBOutlet UILabel *autoTitleLabel;
-@property (nonatomic, weak) IBOutlet UILabel *autoYearsLabel;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *constraintDetailTextHeight;
+@property (nonatomic) IBOutlet UILabel *autoTitleLabel;
+@property (nonatomic) IBOutlet UILabel *autoYearsLabel;
+@property (nonatomic) IBOutlet NSLayoutConstraint *constraintDetailTextHeight;
 
-@property (nonatomic, weak) IBOutlet UIImageView *autoLogo;
-@property (nonatomic, weak) IBOutlet UIButton *autoModelsButton;
+@property (nonatomic) IBOutlet UIImageView *autoLogo;
+@property (nonatomic) IBOutlet UIButton *autoModelsButton;
 @property id<SublevelPickerDelegate> sublevelPickerDelegate;
 
 -(IBAction)modelsButtonPressed:(id)sender;
