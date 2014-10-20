@@ -27,7 +27,10 @@
     
     modelLabelInitialHeight = self.modelLabelHeight.constant;
     canEditFieldAuto1 = YES;
-    _commandFlags.canCmdEditText = YES;
+    
+    commands = [NSArray arrayWithObjects:
+                [NSNumber numberWithInt:COMMAND_EDITTEXT],
+                nil];
 }
 
 -(void)fieldAuto1DidUpdate{

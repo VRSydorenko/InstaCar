@@ -31,7 +31,10 @@
     
     canEditFieldAuto1 = YES;
     prefix = @"With my";
-    _commandFlags.canCmdEditPrefix = YES;
+    
+    commands = [NSArray arrayWithObjects:
+                [NSNumber numberWithInt:COMMAND_EDITPREFIX],
+                nil];
     
     [self fieldAuto1DidUpdate]; // initial skin text
 }

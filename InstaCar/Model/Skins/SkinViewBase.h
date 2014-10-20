@@ -10,6 +10,7 @@
 #import "Location.h"
 #import "Auto.h"
 #import "MainNavController.h"
+#import "SkinCommandProtocol.h"
 
 #import "SkinElementLabel.h"
 #import "SkinElementImage.h"
@@ -32,21 +33,8 @@ typedef struct {
     unsigned int canCmdEditPrefix:1;
     unsigned int canCmdEditRaiting:1;
 } CommandFlags;
-
-@protocol SkinCommandProtocol <NSObject>
-// commands
--(void)onCmdInvertColors;
--(void)onCmdEditText:(NSString*)newText;
--(void)onCmdEditPrefix:(NSString*)newPrefix;
--(void)onCmdEditRaiting:(int)newRaiting;
-// data getters
--(NSString*)getSkinContentText;
--(NSString*)getSkinPrefixText;
--(int)getSkinRaiting;
--(BOOL)getAllowsEmptyContentText;
-@end
     
-@interface SkinViewBase : UIView <SkinCommandProtocol> {
+@interface SkinViewBase : UIView <SkinCommandDelegate> {
 @protected
     BOOL canEditFieldLocation;
     BOOL canEditFieldAuto1;
@@ -54,7 +42,7 @@ typedef struct {
     BOOL canEditFieldText1;
     BOOL canEditFieldText2;
     
-    CommandFlags _commandFlags;
+    NSArray *commands; // type: NSNumber
     
     Location *fieldLocation;
     Auto *fieldAuto1;
@@ -85,7 +73,7 @@ typedef struct {
 -(UIImage*)getSkinImage;
 -(UIImage*)getSkinImageWithBlur:(CGFloat)blurStrength;
 
--(CommandFlags)getSkinCommands;
+-(NSArray*)getSkinCommands;
 
 -(void)moveContentUp;
 -(void)moveContentDown;

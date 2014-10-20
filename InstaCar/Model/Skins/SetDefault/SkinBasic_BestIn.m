@@ -23,9 +23,12 @@
     [self setMovingViewConstraint:self.topMargin andViewHeight:self.movingView.bounds.size.height andMovingViewTopBottomMargin:0];
     
     canEditFieldLocation = YES;
-    _commandFlags.canCmdInvertColors = YES;
-    _commandFlags.canCmdEditPrefix = YES;
-    _commandFlags.canCmdEditText = YES;
+    
+    commands = [NSArray arrayWithObjects:
+                [NSNumber numberWithInt:COMMAND_EDITTEXT],
+                [NSNumber numberWithInt:COMMAND_INVERTCOLORS],
+                [NSNumber numberWithInt:COMMAND_EDITPREFIX],
+                nil];
 }
 
 -(void)fieldLocationDidUpdate{

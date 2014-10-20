@@ -13,6 +13,7 @@
 #import "SMPageControl.h"
 #import "SHKShareItemDelegate.h"
 #import "FirstTimeInfoVC.h"
+#import "SkinCommandsPopoverView.h"
 
 @interface MainVC : UIViewController <UIScrollViewDelegate,
                                       UIImagePickerControllerDelegate,
@@ -42,12 +43,15 @@
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *constraintWhiteActBottomMargin;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *constraintPreviewImageHeight;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *constraintScrollHeight;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *constraintCmdViewTopMargin;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *constraintCmdViewHeight;
 
 
 @property (nonatomic) IBOutlet UIImageView *imagePreview;
 @property (nonatomic) IBOutlet UIScrollView *scrollSkins;
 @property (nonatomic) IBOutlet UIView *pageControlContainer;
 @property (weak, nonatomic) IBOutlet UIView *iAdView;
+@property (weak, nonatomic) IBOutlet SkinCommandsPopoverView *commandView;
 
 // Actions
 - (IBAction)btnLocationPressed:(id)sender;

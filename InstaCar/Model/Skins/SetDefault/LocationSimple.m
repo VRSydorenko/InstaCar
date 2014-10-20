@@ -26,7 +26,10 @@
     self.movingView.backgroundColor = [UIColor clearColor];
     
     canEditFieldLocation = YES;
-    _commandFlags.canCmdInvertColors = YES;
+    
+    commands = [NSArray arrayWithObjects:
+                [NSNumber numberWithInt:COMMAND_INVERTCOLORS],
+                nil];
 }
 
 -(void)moveContentUp{

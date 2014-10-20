@@ -13,7 +13,6 @@
 #import "ImageEditor.h"
 #import "SHKSharer.h"
 #import "DataManager.h"
-#import "SkinCommandsPopoverView.h"
 
 #define SWITCH_TIME 1.0
 
@@ -38,8 +37,7 @@ typedef enum {
     ADBannerView *bannerView;
     
     CGFloat pageControlHeight;
-    
-    SkinCommandsPopoverView *cmdPopoverView;
+
     CGRect initialPopoverFrame;
     BOOL isShowingAd;
 }
@@ -108,7 +106,7 @@ typedef enum {
     
     self.constraintButtonsCoverViewHeight.constant = [self calcPageControlHeight];
     
-    [self initSkinCommandPopoverView];
+    [self initSkinCommandView];
     [self setActiveSkin:0]; // goes after creating the command view
     
     if (NO == [DataManager getHasLaunchedBefore]){
@@ -225,38 +223,18 @@ typedef enum {
     }
 }
 
--(void) initSkinCommandPopoverView{
-    if (cmdPopoverView){
-        return;
-    }
-    
-    CGFloat topBottomMargin = 0.0;
-    CGFloat sideMargin = 10.0;
-    CGFloat y = self.pageControlContainer.frame.origin.y + pageControlHeight + topBottomMargin;
-    CGFloat width = [UIScreen mainScreen].bounds.size.width - 2 * sideMargin;
-    CGFloat height = [self getPopCommandsViewHeight];
-    
-    CGRect frame = CGRectMake(sideMargin, y, width, height);
-    
-    cmdPopoverView = [[SkinCommandsPopoverView alloc] initWithFrame:frame];
-    initialPopoverFrame = frame;
-    cmdPopoverView.ownerVC = (UIViewController<ProInfoViewControllerDelegate>*)self.navigationController; // TODO: refactor this workaround
-    cmdPopoverView.backgroundColor = [UIColor whiteColor]; // TOOD: move to the view initialisation
+-(void) initSkinCommandView{
+    self.constraintCmdViewTopMargin.constant = 0.0;
+    self.commandView.ownerVC = (UIViewController<ProInfoViewControllerDelegate>*)self.navigationController; // TODO: refactor this workaround
     
     //Set the customView properties
-    cmdPopoverView.alpha = 0.0;
-    cmdPopoverView.layer.cornerRadius = 3;
-    cmdPopoverView.layer.borderWidth = 1.5f;
-    cmdPopoverView.layer.masksToBounds = YES;
+    // TODO: self.commandView.layer.cornerRadius = 3;
+    // TODO: self.commandView.layer.borderWidth = 1.5f;
     
     //Add the customView to the current view
-    [self.view addSubview:cmdPopoverView];
-    [self.view bringSubviewToFront:cmdPopoverView];
+    [self.view bringSubviewToFront:self.commandView];
     
-    //Display the customView with animation
-    [UIView animateWithDuration:0.4 animations:^{
-        [cmdPopoverView setAlpha:1.0];
-    } completion:^(BOOL finished) {}];
+    [self.commandView setNeedsLayout];
 }
 
 #pragma Banner view delegate
@@ -268,13 +246,12 @@ typedef enum {
         self.constraintViewAdContainerHeight.constant = 50.0;
         self.constraintButtonsCoverViewHeight.constant = [self calcPageControlHeight];
         
-        CGRect popoverFrame = cmdPopoverView.frame;
-        popoverFrame.size.height = [self getPopCommandsViewHeight];
+        CGFloat cmdViewNewHeight = [self getPopCommandsViewHeight];
         
         [UIView animateWithDuration:0.25
                          animations:^(void){
-                             if (!cmdPopoverView.isInEditMode){
-                                 cmdPopoverView.frame = popoverFrame;
+                             if (!self.commandView.isInEditMode){
+                                 self.constraintCmdViewHeight.constant = cmdViewNewHeight;
                              }
                              
                              if ([UserSettings isIPhone4]){
@@ -285,8 +262,8 @@ typedef enum {
                              [self.view layoutIfNeeded];
                          }
                          completion:^(BOOL success){
-                             if (!cmdPopoverView.isInEditMode){
-                                 [cmdPopoverView rebuildView];
+                             if (!self.commandView.isInEditMode){
+                                 [self.commandView rebuildView];
                              }
                          }
          ];
@@ -300,13 +277,12 @@ typedef enum {
         self.constraintViewAdContainerHeight.constant = 0.0;
         self.constraintButtonsCoverViewHeight.constant = [self calcPageControlHeight];
         
-        CGRect popoverFrame = cmdPopoverView.frame;
-        popoverFrame.size.height = [self getPopCommandsViewHeight];
+        CGFloat cmdViewNewHeight = [self getPopCommandsViewHeight];
         
         [UIView animateWithDuration:0.25
                          animations:^(void){
-                             if (!cmdPopoverView.isInEditMode){
-                                 cmdPopoverView.frame = popoverFrame;
+                             if (!self.commandView.isInEditMode){
+                                 self.constraintCmdViewHeight.constant = cmdViewNewHeight;
                              }
                              
                              if ([UserSettings isIPhone4]){
@@ -317,8 +293,8 @@ typedef enum {
                              [self.view layoutIfNeeded];
                          }
                          completion:^(BOOL success){
-                             if (!cmdPopoverView.isInEditMode){
-                                 [cmdPopoverView rebuildView];
+                             if (!self.commandView.isInEditMode){
+                                 [self.commandView rebuildView];
                              }
                          }
          ];
@@ -653,8 +629,8 @@ typedef enum {
 }
 
 -(CGFloat)getPopCommandsViewHeight{
-    if (nil != cmdPopoverView && [cmdPopoverView isInEditMode]){
-        return [cmdPopoverView heightOnTop];
+    if ([self.commandView isInEditMode]){
+        return [self.commandView heightOnTop];
     }
     
     if (!isShowingAd){
@@ -695,33 +671,12 @@ typedef enum {
     return newImage;
 }
 
--(void)updateSkinCommandsPopover{
-    if (cmdPopoverView.isInEditMode){ // TODO: reimplement this workaround
-        [cmdPopoverView removeFromSuperview];
-        cmdPopoverView = nil;
-        
-        [self initSkinCommandPopoverView];
-    }
-    
-    if (!cmdPopoverView){
-        DLog(@"Skin command popover is not initialized");
-        return;
-    }
-    
-    cmdPopoverView.delegatingSkin = activeSkin;
-}
-
 -(void)setActiveSkin:(int)index{
     activeSkin = [[DataManager getSelectedSkinSet] getSkinAtIndex:index];
-    [self updateSkinCommandsPopover];
+    [self.commandView rebuildView];
 }
 
 - (void)keyboardWillShow:(NSNotification *)notification {
-    if (nil == cmdPopoverView){
-        // this view reacts on keyboard only in case of user text editing
-        return;
-    }
-    
     NSValue *aValue = [notification.userInfo objectForKey:UIKeyboardFrameEndUserInfoKey];
     
     CGRect keyboardRect = [aValue CGRectValue];
@@ -730,7 +685,7 @@ typedef enum {
     CGFloat keyboardTop = keyboardRect.origin.y;
     
     CGFloat height = [self getPopCommandsViewHeight];
-    CGRect popoverFrame = CGRectMake(cmdPopoverView.frame.origin.x, keyboardTop - height, cmdPopoverView.bounds.size.width, height);
+    CGRect popoverFrame = CGRectMake(self.commandView.frame.origin.x, keyboardTop - height, self.commandView.bounds.size.width, height);
     
     NSValue *animationDurationValue = [notification.userInfo objectForKey:UIKeyboardAnimationDurationUserInfoKey];
     NSTimeInterval animationDuration;
@@ -738,17 +693,12 @@ typedef enum {
     
     [UIView animateWithDuration:animationDuration
                      animations:^{
-                         cmdPopoverView.frame = popoverFrame;
+                         self.commandView.frame = popoverFrame;
                      }
      ];
 }
 
 - (void)keyboardWillHide:(NSNotification *)notification {
-    if (nil == cmdPopoverView){
-        // this view reacts on keyboard only in case of user text editing
-        return;
-    }
-    
     NSValue *animationDurationValue = [notification.userInfo objectForKey:UIKeyboardAnimationDurationUserInfoKey];
     NSTimeInterval animationDuration;
     [animationDurationValue getValue:&animationDuration];
@@ -758,10 +708,10 @@ typedef enum {
     
     [UIView animateWithDuration:animationDuration
                     animations:^{
-                        cmdPopoverView.frame = popoverFrame;
+                        self.commandView.frame = popoverFrame;
                     }
                     completion:^(BOOL finished){
-                        [cmdPopoverView rebuildView];
+                        [self.commandView rebuildView];
                     }
     ];
 }

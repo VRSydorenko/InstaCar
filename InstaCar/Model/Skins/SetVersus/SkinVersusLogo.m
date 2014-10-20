@@ -28,7 +28,10 @@
     
     canEditFieldAuto1 = YES;
     canEditFieldAuto2 = YES;
-    _commandFlags.canCmdInvertColors = YES;
+    
+    commands = [NSArray arrayWithObjects:
+                [NSNumber numberWithInt:COMMAND_INVERTCOLORS],
+                nil];
 }
 
 -(void)fieldAuto1DidUpdate{

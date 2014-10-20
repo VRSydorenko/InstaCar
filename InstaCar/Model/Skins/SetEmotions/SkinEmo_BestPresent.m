@@ -23,8 +23,11 @@
     self.movingView.backgroundColor = [UIColor clearColor];
     
     canEditFieldAuto1 = YES;
-    _commandFlags.canCmdInvertColors = YES;
-    _commandFlags.canCmdEditText = YES;
+    
+    commands = [NSArray arrayWithObjects:
+                [NSNumber numberWithInt:COMMAND_EDITTEXT],
+                [NSNumber numberWithInt:COMMAND_INVERTCOLORS],
+                nil];
 }
 
 -(void)fieldAuto1DidUpdate{

@@ -25,8 +25,11 @@
     [self setMovingViewConstraint:self.topMargin andViewHeight:self.movingView.bounds.size.height andMovingViewTopBottomMargin:0];
 
     canEditFieldAuto1 = YES;
-    _commandFlags.canCmdEditText = YES;
-    _commandFlags.canCmdInvertColors = YES;
+    
+    commands = [NSArray arrayWithObjects:
+                [NSNumber numberWithInt:COMMAND_EDITTEXT],
+                [NSNumber numberWithInt:COMMAND_INVERTCOLORS],
+                nil];
 }
 
 -(void)fieldAuto1DidUpdate{

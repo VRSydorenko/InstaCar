@@ -27,7 +27,10 @@
     
     [self setMovingViewConstraint:self.topMargin andViewHeight:self.movingView.bounds.size.height andMovingViewTopBottomMargin:0];
     
-    _commandFlags.canCmdEditText = YES;
+    commands = [NSArray arrayWithObjects:
+                [NSNumber numberWithInt:COMMAND_EDITTEXT],
+                nil];
+    
     canEditFieldAuto1 = YES;
 }
 

@@ -148,6 +148,13 @@
                                     <constraint firstAttribute="height" constant="50" id="5A5-i0-xsc"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Mi-Pc-8Iq" customClass="SkinCommandsPopoverView">
+                                <rect key="frame" x="16" y="235" width="288" height="70"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="4mb-IY-nKD"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -156,6 +163,7 @@
                             <constraint firstAttribute="trailing" secondItem="AIv-dK-ka2" secondAttribute="trailing" id="E1p-C6-FPh"/>
                             <constraint firstItem="sCG-cl-3fd" firstAttribute="top" secondItem="4oZ-cn-B3n" secondAttribute="bottom" id="E6j-bu-UaL"/>
                             <constraint firstItem="PZn-uN-nYb" firstAttribute="leading" secondItem="K25-XF-Jiu" secondAttribute="leading" id="EWb-W2-4N9"/>
+                            <constraint firstItem="4Mi-Pc-8Iq" firstAttribute="leading" secondItem="K25-XF-Jiu" secondAttribute="leading" constant="16" id="JMB-Hu-KWt"/>
                             <constraint firstItem="sCG-cl-3fd" firstAttribute="top" secondItem="H6A-is-85W" secondAttribute="bottom" constant="17" id="Kcw-bB-4r4"/>
                             <constraint firstAttribute="trailing" secondItem="sCG-cl-3fd" secondAttribute="trailing" id="Kug-1y-glA"/>
                             <constraint firstItem="kdr-lZ-7HS" firstAttribute="leading" secondItem="K25-XF-Jiu" secondAttribute="leading" id="LWs-gn-l8x"/>
@@ -174,8 +182,10 @@
                             <constraint firstItem="AkF-py-Nas" firstAttribute="leading" secondItem="4oZ-cn-B3n" secondAttribute="trailing" id="phC-Hp-6Fm"/>
                             <constraint firstItem="GJ3-KC-Oir" firstAttribute="leading" secondItem="PZn-uN-nYb" secondAttribute="trailing" id="qgf-Jz-8N8"/>
                             <constraint firstItem="H0K-d7-f7o" firstAttribute="leading" secondItem="K25-XF-Jiu" secondAttribute="leading" id="v72-mO-qzC"/>
+                            <constraint firstAttribute="trailing" secondItem="4Mi-Pc-8Iq" secondAttribute="trailing" constant="16" id="vwB-c9-sf5"/>
                             <constraint firstItem="4Xz-0E-p37" firstAttribute="leading" secondItem="K25-XF-Jiu" secondAttribute="leading" id="yG8-17-azR"/>
                             <constraint firstItem="4oZ-cn-B3n" firstAttribute="leading" secondItem="GJ3-KC-Oir" secondAttribute="trailing" id="zlF-2K-NyW"/>
+                            <constraint firstItem="4Mi-Pc-8Iq" firstAttribute="top" secondItem="kdr-lZ-7HS" secondAttribute="bottom" constant="-95" id="zoa-c8-QPL"/>
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
@@ -187,7 +197,10 @@
                         <outlet property="btnMiddleLeft" destination="GJ3-KC-Oir" id="lJP-dk-eKX"/>
                         <outlet property="btnMiddleRight" destination="AkF-py-Nas" id="eBf-TX-cMc"/>
                         <outlet property="btnRightSide" destination="AIv-dK-ka2" id="Hso-eM-RYO"/>
+                        <outlet property="commandView" destination="4Mi-Pc-8Iq" id="Luw-nS-MEr"/>
                         <outlet property="constraintButtonsCoverViewHeight" destination="bTL-mi-pXB" id="LPa-bA-WJj"/>
+                        <outlet property="constraintCmdViewHeight" destination="4mb-IY-nKD" id="n0G-Rx-kUW"/>
+                        <outlet property="constraintCmdViewTopMargin" destination="zoa-c8-QPL" id="PSl-0N-dc0"/>
                         <outlet property="constraintMidBtnLeftWidth" destination="Oa0-2L-vEc" id="qEH-BF-oL4"/>
                         <outlet property="constraintMidBtnRigthWidth" destination="XH9-Ag-cCp" id="kTx-C9-LyM"/>
                         <outlet property="constraintPreviewImageHeight" destination="xj8-d5-pdd" id="hTB-JJ-bi0"/>

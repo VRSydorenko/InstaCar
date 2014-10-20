@@ -77,9 +77,7 @@
     canEditFieldText1 = NO;
     canEditFieldText2 = NO;
     
-    _commandFlags.canCmdInvertColors = NO;
-    _commandFlags.canCmdEditText = NO;
-    _commandFlags.canCmdEditPrefix = NO;
+    commands = [NSArray arrayWithObject:[NSNumber numberWithInt:COMMAND_NOCOMMANDS]]; // initially no commands
     
     self.userInteractionEnabled = YES;
     gradientInitialized = NO;
@@ -351,11 +349,11 @@
     isContentOnTop = NO;
 }
 
--(CommandFlags)getSkinCommands{
-    return _commandFlags;
+-(NSArray*)getSkinCommands{
+    return commands;
 }
 
-#pragma mark Skin commands descendant overrides
+#pragma mark Skin Command Delegate
 
 -(void)onCmdInvertColors{
     // overriden in descendants
@@ -368,6 +366,9 @@
 }
 -(void)onCmdEditRaiting:(int)newRaiting{
 }
+
+// data getters
+
 -(NSString*)getSkinContentText{
     return @"";
 }

@@ -26,8 +26,11 @@
     
     canEditFieldAuto1 = YES;
     
-    _commandFlags.canCmdEditRaiting = YES;
-    _commandFlags.canCmdEditText = YES;
+    commands = [NSArray arrayWithObjects:
+                [NSNumber numberWithInt:COMMAND_EDITTEXT],
+                [NSNumber numberWithInt:COMMAND_EDITRATING],
+                nil];
+    
     raiting = [super getSkinRaiting];
     [self lightUpStars];
 }
