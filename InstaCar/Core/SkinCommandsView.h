@@ -15,7 +15,7 @@
 #define BTNS_EDITOR_MARGIN 2.0
 #define HEIGHT_ON_TOP 40.0
 
-@interface SkinCommandsPopoverView : UIView <SkinCommandContainerDelegate>{
+@interface SkinCommandsView : UIView <SkinCommandContainerDelegate>{
 @private
     CommandFlags skinCommands;
     

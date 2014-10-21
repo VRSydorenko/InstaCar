@@ -6,11 +6,11 @@
 //  Copyright (c) 2014 Viktor Sydorenko. All rights reserved.
 //
 
-#import "SkinCommandsPopoverView.h"
+#import "SkinCommandsView.h"
 #import "SkinCommandProvider.h"
 #import "SkinCmdNoCommands.h"
 
-@implementation SkinCommandsPopoverView
+@implementation SkinCommandsView
 
 -(id)initWithFrame:(CGRect)frame{
     self = [super initWithFrame:frame];

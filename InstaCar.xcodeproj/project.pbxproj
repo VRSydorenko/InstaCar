@@ -63,6 +63,7 @@
 		7F3648B3180F2A1900B95693 /* FirstTimeInfoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F3648B2180F2A1900B95693 /* FirstTimeInfoVC.m */; };
 		7F3871DE17BE4F1000D8E39D /* DDMenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F3871DD17BE4F1000D8E39D /* DDMenuController.m */; };
 		7F3AB72119F592340013B672 /* SkinCmdNoCommands.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F3AB72019F592340013B672 /* SkinCmdNoCommands.m */; };
+		7F3AB72419F5AD810013B672 /* ButtonsControlView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F3AB72319F5AD810013B672 /* ButtonsControlView.m */; };
 		7F419E2717D65EBB00255E56 /* CellSkinSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F419E2617D65EBB00255E56 /* CellSkinSet.m */; };
 		7F419E2D17D6698000255E56 /* CellAuto.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F419E2C17D6698000255E56 /* CellAuto.m */; };
 		7F4CB669180977DF008B5CA2 /* iCloudHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F4CB668180977DF008B5CA2 /* iCloudHandler.m */; };
@@ -110,7 +111,7 @@
 		841988CF19C87B4000C73A19 /* imgCmdEditNormal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 841988C219C87B4000C73A19 /* imgCmdEditNormal@2x.png */; };
 		841988D119C87B4000C73A19 /* imgCmdInvertNormal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 841988C419C87B4000C73A19 /* imgCmdInvertNormal@2x.png */; };
 		841988D419C87B4000C73A19 /* imgCmdOkNormal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 841988C719C87B4000C73A19 /* imgCmdOkNormal@2x.png */; };
-		841988D519C87B4000C73A19 /* SkinCommandsPopoverView.m in Sources */ = {isa = PBXBuildFile; fileRef = 841988C919C87B4000C73A19 /* SkinCommandsPopoverView.m */; };
+		841988D519C87B4000C73A19 /* SkinCommandsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 841988C919C87B4000C73A19 /* SkinCommandsView.m */; };
 		841C5EF4195483FF00AD025D /* SkinElementImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 841C5EF3195483FF00AD025D /* SkinElementImage.m */; };
 		84205D6819C08D5800CAD98E /* SCRIPTIN.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 84205D6719C08D5800CAD98E /* SCRIPTIN.ttf */; };
 		84213FB619C9B2570083C5BD /* UIView+MyExtentions.m in Sources */ = {isa = PBXBuildFile; fileRef = 84213FB519C9B2570083C5BD /* UIView+MyExtentions.m */; };
@@ -437,6 +438,8 @@
 		7F3871DD17BE4F1000D8E39D /* DDMenuController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDMenuController.m; sourceTree = "<group>"; };
 		7F3AB71F19F592340013B672 /* SkinCmdNoCommands.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkinCmdNoCommands.h; sourceTree = "<group>"; };
 		7F3AB72019F592340013B672 /* SkinCmdNoCommands.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SkinCmdNoCommands.m; sourceTree = "<group>"; };
+		7F3AB72219F5AD810013B672 /* ButtonsControlView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ButtonsControlView.h; path = InstaCar/ButtonsControlView.h; sourceTree = "<group>"; };
+		7F3AB72319F5AD810013B672 /* ButtonsControlView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ButtonsControlView.m; path = InstaCar/ButtonsControlView.m; sourceTree = "<group>"; };
 		7F419E2517D65EBB00255E56 /* CellSkinSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CellSkinSet.h; path = InstaCar/TableCells/CellSkinSet.h; sourceTree = "<group>"; };
 		7F419E2617D65EBB00255E56 /* CellSkinSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CellSkinSet.m; path = InstaCar/TableCells/CellSkinSet.m; sourceTree = "<group>"; };
 		7F419E2B17D6698000255E56 /* CellAuto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CellAuto.h; path = InstaCar/TableCells/CellAuto.h; sourceTree = "<group>"; };
@@ -520,8 +523,8 @@
 		841988C219C87B4000C73A19 /* imgCmdEditNormal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "imgCmdEditNormal@2x.png"; sourceTree = "<group>"; };
 		841988C419C87B4000C73A19 /* imgCmdInvertNormal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "imgCmdInvertNormal@2x.png"; sourceTree = "<group>"; };
 		841988C719C87B4000C73A19 /* imgCmdOkNormal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "imgCmdOkNormal@2x.png"; sourceTree = "<group>"; };
-		841988C819C87B4000C73A19 /* SkinCommandsPopoverView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SkinCommandsPopoverView.h; path = InstaCar/Core/SkinCommandsPopoverView.h; sourceTree = "<group>"; };
-		841988C919C87B4000C73A19 /* SkinCommandsPopoverView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SkinCommandsPopoverView.m; path = InstaCar/Core/SkinCommandsPopoverView.m; sourceTree = "<group>"; };
+		841988C819C87B4000C73A19 /* SkinCommandsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SkinCommandsView.h; path = InstaCar/Core/SkinCommandsView.h; sourceTree = "<group>"; };
+		841988C919C87B4000C73A19 /* SkinCommandsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SkinCommandsView.m; path = InstaCar/Core/SkinCommandsView.m; sourceTree = "<group>"; };
 		841C5EF2195483FF00AD025D /* SkinElementImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SkinElementImage.h; path = InstaCar/Core/DrawingElements/SkinElementImage.h; sourceTree = "<group>"; };
 		841C5EF3195483FF00AD025D /* SkinElementImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SkinElementImage.m; path = InstaCar/Core/DrawingElements/SkinElementImage.m; sourceTree = "<group>"; };
 		84205D6719C08D5800CAD98E /* SCRIPTIN.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SCRIPTIN.ttf; sourceTree = "<group>"; };
@@ -876,6 +879,8 @@
 				8440C97919CC640B009D0C19 /* MainNavController.m */,
 				8440C97A19CC640B009D0C19 /* MainVC.h */,
 				8440C97B19CC640B009D0C19 /* MainVC.m */,
+				7F3AB72219F5AD810013B672 /* ButtonsControlView.h */,
+				7F3AB72319F5AD810013B672 /* ButtonsControlView.m */,
 				8440C97C19CC640B009D0C19 /* SideViewControllerBase.h */,
 				8440C97D19CC640B009D0C19 /* SideViewControllerBase.m */,
 				7FF3389117D4C0E700B046C4 /* SkinsVC.h */,
@@ -1225,8 +1230,8 @@
 				7F4CB66C180978CF008B5CA2 /* CustomSHKConfigurator.m */,
 				7F4CB667180977DF008B5CA2 /* iCloudHandler.h */,
 				7F4CB668180977DF008B5CA2 /* iCloudHandler.m */,
-				841988C819C87B4000C73A19 /* SkinCommandsPopoverView.h */,
-				841988C919C87B4000C73A19 /* SkinCommandsPopoverView.m */,
+				841988C819C87B4000C73A19 /* SkinCommandsView.h */,
+				841988C919C87B4000C73A19 /* SkinCommandsView.m */,
 			);
 			name = Core;
 			sourceTree = "<group>";
@@ -2018,7 +2023,7 @@
 				8440C93919CC627E009D0C19 /* LogoNameLeft.m in Sources */,
 				8440C8A619CC627E009D0C19 /* AutoModel.m in Sources */,
 				8440C97019CC638B009D0C19 /* main.m in Sources */,
-				841988D519C87B4000C73A19 /* SkinCommandsPopoverView.m in Sources */,
+				841988D519C87B4000C73A19 /* SkinCommandsView.m in Sources */,
 				8440C96419CC62AE009D0C19 /* DbManager.m in Sources */,
 				7FF3389317D4C0E700B046C4 /* SkinsVC.m in Sources */,
 				8440C92F19CC627E009D0C19 /* SkinAwd_Raiting.m in Sources */,
@@ -2064,6 +2069,7 @@
 				7FF4091C19E9953F000B5CAD /* FMDatabase.m in Sources */,
 				7FC4137917C7E8450025DD2C /* FSVenue.m in Sources */,
 				7F2AD57B17EDE9B40096EC8D /* SHKSharer.m in Sources */,
+				7F3AB72419F5AD810013B672 /* ButtonsControlView.m in Sources */,
 				7F4F684817F6FDF500F1017B /* ImageEditor.m in Sources */,
 				8440C95119CC627E009D0C19 /* SkinEmo_MyDream.m in Sources */,
 				7F4CB67A180978CF008B5CA2 /* UserSettings.m in Sources */,

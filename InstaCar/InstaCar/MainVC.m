@@ -14,13 +14,6 @@
 #import "SHKSharer.h"
 #import "DataManager.h"
 
-#define SWITCH_TIME 1.0
-
-typedef enum {
-    COLLAPSE,
-    EXPAND
-} ButtonTransformAction;
-
 @interface MainVC (){
     MainNavController *navCon;
     BOOL buttonsInInitialState;
@@ -50,11 +43,7 @@ typedef enum {
 {
     [super viewDidLoad];
     
-    [self.btnMiddleLeft setImage:[UIImage imageNamed:@"PicLandscape.png"] forState:UIControlStateNormal];
-    [self.btnMiddleLeft setTitle:@"" forState:UIControlStateNormal];
-    
-    [self.btnMiddleRight setImage:[UIImage imageNamed:@"Repeat.png"] forState:UIControlStateNormal];
-    [self.btnMiddleRight setTitle:@"" forState:UIControlStateNormal];
+    self.buttonsControlView.delegate = self;
     
     navCon = (MainNavController*)self.navigationController;
     navCon.dataSelectionChangeDelegate = self;
@@ -65,7 +54,6 @@ typedef enum {
     selectedImage = nil;
     imageInProcessing = NO;
     isShowingAd = NO;
-    self.activityShareInProgress.hidden = YES;
     
     [self initCaptureManager];
     
@@ -103,8 +91,6 @@ typedef enum {
     
     CGPoint convertedPreviewPoint = [self.imagePreview.superview convertPoint:self.imagePreview.frame.origin toView:nil];
     self.captureManager.imageTopCropMargin = convertedPreviewPoint.y;
-    
-    self.constraintButtonsCoverViewHeight.constant = [self calcPageControlHeight];
     
     [self initSkinCommandView];
     [self setActiveSkin:0]; // goes after creating the command view
@@ -243,9 +229,6 @@ typedef enum {
     if (NO == [DataManager isFullVersion] && self.constraintViewAdContainerHeight.constant == 0){
         isShowingAd = YES;
         
-        self.constraintViewAdContainerHeight.constant = 50.0;
-        self.constraintButtonsCoverViewHeight.constant = [self calcPageControlHeight];
-        
         CGFloat cmdViewNewHeight = [self getPopCommandsViewHeight];
         
         [UIView animateWithDuration:0.25
@@ -254,17 +237,11 @@ typedef enum {
                                  self.constraintCmdViewHeight.constant = cmdViewNewHeight;
                              }
                              
-                             if ([UserSettings isIPhone4]){
-                                 [self setButtonsBottomInset:-26.0];
-                                 self.constraintWhiteActBottomMargin.constant -= 13.0;
-                             }
+                             self.constraintViewAdContainerHeight.constant = 50.0;
                              
                              [self.view layoutIfNeeded];
                          }
                          completion:^(BOOL success){
-                             if (!self.commandView.isInEditMode){
-                                 [self.commandView rebuildView];
-                             }
                          }
          ];
     }
@@ -274,9 +251,6 @@ typedef enum {
     if (NO == [DataManager isFullVersion] && self.constraintViewAdContainerHeight.constant == 50.0){
         isShowingAd = NO;
         
-        self.constraintViewAdContainerHeight.constant = 0.0;
-        self.constraintButtonsCoverViewHeight.constant = [self calcPageControlHeight];
-        
         CGFloat cmdViewNewHeight = [self getPopCommandsViewHeight];
         
         [UIView animateWithDuration:0.25
@@ -285,17 +259,11 @@ typedef enum {
                                  self.constraintCmdViewHeight.constant = cmdViewNewHeight;
                              }
                              
-                             if ([UserSettings isIPhone4]){
-                                 [self setButtonsBottomInset:0.0];
-                                 self.constraintWhiteActBottomMargin.constant += 13.0;
-                             }
+                             self.constraintViewAdContainerHeight.constant = 0.0;
                              
                              [self.view layoutIfNeeded];
                          }
                          completion:^(BOOL success){
-                             if (!self.commandView.isInEditMode){
-                                 [self.commandView rebuildView];
-                             }
                          }
          ];
     }
@@ -365,88 +333,9 @@ typedef enum {
     [activeSkin moveContentDown];
 }
 
-#pragma mark Switching buttons
+#pragma mark Buttons Control Delegate
 
--(void) switchButtons{
-    [self collapseButtons];
-    [NSTimer scheduledTimerWithTimeInterval:SWITCH_TIME/2.0 target:self selector:@selector(expandButtons) userInfo:nil repeats:NO];
-}
-
--(void)collapseButtons{
-    [UIView animateWithDuration:SWITCH_TIME / 2.0
-            delay:0.0
-            options:UIViewAnimationOptionAllowAnimatedContent
-            animations:^{
-                self.constraintButtonsCoverViewHeight.constant = self.view.bounds.size.height - self.constraintViewAdContainerHeight.constant - self.pageControlContainer.frame.origin.y;
-                
-                self.btnMiddleLeft.titleLabel.alpha = 0.0;
-                self.btnMiddle.titleLabel.alpha = 0.0;
-                self.btnMiddleRight.titleLabel.alpha = 0.0;
-                
-                [self.view layoutIfNeeded];
-            }
-            completion:^(BOOL finished){
-                if (buttonsInInitialState){
-                    CGFloat longWidth = 0.5 * ([UIScreen mainScreen].bounds.size.width - 2 * 64);
-                    self.constraintMidBtnLeftWidth.constant = longWidth; //96.0;
-                    [self.btnMiddleLeft setTitle:@"New photo" forState:UIControlStateNormal];
-                    [self.btnMiddleLeft setImage:nil forState:UIControlStateNormal];
-                    
-                    self.constraintMidBtnRigthWidth.constant = longWidth; // 96.0;
-                    [self.btnMiddleRight setTitle:@"Share" forState:UIControlStateNormal];
-                    [self.btnMiddleRight setImage:nil forState:UIControlStateNormal];
-                } else {
-                    self.constraintMidBtnLeftWidth.constant = 64.0;
-                    [self.btnMiddleLeft setImage:[UIImage imageNamed:@"PicLandscape.png"] forState:UIControlStateNormal];
-                    [self.btnMiddleLeft setTitle:@"" forState:UIControlStateNormal];
-                    
-                    self.constraintMidBtnRigthWidth.constant = 64.0;
-                    [self.btnMiddleRight setImage:[UIImage imageNamed:@"Repeat.png"] forState:UIControlStateNormal];
-                    [self.btnMiddleRight setTitle:@"" forState:UIControlStateNormal];
-                }
-            }
-     ];
-}
-
--(void)expandButtons{
-    [UIView animateWithDuration:SWITCH_TIME / 2.0
-            delay:0.0
-            options:UIViewAnimationOptionAllowAnimatedContent
-            animations:^{
-                self.constraintButtonsCoverViewHeight.constant = [self calcPageControlHeight];
-               
-                self.btnMiddleLeft.titleLabel.alpha = 1.0;
-                self.btnMiddle.titleLabel.alpha = 1.0;
-                self.btnMiddleRight.titleLabel.alpha = 1.0;
-            
-                [self.view layoutIfNeeded];
-            }
-            completion:^(BOOL finished){
-                buttonsInInitialState = !buttonsInInitialState;
-                self.btnMiddle.enabled = YES; // make the Shot button available for using again
-            }
-    ];
-}
-
-- (IBAction)btnMiddleLeftPressed {
-    if (buttonsInInitialState){
-        [self doPickPhotoPressed];
-    } else {
-        [self doPickNewPhotoPressed];
-    }
-}
-
-- (IBAction)btnMiddleRightPressed {
-    if (buttonsInInitialState){
-        [self doCamSettingsPressed];
-    } else {
-        [self doSharePressed];
-    }
-}
-
-#pragma mark Button Actions
-
-- (IBAction)btnLocationPressed:(id)sender {
+-(void)onBtnLocationPressed{
     if (imageInProcessing){
         return;
     }
@@ -454,22 +343,7 @@ typedef enum {
     [navCon setSideViewController:LOCATIONS andShowOnTheLeftSide:YES];
 }
 
-- (IBAction)btnMiddlePressed {
-    if (buttonsInInitialState){
-        self.btnMiddle.enabled = NO;
-        [self.captureManager captureStillImage];
-    }
-}
-
-- (IBAction)btnSkinsPressed:(id)sender {
-    if (imageInProcessing){
-        return;
-    }
-    
-    [navCon setSideViewController:SKINS andShowOnTheLeftSide:NO];
-}
-
--(void)doPickPhotoPressed{
+-(void)onBtnPickPhotoPressed{
     UIImagePickerController *picker = [[UIImagePickerController alloc] init];
     
     picker.allowsEditing = NO;
@@ -491,11 +365,24 @@ typedef enum {
     [self presentViewController:picker animated:YES completion:nil];
 }
 
--(void)doCamSettingsPressed{
+-(void)onBtnShotPressed{
+    [self.buttonsControlView enable_M_Button:NO];
+    [self.captureManager captureStillImage];
+}
+
+-(void)onBtnSwitchCameraPressed{
     [self.captureManager switchInputs];
 }
 
--(void)doPickNewPhotoPressed{
+-(void)onBtnSkinsPressed{
+    if (imageInProcessing){
+        return;
+    }
+    
+    [navCon setSideViewController:SKINS andShowOnTheLeftSide:NO];
+}
+
+-(void)onBtnNewPhotoPressed{
     if (imageInProcessing){
         imageInProcessing = NO;
     }
@@ -503,15 +390,17 @@ typedef enum {
     [self.captureManager addLastVideoInput];
     [self initPreviewLayer];
     self.captureManager.stillImage = nil;
-    [self switchButtons];
+    [self.buttonsControlView switchButtons];
 }
 
--(void)doSharePressed{
+-(void)onBtnSharePressed{
     if (imageInProcessing){
         return;
     }
     
-    [self showActivityIndicator];
+    [self.buttonsControlView showActivityIndicator:YES];
+    self.scrollSkins.userInteractionEnabled = NO;
+    imageInProcessing = YES;
     
     dispatch_queue_t refreshQueue = dispatch_queue_create("image processing queue", NULL);
     dispatch_async(refreshQueue, ^{
@@ -534,10 +423,12 @@ typedef enum {
                 SHKActionSheet *actionSheet = [SHKActionSheet actionSheetForItem:item];
                 actionSheet.shareDelegate = self;
                 [SHK setRootViewController:self];
-            
+                
                 [actionSheet showInView:self.view];
-            
-                [self hideActivityIndicator];
+                
+                [self.buttonsControlView showActivityIndicator:NO];
+                self.scrollSkins.userInteractionEnabled = YES;
+                imageInProcessing = NO;
             }
         });
     });
@@ -608,26 +499,6 @@ typedef enum {
     }
 }
 
--(void)showActivityIndicator{
-    [self.btnMiddleRight setTitle:@"" forState:UIControlStateNormal];
-    self.scrollSkins.userInteractionEnabled = NO;
-    self.activityShareInProgress.hidden = NO;
-    imageInProcessing = YES;
-    [self.activityShareInProgress startAnimating];
-}
-
--(void)hideActivityIndicator{
-    [self.btnMiddleRight setTitle:@"Share" forState:UIControlStateNormal];
-    self.scrollSkins.userInteractionEnabled = YES;
-    [self.activityShareInProgress stopAnimating];
-    self.activityShareInProgress.hidden = YES;
-    imageInProcessing = NO;
-}
-
--(CGFloat)calcPageControlHeight{
-    return self.view.bounds.size.height - self.constraintViewAdContainerHeight.constant - self.btnLocation.bounds.size.height - 1.0 - self.pageControlContainer.frame.origin.y;
-}
-
 -(CGFloat)getPopCommandsViewHeight{
     if ([self.commandView isInEditMode]){
         return [self.commandView heightOnTop];
@@ -646,7 +517,7 @@ typedef enum {
     
     [self.captureManager clearInputs];
     [self.captureManager.previewLayer removeFromSuperlayer];
-    [self switchButtons];
+    [self.buttonsControlView switchButtons];
 }
 
 -(UIImage*) drawSkin:(UIImage*)skinImage
@@ -714,17 +585,6 @@ typedef enum {
                         [self.commandView rebuildView];
                     }
     ];
-}
-
--(void)setButtonsBottomInset:(CGFloat)btnBottomInset{
-    [self.btnLocation setImageEdgeInsets:UIEdgeInsetsMake(0, 0, btnBottomInset, 0)];
-    [self.btnMiddleLeft setImageEdgeInsets:UIEdgeInsetsMake(0, 0, btnBottomInset, 0)];
-    [self.btnMiddle setImageEdgeInsets:UIEdgeInsetsMake(0, 0, btnBottomInset, 0)];
-    [self.btnMiddleRight setImageEdgeInsets:UIEdgeInsetsMake(0, 0, btnBottomInset, 0)];
-    [self.btnRightSide setImageEdgeInsets:UIEdgeInsetsMake(0, 0, btnBottomInset, 0)];
-    
-    [self.btnMiddleLeft setTitleEdgeInsets:UIEdgeInsetsMake(0, 0, btnBottomInset, 0)];
-    [self.btnMiddleRight setTitleEdgeInsets:UIEdgeInsetsMake(0, 0, btnBottomInset, 0)];
 }
 
 @end

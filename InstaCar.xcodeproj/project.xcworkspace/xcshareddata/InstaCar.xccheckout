@@ -14,7 +14,7 @@
 		<string>https://github.com/VRSydorenko/InstaCar.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>InstaCar.xcodeproj/project.xcworkspace</string>
+	<string>InstaCar.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>85AFD6101B4A6A078475C515A2A43E0B471EE47A</key>
