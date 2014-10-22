@@ -44,6 +44,8 @@
 @property (nonatomic) IBOutlet NSLayoutConstraint *constraintBtn_MR_Width;
 @property (nonatomic) IBOutlet NSLayoutConstraint *constraintBtn_R_Width;
 @property (nonatomic) IBOutlet NSLayoutConstraint *constraintCoverViewHeight;
+@property (nonatomic) IBOutlet NSLayoutConstraint *constraintActIndicatorLeft;
+@property (nonatomic) IBOutlet NSLayoutConstraint *constraintActIndicatorBottom;
 
 @property (nonatomic) NSObject<ButtonsControlDelegate> *delegate;
 
@@ -51,5 +53,6 @@
 -(void)enable_M_Button:(BOOL)enabled;
 -(void)showActivityIndicator:(BOOL)show;
 -(void)switchButtons;
+-(void)setButtonsBottomInset:(CGFloat)btnBottomInset;
 
 @end

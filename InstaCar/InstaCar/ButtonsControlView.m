@@ -19,6 +19,12 @@ typedef enum {
 
 #pragma mark Button handlers
 
+-(void)awakeFromNib{
+    self.constraintCoverViewHeight.constant = 0.0;
+    self.activityIndicator.hidden = YES;
+    isInInitialState = YES;
+}
+
 -(IBAction)onBtn_L_Pressed:(id)sender{
     [self.delegate onBtnLocationPressed];
 }
@@ -55,6 +61,9 @@ typedef enum {
 }
 
 -(void)collapseButtons{
+    CGFloat sideButtonsWidth = self.bounds.size.height * 1.2; // 20% wider than higher
+    CGFloat middleButtonsWidth = ([UIScreen mainScreen].bounds.size.width - 2/*side buttons*/ * sideButtonsWidth) / 2/*middle buttons*/;
+    
     [UIView animateWithDuration:SWITCH_TIME / 2.0
                           delay:0.0
                         options:UIViewAnimationOptionAllowAnimatedContent
@@ -68,19 +77,17 @@ typedef enum {
                      }
                      completion:^(BOOL finished){
                          if (isInInitialState){ // make state with Share button
-                             self.constraintBtn_L_Width.constant = 64.0; // left is standard
-                             self.constraintBtn_ML_Width.constant = 96.0; // then a long one "new photo
+                             self.constraintBtn_L_Width.constant = sideButtonsWidth; // left is standard
+                             self.constraintBtn_ML_Width.constant = middleButtonsWidth; // then a long one "new photo
                                                                           // middle one will autoadjust
                              self.constraintBtn_MR_Width.constant = 0.0; // this one has no length
-                             self.constraintBtn_R_Width.constant = 64.0; // right one is standard
+                             self.constraintBtn_R_Width.constant = sideButtonsWidth; // right one is standard
                              
                             [self updateButtonIcons];
                          } else { // make initial state
-                             self.constraintBtn_ML_Width.constant = 64.0;
-                             self.constraintBtn_MR_Width.constant = 64.0;
-                             [self.btnM setImage:[UIImage imageNamed:@"Camera.png"] forState:UIControlStateNormal];
-                             [self.btnM setTitle:@"" forState:UIControlStateNormal];
-     
+                             self.constraintBtn_ML_Width.constant = sideButtonsWidth;
+                             self.constraintBtn_MR_Width.constant = sideButtonsWidth;
+                             
                              [self updateButtonIcons];
                          }
                      }
@@ -88,6 +95,8 @@ typedef enum {
 }
 
 -(void)expandButtons{
+    [self enable_M_Button:YES]; // make the Shot button available for using again
+    
     [UIView animateWithDuration:SWITCH_TIME / 2.0
                           delay:0.0
                         options:UIViewAnimationOptionAllowAnimatedContent
@@ -101,7 +110,6 @@ typedef enum {
                      }
                      completion:^(BOOL finished){
                          isInInitialState = !isInInitialState;
-                         [self enable_M_Button:YES]; // make the Shot button available for using again
                      }
      ];
 }
@@ -143,12 +151,14 @@ typedef enum {
 -(void)setButtonsBottomInset:(CGFloat)btnBottomInset{
     [self.btnL setImageEdgeInsets:UIEdgeInsetsMake(0, 0, btnBottomInset, 0)];
     [self.btnML setImageEdgeInsets:UIEdgeInsetsMake(0, 0, btnBottomInset, 0)];
-    [self.btnM setImageEdgeInsets:UIEdgeInsetsMake(0, 0, btnBottomInset, 0)];
+    [self.btnM setImageEdgeInsets:UIEdgeInsetsMake(0, 0, btnBottomInset + 6.0 /*top margin*/, 0)];
     [self.btnMR setImageEdgeInsets:UIEdgeInsetsMake(0, 0, btnBottomInset, 0)];
     [self.btnR setImageEdgeInsets:UIEdgeInsetsMake(0, 0, btnBottomInset, 0)];
     
     [self.btnML setTitleEdgeInsets:UIEdgeInsetsMake(0, 0, btnBottomInset, 0)];
     [self.btnM setTitleEdgeInsets:UIEdgeInsetsMake(0, 0, btnBottomInset, 0)];
+    
+    self.constraintActIndicatorBottom.constant += btnBottomInset == 0.0 ? 13.0 : -13.0; // TODO: fix hardcoded workaround
 }
 
 @end

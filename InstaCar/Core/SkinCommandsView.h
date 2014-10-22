@@ -13,7 +13,10 @@
 
 #define SIDE_PADDING 2.0
 #define BTNS_EDITOR_MARGIN 2.0
-#define HEIGHT_ON_TOP 40.0
+#define HEIGHT_ON_TOP_IPHONE4 40.0
+#define HEIGHT_ON_TOP_IPHONE5 40.0
+#define HEIGHT_ON_TOP_IPHONE6 40.0
+#define HEIGHT_ON_TOP_IPHONE6PLUS 40.0
 
 @interface SkinCommandsView : UIView <SkinCommandContainerDelegate>{
 @private

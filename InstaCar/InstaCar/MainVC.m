@@ -86,14 +86,16 @@
 
 }
 
+-(void)viewWillAppear:(BOOL)animated{
+    [self initSkinCommandView];
+    [self setActiveSkin:0]; // goes after creating the command view
+}
+
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
     
     CGPoint convertedPreviewPoint = [self.imagePreview.superview convertPoint:self.imagePreview.frame.origin toView:nil];
     self.captureManager.imageTopCropMargin = convertedPreviewPoint.y;
-    
-    [self initSkinCommandView];
-    [self setActiveSkin:0]; // goes after creating the command view
     
     if (NO == [DataManager getHasLaunchedBefore]){
         FirstTimeInfoVC *infoVC = [[UIStoryboard storyboardWithName:@"main" bundle:nil] instantiateViewControllerWithIdentifier:@"firstTimeInfoVC"];
@@ -211,11 +213,13 @@
 
 -(void) initSkinCommandView{
     self.constraintCmdViewTopMargin.constant = 0.0;
+    self.constraintCmdViewHeight.constant = [self calcCommandsViewHeight];
+    
     self.commandView.ownerVC = (UIViewController<ProInfoViewControllerDelegate>*)self.navigationController; // TODO: refactor this workaround
     
     //Set the customView properties
-    // TODO: self.commandView.layer.cornerRadius = 3;
-    // TODO: self.commandView.layer.borderWidth = 1.5f;
+    self.commandView.layer.cornerRadius = 3;
+    self.commandView.layer.borderWidth = 1.0f;
     
     //Add the customView to the current view
     [self.view bringSubviewToFront:self.commandView];
@@ -229,7 +233,7 @@
     if (NO == [DataManager isFullVersion] && self.constraintViewAdContainerHeight.constant == 0){
         isShowingAd = YES;
         
-        CGFloat cmdViewNewHeight = [self getPopCommandsViewHeight];
+        CGFloat cmdViewNewHeight = [self calcCommandsViewHeight];
         
         [UIView animateWithDuration:0.25
                          animations:^(void){
@@ -238,6 +242,10 @@
                              }
                              
                              self.constraintViewAdContainerHeight.constant = 50.0;
+                             
+                             if ([UserSettings isIPhone4]){
+                                 [self.buttonsControlView setButtonsBottomInset:-26.0];
+                             }
                              
                              [self.view layoutIfNeeded];
                          }
@@ -251,12 +259,16 @@
     if (NO == [DataManager isFullVersion] && self.constraintViewAdContainerHeight.constant == 50.0){
         isShowingAd = NO;
         
-        CGFloat cmdViewNewHeight = [self getPopCommandsViewHeight];
+        CGFloat cmdViewNewHeight = [self calcCommandsViewHeight];
         
         [UIView animateWithDuration:0.25
                          animations:^(void){
                              if (!self.commandView.isInEditMode){
                                  self.constraintCmdViewHeight.constant = cmdViewNewHeight;
+                             }
+                             
+                             if ([UserSettings isIPhone4]){
+                                 [self.buttonsControlView setButtonsBottomInset:0.0];
                              }
                              
                              self.constraintViewAdContainerHeight.constant = 0.0;
@@ -499,16 +511,26 @@
     }
 }
 
--(CGFloat)getPopCommandsViewHeight{
+-(CGFloat)calcCommandsViewHeight{
+    // Node: if it is not iPhone4 then the space between buttons & command should be minimum twice bigger than buttons height
+    
     if ([self.commandView isInEditMode]){
         return [self.commandView heightOnTop];
     }
     
-    if (!isShowingAd){
-        return [UserSettings isIPhone4] ? 47.0 : 70.0;
-    } else {
-        return [UserSettings isIPhone4] ? 28.0 /*+9*/: 55.0/*-15*/;
+    if ([UserSettings isIPhone5]){
+        return isShowingAd ? 28.0 : 47.0;
     }
+    
+    if ([UserSettings isIPhone6]){
+        return isShowingAd ? 28.0 : 47.0;
+    }
+    
+    if ([UserSettings isIPhone6plus]){
+        return isShowingAd ? 28.0 : 47.0;
+    }
+    
+    return isShowingAd ? 28.0 : 47.0; // iPhone4
 }
 
 -(void) imageCaptured{
@@ -555,7 +577,7 @@
     
     CGFloat keyboardTop = keyboardRect.origin.y;
     
-    CGFloat height = [self getPopCommandsViewHeight];
+    CGFloat height = [self calcCommandsViewHeight];
     CGRect popoverFrame = CGRectMake(self.commandView.frame.origin.x, keyboardTop - height, self.commandView.bounds.size.width, height);
     
     NSValue *animationDurationValue = [notification.userInfo objectForKey:UIKeyboardAnimationDurationUserInfoKey];
@@ -575,7 +597,7 @@
     [animationDurationValue getValue:&animationDuration];
     
     CGRect popoverFrame = initialPopoverFrame;
-    popoverFrame.size.height = [self getPopCommandsViewHeight];
+    popoverFrame.size.height = [self calcCommandsViewHeight];
     
     [UIView animateWithDuration:animationDuration
                     animations:^{

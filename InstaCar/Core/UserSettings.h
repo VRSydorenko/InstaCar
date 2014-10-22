@@ -19,6 +19,9 @@
 
 +(BOOL)isFullVersion;
 +(BOOL)isIPhone4;
++(BOOL)isIPhone5;
++(BOOL)isIPhone6;
++(BOOL)isIPhone6plus;
 
 +(NSString*) getStoredAppVersion;
 +(void) setStoredAppVersion;

@@ -62,7 +62,19 @@
 }
 
 -(CGFloat)heightOnTop{
-    return HEIGHT_ON_TOP;
+    if ([UserSettings isIPhone5]){
+        return HEIGHT_ON_TOP_IPHONE5;
+    }
+    
+    if ([UserSettings isIPhone6]){
+        return HEIGHT_ON_TOP_IPHONE6;
+    }
+    
+    if ([UserSettings isIPhone6plus]){
+        return HEIGHT_ON_TOP_IPHONE6PLUS;
+    }
+    
+    return HEIGHT_ON_TOP_IPHONE4;
 }
 
 -(void)reset{
@@ -90,7 +102,7 @@
 }
 
 -(CGFloat)getOneCommandHeight{
-    return (isEditMode ? HEIGHT_ON_TOP : self.bounds.size.height) - 2 * SIDE_PADDING;
+    return (isEditMode ? [self heightOnTop] : self.bounds.size.height) - 2 * SIDE_PADDING;
 }
 
 #pragma mark Event handlers

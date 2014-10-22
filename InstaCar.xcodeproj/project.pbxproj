@@ -78,7 +78,6 @@
 		7F59AC5F17D3C1F400B87457 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F59AC5E17D3C1F400B87457 /* libsqlite3.0.dylib */; };
 		7F5C46671811E87900DF94B1 /* ProInfoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F5C46661811E87900DF94B1 /* ProInfoVC.m */; };
 		7F98D62419F450A500415C8D /* SkinCmdInvertColors.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F98D62319F450A500415C8D /* SkinCmdInvertColors.m */; };
-		7F98D62719F4558300415C8D /* CmdImages.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7F98D62619F4558300415C8D /* CmdImages.xcassets */; };
 		7FA49E3019EAFF670032CEAB /* star_full.png in Resources */ = {isa = PBXBuildFile; fileRef = 7FA49E2F19EAFF670032CEAB /* star_full.png */; };
 		7FA49E3219EB03950032CEAB /* star_dark.png in Resources */ = {isa = PBXBuildFile; fileRef = 7FA49E3119EB03950032CEAB /* star_dark.png */; };
 		7FA49E3419EB19080032CEAB /* ribbon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7FA49E3319EB19080032CEAB /* ribbon@2x.png */; };
@@ -467,7 +466,6 @@
 		7F5C46661811E87900DF94B1 /* ProInfoVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProInfoVC.m; path = InstaCar/ProInfoVC.m; sourceTree = "<group>"; };
 		7F98D62219F450A500415C8D /* SkinCmdInvertColors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkinCmdInvertColors.h; sourceTree = "<group>"; };
 		7F98D62319F450A500415C8D /* SkinCmdInvertColors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SkinCmdInvertColors.m; sourceTree = "<group>"; };
-		7F98D62619F4558300415C8D /* CmdImages.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = CmdImages.xcassets; sourceTree = "<group>"; };
 		7FA49E2F19EAFF670032CEAB /* star_full.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star_full.png; sourceTree = "<group>"; };
 		7FA49E3119EB03950032CEAB /* star_dark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star_dark.png; sourceTree = "<group>"; };
 		7FA49E3319EB19080032CEAB /* ribbon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ribbon@2x.png"; sourceTree = "<group>"; };
@@ -1311,7 +1309,6 @@
 				7F98D62319F450A500415C8D /* SkinCmdInvertColors.m */,
 				7F03029F19F468520007BD47 /* SkinCmdRatingEditor.h */,
 				7F0302A019F468520007BD47 /* SkinCmdRatingEditor.m */,
-				7F98D62619F4558300415C8D /* CmdImages.xcassets */,
 			);
 			name = SkinCommands;
 			path = InstaCar/Model/SkinCommands;
@@ -1976,7 +1973,6 @@
 				8440C8E819CC627E009D0C19 /* logo_bentley_256.png in Resources */,
 				8440C90419CC627E009D0C19 /* logo_lambo_256.png in Resources */,
 				8440C90819CC627E009D0C19 /* logo_lotus_256.png in Resources */,
-				7F98D62719F4558300415C8D /* CmdImages.xcassets in Resources */,
 				8440C8DD19CC627E009D0C19 /* logo_subaru_128.png in Resources */,
 				8440C8AE19CC627E009D0C19 /* logo_bogdan_128.png in Resources */,
 				8440C8D319CC627E009D0C19 /* logo_nissan_128.png in Resources */,

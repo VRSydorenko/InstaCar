@@ -18,12 +18,22 @@
  */
 
 +(BOOL)isFullVersion{
-    return YES;
+    return NO;
 }
 
+// TODO: consider screen orientation
 +(BOOL)isIPhone4{
     return [UIScreen mainScreen].bounds.size.height == 480
         || UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad; // Workaround: iPad is like iPhone4 // TODO: refactor/rewrite logic
+}
++(BOOL)isIPhone5{
+    return [UIScreen mainScreen].bounds.size.height == 1136;
+}
++(BOOL)isIPhone6{
+    return [UIScreen mainScreen].bounds.size.height == 1334;
+}
++(BOOL)isIPhone6plus{
+    return [UIScreen mainScreen].bounds.size.height == 1920;
 }
 
 +(NSString*) getStoredAppVersion{
