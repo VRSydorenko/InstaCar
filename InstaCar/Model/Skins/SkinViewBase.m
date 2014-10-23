@@ -78,6 +78,7 @@
     canEditFieldText2 = NO;
     
     commands = [NSArray arrayWithObject:[NSNumber numberWithInt:COMMAND_NOCOMMANDS]]; // initially no commands
+    commandsSorted = NO;
     
     self.userInteractionEnabled = YES;
     gradientInitialized = NO;
@@ -350,6 +351,10 @@
 }
 
 -(NSArray*)getSkinCommands{
+    if (NO == commandsSorted){
+        commands = [commands sortedArrayUsingSelector:@selector(compare:)];
+        commandsSorted = YES;
+    }
     return commands;
 }
 

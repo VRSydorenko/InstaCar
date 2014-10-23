@@ -11,8 +11,8 @@
 typedef enum {
     COMMAND_NOCOMMANDS = 0, // default command
     COMMAND_INVERTCOLORS,
-    COMMAND_EDITTEXT, // UI
     COMMAND_EDITPREFIX, // UI
+    COMMAND_EDITTEXT, // UI
     COMMAND_EDITRATING, // UI
 } SkinCmdTypes;
 

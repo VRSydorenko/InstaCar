@@ -23,16 +23,21 @@
 -(void)rebuildView{
     [self reset];
     
-    CGFloat cmdWidth = [self getOneCommandWidth];
-    CGFloat cmdHeight = [self getOneCommandHeight];
+    int cmdCount = [self.delegatingSkin getSkinCommands].count;
     
-    CGRect frame = CGRectMake(SIDE_PADDING, SIDE_PADDING, cmdWidth, cmdHeight);
+    [self setCommandLenghts:[self getOneCommandWidth] forFirst:cmdCount];
     
-    for (NSNumber *cmdId in [self.delegatingSkin getSkinCommands]) {
+    for (int cmdNdx = 0; cmdNdx < cmdCount; cmdNdx++) {
+        NSArray *commands = [self.delegatingSkin getSkinCommands];
+        assert(commands.count > 0);
+        NSNumber *cmdId = [commands objectAtIndex:cmdNdx];
+        assert(cmdId);
         SkinCommand *command = [[SkinCommandProvider getInstance] getCommand:cmdId];
         assert(command);
         
-        UIButton *btn = [[UIButton alloc] initWithFrame:frame];
+        UIButton *btn = [self getButtonForCommand:cmdNdx];
+        btn.enabled = YES;
+        
         // no commands button has some other settings
         if ([command isKindOfClass:[SkinCmdNoCommands class]]){
             btn.enabled = NO;
@@ -44,7 +49,6 @@
         
         command.delegate = self.delegatingSkin;
         command.container = self;
-        [btn addTarget:self action:@selector(onCommandPressed:) forControlEvents:UIControlEventTouchUpInside];
         
         if ([command isPro] && NO == [UserSettings isFullVersion]){
             [btn setImage:[UIImage imageNamed:@"imgBadgePro.png"] forState:UIControlStateNormal];
@@ -52,9 +56,32 @@
             [btn setImage:[command getIcon] forState:UIControlStateNormal];
         }
         
-        [self addSubview:btn];
-        frame.origin.x += cmdWidth;
+        btn.hidden = NO;
     }
+    
+    self.cmdContainerView.hidden = NO;
+}
+
+-(void)setCommandLenghts:(CGFloat)width forFirst:(int)commandsNumber{
+    self.constraintCmd1Width.constant = commandsNumber >= 1 ? width : 0;
+    self.constraintCmd2Width.constant = commandsNumber >= 2 ? width : 0;
+    self.constraintCmd3Width.constant = commandsNumber >= 3 ? width : 0;
+    self.constraintCmd4Width.constant = commandsNumber >= 4 ? width : 0;
+    self.constraintCmd5Width.constant = commandsNumber >= 5 ? width : 0;
+}
+
+-(UIButton*)getButtonForCommand:(int)cmdIndex{
+    assert(cmdIndex >= 0 && cmdIndex < [self.delegatingSkin getSkinCommands].count);
+    
+    switch (cmdIndex) {
+        case 0: return self.btnCmd1;
+        case 1: return self.btnCmd2;
+        case 2: return self.btnCmd3;
+        case 3: return self.btnCmd4;
+        case 4: return self.btnCmd5;
+    }
+    
+    return nil;
 }
 
 -(BOOL)isInEditMode{
@@ -78,41 +105,58 @@
 }
 
 -(void)reset{
-    [self.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
+    // remove everything except the cmd container
+    for (UIView* subview in self.subviews) {
+        if (NO == [subview isEqual:self.cmdContainerView]){
+            [subview removeFromSuperview];
+        }
+    }
+    
+    // make commands hidden
+    //[self.cmdContainerView.subviews makeObjectsPerformSelector:@selector(setHiddenWithNumber:) withObject:[NSNumber numberWithBool:YES]];
+    self.cmdContainerView.hidden = YES;
+    
     isEditMode = NO;
 }
 
--(void)switchStringEditView:(BOOL)editMode raitingSubMode:(BOOL)raitingSubMode{
-    if (isEditMode == editMode){
-        return;
+-(void)switchToCommandView:(UIView*)cmdView{
+    if ([cmdView isEqual:self.cmdContainerView]){
+        [self rebuildView];
+    } else {
+        [self reset];
+        
+        cmdView.frame = self.bounds;
+        [self addSubview:cmdView];
     }
-    isEditMode = editMode;
-    
-    if (editMode){
-        //[self createStringEditorControls:raitingSubMode];
-    }
-    
-    [self.subviews makeObjectsPerformSelector:@selector(setHiddenWithNumber:) withObject:[NSNumber numberWithBool:editMode]];
 }
 
 #pragma mark Control dimentions
 
 -(CGFloat)getOneCommandWidth{
-    return (self.bounds.size.width - 2 * SIDE_PADDING) / [self.delegatingSkin getSkinCommands].count;
-}
-
--(CGFloat)getOneCommandHeight{
-    return (isEditMode ? [self heightOnTop] : self.bounds.size.height) - 2 * SIDE_PADDING;
+    return self.bounds.size.width / [self.delegatingSkin getSkinCommands].count;
 }
 
 #pragma mark Event handlers
 
 -(IBAction)onCommandPressed:(UIButton*)sender{
-    // TODO:
+    assert(sender.tag >= 0 && sender.tag < [self.delegatingSkin getSkinCommands].count);
+    
+    NSNumber *cmdId = [[self.delegatingSkin getSkinCommands] objectAtIndex:sender.tag];
+    assert(cmdId);
+    SkinCommand *command = [[SkinCommandProvider getInstance] getCommand:cmdId];
+    assert(command);
+    
+    UIView *cmdView = [command getCmdView];
+    
+    if (cmdView != nil){
+        [self switchToCommandView:cmdView];
+    } else {
+        [command execute];
+    }
 }
 
 -(void)skinCommandOnExecuted{
-    // TODO:
+    [self rebuildView];
 }
 
 #pragma mark -

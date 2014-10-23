@@ -94,14 +94,6 @@
                                             <action selector="onBtn_ML_Pressed:" destination="RVN-0d-NPt" eventType="touchUpInside" id="HEU-ck-KTR"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wJg-JS-xCK">
-                                        <rect key="frame" x="102" y="2" width="116" height="48"/>
-                                        <color key="backgroundColor" red="0.458823561668396" green="0.54117649793624878" blue="0.68235296010971069" alpha="1" colorSpace="deviceRGB"/>
-                                        <state key="normal" image="Camera"/>
-                                        <connections>
-                                            <action selector="onBtn_M_Pressed:" destination="RVN-0d-NPt" eventType="touchUpInside" id="AFq-qO-VB0"/>
-                                        </connections>
-                                    </button>
                                     <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hyC-ss-Ndv">
                                         <rect key="frame" x="218" y="0.0" width="51" height="50"/>
                                         <constraints>
@@ -136,6 +128,14 @@
                                             <constraint firstAttribute="height" constant="16" id="dDf-Qu-nOl"/>
                                         </constraints>
                                     </view>
+                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wJg-JS-xCK">
+                                        <rect key="frame" x="102" y="1" width="116" height="49"/>
+                                        <color key="backgroundColor" red="0.458823561668396" green="0.54117649793624878" blue="0.68235296010971069" alpha="1" colorSpace="deviceRGB"/>
+                                        <state key="normal" image="Camera"/>
+                                        <connections>
+                                            <action selector="onBtn_M_Pressed:" destination="RVN-0d-NPt" eventType="touchUpInside" id="AFq-qO-VB0"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -151,7 +151,7 @@
                                     <constraint firstAttribute="trailing" secondItem="HfA-zF-EjF" secondAttribute="trailing" id="GDi-Wp-4Xz"/>
                                     <constraint firstAttribute="height" constant="50" id="H3f-4a-vTQ"/>
                                     <constraint firstAttribute="bottom" secondItem="HfA-zF-EjF" secondAttribute="bottom" id="K99-n0-DoZ"/>
-                                    <constraint firstItem="wJg-JS-xCK" firstAttribute="top" secondItem="RVN-0d-NPt" secondAttribute="top" constant="2" id="Q7X-t8-NIT"/>
+                                    <constraint firstItem="wJg-JS-xCK" firstAttribute="top" secondItem="RVN-0d-NPt" secondAttribute="top" constant="1" id="Q7X-t8-NIT"/>
                                     <constraint firstItem="NFQ-KK-rRw" firstAttribute="leading" secondItem="RVN-0d-NPt" secondAttribute="leading" id="QmR-Xe-chF"/>
                                     <constraint firstAttribute="bottom" secondItem="H6A-is-85W" secondAttribute="bottom" constant="15" id="Ysi-8O-zrF"/>
                                     <constraint firstItem="wJg-JS-xCK" firstAttribute="leading" secondItem="Ru2-l9-G8T" secondAttribute="trailing" id="ZLb-Mh-r9c"/>
@@ -178,10 +178,111 @@
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Mi-Pc-8Iq" customClass="SkinCommandsView">
                                 <rect key="frame" x="10" y="235" width="300" height="70"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KCP-nG-uZ5">
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="70"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vO2-jl-uTI">
+                                                <rect key="frame" x="0.0" y="0.0" width="50" height="70"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="50" id="BpH-RG-ogW"/>
+                                                </constraints>
+                                                <state key="normal" title="cmd1">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="onCommandPressed:" destination="4Mi-Pc-8Iq" eventType="touchUpInside" id="joq-GL-AN3"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QLi-qo-DA8">
+                                                <rect key="frame" x="50" y="0.0" width="50" height="70"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="50" id="pXb-bv-Byf"/>
+                                                </constraints>
+                                                <state key="normal" title="cmd2">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="onCommandPressed:" destination="4Mi-Pc-8Iq" eventType="touchUpInside" id="iSx-Pk-P5l"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h72-DX-FUt">
+                                                <rect key="frame" x="100" y="0.0" width="50" height="70"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="50" id="9kj-tc-bys"/>
+                                                </constraints>
+                                                <state key="normal" title="cmd3">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="onCommandPressed:" destination="4Mi-Pc-8Iq" eventType="touchUpInside" id="UIl-6Z-HQc"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h9E-Pj-Tjg">
+                                                <rect key="frame" x="150" y="0.0" width="50" height="70"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="50" id="gtg-ww-U0h"/>
+                                                </constraints>
+                                                <state key="normal" title="cmd4">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="onCommandPressed:" destination="4Mi-Pc-8Iq" eventType="touchUpInside" id="oyx-Hb-5aR"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cb2-Rf-ioa">
+                                                <rect key="frame" x="200" y="0.0" width="50" height="70"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="50" id="P7t-dp-phB"/>
+                                                </constraints>
+                                                <state key="normal" title="cmd5">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="onCommandPressed:" destination="4Mi-Pc-8Iq" eventType="touchUpInside" id="PPG-SR-n3R"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="h72-DX-FUt" secondAttribute="bottom" id="27o-HM-RZB"/>
+                                            <constraint firstAttribute="bottom" secondItem="vO2-jl-uTI" secondAttribute="bottom" id="3Mu-Kp-6J1"/>
+                                            <constraint firstItem="h72-DX-FUt" firstAttribute="leading" secondItem="QLi-qo-DA8" secondAttribute="trailing" id="9jN-xH-2CK"/>
+                                            <constraint firstItem="h72-DX-FUt" firstAttribute="top" secondItem="KCP-nG-uZ5" secondAttribute="top" id="Bzm-WX-4ro"/>
+                                            <constraint firstItem="QLi-qo-DA8" firstAttribute="leading" secondItem="vO2-jl-uTI" secondAttribute="trailing" id="FRj-16-2fR"/>
+                                            <constraint firstItem="QLi-qo-DA8" firstAttribute="top" secondItem="KCP-nG-uZ5" secondAttribute="top" id="Fye-j6-mwq"/>
+                                            <constraint firstAttribute="bottom" secondItem="Cb2-Rf-ioa" secondAttribute="bottom" id="G78-zk-U0n"/>
+                                            <constraint firstItem="h9E-Pj-Tjg" firstAttribute="top" secondItem="KCP-nG-uZ5" secondAttribute="top" id="HFy-Of-DLj"/>
+                                            <constraint firstAttribute="bottom" secondItem="QLi-qo-DA8" secondAttribute="bottom" id="J3y-KE-wJr"/>
+                                            <constraint firstAttribute="bottom" secondItem="h9E-Pj-Tjg" secondAttribute="bottom" id="M7x-D4-Xow"/>
+                                            <constraint firstItem="h9E-Pj-Tjg" firstAttribute="leading" secondItem="h72-DX-FUt" secondAttribute="trailing" id="h2W-kI-bVc"/>
+                                            <constraint firstItem="Cb2-Rf-ioa" firstAttribute="leading" secondItem="h9E-Pj-Tjg" secondAttribute="trailing" id="jJF-3M-b5h"/>
+                                            <constraint firstItem="vO2-jl-uTI" firstAttribute="top" secondItem="KCP-nG-uZ5" secondAttribute="top" id="puj-6q-Ejo"/>
+                                            <constraint firstItem="Cb2-Rf-ioa" firstAttribute="top" secondItem="KCP-nG-uZ5" secondAttribute="top" id="r8R-g7-bFi"/>
+                                            <constraint firstItem="vO2-jl-uTI" firstAttribute="leading" secondItem="KCP-nG-uZ5" secondAttribute="leading" id="tPu-2m-LRo"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="4mb-IY-nKD"/>
+                                    <constraint firstItem="KCP-nG-uZ5" firstAttribute="leading" secondItem="4Mi-Pc-8Iq" secondAttribute="leading" id="VkP-Fr-DwD"/>
+                                    <constraint firstItem="KCP-nG-uZ5" firstAttribute="top" secondItem="4Mi-Pc-8Iq" secondAttribute="top" id="Wcv-GJ-qNh"/>
+                                    <constraint firstAttribute="bottom" secondItem="KCP-nG-uZ5" secondAttribute="bottom" id="lTj-Mj-IX1"/>
+                                    <constraint firstAttribute="trailing" secondItem="KCP-nG-uZ5" secondAttribute="trailing" id="nTV-GF-dBQ"/>
                                 </constraints>
+                                <connections>
+                                    <outlet property="btnCmd1" destination="vO2-jl-uTI" id="baV-EO-yC6"/>
+                                    <outlet property="btnCmd2" destination="QLi-qo-DA8" id="6Tm-Lb-ci8"/>
+                                    <outlet property="btnCmd3" destination="h72-DX-FUt" id="RQZ-Yb-QkT"/>
+                                    <outlet property="btnCmd4" destination="h9E-Pj-Tjg" id="ese-0X-WOo"/>
+                                    <outlet property="btnCmd5" destination="Cb2-Rf-ioa" id="fxa-7S-rR9"/>
+                                    <outlet property="cmdContainerView" destination="KCP-nG-uZ5" id="NkO-i3-73w"/>
+                                    <outlet property="constraintCmd1Width" destination="BpH-RG-ogW" id="HTy-3C-Nuj"/>
+                                    <outlet property="constraintCmd2Width" destination="pXb-bv-Byf" id="Ahv-rt-Ali"/>
+                                    <outlet property="constraintCmd3Width" destination="9kj-tc-bys" id="npA-lR-tfC"/>
+                                    <outlet property="constraintCmd4Width" destination="gtg-ww-U0h" id="zYn-4F-rcj"/>
+                                    <outlet property="constraintCmd5Width" destination="P7t-dp-phB" id="4iO-HE-Vdv"/>
+                                </connections>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="0.45882356169999999" green="0.5411764979" blue="0.68235296010000002" alpha="1" colorSpace="deviceRGB"/>

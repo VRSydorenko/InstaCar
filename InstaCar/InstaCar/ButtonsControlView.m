@@ -151,7 +151,7 @@ typedef enum {
 -(void)setButtonsBottomInset:(CGFloat)btnBottomInset{
     [self.btnL setImageEdgeInsets:UIEdgeInsetsMake(0, 0, btnBottomInset, 0)];
     [self.btnML setImageEdgeInsets:UIEdgeInsetsMake(0, 0, btnBottomInset, 0)];
-    [self.btnM setImageEdgeInsets:UIEdgeInsetsMake(0, 0, btnBottomInset + 6.0 /*top margin*/, 0)];
+    [self.btnM setImageEdgeInsets:UIEdgeInsetsMake(0, 0, btnBottomInset + 5.0 /*top margin*/, 0)];
     [self.btnMR setImageEdgeInsets:UIEdgeInsetsMake(0, 0, btnBottomInset, 0)];
     [self.btnR setImageEdgeInsets:UIEdgeInsetsMake(0, 0, btnBottomInset, 0)];
     

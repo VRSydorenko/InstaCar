@@ -87,7 +87,7 @@
 }
 
 -(void)viewWillAppear:(BOOL)animated{
-    [self initSkinCommandView];
+    [self initSkinCommandView]; // to position it on the right place
     [self setActiveSkin:0]; // goes after creating the command view
 }
 
@@ -566,6 +566,7 @@
 
 -(void)setActiveSkin:(int)index{
     activeSkin = [[DataManager getSelectedSkinSet] getSkinAtIndex:index];
+    self.commandView.delegatingSkin = activeSkin;
     [self.commandView rebuildView];
 }
 
@@ -604,7 +605,7 @@
                         self.commandView.frame = popoverFrame;
                     }
                     completion:^(BOOL finished){
-                        [self.commandView rebuildView];
+                        //[self.commandView rebuildView];
                     }
     ];
 }

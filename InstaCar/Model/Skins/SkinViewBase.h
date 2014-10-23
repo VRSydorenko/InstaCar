@@ -27,13 +27,6 @@ typedef enum {
     fTEXT2,
 } SkinField;
 
-typedef struct {
-    unsigned int canCmdInvertColors:1;
-    unsigned int canCmdEditText:1;
-    unsigned int canCmdEditPrefix:1;
-    unsigned int canCmdEditRaiting:1;
-} CommandFlags;
-    
 @interface SkinViewBase : UIView <SkinCommandDelegate> {
 @protected
     BOOL canEditFieldLocation;
@@ -43,6 +36,7 @@ typedef struct {
     BOOL canEditFieldText2;
     
     NSArray *commands; // type: NSNumber
+    BOOL commandsSorted;
     
     Location *fieldLocation;
     Auto *fieldAuto1;

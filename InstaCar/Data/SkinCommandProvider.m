@@ -9,6 +9,7 @@
 #import "SkinCommandProvider.h"
 
 #import "SkinCommandProtocol.h"
+#import "SkinCmdNoCommands.h"
 #import "SkinCmdTextEditor.h"
 #import "SkinCmdPrefixEditor.h"
 #import "SkinCmdRatingEditor.h"
@@ -35,25 +36,10 @@
 
 -(void)initCommands{
     NSMutableDictionary *cmdDict = [[NSMutableDictionary alloc] init];
-    // load UI commands from NIB
-    /*NSArray *bundle = [[NSBundle mainBundle] loadNibNamed:@"SkinCommands" owner:self options:nil];
-    DLog(@"SkinCommands Bundle objects: %lu",(unsigned long)bundle.count);
-    
-    for (id object in bundle) {
-        SkinCommand *cmd = nil;
-        if ([object isKindOfClass:[SkinCmdTextEditor class]]){
-            cmd = (SkinCmdTextEditor*)object;
-        }
-        
-        NSAssert(cmd, @"Undefined skin command!");
-        
-        NSNumber *cmdTypeAsNumber = [NSNumber numberWithInt:[cmd getCommandType]];
-        assert(![cmdDict.allKeys containsObject:cmdTypeAsNumber]); // each command only once
-        
-        [cmdDict setObject:cmd forKey:cmdTypeAsNumber];
-    }*/
     
     SkinCommand *
+    cmdUI = [[SkinCmdNoCommands alloc] init];
+    [cmdDict setObject:cmdUI forKey:[NSNumber numberWithInt:COMMAND_NOCOMMANDS]];
     cmdUI = [[SkinCmdTextEditor alloc] init];
     [cmdDict setObject:cmdUI forKey:[NSNumber numberWithInt:COMMAND_EDITTEXT]];
     cmdUI = [[SkinCmdPrefixEditor alloc] init];
