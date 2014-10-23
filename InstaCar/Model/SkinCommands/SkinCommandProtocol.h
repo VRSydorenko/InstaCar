@@ -8,12 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
+// Node: this enum also defines the order in which commands will be present on the skin view
 typedef enum {
     COMMAND_NOCOMMANDS = 0, // default command
-    COMMAND_INVERTCOLORS,
-    COMMAND_EDITPREFIX, // UI
-    COMMAND_EDITTEXT, // UI
-    COMMAND_EDITRATING, // UI
+    COMMAND_INVERTCOLORS = 1,
+    COMMAND_EDITPREFIX = 2, // UI
+    COMMAND_EDITTEXT = 3, // UI
+    COMMAND_EDITRATING = 4, // UI
 } SkinCmdTypes;
 
 @protocol SkinCommandContainerDelegate <NSObject>

@@ -10,6 +10,24 @@
 
 @implementation SkinCmdRatingEditor
 
+-(id)init{
+    self = [SkinCmdRatingEditor loadFromNib];
+    if (nil == self){
+        self = [super init];
+    }
+    if (self){
+        sizeInitialized = NO;
+    }
+    return self;
+}
+
++(instancetype)loadFromNib{
+    NSArray *bundle = [[NSBundle mainBundle] loadNibNamed:@"SkinCmdUIRatingEditor" owner:self options:nil];
+    assert(bundle);
+    
+    return [bundle objectAtIndex:0];
+}
+
 -(BOOL)isPro{
     return NO;
 }
@@ -47,9 +65,12 @@
 }
 
 -(void)layoutSubviews{
-    [super layoutSubviews];
+    if (YES == sizeInitialized){
+        [super layoutSubviews];
+        return;
+    }
     
-    self.constraintBtnCancelWidth.constant = self.bounds.size.height;
+    self.constraintBtnCancelWidth.constant = self.bounds.size.height; // TODO: don't update it
     self.constraintbtnConfirmWidth.constant = self.bounds.size.height;
     
     CGFloat oneStarWidth = (self.bounds.size.width - 2 * self.bounds.size.height /*cancel & confirm buttons*/) / 5 /*stars count*/;
@@ -57,6 +78,10 @@
     self.constraintStar2Width.constant = oneStarWidth;
     self.constraintStar4Width.constant = oneStarWidth;
     self.constraintStar5Width.constant = oneStarWidth;
+    
+    sizeInitialized = YES;
+    
+    [super layoutSubviews];
 }
 
 -(IBAction)onStarClick:(id)sender{

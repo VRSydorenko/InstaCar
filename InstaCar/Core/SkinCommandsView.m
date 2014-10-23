@@ -177,4 +177,15 @@
     [btn centerButtonAndImageWithSpacing:3.0];
 }
 
+-(void)layoutSubviews{
+    [super layoutSubviews];
+
+    CGRect rect = self.bounds;
+    for (UIView* subview in self.subviews) {
+        if (NO == [subview isEqual:self.cmdContainerView]){
+            subview.frame = rect;
+        }
+    }
+}
+
 @end

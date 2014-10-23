@@ -11,6 +11,7 @@
 
 @interface SkinCmdRatingEditor : UIView <SkinCommandProtocol>{
     int rating;
+    BOOL sizeInitialized;
 }
 
 @property (nonatomic) SkinCommandDelegate *delegate;

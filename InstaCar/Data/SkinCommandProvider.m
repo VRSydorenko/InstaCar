@@ -11,7 +11,6 @@
 #import "SkinCommandProtocol.h"
 #import "SkinCmdNoCommands.h"
 #import "SkinCmdTextEditor.h"
-#import "SkinCmdPrefixEditor.h"
 #import "SkinCmdRatingEditor.h"
 #import "SkinCmdInvertColors.h"
 
@@ -40,10 +39,14 @@
     SkinCommand *
     cmdUI = [[SkinCmdNoCommands alloc] init];
     [cmdDict setObject:cmdUI forKey:[NSNumber numberWithInt:COMMAND_NOCOMMANDS]];
+    
     cmdUI = [[SkinCmdTextEditor alloc] init];
     [cmdDict setObject:cmdUI forKey:[NSNumber numberWithInt:COMMAND_EDITTEXT]];
-    cmdUI = [[SkinCmdPrefixEditor alloc] init];
+    
+    cmdUI = [[SkinCmdTextEditor alloc] init];
+    ((SkinCmdTextEditor*)cmdUI).editorMode = EDITORMODE_PREFIX; // TODO: init this in the init method :)
     [cmdDict setObject:cmdUI forKey:[NSNumber numberWithInt:COMMAND_EDITPREFIX]];
+    
     cmdUI = [[SkinCmdRatingEditor alloc] init];
     [cmdDict setObject:cmdUI forKey:[NSNumber numberWithInt:COMMAND_EDITRATING]];
     

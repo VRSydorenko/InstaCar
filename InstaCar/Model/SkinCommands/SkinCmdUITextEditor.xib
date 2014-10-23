@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="6HM-VJ-pnw" customClass="SkinCmdTextEditor">
+            <rect key="frame" x="0.0" y="0.0" width="376" height="98"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oq8-ZY-hv0">
+                    <rect key="frame" x="0.0" y="0.0" width="90" height="98"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="90" id="r98-eZ-BYU"/>
+                    </constraints>
+                    <state key="normal" title="X"/>
+                    <connections>
+                        <action selector="onBtnCancel:" destination="6HM-VJ-pnw" eventType="touchUpInside" id="ABF-3B-bba"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wAT-Fj-ZNU">
+                    <rect key="frame" x="286" y="0.0" width="90" height="98"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="90" id="nQG-pJ-X7N"/>
+                    </constraints>
+                    <state key="normal" title="V"/>
+                    <connections>
+                        <action selector="onBtnConfirm:" destination="6HM-VJ-pnw" eventType="touchUpInside" id="yxr-TN-AcZ"/>
+                    </connections>
+                </button>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="9eQ-yC-Ish">
+                    <rect key="frame" x="90" y="0.0" width="196" height="98"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                    <connections>
+                        <action selector="onTextChanged:" destination="6HM-VJ-pnw" eventType="editingDidEnd" id="xDL-rC-UCU"/>
+                    </connections>
+                </textField>
+            </subviews>
+            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="Oq8-ZY-hv0" firstAttribute="leading" secondItem="6HM-VJ-pnw" secondAttribute="leading" id="6ns-KF-B9m"/>
+                <constraint firstAttribute="bottom" secondItem="wAT-Fj-ZNU" secondAttribute="bottom" id="HCP-xu-FkO"/>
+                <constraint firstItem="Oq8-ZY-hv0" firstAttribute="top" secondItem="6HM-VJ-pnw" secondAttribute="top" id="P8Y-Qc-DUT"/>
+                <constraint firstAttribute="trailing" secondItem="wAT-Fj-ZNU" secondAttribute="trailing" id="UCu-Ya-UsY"/>
+                <constraint firstItem="9eQ-yC-Ish" firstAttribute="top" secondItem="6HM-VJ-pnw" secondAttribute="top" id="VZO-jF-hBV"/>
+                <constraint firstItem="wAT-Fj-ZNU" firstAttribute="top" secondItem="6HM-VJ-pnw" secondAttribute="top" id="X8F-Wn-M79"/>
+                <constraint firstAttribute="bottom" secondItem="9eQ-yC-Ish" secondAttribute="bottom" id="YhV-tj-7lj"/>
+                <constraint firstItem="wAT-Fj-ZNU" firstAttribute="leading" secondItem="9eQ-yC-Ish" secondAttribute="trailing" id="jzU-G0-HMc"/>
+                <constraint firstItem="9eQ-yC-Ish" firstAttribute="leading" secondItem="Oq8-ZY-hv0" secondAttribute="trailing" id="lLI-NE-ON7"/>
+                <constraint firstAttribute="bottom" secondItem="Oq8-ZY-hv0" secondAttribute="bottom" id="su5-mf-J3J"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="btnConfirm" destination="wAT-Fj-ZNU" id="wRa-c0-1VR"/>
+                <outlet property="constraintBtnCancelWidth" destination="r98-eZ-BYU" id="6GB-R6-Wqb"/>
+                <outlet property="constraintbtnConfirmWidth" destination="nQG-pJ-X7N" id="BB1-33-a7m"/>
+                <outlet property="txtText" destination="9eQ-yC-Ish" id="8GF-KJ-bEP"/>
+            </connections>
+            <point key="canvasLocation" x="117" y="126"/>
+        </view>
+    </objects>
+</document>

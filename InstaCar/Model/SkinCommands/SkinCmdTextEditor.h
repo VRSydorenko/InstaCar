@@ -8,8 +8,16 @@
 
 #import "SkinCommandProtocol.h"
 
-@interface SkinCmdTextEditor : UIView <SkinCommandProtocol>
+typedef enum {
+    EDITORMODE_TEXT,
+    EDITORMODE_PREFIX,
+} EditorModes;
 
+@interface SkinCmdTextEditor : UIView <SkinCommandProtocol>{
+    BOOL sizeInitialized;
+}
+
+@property (nonatomic) EditorModes editorMode;
 @property (nonatomic) SkinCommandDelegate *delegate;
 @property (nonatomic) SkinCommandContainerDelegate *container;
 

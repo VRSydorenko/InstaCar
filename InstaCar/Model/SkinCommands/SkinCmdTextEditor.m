@@ -10,6 +10,25 @@
 
 @implementation SkinCmdTextEditor
 
+-(id)init{
+    self = [SkinCmdTextEditor loadFromNib];
+    if (nil == self){
+        self = [super init];
+    }
+    if (self){
+        sizeInitialized = NO;
+        self.editorMode = EDITORMODE_TEXT;
+    }
+    return self;
+}
+
++(instancetype)loadFromNib{
+    NSArray *bundle = [[NSBundle mainBundle] loadNibNamed:@"SkinCmdUITextEditor" owner:self options:nil];
+    assert(bundle);
+    
+    return [bundle objectAtIndex:0];
+}
+
 -(BOOL)isPro{
     return YES;
 }
@@ -26,7 +45,15 @@
 }
 
 -(void)prepare{
-    self.txtText.text = [self.delegate getSkinContentText];
+    switch (self.editorMode) {
+        case EDITORMODE_PREFIX:
+            self.txtText.text = [self.delegate getSkinPrefixText];
+            break;
+            
+        case EDITORMODE_TEXT:
+            self.txtText.text = [self.delegate getSkinContentText];
+            break;
+    }
 }
 
 -(UIImage*)getIcon{
@@ -34,7 +61,12 @@
 }
 
 -(NSString*)getTitle{
-    return @"Text";
+    switch (self.editorMode) {
+        case EDITORMODE_PREFIX: return @"Prefix";
+        case EDITORMODE_TEXT: return @"Text";
+    }
+    
+    return @"Text"; // default
 }
 
 - (IBAction)onBtnCancel:(id)sender {
@@ -42,18 +74,35 @@
 }
 
 - (IBAction)onBtnConfirm:(id)sender {
-    [self.delegate onCmdEditText:self.txtText.text];
+    switch (self.editorMode) {
+        case EDITORMODE_PREFIX:
+            [self.delegate onCmdEditPrefix:self.txtText.text];
+            break;
+        case EDITORMODE_TEXT:
+            [self.delegate onCmdEditText:self.txtText.text];
+            break;
+    }
+    
     [self.container skinCommandOnExecuted];
 }
 
 - (IBAction)onTextChanged:(id)sender {
-    self.btnConfirm.enabled = [self.delegate getAllowsEmptyContentText] || self.txtText.text.length > 0;
+    if (self.editorMode == EDITORMODE_TEXT){
+        self.btnConfirm.enabled = [self.delegate getAllowsEmptyContentText] || self.txtText.text.length > 0;
+    }
 }
 
 -(void)layoutSubviews{
-    [super layoutSubviews];
+    if (YES == sizeInitialized){
+        [super layoutSubviews];
+        return;
+    }
     
-    self.constraintBtnCancelWidth.constant = self.bounds.size.height;
+    self.constraintBtnCancelWidth.constant = self.bounds.size.height; // TODO: don't update it
     self.constraintbtnConfirmWidth.constant = self.bounds.size.height;
+    
+    sizeInitialized = YES;
+    
+    [super layoutSubviews];
 }
 @end

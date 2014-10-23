@@ -216,11 +216,7 @@
     self.constraintCmdViewHeight.constant = [self calcCommandsViewHeight];
     
     self.commandView.ownerVC = (UIViewController<ProInfoViewControllerDelegate>*)self.navigationController; // TODO: refactor this workaround
-    
-    //Set the customView properties
-    self.commandView.layer.cornerRadius = 3;
-    self.commandView.layer.borderWidth = 1.0f;
-    
+      
     //Add the customView to the current view
     [self.view bringSubviewToFront:self.commandView];
     
