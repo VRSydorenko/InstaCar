@@ -94,7 +94,7 @@
                  andViewHeight:(unsigned short)height
   andMovingViewTopBottomMargin:(CGFloat)margin{
     movingViewTopMarginConstraint = topMargin;
-    if (movingViewTopMarginConstraint.constant > 50){ // if it is not on the top in designer then move bottom. TODO: Rewrite this awkward workaround. 50 here means "not 0" but also not too much to be considered as "on the bottom". 
+    if (movingViewTopMarginConstraint.constant > 50){ // if it is not on the top in designer then move bottom. TODO: Rewrite this awkward workaround. 50 here means "not 0" but also not that as much as for to be considered as "on the bottom". 
         movingViewTopMarginConstraint.constant = [UIScreen mainScreen].bounds.size.width - height - margin;
         isContentOnTop = NO;
     }

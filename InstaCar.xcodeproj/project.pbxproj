@@ -462,6 +462,7 @@
 		7F59AC5E17D3C1F400B87457 /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
 		7F5C46651811E87900DF94B1 /* ProInfoVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProInfoVC.h; path = InstaCar/ProInfoVC.h; sourceTree = "<group>"; };
 		7F5C46661811E87900DF94B1 /* ProInfoVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProInfoVC.m; path = InstaCar/ProInfoVC.m; sourceTree = "<group>"; };
+		7F87F29E19F962D600E4B592 /* fbCover.psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = fbCover.psd; sourceTree = "<group>"; };
 		7F98D62219F450A500415C8D /* SkinCmdInvertColors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkinCmdInvertColors.h; sourceTree = "<group>"; };
 		7F98D62319F450A500415C8D /* SkinCmdInvertColors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SkinCmdInvertColors.m; sourceTree = "<group>"; };
 		7FA49E2F19EAFF670032CEAB /* star_full.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star_full.png; sourceTree = "<group>"; };
@@ -813,6 +814,7 @@
 		7F02DCA419E17C5E0042750C /* PSD */ = {
 			isa = PBXGroup;
 			children = (
+				7F87F29E19F962D600E4B592 /* fbCover.psd */,
 				7F02DCA519E17C5E0042750C /* appIcon.psd */,
 				7F02DCA619E17C5E0042750C /* imgBadgePro.psd */,
 				7F02DCA719E17C5E0042750C /* logoOverlay@2x.psd */,
