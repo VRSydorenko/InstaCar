@@ -574,6 +574,7 @@
     
     CGFloat keyboardTop = keyboardRect.origin.y;
     
+    initialPopoverFrame = self.commandView.frame;
     CGFloat height = [self calcCommandsViewHeight];
     CGRect popoverFrame = CGRectMake(self.commandView.frame.origin.x, keyboardTop - height, self.commandView.bounds.size.width, height);
     

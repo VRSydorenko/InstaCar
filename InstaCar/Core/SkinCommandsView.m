@@ -150,6 +150,7 @@
     
     if (cmdView != nil){
         [self switchToCommandView:cmdView];
+        [command cmdViewShown];
     } else {
         [command execute];
     }

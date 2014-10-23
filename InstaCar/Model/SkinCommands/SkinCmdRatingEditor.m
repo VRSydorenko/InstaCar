@@ -39,6 +39,9 @@
     return self;
 }
 
+-(void)cmdViewShown{
+}
+
 -(void)execute{
     assert(false);
 }

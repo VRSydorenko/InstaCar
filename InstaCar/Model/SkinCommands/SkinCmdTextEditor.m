@@ -40,6 +40,10 @@
     return self;
 }
 
+-(void)cmdViewShown{
+    [self.txtText becomeFirstResponder];
+}
+
 -(void)execute{
     assert(false);
 }
@@ -83,6 +87,7 @@
             break;
     }
     
+    [self.txtText resignFirstResponder];
     [self.container skinCommandOnExecuted];
 }
 

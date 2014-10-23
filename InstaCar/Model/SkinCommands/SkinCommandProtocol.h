@@ -39,6 +39,7 @@ typedef NSObject<SkinCommandContainerDelegate> SkinCommandContainerDelegate;
 @protocol SkinCommandProtocol <NSObject>
 -(BOOL)isPro;
 -(UIView*)getCmdView;
+-(void)cmdViewShown;
 -(void)execute;
 -(void)prepare;
 -(UIImage*)getIcon;

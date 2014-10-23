@@ -18,6 +18,9 @@
     return nil;
 }
 
+-(void)cmdViewShown{
+}
+
 -(void)execute{
     assert(self.delegate);
     

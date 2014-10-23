@@ -18,6 +18,9 @@
     return 0;
 }
 
+-(void)cmdViewShown{
+}
+
 -(void)execute{
 }
 
