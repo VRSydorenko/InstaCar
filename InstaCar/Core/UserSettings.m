@@ -18,7 +18,7 @@
  */
 
 +(BOOL)isFullVersion{
-    return NO;
+    return YES;
 }
 
 // TODO: consider screen orientation
