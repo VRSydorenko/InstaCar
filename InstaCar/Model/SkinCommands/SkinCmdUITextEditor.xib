@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6250" systemVersion="14A388a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -10,22 +11,22 @@
             <rect key="frame" x="0.0" y="0.0" width="376" height="98"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oq8-ZY-hv0">
+                <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oq8-ZY-hv0">
                     <rect key="frame" x="0.0" y="0.0" width="90" height="98"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="90" id="r98-eZ-BYU"/>
                     </constraints>
-                    <state key="normal" title="X"/>
+                    <state key="normal" image="imgCmdDecline"/>
                     <connections>
                         <action selector="onBtnCancel:" destination="6HM-VJ-pnw" eventType="touchUpInside" id="ABF-3B-bba"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wAT-Fj-ZNU">
+                <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wAT-Fj-ZNU">
                     <rect key="frame" x="286" y="0.0" width="90" height="98"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="90" id="nQG-pJ-X7N"/>
                     </constraints>
-                    <state key="normal" title="V"/>
+                    <state key="normal" image="imgCmdConfirm"/>
                     <connections>
                         <action selector="onBtnConfirm:" destination="6HM-VJ-pnw" eventType="touchUpInside" id="yxr-TN-AcZ"/>
                     </connections>
@@ -56,6 +57,7 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="btnConfirm" destination="wAT-Fj-ZNU" id="wRa-c0-1VR"/>
+                <outlet property="btnDecline" destination="Oq8-ZY-hv0" id="1jF-o5-uxa"/>
                 <outlet property="constraintBtnCancelWidth" destination="r98-eZ-BYU" id="6GB-R6-Wqb"/>
                 <outlet property="constraintbtnConfirmWidth" destination="nQG-pJ-X7N" id="BB1-33-a7m"/>
                 <outlet property="txtText" destination="9eQ-yC-Ish" id="8GF-KJ-bEP"/>
@@ -63,4 +65,8 @@
             <point key="canvasLocation" x="117" y="126"/>
         </view>
     </objects>
+    <resources>
+        <image name="imgCmdConfirm" width="48" height="40"/>
+        <image name="imgCmdDecline" width="48" height="48"/>
+    </resources>
 </document>

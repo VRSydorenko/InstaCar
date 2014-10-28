@@ -51,7 +51,7 @@
 }
 
 -(UIImage*)getIcon{ // TODO: add rating icon
-    return [UIImage imageNamed:@"imgCmdEditNormal@2x.png"]; // TODO: use name w/o scale factor
+    return [UIImage imageNamed:@"imgCmdStar"];
 }
 
 -(NSString*)getTitle{

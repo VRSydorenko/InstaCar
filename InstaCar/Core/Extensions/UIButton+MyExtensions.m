@@ -11,7 +11,8 @@
 @implementation UIButton (MyExtensions)
 
 -(void) centerButtonAndImageWithSpacing:(CGFloat)spacing {
-    self.imageEdgeInsets = UIEdgeInsetsMake(0, 0, 0, spacing);
+    CGFloat topBottomMargin = (0.5 /*50%*/ * self.bounds.size.height) / 2 /*top & bottom*/;
+    self.imageEdgeInsets = UIEdgeInsetsMake(topBottomMargin, 0, topBottomMargin, spacing);
     self.titleEdgeInsets = UIEdgeInsetsMake(0, spacing, 0, 0);
 }
 

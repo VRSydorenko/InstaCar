@@ -51,9 +51,9 @@
         command.container = self;
         
         if ([command isPro] && NO == [UserSettings isFullVersion]){
-            [btn setImage:[UIImage imageNamed:@"imgBadgePro.png"] forState:UIControlStateNormal];
+            [btn setImage:[[UIImage imageNamed:@"imgBadgePro.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] forState:UIControlStateNormal];
         } else {
-            [btn setImage:[command getIcon] forState:UIControlStateNormal];
+            [btn setImage:[[command getIcon] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] forState:UIControlStateNormal];
         }
         
         btn.hidden = NO;
@@ -172,7 +172,6 @@
     [btn setTitleShadowColor:[UIColor blackColor] forState:UIControlStateDisabled]; // TODO: dark the color
     
     btn.imageView.contentMode = UIViewContentModeScaleAspectFit;
-    [btn setImageEdgeInsets:UIEdgeInsetsMake(-5, -5, -5, -5)];
     btn.backgroundColor = [UIColor lightGrayColor];
     
     [btn centerButtonAndImageWithSpacing:3.0];

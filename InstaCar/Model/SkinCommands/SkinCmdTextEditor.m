@@ -61,7 +61,7 @@
 }
 
 -(UIImage*)getIcon{
-    return [UIImage imageNamed:@"imgCmdEditNormal@2x.png"]; // TODO: use name w/o scale factor
+    return [UIImage imageNamed:@"imgCmdEdit"];
 }
 
 -(NSString*)getTitle{
@@ -105,6 +105,10 @@
     
     self.constraintBtnCancelWidth.constant = self.bounds.size.height; // TODO: don't update it
     self.constraintbtnConfirmWidth.constant = self.bounds.size.height;
+    
+    CGFloat margin = (0.5 /*50%*/ * self.bounds.size.height) / 2;
+    self.btnConfirm.imageEdgeInsets = UIEdgeInsetsMake(margin, margin, margin, margin);
+    self.btnDecline.imageEdgeInsets = UIEdgeInsetsMake(margin, margin, margin, margin);
     
     sizeInitialized = YES;
     

@@ -21,6 +21,7 @@ typedef enum {
 @property (nonatomic) SkinCommandDelegate *delegate;
 @property (nonatomic) SkinCommandContainerDelegate *container;
 
+@property (weak, nonatomic) IBOutlet UIButton *btnDecline;
 @property (weak, nonatomic) IBOutlet UIButton *btnConfirm;
 @property (weak, nonatomic) IBOutlet UITextField *txtText;
 

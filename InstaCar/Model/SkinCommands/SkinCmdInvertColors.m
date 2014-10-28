@@ -31,7 +31,7 @@
 }
 
 -(UIImage*)getIcon{
-    return [UIImage imageNamed:@"imgCmdInvertNormal@2x.png"]; // TODO: use name w/o scale factor
+    return [UIImage imageNamed:@"imgCmdInvert"];
 }
 
 -(NSString*)getTitle{

@@ -28,7 +28,7 @@
 }
 
 -(UIImage*)getIcon{
-    return [UIImage imageNamed:@"imgCmdNoActionsDisabled@2x.png"]; // TODO: use name w/o scale factor
+    return [UIImage imageNamed:@"imgCmdInfo"];
 }
 
 -(NSString*)getTitle{
