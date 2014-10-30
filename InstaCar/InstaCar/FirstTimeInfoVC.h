@@ -16,6 +16,10 @@
 
 @interface FirstTimeInfoVC : UIViewController
 
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *constraintArrowLeftTop;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *constraintMiddleTextTop;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *constraintArrowRightTop;
+
 @property id<FirstTimeVCDelegate> delegate;
 @property (nonatomic) IBOutlet UIView *infoView;
 
