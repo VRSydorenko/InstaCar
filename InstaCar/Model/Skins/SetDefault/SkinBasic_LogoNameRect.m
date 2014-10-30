@@ -37,7 +37,7 @@
     [self.imageLogo setImageLogoName:fieldAuto1.logoName];
     self.imageLogo.image = fieldAuto1.logo128;
     
-    self.labelAuto.text = fieldAuto1.name;
+    self.labelAuto.text = fieldAuto1.logoAsName ? fieldAuto1.selectedTextModel : fieldAuto1.name;
     [self adjustAutoLabelSizeAccordingToText];
 }
 
