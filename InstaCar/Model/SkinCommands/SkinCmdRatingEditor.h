@@ -17,6 +17,9 @@
 @property (nonatomic) SkinCommandDelegate *delegate;
 @property (nonatomic) SkinCommandContainerDelegate *container;
 
+@property (weak, nonatomic) IBOutlet UIButton *btnDecline;
+@property (weak, nonatomic) IBOutlet UIButton *btnConfirm;
+
 @property (weak, nonatomic) IBOutlet UIButton *btnStar1;
 @property (weak, nonatomic) IBOutlet UIButton *btnStar2;
 @property (weak, nonatomic) IBOutlet UIButton *btnStar3;

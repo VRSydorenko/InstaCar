@@ -48,6 +48,7 @@
 
 -(void)prepare{
     rating = [self.delegate getSkinRaiting];
+    [self updateStarsAccordingToRaiting:rating];
 }
 
 -(UIImage*)getIcon{ // TODO: add rating icon
@@ -75,6 +76,10 @@
     
     self.constraintBtnCancelWidth.constant = self.bounds.size.height; // TODO: don't update it
     self.constraintbtnConfirmWidth.constant = self.bounds.size.height;
+    
+    CGFloat margin = (0.5 /*50%*/ * self.bounds.size.height) / 2;
+    self.btnConfirm.imageEdgeInsets = UIEdgeInsetsMake(margin, margin, margin, margin);
+    self.btnDecline.imageEdgeInsets = UIEdgeInsetsMake(margin, margin, margin, margin);
     
     CGFloat oneStarWidth = (self.bounds.size.width - 2 * self.bounds.size.height /*cancel & confirm buttons*/) / 5 /*stars count*/;
     self.constraintStar1Width.constant = oneStarWidth;
@@ -107,8 +112,8 @@
 }
 
 -(void)updateStarsAccordingToRaiting:(int)rate{
-    UIImage *starFull = [UIImage imageNamed:@"star_full.png"]; // TODO: use image from asset / scaled
-    UIImage *starDark = [UIImage imageNamed:@"star_dark.png"]; // TODO: use image from asset / scaled
+    UIImage *starFull = [[UIImage imageNamed:@"star_full.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]; // TODO: use image from asset / scaled
+    UIImage *starDark = [[UIImage imageNamed:@"star_dark.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]; // TODO: use image from asset / scaled
     
     [self.btnStar1 setImage:rate >= 1 ? starFull : starDark forState:UIControlStateNormal];
     [self.btnStar2 setImage:rate >= 2 ? starFull : starDark forState:UIControlStateNormal];

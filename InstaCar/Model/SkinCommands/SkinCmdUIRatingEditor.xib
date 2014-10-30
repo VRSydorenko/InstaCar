@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6250" systemVersion="14A388a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SkinCmdRatingEditor"/>
@@ -10,24 +11,24 @@
             <rect key="frame" x="0.0" y="0.0" width="376" height="122"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v7b-xU-cZ1">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v7b-xU-cZ1">
                     <rect key="frame" x="0.0" y="0.0" width="64" height="122"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="64" id="8rF-CP-ECl"/>
                     </constraints>
-                    <state key="normal" title="X">
+                    <state key="normal" image="imgCmdDecline">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
                         <action selector="onBtnCancel:" destination="XJU-X4-fxf" eventType="touchUpInside" id="5hh-Qr-qlh"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tP0-jP-YFK">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tP0-jP-YFK">
                     <rect key="frame" x="299" y="0.0" width="77" height="122"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="77" id="mkL-Ga-E0E"/>
                     </constraints>
-                    <state key="normal" title="V">
+                    <state key="normal" image="imgCmdConfirm">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
@@ -119,6 +120,8 @@
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
+                <outlet property="btnConfirm" destination="tP0-jP-YFK" id="Q8N-QO-BWS"/>
+                <outlet property="btnDecline" destination="v7b-xU-cZ1" id="75C-wh-wwd"/>
                 <outlet property="btnStar1" destination="taE-KF-ULX" id="BCp-Ka-Jxo"/>
                 <outlet property="btnStar2" destination="mGo-2n-mHd" id="VT6-IC-D2w"/>
                 <outlet property="btnStar3" destination="Cqe-D1-fYU" id="Kkv-uq-bst"/>
@@ -134,4 +137,8 @@
             <point key="canvasLocation" x="154" y="256"/>
         </view>
     </objects>
+    <resources>
+        <image name="imgCmdConfirm" width="48" height="40"/>
+        <image name="imgCmdDecline" width="48" height="48"/>
+    </resources>
 </document>

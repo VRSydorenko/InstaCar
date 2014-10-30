@@ -145,6 +145,7 @@
     assert(cmdId);
     SkinCommand *command = [[SkinCommandProvider getInstance] getCommand:cmdId];
     assert(command);
+    [command prepare];
     
     UIView *cmdView = [command getCmdView];
     
