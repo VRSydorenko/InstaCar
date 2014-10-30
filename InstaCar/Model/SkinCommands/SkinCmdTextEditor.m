@@ -18,6 +18,8 @@
     if (self){
         sizeInitialized = NO;
         self.editorMode = EDITORMODE_TEXT;
+        self.btnDecline.imageView.contentMode = UIViewContentModeScaleAspectFit;
+        self.btnConfirm.imageView.contentMode = UIViewContentModeScaleAspectFit;
     }
     return self;
 }
@@ -103,8 +105,8 @@
         return;
     }
     
-    self.constraintBtnCancelWidth.constant = self.bounds.size.height; // TODO: don't update it
-    self.constraintbtnConfirmWidth.constant = self.bounds.size.height;
+    self.constraintBtnCancelWidth.constant = MAX(40, self.bounds.size.height);
+    self.constraintbtnConfirmWidth.constant = MAX(40, self.bounds.size.height);
     
     CGFloat margin = (0.5 /*50%*/ * self.bounds.size.height) / 2;
     self.btnConfirm.imageEdgeInsets = UIEdgeInsetsMake(margin, margin, margin, margin);

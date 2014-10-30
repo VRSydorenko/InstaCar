@@ -9,6 +9,7 @@
 #import "SkinCommandsView.h"
 #import "SkinCommandProvider.h"
 #import "SkinCmdNoCommands.h"
+#import "SkinCmdTextEditor.h"
 
 @implementation SkinCommandsView
 
@@ -151,14 +152,20 @@
     
     if (cmdView != nil){
         [self switchToCommandView:cmdView];
+        // after switching to the text edit view kexboard will appear so it will be in the edit mode
+        if ([command isKindOfClass:[SkinCmdTextEditor class]]){
+            isEditMode = YES;
+        }
         [command cmdViewShown];
     } else {
         [command execute];
+        isEditMode = NO;
     }
 }
 
 -(void)skinCommandOnExecuted{
     [self rebuildView];
+    isEditMode = NO;
 }
 
 #pragma mark -

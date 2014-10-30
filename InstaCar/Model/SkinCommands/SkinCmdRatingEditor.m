@@ -17,6 +17,8 @@
     }
     if (self){
         sizeInitialized = NO;
+        self.btnDecline.imageView.contentMode = UIViewContentModeScaleAspectFit;
+        self.btnConfirm.imageView.contentMode = UIViewContentModeScaleAspectFit;
     }
     return self;
 }

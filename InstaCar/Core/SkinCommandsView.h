@@ -11,11 +11,10 @@
 #include "UIButton+MyExtensions.h"
 #import "SkinViewBase.h"
 
-#define BTNS_EDITOR_MARGIN 2.0
-#define HEIGHT_ON_TOP_IPHONE4 40.0 // TODO: calc these sizes
-#define HEIGHT_ON_TOP_IPHONE5 40.0
-#define HEIGHT_ON_TOP_IPHONE6 40.0
-#define HEIGHT_ON_TOP_IPHONE6PLUS 40.0
+#define HEIGHT_ON_TOP_IPHONE4 35.0
+#define HEIGHT_ON_TOP_IPHONE5 35.0
+#define HEIGHT_ON_TOP_IPHONE6 45.0
+#define HEIGHT_ON_TOP_IPHONE6PLUS 50.0
 
 @interface SkinCommandsView : UIView <SkinCommandContainerDelegate>{
 @private

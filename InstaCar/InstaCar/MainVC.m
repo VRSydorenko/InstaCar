@@ -515,15 +515,15 @@
     }
     
     if ([UserSettings isIPhone5]){
-        return isShowingAd ? 28.0 : 47.0;
+        return isShowingAd ? 55.0 : 65.0;
     }
     
     if ([UserSettings isIPhone6]){
-        return isShowingAd ? 28.0 : 47.0;
+        return isShowingAd ? 65.0 : 75.0;
     }
     
     if ([UserSettings isIPhone6plus]){
-        return isShowingAd ? 28.0 : 47.0;
+        return isShowingAd ? 70.0 : 80.0;
     }
     
     return isShowingAd ? 28.0 : 47.0; // iPhone4

@@ -31,11 +31,11 @@
                         <action selector="onBtnConfirm:" destination="6HM-VJ-pnw" eventType="touchUpInside" id="yxr-TN-AcZ"/>
                     </connections>
                 </button>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="9eQ-yC-Ish">
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="20" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="9eQ-yC-Ish">
                     <rect key="frame" x="90" y="0.0" width="196" height="98"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <textInputTraits key="textInputTraits"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                    <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                     <connections>
                         <action selector="onTextChanged:" destination="6HM-VJ-pnw" eventType="editingDidEnd" id="xDL-rC-UCU"/>
                     </connections>
